@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаОтменить" id="40">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаОтменить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаОтменитьРасширеннаяПодсказка" id="41"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщиеРеквизиты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбщиеРеквизитыРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<InputField name="Номер" id="9">
+					<DataPath>Объект.Number</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="11"/>
+				</InputField>
+				<InputField name="Дата" id="12">
+					<DataPath>Объект.Date</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="14"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+						<Event name="ChoiceProcessing">ДатаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="15">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="17"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Основание" id="1">
+			<DataPath>Объект.Основание</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ОснованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ОснованиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Сотрудник" id="4">
+			<DataPath>Объект.Сотрудник</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="СотрудникКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="СотрудникРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ОснованиеТемаОбучения" id="26">
+			<DataPath>Объект.Основание.ТемаОбучения</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ОснованиеТемаОбученияКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ОснованиеТемаОбученияРасширеннаяПодсказка" id="28"/>
+		</InputField>
+		<UsualGroup name="ГруппаСтатусыБизнесПроцесса" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа статусы бизнес процесса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа статусы бизнес процесса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтатусыБизнесПроцессаРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<CheckBoxField name="Стартован" id="31">
+					<DataPath>Объект.Started</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтартованКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="СтартованРасширеннаяПодсказка" id="33"/>
+				</CheckBoxField>
+				<CheckBoxField name="Завершен" id="34">
+					<DataPath>Объект.Completed</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗавершенКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ЗавершенРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
+				<CheckBoxField name="Отменен" id="37">
+					<DataPath>Объект.Отменен</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтмененКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ОтмененРасширеннаяПодсказка" id="39"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодвалФормы" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаПодвалФормыРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<LabelField name="Ответственный" id="20">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="Комментарий" id="23">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="25"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:BusinessProcessObject.ОбучениеСотрудника</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОтменить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда отменить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтменить</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,1150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗапуститьОтложенныеЗадания" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗапуститьОтложенныеЗадания</CommandName>
+				<ExtendedTooltip name="ФормаЗапуститьОтложенныеЗаданияРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="40">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="41"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаЗаданияВРаботе" id="125">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задания в работе</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполняющиеся задания и задания в очереди</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="СтраницаЗаданияВРаботеРасширеннаяПодсказка" id="126"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЗаданияОжидающиеЗапуск" id="180">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задания, ожидающие запуск</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Очередь заданий, ожидающих запуск</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаЗаданияОжидающиеЗапускРасширеннаяПодсказка" id="181"/>
+							<ChildItems>
+								<UsualGroup name="ЗаданияОжидающиеЗапускКомпоновщикНастроекПользовательскиеНастройки" id="198">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа пользовательских настроек</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Задания ожидающие запуск компоновщик настроек пользовательские настройки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>false</VerticalStretch>
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ЗаданияОжидающиеЗапускКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="199"/>
+								</UsualGroup>
+								<Table name="ЗаданияОжидающиеЗапуск" id="3">
+									<ReadOnly>true</ReadOnly>
+									<Height>4</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<AutoMaxRowsCount>false</AutoMaxRowsCount>
+									<RowSelectionMode>Row</RowSelectionMode>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<DataPath>ЗаданияОжидающиеЗапуск</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>ChangeHistory</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>true</AutoRefresh>
+									<AutoRefreshPeriod>20</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<UserSettingsGroup>ЗаданияОжидающиеЗапускКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="ЗаданияОжидающиеЗапускКонтекстноеМеню" id="4"/>
+									<AutoCommandBar name="ЗаданияОжидающиеЗапускКоманднаяПанель" id="5">
+										<ChildItems>
+											<Button name="ЗаданияОжидающиеЗапускЗапуститьОтложенноеЗадание" id="161">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗапуститьОтложенноеЗадание</CommandName>
+												<ExtendedTooltip name="ЗаданияОжидающиеЗапускЗапуститьОтложенноеЗаданиеРасширеннаяПодсказка" id="162"/>
+											</Button>
+											<Button name="ЗаданияОжидающиеЗапускОтменитьОтложенноеЗадание" id="163">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтменитьОтложенноеЗадание</CommandName>
+												<ExtendedTooltip name="ЗаданияОжидающиеЗапускОтменитьОтложенноеЗаданиеРасширеннаяПодсказка" id="164"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ЗаданияОжидающиеЗапускРасширеннаяПодсказка" id="6"/>
+									<SearchStringAddition name="ЗаданияОжидающиеЗапускСтрокаПоиска" id="7">
+										<AdditionSource>
+											<Item>ЗаданияОжидающиеЗапуск</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаданияОжидающиеЗапускСтрокаПоискаКонтекстноеМеню" id="8"/>
+										<ExtendedTooltip name="ЗаданияОжидающиеЗапускСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ЗаданияОжидающиеЗапускСостояниеПросмотра" id="10">
+										<AdditionSource>
+											<Item>ЗаданияОжидающиеЗапуск</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаданияОжидающиеЗапускСостояниеПросмотраКонтекстноеМеню" id="11"/>
+										<ExtendedTooltip name="ЗаданияОжидающиеЗапускСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ЗаданияОжидающиеЗапускУправлениеПоиском" id="13">
+										<AdditionSource>
+											<Item>ЗаданияОжидающиеЗапуск</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаданияОжидающиеЗапускУправлениеПоискомКонтекстноеМеню" id="14"/>
+										<ExtendedTooltip name="ЗаданияОжидающиеЗапускУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ТаблицаВыбор</Event>
+										<Event name="OnActivateRow">ЗаданияОжидающиеЗапускПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="ЗаданияОжидающиеЗапускДатаЗапускаПлан" id="186">
+											<DataPath>ЗаданияОжидающиеЗапуск.ДатаЗапускаПлан</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Плановая дата запуска</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЗаданияОжидающиеЗапускДатаЗапускаПланКонтекстноеМеню" id="187"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускДатаЗапускаПланРасширеннаяПодсказка" id="188"/>
+										</LabelField>
+										<LabelField name="ЗаданияОжидающиеЗапускДатаДобавления" id="16">
+											<DataPath>ЗаданияОжидающиеЗапуск.ДатаДобавления</DataPath>
+											<ContextMenu name="ЗаданияОжидающиеЗапускДатаДобавленияКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускДатаДобавленияРасширеннаяПодсказка" id="18"/>
+										</LabelField>
+										<LabelField name="ЗаданияОжидающиеЗапускОбъект" id="25">
+											<DataPath>ЗаданияОжидающиеЗапуск.Объект</DataPath>
+											<ContextMenu name="ЗаданияОжидающиеЗапускОбъектКонтекстноеМеню" id="26"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускОбъектРасширеннаяПодсказка" id="27"/>
+										</LabelField>
+										<LabelField name="ЗаданияОжидающиеЗапускКоманда" id="22">
+											<DataPath>ЗаданияОжидающиеЗапуск.Команда</DataPath>
+											<ContextMenu name="ЗаданияОжидающиеЗапускКомандаКонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускКомандаРасширеннаяПодсказка" id="24"/>
+										</LabelField>
+										<LabelField name="ЗаданияОжидающиеЗапускОписаниеПараметров" id="28">
+											<DataPath>ЗаданияОжидающиеЗапуск.ОписаниеПараметров</DataPath>
+											<ContextMenu name="ЗаданияОжидающиеЗапускОписаниеПараметровКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускОписаниеПараметровРасширеннаяПодсказка" id="30"/>
+										</LabelField>
+										<LabelField name="ЗаданияОжидающиеЗапускТаймаут" id="34">
+											<DataPath>ЗаданияОжидающиеЗапуск.Таймаут</DataPath>
+											<ContextMenu name="ЗаданияОжидающиеЗапускТаймаутКонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускТаймаутРасширеннаяПодсказка" id="36"/>
+										</LabelField>
+										<CheckBoxField name="ЗаданияОжидающиеЗапускПерезапускатьПоИстечениюТаймаута" id="31">
+											<DataPath>ЗаданияОжидающиеЗапуск.ПерезапускатьПоИстечениюТаймаута</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаданияОжидающиеЗапускПерезапускатьПоИстечениюТаймаутаКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускПерезапускатьПоИстечениюТаймаутаРасширеннаяПодсказка" id="33"/>
+										</CheckBoxField>
+										<LabelField name="ЗаданияОжидающиеЗапускИдентификатор" id="19">
+											<DataPath>ЗаданияОжидающиеЗапуск.Идентификатор</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаданияОжидающиеЗапускИдентификаторКонтекстноеМеню" id="20"/>
+											<ExtendedTooltip name="ЗаданияОжидающиеЗапускИдентификаторРасширеннаяПодсказка" id="21"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаВыполняющиесяЗадания" id="178">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выполняющиеся задания</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выполняющиеся в текущий момент задания</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаВыполняющиесяЗаданияРасширеннаяПодсказка" id="179"/>
+							<ChildItems>
+								<UsualGroup name="ВыполняющиесяЗаданияКомпоновщикНастроекПользовательскиеНастройки" id="200">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа пользовательских настроек</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Задания ожидающие запуск компоновщик настроек пользовательские настройки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>false</VerticalStretch>
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ВыполняющиесяЗаданияКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="201"/>
+								</UsualGroup>
+								<Table name="ВыполняющиесяЗадания" id="127">
+									<ReadOnly>true</ReadOnly>
+									<Height>4</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<AutoMaxRowsCount>false</AutoMaxRowsCount>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<InitialListView>End</InitialListView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<DataPath>ВыполняющиесяЗадания</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>ChangeHistory</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>true</AutoRefresh>
+									<AutoRefreshPeriod>20</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<UserSettingsGroup>ВыполняющиесяЗаданияКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="ВыполняющиесяЗаданияКонтекстноеМеню" id="128"/>
+									<AutoCommandBar name="ВыполняющиесяЗаданияКоманднаяПанель" id="129"/>
+									<ExtendedTooltip name="ВыполняющиесяЗаданияРасширеннаяПодсказка" id="130"/>
+									<SearchStringAddition name="ВыполняющиесяЗаданияСтрокаПоиска" id="131">
+										<AdditionSource>
+											<Item>ВыполняющиесяЗадания</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВыполняющиесяЗаданияСтрокаПоискаКонтекстноеМеню" id="132"/>
+										<ExtendedTooltip name="ВыполняющиесяЗаданияСтрокаПоискаРасширеннаяПодсказка" id="133"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВыполняющиесяЗаданияСостояниеПросмотра" id="134">
+										<AdditionSource>
+											<Item>ВыполняющиесяЗадания</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВыполняющиесяЗаданияСостояниеПросмотраКонтекстноеМеню" id="135"/>
+										<ExtendedTooltip name="ВыполняющиесяЗаданияСостояниеПросмотраРасширеннаяПодсказка" id="136"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВыполняющиесяЗаданияУправлениеПоиском" id="137">
+										<AdditionSource>
+											<Item>ВыполняющиесяЗадания</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВыполняющиесяЗаданияУправлениеПоискомКонтекстноеМеню" id="138"/>
+										<ExtendedTooltip name="ВыполняющиесяЗаданияУправлениеПоискомРасширеннаяПодсказка" id="139"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ТаблицаВыбор</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="ВыполняющиесяЗаданияДатаЗапускаПлан" id="192">
+											<DataPath>ВыполняющиесяЗадания.ДатаЗапускаПлан</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Плановая дата запуска</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ВыполняющиесяЗаданияДатаЗапускаПланКонтекстноеМеню" id="193"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияДатаЗапускаПланРасширеннаяПодсказка" id="194"/>
+										</LabelField>
+										<LabelField name="ВыполняющиесяЗаданияДатаДобавления" id="140">
+											<DataPath>ВыполняющиесяЗадания.ДатаДобавления</DataPath>
+											<ContextMenu name="ВыполняющиесяЗаданияДатаДобавленияКонтекстноеМеню" id="141"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияДатаДобавленияРасширеннаяПодсказка" id="142"/>
+										</LabelField>
+										<LabelField name="ВыполняющиесяЗаданияДатаЗапуска" id="143">
+											<DataPath>ВыполняющиесяЗадания.ДатаЗапуска</DataPath>
+											<ContextMenu name="ВыполняющиесяЗаданияДатаЗапускаКонтекстноеМеню" id="144"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияДатаЗапускаРасширеннаяПодсказка" id="145"/>
+										</LabelField>
+										<LabelField name="ВыполняющиесяЗаданияОбъект" id="152">
+											<DataPath>ВыполняющиесяЗадания.Объект</DataPath>
+											<ContextMenu name="ВыполняющиесяЗаданияОбъектКонтекстноеМеню" id="153"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияОбъектРасширеннаяПодсказка" id="154"/>
+										</LabelField>
+										<LabelField name="ВыполняющиесяЗаданияКоманда" id="149">
+											<DataPath>ВыполняющиесяЗадания.Команда</DataPath>
+											<ContextMenu name="ВыполняющиесяЗаданияКомандаКонтекстноеМеню" id="150"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияКомандаРасширеннаяПодсказка" id="151"/>
+										</LabelField>
+										<LabelField name="ВыполняющиесяЗаданияОписаниеПараметров" id="155">
+											<DataPath>ВыполняющиесяЗадания.ОписаниеПараметров</DataPath>
+											<ContextMenu name="ВыполняющиесяЗаданияОписаниеПараметровКонтекстноеМеню" id="156"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияОписаниеПараметровРасширеннаяПодсказка" id="157"/>
+										</LabelField>
+										<LabelField name="ВыполняющиесяЗаданияИдентификатор" id="146">
+											<DataPath>ВыполняющиесяЗадания.Идентификатор</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ВыполняющиесяЗаданияИдентификаторКонтекстноеМеню" id="147"/>
+											<ExtendedTooltip name="ВыполняющиесяЗаданияИдентификаторРасширеннаяПодсказка" id="148"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаВыполненныеЗадания" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполненные задания</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполненные задания</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>StdPicture.CheckSyntax</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="СтраницаВыполненныеЗаданияРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<UsualGroup name="ВыполненныеЗаданияКомпоновщикНастроекПользовательскиеНастройки" id="202">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа пользовательских настроек</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задания ожидающие запуск компоновщик настроек пользовательские настройки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ВыполненныеЗаданияКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="203"/>
+						</UsualGroup>
+						<Table name="ВыполненныеЗадания" id="46">
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<InitialListView>End</InitialListView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>ВыполненныеЗадания</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>ChangeHistory</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+								<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+							</CommandSet>
+							<AutoRefresh>true</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<UserSettingsGroup>ВыполненныеЗаданияКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ВыполненныеЗаданияКонтекстноеМеню" id="47"/>
+							<AutoCommandBar name="ВыполненныеЗаданияКоманднаяПанель" id="48">
+								<ChildItems>
+									<Button name="ВыполненныеЗаданияПовторитьВыполненноеЗадание" id="165">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПовторитьВыполненноеЗадание</CommandName>
+										<ExtendedTooltip name="ВыполненныеЗаданияПовторитьВыполненноеЗаданиеРасширеннаяПодсказка" id="166"/>
+									</Button>
+									<Button name="ВыполненныеЗаданияУдалитьДанныеОВыполненныхЗаданиях" id="182">
+										<Type>CommandBarButton</Type>
+										<Enabled>false</Enabled>
+										<CommandName>Form.Command.УдалитьДанныеОВыполненныхЗаданиях</CommandName>
+										<ExtendedTooltip name="ВыполненныеЗаданияУдалитьДанныеОВыполненныхЗаданияхРасширеннаяПодсказка" id="183"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВыполненныеЗаданияРасширеннаяПодсказка" id="49"/>
+							<SearchStringAddition name="ВыполненныеЗаданияСтрокаПоиска" id="50">
+								<AdditionSource>
+									<Item>ВыполненныеЗадания</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыполненныеЗаданияСтрокаПоискаКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="ВыполненныеЗаданияСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВыполненныеЗаданияСостояниеПросмотра" id="53">
+								<AdditionSource>
+									<Item>ВыполненныеЗадания</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыполненныеЗаданияСостояниеПросмотраКонтекстноеМеню" id="54"/>
+								<ExtendedTooltip name="ВыполненныеЗаданияСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВыполненныеЗаданияУправлениеПоиском" id="56">
+								<AdditionSource>
+									<Item>ВыполненныеЗадания</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыполненныеЗаданияУправлениеПоискомКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="ВыполненныеЗаданияУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаВыбор</Event>
+								<Event name="OnActivateRow">ВыполненныеЗаданияПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ВыполненныеЗаданияДатаЗапускаПлан" id="189">
+									<DataPath>ВыполненныеЗадания.ДатаЗапускаПлан</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Плановая дата запуска</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ВыполненныеЗаданияДатаЗапускаПланКонтекстноеМеню" id="190"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияДатаЗапускаПланРасширеннаяПодсказка" id="191"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияДатаДобавления" id="169">
+									<DataPath>ВыполненныеЗадания.ДатаДобавления</DataPath>
+									<ContextMenu name="ВыполненныеЗаданияДатаДобавленияКонтекстноеМеню" id="170"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияДатаДобавленияРасширеннаяПодсказка" id="171"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияДатаЗапуска" id="62">
+									<DataPath>ВыполненныеЗадания.ДатаЗапуска</DataPath>
+									<ContextMenu name="ВыполненныеЗаданияДатаЗапускаКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияДатаЗапускаРасширеннаяПодсказка" id="64"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияДатаВыполнения" id="59">
+									<DataPath>ВыполненныеЗадания.ДатаВыполнения</DataPath>
+									<ContextMenu name="ВыполненныеЗаданияДатаВыполненияКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияДатаВыполненияРасширеннаяПодсказка" id="61"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияОбъект" id="71">
+									<DataPath>ВыполненныеЗадания.Объект</DataPath>
+									<ContextMenu name="ВыполненныеЗаданияОбъектКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияОбъектРасширеннаяПодсказка" id="73"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияКоманда" id="68">
+									<DataPath>ВыполненныеЗадания.Команда</DataPath>
+									<ContextMenu name="ВыполненныеЗаданияКомандаКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияКомандаРасширеннаяПодсказка" id="70"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияОписаниеПараметров" id="74">
+									<DataPath>ВыполненныеЗадания.ОписаниеПараметров</DataPath>
+									<ContextMenu name="ВыполненныеЗаданияОписаниеПараметровКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияОписаниеПараметровРасширеннаяПодсказка" id="76"/>
+								</LabelField>
+								<LabelField name="ВыполненныеЗаданияИдентификатор" id="65">
+									<DataPath>ВыполненныеЗадания.Идентификатор</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="ВыполненныеЗаданияИдентификаторКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="ВыполненныеЗаданияИдентификаторРасширеннаяПодсказка" id="67"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЗаданияСОшибками" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задания с ошибками</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задания с ошибками</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>StdPicture.Stop</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="СтраницаЗаданияСОшибкамиРасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<UsualGroup name="ЗаданияСОшибкамиКомпоновщикНастроекПользовательскиеНастройки" id="204">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа пользовательских настроек</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задания ожидающие запуск компоновщик настроек пользовательские настройки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ЗаданияСОшибкамиКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="205"/>
+						</UsualGroup>
+						<Table name="ЗаданияСОшибками" id="82">
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>ЗаданияСОшибками</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>ChangeHistory</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+								<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+							</CommandSet>
+							<AutoRefresh>true</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<UserSettingsGroup>ЗаданияСОшибкамиКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ЗаданияСОшибкамиКонтекстноеМеню" id="83"/>
+							<AutoCommandBar name="ЗаданияСОшибкамиКоманднаяПанель" id="84">
+								<ChildItems>
+									<Button name="ЗаданияСОшибкамиПовторитьЗаданиеВыполненоеСОшибкой" id="167">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПовторитьЗаданиеВыполненоеСОшибкой</CommandName>
+										<ExtendedTooltip name="ЗаданияСОшибкамиПовторитьЗаданиеВыполненоеСОшибкойРасширеннаяПодсказка" id="168"/>
+									</Button>
+									<Button name="ЗаданияСОшибкамиУдалитьДанныеОЗадании" id="184">
+										<Type>CommandBarButton</Type>
+										<Enabled>false</Enabled>
+										<CommandName>Form.Command.УдалитьДанныеОЗадании</CommandName>
+										<ExtendedTooltip name="ЗаданияСОшибкамиУдалитьДанныеОЗаданииРасширеннаяПодсказка" id="185"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаданияСОшибкамиРасширеннаяПодсказка" id="85"/>
+							<SearchStringAddition name="ЗаданияСОшибкамиСтрокаПоиска" id="86">
+								<AdditionSource>
+									<Item>ЗаданияСОшибками</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаданияСОшибкамиСтрокаПоискаКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="ЗаданияСОшибкамиСтрокаПоискаРасширеннаяПодсказка" id="88"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаданияСОшибкамиСостояниеПросмотра" id="89">
+								<AdditionSource>
+									<Item>ЗаданияСОшибками</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаданияСОшибкамиСостояниеПросмотраКонтекстноеМеню" id="90"/>
+								<ExtendedTooltip name="ЗаданияСОшибкамиСостояниеПросмотраРасширеннаяПодсказка" id="91"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаданияСОшибкамиУправлениеПоиском" id="92">
+								<AdditionSource>
+									<Item>ЗаданияСОшибками</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаданияСОшибкамиУправлениеПоискомКонтекстноеМеню" id="93"/>
+								<ExtendedTooltip name="ЗаданияСОшибкамиУправлениеПоискомРасширеннаяПодсказка" id="94"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаВыбор</Event>
+								<Event name="OnActivateRow">ЗаданияСОшибкамиПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ЗаданияСОшибкамиДатаЗапускаПлан" id="195">
+									<DataPath>ЗаданияСОшибками.ДатаЗапускаПлан</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Плановая дата запуска</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЗаданияСОшибкамиДатаЗапускаПланКонтекстноеМеню" id="196"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиДатаЗапускаПланРасширеннаяПодсказка" id="197"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиДатаДобавления" id="172">
+									<DataPath>ЗаданияСОшибками.ДатаДобавления</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиДатаДобавленияКонтекстноеМеню" id="173"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиДатаДобавленияРасширеннаяПодсказка" id="174"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиДатаЗапуска" id="175">
+									<DataPath>ЗаданияСОшибками.ДатаЗапуска</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиДатаЗапускаКонтекстноеМеню" id="176"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиДатаЗапускаРасширеннаяПодсказка" id="177"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиДатаОшибкиОтмены" id="95">
+									<DataPath>ЗаданияСОшибками.ДатаОшибкиОтмены</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиДатаОшибкиОтменыКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиДатаОшибкиОтменыРасширеннаяПодсказка" id="97"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиОбъект" id="107">
+									<DataPath>ЗаданияСОшибками.Объект</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиОбъектКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиОбъектРасширеннаяПодсказка" id="109"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиКоманда" id="101">
+									<DataPath>ЗаданияСОшибками.Команда</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиКомандаКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиКомандаРасширеннаяПодсказка" id="103"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиСостояние" id="116">
+									<DataPath>ЗаданияСОшибками.Состояние</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиСостояниеКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиСостояниеРасширеннаяПодсказка" id="118"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиОписаниеПараметров" id="110">
+									<DataPath>ЗаданияСОшибками.ОписаниеПараметров</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиОписаниеПараметровКонтекстноеМеню" id="111"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиОписаниеПараметровРасширеннаяПодсказка" id="112"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиКомментарий" id="104">
+									<DataPath>ЗаданияСОшибками.Комментарий</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиКомментарийКонтекстноеМеню" id="105"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиКомментарийРасширеннаяПодсказка" id="106"/>
+								</LabelField>
+								<LabelField name="ЗаданияСОшибкамиТаймаут" id="119">
+									<DataPath>ЗаданияСОшибками.Таймаут</DataPath>
+									<ContextMenu name="ЗаданияСОшибкамиТаймаутКонтекстноеМеню" id="120"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиТаймаутРасширеннаяПодсказка" id="121"/>
+								</LabelField>
+								<CheckBoxField name="ЗаданияСОшибкамиПерезапускатьПоИстечениюТаймаута" id="113">
+									<DataPath>ЗаданияСОшибками.ПерезапускатьПоИстечениюТаймаута</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЗаданияСОшибкамиПерезапускатьПоИстечениюТаймаутаКонтекстноеМеню" id="114"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиПерезапускатьПоИстечениюТаймаутаРасширеннаяПодсказка" id="115"/>
+								</CheckBoxField>
+								<LabelField name="ЗаданияСОшибкамиИдентификатор" id="98">
+									<DataPath>ЗаданияСОшибками.Идентификатор</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="ЗаданияСОшибкамиИдентификаторКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="ЗаданияСОшибкамиИдентификаторРасширеннаяПодсказка" id="100"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.МенеджерОтложенныхЗаданий</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ЗаданияОжидающиеЗапуск" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задания, ожидающие запуск</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ЗаданияОжидающиеЗапуск.Идентификатор</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОтложенныеЗадания.ДатаЗапускаПлан КАК ДатаЗапускаПлан,
+	ОтложенныеЗадания.ДатаДобавления КАК ДатаДобавления,
+	ОтложенныеЗадания.Объект КАК Объект,
+	ОтложенныеЗадания.Команда КАК Команда,
+	ОтложенныеЗадания.ОписаниеПараметров КАК ОписаниеПараметров,
+	ОтложенныеЗадания.Таймаут КАК Таймаут,
+	ОтложенныеЗадания.ПерезапускатьПоИстечениюТаймаута КАК ПерезапускатьПоИстечениюТаймаута,
+	ОтложенныеЗадания.Идентификатор КАК Идентификатор
+ИЗ
+	РегистрСведений.ОтложенныеЗадания КАК ОтложенныеЗадания
+ГДЕ
+	ОтложенныеЗадания.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияОтложенныхЗаданий.Ожидание)</QueryText>
+				<MainTable>InformationRegister.ОтложенныеЗадания</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапускаПлан</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаДобавления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Объект</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Команда</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВыполненныеЗадания" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполненные задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ВыполненныеЗадания.Идентификатор</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОтложенныеЗадания.ДатаДобавления КАК ДатаДобавления,
+	ОтложенныеЗадания.ДатаЗапускаПлан КАК ДатаЗапускаПлан,
+	ОтложенныеЗадания.ДатаЗапуска КАК ДатаЗапуска,
+	ОтложенныеЗадания.ДатаВыполнения КАК ДатаВыполнения,
+	ОтложенныеЗадания.Объект КАК Объект,
+	ОтложенныеЗадания.Команда КАК Команда,
+	ОтложенныеЗадания.ОписаниеПараметров КАК ОписаниеПараметров,
+	ОтложенныеЗадания.Идентификатор КАК Идентификатор
+ИЗ
+	РегистрСведений.ОтложенныеЗадания КАК ОтложенныеЗадания
+ГДЕ
+	ОтложенныеЗадания.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияОтложенныхЗаданий.Завершено)</QueryText>
+				<MainTable>InformationRegister.ОтложенныеЗадания</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапускаПлан</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаДобавления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапуска</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаВыполнения</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Объект</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Команда</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ЗаданияСОшибками" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задания с ошибками</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ЗаданияСОшибками.Идентификатор</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОтложенныеЗадания.ДатаДобавления КАК ДатаДобавления,
+	ОтложенныеЗадания.ДатаЗапуска КАК ДатаЗапуска,
+	ОтложенныеЗадания.ДатаЗапускаПлан КАК ДатаЗапускаПлан,
+	ОтложенныеЗадания.ДатаОшибкиОтмены КАК ДатаОшибкиОтмены,
+	ОтложенныеЗадания.Объект КАК Объект,
+	ОтложенныеЗадания.Команда КАК Команда,
+	ОтложенныеЗадания.Состояние КАК Состояние,
+	ОтложенныеЗадания.ОписаниеПараметров КАК ОписаниеПараметров,
+	ОтложенныеЗадания.Комментарий КАК Комментарий,
+	ОтложенныеЗадания.Таймаут КАК Таймаут,
+	ОтложенныеЗадания.ПерезапускатьПоИстечениюТаймаута КАК ПерезапускатьПоИстечениюТаймаута,
+	ОтложенныеЗадания.Идентификатор КАК Идентификатор
+ИЗ
+	РегистрСведений.ОтложенныеЗадания КАК ОтложенныеЗадания
+ГДЕ
+	ОтложенныеЗадания.Состояние В (ЗНАЧЕНИЕ(Перечисление.СостоянияОтложенныхЗаданий.Отменено), ЗНАЧЕНИЕ(Перечисление.СостоянияОтложенныхЗаданий.Ошибка))</QueryText>
+				<MainTable>InformationRegister.ОтложенныеЗадания</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапускаПлан</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаДобавления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапуска</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаОшибкиОтмены</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Объект</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Команда</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВыполняющиесяЗадания" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполняющиеся задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ВыполняющиесяЗадания.Идентификатор</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОтложенныеЗадания.ДатаДобавления КАК ДатаДобавления,
+	ОтложенныеЗадания.ДатаЗапускаПлан КАК ДатаЗапускаПлан,
+	ОтложенныеЗадания.ДатаЗапуска КАК ДатаЗапуска,
+	ОтложенныеЗадания.Объект КАК Объект,
+	ОтложенныеЗадания.Команда КАК Команда,
+	ОтложенныеЗадания.ОписаниеПараметров КАК ОписаниеПараметров,
+	ОтложенныеЗадания.Идентификатор КАК Идентификатор
+ИЗ
+	РегистрСведений.ОтложенныеЗадания КАК ОтложенныеЗадания
+ГДЕ
+	ОтложенныеЗадания.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияОтложенныхЗаданий.Выполняется)</QueryText>
+				<MainTable>InformationRegister.ОтложенныеЗадания</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапускаПлан</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаДобавления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаЗапуска</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Объект</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Команда</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗапуститьОтложенныеЗадания" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить отложенные задания</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить отложенные задания</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗапуститьОтложенныеЗадания</Action>
+		</Command>
+		<Command name="ЗапуститьОтложенноеЗадание" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить отложенное задание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗапуститьОтложенноеЗадание</Action>
+			<Representation>TextPicture</Representation>
+			<AssociatedTableElementId xsi:type="xs:string">ЗаданияОжидающиеЗапуск</AssociatedTableElementId>
+		</Command>
+		<Command name="ОтменитьОтложенноеЗадание" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить отложенное задание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтменитьОтложенноеЗадание</Action>
+			<Representation>TextPicture</Representation>
+			<AssociatedTableElementId xsi:type="xs:string">ЗаданияОжидающиеЗапуск</AssociatedTableElementId>
+		</Command>
+		<Command name="ПовторитьВыполненноеЗадание" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторить задание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторить выполненное задание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.History</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПовторитьВыполненноеЗадание</Action>
+			<Representation>TextPicture</Representation>
+			<AssociatedTableElementId xsi:type="xs:string">ВыполненныеЗадания</AssociatedTableElementId>
+		</Command>
+		<Command name="ПовторитьЗаданиеВыполненоеСОшибкой" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторить задание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторить задание выполненое с ошибкой</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.History</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПовторитьЗаданиеВыполненоеСОшибкой</Action>
+			<Representation>TextPicture</Representation>
+			<AssociatedTableElementId xsi:type="xs:string">ЗаданияСОшибками</AssociatedTableElementId>
+		</Command>
+		<Command name="УдалитьДанныеОВыполненныхЗаданиях" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные о выполненных заданиях</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные об успешно выполненных заданиях</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьДанныеОВыполненныхЗаданиях</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="УдалитьДанныеОЗадании" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные о задании</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные о задании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьДанныеОЗадании</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

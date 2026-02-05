@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаСкорректировать" id="23">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Скорректировать</CommandName>
+				<ExtendedTooltip name="ФормаСкорректироватьРасширеннаяПодсказка" id="24"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="25">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="26"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ТаблицаРазличий" id="1">
+			<Representation>List</Representation>
+			<ReadOnly>true</ReadOnly>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаРазличий</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаРазличийКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаРазличийКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаРазличийРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаРазличийСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаРазличий</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаРазличийСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаРазличийСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаРазличийСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаРазличий</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаРазличийСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаРазличийСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаРазличийУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаРазличий</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаРазличийУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаРазличийУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ТаблицаРазличийПредставлениеРеквизита" id="27">
+					<DataPath>ТаблицаРазличий.ПредставлениеРеквизита</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизит</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаРазличийПредставлениеРеквизитаКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ТаблицаРазличийПредставлениеРеквизитаРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<InputField name="ТаблицаРазличийЗначениеАнкеты" id="17">
+					<DataPath>ТаблицаРазличий.ЗначениеАнкеты</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаРазличийЗначениеАнкетыКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ТаблицаРазличийЗначениеАнкетыРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ТаблицаРазличийЗначениеГК" id="20">
+					<DataPath>ТаблицаРазличий.ЗначениеГК</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаРазличийЗначениеГККонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ТаблицаРазличийЗначениеГКРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<LabelDecoration name="НадписьРазличияНеВыявлены" id="30">
+			<TextColor>#288C46</TextColor>
+			<Font ref="style:NormalTextFont" height="12" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Различия не выявлены</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalAlign>Center</VerticalAlign>
+			<ContextMenu name="НадписьРазличияНеВыявленыКонтекстноеМеню" id="31"/>
+			<ExtendedTooltip name="НадписьРазличияНеВыявленыРасширеннаяПодсказка" id="32"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаРазличий" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица различий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Реквизит" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизит</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеАнкеты" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные анкеты</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ЗначениеГК" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные группы компаний</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ПредставлениеРеквизита" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление реквизита</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Скорректировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скорректировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скорректировать данные анкеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Скорректировать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоговора</dataPath>
+			<field>ВидДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отчет</dataPath>
+			<field>Отчет</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ВыборГруппИЭлементов</dcscor:parameter>
+					<dcscor:value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d6p1:FoldersAndItemsUse">Items</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаОтчетов</dataPath>
+			<field>ГруппаОтчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отчетов</v8:content>
+				</v8:item>
+			</title>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ВыборГруппИЭлементов</dcscor:parameter>
+					<dcscor:value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d6p1:FoldersAndItemsUse">Folders</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Периодичность</dataPath>
+			<field>Периодичность</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Формировать</dataPath>
+			<field>Формировать</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формировать</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Настройка</dataPath>
+			<field>Настройка</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Значение</dataPath>
+			<field>Значение</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>СвязьПоТипу</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:TypeLink">
+						<dcscor:field>Настройка</dcscor:field>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаданоДля</dataPath>
+			<field>ЗаданоДля</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задано для</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СчетаДоверительногоУправления.ВидДоговораДоверительногоУправления КАК ВидДоговора,
+	СчетаДоверительногоУправления.Ссылка КАК Договор
+ПОМЕСТИТЬ _ДействующиеДоговоры
+ИЗ
+	Справочник.СчетаДоверительногоУправления КАК СчетаДоверительногоУправления
+ГДЕ
+	СчетаДоверительногоУправления.Организация = &amp;Организация
+	И СчетаДоверительногоУправления.ДатаЗаключения &lt;= &amp;Период
+	И (СчетаДоверительногоУправления.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ СчетаДоверительногоУправления.ДатаРасторжения &gt;= &amp;Период)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КлиентыДоверительногоУправленияСрезПоследних.Клиент КАК Клиент,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ВидДоговораДоверительногоУправления КАК ВидДоговора,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления КАК Договор
+ПОМЕСТИТЬ _СтруктураДоговоров
+ИЗ
+	РегистрСведений.КлиентыДоверительногоУправления.СрезПоследних(
+			&amp;Период,
+			(Организация, СчетДоверительногоУправления) В
+				(ВЫБРАТЬ
+					&amp;Организация КАК Организация,
+					_ДействующиеДоговоры.Договор КАК Договор
+				ИЗ
+					_ДействующиеДоговоры КАК _ДействующиеДоговоры)) КАК КлиентыДоверительногоУправленияСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СоставИНастройкиОтчетовСрезПоследних.Период КАК Период,
+	СоставИНастройкиОтчетовСрезПоследних.Субъект КАК Субъект,
+	СоставИНастройкиОтчетовСрезПоследних.ВидДоговора КАК ВидДоговора,
+	СоставИНастройкиОтчетовСрезПоследних.Отчет КАК Отчет,
+	СоставИНастройкиОтчетовСрезПоследних.Периодичность КАК Периодичность,
+	СоставИНастройкиОтчетовСрезПоследних.Настройка КАК Настройка,
+	СоставИНастройкиОтчетовСрезПоследних.ВидЗначения КАК ВидЗначения,
+	СоставИНастройкиОтчетовСрезПоследних.Значение КАК Значение,
+	СоставИНастройкиОтчетовСрезПоследних.Приоритет КАК Приоритет
+ПОМЕСТИТЬ _ДанныеРегистра
+ИЗ
+	РегистрСведений.СоставИНастройкиОтчетов.СрезПоследних(
+			&amp;Период,
+			Организация = &amp;Организация
+				И (Субъект, ВидДоговора) В
+					(ВЫБРАТЬ
+						НЕОПРЕДЕЛЕНО КАК Субъект,
+						ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка) КАК ВидДоговора
+			
+					ОБЪЕДИНИТЬ ВСЕ
+			
+					ВЫБРАТЬ
+						_СтруктураДоговоров.Клиент,
+						ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка)
+					ИЗ
+						_СтруктураДоговоров КАК _СтруктураДоговоров
+			
+					ОБЪЕДИНИТЬ ВСЕ
+			
+					ВЫБРАТЬ
+						_СтруктураДоговоров.Клиент,
+						_СтруктураДоговоров.ВидДоговора
+					ИЗ
+						_СтруктураДоговоров КАК _СтруктураДоговоров
+			
+					ОБЪЕДИНИТЬ ВСЕ
+			
+					ВЫБРАТЬ
+						_СтруктураДоговоров.Договор,
+						ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка)
+					ИЗ
+						_СтруктураДоговоров КАК _СтруктураДоговоров)) КАК СоставИНастройкиОтчетовСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_СтруктураДоговоров.Клиент КАК Клиент,
+	_СтруктураДоговоров.ВидДоговора КАК ВидДоговора,
+	_СтруктураДоговоров.Договор КАК Договор,
+	_ДанныеРегистра.Отчет КАК Отчет,
+	_ДанныеРегистра.Периодичность КАК Периодичность,
+	_ДанныеРегистра.Значение КАК Значение,
+	_ДанныеРегистра.Приоритет КАК Приоритет,
+	_ДанныеРегистра.Период КАК Период
+ПОМЕСТИТЬ _НастройкиСостава
+ИЗ
+	_СтруктураДоговоров КАК _СтруктураДоговоров
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ _ДанныеРегистра КАК _ДанныеРегистра
+		ПО (_ДанныеРегистра.Настройка = ЗНАЧЕНИЕ(ПланВидовХарактеристик.НастройкиОтчетов.Формировать))
+			И (_ДанныеРегистра.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ВидыЗначенияНастроекОтчетов.Собственное))
+			И (ВЫБОР
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеРегистра.Субъект) = ТИП(Справочник.СчетаДоверительногоУправления)
+					ТОГДА _ДанныеРегистра.Субъект = _СтруктураДоговоров.Договор
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеРегистра.Субъект) &lt;&gt; ТИП(Справочник.СчетаДоверительногоУправления)
+						И _ДанныеРегистра.ВидДоговора &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка)
+					ТОГДА _ДанныеРегистра.Субъект = _СтруктураДоговоров.Клиент
+							И _СтруктураДоговоров.ВидДоговора = _ДанныеРегистра.ВидДоговора
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеРегистра.Субъект) &lt;&gt; ТИП(Справочник.СчетаДоверительногоУправления)
+						И _ДанныеРегистра.ВидДоговора = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка)
+					ТОГДА _ДанныеРегистра.Субъект = _СтруктураДоговоров.Клиент
+				ИНАЧЕ ЛОЖЬ
+			КОНЕЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_НастройкиСостава.Клиент КАК Клиент,
+	_НастройкиСостава.ВидДоговора КАК ВидДоговора,
+	_НастройкиСостава.Договор КАК Договор,
+	_НастройкиСостава.Отчет КАК Отчет,
+	_НастройкиСостава.Периодичность КАК Периодичность,
+	_НастройкиСостава.Значение КАК Формировать,
+	_НастройкиСостава.Период КАК Дата
+ПОМЕСТИТЬ _ЗначенияНастроекСостава
+ИЗ
+	_НастройкиСостава КАК _НастройкиСостава
+ГДЕ
+	(_НастройкиСостава.Клиент, _НастройкиСостава.ВидДоговора, _НастройкиСостава.Договор, _НастройкиСостава.Отчет, _НастройкиСостава.Периодичность, _НастройкиСостава.Приоритет) В
+			(ВЫБРАТЬ
+				_НастройкиСостава.Клиент КАК Клиент,
+				_НастройкиСостава.ВидДоговора КАК ВидДоговора,
+				_НастройкиСостава.Договор КАК Договор,
+				_НастройкиСостава.Отчет КАК Отчет,
+				_НастройкиСостава.Периодичность КАК Периодичность,
+				МАКСИМУМ(_НастройкиСостава.Приоритет) КАК Приоритет
+			ИЗ
+				_НастройкиСостава КАК _НастройкиСостава
+			СГРУППИРОВАТЬ ПО
+				_НастройкиСостава.Клиент,
+				_НастройкиСостава.ВидДоговора,
+				_НастройкиСостава.Договор,
+				_НастройкиСостава.Отчет,
+				_НастройкиСостава.Периодичность)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_ЗначенияНастроекСостава.Клиент КАК Клиент,
+	_ЗначенияНастроекСостава.ВидДоговора КАК ВидДоговора,
+	_ЗначенияНастроекСостава.Договор КАК Договор,
+	ВЫБОР
+		КОГДА _ЗначенияНастроекСостава.Отчет.Родитель.Родитель &lt;&gt; ЗНАЧЕНИЕ(Справочник.Отчеты.ПустаяСсылка)
+			ТОГДА _ЗначенияНастроекСостава.Отчет.Родитель.Родитель
+		ИНАЧЕ _ЗначенияНастроекСостава.Отчет.Родитель
+	КОНЕЦ КАК ГруппаОтчетов,
+	_ЗначенияНастроекСостава.Отчет КАК Отчет,
+	_ЗначенияНастроекСостава.Периодичность КАК Периодичность,
+	_ЗначенияНастроекСостава.Формировать КАК Формировать,
+	_ЗначенияНастроекСостава.Дата КАК Дата,
+	НазначенияНастроекОтчетов.Настройка КАК Настройка
+ПОМЕСТИТЬ _СоставСоСпискомНастроек
+ИЗ
+	_ЗначенияНастроекСостава КАК _ЗначенияНастроекСостава
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НазначенияНастроекОтчетов КАК НазначенияНастроекОтчетов
+		ПО _ЗначенияНастроекСостава.Отчет = НазначенияНастроекОтчетов.Отчет
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_СоставСоСпискомНастроек.Клиент КАК Клиент,
+	_СоставСоСпискомНастроек.ВидДоговора КАК ВидДоговора,
+	_СоставСоСпискомНастроек.Договор КАК Договор,
+	_СоставСоСпискомНастроек.ГруппаОтчетов КАК ГруппаОтчетов,
+	_СоставСоСпискомНастроек.Отчет КАК Отчет,
+	_СоставСоСпискомНастроек.Периодичность КАК Периодичность,
+	_СоставСоСпискомНастроек.Формировать КАК Формировать,
+	_СоставСоСпискомНастроек.Дата КАК Дата,
+	_СоставСоСпискомНастроек.Настройка КАК Настройка,
+	_ДанныеРегистра.Значение КАК Значение,
+	_ДанныеРегистра.Приоритет КАК Приоритет,
+	_ДанныеРегистра.Период КАК Период
+ПОМЕСТИТЬ _ЗначенияНастроек
+ИЗ
+	_СоставСоСпискомНастроек КАК _СоставСоСпискомНастроек
+		ЛЕВОЕ СОЕДИНЕНИЕ _ДанныеРегистра КАК _ДанныеРегистра
+		ПО (_ДанныеРегистра.Субъект = НЕОПРЕДЕЛЕНО
+				ИЛИ ТИПЗНАЧЕНИЯ(_ДанныеРегистра.Субъект) &lt;&gt; ТИП(Справочник.СчетаДоверительногоУправления)
+					И _ДанныеРегистра.ВидДоговора = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка)
+					И _СоставСоСпискомНастроек.Клиент = _ДанныеРегистра.Субъект
+				ИЛИ ТИПЗНАЧЕНИЯ(_ДанныеРегистра.Субъект) &lt;&gt; ТИП(Справочник.СчетаДоверительногоУправления)
+					И _ДанныеРегистра.ВидДоговора &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ПустаяСсылка)
+					И _СоставСоСпискомНастроек.Клиент = _ДанныеРегистра.Субъект
+					И _СоставСоСпискомНастроек.ВидДоговора = _ДанныеРегистра.ВидДоговора
+				ИЛИ ТИПЗНАЧЕНИЯ(_ДанныеРегистра.Субъект) = ТИП(Справочник.СчетаДоверительногоУправления)
+					И _СоставСоСпискомНастроек.Договор = _ДанныеРегистра.Субъект)
+			И (_ДанныеРегистра.Отчет = ЗНАЧЕНИЕ(Справочник.Отчеты.ПустаяСсылка)
+				ИЛИ _ДанныеРегистра.Отчет.ЭтоГруппа
+					И _ДанныеРегистра.Отчет = _СоставСоСпискомНастроек.ГруппаОтчетов
+				ИЛИ _ДанныеРегистра.Отчет = _СоставСоСпискомНастроек.Отчет)
+			И (_ДанныеРегистра.Периодичность = ЗНАЧЕНИЕ(Перечисление.ПериодичностьПредоставленияОтчетности.ПустаяСсылка)
+				ИЛИ _ДанныеРегистра.Периодичность = _СоставСоСпискомНастроек.Периодичность)
+			И _СоставСоСпискомНастроек.Настройка = _ДанныеРегистра.Настройка
+			И (_ДанныеРегистра.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ВидыЗначенияНастроекОтчетов.Собственное))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	_ЗначенияНастроек.Клиент КАК Клиент,
+	_ЗначенияНастроек.ВидДоговора КАК ВидДоговора,
+	_ЗначенияНастроек.Договор КАК Договор,
+	_ЗначенияНастроек.ГруппаОтчетов КАК ГруппаОтчетов,
+	_ЗначенияНастроек.Отчет КАК Отчет,
+	_ЗначенияНастроек.Периодичность КАК Периодичность,
+	_ЗначенияНастроек.Формировать КАК Формировать,
+	_ЗначенияНастроек.Дата КАК Дата,
+	_ЗначенияНастроек.Настройка КАК Настройка,
+	_ЗначенияНастроек.Значение КАК Значение,
+	_ЗначенияНастроек.Период КАК Период,
+	ВЫБОР
+		КОГДА _ЗначенияНастроек.Приоритет = 1
+			ТОГДА "Организация"
+		КОГДА _ЗначенияНастроек.Приоритет = 2
+			ТОГДА "Организация с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 3
+			ТОГДА "Группа отчетов организации"
+		КОГДА _ЗначенияНастроек.Приоритет = 4
+			ТОГДА "Группа отчетов организации с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 5
+			ТОГДА "Отчет организации"
+		КОГДА _ЗначенияНастроек.Приоритет = 6
+			ТОГДА "Отчет организации с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 7
+			ТОГДА "Клиент"
+		КОГДА _ЗначенияНастроек.Приоритет = 8
+			ТОГДА "Клиент с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 9
+			ТОГДА "Группа отчетов клиента"
+		КОГДА _ЗначенияНастроек.Приоритет = 10
+			ТОГДА "Группа отчетов клиента с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 11
+			ТОГДА "Отчет клиента"
+		КОГДА _ЗначенияНастроек.Приоритет = 12
+			ТОГДА "Отчет клиента с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 13
+			ТОГДА "Вид договора клиента"
+		КОГДА _ЗначенияНастроек.Приоритет = 14
+			ТОГДА "Вид договора клиента с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 15
+			ТОГДА "Группа отчетов вида договора клиента"
+		КОГДА _ЗначенияНастроек.Приоритет = 16
+			ТОГДА "Группа отчетов вида договора клиента с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 17
+			ТОГДА "Отчет вида договора клиента"
+		КОГДА _ЗначенияНастроек.Приоритет = 18
+			ТОГДА "Отчет вида договора клиента с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 19
+			ТОГДА "Договор"
+		КОГДА _ЗначенияНастроек.Приоритет = 20
+			ТОГДА "Договор с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 21
+			ТОГДА "Группа отчетов договора"
+		КОГДА _ЗначенияНастроек.Приоритет = 22
+			ТОГДА "Группа отчетов договора с периодичностью"
+		КОГДА _ЗначенияНастроек.Приоритет = 23
+			ТОГДА "Отчет договора"
+		КОГДА _ЗначенияНастроек.Приоритет = 24
+			ТОГДА "Отчет договора с периодичностью"
+		ИНАЧЕ "Не задана"
+	КОНЕЦ КАК ЗаданоДля,
+	_ЗначенияНастроек.Приоритет КАК ПриоритетЗначенияНастройки
+{ВЫБРАТЬ
+	Клиент.*,
+	ВидДоговора.*,
+	Договор.*,
+	ГруппаОтчетов.*,
+	Отчет.*,
+	Периодичность.*,
+	Формировать.*,
+	Дата,
+	Настройка.*,
+	Значение.*,
+	Период,
+	ЗаданоДля}
+ИЗ
+	_ЗначенияНастроек КАК _ЗначенияНастроек
+ГДЕ
+	(_ЗначенияНастроек.Клиент, _ЗначенияНастроек.ВидДоговора, _ЗначенияНастроек.Договор, _ЗначенияНастроек.ГруппаОтчетов, _ЗначенияНастроек.Отчет, _ЗначенияНастроек.Периодичность, _ЗначенияНастроек.Формировать, _ЗначенияНастроек.Дата, _ЗначенияНастроек.Настройка, _ЗначенияНастроек.Приоритет) В
+			(ВЫБРАТЬ
+				_ЗначенияНастроек.Клиент КАК Клиент,
+				_ЗначенияНастроек.ВидДоговора КАК ВидДоговора,
+				_ЗначенияНастроек.Договор КАК Договор,
+				_ЗначенияНастроек.ГруппаОтчетов КАК ГруппаОтчетов,
+				_ЗначенияНастроек.Отчет КАК Отчет,
+				_ЗначенияНастроек.Периодичность КАК Периодичность,
+				_ЗначенияНастроек.Формировать КАК Формировать,
+				_ЗначенияНастроек.Дата КАК Дата,
+				_ЗначенияНастроек.Настройка КАК Настройка,
+				МАКСИМУМ(_ЗначенияНастроек.Приоритет) КАК Приоритет
+			ИЗ
+				_ЗначенияНастроек КАК _ЗначенияНастроек
+			СГРУППИРОВАТЬ ПО
+				_ЗначенияНастроек.Клиент,
+				_ЗначенияНастроек.ВидДоговора,
+				_ЗначенияНастроек.Договор,
+				_ЗначенияНастроек.ГруппаОтчетов,
+				_ЗначенияНастроек.Отчет,
+				_ЗначенияНастроек.Периодичность,
+				_ЗначенияНастроек.Формировать,
+				_ЗначенияНастроек.Дата,
+				_ЗначенияНастроек.Настройка)
+{ГДЕ
+	_ЗначенияНастроек.Клиент.*,
+	_ЗначенияНастроек.ВидДоговора.*,
+	_ЗначенияНастроек.Договор.*,
+	_ЗначенияНастроек.ГруппаОтчетов.*,
+	_ЗначенияНастроек.Отчет.*,
+	_ЗначенияНастроек.Периодичность.*,
+	_ЗначенияНастроек.Формировать.*,
+	_ЗначенияНастроек.Настройка.*,
+	_ЗначенияНастроек.Значение.*}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>7a1affd8-4431-418a-962f-20aeadad1e4c</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ГруппаОтчетов</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Клиент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ВидДоговора</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Договор</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Периодичность</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Отчет</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Настройка.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ГруппаОтчетов</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Клиент</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ВидДоговора</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Договор</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Периодичность</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+								<dcsset:item xsi:type="dcsset:StructureItemGroup">
+									<dcsset:groupItems>
+										<dcsset:item xsi:type="dcsset:GroupItemField">
+											<dcsset:field>Отчет</dcsset:field>
+											<dcsset:groupType>Items</dcsset:groupType>
+											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+										</dcsset:item>
+										<dcsset:item xsi:type="dcsset:GroupItemField">
+											<dcsset:field>Формировать</dcsset:field>
+											<dcsset:groupType>Items</dcsset:groupType>
+											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+										</dcsset:item>
+										<dcsset:item xsi:type="dcsset:GroupItemField">
+											<dcsset:field>Дата</dcsset:field>
+											<dcsset:groupType>Items</dcsset:groupType>
+											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+										</dcsset:item>
+									</dcsset:groupItems>
+									<dcsset:order>
+										<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+									</dcsset:order>
+									<dcsset:selection>
+										<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+									</dcsset:selection>
+									<dcsset:item xsi:type="dcsset:StructureItemGroup">
+										<dcsset:order>
+											<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+										</dcsset:order>
+										<dcsset:selection>
+											<dcsset:item xsi:type="dcsset:SelectedItemField">
+												<dcsset:field>Настройка</dcsset:field>
+											</dcsset:item>
+											<dcsset:item xsi:type="dcsset:SelectedItemField">
+												<dcsset:field>Значение</dcsset:field>
+											</dcsset:item>
+											<dcsset:item xsi:type="dcsset:SelectedItemField">
+												<dcsset:field>Период</dcsset:field>
+											</dcsset:item>
+											<dcsset:item xsi:type="dcsset:SelectedItemField">
+												<dcsset:field>ЗаданоДля</dcsset:field>
+											</dcsset:item>
+										</dcsset:selection>
+									</dcsset:item>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщиеРеквизиты" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбщиеРеквизитыРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+						<Event name="ChoiceProcessing">ДатаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаШапкаФормы" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаФормыРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаФормыКолонка1" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка формы колонка1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка формы колонка1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаФормыКолонка1РасширеннаяПодсказка" id="33"/>
+					<ChildItems>
+						<InputField name="СчетДоверительногоУправления" id="13">
+							<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Счет д/у</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="15"/>
+							<Events>
+								<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
+								<Event name="ChoiceProcessing">СчетДоверительногоУправленияОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="Рынок" id="10">
+							<DataPath>Объект.Рынок</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РынокКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="РынокРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="OnChange">РынокПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ЦеннаяБумага" id="43">
+							<DataPath>Объект.ЦеннаяБумага</DataPath>
+							<ContextMenu name="ЦеннаяБумагаКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="ЦеннаяБумагаРасширеннаяПодсказка" id="45"/>
+							<Events>
+								<Event name="OnChange">ЦеннаяБумагаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Количество" id="46">
+							<DataPath>Объект.Количество</DataPath>
+							<ContextMenu name="КоличествоКонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="КоличествоРасширеннаяПодсказка" id="48"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаФормыКолонка2" id="34">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа колонка1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаФормыКолонка2РасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<Button name="КомандаВыбратьИсполнителяПоЦеннымБумагам" id="36">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.КомандаВыбратьИсполнителяПоЦеннымБумагам</CommandName>
+							<ExtendedTooltip name="КомандаВыбратьИсполнителяПоЦеннымБумагамРасширеннаяПодсказка" id="37"/>
+						</Button>
+						<InputField name="ДепозитарныйСчет" id="16">
+							<DataPath>Объект.ДепозитарныйСчет</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceForm>Catalog.ДепозитарныеСчета.Form.ФормаВыбораИзИсполнителей</ChoiceForm>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Период</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Объект.Date</xr:DataPath>
+									<xr:ValueChange>DontChange</xr:ValueChange>
+								</xr:Link>
+								<xr:Link>
+									<xr:Name>Организация</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+								<xr:Link>
+									<xr:Name>СчетДоверительногоУправления</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Объект.СчетДоверительногоУправления</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ДепозитарныйСчетКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ДепозитарныйСчетРасширеннаяПодсказка" id="18"/>
+							<Events>
+								<Event name="OnChange">ДепозитарныйСчетПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодвалФормы" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалФормыРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<LabelField name="Ответственный" id="22">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<InputField name="Комментарий" id="25">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="27"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.СнятиеЦеннойБумагиСУчета</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыбратьИсполнителяПоЦеннымБумагам" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать исполнителя по ценным бумагам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выбрать исполнителя по ценным бумагам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыбратьИсполнителяПоЦеннымБумагам</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

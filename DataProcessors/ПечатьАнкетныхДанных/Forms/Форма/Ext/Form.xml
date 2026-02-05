@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПечать" id="7">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Печать</CommandName>
+				<ExtendedTooltip name="ФормаПечатьРасширеннаяПодсказка" id="8"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПечатьОдиночная" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа печать одиночная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа печать одиночная</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПечатьОдиночнаяРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<InputField name="ЮрФизЛицо" id="1">
+					<DataPath>ЮрФизЛицо</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЮрФизЛицоКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ЮрФизЛицоРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ЮрФизЛицоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Период" id="21">
+					<DataPath>Период</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="23"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Подписант" id="4">
+					<DataPath>Подписант</DataPath>
+					<ContextMenu name="ПодписантКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПодписантРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ПодписантПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Должность" id="111">
+					<DataPath>Должность</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДолжностьКонтекстноеМеню" id="112"/>
+					<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="113"/>
+				</InputField>
+				<CheckBoxField name="ПервичноеОбращение" id="24">
+					<DataPath>ПервичноеОбращение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант обращения</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Обновление; БИ=Первичное</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ItemWidth>12</ItemWidth>
+					<ContextMenu name="ПервичноеОбращениеКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ПервичноеОбращениеРасширеннаяПодсказка" id="26"/>
+					<Events>
+						<Event name="OnChange">ПервичноеОбращениеПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="ВыборАнкет" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор анкет</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор анкет</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ВыборАнкетРасширеннаяПодсказка" id="33"/>
+					<ChildItems>
+						<RadioButtonField name="ВариантАнкеты" id="27">
+							<DataPath>ВариантАнкеты</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ItemWidth>17</ItemWidth>
+							<EqualColumnsWidth>true</EqualColumnsWidth>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Владелец</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыУчастниковАнкет.EmptyRef</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыУчастниковАнкет.EnumValue.Представитель</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыУчастниковАнкет.EnumValue.Выгодоприобретатель</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыУчастниковАнкет.EnumValue.БенефициарныйВладелец</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ВариантАнкетыКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="ВариантАнкетыРасширеннаяПодсказка" id="29"/>
+							<Events>
+								<Event name="OnChange">ВариантАнкетыПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<InputField name="ОснованиеПолномочий" id="34">
+							<DataPath>ОснованиеПолномочий</DataPath>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ОснованиеПолномочийКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="ОснованиеПолномочийРасширеннаяПодсказка" id="36"/>
+						</InputField>
+						<CheckBoxField name="АнкетаЮрФизЛица" id="9">
+							<DataPath>АнкетаЮрФизЛица</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АнкетаЮрФизЛицаКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="АнкетаЮрФизЛицаРасширеннаяПодсказка" id="11"/>
+						</CheckBoxField>
+						<CheckBoxField name="АнкетаЮрФизЛицаСД" id="12">
+							<DataPath>АнкетаЮрФизЛицаСД</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АнкетаЮрФизЛицаСДКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="АнкетаЮрФизЛицаСДРасширеннаяПодсказка" id="14"/>
+						</CheckBoxField>
+						<CheckBoxField name="ИзменениеАнкетыЮрФизЛицаСД" id="97">
+							<DataPath>ИзменениеАнкетыЮрФизЛицаСД</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИзменениеАнкетыЮрФизЛицаСДКонтекстноеМеню" id="98"/>
+							<ExtendedTooltip name="ИзменениеАнкетыЮрФизЛицаСДРасширеннаяПодсказка" id="99"/>
+						</CheckBoxField>
+						<CheckBoxField name="ОпросникФАТКА" id="15">
+							<DataPath>ОпросникФАТКА</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОпросникФАТКАКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="ОпросникФАТКАРасширеннаяПодсказка" id="17"/>
+						</CheckBoxField>
+						<CheckBoxField name="СогласиеНаОбработкуПерсональныхДанных" id="18">
+							<DataPath>СогласиеНаОбработкуПерсональныхДанных</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СогласиеНаОбработкуПерсональныхДанныхКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="СогласиеНаОбработкуПерсональныхДанныхРасширеннаяПодсказка" id="20"/>
+						</CheckBoxField>
+						<CheckBoxField name="ВтораяЧастьАнкеты" id="114">
+							<DataPath>ВтораяЧастьАнкеты</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВтораяЧастьАнкетыКонтекстноеМеню" id="115"/>
+							<ExtendedTooltip name="ВтораяЧастьАнкетыРасширеннаяПодсказка" id="116"/>
+						</CheckBoxField>
+						<CheckBoxField name="ТретьяЧастьАнкеты" id="37">
+							<DataPath>ТретьяЧастьАнкеты</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТретьяЧастьАнкетыКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ТретьяЧастьАнкетыРасширеннаяПодсказка" id="39"/>
+							<Events>
+								<Event name="OnChange">ТретьяЧастьАнкетыПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ПериодСверокСоСписками" id="105">
+							<DataPath>ПериодСверокСоСписками</DataPath>
+							<Visible>false</Visible>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПериодСверокСоСпискамиКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ПериодСверокСоСпискамиРасширеннаяПодсказка" id="107"/>
+						</InputField>
+						<CheckBoxField name="ФормаСамосертификации" id="100">
+							<DataPath>ФормаСамосертификации</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ФормаСамосертификацииКонтекстноеМеню" id="101"/>
+							<ExtendedTooltip name="ФормаСамосертификацииРасширеннаяПодсказка" id="102"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПечатьГрупповая" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать 3 части анкеты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа печать групповая</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаПечатьГрупповаяРасширеннаяПодсказка" id="59"/>
+			<ChildItems>
+				<InputField name="ПериодСверокСоСписками1" id="108">
+					<DataPath>ПериодСверокСоСписками</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПериодСверокСоСписками1КонтекстноеМеню" id="109"/>
+					<ExtendedTooltip name="ПериодСверокСоСписками1РасширеннаяПодсказка" id="110"/>
+				</InputField>
+				<UsualGroup name="ГруппаСписки" id="95">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа списки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа списки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпискиРасширеннаяПодсказка" id="96"/>
+					<ChildItems>
+						<Table name="СписокЮрФизЛиц" id="60">
+							<Representation>List</Representation>
+							<TitleLocation>Top</TitleLocation>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<DataPath>СписокЮрФизЛиц</DataPath>
+							<RowPictureDataPath>СписокЮрФизЛиц.Picture</RowPictureDataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список юр/физ лиц</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокЮрФизЛицКонтекстноеМеню" id="61"/>
+							<AutoCommandBar name="СписокЮрФизЛицКоманднаяПанель" id="62"/>
+							<ExtendedTooltip name="СписокЮрФизЛицРасширеннаяПодсказка" id="63"/>
+							<SearchStringAddition name="СписокЮрФизЛицСтрокаПоиска" id="64">
+								<AdditionSource>
+									<Item>СписокЮрФизЛиц</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокЮрФизЛицСтрокаПоискаКонтекстноеМеню" id="65"/>
+								<ExtendedTooltip name="СписокЮрФизЛицСтрокаПоискаРасширеннаяПодсказка" id="66"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокЮрФизЛицСостояниеПросмотра" id="67">
+								<AdditionSource>
+									<Item>СписокЮрФизЛиц</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокЮрФизЛицСостояниеПросмотраКонтекстноеМеню" id="68"/>
+								<ExtendedTooltip name="СписокЮрФизЛицСостояниеПросмотраРасширеннаяПодсказка" id="69"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокЮрФизЛицУправлениеПоиском" id="70">
+								<AdditionSource>
+									<Item>СписокЮрФизЛиц</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокЮрФизЛицУправлениеПоискомКонтекстноеМеню" id="71"/>
+								<ExtendedTooltip name="СписокЮрФизЛицУправлениеПоискомРасширеннаяПодсказка" id="72"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СписокЮрФизЛицЗначение" id="73">
+									<DataPath>СписокЮрФизЛиц.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокЮрФизЛицЗначениеКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="СписокЮрФизЛицЗначениеРасширеннаяПодсказка" id="75"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПечатьАнкетныхДанных</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АнкетаЮрФизЛица" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анкета юр / физ лица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АнкетаЮрФизЛицаСД" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анкета юр / физ лица спец. депозитария</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОпросникФАТКА" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Опросник ФАТКА</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СогласиеНаОбработкуПерсональныхДанных" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласие на обработку персональных данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПервичноеОбращение" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Первичное обращение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантАнкеты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант анкеты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыУчастниковАнкет</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЮрФизЛицо" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юр / физ лицо</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Период" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Подписант" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<Save>
+				<Field>Подписант</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОснованиеПолномочий" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основание полномочий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВозможнаАнкетаДепозитария" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возможна анкета депозитария</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТретьяЧастьАнкеты" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Часть 3 анкеты клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокЮрФизЛиц" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список юр физ лиц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИзменениеАнкетыЮрФизЛицаСД" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменение анкеты юр / физ лица спец. депозитария</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормаСамосертификации" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма самосертификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодСверокСоСписками" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период сверок со списками</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Должность" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВтораяЧастьАнкеты" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Часть 2 анкеты клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Подписант</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">АнкетаЮрФизЛицаСД</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Подписант</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Печать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Печать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

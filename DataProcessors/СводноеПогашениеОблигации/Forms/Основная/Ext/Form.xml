@@ -1,0 +1,1645 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Погашения облигации</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ФормаГруппаОсновная" id="246">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа основная</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа основная</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаОсновнаяРасширеннаяПодсказка" id="247"/>
+				<ChildItems>
+					<Button name="ФормаКомандаОбновить" id="242">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаОбновить</CommandName>
+						<ExtendedTooltip name="ФормаКомандаОбновитьРасширеннаяПодсказка" id="243"/>
+					</Button>
+					<Popup name="Печать" id="292">
+						<Visible>false</Visible>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Печать</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Печать</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="293"/>
+						<ChildItems>
+							<Button name="ПечатьПоручениеНаСделку" id="294">
+								<Type>CommandBarButton</Type>
+								<Visible>false</Visible>
+								<CommandName>Form.Command.КомандаПечатьПоручениеНаСделкуГПБ</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Поручение на сделку ГПБ </v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПечатьПоручениеНаСделкуРасширеннаяПодсказка" id="295"/>
+							</Button>
+							<Button name="КомандаПечатьНамерениеПродатьГПБ" id="296">
+								<Type>CommandBarButton</Type>
+								<Visible>false</Visible>
+								<CommandName>Form.Command.КомандаПечатьНамерениеПродатьГПБ</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Намерение продать для ГПБ</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомандаПечатьНамерениеПродатьГПБРасширеннаяПодсказка" id="297"/>
+							</Button>
+							<Button name="ФормаКомандаПечатьПорученияБКРегион" id="300">
+								<Type>CommandBarButton</Type>
+								<Visible>false</Visible>
+								<CommandName>Form.Command.КомандаПечатьПорученияБКРегион</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Поручение БК Регион (П-1)</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ФормаКомандаПечатьПорученияБКРегионРасширеннаяПодсказка" id="301"/>
+							</Button>
+							<Button name="КомандаПечатьОтменаПорученияБКРегион" id="298">
+								<Type>CommandBarButton</Type>
+								<Visible>false</Visible>
+								<CommandName>Form.Command.КомандаОтменаПорученияБКРегион</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отмена поручения БК Регион (П- 5)</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомандаПечатьОтменаПорученияБКРегионРасширеннаяПодсказка" id="299"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОблигация" id="244">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа облигация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа облигация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОблигацияРасширеннаяПодсказка" id="245"/>
+			<ChildItems>
+				<InputField name="ВидПогашения" id="66">
+					<DataPath>ВидПогашения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид погашения</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<HorizontalStretch>false</HorizontalStretch>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ВидПогашенияКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="ВидПогашенияРасширеннаяПодсказка" id="68"/>
+					<Events>
+						<Event name="OnChange">ВидПогашенияОблигацииПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Облигация" id="4">
+					<DataPath>Облигация</DataPath>
+					<ContextMenu name="ОблигацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОблигацияРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ОблигацияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="КомандаОткрытьГрафикНоминалов" id="261">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.КомандаОткрытьГрафикИзмененияНоминала</CommandName>
+					<ExtendedTooltip name="КомандаОткрытьГрафикНоминаловРасширеннаяПодсказка" id="262"/>
+				</Button>
+				<Button name="КомандаОткрытьГрафикНачисленияПроцентов" id="259">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.КомандаОткрытьГрафикНачисленияПроцентов</CommandName>
+					<ExtendedTooltip name="КомандаОткрытьГрафикНачисленияПроцентовРасширеннаяПодсказка" id="260"/>
+				</Button>
+				<Button name="КомандаОткрытьУсловияОферт" id="287">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.КомандаОткрытьУсловияОферт</CommandName>
+					<ExtendedTooltip name="КомандаОткрытьУсловияОфертРасширеннаяПодсказка" id="288"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсновныеРеквизиты" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновныеРеквизитыРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<InputField name="Дата" id="40">
+					<DataPath>Дата</DataPath>
+					<DropListButton>true</DropListButton>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="42"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="КомандаЗаполнитьДатуФиксацииИзДаты" id="119">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.КомандаЗаполнитьДатуФиксацииИзДаты</CommandName>
+					<ExtendedTooltip name="КомандаЗаполнитьДатуФиксацииИзДатыРасширеннаяПодсказка" id="120"/>
+				</Button>
+				<InputField name="ДатаФиксации" id="9">
+					<DataPath>ДатаФиксации</DataPath>
+					<ContextMenu name="ДатаФиксацииКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ДатаФиксацииРасширеннаяПодсказка" id="11"/>
+					<Events>
+						<Event name="OnChange">ДатаФиксацииПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СуммаНаОднуОблигацию" id="266">
+					<DataPath>СуммаНаОднуОблигацию</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<TitleHeight>2</TitleHeight>
+					<HorizontalStretch>false</HorizontalStretch>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="СуммаНаОднуОблигациюКонтекстноеМеню" id="267"/>
+					<ExtendedTooltip name="СуммаНаОднуОблигациюРасширеннаяПодсказка" id="268"/>
+					<Events>
+						<Event name="OnChange">СуммаНаОднуОблигациюПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СуммаКупонаНаОднуОблигацию" id="263">
+					<DataPath>СуммаКупонаНаОднуОблигацию</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<TitleHeight>2</TitleHeight>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="СуммаКупонаНаОднуОблигациюКонтекстноеМеню" id="264"/>
+					<ExtendedTooltip name="СуммаКупонаНаОднуОблигациюРасширеннаяПодсказка" id="265"/>
+					<Events>
+						<Event name="OnChange">СуммаКупонаНаОднуОблигациюПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="1">
+					<DataPath>Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПогашенияКупона" id="193">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа погашения купона</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа погашения купона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПогашенияКупонаРасширеннаяПодсказка" id="194"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПогашенияПлановые" id="139">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановые погашения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа погашения плановые</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаПогашенияПлановыеРасширеннаяПодсказка" id="140"/>
+					<ChildItems>
+						<Table name="ПогашенияПлановые" id="141">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПогашенияПлановые</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПогашенияПлановыеКонтекстноеМеню" id="142"/>
+							<AutoCommandBar name="ПогашенияПлановыеКоманднаяПанель" id="143">
+								<ChildItems>
+									<Button name="ПогашенияПлановыеКомандаПогашенияПлановыеУстановитьВсеФлажки" id="169">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаПогашенияПлановыеУстановитьВсеФлажки</CommandName>
+										<ExtendedTooltip name="ПогашенияПлановыеКомандаПогашенияПлановыеУстановитьВсеФлажкиРасширеннаяПодсказка" id="170"/>
+									</Button>
+									<Button name="ПогашенияПлановыеКомандаПогашенияПлановыеСнятьВсеФлажки" id="171">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаПогашенияПлановыеСнятьВсеФлажки</CommandName>
+										<ExtendedTooltip name="ПогашенияПлановыеКомандаПогашенияПлановыеСнятьВсеФлажкиРасширеннаяПодсказка" id="172"/>
+									</Button>
+									<Button name="ПогашенияПлановыеКомандаСоздатьПогашенияКупона" id="173">
+										<Type>CommandBarButton</Type>
+										<DefaultButton>true</DefaultButton>
+										<CommandName>Form.Command.КомандаСоздатьПогашенияОблигации</CommandName>
+										<ExtendedTooltip name="ПогашенияПлановыеКомандаСоздатьПогашенияКупонаРасширеннаяПодсказка" id="174"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПогашенияПлановыеРасширеннаяПодсказка" id="144"/>
+							<SearchStringAddition name="ПогашенияПлановыеСтрокаПоиска" id="269">
+								<AdditionSource>
+									<Item>ПогашенияПлановые</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПогашенияПлановыеСтрокаПоискаКонтекстноеМеню" id="270"/>
+								<ExtendedTooltip name="ПогашенияПлановыеСтрокаПоискаРасширеннаяПодсказка" id="271"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПогашенияПлановыеСостояниеПросмотра" id="272">
+								<AdditionSource>
+									<Item>ПогашенияПлановые</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПогашенияПлановыеСостояниеПросмотраКонтекстноеМеню" id="273"/>
+								<ExtendedTooltip name="ПогашенияПлановыеСостояниеПросмотраРасширеннаяПодсказка" id="274"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПогашенияПлановыеУправлениеПоиском" id="275">
+								<AdditionSource>
+									<Item>ПогашенияПлановые</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПогашенияПлановыеУправлениеПоискомКонтекстноеМеню" id="276"/>
+								<ExtendedTooltip name="ПогашенияПлановыеУправлениеПоискомРасширеннаяПодсказка" id="277"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ПогашенияПлановыеФлажок" id="163">
+									<DataPath>ПогашенияПлановые.Флажок</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПогашенияПлановыеФлажокКонтекстноеМеню" id="164"/>
+									<ExtendedTooltip name="ПогашенияПлановыеФлажокРасширеннаяПодсказка" id="165"/>
+								</CheckBoxField>
+								<InputField name="ПогашенияПлановыеСчетДоверительногоУправления" id="145">
+									<DataPath>ПогашенияПлановые.СчетДоверительногоУправления</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="ПогашенияПлановыеСчетДоверительногоУправленияКонтекстноеМеню" id="146"/>
+									<ExtendedTooltip name="ПогашенияПлановыеСчетДоверительногоУправленияРасширеннаяПодсказка" id="147"/>
+								</InputField>
+								<InputField name="ПогашенияПлановыеБрокер" id="289">
+									<DataPath>ПогашенияПлановые.Брокер</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПогашенияПлановыеБрокерКонтекстноеМеню" id="290"/>
+									<ExtendedTooltip name="ПогашенияПлановыеБрокерРасширеннаяПодсказка" id="291"/>
+								</InputField>
+								<InputField name="ПогашенияПлановыеКоличество" id="151">
+									<DataPath>ПогашенияПлановые.Количество</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="ПогашенияПлановыеКоличествоКонтекстноеМеню" id="152"/>
+									<ExtendedTooltip name="ПогашенияПлановыеКоличествоРасширеннаяПодсказка" id="153"/>
+								</InputField>
+								<InputField name="ПогашенияПлановыеСумма" id="154">
+									<DataPath>ПогашенияПлановые.Сумма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="ПогашенияПлановыеСуммаКонтекстноеМеню" id="155"/>
+									<ExtendedTooltip name="ПогашенияПлановыеСуммаРасширеннаяПодсказка" id="156"/>
+								</InputField>
+								<InputField name="ПогашенияПлановыеСуммаКупона" id="157">
+									<DataPath>ПогашенияПлановые.СуммаКупона</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПогашенияПлановыеСуммаКупонаКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="ПогашенияПлановыеСуммаКупонаРасширеннаяПодсказка" id="159"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<LabelDecoration name="НадписьПогашенияПлановыеИтого" id="250">
+							<Font ref="style:ВажнаяИнформацияНаФормеШрифт" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>:)) Итого: 100 облигаций, в т.ч. 10 по РЕПО, на сумму 100 000</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПогашенияПлановыеИтогоКонтекстноеМеню" id="251"/>
+							<ExtendedTooltip name="НадписьПогашенияПлановыеИтогоРасширеннаяПодсказка" id="252"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПогашенияСозданные" id="134">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Созданные погашения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа погашения созданные</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаПогашенияСозданныеРасширеннаяПодсказка" id="135"/>
+					<ChildItems>
+						<Table name="ПогашенияСозданные" id="127">
+							<Representation>Tree</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПогашенияСозданные</DataPath>
+							<RowPictureDataPath>ПогашенияСозданные.СостояниеДокумента</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.СтатусыДокументов4х16</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</RowsPicture>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ПогашенияСозданныеКонтекстноеМеню" id="128">
+								<ChildItems>
+									<ButtonGroup name="ПогашенияСозданныеКонтекстноеМенюГруппаУправлениеСтатусомДокумента" id="240">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Погашения созданные контекстное меню группа управление статусом документа</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Погашения созданные контекстное меню группа управление статусом документа</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ПогашенияСозданныеКонтекстноеМенюГруппаУправлениеСтатусомДокументаРасширеннаяПодсказка" id="241"/>
+										<ChildItems>
+											<Button name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыПровести" id="232">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаДокументыПровести</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыПровестиРасширеннаяПодсказка" id="233"/>
+											</Button>
+											<Button name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыОтменитьПроведение" id="234">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаДокументыОтменитьПроведение</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыОтменитьПроведениеРасширеннаяПодсказка" id="235"/>
+											</Button>
+											<Button name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыУстановитьСнятьПометкуУдаление" id="236">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаДокументыУстановитьСнятьПометкуУдаление</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыУстановитьСнятьПометкуУдалениеРасширеннаяПодсказка" id="237"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыСоздатьНаОсновании" id="238">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаДокументыСоздатьНаОсновании</CommandName>
+										<ExtendedTooltip name="ПогашенияСозданныеКонтекстноеМенюКомандаДокументыСоздатьНаОснованииРасширеннаяПодсказка" id="239"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ПогашенияСозданныеКоманднаяПанель" id="129">
+								<ChildItems>
+									<ButtonGroup name="ПогашенияСозданныеГруппаСвернутьРазвернуть" id="253">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Погашения созданные группа свернуть развернуть</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Погашения созданные группа свернуть развернуть</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ПогашенияСозданныеГруппаСвернутьРазвернутьРасширеннаяПодсказка" id="254"/>
+										<ChildItems>
+											<Button name="ПогашенияСозданныеКомандаПогашенияСозданныеРазвернутьВсе" id="255">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПогашенияСозданныеРазвернутьВсе</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаПогашенияСозданныеРазвернутьВсеРасширеннаяПодсказка" id="256"/>
+											</Button>
+											<Button name="ПогашенияСозданныеКомандаПогашенияСозданныеСвернутьВсе" id="257">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПогашенияСозданныеСвернутьВсе</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаПогашенияСозданныеСвернутьВсеРасширеннаяПодсказка" id="258"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Popup name="Создать" id="302">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Создать</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Создать</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СоздатьРасширеннаяПодсказка" id="303"/>
+										<ChildItems>
+											<Button name="ПогашенияСозданныеКомандаСоздатьНедостающиеОплаты" id="248">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаСоздатьНедостающиеОплаты</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаСоздатьНедостающиеОплатыРасширеннаяПодсказка" id="249"/>
+											</Button>
+											<Button name="ПогашенияСозданныеКомандаСоздатьНедостающиеСписанияОблигаций" id="304">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаСоздатьНедостающиеСписанияОблигаций</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаСоздатьНедостающиеСписанияОблигацийРасширеннаяПодсказка" id="305"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Popup name="ПогашенияСозданныеГруппаУправлениеСтатусомДокумента" id="224">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Изменить</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Погашения созданные группа управление статусом документа</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ПогашенияСозданныеГруппаУправлениеСтатусомДокументаРасширеннаяПодсказка" id="225"/>
+										<ChildItems>
+											<Button name="ПогашенияСозданныеКомандаДокументыПровести" id="222">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаДокументыПровести</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаДокументыПровестиРасширеннаяПодсказка" id="223"/>
+											</Button>
+											<Button name="ПогашенияСозданныеКомандаДокументыОтменитьПроведение" id="226">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаДокументыОтменитьПроведение</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаДокументыОтменитьПроведениеРасширеннаяПодсказка" id="227"/>
+											</Button>
+											<Button name="ПогашенияСозданныеКомандаДокументыУстановитьСнятьПометкуУдаление" id="228">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаДокументыУстановитьСнятьПометкуУдаление</CommandName>
+												<ExtendedTooltip name="ПогашенияСозданныеКомандаДокументыУстановитьСнятьПометкуУдалениеРасширеннаяПодсказка" id="229"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ПогашенияСозданныеКомандаДокументыСоздатьНаОсновании" id="230">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаДокументыСоздатьНаОсновании</CommandName>
+										<ExtendedTooltip name="ПогашенияСозданныеКомандаДокументыСоздатьНаОснованииРасширеннаяПодсказка" id="231"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПогашенияСозданныеРасширеннаяПодсказка" id="130"/>
+							<SearchStringAddition name="ПогашенияСозданныеСтрокаПоиска" id="278">
+								<AdditionSource>
+									<Item>ПогашенияСозданные</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПогашенияСозданныеСтрокаПоискаКонтекстноеМеню" id="279"/>
+								<ExtendedTooltip name="ПогашенияСозданныеСтрокаПоискаРасширеннаяПодсказка" id="280"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПогашенияСозданныеСостояниеПросмотра" id="281">
+								<AdditionSource>
+									<Item>ПогашенияСозданные</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПогашенияСозданныеСостояниеПросмотраКонтекстноеМеню" id="282"/>
+								<ExtendedTooltip name="ПогашенияСозданныеСостояниеПросмотраРасширеннаяПодсказка" id="283"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПогашенияСозданныеУправлениеПоиском" id="284">
+								<AdditionSource>
+									<Item>ПогашенияСозданные</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПогашенияСозданныеУправлениеПоискомКонтекстноеМеню" id="285"/>
+								<ExtendedTooltip name="ПогашенияСозданныеУправлениеПоискомРасширеннаяПодсказка" id="286"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeRowChange">ПогашенияСозданныеПередНачаломИзменения</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПогашенияСозданныеОбъект" id="190">
+									<DataPath>ПогашенияСозданные.Объект</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПогашенияСозданныеОбъектКонтекстноеМеню" id="191"/>
+									<ExtendedTooltip name="ПогашенияСозданныеОбъектРасширеннаяПодсказка" id="192"/>
+								</InputField>
+								<ColumnGroup name="ПогашенияСозданныеГруппаКоличество" id="207">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Погашения созданные группа количество</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Погашения созданные группа количество</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ПогашенияСозданныеГруппаКоличествоРасширеннаяПодсказка" id="208"/>
+									<ChildItems>
+										<InputField name="ПогашенияСозданныеКоличество" id="195">
+											<DataPath>ПогашенияСозданные.Количество</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПогашенияСозданныеКоличествоКонтекстноеМеню" id="196"/>
+											<ExtendedTooltip name="ПогашенияСозданныеКоличествоРасширеннаяПодсказка" id="197"/>
+										</InputField>
+										<InputField name="ПогашенияСозданные_ПлановоеКоличество" id="213">
+											<DataPath>ПогашенияСозданные._ПлановоеКоличество</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(план)</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПогашенияСозданные_ПлановоеКоличествоКонтекстноеМеню" id="214"/>
+											<ExtendedTooltip name="ПогашенияСозданные_ПлановоеКоличествоРасширеннаяПодсказка" id="215"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПогашенияСозданныеГруппаКоличествоПоРЕПО" id="209">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Погашения созданные группа количество по РЕПО</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Погашения созданные группа количество по РЕПО</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ПогашенияСозданныеГруппаКоличествоПоРЕПОРасширеннаяПодсказка" id="210"/>
+									<ChildItems>
+										<InputField name="ПогашенияСозданныеСумма" id="198">
+											<DataPath>ПогашенияСозданные.Сумма</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПогашенияСозданныеСуммаКонтекстноеМеню" id="199"/>
+											<ExtendedTooltip name="ПогашенияСозданныеСуммаРасширеннаяПодсказка" id="200"/>
+										</InputField>
+										<InputField name="ПогашенияСозданные_ПлановаяСумма" id="216">
+											<DataPath>ПогашенияСозданные._ПлановаяСумма</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(план)</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПогашенияСозданные_ПлановаяСуммаКонтекстноеМеню" id="217"/>
+											<ExtendedTooltip name="ПогашенияСозданные_ПлановаяСуммаРасширеннаяПодсказка" id="218"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПогашенияСозданныеГруппаСуммаКупона" id="211">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Погашения созданные группа сумма купона</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Погашения созданные группа сумма купона</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ПогашенияСозданныеГруппаСуммаКупонаРасширеннаяПодсказка" id="212"/>
+									<ChildItems>
+										<InputField name="ПогашенияСозданныеСуммаКупона" id="187">
+											<DataPath>ПогашенияСозданные.СуммаКупона</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПогашенияСозданныеСуммаКупонаКонтекстноеМеню" id="188"/>
+											<ExtendedTooltip name="ПогашенияСозданныеСуммаКупонаРасширеннаяПодсказка" id="189"/>
+										</InputField>
+										<InputField name="ПогашенияСозданные_ПлановаяСуммаКупона" id="219">
+											<DataPath>ПогашенияСозданные._ПлановаяСуммаКупона</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(план)</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПогашенияСозданные_ПлановаяСуммаКупонаКонтекстноеМеню" id="220"/>
+											<ExtendedTooltip name="ПогашенияСозданные_ПлановаяСуммаКупонаРасширеннаяПодсказка" id="221"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ПогашенияСозданныеВалютаОплаты" id="204">
+									<DataPath>ПогашенияСозданные.ВалютаОплаты</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Валюта</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПогашенияСозданныеВалютаОплатыКонтекстноеМеню" id="205"/>
+									<ExtendedTooltip name="ПогашенияСозданныеВалютаОплатыРасширеннаяПодсказка" id="206"/>
+								</InputField>
+								<InputField name="ПогашенияСозданныеПлатежныеРеквизиты" id="177">
+									<DataPath>ПогашенияСозданные.ПлатежныеРеквизиты</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПогашенияСозданныеПлатежныеРеквизитыКонтекстноеМеню" id="178"/>
+									<ExtendedTooltip name="ПогашенияСозданныеПлатежныеРеквизитыРасширеннаяПодсказка" id="179"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СводноеПогашениеОблигации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Облигация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Облигация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Облигации</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ДатаФиксации" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата фиксации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ВидПогашения" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид погашения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыПогашения</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Дата" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ПогашенияПлановые" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Погашения плановые</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СчетДоверительногоУправления" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиКоличествоЦелое</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаКупона" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма купона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Брокер" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Брокер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БрокерскиеКомпании</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПогашенияСозданные" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Погашения созданные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ПогашениеЦеннойБумаги</v8:Type>
+						<v8:Type>cfg:DocumentRef.Оплата</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеЦеннойБумаги</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиКоличествоЦелое</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаКупона" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма купона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ВалютаОплаты" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Брокер" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Брокер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БрокерскиеКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасчетныйСчет" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчетный счет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПлатежныеРеквизиты" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Платежные реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СостояниеДокумента" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Объект" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+						<v8:Type>cfg:DocumentRef.Оплата</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеЦеннойБумаги</v8:Type>
+					</Type>
+				</Column>
+				<Column name="_ПлановоеКоличество" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановое количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="_ПлановаяСумма" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановая сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="_ПлановаяСуммаКупона" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановая сумма купона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РасхождениеПоКоличество" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расхождение по количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасхождениеПоСумма" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расхождение по сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасхождениеПоСуммаКупона" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расхождение по сумма купона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПлановоеКоличество" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановое количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиКоличествоЦелое</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ПлановаяСумма" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановая сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ПлановаяСуммаКупона" id="23">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плановая сумма купона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ИсключатьИзРасчетов" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключать из расчетов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СуммаКупонаНаОднуОблигацию" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма купона на одну облигацию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиЦена</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаНаОднуОблигацию" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма на одну облигацию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиЦена</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ВалютаНоминала" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта номинала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПогашенияСозданные_ПлановоеКоличество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПогашенияСозданные.РасхождениеПоКоличество</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПогашенияСозданные_ПлановаяСумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПогашенияСозданные.РасхождениеПоСумма</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПогашенияСозданные_ПлановаяСуммаКупона</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПогашенияСозданные.РасхождениеПоСуммаКупона</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПогашенияСозданные</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПогашенияСозданные.СостояниеДокумента</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеактуальнаяСтрокаВСпискеЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОбновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСоздатьПогашенияОблигации" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать погашения облигации…</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда создать погашения облигации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСоздатьПогашенияОблигации</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаЗаполнитьДатуФиксацииИзДаты" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить дату фиксации из даты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда заполнить дату фиксации из даты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveRight</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаЗаполнитьДатуФиксацииИзДаты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПогашенияПлановыеУстановитьВсеФлажки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения плановые установить все флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения плановые установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПогашенияПлановыеУстановитьВсеФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПогашенияПлановыеСнятьВсеФлажки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения плановые снять все флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения плановые снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПогашенияПлановыеСнятьВсеФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДокументыУстановитьСнятьПометкуУдаление" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление / снять пометку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда документы установить снять пометку удаление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаДокументыУстановитьСнятьПометкуУдаление</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДокументыПровести" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда документы провести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Post</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаДокументыПровести</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДокументыОтменитьПроведение" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить проведение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда документы отменить проведение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UndoPosting</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаДокументыОтменитьПроведение</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДокументыСоздатьНаОсновании" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать на основании</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда документы создать на основании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаДокументыСоздатьНаОсновании</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСоздатьНедостающиеОплаты" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Недостающие оплаты…</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда создать недостающие оплаты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСоздатьНедостающиеОплаты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПогашенияСозданныеСвернутьВсе" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения созданные свернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения созданные свернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПогашенияСозданныеСвернутьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПогашенияСозданныеРазвернутьВсе" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения созданные развернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда погашения созданные развернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПогашенияСозданныеРазвернутьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОткрытьГрафикНачисленияПроцентов" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>График начисления процентов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда открыть график начисления процентов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОткрытьГрафикНачисленияПроцентов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОткрытьГрафикИзмененияНоминала" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>График изменения номинала</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда открыть график изменения номинала</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОткрытьГрафикИзмененияНоминала</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОткрытьУсловияОферт" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия оферт</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть условия оферт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОткрытьУсловияОферт</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьПоручениеНаСделкуГПБ" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать поручение на сделку ГПБ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать поручение на сделку ГПБ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПечатьПоручениеНаСделкуГПБ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьНамерениеПродатьГПБ" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать намерение продать ГПБ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать намерение продать ГПБ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьНамерениеПродатьГПБ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтменаПорученияБКРегион" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда отмена поручения БКРегион</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда отмена поручения БКРегион</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтменаПорученияБКРегион</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьПорученияБКРегион" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать поручения БКРегион</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать поручения БКРегион</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьПорученияБКРегион</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСоздатьНедостающиеСписанияОблигаций" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Недостающие списания облигаций…</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда создать недостающие списания облигаций</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСоздатьНедостающиеСписанияОблигаций</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ПогашениеОблигации">
+			<Type>
+				<v8:Type>cfg:DocumentRef.ПогашениеЦеннойБумаги</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

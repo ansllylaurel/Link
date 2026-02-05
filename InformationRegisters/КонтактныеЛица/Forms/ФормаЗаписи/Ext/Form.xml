@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Подразделение" id="1">
+			<DataPath>Запись.Подразделение</DataPath>
+			<ContextMenu name="ПодразделениеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Язык" id="4">
+			<DataPath>Запись.Язык</DataPath>
+			<ContextMenu name="ЯзыкКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ЯзыкРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="ГруппаТипОбъектаОбъект" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа тип объекта объект</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа тип объекта объект</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТипОбъектаОбъектРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<RadioButtonField name="ТипОбъекта" id="24">
+					<DataPath>ТипОбъекта</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<RadioButtonType>Auto</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Юр. или физ. лицо</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>ПИФ</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">2</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ТипОбъектаКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ТипОбъектаРасширеннаяПодсказка" id="26"/>
+					<Events>
+						<Event name="OnChange">ТипОбъектаПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="Объект" id="7">
+					<DataPath>Запись.Объект</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ChooseType>false</ChooseType>
+					<ContextMenu name="ОбъектКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОбъектРасширеннаяПодсказка" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКонтактноеЛицо" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контактное лицо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа контактное лицо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаКонтактноеЛицоРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаТипИКонтактноеЛицо" id="27">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа тип и контактное лицо</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТипИКонтактноеЛицоРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<RadioButtonField name="ТипКонтактногоЛица" id="29">
+							<DataPath>ТипКонтактногоЛица</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Из справочника</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Текстом</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ТипКонтактногоЛицаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ТипКонтактногоЛицаРасширеннаяПодсказка" id="31"/>
+							<Events>
+								<Event name="OnChange">ТипКонтактногоЛицаПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<InputField name="КонтактноеЛицо" id="10">
+							<DataPath>Запись.КонтактноеЛицо</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ChooseType>false</ChooseType>
+							<ChoiceParameters>
+								<app:item name="Отбор.ВидЮрФизЛица">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыЮрФизЛиц.EnumValue.ФизическоеЛицо</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="12"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Должность" id="13">
+					<DataPath>Запись.Должность</DataPath>
+					<ContextMenu name="ДолжностьКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<InputField name="ОснованиеПолномочий" id="16">
+					<DataPath>Запись.ОснованиеПолномочий</DataPath>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="ОснованиеПолномочийКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ОснованиеПолномочийРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="Комментарий" id="19">
+					<DataPath>Запись.Комментарий</DataPath>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="21"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.КонтактныеЛица</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТипКонтактногоЛица" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип контактного лица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТипОбъекта" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

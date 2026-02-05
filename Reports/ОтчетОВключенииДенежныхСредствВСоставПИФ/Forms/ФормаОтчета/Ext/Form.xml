@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<CommandBarLocation>None</CommandBarLocation>
+	<ReportResult>ДокументРезультат</ReportResult>
+	<ReportFormType>Main</ReportFormType>
+	<AutoShowState>DontShow</AutoShowState>
+	<ReportResultViewMode>Auto</ReportResultViewMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРеквизитов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизитов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизитов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитовРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<Button name="Сформировать" id="17">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.StandardCommand.Generate</CommandName>
+					<ExtendedTooltip name="СформироватьРасширеннаяПодсказка" id="18"/>
+				</Button>
+				<InputField name="Период" id="5">
+					<DataPath>Отчет.Период</DataPath>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="7"/>
+				</InputField>
+				<InputField name="ПаевойИнвестиционныйФонд" id="8">
+					<DataPath>Отчет.ПаевойИнвестиционныйФонд</DataPath>
+					<ContextMenu name="ПаевойИнвестиционныйФондКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ПаевойИнвестиционныйФондРасширеннаяПодсказка" id="10"/>
+				</InputField>
+				<InputField name="ЗачислениеПаев" id="11">
+					<DataPath>Отчет.ЗачислениеПаев</DataPath>
+					<ClearButton>true</ClearButton>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ЗачислениеПаевКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="ЗачислениеПаевРасширеннаяПодсказка" id="13"/>
+					<Events>
+						<Event name="OnChange">ЗачислениеПаевПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Подписант" id="30">
+					<DataPath>Подписант</DataPath>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ПодписантКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ПодписантРасширеннаяПодсказка" id="32"/>
+					<Events>
+						<Event name="StartChoice">ПодписантНачалоВыбора</Event>
+						<Event name="Clearing">ПодписантОчистка</Event>
+						<Event name="ChoiceProcessing">ПодписантОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="19">
+					<DataPath>Отчет.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<CommandBar name="ГруппаКомандВывода" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команд вывода</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команд вывода</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаКомандВыводаРасширеннаяПодсказка" id="23"/>
+					<ChildItems>
+						<Button name="Сохранить" id="28">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ДокументРезультат.StandardCommand.Save</CommandName>
+							<ExtendedTooltip name="СохранитьРасширеннаяПодсказка" id="29"/>
+						</Button>
+						<Button name="Печать" id="24">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ДокументРезультат.StandardCommand.Print</CommandName>
+							<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="25"/>
+						</Button>
+						<Button name="ПредварительныйПросмотр" id="26">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ДокументРезультат.StandardCommand.Preview</CommandName>
+							<ExtendedTooltip name="ПредварительныйПросмотрРасширеннаяПодсказка" id="27"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<SpreadSheetDocumentField name="ДокументРезультат" id="14">
+			<DataPath>ДокументРезультат</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ContextMenu name="ДокументРезультатКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ДокументРезультатРасширеннаяПодсказка" id="16"/>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Отчет" id="1">
+			<Type>
+				<v8:Type>cfg:ReportObject.ОтчетОВключенииДенежныхСредствВСоставПИФ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДокументРезультат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Подписант" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>Подписант</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+</Form>

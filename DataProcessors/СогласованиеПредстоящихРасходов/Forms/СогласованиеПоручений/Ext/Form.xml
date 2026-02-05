@@ -1,0 +1,2464 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Согласование поручений на вывод денежных средств</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРеквизиты" id="116">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитыРасширеннаяПодсказка" id="117"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДатаОрганизация" id="180">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа дата организация</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа дата организация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДатаОрганизацияРасширеннаяПодсказка" id="181"/>
+					<ChildItems>
+						<InputField name="Дата" id="177">
+							<DataPath>Дата</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="178"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="179"/>
+						</InputField>
+						<LabelField name="Организация" id="121">
+							<DataPath>Организация</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="122"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="123"/>
+						</LabelField>
+						<CommandBar name="ГруппаЕще" id="274">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа еще</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа еще</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаЕщеРасширеннаяПодсказка" id="275"/>
+							<ChildItems>
+								<Button name="Справка" id="276">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.Help</CommandName>
+									<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="277"/>
+								</Button>
+								<Button name="ИзменитьФорму" id="278">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+									<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="279"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРаботаСФайлом" id="167">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа работа с файлом</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа работа с файлом</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРаботаСФайломРасширеннаяПодсказка" id="168"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлу" id="169">
+					<DataPath>ПутьКФайлу</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<ChoiceButton>true</ChoiceButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="170"/>
+					<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="171"/>
+					<Events>
+						<Event name="StartChoice">ПутьКФайлуНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<CommandBar name="ГруппаКомандыЗагрузки" id="199">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды загрузки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды загрузки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаКомандыЗагрузкиРасширеннаяПодсказка" id="200"/>
+					<ChildItems>
+						<Popup name="ГруппаКомандыЗагрузкиДанных" id="201">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузить статус</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа команды загрузки данных</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="ГруппаКомандыЗагрузкиДанныхРасширеннаяПодсказка" id="202"/>
+							<ChildItems>
+								<Button name="ЗагрузитьДанныеДляВыполненияЗадачКонтроля" id="197">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ЗагрузитьДанныеДляВыполненияЗадачКонтроля</CommandName>
+									<ExtendedTooltip name="ЗагрузитьДанныеДляВыполненияЗадачКонтроляРасширеннаяПодсказка" id="198"/>
+								</Button>
+								<Button name="ЗагрузитьДанныеДляВыполненияЗадачСогласования" id="203">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ЗагрузитьДанныеДляВыполненияЗадачСогласования</CommandName>
+									<ExtendedTooltip name="ЗагрузитьДанныеДляВыполненияЗадачСогласованияРасширеннаяПодсказка" id="204"/>
+								</Button>
+							</ChildItems>
+						</Popup>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсновныеКоманды" id="124">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные команды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные команды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновныеКомандыРасширеннаяПодсказка" id="125"/>
+			<ChildItems>
+				<Button name="Обновить" id="154">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.Обновить</CommandName>
+					<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="155"/>
+				</Button>
+				<CommandBar name="ГруппаКоманды" id="159">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="160"/>
+					<ChildItems>
+						<ButtonGroup name="ГруппаКомандыФронтОфиса" id="308">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа команды фронт офиса</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа команды фронт офиса</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаКомандыФронтОфисаРасширеннаяПодсказка" id="309"/>
+							<ChildItems>
+								<Popup name="ГруппаКомандыВыполнитьЗадачи" id="161">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Установить статус</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>StdPicture.AppearanceCheckBox</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ГруппаКомандыВыполнитьЗадачиРасширеннаяПодсказка" id="162"/>
+									<ChildItems>
+										<Button name="ВыполнитьЗадачиКонтроля" id="163">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ВыполнитьЗадачиКонтроля</CommandName>
+											<ExtendedTooltip name="ВыполнитьЗадачиКонтроляРасширеннаяПодсказка" id="164"/>
+										</Button>
+										<Button name="ВыполнитьЗадачиСогласования" id="165">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ВыполнитьЗадачиСогласования</CommandName>
+											<ExtendedTooltip name="ВыполнитьЗадачиСогласованияРасширеннаяПодсказка" id="166"/>
+										</Button>
+									</ChildItems>
+								</Popup>
+								<Popup name="ГруппаКомандыОтмены" id="186">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Снять статус</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа команды отмены</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Picture>
+										<xr:Ref>StdPicture.AppearanceCross</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ГруппаКомандыОтменыРасширеннаяПодсказка" id="187"/>
+									<ChildItems>
+										<Button name="ОтменитьВыполнениеЗадачКонтроля" id="188">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ОтменитьВыполнениеЗадачКонтроля</CommandName>
+											<ExtendedTooltip name="ОтменитьВыполнениеЗадачКонтроляРасширеннаяПодсказка" id="189"/>
+										</Button>
+										<Button name="ОтменитьВыполнениеЗадачСогласования" id="190">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ОтменитьВыполнениеЗадачСогласования</CommandName>
+											<ExtendedTooltip name="ОтменитьВыполнениеЗадачСогласованияРасширеннаяПодсказка" id="191"/>
+										</Button>
+									</ChildItems>
+								</Popup>
+							</ChildItems>
+						</ButtonGroup>
+						<Button name="ВыполнитьЗадачиПодтверждения" id="182">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ВыполнитьЗадачиПодтверждения</CommandName>
+							<ExtendedTooltip name="ВыполнитьЗадачиПодтвержденияРасширеннаяПодсказка" id="183"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДопКоманды" id="128">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа доп команды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа доп команды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДопКомандыРасширеннаяПодсказка" id="129"/>
+		</UsualGroup>
+		<UsualGroup name="ГруппаТаблицаПоручений" id="126">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа таблица поручений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа таблица поручений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТаблицаПорученийРасширеннаяПодсказка" id="127"/>
+			<ChildItems>
+				<Table name="ПорученияДляСогласования" id="1">
+					<Representation>List</Representation>
+					<CommandBarLocation>Top</CommandBarLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>ПорученияДляСогласования</DataPath>
+					<BackColor>web:GhostWhite</BackColor>
+					<CommandSet>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+					</CommandSet>
+					<SearchStringLocation>CommandBar</SearchStringLocation>
+					<ViewStatusLocation>Top</ViewStatusLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ПорученияДляСогласованияКонтекстноеМеню" id="2"/>
+					<AutoCommandBar name="ПорученияДляСогласованияКоманднаяПанель" id="3">
+						<ChildItems>
+							<Button name="УстановитьФлажки" id="130">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьФлажки</CommandName>
+								<ExtendedTooltip name="УстановитьФлажкиРасширеннаяПодсказка" id="131"/>
+							</Button>
+							<Button name="СнятьФлажки" id="132">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьФлажки</CommandName>
+								<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="133"/>
+							</Button>
+							<Button name="ПоместитьДанныеВБуфер" id="184">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПоместитьДанныеВБуфер</CommandName>
+								<ExtendedTooltip name="ПоместитьДанныеВБуферРасширеннаяПодсказка" id="185"/>
+							</Button>
+							<Button name="ПорученияДляСогласованияСортироватьСписокПоВозрастанию" id="304">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ПорученияДляСогласования.StandardCommand.SortListAsc</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ПорученияДляСогласованияСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="305"/>
+							</Button>
+							<Button name="ПорученияДляСогласованияСортироватьСписокПоУбыванию" id="306">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ПорученияДляСогласования.StandardCommand.SortListDesc</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ПорученияДляСогласованияСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="307"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ПорученияДляСогласованияРасширеннаяПодсказка" id="4"/>
+					<SearchStringAddition name="ПорученияДляСогласованияСтрокаПоиска" id="5">
+						<AdditionSource>
+							<Item>ПорученияДляСогласования</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПорученияДляСогласованияСтрокаПоискаКонтекстноеМеню" id="6"/>
+						<ExtendedTooltip name="ПорученияДляСогласованияСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПорученияДляСогласованияСостояниеПросмотра" id="8">
+						<AdditionSource>
+							<Item>ПорученияДляСогласования</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Состояние</v8:content>
+							</v8:item>
+						</Title>
+						<ContextMenu name="ПорученияДляСогласованияСостояниеПросмотраКонтекстноеМеню" id="9"/>
+						<ExtendedTooltip name="ПорученияДляСогласованияСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПорученияДляСогласованияУправлениеПоиском" id="11">
+						<AdditionSource>
+							<Item>ПорученияДляСогласования</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПорученияДляСогласованияУправлениеПоискомКонтекстноеМеню" id="12"/>
+						<ExtendedTooltip name="ПорученияДляСогласованияУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeRowChange">ПорученияДляСогласованияПередНачаломИзменения</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ПорученияДляСогласованияИдентификатор" id="113">
+							<DataPath>ПорученияДляСогласования.Идентификатор</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>3</Width>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ПорученияДляСогласованияИдентификаторКонтекстноеМеню" id="114"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияИдентификаторРасширеннаяПодсказка" id="115"/>
+						</InputField>
+						<CheckBoxField name="ПорученияДляСогласованияФлажок" id="68">
+							<DataPath>ПорученияДляСогласования.Флажок</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderPicture>
+								<xr:Ref>StdPicture.AppearanceCheckBox</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</HeaderPicture>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПорученияДляСогласованияФлажокКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияФлажокРасширеннаяПодсказка" id="70"/>
+						</CheckBoxField>
+						<InputField name="ПорученияДляСогласованияСтатус" id="17">
+							<DataPath>ПорученияДляСогласования.Статус</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CellHyperlink>true</CellHyperlink>
+							<ContextMenu name="ПорученияДляСогласованияСтатусКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияСтатусРасширеннаяПодсказка" id="19"/>
+						</InputField>
+						<InputField name="ПорученияДляСогласованияВидПоручения" id="14">
+							<DataPath>ПорученияДляСогласования.ВидПоручения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ПорученияДляСогласованияВидПорученияКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияВидПорученияРасширеннаяПодсказка" id="16"/>
+						</InputField>
+						<ColumnGroup name="ГруппаСчетДоверительногоУправления" id="71">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Счет доверительного управления</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа счет доверительного управления</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ГруппаСчетДоверительногоУправленияРасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<InputField name="ПорученияДляСогласованияСчетДоверительногоУправления" id="20">
+									<DataPath>ПорученияДляСогласования.СчетДоверительногоУправления</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<QuickChoice>false</QuickChoice>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ПорученияДляСогласованияСчетДоверительногоУправленияКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияСчетДоверительногоУправленияРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<InputField name="ПорученияДляСогласованияКодСчета" id="23">
+									<DataPath>ПорученияДляСогласования.КодСчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ПорученияДляСогласованияКодСчетаКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияКодСчетаРасширеннаяПодсказка" id="25"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="ПорученияДляСогласованияГруппаСумма" id="285">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поручения для согласования группа сумма</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поручения для согласования группа сумма</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>InCell</Group>
+							<ExtendedTooltip name="ПорученияДляСогласованияГруппаСуммаРасширеннаяПодсказка" id="286"/>
+							<ChildItems>
+								<InputField name="ПорученияДляСогласованияСумма" id="26">
+									<DataPath>ПорученияДляСогласования.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ПорученияДляСогласованияСуммаКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияСуммаРасширеннаяПодсказка" id="28"/>
+								</InputField>
+								<PictureField name="ПорученияДляСогласованияВыводВсехАктивов1" id="287">
+									<DataPath>ПорученияДляСогласования.ВыводВсехАктивов</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>фыарыкерукерук</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.Информация16</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="ПорученияДляСогласованияВыводВсехАктивов1КонтекстноеМеню" id="288"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияВыводВсехАктивов1РасширеннаяПодсказка" id="289"/>
+								</PictureField>
+							</ChildItems>
+						</ColumnGroup>
+						<InputField name="ПорученияДляСогласованияВалюта" id="29">
+							<DataPath>ПорученияДляСогласования.Валюта</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПорученияДляСогласованияВалютаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияВалютаРасширеннаяПодсказка" id="31"/>
+						</InputField>
+						<CheckBoxField name="ПорученияДляСогласованияВыводВсехАктивов" id="32">
+							<DataPath>ПорученияДляСогласования.ВыводВсехАктивов</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПорученияДляСогласованияВыводВсехАктивовКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияВыводВсехАктивовРасширеннаяПодсказка" id="34"/>
+						</CheckBoxField>
+						<ColumnGroup name="ГруппаПериодИсполнения" id="73">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период исполнения</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа период исполнения</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ГруппаПериодИсполненияРасширеннаяПодсказка" id="74"/>
+							<ChildItems>
+								<InputField name="ПорученияДляСогласованияДатаИсполненияС" id="35">
+									<DataPath>ПорученияДляСогласования.ДатаИсполненияС</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПорученияДляСогласованияДатаИсполненияСКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияДатаИсполненияСРасширеннаяПодсказка" id="37"/>
+								</InputField>
+								<InputField name="ПорученияДляСогласованияДатаИсполненияПо" id="38">
+									<DataPath>ПорученияДляСогласования.ДатаИсполненияПо</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПорученияДляСогласованияДатаИсполненияПоКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияДатаИсполненияПоРасширеннаяПодсказка" id="40"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="ГруппаВходящийДокумент" id="75">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Входящий документ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа входящий документ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ГруппаВходящийДокументРасширеннаяПодсказка" id="76"/>
+							<ChildItems>
+								<InputField name="ПорученияДляСогласованияНомерВходящегоДокумента" id="41">
+									<DataPath>ПорученияДляСогласования.НомерВходящегоДокумента</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПорученияДляСогласованияНомерВходящегоДокументаКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияНомерВходящегоДокументаРасширеннаяПодсказка" id="43"/>
+								</InputField>
+								<InputField name="ПорученияДляСогласованияДатаВходящегоДокумента" id="44">
+									<DataPath>ПорученияДляСогласования.ДатаВходящегоДокумента</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПорученияДляСогласованияДатаВходящегоДокументаКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияДатаВходящегоДокументаРасширеннаяПодсказка" id="46"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="ГруппаЗадолженность" id="195">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задолженность</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа задолженность</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ГруппаЗадолженностьРасширеннаяПодсказка" id="196"/>
+							<ChildItems>
+								<InputField name="ПорученияДляСогласованияТипЗадолженности" id="47">
+									<DataPath>ПорученияДляСогласования.ТипЗадолженности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ПорученияДляСогласованияТипЗадолженностиКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияТипЗадолженностиРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="ПорученияДляСогласованияВидЗадолженности" id="192">
+									<DataPath>ПорученияДляСогласования.ВидЗадолженности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ПорученияДляСогласованияВидЗадолженностиКонтекстноеМеню" id="193"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияВидЗадолженностиРасширеннаяПодсказка" id="194"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<InputField name="ПорученияДляСогласованияПоручение" id="156">
+							<DataPath>ПорученияДляСогласования.Поручение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CellHyperlink>true</CellHyperlink>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<QuickChoice>false</QuickChoice>
+							<TextEdit>false</TextEdit>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ПорученияДляСогласованияПоручениеКонтекстноеМеню" id="157"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияПоручениеРасширеннаяПодсказка" id="158"/>
+						</InputField>
+						<InputField name="ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполнения" id="53">
+							<DataPath>ПорученияДляСогласования.КоличествоДнейДоКрайнейДатыИсполнения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполненияКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполненияРасширеннаяПодсказка" id="55"/>
+						</InputField>
+						<ColumnGroup name="ГруппаРасчетныеСчета" id="77">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расчетный счет</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа расчетные счета</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ГруппаРасчетныеСчетаРасширеннаяПодсказка" id="78"/>
+							<ChildItems>
+								<ColumnGroup name="СчетОткуда" id="283">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет откуда</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет откуда</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="СчетОткудаРасширеннаяПодсказка" id="284"/>
+									<ChildItems>
+										<PictureField name="ПорученияДляСогласованияСчетИзНастроекУчетаДоходовПоЦеннымБумагам" id="280">
+											<DataPath>ПорученияДляСогласования.СчетСоответствуетСчетуИзНастроек</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ValuesPicture>
+												<xr:Ref>StdPicture.AppearanceCheckIcon</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</ValuesPicture>
+											<ContextMenu name="ПорученияДляСогласованияСчетИзНастроекУчетаДоходовПоЦеннымБумагамКонтекстноеМеню" id="281"/>
+											<ExtendedTooltip name="ПорученияДляСогласованияСчетИзНастроекУчетаДоходовПоЦеннымБумагамРасширеннаяПодсказка" id="282"/>
+										</PictureField>
+										<InputField name="ПорученияДляСогласованияРасчетныйСчет" id="56">
+											<DataPath>ПорученияДляСогласования.РасчетныйСчет</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПорученияДляСогласованияРасчетныйСчетКонтекстноеМеню" id="57"/>
+											<ExtendedTooltip name="ПорученияДляСогласованияРасчетныйСчетРасширеннаяПодсказка" id="58"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ПорученияДляСогласованияРасчетныйСчетПолучатель" id="59">
+									<DataPath>ПорученияДляСогласования.РасчетныйСчетПолучатель</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПорученияДляСогласованияРасчетныйСчетПолучательКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ПорученияДляСогласованияРасчетныйСчетПолучательРасширеннаяПодсказка" id="61"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСправка" id="134">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>PopUp</Behavior>
+			<ExtendedTooltip name="ГруппаСправкаРасширеннаяПодсказка" id="135"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСтатусыПоручений" id="207">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статусы</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа статусы поручений</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаСтатусыПорученийРасширеннаяПодсказка" id="208"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНаименованияСтатусов" id="215">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа наименования статусов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа наименования статусов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаНаименованияСтатусовРасширеннаяПодсказка" id="216"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияСтатус1" id="209">
+									<Height>1</Height>
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Font faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ОЖИДАЕТ СОГЛАСОВАНИЯ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус1КонтекстноеМеню" id="210"/>
+									<ExtendedTooltip name="ДекорацияСтатус1РасширеннаяПодсказка" id="211"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус2" id="212">
+									<Height>1</Height>
+									<TextColor>web:DarkGreen</TextColor>
+									<Font faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ПРОЙДЕН КОНТРОЛЬ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус2КонтекстноеМеню" id="213"/>
+									<ExtendedTooltip name="ДекорацияСтатус2РасширеннаяПодсказка" id="214"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус3" id="225">
+									<Height>1</Height>
+									<TextColor>web:DarkCyan</TextColor>
+									<Font faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ПОРУЧЕНИЕ СОГЛАСОВАНО</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус3КонтекстноеМеню" id="226"/>
+									<ExtendedTooltip name="ДекорацияСтатус3РасширеннаяПодсказка" id="227"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус4" id="231">
+									<Height>1</Height>
+									<TextColor>win:HotLight</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ПОРУЧЕНИЕ НА СОГЛАСОВАНИИ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус4КонтекстноеМеню" id="232"/>
+									<ExtendedTooltip name="ДекорацияСтатус4РасширеннаяПодсказка" id="233"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус5" id="237">
+									<Height>1</Height>
+									<TextColor>win:HotLight</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>В ОБРАБОТКЕ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус5КонтекстноеМеню" id="238"/>
+									<ExtendedTooltip name="ДекорацияСтатус5РасширеннаяПодсказка" id="239"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус6" id="243">
+									<Height>1</Height>
+									<TextColor>web:DarkGreen</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧАСТИЧНО ИСПОЛНЕНО</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус6КонтекстноеМеню" id="244"/>
+									<ExtendedTooltip name="ДекорацияСтатус6РасширеннаяПодсказка" id="245"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус7" id="246">
+									<Height>1</Height>
+									<TextColor>web:DarkGreen</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ИСПОЛНЕНО</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус7КонтекстноеМеню" id="247"/>
+									<ExtendedTooltip name="ДекорацияСтатус7РасширеннаяПодсказка" id="248"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияСтатус8" id="249">
+									<Height>1</Height>
+									<TextColor>style:НеактуальнаяСтрокаВСпискеЦвет</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ОТМЕНЕНО</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСтатус8КонтекстноеМеню" id="250"/>
+									<ExtendedTooltip name="ДекорацияСтатус8РасширеннаяПодсказка" id="251"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКомментарии" id="217">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа комментарии</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа комментарии</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаКомментарииРасширеннаяПодсказка" id="218"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияКомментарий1" id="219">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- новое поручение для согласования</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий1КонтекстноеМеню" id="220"/>
+									<ExtendedTooltip name="ДекорацияКомментарий1РасширеннаяПодсказка" id="221"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий2" id="222">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- отдел сопровождения операций провел контроль поручения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий2КонтекстноеМеню" id="223"/>
+									<ExtendedTooltip name="ДекорацияКомментарий2РасширеннаяПодсказка" id="224"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий3" id="228">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- поручение согласовано отделом сопровождения операций (клиентским отделом)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий3КонтекстноеМеню" id="229"/>
+									<ExtendedTooltip name="ДекорацияКомментарий3РасширеннаяПодсказка" id="230"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий4" id="234">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- поруение находится в стадии согласования отделом сопровождения операций (клиентским отделом)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий4КонтекстноеМеню" id="235"/>
+									<ExtendedTooltip name="ДекорацияКомментарий4РасширеннаяПодсказка" id="236"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий5" id="240">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- на основании поручения создан документ оплата (вывод денежных средств)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий5КонтекстноеМеню" id="241"/>
+									<ExtendedTooltip name="ДекорацияКомментарий5РасширеннаяПодсказка" id="242"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий6" id="252">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- проведена частичная оплата по поручению / проведен частичный вывод активов по поручению</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий6КонтекстноеМеню" id="253"/>
+									<ExtendedTooltip name="ДекорацияКомментарий6РасширеннаяПодсказка" id="254"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий7" id="255">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- произведена оплата (вывод денежных средств) всей суммы по поручению в текущем дне, оплата подтверждена строкой банковской выписки</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий7КонтекстноеМеню" id="256"/>
+									<ExtendedTooltip name="ДекорацияКомментарий7РасширеннаяПодсказка" id="257"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияКомментарий8" id="258">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>1</Height>
+									<TextColor>#808080</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- поручение отменено в текущем дне списанием задолженности по поручению</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКомментарий8КонтекстноеМеню" id="259"/>
+									<ExtendedTooltip name="ДекорацияКомментарий8РасширеннаяПодсказка" id="260"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСрокИсполненияПрочее" id="290">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа срок исполнения прочее</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа срок исполнения прочее</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСрокИсполненияПрочееРасширеннаяПодсказка" id="291"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСрокИсполнения" id="205">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок исполнения</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа срок исполнения</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="ГруппаСрокИсполненияРасширеннаяПодсказка" id="206"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаДекорации" id="261">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа декорации</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа декорации</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДекорацииРасширеннаяПодсказка" id="262"/>
+									<ChildItems>
+										<PictureDecoration name="ДекорацияЦвет1" id="136">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация цвет1</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<Picture>
+												<xr:Ref>StdPicture.AppearanceCircleGreen</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияЦвет1КонтекстноеМеню" id="137"/>
+											<ExtendedTooltip name="ДекорацияЦвет1РасширеннаяПодсказка" id="138"/>
+										</PictureDecoration>
+										<PictureDecoration name="ДекорацияЦвет2" id="142">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация цвет2</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<Picture>
+												<xr:Ref>StdPicture.AppearanceCircleYellow</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияЦвет2КонтекстноеМеню" id="143"/>
+											<ExtendedTooltip name="ДекорацияЦвет2РасширеннаяПодсказка" id="144"/>
+										</PictureDecoration>
+										<PictureDecoration name="ДекорацияЦвет3" id="148">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация цвет3</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<Picture>
+												<xr:Ref>StdPicture.AppearanceCircleRed</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияЦвет3КонтекстноеМеню" id="149"/>
+											<ExtendedTooltip name="ДекорацияЦвет3РасширеннаяПодсказка" id="150"/>
+										</PictureDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКомментарииКДекорациям" id="263">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа комментарии к декорациям</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа комментарии к декорациям</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКомментарииКДекорациямРасширеннаяПодсказка" id="264"/>
+									<ChildItems>
+										<LabelDecoration name="Декорация1" id="265">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>1</Height>
+											<TextColor>#808080</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>- исполнено в текущем дне</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация1КонтекстноеМеню" id="266"/>
+											<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="267"/>
+										</LabelDecoration>
+										<LabelDecoration name="Декорация2" id="268">
+											<Height>1</Height>
+											<TextColor>#808080</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>- один день до крайней даты исполнения</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация2КонтекстноеМеню" id="269"/>
+											<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="270"/>
+										</LabelDecoration>
+										<LabelDecoration name="Декорация3" id="271">
+											<Height>1</Height>
+											<TextColor>#808080</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>- сегодня истекает срок исполнения, или уже истек </v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация3КонтекстноеМеню" id="272"/>
+											<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="273"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПрочее" id="292">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прочее</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа прочее</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="293"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПрочееДекорации" id="294">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прочее декорации</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прочее декорации</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПрочееДекорацииРасширеннаяПодсказка" id="295"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация4" id="298">
+											<Picture>
+												<xr:Ref>CommonPicture.Информация16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="Декорация4КонтекстноеМеню" id="299"/>
+											<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="300"/>
+										</PictureDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПрочееКомментарии" id="296">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прочее комментарии</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прочее комментарии</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПрочееКомментарииРасширеннаяПодсказка" id="297"/>
+									<ChildItems>
+										<LabelDecoration name="Декорация5" id="301">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<TextColor>#808080</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>- расчетная сумма при выводе всех активов: сумма формируется из задолженности по сделкам репо, из остатков на расчетных счетах и счетах брокера</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация5КонтекстноеМеню" id="302"/>
+											<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="303"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СогласованиеПредстоящихРасходов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПорученияДляСогласования" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поручения для согласования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВидПоручения" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид поручения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КодСчета" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Валюта" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВыводВсехАктивов" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вывод всех активов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаИсполненияС" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаИсполненияПо" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерВходящегоДокумента" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаВходящегоДокумента" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипЗадолженности" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ТипыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Поручение" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поручение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ПоручениеНаДвижениеДенежныхСредств</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КоличествоДнейДоКрайнейДатыИсполнения" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дней до исполнения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="РасчетныйСчет" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Откуда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасчетныйСчетПолучатель" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Куда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Идентификатор" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидЗадолженности" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НаступилПериодИсполнения" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наступил период исполнения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетСоответствуетСчетуИзНастроек" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет соответствует счету из настроек</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПерекрестноеПоручение" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перекрестное поручение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Дата" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьКФайлу" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПутьКФайлу</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="РольОперацииФронтОфиса" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Роль операции фронт офиса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ОТМЕНЕНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеактуальнаяСтрокаВСпискеЦвет</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ПОРУЧЕНИЕ НА СОГЛАСОВАНИИ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">win:HotLight</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:nil="true"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ОЖИДАЕТ СОГЛАСОВАНИЯ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:nil="true"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ПРОЙДЕН КОНТРОЛЬ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DarkGreen</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:nil="true"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ПОРУЧЕНИЕ СОГЛАСОВАНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DarkCyan</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">В ОБРАБОТКЕ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">win:HotLight</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ЧАСТИЧНО ИСПОЛНЕНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DarkGreen</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ИСПОЛНЕНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DarkGreen</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидПоручения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.ВидПоручения</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">КЛИЕНТСКОЕ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:nil="true"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидПоручения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.ВидПоручения</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ВНУТРЕННЕЕ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Segoe UI Semibold" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:nil="true"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидПоручения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВыводВсехАктивов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияПо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияНомерВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияТипЗадолженности</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияПоручение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчетПолучатель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидЗадолженности</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.ВыводВсехАктивов</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.КоличествоДнейДоКрайнейДатыИсполнения</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:AuxiliaryNavigationColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидПоручения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВыводВсехАктивов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияПо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияНомерВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияТипЗадолженности</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияПоручение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчетПолучатель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидЗадолженности</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ИСПОЛНЕНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидПоручения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВыводВсехАктивов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияПо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияНомерВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияТипЗадолженности</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияПоручение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчетПолучатель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидЗадолженности</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.КоличествоДнейДоКрайнейДатыИсполнения</dcsset:left>
+							<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.ВыводВсехАктивов</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>NotGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemGroup">
+								<dcsset:groupType>OrGroup</dcsset:groupType>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">ИСПОЛНЕНО</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">ЧАСТИЧНО ИСПОЛНЕНО</dcsset:right>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAA8C</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияФлажок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+						<dcsset:comparisonType>InList</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">В ОБРАБОТКЕ</dcsset:right>
+						<dcsset:right xsi:type="xs:string">ИСПОЛНЕНО</dcsset:right>
+						<dcsset:right xsi:type="xs:string">ЧАСТИЧНО ИСПОЛНЕНО</dcsset:right>
+						<dcsset:right xsi:type="xs:string">ОТМЕНЕНО</dcsset:right>
+						<dcsset:right xsi:type="xs:string">ПОРУЧЕНИЕ НА СОГЛАСОВАНИИ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидПоручения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВыводВсехАктивов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаИсполненияПо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияНомерВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияДатаВходящегоДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияТипЗадолженности</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияВидЗадолженности</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияПоручение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияКоличествоДнейДоКрайнейДатыИсполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПорученияДляСогласованияРасчетныйСчетПолучатель</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.Статус</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">ПРОЙДЕН КОНТРОЛЬ</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.НаступилПериодИсполнения</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорученияДляСогласования.КоличествоДнейДоКрайнейДатыИсполнения</dcsset:left>
+							<dcsset:comparisonType>Greater</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:HoneyDew</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="УстановитьФлажки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СнятьФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="Обновить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Обновить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ВыполнитьЗадачиКонтроля" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пройден контроль</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрывается задача "Контроль" бизнес процесса СогласованиеПорученийНаВыводАктивов </v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьЗадачиКонтроля</Action>
+		</Command>
+		<Command name="ВыполнитьЗадачиСогласования" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрывается задача "Согласовано" бизнес процесса СогласованиеПорученийНаВыводАктивов </v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьЗадачиСогласования</Action>
+		</Command>
+		<Command name="ВыполнитьЗадачиПодтверждения" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиентский отдел закрывает задачи "Подтвердить" бизнес процесса СогласованиеПорученийНаВыводАктивов </v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьЗадачиПодтверждения</Action>
+		</Command>
+		<Command name="ПоместитьДанныеВБуфер" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поместить данные в буфер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать данные в буфер обмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputOnBasis</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоместитьДанныеВБуфер</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ОтменитьВыполнениеЗадачСогласования" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить выполнение задач согласования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтменитьВыполнениеЗадачСогласования</Action>
+		</Command>
+		<Command name="ОтменитьВыполнениеЗадачКонтроля" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пройден контроль</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить выполнение задач контроля</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтменитьВыполнениеЗадачКонтроля</Action>
+		</Command>
+		<Command name="ЗагрузитьДанныеДляВыполненияЗадачКонтроля" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пройден контроль</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные для выполнения задач контроля</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДанныеДляВыполненияЗадачКонтроля</Action>
+		</Command>
+		<Command name="ЗагрузитьДанныеДляВыполненияЗадачСогласования" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные для выполнения задач согласования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДанныеДляВыполненияЗадачСогласования</Action>
+		</Command>
+	</Commands>
+</Form>

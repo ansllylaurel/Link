@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщиеРеквизиты" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаОбщиеРеквизитыРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="Номер" id="30">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<InputField name="Дата" id="33">
+					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="35"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+						<Event name="ChoiceProcessing">ДатаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="36">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="38"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКонфликтИнтересов" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа конфликт интересов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа конфликт интересов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаКонфликтИнтересовРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<InputField name="КонфликтИнтересов" id="16">
+					<DataPath>Объект.КонфликтИнтересов</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КонфликтИнтересовКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="КонфликтИнтересовРасширеннаяПодсказка" id="18"/>
+					<Events>
+						<Event name="OnChange">КонфликтИнтересовПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ВидИнформации" id="13">
+					<DataPath>Объект.ВидСобытия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ВидИнформацииКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ВидИнформацииРасширеннаяПодсказка" id="15"/>
+					<Events>
+						<Event name="OnChange">ВидИнформацииПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКолонки" id="83">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа колонки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа колонки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКолонкиРасширеннаяПодсказка" id="84"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаИнформацияОКонфликте" id="49">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Информация о конфликте</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа информация о конфликте</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="ГруппаИнформацияОКонфликтеРасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаКолонкаЛевая" id="60">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа колонка левая</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа колонка левая</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКолонкаЛеваяРасширеннаяПодсказка" id="61"/>
+							<ChildItems>
+								<InputField name="КонфликтИнтересовСчетДоверительногоУправления" id="51">
+									<DataPath>Объект.КонфликтИнтересов.СчетДоверительногоУправления</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КонфликтИнтересовСчетДоверительногоУправленияКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="КонфликтИнтересовСчетДоверительногоУправленияРасширеннаяПодсказка" id="53"/>
+								</InputField>
+								<InputField name="КонфликтИнтересовОбстоятельство" id="54">
+									<DataPath>Объект.КонфликтИнтересов.Обстоятельство</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КонфликтИнтересовОбстоятельствоКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="КонфликтИнтересовОбстоятельствоРасширеннаяПодсказка" id="56"/>
+								</InputField>
+								<UsualGroup name="ГруппаПериодДействия" id="93">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа период действия</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа период действия</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПериодДействияРасширеннаяПодсказка" id="94"/>
+									<ChildItems>
+										<InputField name="КонфликтИнтересовДатаВозникновения" id="57">
+											<DataPath>Объект.КонфликтИнтересов.ДатаВозникновения</DataPath>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="КонфликтИнтересовДатаВозникновенияКонтекстноеМеню" id="58"/>
+											<ExtendedTooltip name="КонфликтИнтересовДатаВозникновенияРасширеннаяПодсказка" id="59"/>
+										</InputField>
+										<InputField name="КонфликтИнтересовДатаПрекращения" id="90">
+											<DataPath>Объект.КонфликтИнтересов.ДатаПрекращения</DataPath>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="КонфликтИнтересовДатаПрекращенияКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="КонфликтИнтересовДатаПрекращенияРасширеннаяПодсказка" id="92"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКолонкаПравая" id="62">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа колонка правая</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа колонка правая</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКолонкаПраваяРасширеннаяПодсказка" id="63"/>
+							<ChildItems>
+								<InputField name="КонфликтИнтересовСвязанноеЛицо" id="64">
+									<DataPath>Объект.КонфликтИнтересов.СвязанноеЛицо</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КонфликтИнтересовСвязанноеЛицоКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="КонфликтИнтересовСвязанноеЛицоРасширеннаяПодсказка" id="66"/>
+								</InputField>
+								<InputField name="КонфликтИнтересовПредметКонфликта" id="67">
+									<DataPath>Объект.КонфликтИнтересов.ПредметКонфликта</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КонфликтИнтересовПредметКонфликтаКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="КонфликтИнтересовПредметКонфликтаРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="КонфликтИнтересовРешениеОбОтказеОтПредотвращения" id="70">
+									<DataPath>Объект.КонфликтИнтересов.РешениеОбОтказеОтПредотвращения</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КонфликтИнтересовРешениеОбОтказеОтПредотвращенияКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="КонфликтИнтересовРешениеОбОтказеОтПредотвращенияРасширеннаяПодсказка" id="72"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРаскрытиеИнформации" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа раскрытие информации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа раскрытие информации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРаскрытиеИнформацииРасширеннаяПодсказка" id="80"/>
+					<ChildItems>
+						<InputField name="КонфликтИнтересовСпособРаскрытияИнформации" id="73">
+							<DataPath>Объект.КонфликтИнтересов.СпособРаскрытияИнформации</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КонфликтИнтересовСпособРаскрытияИнформацииКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="КонфликтИнтересовСпособРаскрытияИнформацииРасширеннаяПодсказка" id="75"/>
+						</InputField>
+						<InputField name="КонфликтИнтересовДатаРаскрытияИнформации" id="76">
+							<DataPath>Объект.КонфликтИнтересов.ДатаРаскрытияИнформации</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КонфликтИнтересовДатаРаскрытияИнформацииКонтекстноеМеню" id="77"/>
+							<ExtendedTooltip name="КонфликтИнтересовДатаРаскрытияИнформацииРасширеннаяПодсказка" id="78"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаТекстоваяИнформация" id="88">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа текстовая информация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа текстовая информация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаТекстоваяИнформацияРасширеннаяПодсказка" id="89"/>
+			<ChildItems>
+				<InputField name="СведенияОКлиенте" id="85">
+					<DataPath>Объект.СведенияОКлиенте</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СведенияОКлиентеКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="СведенияОКлиентеРасширеннаяПодсказка" id="87"/>
+				</InputField>
+				<InputField name="СодержаниеКонфликтаИнтересов" id="19">
+					<DataPath>Объект.СодержаниеКонфликтаИнтересов</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СодержаниеКонфликтаИнтересовКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="СодержаниеКонфликтаИнтересовРасширеннаяПодсказка" id="21"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодвалФормы" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалФормыРасширеннаяПодсказка" id="40"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="44">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<LabelField name="Ответственный" id="41">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="43"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РегистрацияИнформацииОКонфликтеИнтересов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>
