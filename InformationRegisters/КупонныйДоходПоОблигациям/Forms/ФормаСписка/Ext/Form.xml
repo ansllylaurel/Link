@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КомандаЗаполнитьФормулыРасчетаСтавокКупонов" id="76">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ЗаполнитьФормулыРасчетаСтавокКупонов</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить формулы ставок</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="КомандаЗаполнитьФормулыРасчетаСтавокКупоновРасширеннаяПодсказка" id="77"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="18"/>
+		</UsualGroup>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="22">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="24"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="25">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="28">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="29"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="30"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Облигация" id="8">
+					<DataPath>Список.Облигация</DataPath>
+					<ContextMenu name="ОблигацияКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ОблигацияРасширеннаяПодсказка" id="10"/>
+				</LabelField>
+				<ColumnGroup name="ГруппаКупонныйПериод" id="74">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Купонный период</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаКупонныйПериодРасширеннаяПодсказка" id="75"/>
+					<ChildItems>
+						<LabelField name="НомерКупона" id="64">
+							<DataPath>Список.НомерКупона</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>№</v8:content>
+								</v8:item>
+							</Title>
+							<Width>1</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="НомерКупонаКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="НомерКупонаРасширеннаяПодсказка" id="66"/>
+						</LabelField>
+						<LabelField name="Период" id="5">
+							<DataPath>Список.Period</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Начало</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПериодКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="7"/>
+						</LabelField>
+						<LabelField name="ДатаОкончанияКупона" id="40">
+							<DataPath>Список.ДатаОкончанияКупона</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Окончание</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаОкончанияКупонаКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="ДатаОкончанияКупонаРасширеннаяПодсказка" id="42"/>
+						</LabelField>
+						<LabelField name="Срок" id="37">
+							<DataPath>Список.Срок</DataPath>
+							<ContextMenu name="СрокКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="СрокРасширеннаяПодсказка" id="39"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="ДатаФиксации" id="52">
+					<DataPath>Список.ДатаФиксации</DataPath>
+					<ContextMenu name="ДатаФиксацииКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ДатаФиксацииРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<ColumnGroup name="ГруппаДатаВыплаты" id="72">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата выплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаДатаВыплатыРасширеннаяПодсказка" id="73"/>
+					<ChildItems>
+						<InputField name="ДатаВыплатыПлан" id="55">
+							<DataPath>Список.ДатаВыплатыПлан</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>План</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаВыплатыПланКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="ДатаВыплатыПланРасширеннаяПодсказка" id="57"/>
+						</InputField>
+						<LabelField name="ДатаВыплатыФакт" id="58">
+							<DataPath>Список.ДатаВыплатыФакт</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Факт</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаВыплатыФактКонтекстноеМеню" id="59"/>
+							<ExtendedTooltip name="ДатаВыплатыФактРасширеннаяПодсказка" id="60"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаСтавка" id="70">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка купона</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаСтавкаРасширеннаяПодсказка" id="71"/>
+					<ChildItems>
+						<LabelField name="СтавкаКупона" id="31">
+							<DataPath>Список.СтавкаКупона</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ставка</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>10</MaxWidth>
+							<ContextMenu name="СтавкаКупонаКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="СтавкаКупонаРасширеннаяПодсказка" id="33"/>
+						</LabelField>
+						<CheckBoxField name="СтавкаОпределена" id="61">
+							<DataPath>Список.СтавкаОпределена</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Определена</v8:content>
+								</v8:item>
+							</Title>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СтавкаОпределенаКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="СтавкаОпределенаРасширеннаяПодсказка" id="63"/>
+						</CheckBoxField>
+						<LabelField name="ДатаПубликации" id="49">
+							<DataPath>Список.ДатаПубликации</DataPath>
+							<ContextMenu name="ДатаПубликацииКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ДатаПубликацииРасширеннаяПодсказка" id="51"/>
+						</LabelField>
+						<LabelField name="ФормулаРасчетаСтавки" id="67">
+							<DataPath>Список.ФормулаРасчетаСтавки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Формула расчета</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ФормулаРасчетаСтавкиКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ФормулаРасчетаСтавкиРасширеннаяПодсказка" id="69"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="СуммаКупона" id="34">
+					<DataPath>Список.СуммаКупона</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>12</MaxWidth>
+					<ContextMenu name="СуммаКупонаКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="СуммаКупонаРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.НомерКупона</Field>
+				<Field>Список.Облигация</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.КупонныйДоходПоОблигациям</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьФормулыРасчетаСтавокКупонов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить формулы расчета ставок купонов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить формулы расчета ставок купонов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.АдминистрированиеСистемы">false</xr:Value>
+				<xr:Value name="Role.БазовыеПрава">false</xr:Value>
+				<xr:Value name="Role.БрокерскийУчет">false</xr:Value>
+				<xr:Value name="Role.БрокерскийУчетПросмотр">false</xr:Value>
+				<xr:Value name="Role.Документооборот">false</xr:Value>
+				<xr:Value name="Role.ДокументооборотПросмотр">false</xr:Value>
+				<xr:Value name="Role.ДокументооборотРегистрацияДокументов">false</xr:Value>
+				<xr:Value name="Role.ЖурналКонфликтаИнтересов">false</xr:Value>
+				<xr:Value name="Role.ЖурналКонфликтаИнтересовПросмотр">false</xr:Value>
+				<xr:Value name="Role.ИзменениеДатЗапретаРедактирования">false</xr:Value>
+				<xr:Value name="Role.ИмпортДанныхИзУК77">false</xr:Value>
+				<xr:Value name="Role.Классификаторы">false</xr:Value>
+				<xr:Value name="Role.КлассификаторыПросмотр">false</xr:Value>
+				<xr:Value name="Role.КлиентскийУчет">false</xr:Value>
+				<xr:Value name="Role.КлиентскийУчетПросмотр">false</xr:Value>
+				<xr:Value name="Role.КоллективныеИнвестиции">false</xr:Value>
+				<xr:Value name="Role.КоллективныеИнвестицииПросмотр">false</xr:Value>
+				<xr:Value name="Role.КонтрольИнвестиционныхДеклараций">false</xr:Value>
+				<xr:Value name="Role.КонтрольИнвестиционныхДекларацийПросмотр">false</xr:Value>
+				<xr:Value name="Role.КонтрольСтраховыхКомпаний">false</xr:Value>
+				<xr:Value name="Role.КонтрольСтраховыхКомпанийПросмотр">false</xr:Value>
+				<xr:Value name="Role.КонтрольУправляющихКомпаний">false</xr:Value>
+				<xr:Value name="Role.КонтрольУправляющихКомпанийПросмотр">false</xr:Value>
+				<xr:Value name="Role.МногофирменныйУчет">false</xr:Value>
+				<xr:Value name="Role.МониторингОшибокРегламентныхЗаданий">false</xr:Value>
+				<xr:Value name="Role.НазначениеОтветственныхЗаОперации">false</xr:Value>
+				<xr:Value name="Role.НастройкаИАдминистрирование">false</xr:Value>
+				<xr:Value name="Role.НастройкаКлиентскойОтчетности">false</xr:Value>
+				<xr:Value name="Role.НастройкаКлиентскойОтчетностиПросмотр">false</xr:Value>
+				<xr:Value name="Role.НормативноСправочнаяИнформация">false</xr:Value>
+				<xr:Value name="Role.НормативноСправочнаяИнформацияГруппыКомпаний">false</xr:Value>
+				<xr:Value name="Role.НормативноСправочнаяИнформацияГруппыКомпанийПросмотр">false</xr:Value>
+				<xr:Value name="Role.ОперацииБухгалтерии">false</xr:Value>
+				<xr:Value name="Role.ОперацииБухгалтерииПросмотр">false</xr:Value>
+				<xr:Value name="Role.ОперацииБэкОфиса">false</xr:Value>
+				<xr:Value name="Role.ОперацииБэкОфисаПросмотр">false</xr:Value>
+				<xr:Value name="Role.ОперацииФронтОфисаУправляющейКомпании">false</xr:Value>
+				<xr:Value name="Role.ОперацииФронтОфисаУправляющейКомпанииПросмотр">false</xr:Value>
+				<xr:Value name="Role.ОтправкаДанныхПИФНаСайт">false</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ПроведениеПоРегистрамБухгалтерии">false</xr:Value>
+				<xr:Value name="Role.ПроведениеПоРегистрамБэкОфиса">false</xr:Value>
+				<xr:Value name="Role.КонтрольСЧА">false</xr:Value>
+			</Use>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionUserFields</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаЗаполнитьФормулыРасчетаСтавокКупонов</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,1077 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подбор наборов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПеренестиВНастройку" id="109">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПеренестиВНастройку</CommandName>
+				<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаПеренестиВНастройкуРасширеннаяПодсказка" id="110"/>
+			</Button>
+			<Button name="ФормаСправка" id="129">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="130"/>
+			</Button>
+			<Button name="ФормаИзменитьФорму" id="131">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="132"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаФильтр" id="81">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа фильтр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="ГруппаФильтрРасширеннаяПодсказка" id="82"/>
+			<ChildItems>
+				<InputField name="НастройкаИсточник" id="1">
+					<DataPath>НастройкаИсточник</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник</v8:content>
+						</v8:item>
+					</Title>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Организация</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="НастройкаИсточникКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НастройкаИсточникРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">НастройкаИсточникПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОписаниеУсловийОтбора" id="4">
+					<DataPath>ОписаниеУсловийОтбора</DataPath>
+					<ContextMenu name="ОписаниеУсловийОтбораКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОписаниеУсловийОтбораРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ОписаниеУсловийОтбораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="114">
+					<DataPath>Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="115"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="116"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СтрокиИсточник" id="7">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<ReadOnly>true</ReadOnly>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СтрокиИсточник</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строки источника</v8:content>
+				</v8:item>
+			</Title>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СтрокиИсточникКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="СтрокиИсточникКоманднаяПанель" id="9">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СтрокиИсточникРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="СтрокиИсточникСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>СтрокиИсточник</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокиИсточникСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СтрокиИсточникСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СтрокиИсточникСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>СтрокиИсточник</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокиИсточникСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СтрокиИсточникСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СтрокиИсточникУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>СтрокиИсточник</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокиИсточникУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СтрокиИсточникУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СтрокиИсточникВыбор</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="СтрокиИсточникБазис" id="103">
+					<DataPath>СтрокиИсточник.Базис</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.DataCompositionUserFields</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ContextMenu name="СтрокиИсточникБазисКонтекстноеМеню" id="104"/>
+					<ExtendedTooltip name="СтрокиИсточникБазисРасширеннаяПодсказка" id="105"/>
+				</InputField>
+				<InputField name="СтрокиИсточникПредставлениеУсловийОтбора" id="26">
+					<DataPath>СтрокиИсточник.НаборИнвестиционнойДекларации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.DataCompositionFilter</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ContextMenu name="СтрокиИсточникПредставлениеУсловийОтбораКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СтрокиИсточникПредставлениеУсловийОтбораРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<CheckBoxField name="СтрокиИсточникОбъединятьОтборы" id="117">
+					<DataPath>СтрокиИсточник.ОбъединятьОтборы</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объединять отборы набора и базиса</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.Enum</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтрокиИсточникОбъединятьОтборыКонтекстноеМеню" id="118"/>
+					<ExtendedTooltip name="СтрокиИсточникОбъединятьОтборыРасширеннаяПодсказка" id="119"/>
+				</CheckBoxField>
+				<InputField name="СтрокиИсточникКонтролируемыйПоказатель" id="29">
+					<DataPath>СтрокиИсточник.КонтролируемыйПоказатель</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.CustomExpression</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ContextMenu name="СтрокиИсточникКонтролируемыйПоказательКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СтрокиИсточникКонтролируемыйПоказательРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<CheckBoxField name="СтрокиИсточникАбсолютнаяВеличинаМин" id="38">
+					<DataPath>СтрокиИсточник.АбсолютнаяВеличинаМин</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтрокиИсточникАбсолютнаяВеличинаМинКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="СтрокиИсточникАбсолютнаяВеличинаМинРасширеннаяПодсказка" id="40"/>
+				</CheckBoxField>
+				<ColumnGroup name="СтрокиИсточникГруппа2" id="91">
+					<Group>InCell</Group>
+					<ExtendedTooltip name="СтрокиИсточникГруппа2РасширеннаяПодсказка" id="92"/>
+					<ChildItems>
+						<InputField name="СтрокиИсточникМинимальноеЗначение" id="32">
+							<DataPath>СтрокиИсточник.МинимальноеЗначение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="СтрокиИсточникМинимальноеЗначениеКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="СтрокиИсточникМинимальноеЗначениеРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="СтрокиИсточникПроцентМин" id="83">
+							<DataPath>СтрокиИсточник.ПроцентМин</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="СтрокиИсточникПроцентМинКонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="СтрокиИсточникПроцентМинРасширеннаяПодсказка" id="85"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<CheckBoxField name="СтрокиИсточникАбсолютнаяВеличинаМакс" id="41">
+					<DataPath>СтрокиИсточник.АбсолютнаяВеличинаМакс</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтрокиИсточникАбсолютнаяВеличинаМаксКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СтрокиИсточникАбсолютнаяВеличинаМаксРасширеннаяПодсказка" id="43"/>
+				</CheckBoxField>
+				<ColumnGroup name="СтрокиИсточникГруппа1" id="89">
+					<Group>InCell</Group>
+					<ExtendedTooltip name="СтрокиИсточникГруппа1РасширеннаяПодсказка" id="90"/>
+					<ChildItems>
+						<InputField name="СтрокиИсточникМаксимальноеЗначение" id="35">
+							<DataPath>СтрокиИсточник.МаксимальноеЗначение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="СтрокиИсточникМаксимальноеЗначениеКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="СтрокиИсточникМаксимальноеЗначениеРасширеннаяПодсказка" id="37"/>
+						</InputField>
+						<InputField name="СтрокиИсточникПроцентМакс" id="86">
+							<DataPath>СтрокиИсточник.ПроцентМакс</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="СтрокиИсточникПроцентМаксКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="СтрокиИсточникПроцентМаксРасширеннаяПодсказка" id="88"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="СтрокиИсточникИнвестиционнаяДекларация" id="123">
+					<DataPath>СтрокиИсточник.ИнвестиционнаяДекларация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.SyncContents</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ContextMenu name="СтрокиИсточникИнвестиционнаяДекларацияКонтекстноеМеню" id="124"/>
+					<ExtendedTooltip name="СтрокиИсточникИнвестиционнаяДекларацияРасширеннаяПодсказка" id="125"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="СтрокиПриемник" id="44">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СтрокиПриемник</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавляемые строки</v8:content>
+				</v8:item>
+			</Title>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СтрокиПриемникКонтекстноеМеню" id="45"/>
+			<AutoCommandBar name="СтрокиПриемникКоманднаяПанель" id="46">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СтрокиПриемникРасширеннаяПодсказка" id="47"/>
+			<SearchStringAddition name="СтрокиПриемникСтрокаПоиска" id="48">
+				<AdditionSource>
+					<Item>СтрокиПриемник</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокиПриемникСтрокаПоискаКонтекстноеМеню" id="49"/>
+				<ExtendedTooltip name="СтрокиПриемникСтрокаПоискаРасширеннаяПодсказка" id="50"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СтрокиПриемникСостояниеПросмотра" id="51">
+				<AdditionSource>
+					<Item>СтрокиПриемник</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокиПриемникСостояниеПросмотраКонтекстноеМеню" id="52"/>
+				<ExtendedTooltip name="СтрокиПриемникСостояниеПросмотраРасширеннаяПодсказка" id="53"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СтрокиПриемникУправлениеПоиском" id="54">
+				<AdditionSource>
+					<Item>СтрокиПриемник</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокиПриемникУправлениеПоискомКонтекстноеМеню" id="55"/>
+				<ExtendedTooltip name="СтрокиПриемникУправлениеПоискомРасширеннаяПодсказка" id="56"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">СтрокиПриемникПередНачаломДобавления</Event>
+				<Event name="Drag">СтрокиПриемникПеретаскивание</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="СтрокиПриемникБазис" id="106">
+					<DataPath>СтрокиПриемник.Базис</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.DataCompositionUserFields</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ContextMenu name="СтрокиПриемникБазисКонтекстноеМеню" id="107"/>
+					<ExtendedTooltip name="СтрокиПриемникБазисРасширеннаяПодсказка" id="108"/>
+					<Events>
+						<Event name="OnChange">СтрокиПриемникБазисПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СтрокиПриемникПредставлениеУсловийОтбора" id="63">
+					<DataPath>СтрокиПриемник.НаборИнвестиционнойДекларации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.DataCompositionFilter</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ContextMenu name="СтрокиПриемникПредставлениеУсловийОтбораКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="СтрокиПриемникПредставлениеУсловийОтбораРасширеннаяПодсказка" id="65"/>
+				</InputField>
+				<CheckBoxField name="СтрокиПриемникОбъединятьОтборы" id="120">
+					<DataPath>СтрокиПриемник.ОбъединятьОтборы</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объединять отборы набора и базиса</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.Enum</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтрокиПриемникОбъединятьОтборыКонтекстноеМеню" id="121"/>
+					<ExtendedTooltip name="СтрокиПриемникОбъединятьОтборыРасширеннаяПодсказка" id="122"/>
+				</CheckBoxField>
+				<InputField name="СтрокиПриемникКонтролируемыйПоказатель" id="66">
+					<DataPath>СтрокиПриемник.КонтролируемыйПоказатель</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.CustomExpression</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="СтрокиПриемникКонтролируемыйПоказательКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="СтрокиПриемникКонтролируемыйПоказательРасширеннаяПодсказка" id="68"/>
+					<Events>
+						<Event name="StartChoice">СтрокиПриемникКонтролируемыйПоказательНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="СтрокиПриемникАбсолютнаяВеличинаМин" id="75">
+					<DataPath>СтрокиПриемник.АбсолютнаяВеличинаМин</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтрокиПриемникАбсолютнаяВеличинаМинКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="СтрокиПриемникАбсолютнаяВеличинаМинРасширеннаяПодсказка" id="77"/>
+				</CheckBoxField>
+				<ColumnGroup name="СтрокиПриемникГруппа1" id="93">
+					<Group>InCell</Group>
+					<ExtendedTooltip name="СтрокиПриемникГруппа1РасширеннаяПодсказка" id="94"/>
+					<ChildItems>
+						<InputField name="СтрокиПриемникМинимальноеЗначение" id="69">
+							<DataPath>СтрокиПриемник.МинимальноеЗначение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="СтрокиПриемникМинимальноеЗначениеКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="СтрокиПриемникМинимальноеЗначениеРасширеннаяПодсказка" id="71"/>
+						</InputField>
+						<InputField name="СтрокиПриемникПроцентМин" id="97">
+							<DataPath>СтрокиПриемник.ПроцентМин</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="СтрокиПриемникПроцентМинКонтекстноеМеню" id="98"/>
+							<ExtendedTooltip name="СтрокиПриемникПроцентМинРасширеннаяПодсказка" id="99"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<CheckBoxField name="СтрокиПриемникАбсолютнаяВеличинаМакс" id="78">
+					<DataPath>СтрокиПриемник.АбсолютнаяВеличинаМакс</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СтрокиПриемникАбсолютнаяВеличинаМаксКонтекстноеМеню" id="79"/>
+					<ExtendedTooltip name="СтрокиПриемникАбсолютнаяВеличинаМаксРасширеннаяПодсказка" id="80"/>
+				</CheckBoxField>
+				<ColumnGroup name="СтрокиПриемникГруппа2" id="95">
+					<Group>InCell</Group>
+					<ExtendedTooltip name="СтрокиПриемникГруппа2РасширеннаяПодсказка" id="96"/>
+					<ChildItems>
+						<InputField name="СтрокиПриемникМаксимальноеЗначение" id="72">
+							<DataPath>СтрокиПриемник.МаксимальноеЗначение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="СтрокиПриемникМаксимальноеЗначениеКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="СтрокиПриемникМаксимальноеЗначениеРасширеннаяПодсказка" id="74"/>
+						</InputField>
+						<InputField name="СтрокиПриемникПроцентМакс" id="100">
+							<DataPath>СтрокиПриемник.ПроцентМакс</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="СтрокиПриемникПроцентМаксКонтекстноеМеню" id="101"/>
+							<ExtendedTooltip name="СтрокиПриемникПроцентМаксРасширеннаяПодсказка" id="102"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="СтрокиПриемникИнвестиционнаяДекларация" id="126">
+					<DataPath>СтрокиПриемник.ИнвестиционнаяДекларация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.SyncContents</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Организация</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ChoiceParameters>
+						<app:item name="Отбор.Консолидирующая">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">false</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="СтрокиПриемникИнвестиционнаяДекларацияКонтекстноеМеню" id="127"/>
+					<ExtendedTooltip name="СтрокиПриемникИнвестиционнаяДекларацияРасширеннаяПодсказка" id="128"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ОписаниеУсловийОтбора" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание условий отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкаИсточник" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка источник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИнвестиционныеДекларации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтрокиИсточник" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строки источник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Настройка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИнвестиционныеДекларации</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НаборИнвестиционнойДекларации" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Набор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.НаборыИнвестиционныхДеклараций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КонтролируемыйПоказатель" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="МинимальноеЗначение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Минимальное значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="МаксимальноеЗначение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Максимальное значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="АбсолютнаяВеличинаМин" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Абс.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АбсолютнаяВеличинаМакс" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Абс.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПроцентМин" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент мин</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПроцентМакс" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент макс</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Базис" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Базис</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БазисыКонтроляИнвестиционныхДеклараций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОбъединятьОтборы" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объединять отборы набора и базиса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИнвестиционнаяДекларация" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвестиционная декларация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИнвестиционныеДекларации</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтрокиПриемник" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строки приемник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="НаборИнвестиционнойДекларации" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Набор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.НаборыИнвестиционныхДеклараций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КонтролируемыйПоказатель" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="МинимальноеЗначение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Минимальное значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="МаксимальноеЗначение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Максимальное значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="АбсолютнаяВеличинаМин" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Абс.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АбсолютнаяВеличинаМакс" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Абс.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПроцентМин" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент мин</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПроцентМакс" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент макс</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Базис" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Базис</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БазисыКонтроляИнвестиционныхДеклараций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОбъединятьОтборы" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объединять отборы набора и базиса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИнвестиционнаяДекларация" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвестиционная декларация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИнвестиционныеДекларации</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="УникальныйИдентификаторВладельца" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уникальный идентификатор владельца</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыБазисов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры базисов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Базис" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Базис</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БазисыКонтроляИнвестиционныхДеклараций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Показатели" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатели</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтрокиИсточникПроцентМин</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиИсточник.АбсолютнаяВеличинаМин</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтрокиИсточникПроцентМакс</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиИсточник.АбсолютнаяВеличинаМакс</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтрокиИсточникМаксимальноеЗначение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиИсточник.АбсолютнаяВеличинаМакс</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиИсточник.МаксимальноеЗначение</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#808080</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧН='Без ограничения'</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтрокиПриемникПроцентМин</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиПриемник.АбсолютнаяВеличинаМин</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтрокиПриемникПроцентМакс</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиПриемник.АбсолютнаяВеличинаМакс</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтрокиПриемникМаксимальноеЗначение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиПриемник.АбсолютнаяВеличинаМакс</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СтрокиПриемник.МаксимальноеЗначение</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#808080</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧН='Без ограничения'</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ПеренестиВНастройку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести в инвестиционную декларацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести в настройку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиВНастройку</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

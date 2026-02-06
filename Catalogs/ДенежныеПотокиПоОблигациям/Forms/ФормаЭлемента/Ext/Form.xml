@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Владелец" id="32">
+			<DataPath>Объект.Owner</DataPath>
+			<Enabled>false</Enabled>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Облигация</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="34"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<Table name="Потоки" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Поток</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПотокиКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ПотокиКоманднаяПанель" id="12">
+				<ChildItems>
+					<Popup name="Заполнить" id="38">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Picture>
+							<xr:Ref>StdPicture.Refresh</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="39"/>
+						<ChildItems>
+							<Button name="КомандаЗаполнитьПотоки" id="40">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаЗаполнитьПотоки</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>С учетом решений (ЕПС)</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомандаЗаполнитьПотокиРасширеннаяПодсказка" id="41"/>
+							</Button>
+							<Button name="КомандаЗаполнитьПотокиБезПрофсуждений" id="42">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаЗаполнитьПотокиБезПрофсуждений</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Без учета решений (ЕПС)</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомандаЗаполнитьПотокиБезПрофсужденийРасширеннаяПодсказка" id="43"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="КомандаСверитьСПотокамиБезПрофсуждений" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСверитьСПотокамиБезПрофсуждений</CommandName>
+						<ExtendedTooltip name="КомандаСверитьСПотокамиБезПрофсужденийРасширеннаяПодсказка" id="45"/>
+					</Button>
+					<Button name="КомандаРассчитатьЭСПпоПотоку" id="46">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.КомандаРассчитатьЭСПпоПотоку</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Расчет ЭСП</v8:content>
+							</v8:item>
+						</Title>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="КомандаРассчитатьЭСПпоПотокуРасширеннаяПодсказка" id="47"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПотокиРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ПотокиСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Потоки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПотокиСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ПотокиСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПотокиСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>Потоки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПотокиСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ПотокиСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПотокиУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>Потоки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПотокиУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ПотокиУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ПотокиНомерСтроки" id="23">
+					<DataPath>Объект.Поток.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПотокиНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ПотокиНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ПотокиДатаПотока" id="26">
+					<DataPath>Объект.Поток.Дата</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПотокиДатаПотокаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ПотокиДатаПотокаРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ПотокиСуммаПотока" id="29">
+					<DataPath>Объект.Поток.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПотокиСуммаПотокаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПотокиСуммаПотокаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<CheckBoxField name="ПотокиКупон" id="35">
+					<DataPath>Объект.Поток.Купон</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПотокиКупонКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ПотокиКупонРасширеннаяПодсказка" id="37"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ДенежныеПотокиПоОблигациям</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Дата" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Клиент" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокВозможныхУчетныхАктивовЕПС" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список возможных учетных активов ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.УчетныеАктивыЕПС</v8:Type>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаЗаполнитьПотоки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить потоки (ЕПС)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить потоки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаполнитьПотоки</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="КомандаЗаполнитьПотокиБезПрофсуждений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить потоки без профсуждений (ЕПС)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда заполнить потоки без профсуждений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаполнитьПотокиБезПрофсуждений</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="КомандаСверитьСПотокамиБезПрофсуждений" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сверить с потоками без профсуждений (ЕПС)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сверить с потоками без профсуждений (ЕПС)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckSyntax</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСверитьСПотокамиБезПрофсуждений</Action>
+		</Command>
+		<Command name="КомандаРассчитатьЭСПпоПотоку" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать ЭСП по потоку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать ЭСП по потоку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataProcessor</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРассчитатьЭСПпоПотоку</Action>
+		</Command>
+	</Commands>
+</Form>

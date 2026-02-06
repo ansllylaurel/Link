@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПериодОрганизация" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период / организация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период организация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодОрганизацияРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<InputField name="Период" id="1">
+					<DataPath>Запись.Period</DataPath>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<LabelField name="Организация" id="20">
+					<DataPath>Запись.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Договор" id="4">
+			<DataPath>Запись.Договор</DataPath>
+			<ContextMenu name="ДоговорКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ДоговорПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ДатаРасторжения" id="7">
+			<DataPath>Запись.ДатаРасторжения</DataPath>
+			<ContextMenu name="ДатаРасторженияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ДатаРасторженияРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<UsualGroup name="ГруппаСрокОплаты" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа срок оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа срок оплаты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСрокОплатыРасширеннаяПодсказка" id="17"/>
+			<ChildItems>
+				<InputField name="ВариантыНачалаСрока" id="23">
+					<DataPath>Запись.ВариантНачалаСрока</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ВариантыНачалаСрокаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ВариантыНачалаСрокаРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="СрокОплаты" id="13">
+					<DataPath>Запись.СрокОплаты</DataPath>
+					<ContextMenu name="СрокОплатыКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="СрокОплатыРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<InputField name="ВариантДлиныСрока" id="10">
+					<DataPath>Запись.ВариантДлиныСрока</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>измеряется в</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВариантДлиныСрокаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВариантДлиныСрокаРасширеннаяПодсказка" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.УсловияДоговоровОбщие</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

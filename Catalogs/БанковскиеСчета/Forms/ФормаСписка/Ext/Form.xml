@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаПоказатьСкрытьЗакрытые" id="162">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаБанковскиеСчетаПоказатьСкрытьЗакрытые</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаКомандаПоказатьСкрытьЗакрытыеРасширеннаяПодсказка" id="163"/>
+			</Button>
+			<Button name="ФормаКомандаПоказатьИсполнителей" id="164">
+				<Type>CommandBarButton</Type>
+				<CommandName>Catalog.БанковскиеСчета.Command.ПоказатьИсполнителей</CommandName>
+				<DataPath>Items.Список.CurrentData.Ref</DataPath>
+				<ExtendedTooltip name="ФормаКомандаПоказатьИсполнителейРасширеннаяПодсказка" id="165"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="29"/>
+		</UsualGroup>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<Height>10</Height>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="42">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="43"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="44"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="45">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="46"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="47"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="48">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="49"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="50"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Наименование" id="5">
+					<DataPath>Список.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+				</LabelField>
+				<LabelField name="Организация" id="169">
+					<DataPath>Список.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="170"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="171"/>
+				</LabelField>
+				<LabelField name="ЮрФизЛицо" id="39">
+					<DataPath>Список.ЮрФизЛицо</DataPath>
+					<ContextMenu name="ЮрФизЛицоКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ЮрФизЛицоРасширеннаяПодсказка" id="41"/>
+				</LabelField>
+				<LabelField name="Договор" id="30">
+					<DataPath>Список.Договор</DataPath>
+					<ContextMenu name="ДоговорКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="32"/>
+				</LabelField>
+				<LabelField name="ДоговорНаименованиеВладельцаДляДокументов" id="36">
+					<DataPath>Список.Договор.НаименованиеВладельцаДляДокументов</DataPath>
+					<ContextMenu name="ДоговорНаименованиеВладельцаДляДокументовКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ДоговорНаименованиеВладельцаДляДокументовРасширеннаяПодсказка" id="38"/>
+				</LabelField>
+				<LabelField name="ДоговорМНО" id="33">
+					<DataPath>Список.ДоговорМНО</DataPath>
+					<ContextMenu name="ДоговорМНОКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ДоговорМНОРасширеннаяПодсказка" id="35"/>
+				</LabelField>
+				<LabelField name="НомерСчета" id="8">
+					<DataPath>Список.НомерСчета</DataPath>
+					<ContextMenu name="НомерСчетаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="НомерСчетаРасширеннаяПодсказка" id="10"/>
+				</LabelField>
+				<LabelField name="Валюта" id="14">
+					<DataPath>Список.Валюта</DataPath>
+					<ContextMenu name="ВалютаКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="16"/>
+				</LabelField>
+				<LabelField name="Банк" id="11">
+					<DataPath>Список.Банк</DataPath>
+					<ContextMenu name="БанкКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="БанкРасширеннаяПодсказка" id="13"/>
+				</LabelField>
+				<LabelField name="ДатаЗакрытия" id="17">
+					<DataPath>Список.ДатаЗакрытия</DataPath>
+					<ContextMenu name="ДатаЗакрытияКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ДатаЗакрытияРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<CheckBoxField name="СчетТипаС" id="166">
+					<DataPath>Список.СчетТипаС</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СчетТипаСКонтекстноеМеню" id="167"/>
+					<ExtendedTooltip name="СчетТипаСРасширеннаяПодсказка" id="168"/>
+				</CheckBoxField>
+				<LabelField name="Комментарий" id="20">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаИсполнители" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполнители</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Collapsible</Behavior>
+			<CollapsedRepresentationTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать исполнителей</v8:content>
+				</v8:item>
+			</CollapsedRepresentationTitle>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаИсполнителиРасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<Pages name="ГруппаСтраницы" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страницы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страницы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<PagesRepresentation>TabsOnTop</PagesRepresentation>
+					<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="54"/>
+					<ChildItems>
+						<Page name="СтраницаИсполнителиСобственные" id="55">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Исполнители собственные</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница исполнители собственные</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаИсполнителиСобственныеРасширеннаяПодсказка" id="56"/>
+							<ChildItems>
+								<Table name="ИсполнителиСобственные" id="68">
+									<Height>5</Height>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ИсполнителиСобственные</DataPath>
+									<RowPictureDataPath>ИсполнителиСобственные.DefaultPicture</RowPictureDataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="ИсполнителиСобственныеКонтекстноеМеню" id="69"/>
+									<AutoCommandBar name="ИсполнителиСобственныеКоманднаяПанель" id="70">
+										<ChildItems>
+											<Button name="КомандаИсполнителиСобственныеПоказатьСкрытьЗакрытых" id="93">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаИсполнителиСобственныеПоказатьСкрытьЗакрытых</CommandName>
+												<ExtendedTooltip name="КомандаИсполнителиСобственныеПоказатьСкрытьЗакрытыхРасширеннаяПодсказка" id="94"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ИсполнителиСобственныеРасширеннаяПодсказка" id="71"/>
+									<SearchStringAddition name="ИсполнителиСобственныеСтрокаПоиска" id="72">
+										<AdditionSource>
+											<Item>ИсполнителиСобственные</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ИсполнителиСобственныеСтрокаПоискаКонтекстноеМеню" id="73"/>
+										<ExtendedTooltip name="ИсполнителиСобственныеСтрокаПоискаРасширеннаяПодсказка" id="74"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ИсполнителиСобственныеСостояниеПросмотра" id="75">
+										<AdditionSource>
+											<Item>ИсполнителиСобственные</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ИсполнителиСобственныеСостояниеПросмотраКонтекстноеМеню" id="76"/>
+										<ExtendedTooltip name="ИсполнителиСобственныеСостояниеПросмотраРасширеннаяПодсказка" id="77"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ИсполнителиСобственныеУправлениеПоиском" id="78">
+										<AdditionSource>
+											<Item>ИсполнителиСобственные</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ИсполнителиСобственныеУправлениеПоискомКонтекстноеМеню" id="79"/>
+										<ExtendedTooltip name="ИсполнителиСобственныеУправлениеПоискомРасширеннаяПодсказка" id="80"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ИсполнителиСобственныеСчетДоверительногоУправления" id="84">
+											<DataPath>ИсполнителиСобственные.СчетДоверительногоУправления</DataPath>
+											<ContextMenu name="ИсполнителиСобственныеСчетДоверительногоУправленияКонтекстноеМеню" id="85"/>
+											<ExtendedTooltip name="ИсполнителиСобственныеСчетДоверительногоУправленияРасширеннаяПодсказка" id="86"/>
+										</LabelField>
+										<LabelField name="ИсполнителиСобственныеПримечание" id="87">
+											<DataPath>ИсполнителиСобственные.Примечание</DataPath>
+											<ContextMenu name="ИсполнителиСобственныеПримечаниеКонтекстноеМеню" id="88"/>
+											<ExtendedTooltip name="ИсполнителиСобственныеПримечаниеРасширеннаяПодсказка" id="89"/>
+										</LabelField>
+										<LabelField name="ИсполнителиСобственныеДатаЗакрытия" id="90">
+											<DataPath>ИсполнителиСобственные.ДатаЗакрытия</DataPath>
+											<ContextMenu name="ИсполнителиСобственныеДатаЗакрытияКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="ИсполнителиСобственныеДатаЗакрытияРасширеннаяПодсказка" id="92"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаИсполнителиБрокерские" id="95">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Исполнители брокерские</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаИсполнителиБрокерскиеРасширеннаяПодсказка" id="96"/>
+							<ChildItems>
+								<Table name="ИсполнителиБрокерские" id="111">
+									<Height>5</Height>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ИсполнителиБрокерские</DataPath>
+									<RowPictureDataPath>ИсполнителиБрокерские.DefaultPicture</RowPictureDataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="ИсполнителиБрокерскиеКонтекстноеМеню" id="112"/>
+									<AutoCommandBar name="ИсполнителиБрокерскиеКоманднаяПанель" id="113">
+										<ChildItems>
+											<Button name="КомандаИсполнителиБрокерскиеПоказатьСкрытьЗакрытых" id="139">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаИсполнителиБрокерскиеПоказатьСкрытьЗакрытых</CommandName>
+												<ExtendedTooltip name="КомандаИсполнителиБрокерскиеПоказатьСкрытьЗакрытыхРасширеннаяПодсказка" id="140"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ИсполнителиБрокерскиеРасширеннаяПодсказка" id="114"/>
+									<SearchStringAddition name="ИсполнителиБрокерскиеСтрокаПоиска" id="115">
+										<AdditionSource>
+											<Item>ИсполнителиБрокерские</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ИсполнителиБрокерскиеСтрокаПоискаКонтекстноеМеню" id="116"/>
+										<ExtendedTooltip name="ИсполнителиБрокерскиеСтрокаПоискаРасширеннаяПодсказка" id="117"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ИсполнителиБрокерскиеСостояниеПросмотра" id="118">
+										<AdditionSource>
+											<Item>ИсполнителиБрокерские</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ИсполнителиБрокерскиеСостояниеПросмотраКонтекстноеМеню" id="119"/>
+										<ExtendedTooltip name="ИсполнителиБрокерскиеСостояниеПросмотраРасширеннаяПодсказка" id="120"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ИсполнителиБрокерскиеУправлениеПоиском" id="121">
+										<AdditionSource>
+											<Item>ИсполнителиБрокерские</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ИсполнителиБрокерскиеУправлениеПоискомКонтекстноеМеню" id="122"/>
+										<ExtendedTooltip name="ИсполнителиБрокерскиеУправлениеПоискомРасширеннаяПодсказка" id="123"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ИсполнителиБрокерскиеСчетДоверительногоУправления" id="159">
+											<DataPath>ИсполнителиБрокерские.СчетДоверительногоУправления</DataPath>
+											<ContextMenu name="ИсполнителиБрокерскиеСчетДоверительногоУправленияКонтекстноеМеню" id="160"/>
+											<ExtendedTooltip name="ИсполнителиБрокерскиеСчетДоверительногоУправленияРасширеннаяПодсказка" id="161"/>
+										</LabelField>
+										<LabelField name="ИсполнителиБрокерскиеБрокер" id="141">
+											<DataPath>ИсполнителиБрокерские.Брокер</DataPath>
+											<ContextMenu name="ИсполнителиБрокерскиеБрокерКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ИсполнителиБрокерскиеБрокерРасширеннаяПодсказка" id="143"/>
+										</LabelField>
+										<LabelField name="ИсполнителиБрокерскиеПримечание" id="153">
+											<DataPath>ИсполнителиБрокерские.Примечание</DataPath>
+											<ContextMenu name="ИсполнителиБрокерскиеПримечаниеКонтекстноеМеню" id="154"/>
+											<ExtendedTooltip name="ИсполнителиБрокерскиеПримечаниеРасширеннаяПодсказка" id="155"/>
+										</LabelField>
+										<LabelField name="ИсполнителиБрокерскиеДатаЗакрытия" id="144">
+											<DataPath>ИсполнителиБрокерские.ДатаЗакрытия</DataPath>
+											<ContextMenu name="ИсполнителиБрокерскиеДатаЗакрытияКонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="ИсполнителиБрокерскиеДатаЗакрытияРасширеннаяПодсказка" id="146"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникБанковскиеСчета.*,
+	ВЫБОР
+		КОГДА (СправочникБанковскиеСчета.ДатаЗакрытия &lt;= &amp;ТекущаяДата) И (СправочникБанковскиеСчета.ДатаЗакрытия &lt;&gt; ДАТАВРЕМЯ(1, 1, 1))
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Закрыт
+
+ИЗ
+	Справочник.БанковскиеСчета КАК СправочникБанковскиеСчета</QueryText>
+				<MainTable>Catalog.БанковскиеСчета</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Закрыт</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:НеактуальнаяСтрокаВСпискеЦвет</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИсполнителиСобственные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполнители собственные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ИсполнителиСобственные.Закрыт</Field>
+				<Field>ИсполнителиСобственные.РасчетныйСчет</Field>
+				<Field>ИсполнителиСобственные.СчетДоверительногоУправления</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИсполнителиПоДенежнымСредствамСобственные.*,
+	ВЫБОР
+		КОГДА ИсполнителиПоДенежнымСредствамСобственные.ДатаЗакрытия &gt;= &amp;ТекущаяДата
+				ИЛИ ИсполнителиПоДенежнымСредствамСобственные.ДатаЗакрытия = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ КАК Закрыт
+ИЗ
+	РегистрСведений.ИсполнителиПоДенежнымСредствамСобственные КАК ИсполнителиПоДенежнымСредствамСобственные</QueryText>
+				<MainTable>InformationRegister.ИсполнителиПоДенежнымСредствамСобственные</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Закрыт</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:НеактуальнаяСтрокаВСпискеЦвет</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИсполнителиБрокерские" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполнители брокерские</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ИсполнителиБрокерские.Брокер</Field>
+				<Field>ИсполнителиБрокерские.Закрыт</Field>
+				<Field>ИсполнителиБрокерские.РасчетныйСчет</Field>
+				<Field>ИсполнителиБрокерские.СчетДоверительногоУправления</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИсполнителиПоДенежнымСредствамБрокерские.*,
+	ВЫБОР
+		КОГДА ИсполнителиПоДенежнымСредствамБрокерские.ДатаЗакрытия &gt;= &amp;ТекущаяДата
+				ИЛИ ИсполнителиПоДенежнымСредствамБрокерские.ДатаЗакрытия = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ КАК Закрыт
+ИЗ
+	РегистрСведений.ИсполнителиПоДенежнымСредствамБрокерские КАК ИсполнителиПоДенежнымСредствамБрокерские</QueryText>
+				<MainTable>InformationRegister.ИсполнителиПоДенежнымСредствамБрокерские</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Закрыт</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:НеактуальнаяСтрокаВСпискеЦвет</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаИсполнителиБрокерскиеПоказатьСкрытьЗакрытых" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытые</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать/скрыть закрытых исполнителей брокерских</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаИсполнителиБрокерскиеПоказатьСкрытьЗакрытых</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаИсполнителиСобственныеПоказатьСкрытьЗакрытых" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытые</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать/скрыть закрытых исполнителей собственных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаИсполнителиСобственныеПоказатьСкрытьЗакрытых</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаБанковскиеСчетаПоказатьСкрытьЗакрытые" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытые</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать/скрыть закрытые банковские счета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаБанковскиеСчетаПоказатьСкрытьЗакрытые</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ТекущаяДата">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

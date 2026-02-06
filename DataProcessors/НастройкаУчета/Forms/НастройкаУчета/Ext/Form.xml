@@ -1,0 +1,4161 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаРазвернуть" id="899">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Развернуть</CommandName>
+				<ExtendedTooltip name="ФормаРазвернутьРасширеннаяПодсказка" id="900"/>
+			</Button>
+			<Button name="ФормаСвернуть" id="901">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Свернуть</CommandName>
+				<ExtendedTooltip name="ФормаСвернутьРасширеннаяПодсказка" id="902"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="НастройкиУчета" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки учета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки учета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="НастройкиУчетаРасширеннаяПодсказка" id="2"/>
+			<Events>
+				<Event name="OnCurrentPageChange">НастройкиУчетаПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="НастройкиУчетаОбщие" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки учета общие</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиУчетаОбщиеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<Table name="Общие" id="9">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>Top</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Общие</DataPath>
+							<RowPictureDataPath>Общие.Картинка</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</RowsPicture>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ОбщиеКонтекстноеМеню" id="10"/>
+							<AutoCommandBar name="ОбщиеКоманднаяПанель" id="11">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОбщиеРасширеннаяПодсказка" id="12"/>
+							<SearchStringAddition name="ОбщиеСтрокаПоиска" id="439">
+								<AdditionSource>
+									<Item>Общие</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОбщиеСтрокаПоискаКонтекстноеМеню" id="440"/>
+								<ExtendedTooltip name="ОбщиеСтрокаПоискаРасширеннаяПодсказка" id="441"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОбщиеСостояниеПросмотра" id="442">
+								<AdditionSource>
+									<Item>Общие</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОбщиеСостояниеПросмотраКонтекстноеМеню" id="443"/>
+								<ExtendedTooltip name="ОбщиеСостояниеПросмотраРасширеннаяПодсказка" id="444"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОбщиеУправлениеПоиском" id="445">
+								<AdditionSource>
+									<Item>Общие</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОбщиеУправлениеПоискомКонтекстноеМеню" id="446"/>
+								<ExtendedTooltip name="ОбщиеУправлениеПоискомРасширеннаяПодсказка" id="447"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ОбщиеВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ОбщиеПредставлениеНастройки" id="19">
+									<DataPath>Общие.ПредставлениеНастройки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОбщиеПредставлениеНастройкиКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ОбщиеПредставлениеНастройкиРасширеннаяПодсказка" id="21"/>
+								</InputField>
+								<InputField name="ОбщиеЗначениеНастройки" id="22">
+									<DataPath>Общие.ЗначениеНастройки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОбщиеЗначениеНастройкиКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="ОбщиеЗначениеНастройкиРасширеннаяПодсказка" id="24"/>
+								</InputField>
+								<InputField name="ОбщиеДатаЗначения" id="25">
+									<DataPath>Общие.ОтображаемаяДата</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОбщиеДатаЗначенияКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ОбщиеДатаЗначенияРасширеннаяПодсказка" id="27"/>
+								</InputField>
+								<InputField name="ОбщиеДругиеДоговора" id="810">
+									<DataPath>Общие.ДругиеДоговора</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОбщиеДругиеДоговораКонтекстноеМеню" id="811"/>
+									<ExtendedTooltip name="ОбщиеДругиеДоговораРасширеннаяПодсказка" id="812"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиПоВидуУчета" id="170">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По виду учета</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки по виду учета</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиПоВидуУчетаРасширеннаяПодсказка" id="171"/>
+					<ChildItems>
+						<Pages name="НастройкиПоВидуУчетаПоРегистрам" id="172">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки по виду учета по регистрам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки по виду учета по регистрам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="НастройкиПоВидуУчетаПоРегистрамРасширеннаяПодсказка" id="173"/>
+							<Events>
+								<Event name="OnCurrentPageChange">НастройкиПоВидуУчетаПоРегистрамПриСменеСтраницы</Event>
+							</Events>
+							<ChildItems>
+								<Page name="НастройкиБухгалтерскийУчетСтраница" id="174">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бухгалтерский учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки бухгалтерский учет страница</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиБухгалтерскийУчетСтраницаРасширеннаяПодсказка" id="175"/>
+									<ChildItems>
+										<Table name="БухгалтерскийУчетНастройки" id="180">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>БухгалтерскийУчетНастройки</DataPath>
+											<RowPictureDataPath>БухгалтерскийУчетНастройки.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="БухгалтерскийУчетНастройкиКонтекстноеМеню" id="181"/>
+											<AutoCommandBar name="БухгалтерскийУчетНастройкиКоманднаяПанель" id="182">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="БухгалтерскийУчетНастройкиРасширеннаяПодсказка" id="183"/>
+											<SearchStringAddition name="БухгалтерскийУчетНастройкиСтрокаПоиска" id="502">
+												<AdditionSource>
+													<Item>БухгалтерскийУчетНастройки</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="БухгалтерскийУчетНастройкиСтрокаПоискаКонтекстноеМеню" id="503"/>
+												<ExtendedTooltip name="БухгалтерскийУчетНастройкиСтрокаПоискаРасширеннаяПодсказка" id="504"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="БухгалтерскийУчетНастройкиСостояниеПросмотра" id="505">
+												<AdditionSource>
+													<Item>БухгалтерскийУчетНастройки</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="БухгалтерскийУчетНастройкиСостояниеПросмотраКонтекстноеМеню" id="506"/>
+												<ExtendedTooltip name="БухгалтерскийУчетНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="507"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="БухгалтерскийУчетНастройкиУправлениеПоиском" id="508">
+												<AdditionSource>
+													<Item>БухгалтерскийУчетНастройки</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="БухгалтерскийУчетНастройкиУправлениеПоискомКонтекстноеМеню" id="509"/>
+												<ExtendedTooltip name="БухгалтерскийУчетНастройкиУправлениеПоискомРасширеннаяПодсказка" id="510"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">БухгалтерскийУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="БухгалтерскийУчетПредставлениеНастройки" id="190">
+													<DataPath>БухгалтерскийУчетНастройки.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="БухгалтерскийУчетПредставлениеНастройкиКонтекстноеМеню" id="191"/>
+													<ExtendedTooltip name="БухгалтерскийУчетПредставлениеНастройкиРасширеннаяПодсказка" id="192"/>
+												</InputField>
+												<InputField name="БухгалтерскийУчетЗначениеНастройки" id="193">
+													<DataPath>БухгалтерскийУчетНастройки.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="БухгалтерскийУчетЗначениеНастройкиКонтекстноеМеню" id="194"/>
+													<ExtendedTooltip name="БухгалтерскийУчетЗначениеНастройкиРасширеннаяПодсказка" id="195"/>
+												</InputField>
+												<InputField name="БухгалтерскийУчетДатаЗначения" id="196">
+													<DataPath>БухгалтерскийУчетНастройки.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="БухгалтерскийУчетДатаЗначенияКонтекстноеМеню" id="197"/>
+													<ExtendedTooltip name="БухгалтерскийУчетДатаЗначенияРасширеннаяПодсказка" id="198"/>
+												</InputField>
+												<InputField name="БухгалтерскийУчетНастройкиДругиеДоговора" id="848">
+													<DataPath>БухгалтерскийУчетНастройки.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="БухгалтерскийУчетНастройкиДругиеДоговораКонтекстноеМеню" id="849"/>
+													<ExtendedTooltip name="БухгалтерскийУчетНастройкиДругиеДоговораРасширеннаяПодсказка" id="850"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиНалоговыйУчетСтраница" id="176">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Налоговый учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки налоговый учет страница</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиНалоговыйУчетСтраницаРасширеннаяПодсказка" id="177"/>
+									<ChildItems>
+										<Table name="НалоговыйУчет" id="199">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>НалоговыйУчет</DataPath>
+											<RowPictureDataPath>НалоговыйУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="НалоговыйУчетКонтекстноеМеню" id="200"/>
+											<AutoCommandBar name="НалоговыйУчетКоманднаяПанель" id="201">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="НалоговыйУчетРасширеннаяПодсказка" id="202"/>
+											<SearchStringAddition name="НалоговыйУчетСтрокаПоиска" id="511">
+												<AdditionSource>
+													<Item>НалоговыйУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="НалоговыйУчетСтрокаПоискаКонтекстноеМеню" id="512"/>
+												<ExtendedTooltip name="НалоговыйУчетСтрокаПоискаРасширеннаяПодсказка" id="513"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="НалоговыйУчетСостояниеПросмотра" id="514">
+												<AdditionSource>
+													<Item>НалоговыйУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="НалоговыйУчетСостояниеПросмотраКонтекстноеМеню" id="515"/>
+												<ExtendedTooltip name="НалоговыйУчетСостояниеПросмотраРасширеннаяПодсказка" id="516"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="НалоговыйУчетУправлениеПоиском" id="517">
+												<AdditionSource>
+													<Item>НалоговыйУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="НалоговыйУчетУправлениеПоискомКонтекстноеМеню" id="518"/>
+												<ExtendedTooltip name="НалоговыйУчетУправлениеПоискомРасширеннаяПодсказка" id="519"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">НалоговыйУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="НалоговыйУчетПредставлениеНастройки" id="209">
+													<DataPath>НалоговыйУчет.ПредставлениеНастройки</DataPath>
+													<TitleHeight>1</TitleHeight>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="НалоговыйУчетПредставлениеНастройкиКонтекстноеМеню" id="210"/>
+													<ExtendedTooltip name="НалоговыйУчетПредставлениеНастройкиРасширеннаяПодсказка" id="211"/>
+												</InputField>
+												<InputField name="НалоговыйУчетЗначениеНастройки" id="212">
+													<DataPath>НалоговыйУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="НалоговыйУчетЗначениеНастройкиКонтекстноеМеню" id="213"/>
+													<ExtendedTooltip name="НалоговыйУчетЗначениеНастройкиРасширеннаяПодсказка" id="214"/>
+												</InputField>
+												<InputField name="НалоговыйУчетДатаЗначения" id="215">
+													<DataPath>НалоговыйУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="НалоговыйУчетДатаЗначенияКонтекстноеМеню" id="216"/>
+													<ExtendedTooltip name="НалоговыйУчетДатаЗначенияРасширеннаяПодсказка" id="217"/>
+												</InputField>
+												<InputField name="НалоговыйУчетДругиеДоговора" id="851">
+													<DataPath>НалоговыйУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="НалоговыйУчетДругиеДоговораКонтекстноеМеню" id="852"/>
+													<ExtendedTooltip name="НалоговыйУчетДругиеДоговораРасширеннаяПодсказка" id="853"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиЕПССтраница" id="586">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЕПС</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки учета партии спец депозитарный учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>HorizontalIfPossible</Group>
+									<ExtendedTooltip name="НастройкиЕПССтраницаРасширеннаяПодсказка" id="587"/>
+									<ChildItems>
+										<Table name="ЕПС" id="588">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ЕПС</DataPath>
+											<RowPictureDataPath>ЕПС.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="ЕПСКонтекстноеМеню" id="589"/>
+											<AutoCommandBar name="ЕПСКоманднаяПанель" id="590">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ЕПСРасширеннаяПодсказка" id="591"/>
+											<SearchStringAddition name="ЕПССтрокаПоиска" id="592">
+												<AdditionSource>
+													<Item>ЕПС</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЕПССтрокаПоискаКонтекстноеМеню" id="593"/>
+												<ExtendedTooltip name="ЕПССтрокаПоискаРасширеннаяПодсказка" id="594"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ЕПССостояниеПросмотра" id="595">
+												<AdditionSource>
+													<Item>ЕПС</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЕПССостояниеПросмотраКонтекстноеМеню" id="596"/>
+												<ExtendedTooltip name="ЕПССостояниеПросмотраРасширеннаяПодсказка" id="597"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ЕПСУправлениеПоиском" id="598">
+												<AdditionSource>
+													<Item>ЕПС</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ЕПСУправлениеПоискомКонтекстноеМеню" id="599"/>
+												<ExtendedTooltip name="ЕПСУправлениеПоискомРасширеннаяПодсказка" id="600"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ЕПСВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ЕПСПредставлениеНастройки" id="607">
+													<DataPath>ЕПС.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЕПСПредставлениеНастройкиКонтекстноеМеню" id="608"/>
+													<ExtendedTooltip name="ЕПСПредставлениеНастройкиРасширеннаяПодсказка" id="609"/>
+												</InputField>
+												<InputField name="ЕПСЗначениеНастройки" id="610">
+													<DataPath>ЕПС.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЕПСЗначениеНастройкиКонтекстноеМеню" id="611"/>
+													<ExtendedTooltip name="ЕПСЗначениеНастройкиРасширеннаяПодсказка" id="612"/>
+												</InputField>
+												<InputField name="ЕПСДатаЗначения" id="613">
+													<DataPath>ЕПС.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЕПСДатаЗначенияКонтекстноеМеню" id="614"/>
+													<ExtendedTooltip name="ЕПСДатаЗначенияРасширеннаяПодсказка" id="615"/>
+												</InputField>
+												<InputField name="ЕПСДругиеДоговора" id="845">
+													<DataPath>ЕПС.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЕПСДругиеДоговораКонтекстноеМеню" id="846"/>
+													<ExtendedTooltip name="ЕПСДругиеДоговораРасширеннаяПодсказка" id="847"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиУчетаАктивов" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Активы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки учета активов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиУчетаАктивовРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<Pages name="НастройкиУчетаАктивовПоРегистрам" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки учета активов по регистрам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки учета активов по регистрам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="НастройкиУчетаАктивовПоРегистрамРасширеннаяПодсказка" id="48"/>
+							<Events>
+								<Event name="OnCurrentPageChange">НастройкиУчетаАктивовПоРегистрамПриСменеСтраницы</Event>
+							</Events>
+							<ChildItems>
+								<Page name="НастройкиУчетаАктивовБухгалтерскийУчет" id="49">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бухгалтерский учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки учета активов бухгалтерский учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиУчетаАктивовБухгалтерскийУчетРасширеннаяПодсказка" id="50"/>
+									<ChildItems>
+										<Table name="АктивыБухгалтерскийУчет" id="28">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>Top</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>АктивыБухгалтерскийУчет</DataPath>
+											<RowPictureDataPath>АктивыБухгалтерскийУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="АктивыБухгалтерскийУчетКонтекстноеМеню" id="29"/>
+											<AutoCommandBar name="АктивыБухгалтерскийУчетКоманднаяПанель" id="30">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="АктивыБухгалтерскийУчетРасширеннаяПодсказка" id="31"/>
+											<SearchStringAddition name="АктивыБухгалтерскийУчетСтрокаПоиска" id="448">
+												<AdditionSource>
+													<Item>АктивыБухгалтерскийУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыБухгалтерскийУчетСтрокаПоискаКонтекстноеМеню" id="449"/>
+												<ExtendedTooltip name="АктивыБухгалтерскийУчетСтрокаПоискаРасширеннаяПодсказка" id="450"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="АктивыБухгалтерскийУчетСостояниеПросмотра" id="451">
+												<AdditionSource>
+													<Item>АктивыБухгалтерскийУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыБухгалтерскийУчетСостояниеПросмотраКонтекстноеМеню" id="452"/>
+												<ExtendedTooltip name="АктивыБухгалтерскийУчетСостояниеПросмотраРасширеннаяПодсказка" id="453"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="АктивыБухгалтерскийУчетУправлениеПоиском" id="454">
+												<AdditionSource>
+													<Item>АктивыБухгалтерскийУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыБухгалтерскийУчетУправлениеПоискомКонтекстноеМеню" id="455"/>
+												<ExtendedTooltip name="АктивыБухгалтерскийУчетУправлениеПоискомРасширеннаяПодсказка" id="456"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">АктивыБухгалтерскийУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="АктивыБухгалтерскийУчетПредставлениеНастройки" id="38">
+													<DataPath>АктивыБухгалтерскийУчет.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыБухгалтерскийУчетПредставлениеНастройкиКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="АктивыБухгалтерскийУчетПредставлениеНастройкиРасширеннаяПодсказка" id="40"/>
+												</InputField>
+												<InputField name="АктивыБухгалтерскийУчетЗначениеНастройки" id="41">
+													<DataPath>АктивыБухгалтерскийУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыБухгалтерскийУчетЗначениеНастройкиКонтекстноеМеню" id="42"/>
+													<ExtendedTooltip name="АктивыБухгалтерскийУчетЗначениеНастройкиРасширеннаяПодсказка" id="43"/>
+												</InputField>
+												<InputField name="АктивыБухгалтерскийУчетДатаЗначения" id="44">
+													<DataPath>АктивыБухгалтерскийУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыБухгалтерскийУчетДатаЗначенияКонтекстноеМеню" id="45"/>
+													<ExtendedTooltip name="АктивыБухгалтерскийУчетДатаЗначенияРасширеннаяПодсказка" id="46"/>
+												</InputField>
+												<InputField name="АктивыБухгалтерскийУчетДругиеДоговора" id="854">
+													<DataPath>АктивыБухгалтерскийУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыБухгалтерскийУчетДругиеДоговораКонтекстноеМеню" id="855"/>
+													<ExtendedTooltip name="АктивыБухгалтерскийУчетДругиеДоговораРасширеннаяПодсказка" id="856"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиУчетаАктивовНалоговыйУчет" id="51">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Налоговый учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки учета активов налоговый учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиУчетаАктивовНалоговыйУчетРасширеннаяПодсказка" id="52"/>
+									<ChildItems>
+										<Table name="АктивыНалоговыйУчет" id="55">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>Top</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>АктивыНалоговыйУчет</DataPath>
+											<RowPictureDataPath>АктивыНалоговыйУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="АктивыНалоговыйУчетКонтекстноеМеню" id="56"/>
+											<AutoCommandBar name="АктивыНалоговыйУчетКоманднаяПанель" id="57">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="АктивыНалоговыйУчетРасширеннаяПодсказка" id="58"/>
+											<SearchStringAddition name="АктивыНалоговыйУчетСтрокаПоиска" id="457">
+												<AdditionSource>
+													<Item>АктивыНалоговыйУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыНалоговыйУчетСтрокаПоискаКонтекстноеМеню" id="458"/>
+												<ExtendedTooltip name="АктивыНалоговыйУчетСтрокаПоискаРасширеннаяПодсказка" id="459"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="АктивыНалоговыйУчетСостояниеПросмотра" id="460">
+												<AdditionSource>
+													<Item>АктивыНалоговыйУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыНалоговыйУчетСостояниеПросмотраКонтекстноеМеню" id="461"/>
+												<ExtendedTooltip name="АктивыНалоговыйУчетСостояниеПросмотраРасширеннаяПодсказка" id="462"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="АктивыНалоговыйУчетУправлениеПоиском" id="463">
+												<AdditionSource>
+													<Item>АктивыНалоговыйУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыНалоговыйУчетУправлениеПоискомКонтекстноеМеню" id="464"/>
+												<ExtendedTooltip name="АктивыНалоговыйУчетУправлениеПоискомРасширеннаяПодсказка" id="465"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">АктивыНалоговыйУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="АктивыНалоговыйУчетПредставлениеНастройки" id="65">
+													<DataPath>АктивыНалоговыйУчет.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыНалоговыйУчетПредставлениеНастройкиКонтекстноеМеню" id="66"/>
+													<ExtendedTooltip name="АктивыНалоговыйУчетПредставлениеНастройкиРасширеннаяПодсказка" id="67"/>
+												</InputField>
+												<InputField name="АктивыНалоговыйУчетЗначениеНастройки" id="68">
+													<DataPath>АктивыНалоговыйУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыНалоговыйУчетЗначениеНастройкиКонтекстноеМеню" id="69"/>
+													<ExtendedTooltip name="АктивыНалоговыйУчетЗначениеНастройкиРасширеннаяПодсказка" id="70"/>
+												</InputField>
+												<InputField name="АктивыНалоговыйУчетДатаЗначения" id="71">
+													<DataPath>АктивыНалоговыйУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыНалоговыйУчетДатаЗначенияКонтекстноеМеню" id="72"/>
+													<ExtendedTooltip name="АктивыНалоговыйУчетДатаЗначенияРасширеннаяПодсказка" id="73"/>
+												</InputField>
+												<InputField name="АктивыНалоговыйУчетДругиеДоговора" id="857">
+													<DataPath>АктивыНалоговыйУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыНалоговыйУчетДругиеДоговораКонтекстноеМеню" id="858"/>
+													<ExtendedTooltip name="АктивыНалоговыйУчетДругиеДоговораРасширеннаяПодсказка" id="859"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиУчетаКлассификацииПоСрочностиЕПС" id="676">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Классификация по срочности ЕПС</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки учета классификации по срочности ЕПС</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиУчетаКлассификацииПоСрочностиЕПСРасширеннаяПодсказка" id="677"/>
+									<ChildItems>
+										<Table name="КлассификацияПоСрочностиЕПС" id="678">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>Top</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>КлассификацияПоСрочностиЕПС</DataPath>
+											<RowPictureDataPath>КлассификацияПоСрочностиЕПС.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="КлассификацияПоСрочностиЕПСКонтекстноеМеню" id="679"/>
+											<AutoCommandBar name="КлассификацияПоСрочностиЕПСКоманднаяПанель" id="680">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="КлассификацияПоСрочностиЕПСРасширеннаяПодсказка" id="681"/>
+											<SearchStringAddition name="КлассификацияПоСрочностиЕПССтрокаПоиска" id="682">
+												<AdditionSource>
+													<Item>КлассификацияПоСрочностиЕПС</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КлассификацияПоСрочностиЕПССтрокаПоискаКонтекстноеМеню" id="683"/>
+												<ExtendedTooltip name="КлассификацияПоСрочностиЕПССтрокаПоискаРасширеннаяПодсказка" id="684"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="КлассификацияПоСрочностиЕПССостояниеПросмотра" id="685">
+												<AdditionSource>
+													<Item>КлассификацияПоСрочностиЕПС</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КлассификацияПоСрочностиЕПССостояниеПросмотраКонтекстноеМеню" id="686"/>
+												<ExtendedTooltip name="КлассификацияПоСрочностиЕПССостояниеПросмотраРасширеннаяПодсказка" id="687"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="КлассификацияПоСрочностиЕПСУправлениеПоиском" id="688">
+												<AdditionSource>
+													<Item>КлассификацияПоСрочностиЕПС</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="КлассификацияПоСрочностиЕПСУправлениеПоискомКонтекстноеМеню" id="689"/>
+												<ExtendedTooltip name="КлассификацияПоСрочностиЕПСУправлениеПоискомРасширеннаяПодсказка" id="690"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">КлассификацияПоСрочностиЕПСВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="КлассификацияАктивовЕПСПредставлениеНастройки" id="691">
+													<DataPath>КлассификацияПоСрочностиЕПС.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КлассификацияАктивовЕПСПредставлениеНастройкиКонтекстноеМеню" id="692"/>
+													<ExtendedTooltip name="КлассификацияАктивовЕПСПредставлениеНастройкиРасширеннаяПодсказка" id="693"/>
+												</InputField>
+												<InputField name="КлассификацияАктивовЕПСЗначениеНастройки" id="694">
+													<DataPath>КлассификацияПоСрочностиЕПС.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КлассификацияАктивовЕПСЗначениеНастройкиКонтекстноеМеню" id="695"/>
+													<ExtendedTooltip name="КлассификацияАктивовЕПСЗначениеНастройкиРасширеннаяПодсказка" id="696"/>
+												</InputField>
+												<InputField name="КлассификацияАктивовЕПСДатаЗначения" id="697">
+													<DataPath>КлассификацияПоСрочностиЕПС.ДатаЗначения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КлассификацияАктивовЕПСДатаЗначенияКонтекстноеМеню" id="698"/>
+													<ExtendedTooltip name="КлассификацияАктивовЕПСДатаЗначенияРасширеннаяПодсказка" id="699"/>
+												</InputField>
+												<InputField name="КлассификацияПоСрочностиЕПСДругиеДоговора" id="866">
+													<DataPath>КлассификацияПоСрочностиЕПС.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КлассификацияПоСрочностиЕПСДругиеДоговораКонтекстноеМеню" id="867"/>
+													<ExtendedTooltip name="КлассификацияПоСрочностиЕПСДругиеДоговораРасширеннаяПодсказка" id="868"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиУчетаАктивовЕПС" id="556">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЕПС</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки учета активов ЕПС</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>HorizontalIfPossible</Group>
+									<ExtendedTooltip name="НастройкиУчетаАктивовЕПСРасширеннаяПодсказка" id="557"/>
+									<ChildItems>
+										<Table name="АктивыЕПС" id="558">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>Top</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>АктивыЕПС</DataPath>
+											<RowPictureDataPath>АктивыЕПС.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="АктивыЕПСКонтекстноеМеню" id="559"/>
+											<AutoCommandBar name="АктивыЕПСКоманднаяПанель" id="560">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="АктивыЕПСРасширеннаяПодсказка" id="561"/>
+											<SearchStringAddition name="АктивыЕПССтрокаПоиска" id="562">
+												<AdditionSource>
+													<Item>АктивыЕПС</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыЕПССтрокаПоискаКонтекстноеМеню" id="563"/>
+												<ExtendedTooltip name="АктивыЕПССтрокаПоискаРасширеннаяПодсказка" id="564"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="АктивыЕПССостояниеПросмотра" id="565">
+												<AdditionSource>
+													<Item>АктивыЕПС</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыЕПССостояниеПросмотраКонтекстноеМеню" id="566"/>
+												<ExtendedTooltip name="АктивыЕПССостояниеПросмотраРасширеннаяПодсказка" id="567"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="АктивыЕПСУправлениеПоиском" id="568">
+												<AdditionSource>
+													<Item>АктивыЕПС</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="АктивыЕПСУправлениеПоискомКонтекстноеМеню" id="569"/>
+												<ExtendedTooltip name="АктивыЕПСУправлениеПоискомРасширеннаяПодсказка" id="570"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">АктивыЕПСВыбор</Event>
+												<Event name="BeforeExpand">АктивыЕПСПередРазворачиванием</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="АктивыЕПСПредставлениеНастройки" id="577">
+													<DataPath>АктивыЕПС.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыЕПСПредставлениеНастройкиКонтекстноеМеню" id="578"/>
+													<ExtendedTooltip name="АктивыЕПСПредставлениеНастройкиРасширеннаяПодсказка" id="579"/>
+												</InputField>
+												<InputField name="АктивыЕПСЗначениеНастройки" id="580">
+													<DataPath>АктивыЕПС.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыЕПСЗначениеНастройкиКонтекстноеМеню" id="581"/>
+													<ExtendedTooltip name="АктивыЕПСЗначениеНастройкиРасширеннаяПодсказка" id="582"/>
+												</InputField>
+												<InputField name="АктивыЕПСДатаЗначения" id="583">
+													<DataPath>АктивыЕПС.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыЕПСДатаЗначенияКонтекстноеМеню" id="584"/>
+													<ExtendedTooltip name="АктивыЕПСДатаЗначенияРасширеннаяПодсказка" id="585"/>
+												</InputField>
+												<InputField name="АктивыЕПСДругиеДоговора" id="863">
+													<DataPath>АктивыЕПС.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="АктивыЕПСДругиеДоговораКонтекстноеМеню" id="864"/>
+													<ExtendedTooltip name="АктивыЕПСДругиеДоговораРасширеннаяПодсказка" id="865"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+						<CheckBoxField name="СкрыватьНеиспользуемыеГруппыАктивов" id="896">
+							<DataPath>СкрыватьНеиспользуемыеГруппыАктивов</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СкрыватьНеиспользуемыеГруппыАктивовКонтекстноеМеню" id="897"/>
+							<ExtendedTooltip name="СкрыватьНеиспользуемыеГруппыАктивовРасширеннаяПодсказка" id="898"/>
+							<Events>
+								<Event name="OnChange">СкрыватьНеиспользуемыеГруппыАктивовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиУчетаКомиссии" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комиссия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки учета комиссии</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиУчетаКомиссииРасширеннаяПодсказка" id="8"/>
+					<ChildItems>
+						<Pages name="НастройкиКомиссииПоРегистрам" id="118">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки комиссии по регистрам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки комиссии по регистрам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="НастройкиКомиссииПоРегистрамРасширеннаяПодсказка" id="119"/>
+							<Events>
+								<Event name="OnCurrentPageChange">НастройкиКомиссииПоРегистрамПриСменеСтраницы</Event>
+							</Events>
+							<ChildItems>
+								<Page name="НастройкиКомиссииБухгалтерскийУчет" id="120">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бухгалтерский учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки комиссии бухгалтерский учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиКомиссииБухгалтерскийУчетРасширеннаяПодсказка" id="121"/>
+									<ChildItems>
+										<Table name="КомиссияБухгалтерскийУчет" id="99">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>Top</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>КомиссияБухгалтерскийУчет</DataPath>
+											<RowPictureDataPath>КомиссияБухгалтерскийУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="КомиссияБухгалтерскийУчетКонтекстноеМеню" id="100"/>
+											<AutoCommandBar name="КомиссияБухгалтерскийУчетКоманднаяПанель" id="101">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="КомиссияБухгалтерскийУчетРасширеннаяПодсказка" id="102"/>
+											<SearchStringAddition name="КомиссияБухгалтерскийУчетСтрокаПоиска" id="475">
+												<AdditionSource>
+													<Item>КомиссияБухгалтерскийУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияБухгалтерскийУчетСтрокаПоискаКонтекстноеМеню" id="476"/>
+												<ExtendedTooltip name="КомиссияБухгалтерскийУчетСтрокаПоискаРасширеннаяПодсказка" id="477"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="КомиссияБухгалтерскийУчетСостояниеПросмотра" id="478">
+												<AdditionSource>
+													<Item>КомиссияБухгалтерскийУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияБухгалтерскийУчетСостояниеПросмотраКонтекстноеМеню" id="479"/>
+												<ExtendedTooltip name="КомиссияБухгалтерскийУчетСостояниеПросмотраРасширеннаяПодсказка" id="480"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="КомиссияБухгалтерскийУчетУправлениеПоиском" id="481">
+												<AdditionSource>
+													<Item>КомиссияБухгалтерскийУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияБухгалтерскийУчетУправлениеПоискомКонтекстноеМеню" id="482"/>
+												<ExtendedTooltip name="КомиссияБухгалтерскийУчетУправлениеПоискомРасширеннаяПодсказка" id="483"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">КомиссияБухгалтерскийУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="КомиссияПредставлениеНастройки" id="109">
+													<DataPath>КомиссияБухгалтерскийУчет.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияПредставлениеНастройкиКонтекстноеМеню" id="110"/>
+													<ExtendedTooltip name="КомиссияПредставлениеНастройкиРасширеннаяПодсказка" id="111"/>
+												</InputField>
+												<InputField name="КомиссияЗначениеНастройки" id="112">
+													<DataPath>КомиссияБухгалтерскийУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияЗначениеНастройкиКонтекстноеМеню" id="113"/>
+													<ExtendedTooltip name="КомиссияЗначениеНастройкиРасширеннаяПодсказка" id="114"/>
+												</InputField>
+												<InputField name="КомиссияДатаЗначения" id="115">
+													<DataPath>КомиссияБухгалтерскийУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияДатаЗначенияКонтекстноеМеню" id="116"/>
+													<ExtendedTooltip name="КомиссияДатаЗначенияРасширеннаяПодсказка" id="117"/>
+												</InputField>
+												<InputField name="КомиссияБухгалтерскийУчетДругиеДоговора" id="872">
+													<DataPath>КомиссияБухгалтерскийУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияБухгалтерскийУчетДругиеДоговораКонтекстноеМеню" id="873"/>
+													<ExtendedTooltip name="КомиссияБухгалтерскийУчетДругиеДоговораРасширеннаяПодсказка" id="874"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиКомиссииНалоговыйУчет" id="122">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Налоговый учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки комиссии налоговый учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиКомиссииНалоговыйУчетРасширеннаяПодсказка" id="123"/>
+									<ChildItems>
+										<Table name="КомиссияНалоговыйУчет" id="126">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>Top</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>КомиссияНалоговыйУчет</DataPath>
+											<RowPictureDataPath>КомиссияНалоговыйУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="КомиссияНалоговыйУчетКонтекстноеМеню" id="127"/>
+											<AutoCommandBar name="КомиссияНалоговыйУчетКоманднаяПанель" id="128">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="КомиссияНалоговыйУчетРасширеннаяПодсказка" id="129"/>
+											<SearchStringAddition name="КомиссияНалоговыйУчетСтрокаПоиска" id="484">
+												<AdditionSource>
+													<Item>КомиссияНалоговыйУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияНалоговыйУчетСтрокаПоискаКонтекстноеМеню" id="485"/>
+												<ExtendedTooltip name="КомиссияНалоговыйУчетСтрокаПоискаРасширеннаяПодсказка" id="486"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="КомиссияНалоговыйУчетСостояниеПросмотра" id="487">
+												<AdditionSource>
+													<Item>КомиссияНалоговыйУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияНалоговыйУчетСостояниеПросмотраКонтекстноеМеню" id="488"/>
+												<ExtendedTooltip name="КомиссияНалоговыйУчетСостояниеПросмотраРасширеннаяПодсказка" id="489"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="КомиссияНалоговыйУчетУправлениеПоиском" id="490">
+												<AdditionSource>
+													<Item>КомиссияНалоговыйУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияНалоговыйУчетУправлениеПоискомКонтекстноеМеню" id="491"/>
+												<ExtendedTooltip name="КомиссияНалоговыйУчетУправлениеПоискомРасширеннаяПодсказка" id="492"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">КомиссияНалоговыйУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="КомиссияНалоговыйУчетПредставлениеНастройки" id="136">
+													<DataPath>КомиссияНалоговыйУчет.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияНалоговыйУчетПредставлениеНастройкиКонтекстноеМеню" id="137"/>
+													<ExtendedTooltip name="КомиссияНалоговыйУчетПредставлениеНастройкиРасширеннаяПодсказка" id="138"/>
+												</InputField>
+												<InputField name="КомиссияНалоговыйУчетЗначениеНастройки" id="139">
+													<DataPath>КомиссияНалоговыйУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияНалоговыйУчетЗначениеНастройкиКонтекстноеМеню" id="140"/>
+													<ExtendedTooltip name="КомиссияНалоговыйУчетЗначениеНастройкиРасширеннаяПодсказка" id="141"/>
+												</InputField>
+												<InputField name="КомиссияНалоговыйУчетДатаЗначения" id="142">
+													<DataPath>КомиссияНалоговыйУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияНалоговыйУчетДатаЗначенияКонтекстноеМеню" id="143"/>
+													<ExtendedTooltip name="КомиссияНалоговыйУчетДатаЗначенияРасширеннаяПодсказка" id="144"/>
+												</InputField>
+												<InputField name="КомиссияНалоговыйУчетДругиеДоговора" id="878">
+													<DataPath>КомиссияНалоговыйУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияНалоговыйУчетДругиеДоговораКонтекстноеМеню" id="879"/>
+													<ExtendedTooltip name="КомиссияНалоговыйУчетДругиеДоговораРасширеннаяПодсказка" id="880"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиКомиссииЕПС" id="616">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки комиссии ЕПС</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки комиссии ЕПС</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиКомиссииЕПСРасширеннаяПодсказка" id="617"/>
+									<ChildItems>
+										<Table name="КомиссияЕПС" id="618">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>КомиссияЕПС</DataPath>
+											<RowPictureDataPath>КомиссияЕПС.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<ContextMenu name="КомиссияЕПСКонтекстноеМеню" id="619"/>
+											<AutoCommandBar name="КомиссияЕПСКоманднаяПанель" id="620">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="КомиссияЕПСРасширеннаяПодсказка" id="621"/>
+											<SearchStringAddition name="КомиссияЕПССтрокаПоиска" id="622">
+												<AdditionSource>
+													<Item>КомиссияЕПС</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияЕПССтрокаПоискаКонтекстноеМеню" id="623"/>
+												<ExtendedTooltip name="КомиссияЕПССтрокаПоискаРасширеннаяПодсказка" id="624"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="КомиссияЕПССостояниеПросмотра" id="625">
+												<AdditionSource>
+													<Item>КомиссияЕПС</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияЕПССостояниеПросмотраКонтекстноеМеню" id="626"/>
+												<ExtendedTooltip name="КомиссияЕПССостояниеПросмотраРасширеннаяПодсказка" id="627"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="КомиссияЕПСУправлениеПоиском" id="628">
+												<AdditionSource>
+													<Item>КомиссияЕПС</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="КомиссияЕПСУправлениеПоискомКонтекстноеМеню" id="629"/>
+												<ExtendedTooltip name="КомиссияЕПСУправлениеПоискомРасширеннаяПодсказка" id="630"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">КомиссияЕПСВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="КомиссияЕПСПредставлениеНастройки" id="637">
+													<DataPath>КомиссияЕПС.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияЕПСПредставлениеНастройкиКонтекстноеМеню" id="638"/>
+													<ExtendedTooltip name="КомиссияЕПСПредставлениеНастройкиРасширеннаяПодсказка" id="639"/>
+												</InputField>
+												<InputField name="КомиссияЕПСЗначениеНастройки" id="640">
+													<DataPath>КомиссияЕПС.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияЕПСЗначениеНастройкиКонтекстноеМеню" id="641"/>
+													<ExtendedTooltip name="КомиссияЕПСЗначениеНастройкиРасширеннаяПодсказка" id="642"/>
+												</InputField>
+												<InputField name="КомиссияЕПСДатаЗначения" id="643">
+													<DataPath>КомиссияЕПС.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияЕПСДатаЗначенияКонтекстноеМеню" id="644"/>
+													<ExtendedTooltip name="КомиссияЕПСДатаЗначенияРасширеннаяПодсказка" id="645"/>
+												</InputField>
+												<InputField name="КомиссияЕПСДругиеДоговора" id="875">
+													<DataPath>КомиссияЕПС.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КомиссияЕПСДругиеДоговораКонтекстноеМеню" id="876"/>
+													<ExtendedTooltip name="КомиссияЕПСДругиеДоговораРасширеннаяПодсказка" id="877"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиЗакрытияСчетов" id="327">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Закрытия бухг.сч.</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки закрытия счетов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиЗакрытияСчетовРасширеннаяПодсказка" id="328"/>
+					<ChildItems>
+						<Pages name="НастройкиЗакрытияСчетовПоРегистрам" id="329">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки закрытия счетов по регистрам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки закрытия счетов по регистрам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="НастройкиЗакрытияСчетовПоРегистрамРасширеннаяПодсказка" id="330"/>
+							<Events>
+								<Event name="OnCurrentPageChange">НастройкиЗакрытияСчетовПоРегистрамПриСменеСтраницы</Event>
+							</Events>
+							<ChildItems>
+								<Page name="НастройкиЗакрытияСчетовБухгалтерскийУчет" id="331">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бухгалтерский учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки закрытия счетов бухгалтерский учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиЗакрытияСчетовБухгалтерскийУчетРасширеннаяПодсказка" id="332"/>
+									<ChildItems>
+										<Table name="ЗакрытияБухгалтерскийУчет" id="337">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ЗакрытияБухгалтерскийУчет</DataPath>
+											<RowPictureDataPath>ЗакрытияБухгалтерскийУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="ЗакрытияБухгалтерскийУчетКонтекстноеМеню" id="338"/>
+											<AutoCommandBar name="ЗакрытияБухгалтерскийУчетКоманднаяПанель" id="339"/>
+											<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетРасширеннаяПодсказка" id="340"/>
+											<SearchStringAddition name="ЗакрытияБухгалтерскийУчетСтрокаПоиска" id="529">
+												<AdditionSource>
+													<Item>ЗакрытияБухгалтерскийУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияБухгалтерскийУчетСтрокаПоискаКонтекстноеМеню" id="530"/>
+												<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетСтрокаПоискаРасширеннаяПодсказка" id="531"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ЗакрытияБухгалтерскийУчетСостояниеПросмотра" id="532">
+												<AdditionSource>
+													<Item>ЗакрытияБухгалтерскийУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияБухгалтерскийУчетСостояниеПросмотраКонтекстноеМеню" id="533"/>
+												<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетСостояниеПросмотраРасширеннаяПодсказка" id="534"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ЗакрытияБухгалтерскийУчетУправлениеПоиском" id="535">
+												<AdditionSource>
+													<Item>ЗакрытияБухгалтерскийУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияБухгалтерскийУчетУправлениеПоискомКонтекстноеМеню" id="536"/>
+												<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетУправлениеПоискомРасширеннаяПодсказка" id="537"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ЗакрытияБухгалтерскийУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ЗакрытияБухгалтерскийУчетПредставлениеНастройки" id="362">
+													<DataPath>ЗакрытияБухгалтерскийУчет.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияБухгалтерскийУчетПредставлениеНастройкиКонтекстноеМеню" id="363"/>
+													<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетПредставлениеНастройкиРасширеннаяПодсказка" id="364"/>
+												</InputField>
+												<InputField name="ЗакрытияБухгалтерскийУчетЗначениеНастройки" id="365">
+													<DataPath>ЗакрытияБухгалтерскийУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияБухгалтерскийУчетЗначениеНастройкиКонтекстноеМеню" id="366"/>
+													<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетЗначениеНастройкиРасширеннаяПодсказка" id="367"/>
+												</InputField>
+												<InputField name="ЗакрытияБухгалтерскийУчетДатаЗначения" id="368">
+													<DataPath>ЗакрытияБухгалтерскийУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияБухгалтерскийУчетДатаЗначенияКонтекстноеМеню" id="369"/>
+													<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетДатаЗначенияРасширеннаяПодсказка" id="370"/>
+												</InputField>
+												<InputField name="ЗакрытияБухгалтерскийУчетДругиеДоговора" id="884">
+													<DataPath>ЗакрытияБухгалтерскийУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияБухгалтерскийУчетДругиеДоговораКонтекстноеМеню" id="885"/>
+													<ExtendedTooltip name="ЗакрытияБухгалтерскийУчетДругиеДоговораРасширеннаяПодсказка" id="886"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиЗакрытияСчетовНалоговыйУчет" id="333">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Налоговый учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки закрытия счетов налоговый учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиЗакрытияСчетовНалоговыйУчетРасширеннаяПодсказка" id="334"/>
+									<ChildItems>
+										<Table name="ЗакрытияНалоговыйУчет" id="371">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ЗакрытияНалоговыйУчет</DataPath>
+											<RowPictureDataPath>ЗакрытияНалоговыйУчет.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="ЗакрытияНалоговыйУчетКонтекстноеМеню" id="372"/>
+											<AutoCommandBar name="ЗакрытияНалоговыйУчетКоманднаяПанель" id="373"/>
+											<ExtendedTooltip name="ЗакрытияНалоговыйУчетРасширеннаяПодсказка" id="374"/>
+											<SearchStringAddition name="ЗакрытияНалоговыйУчетСтрокаПоиска" id="538">
+												<AdditionSource>
+													<Item>ЗакрытияНалоговыйУчет</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияНалоговыйУчетСтрокаПоискаКонтекстноеМеню" id="539"/>
+												<ExtendedTooltip name="ЗакрытияНалоговыйУчетСтрокаПоискаРасширеннаяПодсказка" id="540"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ЗакрытияНалоговыйУчетСостояниеПросмотра" id="541">
+												<AdditionSource>
+													<Item>ЗакрытияНалоговыйУчет</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияНалоговыйУчетСостояниеПросмотраКонтекстноеМеню" id="542"/>
+												<ExtendedTooltip name="ЗакрытияНалоговыйУчетСостояниеПросмотраРасширеннаяПодсказка" id="543"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ЗакрытияНалоговыйУчетУправлениеПоиском" id="544">
+												<AdditionSource>
+													<Item>ЗакрытияНалоговыйУчет</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияНалоговыйУчетУправлениеПоискомКонтекстноеМеню" id="545"/>
+												<ExtendedTooltip name="ЗакрытияНалоговыйУчетУправлениеПоискомРасширеннаяПодсказка" id="546"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ЗакрытияНалоговыйУчетВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ЗакрытияНалоговыйУчетПредставлениеНастройки" id="396">
+													<DataPath>ЗакрытияНалоговыйУчет.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияНалоговыйУчетПредставлениеНастройкиКонтекстноеМеню" id="397"/>
+													<ExtendedTooltip name="ЗакрытияНалоговыйУчетПредставлениеНастройкиРасширеннаяПодсказка" id="398"/>
+												</InputField>
+												<InputField name="ЗакрытияНалоговыйУчетЗначениеНастройки" id="399">
+													<DataPath>ЗакрытияНалоговыйУчет.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияНалоговыйУчетЗначениеНастройкиКонтекстноеМеню" id="400"/>
+													<ExtendedTooltip name="ЗакрытияНалоговыйУчетЗначениеНастройкиРасширеннаяПодсказка" id="401"/>
+												</InputField>
+												<InputField name="ЗакрытияНалоговыйУчетДатаЗначения" id="402">
+													<DataPath>ЗакрытияНалоговыйУчет.ОтображаемаяДата</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияНалоговыйУчетДатаЗначенияКонтекстноеМеню" id="403"/>
+													<ExtendedTooltip name="ЗакрытияНалоговыйУчетДатаЗначенияРасширеннаяПодсказка" id="404"/>
+												</InputField>
+												<InputField name="ЗакрытияНалоговыйУчетДругиеДоговора" id="890">
+													<DataPath>ЗакрытияНалоговыйУчет.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияНалоговыйУчетДругиеДоговораКонтекстноеМеню" id="891"/>
+													<ExtendedTooltip name="ЗакрытияНалоговыйУчетДругиеДоговораРасширеннаяПодсказка" id="892"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиЗакрытияЕПС" id="646">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЕПС</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки закрытия ЕПС</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиЗакрытияЕПСРасширеннаяПодсказка" id="647"/>
+									<ChildItems>
+										<Table name="ЗакрытияЕПС" id="648">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ЗакрытияЕПС</DataPath>
+											<RowPictureDataPath>ЗакрытияЕПС.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<ContextMenu name="ЗакрытияЕПСКонтекстноеМеню" id="649"/>
+											<AutoCommandBar name="ЗакрытияЕПСКоманднаяПанель" id="650"/>
+											<ExtendedTooltip name="ЗакрытияЕПСРасширеннаяПодсказка" id="651"/>
+											<SearchStringAddition name="ЗакрытияЕПССтрокаПоиска" id="652">
+												<AdditionSource>
+													<Item>ЗакрытияЕПС</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияЕПССтрокаПоискаКонтекстноеМеню" id="653"/>
+												<ExtendedTooltip name="ЗакрытияЕПССтрокаПоискаРасширеннаяПодсказка" id="654"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ЗакрытияЕПССостояниеПросмотра" id="655">
+												<AdditionSource>
+													<Item>ЗакрытияЕПС</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияЕПССостояниеПросмотраКонтекстноеМеню" id="656"/>
+												<ExtendedTooltip name="ЗакрытияЕПССостояниеПросмотраРасширеннаяПодсказка" id="657"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ЗакрытияЕПСУправлениеПоиском" id="658">
+												<AdditionSource>
+													<Item>ЗакрытияЕПС</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ЗакрытияЕПСУправлениеПоискомКонтекстноеМеню" id="659"/>
+												<ExtendedTooltip name="ЗакрытияЕПСУправлениеПоискомРасширеннаяПодсказка" id="660"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ЗакрытияЕПСВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ЗакрытияЕПСПредставлениеНастройки" id="667">
+													<DataPath>ЗакрытияЕПС.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияЕПСПредставлениеНастройкиКонтекстноеМеню" id="668"/>
+													<ExtendedTooltip name="ЗакрытияЕПСПредставлениеНастройкиРасширеннаяПодсказка" id="669"/>
+												</InputField>
+												<InputField name="ЗакрытияЕПСЗначениеНастройки" id="670">
+													<DataPath>ЗакрытияЕПС.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияЕПСЗначениеНастройкиКонтекстноеМеню" id="671"/>
+													<ExtendedTooltip name="ЗакрытияЕПСЗначениеНастройкиРасширеннаяПодсказка" id="672"/>
+												</InputField>
+												<InputField name="ЗакрытияЕПСДатаЗначения" id="673">
+													<DataPath>ЗакрытияЕПС.ДатаЗначения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияЕПСДатаЗначенияКонтекстноеМеню" id="674"/>
+													<ExtendedTooltip name="ЗакрытияЕПСДатаЗначенияРасширеннаяПодсказка" id="675"/>
+												</InputField>
+												<InputField name="ЗакрытияЕПСДругиеДоговора" id="887">
+													<DataPath>ЗакрытияЕПС.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ЗакрытияЕПСДругиеДоговораКонтекстноеМеню" id="888"/>
+													<ExtendedTooltip name="ЗакрытияЕПСДругиеДоговораРасширеннаяПодсказка" id="889"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиФормированияСЧА" id="700">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СЧА</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки формирования СЧА</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиФормированияСЧАРасширеннаяПодсказка" id="701"/>
+					<ChildItems>
+						<Pages name="НастройкиФормированияСЧАПоРегистрам" id="702">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки формирования СЧАПо регистрам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки формирования СЧАПо регистрам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="НастройкиФормированияСЧАПоРегистрамРасширеннаяПодсказка" id="703"/>
+							<Events>
+								<Event name="OnCurrentPageChange">НастройкиФормированияСЧАПоРегистрамПриСменеСтраницы</Event>
+							</Events>
+							<ChildItems>
+								<Page name="НастройкиФормированияСЧАСтраница" id="704">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки формирования СЧА</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки формирования СЧАСтраница</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиФормированияСЧАСтраницаРасширеннаяПодсказка" id="705"/>
+									<ChildItems>
+										<Table name="ФормированияСЧА" id="706">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ФормированияСЧА</DataPath>
+											<RowPictureDataPath>ФормированияСЧА.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="ФормированияСЧАКонтекстноеМеню" id="707"/>
+											<AutoCommandBar name="ФормированияСЧАКоманднаяПанель" id="708"/>
+											<ExtendedTooltip name="ФормированияСЧАРасширеннаяПодсказка" id="709"/>
+											<SearchStringAddition name="ФормированияСЧАСтрокаПоиска" id="710">
+												<AdditionSource>
+													<Item>ФормированияСЧА</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ФормированияСЧАСтрокаПоискаКонтекстноеМеню" id="711"/>
+												<ExtendedTooltip name="ФормированияСЧАСтрокаПоискаРасширеннаяПодсказка" id="712"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ФормированияСЧАСостояниеПросмотра" id="713">
+												<AdditionSource>
+													<Item>ФормированияСЧА</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ФормированияСЧАСостояниеПросмотраКонтекстноеМеню" id="714"/>
+												<ExtendedTooltip name="ФормированияСЧАСостояниеПросмотраРасширеннаяПодсказка" id="715"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ФормированияСЧАУправлениеПоиском" id="716">
+												<AdditionSource>
+													<Item>ФормированияСЧА</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ФормированияСЧАУправлениеПоискомКонтекстноеМеню" id="717"/>
+												<ExtendedTooltip name="ФормированияСЧАУправлениеПоискомРасширеннаяПодсказка" id="718"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ФормированияСЧАВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ФормированияСЧАПредставлениеНастройки" id="725">
+													<DataPath>ФормированияСЧА.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ФормированияСЧАПредставлениеНастройкиКонтекстноеМеню" id="726"/>
+													<ExtendedTooltip name="ФормированияСЧАПредставлениеНастройкиРасширеннаяПодсказка" id="727"/>
+												</InputField>
+												<InputField name="ФормированияСЧАЗначениеНастройки" id="728">
+													<DataPath>ФормированияСЧА.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ФормированияСЧАЗначениеНастройкиКонтекстноеМеню" id="729"/>
+													<ExtendedTooltip name="ФормированияСЧАЗначениеНастройкиРасширеннаяПодсказка" id="730"/>
+												</InputField>
+												<InputField name="ФормированияСЧАДатаЗначения" id="731">
+													<DataPath>ФормированияСЧА.ДатаЗначения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ФормированияСЧАДатаЗначенияКонтекстноеМеню" id="732"/>
+													<ExtendedTooltip name="ФормированияСЧАДатаЗначенияРасширеннаяПодсказка" id="733"/>
+												</InputField>
+												<InputField name="ФормированияСЧАДругиеДоговора" id="903">
+													<DataPath>ФормированияСЧА.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="ФормированияСЧАДругиеДоговораКонтекстноеМеню" id="904"/>
+													<ExtendedTooltip name="ФормированияСЧАДругиеДоговораРасширеннаяПодсказка" id="905"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="НастройкиФормированияСЧАПоВидамЗадолженностиСтраница" id="734">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки формирования СЧА по видам задолженности</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки формирования СЧАПо видам задолженности страница</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НастройкиФормированияСЧАПоВидамЗадолженностиСтраницаРасширеннаяПодсказка" id="735"/>
+									<ChildItems>
+										<Table name="ФормированияСЧАПоВидамЗадолженности" id="736">
+											<Representation>Tree</Representation>
+											<ReadOnly>true</ReadOnly>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ФормированияСЧАПоВидамЗадолженности</DataPath>
+											<RowPictureDataPath>ФормированияСЧАПоВидамЗадолженности.Картинка</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ТипыНастроек9х16</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиКонтекстноеМеню" id="737"/>
+											<AutoCommandBar name="ФормированияСЧАПоВидамЗадолженностиКоманднаяПанель" id="738"/>
+											<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиРасширеннаяПодсказка" id="739"/>
+											<SearchStringAddition name="ФормированияСЧАПоВидамЗадолженностиСтрокаПоиска" id="740">
+												<AdditionSource>
+													<Item>ФормированияСЧАПоВидамЗадолженности</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиСтрокаПоискаКонтекстноеМеню" id="741"/>
+												<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиСтрокаПоискаРасширеннаяПодсказка" id="742"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ФормированияСЧАПоВидамЗадолженностиСостояниеПросмотра" id="743">
+												<AdditionSource>
+													<Item>ФормированияСЧАПоВидамЗадолженности</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиСостояниеПросмотраКонтекстноеМеню" id="744"/>
+												<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиСостояниеПросмотраРасширеннаяПодсказка" id="745"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ФормированияСЧАПоВидамЗадолженностиУправлениеПоиском" id="746">
+												<AdditionSource>
+													<Item>ФормированияСЧАПоВидамЗадолженности</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиУправлениеПоискомКонтекстноеМеню" id="747"/>
+												<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиУправлениеПоискомРасширеннаяПодсказка" id="748"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ФормированияСЧАПоВидамЗадолженностиВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ФормированияСЧАПоВидамЗадолженностиПредставлениеНастройки" id="755">
+													<DataPath>ФормированияСЧАПоВидамЗадолженности.ПредставлениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиПредставлениеНастройкиКонтекстноеМеню" id="756"/>
+													<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиПредставлениеНастройкиРасширеннаяПодсказка" id="757"/>
+												</InputField>
+												<InputField name="ФормированияСЧАПоВидамЗадолженностиЗначениеНастройки" id="758">
+													<DataPath>ФормированияСЧАПоВидамЗадолженности.ЗначениеНастройки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиЗначениеНастройкиКонтекстноеМеню" id="759"/>
+													<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиЗначениеНастройкиРасширеннаяПодсказка" id="760"/>
+												</InputField>
+												<InputField name="ФормированияСЧАПоВидамЗадолженностиДатаЗначения" id="761">
+													<DataPath>ФормированияСЧАПоВидамЗадолженности.ДатаЗначения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиДатаЗначенияКонтекстноеМеню" id="762"/>
+													<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиДатаЗначенияРасширеннаяПодсказка" id="763"/>
+												</InputField>
+												<InputField name="ФормированияСЧАПоВидамЗадолженностиДругиеДоговора" id="906">
+													<DataPath>ФормированияСЧАПоВидамЗадолженности.ДругиеДоговора</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="ФормированияСЧАПоВидамЗадолженностиДругиеДоговораКонтекстноеМеню" id="907"/>
+													<ExtendedTooltip name="ФормированияСЧАПоВидамЗадолженностиДругиеДоговораРасширеннаяПодсказка" id="908"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="РасчетныеНастройкиСтраница" id="764">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчетные настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчетные настройки страница</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="РасчетныеНастройкиСтраницаРасширеннаяПодсказка" id="765"/>
+					<ChildItems>
+						<InputField name="ДатаРасчетныхНастроек" id="807">
+							<DataPath>ДатаРасчетныхНастроек</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>На дату</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаРасчетныхНастроекКонтекстноеМеню" id="808"/>
+							<ExtendedTooltip name="ДатаРасчетныхНастроекРасширеннаяПодсказка" id="809"/>
+							<Events>
+								<Event name="OnChange">ДатаРасчетныхНастроекПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="РасчетныеНастройки" id="788">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>РасчетныеНастройки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РасчетныеНастройкиКонтекстноеМеню" id="789"/>
+							<AutoCommandBar name="РасчетныеНастройкиКоманднаяПанель" id="790"/>
+							<ExtendedTooltip name="РасчетныеНастройкиРасширеннаяПодсказка" id="791"/>
+							<SearchStringAddition name="РасчетныеНастройкиСтрокаПоиска" id="792">
+								<AdditionSource>
+									<Item>РасчетныеНастройки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РасчетныеНастройкиСтрокаПоискаКонтекстноеМеню" id="793"/>
+								<ExtendedTooltip name="РасчетныеНастройкиСтрокаПоискаРасширеннаяПодсказка" id="794"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РасчетныеНастройкиСостояниеПросмотра" id="795">
+								<AdditionSource>
+									<Item>РасчетныеНастройки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РасчетныеНастройкиСостояниеПросмотраКонтекстноеМеню" id="796"/>
+								<ExtendedTooltip name="РасчетныеНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="797"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РасчетныеНастройкиУправлениеПоиском" id="798">
+								<AdditionSource>
+									<Item>РасчетныеНастройки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РасчетныеНастройкиУправлениеПоискомКонтекстноеМеню" id="799"/>
+								<ExtendedTooltip name="РасчетныеНастройкиУправлениеПоискомРасширеннаяПодсказка" id="800"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="РасчетныеНастройкиНастройка" id="801">
+									<DataPath>РасчетныеНастройки.Настройка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РасчетныеНастройкиНастройкаКонтекстноеМеню" id="802"/>
+									<ExtendedTooltip name="РасчетныеНастройкиНастройкаРасширеннаяПодсказка" id="803"/>
+								</InputField>
+								<InputField name="РасчетныеНастройкиЗначение" id="804">
+									<DataPath>РасчетныеНастройки.Значение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РасчетныеНастройкиЗначениеКонтекстноеМеню" id="805"/>
+									<ExtendedTooltip name="РасчетныеНастройкиЗначениеРасширеннаяПодсказка" id="806"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СчетДоверительногоУправления" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет доверительного управления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Общие" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Организация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АктивыБухгалтерскийУчет" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активы бухгалтерский учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчетныйАктив" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетный актив</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.УчетныеАктивы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АктивыНалоговыйУчет" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активы налоговый учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчетныйАктив" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетный актив</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.УчетныеАктивы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КомиссияБухгалтерскийУчет" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комиссия бухгалтерский учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидЗадолженности" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид задолженности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КомиссияНалоговыйУчет" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комиссия налоговый учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидЗадолженности" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид задолженности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="БухгалтерскийУчетНастройки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бухгалтерский учет настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="НалоговыйУчет" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налоговый учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЗакрытияБухгалтерскийУчет" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытия бухгалтерский учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантЗакрытия" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант закрытия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВариантыЗакрытияБухгалтерскихСчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЗакрытияНалоговыйУчет" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытия налоговый учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантЗакрытия" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант закрытия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВариантыЗакрытияБухгалтерскихСчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АктивыЕПС" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активы ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчетныйАктив" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетный актив</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.УчетныеАктивыЕПС</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЕПС" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КомиссияЕПС" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комиссия ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидЗадолженности" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид задолженности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЗакрытияЕПС" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытия ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантЗакрытия" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант закрытия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВариантыЗакрытияБухгалтерскихСчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресТаблицыНастроекВидимости" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес таблицы настроек видимости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КлассификацияПоСрочностиЕПС" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Классификация по срочности ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчетныйАктив" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетный актив</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.УчетныеАктивы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресМассиваОбновленныхСтраниц" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес массива обновленных страниц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормированияСЧА" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формирования СЧА</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ФормированияСЧАПоВидамЗадолженности" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формирования СЧАПо видам задолженности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Картинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяНастройки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеНастройки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНастройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДатаЗначения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтображаемаяДата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата значения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидЗадолженности" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид задолженности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДругиеДоговора" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Другие договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="РасчетныеНастройки" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчетные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Настройка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Значение" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДатаРасчетныхНастроек" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расчетных настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьВозможностьУчитыватьЦенныеБумагиПоАмортизированнойСтоимости" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть возможность учитывать ценные бумаги по амортизированной стоимости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СчетаКлиента" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КлиентДУ" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПаевыеИнвестиционныеФонды</v8:Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФлагРазворачивания" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Флаг разворачивания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СкрыватьНеиспользуемыеГруппыАктивов" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрывать неиспользуемые группы активов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СчетаКлиентаБезПН" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Развернуть" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть активы бухгалтерский учет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Развернуть</Action>
+		</Command>
+		<Command name="Свернуть" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть общие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Свернуть</Action>
+		</Command>
+	</Commands>
+</Form>

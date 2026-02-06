@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КомандаПоказатьДоговор" id="61">
+				<Type>CommandBarButton</Type>
+				<CommandName>InformationRegister.ИсполнителиПоДенежнымСредствамСобственные.Command.ПоказатьДоговор</CommandName>
+				<ExtendedTooltip name="КомандаПоказатьДоговорРасширеннаяПодсказка" id="62"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаИсполнительЗакрыт" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа исполнитель закрыт</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа исполнитель закрыт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИсполнительЗакрытРасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<CheckBoxField name="ИсполнительЗакрыт" id="40">
+					<DataPath>ИсполнительЗакрыт</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Закрыт</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИсполнительЗакрытКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ИсполнительЗакрытРасширеннаяПодсказка" id="42"/>
+					<Events>
+						<Event name="OnChange">ИсполнительЗакрытПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ДатаЗакрытия" id="48">
+					<DataPath>Запись.ДатаЗакрытия</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ДатаЗакрытияКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ДатаЗакрытияРасширеннаяПодсказка" id="50"/>
+				</InputField>
+				<Button name="КомандаЗакрытьДоговор" id="59">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.КомандаЗакрытьДоговор</CommandName>
+					<ExtendedTooltip name="КомандаЗакрытьДоговорРасширеннаяПодсказка" id="60"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="57">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<InputField name="СчетДоверительногоУправления" id="10">
+					<DataPath>Запись.СчетДоверительногоУправления</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет д/у</v8:content>
+						</v8:item>
+					</Title>
+					<Width>40</Width>
+					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<LabelField name="Организация" id="4">
+					<DataPath>Запись.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="РасчетныйСчет" id="13">
+			<DataPath>Запись.РасчетныйСчет</DataPath>
+			<ContextMenu name="РасчетныйСчетКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="РасчетныйСчетРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="OnChange">РасчетныйСчетПриИзменении</Event>
+			</Events>
+		</InputField>
+		<LabelField name="Договор" id="54">
+			<DataPath>Запись.РасчетныйСчет.Договор</DataPath>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ДоговорКонтекстноеМеню" id="55"/>
+			<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="56"/>
+		</LabelField>
+		<InputField name="Примечание" id="51">
+			<DataPath>Запись.Примечание</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ПримечаниеКонтекстноеМеню" id="52"/>
+			<ExtendedTooltip name="ПримечаниеРасширеннаяПодсказка" id="53"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ИсполнителиПоДенежнымСредствамСобственные</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИсполнительЗакрыт" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполнитель закрыт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаЗакрытьДоговор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть договор \ исполнителей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗакрытьДоговор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

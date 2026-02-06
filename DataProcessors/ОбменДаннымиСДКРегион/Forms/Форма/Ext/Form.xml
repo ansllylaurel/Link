@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаВыгрузить" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаВыгрузить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыгрузитьРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаКомандаЗагрузить" id="12">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаЗагрузить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Загрузить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаКомандаЗагрузитьРасширеннаяПодсказка" id="13"/>
+			</Button>
+			<Button name="ФормаКомандаВыгрузитьСверкуЗаявокЗаДень" id="14">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаВыгрузитьСверкуЗаявокЗаДень</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыгрузитьСверкуЗаявокЗаДеньРасширеннаяПодсказка" id="15"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="19">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<InputField name="Дата" id="3">
+					<DataPath>Объект.Дата</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="5"/>
+				</InputField>
+				<LabelField name="Организация" id="6">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="8"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПаевойИнвестиционныйФонд" id="9">
+			<DataPath>Объект.ПаевойИнвестиционныйФонд</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ПаевойИнвестиционныйФондКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="ПаевойИнвестиционныйФондРасширеннаяПодсказка" id="11"/>
+		</InputField>
+		<InputField name="Задача" id="16">
+			<DataPath>Объект.Задача</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ЗадачаКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ЗадачаРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="КаталогОбмена" id="21">
+			<DataPath>Объект.КаталогОбмена</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КаталогОбменаКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="КаталогОбменаРасширеннаяПодсказка" id="23"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ОбменДаннымиСДКРегион</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.Дата</Field>
+				<Field>Объект.Организация</Field>
+				<Field>Объект.ПаевойИнвестиционныйФонд</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="МакетXSD" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макет XSD</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыгрузить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выгрузить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыгрузить</Action>
+		</Command>
+		<Command name="КомандаЗагрузить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда загрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда загрузить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗагрузить</Action>
+		</Command>
+		<Command name="КомандаВыгрузитьСверкуЗаявокЗаДень" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить сверку заявок за день</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выгрузить сверку заявок за день</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыгрузитьСверкуЗаявокЗаДень</Action>
+		</Command>
+	</Commands>
+</Form>

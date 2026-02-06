@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>НаборДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦеннаяБумага</dataPath>
+			<field>ЦеннаяБумага</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидУчета</dataPath>
+			<field>ВидУчета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтрокаПартии</dataPath>
+			<field>СтрокаПартии</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРынокРуб</dataPath>
+			<field>СуммаРынокРуб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость ЦБ (без НКД)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партия</dataPath>
+			<field>Партия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма_налогРуб</dataPath>
+			<field>Сумма_налогРуб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость ЦБ (без НКД)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРынок</dataPath>
+			<field>СуммаРынок</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рынок</dataPath>
+			<field>Рынок</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчетныйАктивЕПС</dataPath>
+			<field>УчетныйАктивЕПС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаКотировки</dataPath>
+			<field>ВалютаКотировки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НКД_налог</dataPath>
+			<field>НКД_налог</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаКупонаРынок</dataPath>
+			<field>СуммаКупонаРынок</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НКД_налогРуб</dataPath>
+			<field>НКД_налогРуб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>НКД</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаКупонаРынокРуб</dataPath>
+			<field>СуммаКупонаРынокРуб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>НКД</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма_налог</dataPath>
+			<field>Сумма_налог</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма_ЕПС</dataPath>
+			<field>Сумма_ЕПС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма_ЕПС_руб</dataPath>
+			<field>Сумма_ЕПС_руб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость ЦБ (без НКД)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НКД_ЕПС</dataPath>
+			<field>НКД_ЕПС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НКД_ЕПС_руб</dataPath>
+			<field>НКД_ЕПС_руб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>НКД</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦеннаяБумагаЭмитент</dataPath>
+			<field>ЦеннаяБумагаЭмитент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эмитент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегНомер</dataPath>
+			<field>РегНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ гос. регистрации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номинал</dataPath>
+			<field>Номинал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номинальная стоимость</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦеннойБумаги</dataPath>
+			<field>ВидЦеннойБумаги</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Язык</dataPath>
+			<field>Язык</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрФизЛицо</dataPath>
+			<field>ЮрФизЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВТомЧислеРезервы</dataPath>
+			<field>ВТомЧислеРезервы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В том числе резерв</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВТомЧислеРезервыРынок</dataPath>
+			<field>ВТомЧислеРезервыРынок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В том числе резерв</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<dataSource>НаборДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыводЦенныхБумагЦенныеБумаги.ЦеннаяБумага КАК ЦеннаяБумага,
+	ВыводЦенныхБумагЦенныеБумаги.Количество КАК Количество,
+	ВыводЦенныхБумагЦенныеБумаги.ВалютаКотировки КАК ВалютаКотировки,
+	ВыводЦенныхБумагЦенныеБумаги.СуммаРынокВВалютеУчета КАК СуммаРынокРуб,
+	ВыводЦенныхБумагЦенныеБумаги.СуммаКупонаРынокВВалютеУчета КАК СуммаКупонаРынокРуб,
+	ВыводЦенныхБумагЦенныеБумаги.СуммаРынок КАК СуммаРынок,
+	ВыводЦенныхБумагЦенныеБумаги.СуммаКупонаРынок КАК СуммаКупонаРынок,
+	ВыводЦенныхБумагЦенныеБумаги.Ссылка КАК Ссылка
+ПОМЕСТИТЬ _Рынок
+ИЗ
+	Документ.ВыводЦенныхБумаг.ЦенныеБумаги КАК ВыводЦенныхБумагЦенныеБумаги
+ГДЕ
+	ВыводЦенныхБумагЦенныеБумаги.Ссылка В(&amp;ДокВывод)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	БухПартииЦенныхБумагОбороты.ЦеннаяБумага КАК ЦеннаяБумага,
+	СУММА(БухПартииЦенныхБумагОбороты.КоличествоРасход) КАК КоличествоРасход,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьРасход) КАК Сумма_налог,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьКупонаРасход + БухПартииЦенныхБумагОбороты.ПереоценкаКупонаРасход) КАК НКД_налог,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьВВалютеУчетаРасход) КАК Сумма_налогРуб,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьКупонаВВалютеУчетаРасход + БухПартииЦенныхБумагОбороты.ПереоценкаКупонаВВалютеУчетаРасход) КАК НКД_налогРуб,
+	БухПартииЦенныхБумагОбороты.Регистратор КАК Регистратор
+ПОМЕСТИТЬ _Налог
+ИЗ
+	РегистрНакопления.БухПартииЦенныхБумаг.Обороты(&amp;ДатаНачало, &amp;ДатаКонец, Регистратор, ВидУчета = ЗНАЧЕНИЕ(Перечисление.ВидыУчета.НалоговыйУчет)) КАК БухПартииЦенныхБумагОбороты
+ГДЕ
+	БухПартииЦенныхБумагОбороты.Регистратор В(&amp;ДокВывод)
+
+СГРУППИРОВАТЬ ПО
+	БухПартииЦенныхБумагОбороты.ЦеннаяБумага,
+	БухПартииЦенныхБумагОбороты.ПереоценкаКупонаВВалютеУчетаРасход,
+	БухПартииЦенныхБумагОбороты.Регистратор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	БухПартииЦенныхБумагОбороты.ЦеннаяБумага КАК ЦеннаяБумага,
+	СУММА(БухПартииЦенныхБумагОбороты.КоличествоРасход) КАК КоличествоРасход,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьРасход + БухПартииЦенныхБумагОбороты.ПереоценкаРасход + БухПартииЦенныхБумагОбороты.ДисконтПремияНачисленныйРасход + БухПартииЦенныхБумагОбороты.КорректировкаЭСПРасход + БухПартииЦенныхБумагОбороты.РазницаПервоначальногоПризнанияНеНаблюдаемыеДанныеРасход) КАК Сумма_ЕПС,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьКупонаРасход + БухПартииЦенныхБумагОбороты.ПереоценкаКупонаРасход) КАК НКД_ЕПС,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьВВалютеУчетаРасход + БухПартииЦенныхБумагОбороты.ПереоценкаВВалютеУчетаРасход + БухПартииЦенныхБумагОбороты.ДисконтПремияНачисленныйВВалютеУчетаРасход + БухПартииЦенныхБумагОбороты.КорректировкаЭСПВВалютеУчетаРасход + БухПартииЦенныхБумагОбороты.РазницаПервоначальногоПризнанияНеНаблюдаемыеДанныеВВалютеУчетаРасход) КАК Сумма_ЕПС_руб,
+	СУММА(БухПартииЦенныхБумагОбороты.СтоимостьКупонаВВалютеУчетаРасход + БухПартииЦенныхБумагОбороты.ПереоценкаКупонаВВалютеУчетаРасход) КАК НКД_ЕПС_руб,
+	БухПартииЦенныхБумагОбороты.Регистратор КАК Регистратор,
+	БухПартииЦенныхБумагОбороты.СуммаРезервовПодОбесценениеРасход КАК ВТомЧислеРезервы
+ПОМЕСТИТЬ _ЕПС
+ИЗ
+	РегистрНакопления.БухПартииЦенныхБумаг.Обороты(&amp;ДатаНачало, &amp;ДатаКонец, Регистратор, ВидУчета = ЗНАЧЕНИЕ(Перечисление.ВидыУчета.ЕдиныйБухгалтерскийУчет)) КАК БухПартииЦенныхБумагОбороты
+ГДЕ
+	БухПартииЦенныхБумагОбороты.Регистратор В(&amp;ДокВывод)
+
+СГРУППИРОВАТЬ ПО
+	БухПартииЦенныхБумагОбороты.ЦеннаяБумага,
+	БухПартииЦенныхБумагОбороты.Регистратор,
+	БухПартииЦенныхБумагОбороты.СуммаРезервовПодОбесценениеРасход
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РеквизитыЮридическихЛицСрезПоследних.КраткоеНаименованиеПоУставу КАК ЦеннаяБумагаЭмитент,
+	_Рынок.ЦеннаяБумага КАК ЦеннаяБумага,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(_Рынок.ЦеннаяБумага) = ТИП(Справочник.Облигации)
+			ТОГДА НоминалыЦенныхБумагСрезПоследних.Номинал
+		КОГДА ТИПЗНАЧЕНИЯ(_Рынок.ЦеннаяБумага) = ТИП(Справочник.Акции)
+			ТОГДА ВЫРАЗИТЬ(_Рынок.ЦеннаяБумага КАК Справочник.Акции).Номинал
+	КОНЕЦ КАК Номинал,
+	_Рынок.ВалютаКотировки КАК ВалютаКотировки,
+	_Рынок.Количество КАК Количество,
+	_Рынок.СуммаРынок КАК СуммаРынок,
+	_Рынок.СуммаРынокРуб КАК СуммаРынокРуб,
+	_Рынок.СуммаКупонаРынок КАК СуммаКупонаРынок,
+	_Рынок.СуммаКупонаРынокРуб КАК СуммаКупонаРынокРуб,
+	ЕСТЬNULL(_Налог.Сумма_налог, 0) КАК Сумма_налог,
+	ЕСТЬNULL(_Налог.Сумма_налогРуб, 0) КАК Сумма_налогРуб,
+	ЕСТЬNULL(_Налог.НКД_налог, 0) КАК НКД_налог,
+	ЕСТЬNULL(_Налог.НКД_налогРуб, 0) КАК НКД_налогРуб,
+	ЕСТЬNULL(_ЕПС.Сумма_ЕПС, 0) КАК Сумма_ЕПС,
+	ЕСТЬNULL(_ЕПС.Сумма_ЕПС_руб, 0) - ЕСТЬNULL(_ЕПС.ВТомЧислеРезервы, 0) КАК Сумма_ЕПС_руб,
+	ЕСТЬNULL(_ЕПС.НКД_ЕПС, 0) КАК НКД_ЕПС,
+	ЕСТЬNULL(_ЕПС.НКД_ЕПС_руб, 0) КАК НКД_ЕПС_руб,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(_Рынок.ЦеннаяБумага) = ТИП(Справочник.Облигации)
+			ТОГДА "Облигация"
+		КОГДА ТИПЗНАЧЕНИЯ(_Рынок.ЦеннаяБумага) = ТИП(Справочник.Акции)
+			ТОГДА "Акция"
+		КОГДА ТИПЗНАЧЕНИЯ(_Рынок.ЦеннаяБумага) = ТИП(Справочник.Паи)
+			ТОГДА "Пай"
+		КОГДА ТИПЗНАЧЕНИЯ(_Рынок.ЦеннаяБумага) = ТИП(Справочник.ИпотечныеСертификатыУчастия)
+			ТОГДА "ИСУ"
+		ИНАЧЕ ""
+	КОНЕЦ КАК ВидЦеннойБумаги,
+	_Рынок.ЦеннаяБумага.ГосударственныйРегистрационныйНомер КАК РегНомер,
+	ЕСТЬNULL(_ЕПС.ВТомЧислеРезервы, 0) КАК ВТомЧислеРезервы,
+	ЕСТЬNULL(_ЕПС.ВТомЧислеРезервы, 0) КАК ВТомЧислеРезервыРынок
+ИЗ
+	_Рынок КАК _Рынок
+		ЛЕВОЕ СОЕДИНЕНИЕ _Налог КАК _Налог
+		ПО _Рынок.ЦеннаяБумага = _Налог.ЦеннаяБумага
+			И _Рынок.Ссылка = _Налог.Регистратор
+		ЛЕВОЕ СОЕДИНЕНИЕ _ЕПС КАК _ЕПС
+		ПО _Рынок.ЦеннаяБумага = _ЕПС.ЦеннаяБумага
+			И _Рынок.Ссылка = _ЕПС.Регистратор
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НоминалыЦенныхБумаг.СрезПоследних({(&amp;ДатаКонец)}, ) КАК НоминалыЦенныхБумагСрезПоследних
+		ПО _Рынок.ЦеннаяБумага = НоминалыЦенныхБумагСрезПоследних.ЦеннаяБумага
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛиц.СрезПоследних(&amp;ДатаКонец {(&amp;ДатаКонец)}, Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)) КАК РеквизитыЮридическихЛицСрезПоследних
+		ПО _Рынок.ЦеннаяБумага.Эмитент.ЮрФизЛицо = РеквизитыЮридическихЛицСрезПоследних.ЮрФизЛицо</query>
+	</dataSet>
+	<totalField>
+		<dataPath>НКД_ЕПС</dataPath>
+		<expression>Сумма(НКД_ЕПС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НКД_ЕПС_руб</dataPath>
+		<expression>Сумма(НКД_ЕПС_руб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НКД_налог</dataPath>
+		<expression>Сумма(НКД_налог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НКД_налогРуб</dataPath>
+		<expression>Сумма(НКД_налогРуб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма_ЕПС</dataPath>
+		<expression>Сумма(Сумма_ЕПС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма_ЕПС_руб</dataPath>
+		<expression>Сумма(Сумма_ЕПС_руб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма_налог</dataPath>
+		<expression>Сумма(Сумма_налог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма_налогРуб</dataPath>
+		<expression>Сумма(Сумма_налогРуб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаКупонаРынок</dataPath>
+		<expression>Сумма(СуммаКупонаРынок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаКупонаРынокРуб</dataPath>
+		<expression>Сумма(СуммаКупонаРынокРуб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаРынок</dataPath>
+		<expression>Сумма(СуммаРынок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаРынокРуб</dataPath>
+		<expression>Сумма(СуммаРынокРуб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВТомЧислеРезервы</dataPath>
+		<expression>Сумма(ВТомЧислеРезервы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВТомЧислеРезервыРынок</dataPath>
+		<expression>Сумма(ВТомЧислеРезервыРынок)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДокВывод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Док вывод</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ПогашениеКупона</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ВыводЦенныхБумаг</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ПереоценкаЦенныхБумаг</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ПоставкаЦенныхБумаг</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.СделкаРЕПО</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ПогашениеЦеннойБумаги</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.СнятиеЦеннойБумагиСУчета</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.Оплата</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ИсполнениеОбязательствПоСделке</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.РегистрацияСуммПогашенийНеИсполненныхВСрок</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.СписаниеЦеннойБумаги</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ЗакрытиеБухгалтерскихСчетов</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.Сделка</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ОтменаСделки</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.КонвертацияЦенныхБумаг</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.КорректировкаРегистров</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ВводЦенныхБумаг</v8:Type>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЦеннаяБумагаЭмитент</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ЦеннаяБумага</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ЦеннаяБумага</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЦеннаяБумага</dcsat:field>
+				<dcsat:expression>ЦеннаяБумага</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЦеннаяБумагаЭмитент</dcsat:name>
+			<dcsat:expression>Представление(ЦеннаяБумагаЭмитент)</dcsat:expression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>ЦеннаяБумагаЭмитент</field>
+		<template>Макет1</template>
+	</fieldTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование имущества</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЦеннаяБумагаЭмитент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидЦеннойБумаги</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Номинал</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РегНомер</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Передано имущество по балансовой стоимости</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма_ЕПС_руб</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВТомЧислеРезервы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НКД_ЕПС_руб</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Передано имущество по налоговому учету</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма_налогРуб</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НКД_налогРуб</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Передано имущество по рыночной стоимости</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаРынокРуб</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВТомЧислеРезервыРынок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаКупонаРынокРуб</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаКонец</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачало</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДокВывод</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

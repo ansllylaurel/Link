@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="35"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+						<Event name="ChoiceProcessing">ДатаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПаевойИнвестиционныйФонд" id="10">
+			<DataPath>Объект.ПаевойИнвестиционныйФонд</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПаевойИнвестиционныйФондКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПаевойИнвестиционныйФондРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">ПаевойИнвестиционныйФондПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="СчетДоверительногоУправления" id="40">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет д/у</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="42"/>
+			<Events>
+				<Event name="ChoiceProcessing">СчетДоверительногоУправленияОбработкаВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="Пайщик" id="16">
+			<DataPath>Объект.Пайщик</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПайщикКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ПайщикРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="Заявка" id="13">
+			<DataPath>Объект.Заявка</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ЗаявкаКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ЗаявкаРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="OnChange">ЗаявкаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ПоступлениеДенежныхСредств" id="48">
+			<DataPath>Объект.ПоступлениеДенежныхСредств</DataPath>
+			<ContextMenu name="ПоступлениеДенежныхСредствКонтекстноеМеню" id="49"/>
+			<ExtendedTooltip name="ПоступлениеДенежныхСредствРасширеннаяПодсказка" id="50"/>
+			<Events>
+				<Event name="OnChange">ПоступлениеДенежныхСредствПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаСумма" id="43">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСуммаРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<InputField name="Сумма" id="19">
+					<DataPath>Объект.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СуммаКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="21"/>
+					<Events>
+						<Event name="OnChange">СуммаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelDecoration name="ДекорацияВалюта" id="45">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>руб.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияВалютаКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ДекорацияВалютаРасширеннаяПодсказка" id="47"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРасчетнаяСтоимостьПая" id="83">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа расчетная стоимость пая</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа расчетная стоимость пая</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРасчетнаяСтоимостьПаяРасширеннаяПодсказка" id="84"/>
+			<ChildItems>
+				<InputField name="РасчетнаяСтоимостьПая" id="69">
+					<DataPath>РасчетнаяСтоимостьПая</DataPath>
+					<ContextMenu name="РасчетнаяСтоимостьПаяКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="РасчетнаяСтоимостьПаяРасширеннаяПодсказка" id="71"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияВалютаРасчетнойСтоимостиПая" id="85">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>руб.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияВалютаРасчетнойСтоимостиПаяКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="ДекорацияВалютаРасчетнойСтоимостиПаяРасширеннаяПодсказка" id="87"/>
+				</LabelDecoration>
+				<LabelField name="ДатаРасчетнойСтоимостиПая" id="88">
+					<DataPath>ДатаРасчетнойСтоимостиПая</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>на дату</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаРасчетнойСтоимостиПаяКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="ДатаРасчетнойСтоимостиПаяРасширеннаяПодсказка" id="90"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНадбавка" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надбавка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надбавка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНадбавкаРасширеннаяПодсказка" id="62"/>
+			<ChildItems>
+				<InputField name="ПроцентНадбавки" id="63">
+					<DataPath>СтавкаНадбавки</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПроцентНадбавкиКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ПроцентНадбавкиРасширеннаяПодсказка" id="65"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияПроцентНадбавки" id="75">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>%</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПроцентНадбавкиКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="ДекорацияПроцентНадбавкиРасширеннаяПодсказка" id="77"/>
+				</LabelDecoration>
+				<InputField name="СуммаНадбавки" id="58">
+					<DataPath>Объект.СуммаНадбавки</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СуммаНадбавкиКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="СуммаНадбавкиРасширеннаяПодсказка" id="60"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияВалютаНадбавки" id="66">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>руб.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияВалютаНадбавкиКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="ДекорацияВалютаНадбавкиРасширеннаяПодсказка" id="68"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="РаспорядительнаяЗаписка" id="55">
+			<ContextMenu name="РаспорядительнаяЗапискаКонтекстноеМеню" id="56"/>
+			<ExtendedTooltip name="РаспорядительнаяЗапискаРасширеннаяПодсказка" id="57"/>
+		</InputField>
+		<UsualGroup name="ГруппаКоличество" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа количество</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа количество</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКоличествоРасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<InputField name="Количество" id="22">
+					<DataPath>Объект.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КоличествоКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="КоличествоРасширеннаяПодсказка" id="24"/>
+				</InputField>
+				<Button name="РассчитатьКоличество" id="53">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.РассчитатьКоличествоПаевИСуммуНадбавки</CommandName>
+					<ExtendedTooltip name="РассчитатьКоличествоРасширеннаяПодсказка" id="54"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Основание" id="25">
+			<DataPath>Объект.Основание</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<InputHint>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомление регистратора</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="ОснованиеКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ОснованиеРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<UsualGroup name="ГруппаПодвалФормы" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалФормыРасширеннаяПодсказка" id="39"/>
+			<ChildItems>
+				<LabelField name="Ответственный" id="28">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<InputField name="Комментарий" id="31">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="33"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЗачислениеПаев</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ПрименяетсяНадбавка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применяется надбавка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтавкаНадбавки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ставка надбавки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="РасчетнаяСтоимостьПая" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая стоимость пая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ДатаРасчетнойСтоимостиПая" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расчетной стоимости пая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РассчитатьКоличествоПаевИСуммуНадбавки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать количество паев и сумму надбавки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РассчитатьКоличествоПаевИСуммуНадбавки</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

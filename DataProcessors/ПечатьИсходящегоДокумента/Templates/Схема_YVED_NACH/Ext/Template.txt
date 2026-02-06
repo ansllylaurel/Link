@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xserializer="http://www.it.ru/Schemas/Avior/XSerializer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:av="http://www.it.ru/Schemas/Avior/УРКИ" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.it.ru/Schemas/Avior/УРКИ" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="УведомлениеОНачалеИспользованияЭлектронныхДокументов">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Files">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="File">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="Name" type="xs:string" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="НомерУведомления" type="xs:string" />
+        <xs:element name="ДатаУведомления" type="xs:date" />
+        <xs:element name="Раздел_СведенияОбУчастникеРынкаКолИнвест">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ВидУчастника">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Код" type="xs:string" />
+                    <xs:element name="Описание" type="xs:string" />
+                    <xs:element name="Активно" type="xs:boolean" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ПолнФирмНаим" type="xs:string" />
+              <xs:element name="ОГРН_1" type="xs:string" />
+              <xs:element name="ИНН_1" type="xs:string" />
+              <xs:element name="НомерЛицензииКолИнвест" type="xs:string" />
+              <xs:element name="ДатаПредостЛицензии" type="xs:date" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Раздел_СведОНачИспользованияЭДО">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ДатаНачИспользЭДО" type="xs:date" />
+              <xs:element name="ПолнФирмНаимФИО" type="xs:string" />
+              <xs:element name="ОГРН_2" type="xs:string" />
+              <xs:element name="ИНН_2" type="xs:string" />
+              <xs:element name="Примечание" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ПодписьУполномоченногоЛица">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ФИОУполнЛица" type="xs:string" />
+              <xs:element name="ДолжностьУполнЛица" type="xs:string" />
+              <xs:element name="КонтактныйТелефонУполнЛица" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="СопроводительноеПисьмо">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ПолноеНаименование" type="xs:string" />
+              <xs:element name="КраткоеНаименование" type="xs:string" />
+              <xs:element name="ФИОРуководителя" type="xs:string" />
+              <xs:element name="ИНН" type="xs:string" />
+              <xs:element name="ОГРН" type="xs:string" />
+              <xs:element name="АдресМестаНахождения" type="xs:string" />
+              <xs:element name="АдресЭП" type="xs:string" />
+              <xs:element name="КонтактныйТелефон" type="xs:string" />
+              <xs:element name="НомерРегистрации" type="xs:string" />
+              <xs:element name="ДатаРегистрации" type="xs:date" />
+              <xs:element name="КраткоеСодержаниеПисьма" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="appVersion" type="xs:string" use="required" />
+      <xs:attribute name="externalId" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

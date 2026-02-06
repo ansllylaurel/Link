@@ -1,0 +1,3121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Распоряжения</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<ButtonGroup name="ФормаГруппаОсновная" id="12">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа основная</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа основная</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаОсновнаяРасширеннаяПодсказка" id="13"/>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаОсновная" id="296">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="297"/>
+			<ChildItems>
+				<Page name="ГруппаМНО" id="298">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>МНО</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа МНО</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаМНОРасширеннаяПодсказка" id="299"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОсновныеРеквизиты" id="1">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа основные реквизиты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа основные реквизиты</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОсновныеРеквизитыРасширеннаяПодсказка" id="2"/>
+							<ChildItems>
+								<Button name="КомандаОбновитьРаспоряженияНаМНО" id="14">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.КомандаОбновитьРаспоряженияМНО</CommandName>
+									<ExtendedTooltip name="КомандаОбновитьРаспоряженияНаМНОРасширеннаяПодсказка" id="15"/>
+								</Button>
+								<InputField name="Дата" id="3">
+									<DataPath>Дата</DataPath>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="5"/>
+									<Events>
+										<Event name="OnChange">ДатаПриИзменении</Event>
+										<Event name="ChoiceProcessing">ДатаОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="Банк" id="6">
+									<DataPath>Банк</DataPath>
+									<ContextMenu name="БанкКонтекстноеМеню" id="7"/>
+									<ExtendedTooltip name="БанкРасширеннаяПодсказка" id="8"/>
+									<Events>
+										<Event name="OnChange">БанкПриИзменении</Event>
+										<Event name="StartChoice">БанкНачалоВыбора</Event>
+										<Event name="ChoiceProcessing">БанкОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="Процент" id="24">
+									<DataPath>Процент</DataPath>
+									<ContextMenu name="ПроцентКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="ПроцентРасширеннаяПодсказка" id="26"/>
+									<Events>
+										<Event name="OnChange">ПроцентПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="Срок" id="168">
+									<DataPath>Срок</DataPath>
+									<ContextMenu name="СрокКонтекстноеМеню" id="169"/>
+									<ExtendedTooltip name="СрокРасширеннаяПодсказка" id="170"/>
+									<Events>
+										<Event name="OnChange">СрокПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ДатаВозврата" id="27">
+									<DataPath>ДатаВозврата</DataPath>
+									<ContextMenu name="ДатаВозвратаКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ДатаВозвратаРасширеннаяПодсказка" id="29"/>
+									<Events>
+										<Event name="OnChange">ДатаВозвратаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelField name="Организация" id="9">
+									<DataPath>Организация</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Hiperlink>true</Hiperlink>
+									<ContextMenu name="ОрганизацияКонтекстноеМеню" id="10"/>
+									<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="11"/>
+								</LabelField>
+								<CommandBar name="ГруппаВсеДействия" id="255">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа все действия</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа все действия</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>11</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ExtendedTooltip name="ГруппаВсеДействияРасширеннаяПодсказка" id="256"/>
+									<ChildItems>
+										<Button name="ИзменитьФорму" id="257">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+											<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="258"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРаспоряженияМНОПлановые" id="18">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Распоряжения плановые</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа распоряжения МНОПлановые</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаРаспоряженияМНОПлановыеРасширеннаяПодсказка" id="19"/>
+							<ChildItems>
+								<Table name="РаспоряженияМНОПлановые" id="30">
+									<Representation>Tree</Representation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>РаспоряженияМНОПлановые</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>HierarchicalList</ExcludedCommand>
+										<ExcludedCommand>List</ExcludedCommand>
+										<ExcludedCommand>Tree</ExcludedCommand>
+									</CommandSet>
+									<ContextMenu name="РаспоряженияМНОПлановыеКонтекстноеМеню" id="31"/>
+									<AutoCommandBar name="РаспоряженияМНОПлановыеКоманднаяПанель" id="32">
+										<ChildItems>
+											<Button name="КомандаРаспоряженияМНОПлановыеРазвернутьВсе" id="130">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРаспоряженияМНОПлановыеРазвернутьВсе</CommandName>
+												<ExtendedTooltip name="КомандаРаспоряженияМНОПлановыеРазвернутьВсеРасширеннаяПодсказка" id="131"/>
+											</Button>
+											<Button name="КомандаРаспоряженияМНОПлановыеСвернутьВсе" id="132">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРаспоряженияМНОПлановыеСвернутьВсе</CommandName>
+												<ExtendedTooltip name="КомандаРаспоряженияМНОПлановыеСвернутьВсеРасширеннаяПодсказка" id="133"/>
+											</Button>
+											<Button name="КомандаРаспоряженияМНОПлановыеУстановитьВсеФлажки" id="85">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРаспоряженияМНОПлановыеУстановитьВсеФлажки</CommandName>
+												<ExtendedTooltip name="КомандаРаспоряженияМНОПлановыеУстановитьВсеФлажкиРасширеннаяПодсказка" id="86"/>
+											</Button>
+											<Button name="КомандаРаспоряженияМНОПлановыеСнятьВсеФлажки" id="83">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРаспоряженияМНОПлановыеСнятьВсеФлажки</CommandName>
+												<ExtendedTooltip name="КомандаРаспоряженияМНОПлановыеСнятьВсеФлажкиРасширеннаяПодсказка" id="84"/>
+											</Button>
+											<Button name="КомандаРаспоряженияМНОПлановыеСоздатьРаспоряженияМНО" id="119">
+												<Type>CommandBarButton</Type>
+												<UserVisible>
+													<xr:Common>true</xr:Common>
+													<xr:Value name="Role.АдминистрированиеСистемы">false</xr:Value>
+													<xr:Value name="Role.БазовыеПрава">false</xr:Value>
+													<xr:Value name="Role.БрокерскийУчет">false</xr:Value>
+													<xr:Value name="Role.БрокерскийУчетПросмотр">false</xr:Value>
+													<xr:Value name="Role.ИзменениеДатЗапретаРедактирования">false</xr:Value>
+													<xr:Value name="Role.ИмпортДанныхИзУК77">false</xr:Value>
+													<xr:Value name="Role.Классификаторы">false</xr:Value>
+													<xr:Value name="Role.КлассификаторыПросмотр">false</xr:Value>
+													<xr:Value name="Role.КлиентскийУчет">false</xr:Value>
+													<xr:Value name="Role.КлиентскийУчетПросмотр">false</xr:Value>
+													<xr:Value name="Role.КоллективныеИнвестиции">false</xr:Value>
+													<xr:Value name="Role.КоллективныеИнвестицииПросмотр">false</xr:Value>
+													<xr:Value name="Role.КонтрольИнвестиционныхДеклараций">false</xr:Value>
+													<xr:Value name="Role.КонтрольИнвестиционныхДекларацийПросмотр">false</xr:Value>
+													<xr:Value name="Role.КонтрольСтраховыхКомпаний">false</xr:Value>
+													<xr:Value name="Role.КонтрольСтраховыхКомпанийПросмотр">false</xr:Value>
+													<xr:Value name="Role.МногофирменныйУчет">false</xr:Value>
+													<xr:Value name="Role.НастройкаИАдминистрирование">false</xr:Value>
+													<xr:Value name="Role.НастройкаКлиентскойОтчетности">false</xr:Value>
+													<xr:Value name="Role.НастройкаКлиентскойОтчетностиПросмотр">false</xr:Value>
+													<xr:Value name="Role.НормативноСправочнаяИнформацияГруппыКомпаний">false</xr:Value>
+													<xr:Value name="Role.НормативноСправочнаяИнформацияГруппыКомпанийПросмотр">false</xr:Value>
+													<xr:Value name="Role.ОперацииБухгалтерии">false</xr:Value>
+													<xr:Value name="Role.ОперацииБухгалтерииПросмотр">false</xr:Value>
+													<xr:Value name="Role.ОперацииБэкОфиса">false</xr:Value>
+													<xr:Value name="Role.ОперацииБэкОфисаПросмотр">false</xr:Value>
+													<xr:Value name="Role.ОперацииФронтОфисаУправляющейКомпанииПросмотр">false</xr:Value>
+													<xr:Value name="Role.ПроведениеПоРегистрамБухгалтерии">false</xr:Value>
+													<xr:Value name="Role.ПроведениеПоРегистрамБэкОфиса">false</xr:Value>
+												</UserVisible>
+												<DefaultButton>true</DefaultButton>
+												<CommandName>Form.Command.КомандаРаспоряженияМНОПлановыеСоздатьРаспоряженияМНО</CommandName>
+												<ExtendedTooltip name="КомандаРаспоряженияМНОПлановыеСоздатьРаспоряженияМНОРасширеннаяПодсказка" id="120"/>
+											</Button>
+											<Button name="КомандаРаспоряженияМНОПлановыеОтображатьНачальныеОстатки" id="265">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРаспоряженияМНОПлановыеОтображатьНачальныеОстатки</CommandName>
+												<ExtendedTooltip name="КомандаРаспоряженияМНОПлановыеОтображатьНачальныеОстаткиРасширеннаяПодсказка" id="266"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="РаспоряженияМНОПлановыеРасширеннаяПодсказка" id="33"/>
+									<SearchStringAddition name="РаспоряженияМНОПлановыеСтрокаПоиска" id="34">
+										<AdditionSource>
+											<Item>РаспоряженияМНОПлановые</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="РаспоряженияМНОПлановыеСтрокаПоискаКонтекстноеМеню" id="35"/>
+										<ExtendedTooltip name="РаспоряженияМНОПлановыеСтрокаПоискаРасширеннаяПодсказка" id="36"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="РаспоряженияМНОПлановыеСостояниеПросмотра" id="37">
+										<AdditionSource>
+											<Item>РаспоряженияМНОПлановые</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="РаспоряженияМНОПлановыеСостояниеПросмотраКонтекстноеМеню" id="38"/>
+										<ExtendedTooltip name="РаспоряженияМНОПлановыеСостояниеПросмотраРасширеннаяПодсказка" id="39"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="РаспоряженияМНОПлановыеУправлениеПоиском" id="40">
+										<AdditionSource>
+											<Item>РаспоряженияМНОПлановые</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="РаспоряженияМНОПлановыеУправлениеПоискомКонтекстноеМеню" id="41"/>
+										<ExtendedTooltip name="РаспоряженияМНОПлановыеУправлениеПоискомРасширеннаяПодсказка" id="42"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">РаспоряженияМНОПлановыеВыбор</Event>
+									</Events>
+									<ChildItems>
+										<ColumnGroup name="ГруппаПараметрыРаспоряжения" id="179">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Распоряжения</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа параметры распоряжения</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ГруппаПараметрыРаспоряженияРасширеннаяПодсказка" id="180"/>
+											<ChildItems>
+												<ColumnGroup name="ГруппаФлажокСчетДУ" id="192">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа флажок счет ДУ</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа флажок счет ДУ</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>InCell</Group>
+													<ExtendedTooltip name="ГруппаФлажокСчетДУРасширеннаяПодсказка" id="193"/>
+													<ChildItems>
+														<CheckBoxField name="РаспоряженияМНОПлановыеФлажок" id="43">
+															<DataPath>РаспоряженияМНОПлановые.Флажок</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="РаспоряженияМНОПлановыеФлажокКонтекстноеМеню" id="44"/>
+															<ExtendedTooltip name="РаспоряженияМНОПлановыеФлажокРасширеннаяПодсказка" id="45"/>
+															<Events>
+																<Event name="OnChange">РаспоряженияПлановыеФлажокПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<InputField name="РаспоряженияМНОПлановыеСчетДоверительногоУправления" id="46">
+															<DataPath>РаспоряженияМНОПлановые.МестоХраненияСтратегияСчетДУ</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>35</Width>
+															<HorizontalStretch>false</HorizontalStretch>
+															<ContextMenu name="РаспоряженияМНОПлановыеСчетДоверительногоУправленияКонтекстноеМеню" id="47"/>
+															<ExtendedTooltip name="РаспоряженияМНОПлановыеСчетДоверительногоУправленияРасширеннаяПодсказка" id="48"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+												<InputField name="РаспоряженияМНОПлановыеКоды" id="176">
+													<DataPath>РаспоряженияМНОПлановые.Коды</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="РаспоряженияМНОПлановыеКодыКонтекстноеМеню" id="177"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеКодыРасширеннаяПодсказка" id="178"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеСумма" id="61">
+													<DataPath>РаспоряженияМНОПлановые.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияМНОПлановыеСуммаКонтекстноеМеню" id="62"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеСуммаРасширеннаяПодсказка" id="63"/>
+													<Events>
+														<Event name="OnChange">РаспоряженияПлановыеСуммаМНОПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеПроцент" id="55">
+													<DataPath>РаспоряженияМНОПлановые.Процент</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияМНОПлановыеПроцентКонтекстноеМеню" id="56"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеПроцентРасширеннаяПодсказка" id="57"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеСрок" id="173">
+													<DataPath>РаспоряженияМНОПлановые.Срок</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияМНОПлановыеСрокКонтекстноеМеню" id="174"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеСрокРасширеннаяПодсказка" id="175"/>
+													<Events>
+														<Event name="OnChange">РаспоряженияПлановыеСрокПриИзменении</Event>
+													</Events>
+												</InputField>
+												<CheckBoxField name="РаспоряженияМНОПлановыеПодКупон" id="607">
+													<DataPath>РаспоряженияМНОПлановые.ПодКупон</DataPath>
+													<Visible>false</Visible>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="РаспоряженияМНОПлановыеПодКупонКонтекстноеМеню" id="608"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеПодКупонРасширеннаяПодсказка" id="609"/>
+												</CheckBoxField>
+												<InputField name="РаспоряженияМНОПлановыеДатаВозврата" id="58">
+													<DataPath>РаспоряженияМНОПлановые.ДатаВозврата</DataPath>
+													<HorizontalAlign>Right</HorizontalAlign>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>12</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияМНОПлановыеДатаВозвратаКонтекстноеМеню" id="59"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеДатаВозвратаРасширеннаяПодсказка" id="60"/>
+													<Events>
+														<Event name="OnChange">РаспоряженияПлановыеДатаВозвратаПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаНачальныеОстатки" id="181">
+											<Visible>false</Visible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Начальные остатки</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа начальные остатки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ГруппаНачальныеОстаткиРасширеннаяПодсказка" id="182"/>
+											<ChildItems>
+												<InputField name="РаспоряженияМНОПлановыеРСНаНачало" id="183">
+													<DataPath>РаспоряженияМНОПлановые.РСНаНачало</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>12</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеРСНаНачалоКонтекстноеМеню" id="184"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеРСНаНачалоРасширеннаяПодсказка" id="185"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеОстатокУБрокера" id="189">
+													<DataPath>РаспоряженияМНОПлановые.БСНаНачало</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>12</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеОстатокУБрокераКонтекстноеМеню" id="190"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеОстатокУБрокераРасширеннаяПодсказка" id="191"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеСуммаМНОНаНачало" id="246">
+													<DataPath>РаспоряженияМНОПлановые.СуммаМНОНаНачало</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>12</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеСуммаМНОНаНачалоКонтекстноеМеню" id="247"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеСуммаМНОНаНачалоРасширеннаяПодсказка" id="248"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеДоступноНаНачало" id="259">
+													<DataPath>РаспоряженияМНОПлановые.ДоступноНаНачало</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>12</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеДоступноНаНачалоКонтекстноеМеню" id="260"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеДоступноНаНачалоРасширеннаяПодсказка" id="261"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаКонечныеОстатки" id="244">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Конечные остатки</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа конечные остатки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ГруппаКонечныеОстаткиРасширеннаяПодсказка" id="245"/>
+											<ChildItems>
+												<InputField name="РаспоряженияМНОПлановыеРСНаКонец" id="186">
+													<DataPath>РаспоряженияМНОПлановые.РСНаКонец</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеРСНаКонецКонтекстноеМеню" id="187"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеРСНаКонецРасширеннаяПодсказка" id="188"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеБСНаКонец" id="249">
+													<DataPath>РаспоряженияМНОПлановые.БСНаКонец</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеБСНаКонецКонтекстноеМеню" id="250"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеБСНаКонецРасширеннаяПодсказка" id="251"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеСуммаМНОНаКонец" id="252">
+													<DataPath>РаспоряженияМНОПлановые.СуммаМНОНаКонец</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеСуммаМНОНаКонецКонтекстноеМеню" id="253"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеСуммаМНОНаКонецРасширеннаяПодсказка" id="254"/>
+												</InputField>
+												<InputField name="РаспоряженияМНОПлановыеДоступноНаКонец" id="262">
+													<DataPath>РаспоряженияМНОПлановые.ДоступноНаКонец</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="РаспоряженияМНОПлановыеДоступноНаКонецКонтекстноеМеню" id="263"/>
+													<ExtendedTooltip name="РаспоряженияМНОПлановыеДоступноНаКонецРасширеннаяПодсказка" id="264"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+								<LabelDecoration name="НадписьРаспоряженияМНОПлановыеИтого" id="165">
+									<Font ref="style:ВажнаяИнформацияНаФормеШрифт" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>:)) Итого: 100 распоряжений, на сумму 100 000</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НадписьРаспоряженияМНОПлановыеИтогоКонтекстноеМеню" id="166"/>
+									<ExtendedTooltip name="НадписьРаспоряженияМНОПлановыеИтогоРасширеннаяПодсказка" id="167"/>
+								</LabelDecoration>
+								<Pages name="ГруппаСтраницыСозданныхДокументов" id="567">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа страницы созданных документов</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа страницы созданных документов</v8:content>
+										</v8:item>
+									</ToolTip>
+									<PagesRepresentation>TabsOnTop</PagesRepresentation>
+									<ExtendedTooltip name="ГруппаСтраницыСозданныхДокументовРасширеннаяПодсказка" id="568"/>
+									<ChildItems>
+										<Page name="ГруппаТекущие" id="569">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Текущие</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа текущие</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>AlwaysHorizontal</Group>
+											<ExtendedTooltip name="ГруппаТекущиеРасширеннаяПодсказка" id="570"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаРаспоряженияМНОСозданные" id="20">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Распоряжения созданные</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа распоряжения МНОСозданные</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ExtendedTooltip name="ГруппаРаспоряженияМНОСозданныеРасширеннаяПодсказка" id="21"/>
+													<ChildItems>
+														<Table name="РаспоряженияМНОСозданные" id="64">
+															<Representation>List</Representation>
+															<ChangeRowSet>false</ChangeRowSet>
+															<UseAlternationRowColor>true</UseAlternationRowColor>
+															<AutoInsertNewRow>true</AutoInsertNewRow>
+															<FileDragMode>AsFile</FileDragMode>
+															<DataPath>РаспоряженияМНОСозданные</DataPath>
+															<RowPictureDataPath>РаспоряженияМНОСозданные.ДанныеКартинкиСтроки</RowPictureDataPath>
+															<RowsPicture>
+																<xr:Ref>CommonPicture.СтатусыДокументов4х16</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</RowsPicture>
+															<CommandSet>
+																<ExcludedCommand>Change</ExcludedCommand>
+																<ExcludedCommand>EndEdit</ExcludedCommand>
+																<ExcludedCommand>MoveDown</ExcludedCommand>
+																<ExcludedCommand>MoveUp</ExcludedCommand>
+															</CommandSet>
+															<SearchStringLocation>None</SearchStringLocation>
+															<ViewStatusLocation>None</ViewStatusLocation>
+															<SearchControlLocation>None</SearchControlLocation>
+															<RowFilter xsi:nil="true"/>
+															<ContextMenu name="РаспоряженияМНОСозданныеКонтекстноеМеню" id="65">
+																<ChildItems>
+																	<Button name="КонтекстноеМенюКомандаДокументыУстановитьСнятьПометкуУдаление" id="274">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Command.КомандаДокументыУстановитьСнятьПометкуУдаление</CommandName>
+																		<ExtendedTooltip name="КонтекстноеМенюКомандаДокументыУстановитьСнятьПометкуУдалениеРасширеннаяПодсказка" id="275"/>
+																	</Button>
+																	<Button name="КонтекстноеМенюСортироватьСписокПоВозрастанию" id="276">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Item.РаспоряженияМНОСозданные.StandardCommand.SortListAsc</CommandName>
+																		<ExtendedTooltip name="КонтекстноеМенюСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="277"/>
+																	</Button>
+																	<Button name="КонтекстноеМенюСортироватьСписокПоУбыванию" id="278">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Item.РаспоряженияМНОСозданные.StandardCommand.SortListDesc</CommandName>
+																		<ExtendedTooltip name="КонтекстноеМенюСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="279"/>
+																	</Button>
+																</ChildItems>
+															</ContextMenu>
+															<AutoCommandBar name="РаспоряженияМНОСозданныеКоманднаяПанель" id="66">
+																<ChildItems>
+																	<Button name="КомандаДокументыУстановитьСнятьПометкуУдаление" id="93">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Command.КомандаДокументыУстановитьСнятьПометкуУдаление</CommandName>
+																		<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+																		<ExtendedTooltip name="КомандаДокументыУстановитьСнятьПометкуУдалениеРасширеннаяПодсказка" id="94"/>
+																	</Button>
+																	<Button name="КомандаРаспоряженияМНОСозданныеПечать" id="137">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Command.КомандаРаспоряженияМНОСозданныеПечать</CommandName>
+																		<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+																		<ExtendedTooltip name="КомандаРаспоряженияМНОСозданныеПечатьРасширеннаяПодсказка" id="138"/>
+																	</Button>
+																	<Button name="КомандаЗагрузитьРаспоряженияМНОИзExcel" id="267">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>true</xr:Common>
+																			<xr:Value name="Role.АдминистрированиеСистемы">false</xr:Value>
+																			<xr:Value name="Role.БазовыеПрава">false</xr:Value>
+																			<xr:Value name="Role.БрокерскийУчет">false</xr:Value>
+																			<xr:Value name="Role.БрокерскийУчетПросмотр">false</xr:Value>
+																			<xr:Value name="Role.ИзменениеДатЗапретаРедактирования">false</xr:Value>
+																			<xr:Value name="Role.ИмпортДанныхИзУК77">false</xr:Value>
+																			<xr:Value name="Role.Классификаторы">false</xr:Value>
+																			<xr:Value name="Role.КлассификаторыПросмотр">false</xr:Value>
+																			<xr:Value name="Role.КлиентскийУчет">false</xr:Value>
+																			<xr:Value name="Role.КлиентскийУчетПросмотр">false</xr:Value>
+																			<xr:Value name="Role.КоллективныеИнвестиции">false</xr:Value>
+																			<xr:Value name="Role.КоллективныеИнвестицииПросмотр">false</xr:Value>
+																			<xr:Value name="Role.КонтрольИнвестиционныхДеклараций">false</xr:Value>
+																			<xr:Value name="Role.КонтрольИнвестиционныхДекларацийПросмотр">false</xr:Value>
+																			<xr:Value name="Role.КонтрольСтраховыхКомпаний">false</xr:Value>
+																			<xr:Value name="Role.КонтрольСтраховыхКомпанийПросмотр">false</xr:Value>
+																			<xr:Value name="Role.МногофирменныйУчет">false</xr:Value>
+																			<xr:Value name="Role.НастройкаИАдминистрирование">false</xr:Value>
+																			<xr:Value name="Role.НастройкаКлиентскойОтчетности">false</xr:Value>
+																			<xr:Value name="Role.НастройкаКлиентскойОтчетностиПросмотр">false</xr:Value>
+																			<xr:Value name="Role.НормативноСправочнаяИнформацияГруппыКомпаний">false</xr:Value>
+																			<xr:Value name="Role.НормативноСправочнаяИнформацияГруппыКомпанийПросмотр">false</xr:Value>
+																			<xr:Value name="Role.ОперацииБухгалтерии">false</xr:Value>
+																			<xr:Value name="Role.ОперацииБухгалтерииПросмотр">false</xr:Value>
+																			<xr:Value name="Role.ОперацииБэкОфиса">false</xr:Value>
+																			<xr:Value name="Role.ОперацииБэкОфисаПросмотр">false</xr:Value>
+																			<xr:Value name="Role.ОперацииФронтОфисаУправляющейКомпании">true</xr:Value>
+																			<xr:Value name="Role.ОперацииФронтОфисаУправляющейКомпанииПросмотр">false</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.ПроведениеПоРегистрамБухгалтерии">false</xr:Value>
+																			<xr:Value name="Role.ПроведениеПоРегистрамБэкОфиса">false</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.КомандаЗагрузитьРаспоряженияМНОИзExcel</CommandName>
+																		<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+																		<ExtendedTooltip name="КомандаЗагрузитьРаспоряженияМНОИзExcelРасширеннаяПодсказка" id="268"/>
+																	</Button>
+																</ChildItems>
+															</AutoCommandBar>
+															<ExtendedTooltip name="РаспоряженияМНОСозданныеРасширеннаяПодсказка" id="67"/>
+															<SearchStringAddition name="РаспоряженияМНОСозданныеСтрокаПоиска" id="68">
+																<AdditionSource>
+																	<Item>РаспоряженияМНОСозданные</Item>
+																	<Type>SearchStringRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="РаспоряженияМНОСозданныеСтрокаПоискаКонтекстноеМеню" id="69"/>
+																<ExtendedTooltip name="РаспоряженияМНОСозданныеСтрокаПоискаРасширеннаяПодсказка" id="70"/>
+															</SearchStringAddition>
+															<ViewStatusAddition name="РаспоряженияМНОСозданныеСостояниеПросмотра" id="71">
+																<AdditionSource>
+																	<Item>РаспоряженияМНОСозданные</Item>
+																	<Type>ViewStatusRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="РаспоряженияМНОСозданныеСостояниеПросмотраКонтекстноеМеню" id="72"/>
+																<ExtendedTooltip name="РаспоряженияМНОСозданныеСостояниеПросмотраРасширеннаяПодсказка" id="73"/>
+															</ViewStatusAddition>
+															<SearchControlAddition name="РаспоряженияМНОСозданныеУправлениеПоиском" id="74">
+																<AdditionSource>
+																	<Item>РаспоряженияМНОСозданные</Item>
+																	<Type>SearchControl</Type>
+																</AdditionSource>
+																<ContextMenu name="РаспоряженияМНОСозданныеУправлениеПоискомКонтекстноеМеню" id="75"/>
+																<ExtendedTooltip name="РаспоряженияМНОСозданныеУправлениеПоискомРасширеннаяПодсказка" id="76"/>
+															</SearchControlAddition>
+															<Events>
+																<Event name="BeforeRowChange">РаспоряженияМНОСозданныеПередНачаломИзменения</Event>
+															</Events>
+															<ChildItems>
+																<InputField name="РаспоряженияМНОСозданныеСчетДоверительногоУправления" id="104">
+																	<DataPath>РаспоряженияМНОСозданные.СчетДоверительногоУправления</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="РаспоряженияМНОСозданныеСчетДоверительногоУправленияКонтекстноеМеню" id="105"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеСчетДоверительногоУправленияРасширеннаяПодсказка" id="106"/>
+																</InputField>
+																<InputField name="РаспоряженияМНОСозданныеБанк" id="387">
+																	<DataPath>РаспоряженияМНОСозданные.Банк</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="РаспоряженияМНОСозданныеБанкКонтекстноеМеню" id="388"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеБанкРасширеннаяПодсказка" id="389"/>
+																</InputField>
+																<InputField name="РаспоряженияМНОСозданныеСтавка" id="290">
+																	<DataPath>РаспоряженияМНОСозданные.Ставка</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>7</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="РаспоряженияМНОСозданныеСтавкаКонтекстноеМеню" id="291"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеСтавкаРасширеннаяПодсказка" id="292"/>
+																</InputField>
+																<InputField name="РаспоряженияМНОСозданныеСумма" id="113">
+																	<DataPath>РаспоряженияМНОСозданные.Сумма</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>13</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="РаспоряженияМНОСозданныеСуммаКонтекстноеМеню" id="114"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеСуммаРасширеннаяПодсказка" id="115"/>
+																</InputField>
+																<InputField name="РаспоряженияМНОСозданныеДатаВозврата" id="116">
+																	<DataPath>РаспоряженияМНОСозданные.ДатаВозврата</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="РаспоряженияМНОСозданныеДатаВозвратаКонтекстноеМеню" id="117"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеДатаВозвратаРасширеннаяПодсказка" id="118"/>
+																</InputField>
+																<InputField name="РаспоряженияМНОСозданныеДоПогашения" id="201">
+																	<DataPath>РаспоряженияМНОСозданные.ДоПогашения</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="РаспоряженияМНОСозданныеДоПогашенияКонтекстноеМеню" id="202"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеДоПогашенияРасширеннаяПодсказка" id="203"/>
+																</InputField>
+															</ChildItems>
+														</Table>
+														<LabelDecoration name="НадписьРаспоряженияМНОСозданныеИтого" id="269">
+															<Font ref="style:ВажнаяИнформацияНаФормеШрифт" kind="StyleItem"/>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>:)) Итого: 100 распоряжений, на сумму 100 000</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="НадписьРаспоряженияМНОСозданныеИтогоКонтекстноеМеню" id="270"/>
+															<ExtendedTooltip name="НадписьРаспоряженияМНОСозданныеИтогоРасширеннаяПодсказка" id="271"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаМНОСозданные" id="196">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Действующие МНО</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа распоряжения созданные</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ExtendedTooltip name="ГруппаМНОСозданныеРасширеннаяПодсказка" id="197"/>
+													<ChildItems>
+														<Table name="МНОСозданные" id="204">
+															<Representation>List</Representation>
+															<ChangeRowSet>false</ChangeRowSet>
+															<UseAlternationRowColor>true</UseAlternationRowColor>
+															<AutoInsertNewRow>true</AutoInsertNewRow>
+															<FileDragMode>AsFile</FileDragMode>
+															<DataPath>МНОСозданные</DataPath>
+															<RowPictureDataPath>МНОСозданные.ДанныеКартинкиСтроки</RowPictureDataPath>
+															<RowsPicture>
+																<xr:Ref>CommonPicture.СтатусыДокументов4х16</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</RowsPicture>
+															<CommandSet>
+																<ExcludedCommand>Change</ExcludedCommand>
+																<ExcludedCommand>EndEdit</ExcludedCommand>
+																<ExcludedCommand>MoveDown</ExcludedCommand>
+																<ExcludedCommand>MoveUp</ExcludedCommand>
+															</CommandSet>
+															<SearchStringLocation>None</SearchStringLocation>
+															<ViewStatusLocation>None</ViewStatusLocation>
+															<SearchControlLocation>None</SearchControlLocation>
+															<RowFilter xsi:nil="true"/>
+															<ContextMenu name="МНОСозданныеКонтекстноеМеню" id="205">
+																<ChildItems>
+																	<Button name="МНОСозданныеКонтекстноеМенюСортироватьСписокПоВозрастанию" id="280">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Item.МНОСозданные.StandardCommand.SortListAsc</CommandName>
+																		<ExtendedTooltip name="МНОСозданныеКонтекстноеМенюСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="281"/>
+																	</Button>
+																	<Button name="МНОСозданныеКонтекстноеМенюСортироватьСписокПоУбыванию" id="282">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Item.МНОСозданные.StandardCommand.SortListDesc</CommandName>
+																		<ExtendedTooltip name="МНОСозданныеКонтекстноеМенюСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="283"/>
+																	</Button>
+																</ChildItems>
+															</ContextMenu>
+															<AutoCommandBar name="МНОСозданныеКоманднаяПанель" id="206"/>
+															<ExtendedTooltip name="МНОСозданныеРасширеннаяПодсказка" id="207"/>
+															<SearchStringAddition name="МНОСозданныеСтрокаПоиска" id="208">
+																<AdditionSource>
+																	<Item>МНОСозданные</Item>
+																	<Type>SearchStringRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="МНОСозданныеСтрокаПоискаКонтекстноеМеню" id="209"/>
+																<ExtendedTooltip name="МНОСозданныеСтрокаПоискаРасширеннаяПодсказка" id="210"/>
+															</SearchStringAddition>
+															<ViewStatusAddition name="МНОСозданныеСостояниеПросмотра" id="211">
+																<AdditionSource>
+																	<Item>МНОСозданные</Item>
+																	<Type>ViewStatusRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="МНОСозданныеСостояниеПросмотраКонтекстноеМеню" id="212"/>
+																<ExtendedTooltip name="МНОСозданныеСостояниеПросмотраРасширеннаяПодсказка" id="213"/>
+															</ViewStatusAddition>
+															<SearchControlAddition name="МНОСозданныеУправлениеПоиском" id="214">
+																<AdditionSource>
+																	<Item>МНОСозданные</Item>
+																	<Type>SearchControl</Type>
+																</AdditionSource>
+																<ContextMenu name="МНОСозданныеУправлениеПоискомКонтекстноеМеню" id="215"/>
+																<ExtendedTooltip name="МНОСозданныеУправлениеПоискомРасширеннаяПодсказка" id="216"/>
+															</SearchControlAddition>
+															<Events>
+																<Event name="BeforeRowChange">МНОСозданныеПередНачаломИзменения</Event>
+															</Events>
+															<ChildItems>
+																<InputField name="МНОСозданныеСчетДоверительногоУправления" id="220">
+																	<DataPath>МНОСозданные.СчетДоверительногоУправления</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="МНОСозданныеСчетДоверительногоУправленияКонтекстноеМеню" id="221"/>
+																	<ExtendedTooltip name="МНОСозданныеСчетДоверительногоУправленияРасширеннаяПодсказка" id="222"/>
+																</InputField>
+																<InputField name="МНОСозданныеБанк" id="390">
+																	<DataPath>МНОСозданные.Банк</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="МНОСозданныеБанкКонтекстноеМеню" id="391"/>
+																	<ExtendedTooltip name="МНОСозданныеБанкРасширеннаяПодсказка" id="392"/>
+																</InputField>
+																<InputField name="МНОСозданныеСтавка" id="287">
+																	<DataPath>МНОСозданные.Ставка</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>7</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="МНОСозданныеСтавкаКонтекстноеМеню" id="288"/>
+																	<ExtendedTooltip name="МНОСозданныеСтавкаРасширеннаяПодсказка" id="289"/>
+																</InputField>
+																<InputField name="МНОСозданныеСумма" id="229">
+																	<DataPath>МНОСозданные.Сумма</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>13</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="МНОСозданныеСуммаКонтекстноеМеню" id="230"/>
+																	<ExtendedTooltip name="МНОСозданныеСуммаРасширеннаяПодсказка" id="231"/>
+																</InputField>
+																<InputField name="МНОСозданныеДатаРазмещения" id="284">
+																	<DataPath>МНОСозданные.ДатаРазмещения</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="МНОСозданныеДатаРазмещенияКонтекстноеМеню" id="285"/>
+																	<ExtendedTooltip name="МНОСозданныеДатаРазмещенияРасширеннаяПодсказка" id="286"/>
+																</InputField>
+																<InputField name="МНОСозданныеДатаВозврата" id="232">
+																	<DataPath>МНОСозданные.ДатаВозврата</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="МНОСозданныеДатаВозвратаКонтекстноеМеню" id="233"/>
+																	<ExtendedTooltip name="МНОСозданныеДатаВозвратаРасширеннаяПодсказка" id="234"/>
+																</InputField>
+																<InputField name="МНОСозданныеДоПогашения" id="241">
+																	<DataPath>МНОСозданные.ДоПогашения</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="МНОСозданныеДоПогашенияКонтекстноеМеню" id="242"/>
+																	<ExtendedTooltip name="МНОСозданныеДоПогашенияРасширеннаяПодсказка" id="243"/>
+																</InputField>
+															</ChildItems>
+														</Table>
+														<LabelDecoration name="НадписьМНОСозданныеИтого" id="293">
+															<Font ref="style:ВажнаяИнформацияНаФормеШрифт" kind="StyleItem"/>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>:)) Итого: 100 МНО, на сумму 100 000</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="НадписьМНОСозданныеИтогоКонтекстноеМеню" id="294"/>
+															<ExtendedTooltip name="НадписьМНОСозданныеИтогоРасширеннаяПодсказка" id="295"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</Page>
+										<Page name="ГруппаПросроченныеРаспоряженияМНО" id="571">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Просроченные</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа просроченные распоряжения МНО</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ГруппаПросроченныеРаспоряженияМНОРасширеннаяПодсказка" id="572"/>
+											<ChildItems>
+												<Table name="ПросроченныеРаспоряженияМНО" id="573">
+													<Representation>List</Representation>
+													<ChangeRowSet>false</ChangeRowSet>
+													<ChangeRowOrder>false</ChangeRowOrder>
+													<AutoInsertNewRow>true</AutoInsertNewRow>
+													<EnableStartDrag>true</EnableStartDrag>
+													<EnableDrag>true</EnableDrag>
+													<DataPath>ПросроченныеРаспоряженияМНО</DataPath>
+													<RowPictureDataPath>ПросроченныеРаспоряженияМНО.СостояниеДокумента</RowPictureDataPath>
+													<RowsPicture>
+														<xr:Ref>CommonPicture.СтатусыДокументов4х16</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</RowsPicture>
+													<RowFilter xsi:nil="true"/>
+													<ContextMenu name="ПросроченныеРаспоряженияМНОКонтекстноеМеню" id="574"/>
+													<AutoCommandBar name="ПросроченныеРаспоряженияМНОКоманднаяПанель" id="575"/>
+													<ExtendedTooltip name="ПросроченныеРаспоряженияМНОРасширеннаяПодсказка" id="576"/>
+													<SearchStringAddition name="ПросроченныеРаспоряженияМНОСтрокаПоиска" id="577">
+														<AdditionSource>
+															<Item>ПросроченныеРаспоряженияМНО</Item>
+															<Type>SearchStringRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="ПросроченныеРаспоряженияМНОСтрокаПоискаКонтекстноеМеню" id="578"/>
+														<ExtendedTooltip name="ПросроченныеРаспоряженияМНОСтрокаПоискаРасширеннаяПодсказка" id="579"/>
+													</SearchStringAddition>
+													<ViewStatusAddition name="ПросроченныеРаспоряженияМНОСостояниеПросмотра" id="580">
+														<AdditionSource>
+															<Item>ПросроченныеРаспоряженияМНО</Item>
+															<Type>ViewStatusRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="ПросроченныеРаспоряженияМНОСостояниеПросмотраКонтекстноеМеню" id="581"/>
+														<ExtendedTooltip name="ПросроченныеРаспоряженияМНОСостояниеПросмотраРасширеннаяПодсказка" id="582"/>
+													</ViewStatusAddition>
+													<SearchControlAddition name="ПросроченныеРаспоряженияМНОУправлениеПоиском" id="583">
+														<AdditionSource>
+															<Item>ПросроченныеРаспоряженияМНО</Item>
+															<Type>SearchControl</Type>
+														</AdditionSource>
+														<ContextMenu name="ПросроченныеРаспоряженияМНОУправлениеПоискомКонтекстноеМеню" id="584"/>
+														<ExtendedTooltip name="ПросроченныеРаспоряженияМНОУправлениеПоискомРасширеннаяПодсказка" id="585"/>
+													</SearchControlAddition>
+													<Events>
+														<Event name="Selection">ПросроченныеРаспоряженияМНОВыбор</Event>
+													</Events>
+													<ChildItems>
+														<InputField name="ПросроченныеРаспоряженияМНОДокумент" id="589">
+															<DataPath>ПросроченныеРаспоряженияМНО.Документ</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ПросроченныеРаспоряженияМНОДокументКонтекстноеМеню" id="590"/>
+															<ExtendedTooltip name="ПросроченныеРаспоряженияМНОДокументРасширеннаяПодсказка" id="591"/>
+														</InputField>
+														<InputField name="ПросроченныеРаспоряженияМНОРасчетныйСчет" id="592">
+															<DataPath>ПросроченныеРаспоряженияМНО.РасчетныйСчет</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ПросроченныеРаспоряженияМНОРасчетныйСчетКонтекстноеМеню" id="593"/>
+															<ExtendedTooltip name="ПросроченныеРаспоряженияМНОРасчетныйСчетРасширеннаяПодсказка" id="594"/>
+														</InputField>
+														<InputField name="ПросроченныеРаспоряженияМНОСчетДоверительногоУправления" id="595">
+															<DataPath>ПросроченныеРаспоряженияМНО.СчетДоверительногоУправления</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ПросроченныеРаспоряженияМНОСчетДоверительногоУправленияКонтекстноеМеню" id="596"/>
+															<ExtendedTooltip name="ПросроченныеРаспоряженияМНОСчетДоверительногоУправленияРасширеннаяПодсказка" id="597"/>
+														</InputField>
+														<InputField name="ПросроченныеРаспоряженияМНОПроцент" id="598">
+															<DataPath>ПросроченныеРаспоряженияМНО.Процент</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ПросроченныеРаспоряженияМНОПроцентКонтекстноеМеню" id="599"/>
+															<ExtendedTooltip name="ПросроченныеРаспоряженияМНОПроцентРасширеннаяПодсказка" id="600"/>
+														</InputField>
+														<InputField name="ПросроченныеРаспоряженияМНОСумма" id="601">
+															<DataPath>ПросроченныеРаспоряженияМНО.Сумма</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ПросроченныеРаспоряженияМНОСуммаКонтекстноеМеню" id="602"/>
+															<ExtendedTooltip name="ПросроченныеРаспоряженияМНОСуммаРасширеннаяПодсказка" id="603"/>
+														</InputField>
+														<InputField name="ПросроченныеРаспоряженияМНОДатаВозврата" id="604">
+															<DataPath>ПросроченныеРаспоряженияМНО.ДатаВозврата</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ПросроченныеРаспоряженияМНОДатаВозвратаКонтекстноеМеню" id="605"/>
+															<ExtendedTooltip name="ПросроченныеРаспоряженияМНОДатаВозвратаРасширеннаяПодсказка" id="606"/>
+														</InputField>
+													</ChildItems>
+												</Table>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСозданныеДокументы" id="194">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа созданные документы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа созданные документы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСозданныеДокументыРасширеннаяПодсказка" id="195"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДепозиты" id="393">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Депозиты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа депозиты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаДепозитыРасширеннаяПодсказка" id="394"/>
+					<ChildItems>
+						<Table name="РаспоряженияНаРазмещениеДепозитов" id="395">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>РаспоряженияНаРазмещениеДепозитов</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+							</CommandSet>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="РаспоряженияНаРазмещениеДепозитовКонтекстноеМеню" id="396"/>
+							<AutoCommandBar name="РаспоряженияНаРазмещениеДепозитовКоманднаяПанель" id="397">
+								<ChildItems>
+									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки" id="558">
+										<Type>CommandBarButton</Type>
+										<Visible>false</Visible>
+										<CommandName>Form.Command.КомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки</CommandName>
+										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажкиРасширеннаяПодсказка" id="559"/>
+									</Button>
+									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки" id="560">
+										<Type>CommandBarButton</Type>
+										<Visible>false</Visible>
+										<CommandName>Form.Command.КомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки</CommandName>
+										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажкиРасширеннаяПодсказка" id="561"/>
+									</Button>
+									<Button name="КомандаОбновитьРаспоряженияНаРазмещениеДепозитов" id="554">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаОбновитьРаспоряженияНаРазмещениеДепозитов</CommandName>
+										<ExtendedTooltip name="КомандаОбновитьРаспоряженияНаРазмещениеДепозитовРасширеннаяПодсказка" id="555"/>
+									</Button>
+									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаЗагрузитьРаспоряженияНаРазмещениеДепозитовИзExcel" id="545">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаЗагрузитьРаспоряженияНаРазмещениеДепозитовИзExcel</CommandName>
+										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаЗагрузитьРаспоряженияНаРазмещениеДепозитовИзExcelРасширеннаяПодсказка" id="546"/>
+									</Button>
+									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаСоздатьЗадачиПоДепозитамВПервойФорме" id="565">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаСоздатьЗадачиПоДепозитамВПервойФорме</CommandName>
+										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаСоздатьЗадачиПоДепозитамВПервойФормеРасширеннаяПодсказка" id="566"/>
+									</Button>
+									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовПечать" id="543">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаРаспоряженияНаРазмещениеДепозитовПечать</CommandName>
+										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовПечатьРасширеннаяПодсказка" id="544"/>
+									</Button>
+									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаСоздатьРаспоряжениеНаРазмещениеДепозита" id="547">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаСоздатьРаспоряжениеНаРазмещениеДепозита</CommandName>
+										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаСоздатьРаспоряжениеНаРазмещениеДепозитаРасширеннаяПодсказка" id="548"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовРасширеннаяПодсказка" id="398"/>
+							<SearchStringAddition name="РаспоряженияНаРазмещениеДепозитовСтрокаПоиска" id="399">
+								<AdditionSource>
+									<Item>РаспоряженияНаРазмещениеДепозитов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСтрокаПоискаКонтекстноеМеню" id="400"/>
+								<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСтрокаПоискаРасширеннаяПодсказка" id="401"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РаспоряженияНаРазмещениеДепозитовСостояниеПросмотра" id="402">
+								<AdditionSource>
+									<Item>РаспоряженияНаРазмещениеДепозитов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСостояниеПросмотраКонтекстноеМеню" id="403"/>
+								<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСостояниеПросмотраРасширеннаяПодсказка" id="404"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РаспоряженияНаРазмещениеДепозитовУправлениеПоиском" id="405">
+								<AdditionSource>
+									<Item>РаспоряженияНаРазмещениеДепозитов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспоряженияНаРазмещениеДепозитовУправлениеПоискомКонтекстноеМеню" id="406"/>
+								<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовУправлениеПоискомРасширеннаяПодсказка" id="407"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">РаспоряженияНаРазмещениеДепозитовВыбор</Event>
+							</Events>
+							<ChildItems>
+								<ColumnGroup name="РаспоряженияНаРазмещениеДепозитовГруппаОбщая" id="552">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Распоряжения на размещение депозитов группа общая</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Распоряжения на размещение депозитов группа общая</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<FixingInTable>Left</FixingInTable>
+									<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовГруппаОбщаяРасширеннаяПодсказка" id="553"/>
+									<ChildItems>
+										<PictureField name="РаспоряженияНаРазмещениеДепозитовФлаг" id="483">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Флаг</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<CellHyperlink>true</CellHyperlink>
+											<Hyperlink>true</Hyperlink>
+											<ValuesPicture>
+												<xr:Ref>CommonPicture.СостоянияФлажка</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</ValuesPicture>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовФлагКонтекстноеМеню" id="484"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовФлагРасширеннаяПодсказка" id="485"/>
+										</PictureField>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовСтатус" id="562">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Статус</DataPath>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСтатусКонтекстноеМеню" id="563"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСтатусРасширеннаяПодсказка" id="564"/>
+										</LabelField>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовСсылка" id="549">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Ссылка</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<DefaultItem>true</DefaultItem>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСсылкаКонтекстноеМеню" id="550"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСсылкаРасширеннаяПодсказка" id="551"/>
+										</LabelField>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовДатаРаспоряжения" id="488">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.ДатаРаспоряжения</DataPath>
+											<Width>10</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовДатаРаспоряженияКонтекстноеМеню" id="489"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовДатаРаспоряженияРасширеннаяПодсказка" id="490"/>
+										</LabelField>
+										<ColumnGroup name="СчетДоверительногоУправления" id="486">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Счет доверительного управления</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Счет доверительного управления</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="487"/>
+											<ChildItems>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовКодСчета" id="491">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.КодСчета</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код</v8:content>
+														</v8:item>
+													</Title>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовКодСчетаКонтекстноеМеню" id="492"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКодСчетаРасширеннаяПодсказка" id="493"/>
+												</LabelField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправления" id="494">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.СчетДоверительногоУправления</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Наименование</v8:content>
+														</v8:item>
+													</Title>
+													<Width>25</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправленияКонтекстноеМеню" id="495"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправленияРасширеннаяПодсказка" id="496"/>
+												</LabelField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовКодБрокера" id="497">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.КодБрокера</DataPath>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовКодБрокераКонтекстноеМеню" id="498"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКодБрокераРасширеннаяПодсказка" id="499"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="Банки" id="532">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Банк</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Банки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="БанкиРасширеннаяПодсказка" id="533"/>
+											<ChildItems>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовБанкРазмещения" id="500">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.БанкРазмещения</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Размещения</v8:content>
+														</v8:item>
+													</Title>
+													<Width>25</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовБанкРазмещенияКонтекстноеМеню" id="501"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовБанкРазмещенияРасширеннаяПодсказка" id="502"/>
+												</LabelField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредств" id="534">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.БанкСписанияДенежныхСредств</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Списания</v8:content>
+														</v8:item>
+													</Title>
+													<Width>25</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредствКонтекстноеМеню" id="535"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредствРасширеннаяПодсказка" id="536"/>
+												</LabelField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредств" id="537">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.БанкВозвратаДенежныхСредств</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Возврата</v8:content>
+														</v8:item>
+													</Title>
+													<Width>25</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредствКонтекстноеМеню" id="538"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредствРасширеннаяПодсказка" id="539"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовСумма" id="503">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Сумма</DataPath>
+											<Width>15</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСуммаКонтекстноеМеню" id="504"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСуммаРасширеннаяПодсказка" id="505"/>
+										</LabelField>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовВалюта" id="506">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Валюта</DataPath>
+											<Width>10</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовВалютаКонтекстноеМеню" id="507"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовВалютаРасширеннаяПодсказка" id="508"/>
+										</LabelField>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовСтавка" id="509">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Ставка</DataPath>
+											<Width>10</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСтавкаКонтекстноеМеню" id="510"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСтавкаРасширеннаяПодсказка" id="511"/>
+										</LabelField>
+										<ColumnGroup name="ГруппаДата" id="556">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа дата</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ГруппаДатаРасширеннаяПодсказка" id="557"/>
+											<ChildItems>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовДатаРазмещения" id="526">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.ДатаРазмещения</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Размещения</v8:content>
+														</v8:item>
+													</Title>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовДатаРазмещенияКонтекстноеМеню" id="527"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовДатаРазмещенияРасширеннаяПодсказка" id="528"/>
+												</LabelField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовДатаПогашения" id="529">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.ДатаПогашения</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Погашения</v8:content>
+														</v8:item>
+													</Title>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовДатаПогашенияКонтекстноеМеню" id="530"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовДатаПогашенияРасширеннаяПодсказка" id="531"/>
+												</LabelField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовСрок" id="512">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.Срок</DataPath>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСрокКонтекстноеМеню" id="513"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСрокРасширеннаяПодсказка" id="514"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<LabelField name="РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентов" id="515">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.ПериодичностьВыплатыПроцентов</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выплата %</v8:content>
+												</v8:item>
+											</Title>
+											<Width>15</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентовКонтекстноеМеню" id="516"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентовРасширеннаяПодсказка" id="517"/>
+										</LabelField>
+										<ColumnGroup name="ДоВостребования" id="518">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>До востребования</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>До востребования</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ДоВостребованияРасширеннаяПодсказка" id="519"/>
+											<ChildItems>
+												<CheckBoxField name="РаспоряженияНаРазмещениеДепозитовДоВостребования" id="520">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.ДоВостребования</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовДоВостребованияКонтекстноеМеню" id="521"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовДоВостребованияРасширеннаяПодсказка" id="522"/>
+												</CheckBoxField>
+												<LabelField name="РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребования" id="523">
+													<DataPath>РаспоряженияНаРазмещениеДепозитов.СтавкаДоВостребования</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ставка</v8:content>
+														</v8:item>
+													</Title>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребованияКонтекстноеМеню" id="524"/>
+													<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребованияРасширеннаяПодсказка" id="525"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<CheckBoxField name="РаспоряженияНаРазмещениеДепозитовСубординированность" id="540">
+											<DataPath>РаспоряженияНаРазмещениеДепозитов.Субординированность</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="РаспоряженияНаРазмещениеДепозитовСубординированностьКонтекстноеМеню" id="541"/>
+											<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовСубординированностьРасширеннаяПодсказка" id="542"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Распоряжения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Дата" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Организация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Банк" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Банк</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+			</Type>
+			<Save>
+				<Field>Банк</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="РаспоряженияМНОПлановые" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распоряжения МНОПлановые</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Флажок" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет д/у</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасчетныйСчет" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Р/счет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РСНаНачало" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>РС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Процент" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДатаВозврата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата возврата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="БСНаНачало" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Коды" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коды</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Срок" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="РСНаКонец" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>РС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="МестоХраненияСтратегияСчетДУ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет д/у</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.МестаХранения</v8:Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+						<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="БСНаКонец" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаМНОНаНачало" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>МНО</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаМНОНаКонец" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>МНО</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДоступноНаНачало" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступно</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДоступноНаКонец" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступно</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СтрокаРС" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка РС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Стратегия" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стратегия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПодКупон" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Под купон</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="РаспоряженияМНОСозданные" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распоряжения МНОСозданные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.Распоряжение</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СостояниеДокумента" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДатаВозврата" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата возврата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДанныеКартинкиСтроки" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДоПогашения" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>До погашения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ставка" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Банк" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Банк</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Истекло" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Истекло</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Процент" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаВозврата" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата возврата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Валюта" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Срок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МНОСозданные" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>МНО созданные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.МНО</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СостояниеДокумента" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДатаВозврата" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата возврата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДанныеКартинкиСтроки" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДоПогашения" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>До погашения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаРазмещения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата размещения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ставка" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Банк" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Банк</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицыЗаполнены" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы заполнены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПоДате" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата распоряжения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РаспоряженияНаРазмещениеДепозитов" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распоряжения на размещение депозитов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>РаспоряженияНаРазмещениеДепозитов.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДокРаспоряжение.Ссылка КАК Ссылка,
+	ДокРаспоряжение.Организация КАК Организация,
+	ДокРаспоряжение.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	НЕ ДепозитныеВклады.Ссылка ЕСТЬ NULL КАК ФлагСозданДепозит
+ПОМЕСТИТЬ _Распоряжения
+ИЗ
+	Документ.Распоряжение КАК ДокРаспоряжение
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ДепозитныеВклады КАК ДепозитныеВклады
+		ПО ДокРаспоряжение.Организация = ДепозитныеВклады.Организация
+			И ДокРаспоряжение.Ссылка = ДепозитныеВклады.Распоряжение
+ГДЕ
+	ДокРаспоряжение.Организация = &amp;Организация
+	И ДокРаспоряжение.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийБэкОфиса.РазмещениеКредитногоИнструмента)
+	И (ДокРаспоряжение.ДатаВозврата &gt; &amp;ТекущаяДата
+			ИЛИ ДокРаспоряжение.ДатаРазмещения &gt;= &amp;ТекущаяДата
+				И ДепозитныеВклады.Ссылка ЕСТЬ NULL)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	КодыСчетовДоверительногоУправленияУБрокеровСрезПоследних.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	КодыСчетовДоверительногоУправленияУБрокеровСрезПоследних.Код КАК Код
+ПОМЕСТИТЬ _КодыБрокеров
+ИЗ
+	РегистрСведений.КодыСчетовДоверительногоУправленияУБрокеров.СрезПоследних(&amp;ТекущаяДата, Организация = &amp;Организация
+			И СчетДоверительногоУправления В (ВЫБРАТЬ _Распоряжения.СчетДоверительногоУправления ИЗ _Распоряжения КАК _Распоряжения)) КАК КодыСчетовДоверительногоУправленияУБрокеровСрезПоследних
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияДоговоровОбщие.СрезПоследних(&amp;ТекущаяДата, Организация = &amp;Организация
+			И Договор ССЫЛКА Справочник.ДоговорыБрокерскогоОбслуживания) КАК УсловияДоговоровОбщиеСрезПоследних
+			ПО КодыСчетовДоверительногоУправленияУБрокеровСрезПоследних.Организация = УсловияДоговоровОбщиеСрезПоследних.Организация
+				И КодыСчетовДоверительногоУправленияУБрокеровСрезПоследних.ДоговорБрокерскогоОбслуживания = УсловияДоговоровОбщиеСрезПоследних.Договор
+ГДЕ
+	(УсловияДоговоровОбщиеСрезПоследних.ДатаРасторжения ЕСТЬ NULL
+			ИЛИ УсловияДоговоровОбщиеСрезПоследних.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ УсловияДоговоровОбщиеСрезПоследних.ДатаРасторжения &gt; &amp;ТекущаяДата)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РазмещениеКредитногоИнструмента.Основание КАК Основание,
+	МАКСИМУМ(РазмещениеКредитногоИнструмента.СтрокаБанковскойВыписки) КАК СтрокаБанковскойВыписки,
+	МИНИМУМ(РазмещениеКредитногоИнструмента.Ссылка) КАК Ссылка,
+	СУММА(РазмещениеКредитногоИнструмента.Сумма) КАК Сумма
+ПОМЕСТИТЬ _Размещение
+ИЗ
+	Документ.РазмещениеКредитногоИнструмента КАК РазмещениеКредитногоИнструмента
+ГДЕ
+	НЕ РазмещениеКредитногоИнструмента.ПометкаУдаления
+	И РазмещениеКредитногоИнструмента.Основание В
+			(ВЫБРАТЬ
+				_Распоряжения.Ссылка
+			ИЗ
+				_Распоряжения КАК _Распоряжения)
+
+СГРУППИРОВАТЬ ПО
+	РазмещениеКредитногоИнструмента.Основание
+
+ИНДЕКСИРОВАТЬ ПО
+	Основание
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА Распоряжение.Ссылка В (&amp;СписокОтмеченных)
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ КАК Флаг,
+	Распоряжение.Ссылка КАК Ссылка,
+	ВЫБОР КОГДА Размещение.Ссылка ЕСТЬ NULL
+			ТОГДА ВЫБОР 
+					КОГДА _Распоряжения.ФлагСозданДепозит
+						ТОГДА "В ОБРАБОТКЕ"
+					КОГДА Распоряжение.ПометкаУдаления
+						ТОГДА "ОТМЕНЕНО"
+					ИНАЧЕ "АКТИВНО"
+				КОНЕЦ
+			ИНАЧЕ ВЫБОР
+					КОГДА Размещение.СтрокаБанковскойВыписки = ЗНАЧЕНИЕ(Документ.СтрокаБанковскойВыписки.ПустаяСсылка)
+						ТОГДА "В ОБРАБОТКЕ"
+					КОГДА ЕСТЬNULL(Размещение.Сумма, 0) &lt; Распоряжение.Сумма
+						ТОГДА "ЧАСТИЧНОЕ ИСПОЛНЕНИЕ"
+					ИНАЧЕ "ИСПОЛНЕНО"
+				КОНЕЦ	
+	КОНЕЦ КАК Статус,
+	НАЧАЛОПЕРИОДА(Распоряжение.Дата, ДЕНЬ) КАК ДатаРаспоряжения,
+	Распоряжение.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	Распоряжение.СчетДоверительногоУправления.КодСчета КАК КодСчета,
+	ВложенныйЗапрос.Код КАК КодБрокера,
+	Распоряжение.Сумма КАК Сумма,
+	Распоряжение.Валюта КАК Валюта,
+	Распоряжение.ДатаРазмещения КАК ДатаРазмещения,
+	Распоряжение.ДатаВозврата КАК ДатаПогашения,
+	РАЗНОСТЬДАТ(Распоряжение.ДатаРазмещения, Распоряжение.ДатаВозврата, ДЕНЬ) КАК Срок,
+	Распоряжение.Процент КАК Ставка,
+	Распоряжение.ПериодичностьВыплатыПроцентов КАК ПериодичностьВыплатыПроцентов,
+	Распоряжение.ДоВостребования КАК ДоВостребования,
+	Распоряжение.ПроцентнаяСтавкаПриДосрочномЗакрытии КАК СтавкаДоВостребования,
+	Распоряжение.Банк КАК БанкРазмещения,
+	Распоряжение.РасчетныйСчет.Банк КАК БанкСписанияДенежныхСредств,
+	Распоряжение.РасчетныйСчетВозвратаДенежныхСредств.Банк КАК БанкВозвратаДенежныхСредств,
+	Распоряжение.Субординированность КАК Субординированность
+ИЗ
+	Документ.Распоряжение КАК Распоряжение
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ _Распоряжения КАК _Распоряжения
+		ПО Распоряжение.Ссылка = _Распоряжения.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			_КодыБрокеров.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+			_КодыБрокеров.Код КАК Код
+		ИЗ
+			(ВЫБРАТЬ
+				_КодыБрокеров.СчетДоверительногоУправления КАК СчетДоверительногоУправления
+			ИЗ
+				_КодыБрокеров КАК _КодыБрокеров
+			
+			СГРУППИРОВАТЬ ПО
+				_КодыБрокеров.СчетДоверительногоУправления
+			
+			ИМЕЮЩИЕ
+				КОЛИЧЕСТВО(РАЗЛИЧНЫЕ _КодыБрокеров.Код) = 1) КАК ЕдиничныеКодыБрокеров
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ _КодыБрокеров КАК _КодыБрокеров
+				ПО ЕдиничныеКодыБрокеров.СчетДоверительногоУправления = _КодыБрокеров.СчетДоверительногоУправления) КАК ВложенныйЗапрос
+		ПО Распоряжение.СчетДоверительногоУправления = ВложенныйЗапрос.СчетДоверительногоУправления
+		ЛЕВОЕ СОЕДИНЕНИЕ _Размещение КАК Размещение
+		ПО Распоряжение.Ссылка = Размещение.Основание  </QueryText>
+				<MainTable>Document.Распоряжение</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance/>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СписокОтмеченных" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список отмеченных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПросроченныеРаспоряженияМНО" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просроченные распоряжения МНО</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СостояниеДокумента" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Документ" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.Распоряжение</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасчетныйСчет" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчетный счет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Процент" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДатаВозврата" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата возврата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОПлановые</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">РаспоряженияМНОПлановые.РасчетныйСчет</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">РаспоряженияМНОПлановые.РасчетныйСчет</dcsset:left>
+							<dcsset:comparisonType>Contains</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">счет клиринга</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#3F3F3F</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОПлановыеСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияМНОПлановые.СтрокаРС</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ButtonTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовФлаг</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРаспоряжения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодБрокера</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСрок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаПогашения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСубординированность</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияНаРазмещениеДепозитов.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ОТМЕНЕНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Gainsboro</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовФлаг</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРаспоряжения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодБрокера</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаПогашения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСрок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСубординированность</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияНаРазмещениеДепозитов.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">СОЗДАНО</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:LemonChiffon</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовФлаг</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРаспоряжения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодБрокера</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаПогашения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСрок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСубординированность</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияНаРазмещениеДепозитов.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">В ОБРАБОТКЕ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовФлаг</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРаспоряжения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовКодБрокера</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкСписанияДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовБанкВозвратаДенежныхСредств</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДатаПогашения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСрок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтавкаДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСубординированность</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияНаРазмещениеДепозитовСтатус</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияНаРазмещениеДепозитов.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">ЧАСТИЧНОЕ ИСПОЛНЕНИЕ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеБанк</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеДатаВозврата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеДоПогашения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияМНОСозданные.Истекло</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОбновитьРаспоряженияМНО" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить таблицу распоряжений МНО</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновитьРаспоряженияМНО</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОПлановыеСнятьВсеФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения МНОПлановые снять все флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОПлановыеСнятьВсеФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОПлановыеУстановитьВсеФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения МНОПлановые установить все флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОПлановыеУстановитьВсеФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОПлановыеСоздатьРаспоряженияМНО" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать распоряжения на МНО</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать распоряжения МНО</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСоздатьРаспоряженияМНО</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДокументыУстановитьСнятьПометкуУдаление" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление / снять пометку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить/Снять пометку удаление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаДокументыУстановитьСнятьПометкуУдаление</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОПлановыеРазвернутьВсе" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения МНОПлановые развернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОПлановыеРазвернутьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОПлановыеСвернутьВсе" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения МНОПлановые свернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОПлановыеСвернутьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОСозданныеПечать" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать тикетов на размещение дс в МНО</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОСозданныеПечать</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОПлановыеОтображатьНачальныеОстатки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начальные остатки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать начальные остатки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаРаспоряженияМНОПлановыеОтображатьНачальныеОстатки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаЗагрузитьРаспоряженияМНОИзExcel" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из Excel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить распоряжения на МНО из excel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SpreadsheetInsertPageBreak</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаЗагрузитьРаспоряженияМНОИзExcel</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаЗагрузитьРаспоряженияНаРазмещениеДепозитовИзExcel" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из Excel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить распоряжения на размещение депозитов из excel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SpreadsheetInsertPageBreak</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаЗагрузитьРаспоряженияНаРазмещениеДепозитовИзExcel</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОбновитьРаспоряженияНаРазмещениеДепозитов" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить таблицу распоряжений на размещение депозитов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновитьРаспоряженияНаРазмещениеДепозитов</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="КомандаСоздатьРаспоряжениеНаРазмещениеДепозита" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать распоряжение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать распоряжение на размещение дс на депозите</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСоздатьРаспоряжениеНаРазмещениеДепозита</Action>
+		</Command>
+		<Command name="КомандаРаспоряженияНаРазмещениеДепозитовПечать" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать тикетов на размещение дс на депозитах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаРаспоряженияНаРазмещениеДепозитовПечать</Action>
+		</Command>
+		<Command name="КомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения на размещение депозитов установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения на размещение депозитов снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаСоздатьЗадачиПоДепозитамВПервойФорме" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать задачи в 1Ф</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать задачи в первой форме</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПерваяФорма</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьЗадачиПоДепозитамВПервойФорме</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

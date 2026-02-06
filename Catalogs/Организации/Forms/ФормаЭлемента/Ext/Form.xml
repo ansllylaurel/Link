@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНаименованиеИКод" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа наименование и код</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНаименованиеИКодРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ЮрФизЛицо" id="7">
+			<DataPath>Объект.ЮрФизЛицо</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>2</TitleHeight>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ЮрФизЛицоКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ЮрФизЛицоРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ЮрФизЛицоПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Группа2" id="31">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<InputField name="ЗаголовокСистемы" id="25">
+					<DataPath>Объект.ЗаголовокСистемы</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<TitleHeight>2</TitleHeight>
+					<ContextMenu name="ЗаголовокСистемыКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ЗаголовокСистемыРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="ПрефиксНумерации" id="22">
+					<DataPath>Объект.ПрефиксНумерации</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<TitleHeight>2</TitleHeight>
+					<ContextMenu name="ПрефиксНумерацииКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ПрефиксНумерацииРасширеннаяПодсказка" id="24"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа1</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа1</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<InputField name="ВалютаУчета" id="17">
+					<DataPath>Объект.ВалютаУчета</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВалютаУчетаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ВалютаУчетаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ДатаНачалаУчета" id="28">
+					<DataPath>Объект.ДатаНачалаУчета</DataPath>
+					<ContextMenu name="ДатаНачалаУчетаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ДатаНачалаУчетаРасширеннаяПодсказка" id="30"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа3" id="33">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="34"/>
+			<ChildItems>
+				<CheckBoxField name="КонтрольОтветственныхЗаОперации" id="35">
+					<DataPath>Объект.КонтрольОтветственныхЗаОперации</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="КонтрольОтветственныхЗаОперацииКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="КонтрольОтветственныхЗаОперацииРасширеннаяПодсказка" id="37"/>
+				</CheckBoxField>
+				<CheckBoxField name="КонтрольПодтвержденийОпераций" id="38">
+					<DataPath>Объект.КонтрольПодтвержденийОпераций</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="КонтрольПодтвержденийОперацийКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="КонтрольПодтвержденийОперацийРасширеннаяПодсказка" id="40"/>
+				</CheckBoxField>
+				<CheckBoxField name="КонтрольДоступаКСчетамДоверительногоУправления" id="41">
+					<DataPath>Объект.КонтрольДоступаКСчетамДоверительногоУправления</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="КонтрольДоступаКСчетамДоверительногоУправленияКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="КонтрольДоступаКСчетамДоверительногоУправленияРасширеннаяПодсказка" id="43"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ИдентификаторПапкиВФайловомХранилище" id="49">
+			<DataPath>Объект.ИдентификаторПапкиВФайловомХранилище</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ИдентификаторПапкиВФайловомХранилищеКонтекстноеМеню" id="50"/>
+			<ExtendedTooltip name="ИдентификаторПапкиВФайловомХранилищеРасширеннаяПодсказка" id="51"/>
+		</InputField>
+		<Button name="КомандаПроверитьСоединениеСБазойБухгалтерии" id="52">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.КомандаПроверитьСоединениеСБазойБухгалтерии</CommandName>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ExtendedTooltip name="КомандаПроверитьСоединениеСБазойБухгалтерииРасширеннаяПодсказка" id="53"/>
+		</Button>
+		<UsualGroup name="ГруппаРеквизитыЮрФизЛица" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты юр./физ. лица</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты юр физ лица</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаРеквизитыЮрФизЛицаРасширеннаяПодсказка" id="16"/>
+		</UsualGroup>
+		<InputField name="Комментарий" id="12">
+			<DataPath>Объект.Комментарий</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="14"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Организации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаПроверитьСоединениеСБазойБухгалтерии" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить соединение с базой бухгалтерии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки подключения задаются в дополнительных сведениях организации. Необходимо заполнить "Строка соединения с базой бухгалтерии" и "Имя компоненты соединения с базой бухгалтерии"</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПроверитьСоединениеСБазойБухгалтерии</Action>
+		</Command>
+	</Commands>
+</Form>
