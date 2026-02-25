@@ -171,6 +171,7 @@
 									<v8:content>Распоряжения плановые</v8:content>
 								</v8:item>
 							</Title>
+							<TitleFont ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -332,9 +333,6 @@
 															<CheckBoxType>Auto</CheckBoxType>
 															<ContextMenu name="РаспоряженияМНОПлановыеФлажокКонтекстноеМеню" id="44"/>
 															<ExtendedTooltip name="РаспоряженияМНОПлановыеФлажокРасширеннаяПодсказка" id="45"/>
-															<Events>
-																<Event name="OnChange">РаспоряженияПлановыеФлажокПриИзменении</Event>
-															</Events>
 														</CheckBoxField>
 														<InputField name="РаспоряженияМНОПлановыеСчетДоверительногоУправления" id="46">
 															<DataPath>РаспоряженияМНОПлановые.МестоХраненияСтратегияСчетДУ</DataPath>
@@ -385,14 +383,6 @@
 														<Event name="OnChange">РаспоряженияПлановыеСрокПриИзменении</Event>
 													</Events>
 												</InputField>
-												<CheckBoxField name="РаспоряженияМНОПлановыеПодКупон" id="607">
-													<DataPath>РаспоряженияМНОПлановые.ПодКупон</DataPath>
-													<Visible>false</Visible>
-													<EditMode>EnterOnInput</EditMode>
-													<CheckBoxType>Auto</CheckBoxType>
-													<ContextMenu name="РаспоряженияМНОПлановыеПодКупонКонтекстноеМеню" id="608"/>
-													<ExtendedTooltip name="РаспоряженияМНОПлановыеПодКупонРасширеннаяПодсказка" id="609"/>
-												</CheckBoxField>
 												<InputField name="РаспоряженияМНОПлановыеДатаВозврата" id="58">
 													<DataPath>РаспоряженияМНОПлановые.ДатаВозврата</DataPath>
 													<HorizontalAlign>Right</HorizontalAlign>
@@ -562,6 +552,7 @@
 															<v8:content>Распоряжения созданные</v8:content>
 														</v8:item>
 													</Title>
+													<TitleFont ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
 													<ToolTip>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -570,6 +561,39 @@
 													</ToolTip>
 													<ExtendedTooltip name="ГруппаРаспоряженияМНОСозданныеРасширеннаяПодсказка" id="21"/>
 													<ChildItems>
+														<UsualGroup name="ГруппаУправляющий" id="625">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Управляющий</v8:content>
+																</v8:item>
+															</Title>
+															<TitleTextColor>web:DarkBlue</TitleTextColor>
+															<TitleFont ref="style:NormalTextFont" height="10" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Управляющий</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Behavior>PopUp</Behavior>
+															<ControlRepresentation>Picture</ControlRepresentation>
+															<Representation>None</Representation>
+															<ExtendedTooltip name="ГруппаУправляющийРасширеннаяПодсказка" id="626"/>
+															<ChildItems>
+																<InputField name="Управляющий" id="622">
+																	<DataPath>Управляющий</DataPath>
+																	<TitleLocation>None</TitleLocation>
+																	<ListChoiceMode>true</ListChoiceMode>
+																	<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+																	<ContextMenu name="УправляющийКонтекстноеМеню" id="623"/>
+																	<ExtendedTooltip name="УправляющийРасширеннаяПодсказка" id="624"/>
+																	<Events>
+																		<Event name="OnChange">УправляющийПриИзменении</Event>
+																	</Events>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
 														<Table name="РаспоряженияМНОСозданные" id="64">
 															<Representation>List</Representation>
 															<ChangeRowSet>false</ChangeRowSet>
@@ -596,7 +620,7 @@
 																<ChildItems>
 																	<Button name="КонтекстноеМенюКомандаДокументыУстановитьСнятьПометкуУдаление" id="274">
 																		<Type>CommandBarButton</Type>
-																		<CommandName>Form.Command.КомандаДокументыУстановитьСнятьПометкуУдаление</CommandName>
+																		<CommandName>Form.Command.КомандаДокументыУстановитьПометкуУдаление</CommandName>
 																		<ExtendedTooltip name="КонтекстноеМенюКомандаДокументыУстановитьСнятьПометкуУдалениеРасширеннаяПодсказка" id="275"/>
 																	</Button>
 																	<Button name="КонтекстноеМенюСортироватьСписокПоВозрастанию" id="276">
@@ -613,17 +637,23 @@
 															</ContextMenu>
 															<AutoCommandBar name="РаспоряженияМНОСозданныеКоманднаяПанель" id="66">
 																<ChildItems>
-																	<Button name="КомандаДокументыУстановитьСнятьПометкуУдаление" id="93">
+																	<Button name="УстановитьВсеФлажки" id="609">
 																		<Type>CommandBarButton</Type>
-																		<CommandName>Form.Command.КомандаДокументыУстановитьСнятьПометкуУдаление</CommandName>
-																		<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-																		<ExtendedTooltip name="КомандаДокументыУстановитьСнятьПометкуУдалениеРасширеннаяПодсказка" id="94"/>
+																		<CommandName>Form.Command.КомандаРаспоряженияМНОСозданныеУстановитьВсеФлажки</CommandName>
+																		<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+																		<ExtendedTooltip name="УстановитьВсеФлажкиРасширеннаяПодсказка" id="610"/>
 																	</Button>
-																	<Button name="КомандаРаспоряженияМНОСозданныеПечать" id="137">
+																	<Button name="СнятьВсеФлажки" id="611">
 																		<Type>CommandBarButton</Type>
-																		<CommandName>Form.Command.КомандаРаспоряженияМНОСозданныеПечать</CommandName>
-																		<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-																		<ExtendedTooltip name="КомандаРаспоряженияМНОСозданныеПечатьРасширеннаяПодсказка" id="138"/>
+																		<CommandName>Form.Command.КомандаРаспоряженияМНОСозданныеСнятьВсеФлажки</CommandName>
+																		<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+																		<ExtendedTooltip name="СнятьВсеФлажкиРасширеннаяПодсказка" id="612"/>
+																	</Button>
+																	<Button name="КомандаДокументыУстановитьПометкуУдаление" id="93">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Command.КомандаДокументыУстановитьПометкуУдаление</CommandName>
+																		<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+																		<ExtendedTooltip name="КомандаДокументыУстановитьПометкуУдалениеРасширеннаяПодсказка" id="94"/>
 																	</Button>
 																	<Button name="КомандаЗагрузитьРаспоряженияМНОИзExcel" id="267">
 																		<Type>CommandBarButton</Type>
@@ -665,6 +695,12 @@
 																		<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 																		<ExtendedTooltip name="КомандаЗагрузитьРаспоряженияМНОИзExcelРасширеннаяПодсказка" id="268"/>
 																	</Button>
+																	<Button name="КомандаСогласоватьМНО" id="607">
+																		<Type>CommandBarButton</Type>
+																		<CommandName>Form.Command.КомандаСогласоватьМНО</CommandName>
+																		<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+																		<ExtendedTooltip name="КомандаСогласоватьМНОРасширеннаяПодсказка" id="608"/>
+																	</Button>
 																</ChildItems>
 															</AutoCommandBar>
 															<ExtendedTooltip name="РаспоряженияМНОСозданныеРасширеннаяПодсказка" id="67"/>
@@ -696,11 +732,53 @@
 																<Event name="BeforeRowChange">РаспоряженияМНОСозданныеПередНачаломИзменения</Event>
 															</Events>
 															<ChildItems>
+																<PictureField name="РаспоряженияМНОСозданныеСогласовано" id="616">
+																	<DataPath>РаспоряженияМНОСозданные.Согласовано</DataPath>
+																	<TitleLocation>None</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<HeaderPicture>
+																		<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
+																	</HeaderPicture>
+																	<ValuesPicture>
+																		<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
+																	</ValuesPicture>
+																	<ContextMenu name="РаспоряженияМНОСозданныеСогласованоКонтекстноеМеню" id="617"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеСогласованоРасширеннаяПодсказка" id="618"/>
+																</PictureField>
+																<CheckBoxField name="РаспоряженияМНОСозданныеФлажок" id="613">
+																	<DataPath>РаспоряженияМНОСозданные.Флажок</DataPath>
+																	<TitleLocation>None</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<HeaderPicture>
+																		<xr:Ref>StdPicture.AppearanceCheckBox</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
+																	</HeaderPicture>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="РаспоряженияМНОСозданныеФлажокКонтекстноеМеню" id="614"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеФлажокРасширеннаяПодсказка" id="615"/>
+																</CheckBoxField>
 																<InputField name="РаспоряженияМНОСозданныеСчетДоверительногоУправления" id="104">
 																	<DataPath>РаспоряженияМНОСозданные.СчетДоверительногоУправления</DataPath>
 																	<EditMode>EnterOnInput</EditMode>
 																	<ContextMenu name="РаспоряженияМНОСозданныеСчетДоверительногоУправленияКонтекстноеМеню" id="105"/>
 																	<ExtendedTooltip name="РаспоряженияМНОСозданныеСчетДоверительногоУправленияРасширеннаяПодсказка" id="106"/>
+																</InputField>
+																<InputField name="РаспоряженияМНОСозданныеНомерРаспоряжения" id="619">
+																	<DataPath>РаспоряженияМНОСозданные.НомерРаспоряжения</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>№</v8:content>
+																		</v8:item>
+																	</Title>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>1</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+																	<ContextMenu name="РаспоряженияМНОСозданныеНомерРаспоряженияКонтекстноеМеню" id="620"/>
+																	<ExtendedTooltip name="РаспоряженияМНОСозданныеНомерРаспоряженияРасширеннаяПодсказка" id="621"/>
 																</InputField>
 																<InputField name="РаспоряженияМНОСозданныеБанк" id="387">
 																	<DataPath>РаспоряженияМНОСозданные.Банк</DataPath>
@@ -732,6 +810,12 @@
 																</InputField>
 																<InputField name="РаспоряженияМНОСозданныеДоПогашения" id="201">
 																	<DataPath>РаспоряженияМНОСозданные.ДоПогашения</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>До погашения</v8:content>
+																		</v8:item>
+																	</Title>
 																	<EditMode>EnterOnInput</EditMode>
 																	<ContextMenu name="РаспоряженияМНОСозданныеДоПогашенияКонтекстноеМеню" id="202"/>
 																	<ExtendedTooltip name="РаспоряженияМНОСозданныеДоПогашенияРасширеннаяПодсказка" id="203"/>
@@ -758,12 +842,14 @@
 															<v8:content>Действующие МНО</v8:content>
 														</v8:item>
 													</Title>
+													<TitleFont ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
 													<ToolTip>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
 															<v8:content>Группа распоряжения созданные</v8:content>
 														</v8:item>
 													</ToolTip>
+													<Behavior>Collapsible</Behavior>
 													<ExtendedTooltip name="ГруппаМНОСозданныеРасширеннаяПодсказка" id="197"/>
 													<ChildItems>
 														<Table name="МНОСозданные" id="204">
@@ -1072,18 +1158,6 @@
 							<ContextMenu name="РаспоряженияНаРазмещениеДепозитовКонтекстноеМеню" id="396"/>
 							<AutoCommandBar name="РаспоряженияНаРазмещениеДепозитовКоманднаяПанель" id="397">
 								<ChildItems>
-									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки" id="558">
-										<Type>CommandBarButton</Type>
-										<Visible>false</Visible>
-										<CommandName>Form.Command.КомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки</CommandName>
-										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажкиРасширеннаяПодсказка" id="559"/>
-									</Button>
-									<Button name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки" id="560">
-										<Type>CommandBarButton</Type>
-										<Visible>false</Visible>
-										<CommandName>Form.Command.КомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки</CommandName>
-										<ExtendedTooltip name="РаспоряженияНаРазмещениеДепозитовКомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажкиРасширеннаяПодсказка" id="561"/>
-									</Button>
 									<Button name="КомандаОбновитьРаспоряженияНаРазмещениеДепозитов" id="554">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.КомандаОбновитьРаспоряженияНаРазмещениеДепозитов</CommandName>
@@ -1748,17 +1822,6 @@
 						<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
 					</Type>
 				</Column>
-				<Column name="ПодКупон" id="20">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Под купон</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:boolean</v8:Type>
-					</Type>
-				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="РаспоряженияМНОСозданные" id="6">
@@ -1898,6 +1961,70 @@
 					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="11">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерРаспоряжения" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер распоряжения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>6</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Согласовано" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Согласовано</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасчетныйСчет" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчетный счет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТребуетсяАкцепт" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требуется акцепт</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Валюта" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
@@ -2398,6 +2525,17 @@
 				</Column>
 			</Columns>
 		</Attribute>
+		<Attribute name="Управляющий" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляющий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -2787,6 +2925,70 @@
 					</dcscor:item>
 				</dcsset:appearance>
 			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеФлажок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияМНОСозданные.Согласовано</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеФлажок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСогласовано</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеНомерРаспоряжения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеБанк</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеДатаВозврата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>РаспоряженияМНОСозданныеДоПогашения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РаспоряженияМНОСозданные.Согласовано</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
 	<Commands>
@@ -2815,7 +3017,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда распоряжения МНОПлановые снять все флажки</v8:content>
+					<v8:content>Снять флажки</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -2835,7 +3037,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда распоряжения МНОПлановые установить все флажки</v8:content>
+					<v8:content>Установить флажки</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -2867,11 +3069,11 @@
 			<Action>КомандаСоздатьРаспоряженияМНО</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="КомандаДокументыУстановитьСнятьПометкуУдаление" id="7">
+		<Command name="КомандаДокументыУстановитьПометкуУдаление" id="7">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Пометить на удаление / снять пометку</v8:content>
+					<v8:content>Пометить на удаление</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -2884,7 +3086,7 @@
 				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
-			<Action>КомандаДокументыУстановитьСнятьПометкуУдаление</Action>
+			<Action>КомандаДокументыУстановитьПометкуУдаление</Action>
 			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
@@ -2892,7 +3094,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда распоряжения МНОПлановые развернуть все</v8:content>
+					<v8:content>Развернуть все</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -2912,7 +3114,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда распоряжения МНОПлановые свернуть все</v8:content>
+					<v8:content>Свернуть все</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -2926,27 +3128,6 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>КомандаРаспоряженияМНОПлановыеСвернутьВсе</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="КомандаРаспоряженияМНОСозданныеПечать" id="10">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Печать</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Печать тикетов на размещение дс в МНО</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.Print</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Action>КомандаРаспоряженияМНОСозданныеПечать</Action>
-			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КомандаРаспоряженияМНОПлановыеОтображатьНачальныеОстатки" id="11">
@@ -3057,46 +3238,6 @@
 			</ToolTip>
 			<Action>КомандаРаспоряженияНаРазмещениеДепозитовПечать</Action>
 		</Command>
-		<Command name="КомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки" id="16">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Команда распоряжения на размещение депозитов установить флажки</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Установить все флажки</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.CheckAll</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Action>КомандаРаспоряженияНаРазмещениеДепозитовУстановитьФлажки</Action>
-			<Representation>Picture</Representation>
-		</Command>
-		<Command name="КомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки" id="17">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Команда распоряжения на размещение депозитов снять флажки</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Снять все флажки</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Action>КомандаРаспоряженияНаРазмещениеДепозитовСнятьФлажки</Action>
-			<Representation>Picture</Representation>
-		</Command>
 		<Command name="КомандаСоздатьЗадачиПоДепозитамВПервойФорме" id="5">
 			<Title>
 				<v8:item>
@@ -3116,6 +3257,66 @@
 			</Picture>
 			<Action>СоздатьЗадачиПоДепозитамВПервойФорме</Action>
 			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="КомандаСогласоватьМНО" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда согласовать МНО</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСогласоватьМНО</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОСозданныеУстановитьВсеФлажки" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения МНОСозданные установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОСозданныеУстановитьВсеФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаРаспоряженияМНОСозданныеСнятьВсеФлажки" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда распоряжения МНОСозданные снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРаспоряженияМНОСозданныеСнятьВсеФлажки</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 </Form>
