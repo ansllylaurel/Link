@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<Width>50</Width>
 	<Height>18</Height>
@@ -30,43 +30,50 @@
 				</v8:item>
 			</Title>
 			<Representation>None</Representation>
-			<ShowTitle>true</ShowTitle>
 			<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="11"/>
 			<ChildItems>
 				<Table name="ПолучателиРассылки" id="12">
 					<Representation>List</Representation>
-					<ChangeRowOrder>false</ChangeRowOrder>
-					<Height>10</Height>
-					<AutoInsertNewRow>false</AutoInsertNewRow>
-					<EnableStartDrag>false</EnableStartDrag>
-					<EnableDrag>false</EnableDrag>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
 					<DataPath>ПолучателиРассылки</DataPath>
-					<CommandSet>
-						<ExcludedCommand>Add</ExcludedCommand>
-						<ExcludedCommand>Copy</ExcludedCommand>
-					</CommandSet>
+					<RowPictureDataPath>ПолучателиРассылки.Picture</RowPictureDataPath>
 					<ContextMenu name="ПолучателиРассылкиКонтекстноеМеню" id="13"/>
-					<AutoCommandBar name="ПолучателиРассылкиКоманднаяПанель" id="14">
-						<ChildItems>
-							<Button name="ПолучателиРассылкиДобавить" id="15">
-								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.Добавить</CommandName>
-								<ExtendedTooltip name="ПолучателиРассылкиДобавитьРасширеннаяПодсказка" id="16"/>
-							</Button>
-							<Button name="ПолучателиРассылкиУдалить" id="17">
-								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.Удалить</CommandName>
-								<ExtendedTooltip name="ПолучателиРассылкиУдалитьРасширеннаяПодсказка" id="18"/>
-							</Button>
-						</ChildItems>
-					</AutoCommandBar>
-					<ExtendedTooltip name="ПолучателиРассылкиРасширеннаяПодсказка" id="19"/>
+					<AutoCommandBar name="ПолучателиРассылкиКоманднаяПанель" id="14"/>
+					<ExtendedTooltip name="ПолучателиРассылкиРасширеннаяПодсказка" id="15"/>
+					<SearchStringAddition name="ПолучателиРассылкиСтрокаПоиска" id="16">
+						<AdditionSource>
+							<Item>ПолучателиРассылки</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПолучателиРассылкиСтрокаПоискаКонтекстноеМеню" id="17"/>
+						<ExtendedTooltip name="ПолучателиРассылкиСтрокаПоискаРасширеннаяПодсказка" id="18"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПолучателиРассылкиСостояниеПросмотра" id="19">
+						<AdditionSource>
+							<Item>ПолучателиРассылки</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПолучателиРассылкиСостояниеПросмотраКонтекстноеМеню" id="20"/>
+						<ExtendedTooltip name="ПолучателиРассылкиСостояниеПросмотраРасширеннаяПодсказка" id="21"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПолучателиРассылкиУправлениеПоиском" id="22">
+						<AdditionSource>
+							<Item>ПолучателиРассылки</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПолучателиРассылкиУправлениеПоискомКонтекстноеМеню" id="23"/>
+						<ExtendedTooltip name="ПолучателиРассылкиУправлениеПоискомРасширеннаяПодсказка" id="24"/>
+					</SearchControlAddition>
 					<ChildItems>
-						<InputField name="ПолучателиРассылкиЗначение" id="20">
-							<DataPath>ПолучателиРассылки</DataPath>
+						<InputField name="ПолучателиРассылкиЗначение" id="25">
+							<DataPath>ПолучателиРассылки.Value</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ПолучателиРассылкиЗначениеКонтекстноеМеню" id="21"/>
-							<ExtendedTooltip name="ПолучателиРассылкиЗначениеРасширеннаяПодсказка" id="22"/>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПолучателиРассылкиЗначениеКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ПолучателиРассылкиЗначениеРасширеннаяПодсказка" id="27"/>
 						</InputField>
 					</ChildItems>
 				</Table>
@@ -104,36 +111,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОК</Action>
-		</Command>
-		<Command name="Добавить" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Добавить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Добавить пользователя из справочника</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>Добавить</Action>
-		</Command>
-		<Command name="Удалить" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить выбранного получателя</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>Удалить</Action>
 		</Command>
 		<Command name="Отмена" id="4">
 			<Title>
