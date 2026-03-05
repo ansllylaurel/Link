@@ -28,6 +28,7 @@
 					<v8:content>Параметры</v8:content>
 				</v8:item>
 			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="23"/>
@@ -42,72 +43,28 @@
 						<Event name="StartChoice">ПутьКПапкеНачалоВыбора</Event>
 					</Events>
 				</InputField>
-				<LabelField name="Организация" id="1">
-					<DataPath>Отчет.Организация</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<TitleLocation>None</TitleLocation>
-					<Hiperlink>true</Hiperlink>
-					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
-					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
-				</LabelField>
-				<Button name="ПоказатьРассылку" id="76">
-					<Type>UsualButton</Type>
-					<Visible>false</Visible>
-					<CommandName>Form.Command.ПоказатьРассылку</CommandName>
-					<ExtendedTooltip name="ПоказатьРассылкуРасширеннаяПодсказка" id="77"/>
-				</Button>
-				<Table name="ПолучателиРассылки" id="26">
-					<Representation>List</Representation>
-					<Visible>false</Visible>
-					<Header>false</Header>
-					<HorizontalLines>false</HorizontalLines>
-					<VerticalLines>false</VerticalLines>
-					<AutoInsertNewRow>true</AutoInsertNewRow>
-					<DataPath>ПолучателиРассылки</DataPath>
-					<RowPictureDataPath>ПолучателиРассылки.Picture</RowPictureDataPath>
-					<ContextMenu name="ПолучателиРассылкиКонтекстноеМеню" id="27"/>
-					<AutoCommandBar name="ПолучателиРассылкиКоманднаяПанель" id="28"/>
-					<ExtendedTooltip name="ПолучателиРассылкиРасширеннаяПодсказка" id="29"/>
-					<SearchStringAddition name="ПолучателиРассылкиСтрокаПоиска" id="30">
-						<AdditionSource>
-							<Item>ПолучателиРассылки</Item>
-							<Type>SearchStringRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="ПолучателиРассылкиСтрокаПоискаКонтекстноеМеню" id="31"/>
-						<ExtendedTooltip name="ПолучателиРассылкиСтрокаПоискаРасширеннаяПодсказка" id="32"/>
-					</SearchStringAddition>
-					<ViewStatusAddition name="ПолучателиРассылкиСостояниеПросмотра" id="33">
-						<AdditionSource>
-							<Item>ПолучателиРассылки</Item>
-							<Type>ViewStatusRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="ПолучателиРассылкиСостояниеПросмотраКонтекстноеМеню" id="34"/>
-						<ExtendedTooltip name="ПолучателиРассылкиСостояниеПросмотраРасширеннаяПодсказка" id="35"/>
-					</ViewStatusAddition>
-					<SearchControlAddition name="ПолучателиРассылкиУправлениеПоиском" id="36">
-						<AdditionSource>
-							<Item>ПолучателиРассылки</Item>
-							<Type>SearchControl</Type>
-						</AdditionSource>
-						<ContextMenu name="ПолучателиРассылкиУправлениеПоискомКонтекстноеМеню" id="37"/>
-						<ExtendedTooltip name="ПолучателиРассылкиУправлениеПоискомРасширеннаяПодсказка" id="38"/>
-					</SearchControlAddition>
-					<ChildItems>
-						<InputField name="ПолучателиРассылкиЗначение" id="39">
-							<DataPath>ПолучателиРассылки.Value</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="ПолучателиРассылкиЗначениеКонтекстноеМеню" id="40"/>
-							<ExtendedTooltip name="ПолучателиРассылкиЗначениеРасширеннаяПодсказка" id="41"/>
-						</InputField>
-					</ChildItems>
-				</Table>
 				<CheckBoxField name="СохранятьДанныеРеестраВExternals" id="78">
 					<DataPath>Отчет.СохранятьДанныеРеестраВExternals</DataPath>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="СохранятьДанныеРеестраВExternalsКонтекстноеМеню" id="79"/>
 					<ExtendedTooltip name="СохранятьДанныеРеестраВExternalsРасширеннаяПодсказка" id="80"/>
 				</CheckBoxField>
+				<Button name="ПоказатьРассылку" id="76">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<CommandName>Form.Command.ПоказатьРассылку</CommandName>
+					<ExtendedTooltip name="ПоказатьРассылкуРасширеннаяПодсказка" id="77"/>
+				</Button>
+				<LabelField name="Организация" id="1">
+					<DataPath>Отчет.Организация</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+				</LabelField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="Группа1" id="74">
@@ -186,7 +143,7 @@
 	<Attributes>
 		<Attribute name="Отчет" id="1">
 			<Type>
-				<v8:Type>cfg:ExternalReportObject.СверкаСРеестромВладельцевИнвестиционныхПаев</v8:Type>
+				<v8:Type>cfg:ExternalReportObject._СверкаСРеестромВладельцевИнвестиционныхПаев</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
@@ -233,20 +190,6 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-		</Attribute>
-		<Attribute name="ПолучателиРассылки" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Получатели рассылки</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>v8:ValueListType</v8:Type>
-			</Type>
-			<Settings xsi:type="v8:TypeDescription">
-				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
-			</Settings>
 		</Attribute>
 		<Attribute name="РезультатыСверки" id="55">
 			<Title>
