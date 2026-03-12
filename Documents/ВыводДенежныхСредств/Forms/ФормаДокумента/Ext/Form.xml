@@ -323,6 +323,7 @@
 							<ChildItems>
 								<InputField name="СуммаНДФЛ" id="112">
 									<DataPath>Объект.СуммаНДФЛ</DataPath>
+									<Enabled>false</Enabled>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -335,10 +336,10 @@
 										<Event name="OnChange">СуммаНДФЛПриИзменении</Event>
 									</Events>
 								</InputField>
-								<Button name="РассчитатьНДФЛ" id="168">
+								<Button name="РассчитатьНДФЛ" id="198">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.РассчитатьНДФЛ</CommandName>
-									<ExtendedTooltip name="РассчитатьНДФЛРасширеннаяПодсказка" id="169"/>
+									<ExtendedTooltip name="РассчитатьНДФЛРасширеннаяПодсказка" id="199"/>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
@@ -379,6 +380,7 @@
 								</LabelField>
 								<InputField name="СуммаПайщику" id="173">
 									<DataPath>СуммаПайщику</DataPath>
+									<Enabled>false</Enabled>
 									<ReadOnly>true</ReadOnly>
 									<ContextMenu name="СуммаПайщикуКонтекстноеМеню" id="174"/>
 									<ExtendedTooltip name="СуммаПайщикуРасширеннаяПодсказка" id="175"/>
@@ -853,23 +855,6 @@
 			<ModifiesSavedData>true</ModifiesSavedData>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="РассчитатьНДФЛ" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Рассчитать</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Рассчитать НДФЛ</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>РассчитатьНДФЛ</Action>
-			<ModifiesSavedData>true</ModifiesSavedData>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
 		<Command name="КомандаВыбратьДанныеПоКонтрагенту" id="4">
 			<Title>
 				<v8:item>
@@ -884,6 +869,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаВыбратьДанныеПоКонтрагенту</Action>
+		</Command>
+		<Command name="РассчитатьНДФЛ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать НДФЛ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РассчитатьНДФЛ</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

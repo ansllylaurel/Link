@@ -5494,6 +5494,33 @@
 		</right>
 	</object>
 	<object>
+		<name>ExternalDataSource.Externals.Table.Register_of_disqualified_persons</name>
+		<right>
+			<name>Insert</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Delete</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>InteractiveInsert</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>InteractiveDelete</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.ЦентрыОбработкиДанных.Attribute.Организация</name>
 		<right>
 			<name>View</name>
@@ -7704,16 +7731,6 @@
 		<right>
 			<name>Edit</name>
 			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.РасчетНДФЛПайщиков</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-			<restrictionByCondition>
-				<condition>#ДанныеТекущейОрганизации()</condition>
-			</restrictionByCondition>
 		</right>
 	</object>
 	<object>
@@ -13693,6 +13710,45 @@
 		</right>
 	</object>
 	<object>
+		<name>InformationRegister.РеквизитыФизическихЛиц</name>
+		<right>
+			<name>Update</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>TotalsControl</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistory</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistoryOfMissingData</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistorySettings</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistoryVersionComment</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>EditDataHistoryVersionComment</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>SwitchToDataHistoryVersion</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Report.РегламентированныйОтчетБалансРСБУ</name>
 		<right>
 			<name>Use</name>
@@ -15012,6 +15068,56 @@
 		<name>InformationRegister.ЖурналСверкиСоСписками.Command.ВыполнитьСверкуССанкционнымСписком</name>
 		<right>
 			<name>View</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>InformationRegister.ВременноеХранилищеОтчетов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>#ВременноеХранилищеОтчетов</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>TotalsControl</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>ReadDataHistory</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>ReadDataHistoryOfMissingData</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistory</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistoryOfMissingData</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistorySettings</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>UpdateDataHistoryVersionComment</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>ViewDataHistory</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>EditDataHistoryVersionComment</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>SwitchToDataHistoryVersion</name>
 			<value>false</value>
 		</right>
 	</object>
@@ -37400,6 +37506,28 @@
 			<value>false</value>
 		</right>
 	</object>
+	<restrictionTemplate>
+		<name>ВременноеХранилищеОтчетов</name>
+		<condition>#Если НЕ &amp;ЭтоФоновоеЗадание #Тогда
+        ТекущаяТаблица
+    ИЗ
+        #ТекущаяТаблица КАК ТекущаяТаблица
+    ГДЕ
+    #Если &amp;КонтрольДоступаКСчетамДоверительногоУправления И НЕ &amp;ДоступныВсеСчетаДоверительногоУправления #Тогда
+        ТекущаяТаблица.ЭкземплярОтчета.Организация = &amp;ТекущаяОрганизация
+        И (ТИПЗНАЧЕНИЯ(ТекущаяТаблица.ЭкземплярОтчета.Субъект) = ТИП(Справочник.СчетаДоверительногоУправления)
+                И ТекущаяТаблица.ЭкземплярОтчета.Субъект В(ВЫБРАТЬ
+                                                ДоступныеСчетаДоверительногоУправления.СчетДоверительногоУправления
+                                            ИЗ
+                                                РегистрСведений.ДоступныеСчетаДоверительногоУправления КАК ДоступныеСчетаДоверительногоУправления
+                                            ГДЕ
+                                                ДоступныеСчетаДоверительногоУправления.Пользователь = &amp;ТекущийПользователь)
+            ИЛИ ТИПЗНАЧЕНИЯ(ТекущаяТаблица.ЭкземплярОтчета.Субъект) &lt;&gt; ТИП(Справочник.СчетаДоверительногоУправления))
+    #Иначе
+        ТекущаяТаблица.ЭкземплярОтчета.Организация = &amp;ТекущаяОрганизация
+    #КонецЕсли
+#КонецЕсли</condition>
+	</restrictionTemplate>
 	<restrictionTemplate>
 		<name>ВходящийДокумент</name>
 		<condition>#Если НЕ &amp;ЭтоФоновоеЗадание #Тогда

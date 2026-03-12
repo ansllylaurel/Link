@@ -21,6 +21,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="NewWriteProcessing">ОбработкаЗаписиНового</Event>
 		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
@@ -226,6 +227,20 @@
 				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 			</Events>
 			<ChildItems>
+				<PictureField name="ЕстьФайлы" id="96">
+					<DataPath>Список.ЕстьФайлы</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.Скрепка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.Скрепка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="ЕстьФайлыКонтекстноеМеню" id="97"/>
+					<ExtendedTooltip name="ЕстьФайлыРасширеннаяПодсказка" id="98"/>
+				</PictureField>
 				<LabelField name="Наименование" id="16">
 					<DataPath>Список.Наименование</DataPath>
 					<DefaultItem>true</DefaultItem>
@@ -343,7 +358,7 @@
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
-				<DynamicDataRead>false</DynamicDataRead>
+				<DynamicDataRead>true</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	"Текст запроса собирается в процедуре Справочники.ЮрФизЛица.ПодготовитьДинамическийСписокФормыСпискаВыбора" КАК Комментарий,
 	СправочникЮрФизЛица.Ссылка КАК Ссылка,
@@ -362,9 +377,16 @@
 	"" КАК ПолноеНаименованиеАнкета,
 	ДАТАВРЕМЯ(1,1,1) КАК ДатаАнкеты,
 	ЛОЖЬ  КАК Клиент,
-	ЛОЖЬ  КАК СотрудникОрганизации
+	ЛОЖЬ  КАК СотрудникОрганизации,
+	ВЫБОР
+		КОГДА НаличиеФайлов.ЕстьФайлы
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ КАК ЕстьФайлы
 ИЗ
-	Справочник.ЮрФизЛица КАК СправочникЮрФизЛица
+	Справочник.ЮрФизЛица КАК СправочникЮрФизЛица  
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НаличиеФайлов КАК НаличиеФайлов
+		ПО СправочникЮрФизЛица.Ссылка = НаличиеФайлов.ВладелецФайла}
 </QueryText>
 				<MainTable>Catalog.ЮрФизЛица</MainTable>
 				<ListSettings>
