@@ -6,6 +6,7 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="Группа1" id="93">
@@ -18,6 +19,9 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
 				</InputField>
 				<InputField name="Номер" id="1">
 					<DataPath>Объект.Number</DataPath>
@@ -40,6 +44,9 @@
 			<EditMode>EnterOnInput</EditMode>
 			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
+			</Events>
 		</InputField>
 		<Pages name="Страницы" id="19">
 			<Title>
@@ -68,7 +75,25 @@
 							<DataPath>Объект.ОбъектыНедвижимостиКромеЗемельныхУчастков</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ОбъектыНедвижимостиКромеЗемельныхУчастковКонтекстноеМеню" id="24"/>
-							<AutoCommandBar name="ОбъектыНедвижимостиКромеЗемельныхУчастковКоманднаяПанель" id="25"/>
+							<AutoCommandBar name="ОбъектыНедвижимостиКромеЗемельныхУчастковКоманднаяПанель" id="25">
+								<ChildItems>
+									<Popup name="ОбъектыНедвижимостиЗаполнить" id="121">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Объекты недвижимости заполнить</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ОбъектыНедвижимостиЗаполнитьРасширеннаяПодсказка" id="122"/>
+									</Popup>
+								</ChildItems>
+							</AutoCommandBar>
 							<ExtendedTooltip name="ОбъектыНедвижимостиКромеЗемельныхУчастковРасширеннаяПодсказка" id="26"/>
 							<SearchStringAddition name="ОбъектыНедвижимостиКромеЗемельныхУчастковСтрокаПоиска" id="27">
 								<AdditionSource>
@@ -111,6 +136,19 @@
 									<ContextMenu name="ОбъектыНедвижимостиКромеЗемельныхУчастковОбъектНедвижимостиКонтекстноеМеню" id="40"/>
 									<ExtendedTooltip name="ОбъектыНедвижимостиКромеЗемельныхУчастковОбъектНедвижимостиРасширеннаяПодсказка" id="41"/>
 								</InputField>
+								<LabelField name="ОбъектыНедвижимостиКромеЗемельныхУчастковКадастровыйНомер" id="123">
+									<DataPath>Объект.ОбъектыНедвижимостиКромеЗемельныхУчастков.ОбъектНедвижимости.КадастровыйНомер</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Кадастровый номер</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>20</Width>
+									<ContextMenu name="ОбъектыНедвижимостиКромеЗемельныхУчастковКадастровыйНомерКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="ОбъектыНедвижимостиКромеЗемельныхУчастковКадастровыйНомерРасширеннаяПодсказка" id="125"/>
+								</LabelField>
 								<InputField name="ОбъектыНедвижимостиКромеЗемельныхУчастковНазначениеОбъектаНедвижимости" id="42">
 									<DataPath>Объект.ОбъектыНедвижимостиКромеЗемельныхУчастков.НазначениеОбъектаНедвижимости</DataPath>
 									<EditMode>EnterOnInput</EditMode>
@@ -213,7 +251,15 @@
 							<DataPath>Объект.ЗемельныеУчастки</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ЗемельныеУчасткиКонтекстноеМеню" id="66"/>
-							<AutoCommandBar name="ЗемельныеУчасткиКоманднаяПанель" id="67"/>
+							<AutoCommandBar name="ЗемельныеУчасткиКоманднаяПанель" id="67">
+								<ChildItems>
+									<Button name="ЗемельныеУчасткиЗаполнитьЗемельныеУчастки" id="129">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗаполнитьЗемельныеУчастки</CommandName>
+										<ExtendedTooltip name="ЗемельныеУчасткиЗаполнитьЗемельныеУчасткиРасширеннаяПодсказка" id="130"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
 							<ExtendedTooltip name="ЗемельныеУчасткиРасширеннаяПодсказка" id="68"/>
 							<SearchStringAddition name="ЗемельныеУчасткиСтрокаПоиска" id="69">
 								<AdditionSource>
@@ -258,6 +304,13 @@
 										<Event name="OnChange">ЗемельныеУчасткиОбъектНедвижимостиПриИзменении</Event>
 									</Events>
 								</InputField>
+								<LabelField name="ЗемельныеУчасткиКадастровыйНомер" id="126">
+									<DataPath>Объект.ЗемельныеУчастки.ОбъектНедвижимости.КадастровыйНомер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>20</Width>
+									<ContextMenu name="ЗемельныеУчасткиКадастровыйНомерКонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="ЗемельныеУчасткиКадастровыйНомерРасширеннаяПодсказка" id="128"/>
+								</LabelField>
 								<InputField name="ЗемельныеУчасткиКатегорияЗемельногоУчастка" id="84">
 									<DataPath>Объект.ЗемельныеУчастки.КатегорияЗемельногоУчастка</DataPath>
 									<EditMode>EnterOnInput</EditMode>
@@ -354,4 +407,30 @@
 			</Columns>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьЗемельныеУчастки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить земельные участки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьЗемельныеУчастки</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<AssociatedTableElementId xsi:type="xs:string">ОбъектыНедвижимостиКромеЗемельныхУчастков</AssociatedTableElementId>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Параметр1">
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыОбъектовНедвижимости</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>
