@@ -85,6 +85,20 @@
 					<ContextMenu name="СуммаНаОднуОблигациюКонтекстноеМеню" id="54"/>
 					<ExtendedTooltip name="СуммаНаОднуОблигациюРасширеннаяПодсказка" id="55"/>
 				</InputField>
+				<InputField name="СуммаНаОднуОблигациюВРублях" id="73">
+					<DataPath>СуммаНаОднуОблигациюВРублях</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>в руб.</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СуммаНаОднуОблигациюВРубляхКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="СуммаНаОднуОблигациюВРубляхРасширеннаяПодсказка" id="75"/>
+				</InputField>
 				<LabelField name="Организация" id="47">
 					<DataPath>Организация</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -182,6 +196,21 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПогашенияКупонаСуммаКупонаКонтекстноеМеню" id="30"/>
 					<ExtendedTooltip name="ПогашенияКупонаСуммаКупонаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ПогашенияКупонаСуммаКупонаВРублях" id="76">
+					<DataPath>ПогашенияКупона.СуммаКупонаВРублях</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>в т.ч .в RUB</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПогашенияКупонаСуммаКупонаВРубляхКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ПогашенияКупонаСуммаКупонаВРубляхРасширеннаяПодсказка" id="78"/>
 				</InputField>
 				<InputField name="ПогашенияКупонаВалютаОплаты" id="20">
 					<DataPath>ПогашенияКупона.ВалютаОплаты</DataPath>
@@ -421,6 +450,17 @@
 						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиКоличествоЦелое</v8:TypeSet>
 					</Type>
 				</Column>
+				<Column name="СуммаКупонаВРублях" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма купона в рублях</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="Дата" id="2">
@@ -516,6 +556,17 @@
 			</Title>
 			<Type>
 				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаНаОднуОблигациюВРублях" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма на одну облигацию в рублях</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиЦена</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>
