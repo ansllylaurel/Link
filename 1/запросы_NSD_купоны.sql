@@ -55,6 +55,40 @@ INNER JOIN [LS_APPSERV].[MatriX_External].[NSD].[Corporate_Actions] AS CA
     ON CA.action_id = CAC.action_id
 WHERE (@ActionId IS NULL OR CAC.action_id = @ActionId);
 
+/* ============================================================
+   4.1) Поиск по ISIN облигации
+
+   Логика как в правилах импорта:
+   ISIN -> Migration.AM.vw_Bonds (BondID)
+   BondID -> MatriX.dbo.vw_Securities_Codes (Type_UID = 'Securities.Code.NSD') -> NSD.Securities (code_nsd)
+   NSD.Securities.id -> NSD.Corporate_Actions_Coupons.security_id -> NSD.Corporate_Actions
+   ============================================================ */
+DECLARE @ISIN NVARCHAR(32) = NULL; -- TODO: например 'RU000A0JX0J2'
+
+SELECT TOP (500)
+    B.BondID,
+    B.ISIN,
+    Nsd_codes.Code            AS NSD_Code,
+    NSD_Securities.id         AS NSD_Security_ID,
+    CAC.*,
+    CA.*
+FROM [Migration].[AM].[vw_Bonds] AS B
+LEFT JOIN MatriX.dbo.vw_Securities_Codes AS Nsd_codes
+    ON Nsd_codes.Security_ID = B.BondID
+   AND Nsd_codes.Type_UID = 'Securities.Code.NSD'
+   AND Nsd_codes.Is_Export = 1
+LEFT JOIN [LS_APPSERV].[MatriX_External].[NSD].[Securities] AS NSD_Securities
+    ON NSD_Securities.code_nsd = Nsd_codes.Code
+LEFT JOIN [LS_APPSERV].[MatriX_External].[NSD].[Corporate_Actions_Coupons] AS CAC
+    ON CAC.Security_id = NSD_Securities.id
+LEFT JOIN [LS_APPSERV].[MatriX_External].[NSD].[Corporate_Actions] AS CA
+    ON CA.action_id = CAC.action_id
+WHERE
+    (@ISIN IS NULL OR LTRIM(RTRIM(B.ISIN)) = LTRIM(RTRIM(@ISIN)))
+ORDER BY
+    B.BondID,
+    CAC.period_from_calc;
+
 
 /* ============================================================
    5) Запасной вариант (если вы подключены напрямую к MatriX_External)
