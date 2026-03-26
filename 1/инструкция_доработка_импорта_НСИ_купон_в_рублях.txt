@@ -1,0 +1,89 @@
+Цель
+-----
+Доработать импорт НСИ так, чтобы в регистр сведений "КупонныйДоходПоОблигациям" загружалась "СуммаКупонаВРублях".
+
+Источник рублёвой суммы
+-----------------------
+В NSD таблице купонов рублёвая сумма берётся из поля:
+  LS_APPSERV.MatriX_External.NSD.Corporate_Actions_Coupons.payment_size
+Связка в правилах импорта уже есть (NSD_Coupons), поэтому достаточно добавить колонку в SELECT.
+
+
+ВАЖНО (метаданные 1С)
+---------------------
+В текущем выгруженном конфиге у регистра "КупонныйДоходПоОблигациям" я вижу ресурс "СуммаКупона",
+но НЕ вижу "СуммаКупонаВРублях" (в формах регистра такого поля нет).
+Если в вашей базе 1С ресурса/реквизита "СуммаКупонаВРублях" ещё нет — его нужно добавить в конфигураторе,
+иначе импорт будет падать с ошибкой вида "Поле объекта не обнаружено: СуммаКупонаВРублях".
+
+Рекомендуемое имя ресурса:  СуммаКупонаВРублях
+Рекомендуемый тип:          Число (например 15.2) / Денежный (если у вас так принято)
+
+
+Изменение в правилах импорта (до/после)
+---------------------------------------
+Файл:
+  DataProcessors\ИмпортНормативноСправочнойИнформации\Templates\ПравилаИмпорта\Ext\Template.txt
+
+Блок правила:
+  <Правило Приемник="РегистрыСведений.КупонныйДоходПоОблигациям">
+
+ДО:
+  CouponPayments.Amount [СуммаКупона],
+  CouponPayments.Period [Срок],
+
+ПОСЛЕ:
+  CouponPayments.Amount [СуммаКупона],
+  CAST(NSD_Coupons.payment_size AS money) [СуммаКупонаВРублях],
+  CouponPayments.Period [Срок],
+
+
+Полный фрагмент SELECT (ПОСЛЕ)
+------------------------------
+SELECT
+	CouponPayments.BondID,
+	'ПолучитьОбъектПоКодуВнешнейСистемы("' + CAST(CouponPayments.BondID AS varchar) + '", "Облигации")' [$$Облигация],
+	CAST(CouponPayments.PaymentBeginDate AS datetime) [Период],
+	CouponPayments.PaymentPercent [СтавкаКупона],
+	CAST(CouponPayments.PaymentEndDate AS datetime) [ДатаОкончанияКупона],
+	CAST(CouponPayments.Date_Rate_Decision AS datetime) [ДатаПубликации],
+	CAST(CASE WHEN NOT CouponPayments.RegisterClosingDatePlan IS NULL THEN CouponPayments.RegisterClosingDatePlan ELSE CouponPayments.RegisterClosingDate END AS datetime) [ДатаФиксации],
+	CouponPayments.Amount [СуммаКупона],
+	CAST(NSD_Coupons.payment_size AS money) [СуммаКупонаВРублях],
+	CouponPayments.Period [Срок],
+	CAST(NSD_Actions.action_date_plan AS datetime) [ДатаВыплатыПлан],
+	CAST(NSD_Actions.action_date_fact AS datetime) [ДатаВыплатыФакт],
+	CouponPayments.IsCouponDetermined [СтавкаОпределена],
+	'ПредопределенноеЗначение("Справочник.НастройкиРасчета.ПустаяСсылка")' [$$ФормулаРасчетаСтавки],
+	DENSE_RANK() OVER (PARTITION BY CouponPayments.BondID ORDER BY CouponPayments.PaymentBeginDate) [НомерКупона]
+FROM
+	[Migration].[AM].[vw_CouponPayments] CouponPayments
+	LEFT JOIN MatriX.dbo.vw_Securities_Codes Nsd_codes
+	ON Nsd_codes.Security_ID = CouponPayments.BondID
+		AND Nsd_codes.Type_UID = 'Securities.Code.NSD'
+		AND Nsd_codes.Is_Export = 1
+	LEFT JOIN LS_APPSERV.MatriX_External.NSD.Securities NSD_Securities
+	ON NSD_Securities.code_nsd = Nsd_codes.Code
+	LEFT JOIN LS_APPSERV.MatriX_External.NSD.Corporate_Actions_Coupons NSD_Coupons
+		INNER JOIN LS_APPSERV.MatriX_External.NSD.Corporate_Actions NSD_Actions
+		ON NSD_Actions.Action_ID = NSD_Coupons.Action_ID
+			AND NSD_Actions.Action_State_Code != 'C'
+	ON NSD_Coupons.Security_id = NSD_Securities.id
+		AND NSD_Coupons.period_from_calc = CouponPayments.PaymentBeginDate
+WHERE
+	CouponPayments.BondID IN (&amp;ИдентификаторыВыбранныхОбъектов)
+ORDER BY
+	CouponPayments.BondID,
+	CouponPayments.PaymentBeginDate
+
+
+Проверка в SQL (для одной облигации по ISIN)
+-------------------------------------------
+Пример запроса (ваш файл 1\SQLQuery2.sql):
+  - берёт CAC.payment_size (рублёвую сумму) и период CAC.period_from_calc
+  - фильтрует по B.ISIN
+
+Совет для сверки:
+  - Сравните, что NSD_Coupons.period_from_calc совпадает с CouponPayments.PaymentBeginDate
+  - И что NSD_Coupons.payment_size заполняется (не NULL) для нужных купонов
+
