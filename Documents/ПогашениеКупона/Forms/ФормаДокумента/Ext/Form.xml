@@ -353,11 +353,13 @@
 					<TitleHeight>2</TitleHeight>
 					<ContextMenu name="СуммаНаОднуОблигациюКонтекстноеМеню" id="87"/>
 					<ExtendedTooltip name="СуммаНаОднуОблигациюРасширеннаяПодсказка" id="88"/>
+					<Events>
+						<Event name="OnChange">СуммаНаОднуОблигациюПриИзменении</Event>
+					</Events>
 				</InputField>
 				<InputField name="СуммаНаОднуОблигациюВРублях" id="181">
 					<DataPath>Объект.СуммаНаОднуОблигациюВРублях</DataPath>
 					<Visible>false</Visible>
-					<ReadOnly>true</ReadOnly>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -367,6 +369,9 @@
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="СуммаНаОднуОблигациюВРубляхКонтекстноеМеню" id="182"/>
 					<ExtendedTooltip name="СуммаНаОднуОблигациюВРубляхРасширеннаяПодсказка" id="183"/>
+					<Events>
+						<Event name="OnChange">СуммаНаОднуОблигациюВРубляхПриИзменении</Event>
+					</Events>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -389,14 +394,12 @@
 			<ChildItems>
 				<InputField name="СуммаКупона" id="121">
 					<DataPath>Объект.СуммаКупона</DataPath>
-					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="СуммаКупонаКонтекстноеМеню" id="122"/>
 					<ExtendedTooltip name="СуммаКупонаРасширеннаяПодсказка" id="123"/>
 				</InputField>
 				<InputField name="СуммаКупонаВРублях" id="184">
 					<DataPath>Объект.СуммаКупонаВРублях</DataPath>
 					<Visible>false</Visible>
-					<ReadOnly>true</ReadOnly>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -503,6 +506,28 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Валюта номинала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РасчетВВалюте" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет в валюте</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВалютаУчета" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта учета</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
