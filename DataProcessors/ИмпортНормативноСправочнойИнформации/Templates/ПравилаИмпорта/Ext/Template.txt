@@ -1,4 +1,4 @@
-﻿<ПравилаИмпорта>
+<ПравилаИмпорта>
 <ГруппаПравил Имя="Матрих" ВнешняяСистема="Матрих" ИсточникДанных="Driver={SQL Server};Server=AP21.G1.LAN;UID=svc_API_AM;PWD=p8z4gr39VAxXAfhn;Database=ReferenceBooks">
 	<ПравилоИмпорта ГруппаОбъектов="ЮридическиеЛица">
 		<Выбор>
@@ -1172,7 +1172,8 @@ SELECT
 	CAST(CouponPayments.Date_Rate_Decision AS datetime) [ДатаПубликации],
 	CAST(CASE WHEN NOT CouponPayments.RegisterClosingDatePlan IS NULL THEN CouponPayments.RegisterClosingDatePlan ELSE CouponPayments.RegisterClosingDate END AS datetime) [ДатаФиксации],
 	CouponPayments.Amount [СуммаКупона],
-  	CAST(NSD_Coupons.payment_size AS money) [СуммаКупонаВРублях],
+	'ПолучитьСправочникПоРеквизиту("643", "Валюты", "Код")' [$$ВалютаОплаты],
+  	CAST(NSD_Coupons.payment_size AS money) [СуммаКупонаВВалютеОплаты],
   	CouponPayments.Period [Срок],
 	CAST(NSD_Actions.action_date_plan AS datetime) [ДатаВыплатыПлан],
 	CAST(NSD_Actions.action_date_fact AS datetime) [ДатаВыплатыФакт],
