@@ -267,6 +267,16 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОферты</dataPath>
+			<field>ТипОферты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип оферты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>ТребуетсяСогласиеКлиента</dataPath>
 			<field>ТребуетсяСогласиеКлиента</field>
 			<title xsi:type="v8:LocalStringType">
@@ -2238,6 +2248,16 @@
 				</title>
 			</field>
 			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипОферты</dataPath>
+				<field>ТипОферты</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Тип оферты</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
 				<dataPath>ТребуетсяСогласиеКлиента</dataPath>
 				<field>ТребуетсяСогласиеКлиента</field>
 				<title xsi:type="v8:LocalStringType">
@@ -2438,6 +2458,7 @@
 	_ВыплатыЗаПериод.Цена КАК Цена,
 	_ВыплатыЗаПериод.Курс КАК Курс,
 	_ВыплатыЗаПериод.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_ВыплатыЗаПериод.ТипОферты КАК ТипОферты,
 	_ВыплатыЗаПериод.АкцептС КАК АкцептС,
 	_ВыплатыЗаПериод.АкцептПо КАК АкцептПо,
 	_ВыплатыЗаПериод.ТолькоДляФизическихЛиц КАК ТолькоДляФизическихЛиц
@@ -2895,6 +2916,7 @@
 	УсловияОферт.АкцептС КАК АкцептС,
 	УсловияОферт.АкцептПо КАК АкцептПо,
 	УсловияОферт.ТипОферты = ЗНАЧЕНИЕ(Перечисление.ТипыОфертПоОблигациям.Досрочно) КАК ДосрочноеПогашение,
+	УсловияОферт.ТипОферты КАК ТипОферты,
 	УсловияОферт.ТолькоДляФизическихЛиц КАК ТолькоДляФизическихЛиц,
 	УсловияОферт.Облигация КАК ЦеннаяБумага,
 	УсловияОферт.Облигация.ВалютаНоминала КАК ВалютаНоминала,
@@ -2930,6 +2952,7 @@
 	_УсловияОфертИзЗадолженности.АкцептС КАК АкцептС,
 	_УсловияОфертИзЗадолженности.АкцептПо КАК АкцептПо,
 	_УсловияОфертИзЗадолженности.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_УсловияОфертИзЗадолженности.ТипОферты КАК ТипОферты,
 	_УсловияОфертИзЗадолженности.ТолькоДляФизическихЛиц КАК ТолькоДляФизическихЛиц,
 	_ЗадолженностьПоДенежнымСредствамОстаткиИОбороты.Организация КАК Организация,
 	_ЗадолженностьПоДенежнымСредствамОстаткиИОбороты.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
@@ -3023,6 +3046,7 @@
 	_ВыплатыПоОфертам.ДатаВыкупа КАК ДатаВыкупа,
 	_ОстаткиЦенныхБумагВключаяЗадолженностьПоСделкамПоСделкамРепо.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
 	_ВыплатыПоОфертам.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_ВыплатыПоОфертам.ТипОферты КАК ТипОферты,
 	_ВыплатыПоОфертам.АкцептС КАК АкцептС,
 	_ВыплатыПоОфертам.АкцептПо КАК АкцептПо,
 	_ВыплатыПоОфертам.Цена КАК Цена,
@@ -3048,6 +3072,7 @@
 	_ВыплатыПоОфертам.ДатаВыкупа КАК ДатаВыкупа,
 	_ОстаткиЦенныхБумагВключаяЗадолженностьПоСделкамПоСделкамРепо.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
 	_ВыплатыПоОфертам.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_ВыплатыПоОфертам.ТипОферты КАК ТипОферты,
 	_ВыплатыПоОфертам.АкцептС КАК АкцептС,
 	_ВыплатыПоОфертам.АкцептПо КАК АкцептПо,
 	_ВыплатыПоОфертам.Цена КАК Цена,
@@ -3071,6 +3096,7 @@
 	_ОстаткиЦенныхБумагНаДатуВыкупа.ДатаВыкупа КАК ДатаВыкупа,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_ОстаткиЦенныхБумагНаДатуВыкупа.ТипОферты КАК ТипОферты,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.ТолькоДляФизическихЛиц КАК ТолькоДляФизическихЛиц,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.АкцептС КАК АкцептС,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.АкцептПо КАК АкцептПо,
@@ -3095,6 +3121,7 @@
 	_ОстаткиЦенныхБумагНаДатуВыкупа.ДатаВыкупа,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.СчетДоверительногоУправления,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.ДосрочноеПогашение,
+	_ОстаткиЦенныхБумагНаДатуВыкупа.ТипОферты,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.ТолькоДляФизическихЛиц,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.АкцептС,
 	_ОстаткиЦенныхБумагНаДатуВыкупа.АкцептПо,
@@ -3109,6 +3136,7 @@
 	_ВыплатыПоОфертамИтоговая.ДатаВыкупа КАК ДатаВыкупа,
 	_ВыплатыПоОфертамИтоговая.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
 	_ВыплатыПоОфертамИтоговая.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_ВыплатыПоОфертамИтоговая.ТипОферты КАК ТипОферты,
 	_ВыплатыПоОфертамИтоговая.ТолькоДляФизическихЛиц КАК ТолькоДляФизическихЛиц,
 	_ВыплатыПоОфертамИтоговая.АкцептС КАК АкцептС,
 	_ВыплатыПоОфертамИтоговая.АкцептПо КАК АкцептПо,
@@ -3167,6 +3195,7 @@
 	_ЗадолженностьПоОфертамНаНачалоПериода.ДатаВыкупа,
 	_ЗадолженностьПоОфертамНаНачалоПериода.СчетДоверительногоУправления,
 	_ЗадолженностьПоОфертамНаНачалоПериода.ДосрочноеПогашение,
+	_ЗадолженностьПоОфертамНаНачалоПериода.ТипОферты,
 	_ЗадолженностьПоОфертамНаНачалоПериода.ТолькоДляФизическихЛиц,
 	_ЗадолженностьПоОфертамНаНачалоПериода.АкцептС,
 	_ЗадолженностьПоОфертамНаНачалоПериода.АкцептПо,
@@ -3201,6 +3230,7 @@
 	_ЗадолженностьПоОфертамНаНачалоПериода.ДатаВыкупа,
 	_ЗадолженностьПоОфертамНаНачалоПериода.СчетДоверительногоУправления,
 	_ЗадолженностьПоОфертамНаНачалоПериода.ДосрочноеПогашение,
+	_ЗадолженностьПоОфертамНаНачалоПериода.ТипОферты,
 	_ЗадолженностьПоОфертамНаНачалоПериода.ТолькоДляФизическихЛиц,
 	_ЗадолженностьПоОфертамНаНачалоПериода.АкцептС,
 	_ЗадолженностьПоОфертамНаНачалоПериода.АкцептПо,
@@ -3241,6 +3271,7 @@
 		ИНАЧЕ ""
 	КОНЕЦ КАК КодСчета,
 	_ОбщиеДанныеПоОфертам.ДосрочноеПогашение КАК ДосрочноеПогашение,
+	_ОбщиеДанныеПоОфертам.ТипОферты КАК ТипОферты,
 	ЕСТЬNULL(НастройкиАкцептованияОперацийСрезПоследних.ТребуетсяАкцептование, ЛОЖЬ) КАК ТребуетсяСогласиеКлиента,
 	_ОбщиеДанныеПоОфертам.АкцептС КАК АкцептС,
 	_ОбщиеДанныеПоОфертам.АкцептПо КАК АкцептПо,
@@ -3304,6 +3335,7 @@
 		ИНАЧЕ ""
 	КОНЕЦ,
 	_ОбщиеДанныеПоОфертам.ДосрочноеПогашение,
+	_ОбщиеДанныеПоОфертам.ТипОферты,
 	ЕСТЬNULL(НастройкиАкцептованияОперацийСрезПоследних.ТребуетсяАкцептование, ЛОЖЬ),
 	_ОбщиеДанныеПоОфертам.Цена,
 	_ОбщиеДанныеПоОфертам.Курс,
@@ -8441,6 +8473,84 @@
 						<dcsat:value xsi:type="v8:LocalStringType">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
+								<v8:content>Тип оферты</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:ReportHeaderBackColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:ReportLineColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Font" ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">44.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
 								<v8:content>Дата оплаты</v8:content>
 							</v8:item>
 						</dcsat:value>
@@ -9120,6 +9230,21 @@
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ТипОферты</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
 						<dcsat:value xsi:type="dcscor:Parameter">ДатаОплаты</dcsat:value>
 						<dcsat:appearance>
 							<dcscor:item>
@@ -9260,6 +9385,10 @@
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ДосрочноеПогашение</dcsat:name>
 			<dcsat:expression>ДосрочноеПогашение</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ТипОферты</dcsat:name>
+			<dcsat:expression>ТипОферты</dcsat:expression>
 		</parameter>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ДатаОплаты</dcsat:name>
@@ -9939,6 +10068,9 @@
 									<v8:content>Обязательное досрочное погашение</v8:content>
 								</v8:item>
 							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ТипОферты</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ТребуетсяСогласиеКлиента</dcsset:field>
@@ -10745,6 +10877,9 @@
 							</dcsset:lwsTitle>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ТипОферты</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ТребуетсяСогласиеКлиента</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
@@ -11118,6 +11253,9 @@
 											<v8:content>Обязательное досрочное погашение</v8:content>
 										</v8:item>
 									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ТипОферты</dcsset:field>
 								</dcsset:item>
 								<dcsset:item xsi:type="dcsset:SelectedItemField">
 									<dcsset:field>ТребуетсяСогласиеКлиента</dcsset:field>
@@ -11828,6 +11966,9 @@
 									<v8:content>Обязательное досрочное погашение</v8:content>
 								</v8:item>
 							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ТипОферты</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ТребуетсяСогласиеКлиента</dcsset:field>
