@@ -1173,7 +1173,7 @@ SELECT
 	CAST(CASE WHEN NOT CouponPayments.RegisterClosingDatePlan IS NULL THEN CouponPayments.RegisterClosingDatePlan ELSE CouponPayments.RegisterClosingDate END AS datetime) [ДатаФиксации],
 	CAST(CouponPayments.Amount AS money) [СуммаКупона],
   	CAST(NSD_Coupons.payment_size AS money) [СуммаКупонаВВалютеОплаты],
-	'ПолучитьСправочникПоРеквизиту("' + CAST(CurrenciesDict.Code AS varchar) + '", "Валюты", "Наименование")' [$$ВалютаОплаты],
+	'ПолучитьСправочникПоРеквизиту("' + CAST(NSD_Currencies.Code AS varchar) + '", "Валюты", "Наименование")' [$$ВалютаОплаты],
   	CouponPayments.Period [Срок],
 	CAST(NSD_Actions.action_date_plan AS datetime) [ДатаВыплатыПлан],
 	CAST(NSD_Actions.action_date_fact AS datetime) [ДатаВыплатыФакт],
@@ -1192,11 +1192,12 @@ FROM
 		INNER JOIN LS_APPSERV.MatriX_External.NSD.Corporate_Actions NSD_Actions
 		ON NSD_Actions.Action_ID = NSD_Coupons.Action_ID
 			AND NSD_Actions.Action_State_Code != 'C'
-		LEFT JOIN LS_APPSERV.MatriX_External.NSD.Dictionaries_Values CurrenciesDict
-		ON CurrenciesDict.id_nsd = NSD_Coupons.payment_currency_id
-			AND CurrenciesDict.[UID] = 'Currency'
 	ON NSD_Coupons.Security_id = NSD_Securities.id
 		AND NSD_Coupons.period_from_calc = CouponPayments.PaymentBeginDate
+	LEFT JOIN LS_APPSERV.MatriX_External.NSD.Dictionaries_Values NSD_Currencies
+	ON NSD_Currencies.id_nsd = NSD_Coupons.payment_currency_id
+		AND NSD_Currencies.[UID] = 'Currency'
+
 WHERE
 	CouponPayments.BondID IN (&amp;ИдентификаторыВыбранныхОбъектов)
 ORDER BY
