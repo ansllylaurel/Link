@@ -10,6 +10,7 @@
 			</Button>
 			<Button name="ФормаВыполнить" id="9">
 				<Type>CommandBarButton</Type>
+				<DefaultButton>false</DefaultButton>
 				<CommandName>Form.Command.Выполнить</CommandName>
 				<ExtendedTooltip name="ФормаВыполнитьРасширеннаяПодсказка" id="10"/>
 			</Button>
@@ -30,34 +31,8 @@
 		</CheckBoxField>
 		<Table name="ТаблицаИзменений" id="11">
 			<DataPath>ТаблицаИзменений</DataPath>
-			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="ТаблицаИзмененийКонтекстноеМеню" id="12"/>
-			<AutoCommandBar name="ТаблицаИзмененийКоманднаяПанель" id="14"/>
 			<ExtendedTooltip name="ТаблицаИзмененийРасширеннаяПодсказка" id="13"/>
-			<SearchStringAddition name="ТаблицаИзмененийСтрокаПоиска" id="15">
-				<AdditionSource>
-					<Item>ТаблицаИзменений</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ТаблицаИзмененийСтрокаПоискаКонтекстноеМеню" id="16"/>
-				<ExtendedTooltip name="ТаблицаИзмененийСтрокаПоискаРасширеннаяПодсказка" id="17"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="ТаблицаИзмененийСостояниеПросмотра" id="18">
-				<AdditionSource>
-					<Item>ТаблицаИзменений</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ТаблицаИзмененийСостояниеПросмотраКонтекстноеМеню" id="19"/>
-				<ExtendedTooltip name="ТаблицаИзмененийСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="ТаблицаИзмененийУправлениеПоиском" id="21">
-				<AdditionSource>
-					<Item>ТаблицаИзменений</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="ТаблицаИзмененийУправлениеПоискомКонтекстноеМеню" id="22"/>
-				<ExtendedTooltip name="ТаблицаИзмененийУправлениеПоискомРасширеннаяПодсказка" id="23"/>
-			</SearchControlAddition>
 		</Table>
 	</ChildItems>
 	<Attributes>
@@ -104,6 +79,75 @@
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
 			</Type>
+			<Columns>
+				<Column name="Заменять" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заменять</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ссылка" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Раздел</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ДепозитарныеСчета</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Было" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Было</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Станет" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Станет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Причина" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причина/ошибка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
 		</Attribute>
 	</Attributes>
 	<Commands>
