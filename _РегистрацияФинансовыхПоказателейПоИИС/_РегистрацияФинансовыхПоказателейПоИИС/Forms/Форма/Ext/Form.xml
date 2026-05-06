@@ -2,11 +2,26 @@
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
-			<Button name="ФормаЗарегистрироватьФинансовыеПоказатели" id="9">
+			<Button name="ФормаКомандаОбновить" id="9">
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.КомандаЗарегистрироватьФинансовыеПоказатели</CommandName>
-				<ExtendedTooltip name="ФормаЗарегистрироватьФинансовыеПоказателиРасширеннаяПодсказка" id="10"/>
+				<CommandName>Form.Command.КомандаОбновить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаОбновитьРасширеннаяПодсказка" id="10"/>
+			</Button>
+			<Button name="ФормаКомандаЗарегистрировать" id="151">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаЗарегистрировать</CommandName>
+				<ExtendedTooltip name="ФормаКомандаЗарегистрироватьРасширеннаяПодсказка" id="152"/>
+			</Button>
+			<Button name="ФормаКомандаСформироватьИСохранитьXML" id="153">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаСформироватьИСохранитьXML</CommandName>
+				<ExtendedTooltip name="ФормаКомандаСформироватьИСохранитьXMLРасширеннаяПодсказка" id="154"/>
+			</Button>
+			<Button name="ФормаКомандаНайтиРасхождения" id="155">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаНайтиРасхождения</CommandName>
+				<ExtendedTooltip name="ФормаКомандаНайтиРасхожденияРасширеннаяПодсказка" id="156"/>
 			</Button>
 			<Button name="ФормаКомандаОтправитьОтчет" id="149">
 				<Type>CommandBarButton</Type>
@@ -43,6 +58,9 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПериодКонтекстноеМеню" id="5"/>
 					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
 				</InputField>
 				<LabelField name="Организация" id="1">
 					<DataPath>Объект.Организация</DataPath>
@@ -52,6 +70,43 @@
 					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
 					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
 				</LabelField>
+				<InputField name="КаталогСохранения" id="157">
+					<DataPath>КаталогСохранения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каталог</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="КаталогСохраненияКонтекстноеМеню" id="158"/>
+					<ExtendedTooltip name="КаталогСохраненияРасширеннаяПодсказка" id="159"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтчетОРасхождениях" id="160">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет о расхождениях</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Visible>false</Visible>
+			<ExtendedTooltip name="ГруппаОтчетОРасхожденияхРасширеннаяПодсказка" id="161"/>
+			<ChildItems>
+				<HTMLDocumentField name="ОтчетОРасхожденияхHTML" id="162">
+					<DataPath>ОтчетОРасхожденияхHTML</DataPath>
+					<Enabled>false</Enabled>
+					<TitleLocation>None</TitleLocation>
+					<Width>1</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>1</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<ContextMenu name="ОтчетОРасхожденияхHTMLКонтекстноеМеню" id="163"/>
+					<ExtendedTooltip name="ОтчетОРасхожденияхHTMLРасширеннаяПодсказка" id="164"/>
+				</HTMLDocumentField>
 			</ChildItems>
 		</UsualGroup>
 		<Table name="ФинансовыеПоказатели" id="11">
@@ -63,35 +118,7 @@
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="ФинансовыеПоказателиКонтекстноеМеню" id="12"/>
 			<AutoCommandBar name="ФинансовыеПоказателиКоманднаяПанель" id="13">
-				<ChildItems>
-					<Popup name="ПодменюПоказать" id="141">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Показать только измененные</v8:content>
-							</v8:item>
-						</Title>
-						<ToolTip>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Подменю показать</v8:content>
-							</v8:item>
-						</ToolTip>
-						<ExtendedTooltip name="ПодменюПоказатьРасширеннаяПодсказка" id="142"/>
-						<ChildItems>
-							<Button name="ФинансовыеПоказателиКомандаПоказатьВсе" id="143">
-								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.КомандаПоказатьВсе</CommandName>
-								<ExtendedTooltip name="ФинансовыеПоказателиКомандаПоказатьВсеРасширеннаяПодсказка" id="144"/>
-							</Button>
-							<Button name="ФинансовыеПоказателиКомандаПоказатьТолькоИзмененные" id="147">
-								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.КомандаПоказатьТолькоИзмененные</CommandName>
-								<ExtendedTooltip name="ФинансовыеПоказателиКомандаПоказатьТолькоИзмененныеРасширеннаяПодсказка" id="148"/>
-							</Button>
-						</ChildItems>
-					</Popup>
-				</ChildItems>
+				<ChildItems/>
 			</AutoCommandBar>
 			<ExtendedTooltip name="ФинансовыеПоказателиРасширеннаяПодсказка" id="14"/>
 			<SearchStringAddition name="ФинансовыеПоказателиСтрокаПоиска" id="15">
@@ -299,7 +326,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Предыдущее значение</v8:content>
+							<v8:content>Текущее значение</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
@@ -397,7 +424,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Текущее значение</v8:content>
+							<v8:content>Новое значение</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
@@ -505,6 +532,36 @@
 				<Field>Объект.Период</Field>
 			</Save>
 		</Attribute>
+		<Attribute name="КаталогСохранения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КаталогСохранения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтчетОРасхожденияхHTML" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОтчетОРасхожденияхHTML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -529,50 +586,65 @@
 		</ConditionalAppearance>
 	</Attributes>
 	<Commands>
-		<Command name="КомандаЗарегистрироватьФинансовыеПоказатели" id="2">
+		<Command name="КомандаОбновить" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Рассчитать и зарегистрировать</v8:content>
+					<v8:content>Обновить</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Рассчитать и зарегистрировать финансовые показатели</v8:content>
+					<v8:content>Обновить значения финансовых показателей</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>КомандаЗарегистрироватьФинансовыеПоказатели</Action>
+			<Action>КомандаОбновить</Action>
 		</Command>
-		<Command name="КомандаПоказатьВсе" id="3">
+		<Command name="КомандаЗарегистрировать" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Все</v8:content>
+					<v8:content>Зарегистрировать</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Все строки</v8:content>
+					<v8:content>Зарегистрировать финансовые показатели</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>КомандаПоказатьВсе</Action>
+			<Action>КомандаЗарегистрировать</Action>
 		</Command>
-		<Command name="КомандаПоказатьТолькоИзмененные" id="4">
+		<Command name="КомандаСформироватьИСохранитьXML" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Только измененные</v8:content>
+					<v8:content>Сформировать и сохранить XML</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Только измененные</v8:content>
+					<v8:content>Сформировать XML и сохранить в выбранный каталог</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>КомандаПоказатьТолькоИзмененные</Action>
+			<Action>КомандаСформироватьИСохранитьXML</Action>
+		</Command>
+		<Command name="КомандаНайтиРасхождения" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти расхождения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти расхождения и при отсутствии опубликовать XML на сайте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаНайтиРасхождения</Action>
 		</Command>
 		<Command name="КомандаОтправитьОтчет" id="1">
 			<Title>
