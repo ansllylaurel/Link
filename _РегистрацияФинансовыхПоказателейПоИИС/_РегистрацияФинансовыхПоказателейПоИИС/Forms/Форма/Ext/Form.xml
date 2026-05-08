@@ -23,6 +23,11 @@
 				<CommandName>Form.Command.КомандаНайтиРасхождения</CommandName>
 				<ExtendedTooltip name="ФормаКомандаНайтиРасхожденияРасширеннаяПодсказка" id="156"/>
 			</Button>
+			<Button name="ФормаКомандаОтправитьИОпубликоватьНаСайте" id="171">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаОтправитьИОпубликоватьНаСайте</CommandName>
+				<ExtendedTooltip name="ФормаКомандаОтправитьИОпубликоватьНаСайтеРасширеннаяПодсказка" id="172"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -74,9 +79,15 @@
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
+					<ChoiceButton>true</ChoiceButton>
+					<OpenButton>true</OpenButton>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<ContextMenu name="КаталогСохраненияКонтекстноеМеню" id="158"/>
 					<ExtendedTooltip name="КаталогСохраненияРасширеннаяПодсказка" id="159"/>
+					<Events>
+						<Event name="StartChoice">КаталогСохраненияНачалоВыбора</Event>
+						<Event name="Opening">КаталогСохраненияОткрытие</Event>
+					</Events>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -679,10 +690,25 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Найти расхождения и при отсутствии опубликовать XML на сайте</v8:content>
+					<v8:content>Сверка сохранённых XML с предыдущим периодом (без публикации и оповещений)</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаНайтиРасхождения</Action>
+		</Command>
+		<Command name="КомандаОтправитьИОпубликоватьНаСайте" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить и опубликовать на сайте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сверка XML; при отсутствии расхождений — публикация на сайт и оповещение с отчётом о доходностях; при расхождениях — оповещение о расхождениях</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтправитьИОпубликоватьНаСайте</Action>
 		</Command>
 	</Commands>
 </Form>
