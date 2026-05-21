@@ -200,14 +200,28 @@
 					<ContextMenu name="СчетаДоверительногоУправленияМатрихИдКонтекстноеМеню" id="52"/>
 					<ExtendedTooltip name="СчетаДоверительногоУправленияМатрихИдРасширеннаяПодсказка" id="53"/>
 				</InputField>
-				<InputField name="СчетаДоверительногоУправленияКодСчета" id="30">
-					<DataPath>СчетаДоверительногоУправления.КодСчета</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="СчетаДоверительногоУправленияКодСчетаКонтекстноеМеню" id="31"/>
-					<ExtendedTooltip name="СчетаДоверительногоУправленияКодСчетаРасширеннаяПодсказка" id="32"/>
-				</InputField>
-			</ChildItems>
-		</Table>
+			<InputField name="СчетаДоверительногоУправленияКодСчета" id="30">
+				<DataPath>СчетаДоверительногоУправления.КодСчета</DataPath>
+				<EditMode>EnterOnInput</EditMode>
+				<ContextMenu name="СчетаДоверительногоУправленияКодСчетаКонтекстноеМеню" id="31"/>
+				<ExtendedTooltip name="СчетаДоверительногоУправленияКодСчетаРасширеннаяПодсказка" id="32"/>
+			</InputField>
+			<CheckBoxField name="СчетаДоверительногоУправленияТребуетГодовогоОтчета" id="70">
+				<DataPath>СчетаДоверительногоУправления.ТребуетГодовогоОтчета</DataPath>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Годовой</v8:content>
+					</v8:item>
+				</Title>
+				<ReadOnly>true</ReadOnly>
+				<TitleLocation>None</TitleLocation>
+				<CheckBoxType>Auto</CheckBoxType>
+				<ContextMenu name="СчетаДоверительногоУправленияТребуетГодовогоОтчетаКонтекстноеМеню" id="71"/>
+				<ExtendedTooltip name="СчетаДоверительногоУправленияТребуетГодовогоОтчетаРасширеннаяПодсказка" id="72"/>
+			</CheckBoxField>
+		</ChildItems>
+	</Table>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Отчет" id="1">
@@ -341,23 +355,34 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="ИмяФайла" id="8">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Имя файла</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>255</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-			</Columns>
-		</Attribute>
+			<Column name="ИмяФайла" id="8">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Имя файла</v8:content>
+					</v8:item>
+				</Title>
+				<Type>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>255</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</Type>
+			</Column>
+			<Column name="ТребуетГодовогоОтчета" id="9">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Годовой</v8:content>
+					</v8:item>
+				</Title>
+				<Type>
+					<v8:Type>xs:boolean</v8:Type>
+				</Type>
+			</Column>
+		</Columns>
+	</Attribute>
 		<Attribute name="ИсключатьСчетаДоверительногоУправленияЗакрытыеЗаПериод" id="4">
 			<Title>
 				<v8:item>
