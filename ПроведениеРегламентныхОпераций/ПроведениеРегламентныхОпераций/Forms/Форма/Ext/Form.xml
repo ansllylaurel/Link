@@ -149,20 +149,33 @@
 										<Value xsi:type="xs:decimal">2</Value>
 									</xr:Value>
 								</xr:Item>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>По клиенту д/у</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:decimal">4</Value>
-									</xr:Value>
-								</xr:Item>
-							</ChoiceList>
+							<xr:Item>
+								<xr:Presentation/>
+								<xr:CheckState>0</xr:CheckState>
+								<xr:Value xsi:type="FormChoiceListDesTimeValue">
+									<Presentation>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>По клиенту д/у</v8:content>
+										</v8:item>
+									</Presentation>
+									<Value xsi:type="xs:decimal">4</Value>
+								</xr:Value>
+							</xr:Item>
+							<xr:Item>
+								<xr:Presentation/>
+								<xr:CheckState>0</xr:CheckState>
+								<xr:Value xsi:type="FormChoiceListDesTimeValue">
+									<Presentation>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Универсальный отбор</v8:content>
+										</v8:item>
+									</Presentation>
+									<Value xsi:type="xs:decimal">8</Value>
+								</xr:Value>
+							</xr:Item>
+						</ChoiceList>
 							<ContextMenu name="РежимОтбораКонтекстноеМеню" id="300"/>
 							<ExtendedTooltip name="РежимОтбораРасширеннаяПодсказка" id="301"/>
 							<Events>
@@ -213,18 +226,83 @@
 								<Event name="OnChange">ВидДоговораДоверительногоУправленияПриИзменении</Event>
 							</Events>
 						</InputField>
-						<InputField name="КлиентДоверительногоУправления" id="364">
-							<DataPath>КлиентДоверительногоУправления</DataPath>
-							<TitleLocation>None</TitleLocation>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ContextMenu name="КлиентДоверительногоУправленияКонтекстноеМеню" id="365"/>
-							<ExtendedTooltip name="КлиентДоверительногоУправленияРасширеннаяПодсказка" id="366"/>
-							<Events>
-								<Event name="OnChange">КлиентДоверительногоУправленияПриИзменении</Event>
-							</Events>
-						</InputField>
-					</ChildItems>
-				</UsualGroup>
+					<InputField name="КлиентДоверительногоУправления" id="364">
+						<DataPath>КлиентДоверительногоУправления</DataPath>
+						<TitleLocation>None</TitleLocation>
+						<AutoMarkIncomplete>true</AutoMarkIncomplete>
+						<ContextMenu name="КлиентДоверительногоУправленияКонтекстноеМеню" id="365"/>
+						<ExtendedTooltip name="КлиентДоверительногоУправленияРасширеннаяПодсказка" id="366"/>
+						<Events>
+							<Event name="OnChange">КлиентДоверительногоУправленияПриИзменении</Event>
+						</Events>
+					</InputField>
+					<UsualGroup name="ГруппаУниверсальныйОтбор" id="421">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Универсальный отбор</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Показать / скрыть универсальный отбор</v8:content>
+							</v8:item>
+						</ToolTip>
+						<HorizontalStretch>false</HorizontalStretch>
+						<GroupVerticalAlign>Center</GroupVerticalAlign>
+						<Group>Vertical</Group>
+						<Behavior>PopUp</Behavior>
+						<CollapsedRepresentationTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Показать отборы</v8:content>
+							</v8:item>
+						</CollapsedRepresentationTitle>
+						<Collapsed>true</Collapsed>
+						<Representation>None</Representation>
+						<TitleDataPath>ЗаголовокУниверсальногоОтбора</TitleDataPath>
+						<Visible>false</Visible>
+						<ExtendedTooltip name="ГруппаУниверсальныйОтборРасширеннаяПодсказка" id="422"/>
+						<ChildItems>
+							<InputField name="УниверсальныйОтборСчет" id="423">
+								<DataPath>УниверсальныйОтборСчет</DataPath>
+								<ClearButton>true</ClearButton>
+								<ChoiceParameterLinks>
+									<xr:Link>
+										<xr:Name>Отбор.Организация</xr:Name>
+										<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+										<xr:ValueChange>Clear</xr:ValueChange>
+									</xr:Link>
+								</ChoiceParameterLinks>
+								<ContextMenu name="УниверсальныйОтборСчетКонтекстноеМеню" id="424"/>
+								<ExtendedTooltip name="УниверсальныйОтборСчетРасширеннаяПодсказка" id="425"/>
+								<Events>
+									<Event name="OnChange">УниверсальныйОтборСчетПриИзменении</Event>
+								</Events>
+							</InputField>
+							<InputField name="УниверсальныйОтборКлиент" id="426">
+								<DataPath>УниверсальныйОтборКлиент</DataPath>
+								<ClearButton>true</ClearButton>
+								<ContextMenu name="УниверсальныйОтборКлиентКонтекстноеМеню" id="427"/>
+								<ExtendedTooltip name="УниверсальныйОтборКлиентРасширеннаяПодсказка" id="428"/>
+								<Events>
+									<Event name="OnChange">УниверсальныйОтборКлиентПриИзменении</Event>
+								</Events>
+							</InputField>
+							<InputField name="УниверсальныйОтборВидДоговора" id="429">
+								<DataPath>УниверсальныйОтборВидДоговора</DataPath>
+								<ClearButton>true</ClearButton>
+								<ContextMenu name="УниверсальныйОтборВидДоговораКонтекстноеМеню" id="430"/>
+								<ExtendedTooltip name="УниверсальныйОтборВидДоговораРасширеннаяПодсказка" id="431"/>
+								<Events>
+									<Event name="OnChange">УниверсальныйОтборВидДоговораПриИзменении</Event>
+								</Events>
+							</InputField>
+						</ChildItems>
+					</UsualGroup>
+				</ChildItems>
+			</UsualGroup>
 				<InputField name="ЦельРасчета" id="322">
 					<DataPath>ЦельРасчета</DataPath>
 					<Visible>false</Visible>
@@ -1349,6 +1427,63 @@
 			<Save>
 				<Field>ВыполнятьРасширеннуюПроверкуНомеровДокументов</Field>
 			</Save>
+		</Attribute>
+		<Attribute name="УниверсальныйОтборСчет" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет ДУ (универсальный отбор)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Type>
+			<Save>
+				<Field>УниверсальныйОтборСчет</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="УниверсальныйОтборКлиент" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент ДУ (универсальный отбор)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<Save>
+				<Field>УниверсальныйОтборКлиент</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="УниверсальныйОтборВидДоговора" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид договора ДУ (универсальный отбор)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыДоговоровДоверительногоУправления</v8:Type>
+			</Type>
+			<Save>
+				<Field>УниверсальныйОтборВидДоговора</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЗаголовокУниверсальногоОтбора" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок универсального отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
