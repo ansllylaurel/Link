@@ -1,75 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<Autofill>false</Autofill>
-	</AutoCommandBar>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаПараметры" id="1">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Параметры</v8:content>
-				</v8:item>
-			</Title>
-			<Representation>NormalGroup</Representation>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
-				<InputField name="ПолеОтчет482" id="2">
-					<DataPath>Отчет482</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Отчет 482 (квартальный источник)</v8:content>
-						</v8:item>
-					</Title>
+				<InputField name="ПолеОтчет482" id="3">
+					<DataPath>Объект.Отчет482</DataPath>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ПолеОтчет482КонтекстноеМеню" id="3"/>
-					<ExtendedTooltip name="ПолеОтчет482РасширеннаяПодсказка" id="4"/>
+					<ContextMenu name="ПолеОтчет482КонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ПолеОтчет482РасширеннаяПодсказка" id="5"/>
 				</InputField>
-				<InputField name="ПолеОтчет482ЦК" id="5">
-					<DataPath>Отчет482ЦК</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Отчет 482 ЦК &gt;45 млн (годовой приемник)</v8:content>
-						</v8:item>
-					</Title>
+				<InputField name="ПолеОтчет482ЦК" id="6">
+					<DataPath>Объект.Отчет482ЦК</DataPath>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ПолеОтчет482ЦККонтекстноеМеню" id="6"/>
-					<ExtendedTooltip name="ПолеОтчет482ЦКРасширеннаяПодсказка" id="7"/>
+					<ContextMenu name="ПолеОтчет482ЦККонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ПолеОтчет482ЦКРасширеннаяПодсказка" id="8"/>
 				</InputField>
-				<InputField name="ПолеДатаНастроек" id="8">
-					<DataPath>ДатаНастроек</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Дата настроек (с какой даты)</v8:content>
-						</v8:item>
-					</Title>
+				<InputField name="ПолеДатаНастроек" id="9">
+					<DataPath>Объект.ДатаНастроек</DataPath>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ПолеДатаНастроекКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="ПолеДатаНастроекРасширеннаяПодсказка" id="10"/>
+					<ContextMenu name="ПолеДатаНастроекКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ПолеДатаНастроекРасширеннаяПодсказка" id="11"/>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаКнопки" id="11">
-			<Representation>NormalGroup</Representation>
-			<Group>HorizontalIfPossible</Group>
+		<UsualGroup name="ГруппаКнопки" id="12">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<Group>AlwaysHorizontal</Group>
 			<ChildItems>
-				<Button name="КнопкаЗаполнить" id="12">
+				<Button name="КнопкаЗаполнить" id="13">
 					<CommandName>Form.Command.КомандаЗаполнить</CommandName>
-					<DefaultButton>true</DefaultButton>
-					<ExtendedTooltip name="КнопкаЗаполнитьРасширеннаяПодсказка" id="13"/>
+					<ExtendedTooltip name="КнопкаЗаполнитьРасширеннаяПодсказка" id="14"/>
 				</Button>
-				<Button name="КнопкаВыполнить" id="14">
+				<Button name="КнопкаВыполнить" id="15">
 					<CommandName>Form.Command.КомандаВыполнить</CommandName>
-					<ExtendedTooltip name="КнопкаВыполнитьРасширеннаяПодсказка" id="15"/>
+					<ExtendedTooltip name="КнопкаВыполнитьРасширеннаяПодсказка" id="16"/>
 				</Button>
 			</ChildItems>
 		</UsualGroup>
-		<Table name="ТаблицаОтчетов" id="16">
+		<Table name="ТаблицаОтчетов" id="17">
 			<Representation>List</Representation>
 			<DataPath>ТаблицаОтчетов</DataPath>
 			<CommandSet>
@@ -79,13 +56,13 @@
 				<ExcludedCommand>Delete</ExcludedCommand>
 			</CommandSet>
 			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="ТаблицаОтчетовКонтекстноеМеню" id="17"/>
-			<AutoCommandBar name="ТаблицаОтчетовКоманднаяПанель" id="18">
+			<ContextMenu name="ТаблицаОтчетовКонтекстноеМеню" id="18"/>
+			<AutoCommandBar name="ТаблицаОтчетовКоманднаяПанель" id="19">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="ТаблицаОтчетовРасширеннаяПодсказка" id="19"/>
+			<ExtendedTooltip name="ТаблицаОтчетовРасширеннаяПодсказка" id="20"/>
 			<ChildItems>
-				<InputField name="ТаблицаСчетДУ" id="20">
+				<InputField name="ТаблицаСчетДУ" id="21">
 					<DataPath>ТаблицаОтчетов.СчетДУ</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<Title>
@@ -95,10 +72,10 @@
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ТаблицаСчетДУКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="ТаблицаСчетДУРасширеннаяПодсказка" id="22"/>
+					<ContextMenu name="ТаблицаСчетДУКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ТаблицаСчетДУРасширеннаяПодсказка" id="23"/>
 				</InputField>
-				<InputField name="ТаблицаОрганизация" id="23">
+				<InputField name="ТаблицаОрганизация" id="24">
 					<DataPath>ТаблицаОтчетов.Организация</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<Title>
@@ -108,10 +85,10 @@
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ТаблицаОрганизацияКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ТаблицаОрганизацияРасширеннаяПодсказка" id="25"/>
+					<ContextMenu name="ТаблицаОрганизацияКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ТаблицаОрганизацияРасширеннаяПодсказка" id="26"/>
 				</InputField>
-				<InputField name="ТаблицаКоличествоНастроек" id="26">
+				<InputField name="ТаблицаКоличествоНастроек" id="27">
 					<DataPath>ТаблицаОтчетов.КоличествоНастроек</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<Title>
@@ -121,10 +98,10 @@
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ТаблицаКоличествоНастроекКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="ТаблицаКоличествоНастроекРасширеннаяПодсказка" id="28"/>
+					<ContextMenu name="ТаблицаКоличествоНастроекКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ТаблицаКоличествоНастроекРасширеннаяПодсказка" id="29"/>
 				</InputField>
-				<InputField name="ТаблицаСтатус" id="29">
+				<InputField name="ТаблицаСтатус" id="30">
 					<DataPath>ТаблицаОтчетов.Статус</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<Title>
@@ -134,50 +111,25 @@
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ТаблицаСтатусКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ТаблицаСтатусРасширеннаяПодсказка" id="31"/>
+					<ContextMenu name="ТаблицаСтатусКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ТаблицаСтатусРасширеннаяПодсказка" id="32"/>
 				</InputField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="Отчет482" id="1">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Отчет 482 (квартальный)</v8:content>
-				</v8:item>
-			</Title>
+		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:CatalogRef.Отчеты</v8:Type>
+				<v8:Type>cfg:ExternalDataProcessorObject._НастройкиОтчета482ЦК</v8:Type>
 			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.Отчет482</Field>
+				<Field>Объект.Отчет482ЦК</Field>
+				<Field>Объект.ДатаНастроек</Field>
+			</Save>
 		</Attribute>
-		<Attribute name="Отчет482ЦК" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Отчет 482 ЦК &gt;45 млн (годовой)</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:CatalogRef.Отчеты</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ДатаНастроек" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дата настроек</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:dateTime</v8:Type>
-				<v8:DateQualifiers>
-					<v8:DateFractions>Date</v8:DateFractions>
-				</v8:DateQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ТаблицаОтчетов" id="4">
+		<Attribute name="ТаблицаОтчетов" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -258,10 +210,6 @@
 					<v8:content>Заполнить таблицу счетами ДУ для обработки</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.Refresh</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
 			<Action>КомандаЗаполнить</Action>
 		</Command>
 		<Command name="КомандаВыполнить" id="2">
@@ -277,10 +225,6 @@
 					<v8:content>Скопировать настройки квартального 482 в годовой 482 ЦК &gt;45 млн</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
 			<Action>КомандаВыполнить</Action>
 		</Command>
 	</Commands>
