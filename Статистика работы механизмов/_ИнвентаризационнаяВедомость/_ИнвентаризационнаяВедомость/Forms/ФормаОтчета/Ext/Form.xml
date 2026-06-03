@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<MobileDeviceCommandBarContent>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string">КомпоновщикНастроекПользовательскиеНастройки</xr:Value>
+		</xr:Item>
+	</MobileDeviceCommandBarContent>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>CancelEdit</ExcludedCommand>
+		<ExcludedCommand>ChangeSettingsStructure</ExcludedCommand>
+		<ExcludedCommand>ChangeVariant</ExcludedCommand>
+		<ExcludedCommand>ClearChartAppearance</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CompactViewMode</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>EndEdit</ExcludedCommand>
+		<ExcludedCommand>Generate</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>LoadReportSettings</ExcludedCommand>
+		<ExcludedCommand>LoadVariant</ExcludedCommand>
+		<ExcludedCommand>NewWindow</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>OpenFromMainServer</ExcludedCommand>
+		<ExcludedCommand>OpenFromStandaloneServer</ExcludedCommand>
+		<ExcludedCommand>Print</ExcludedCommand>
+		<ExcludedCommand>ReportSettings</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>Save</ExcludedCommand>
+		<ExcludedCommand>SaveReportSettings</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>SaveVariant</ExcludedCommand>
+		<ExcludedCommand>StandardSettings</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<ReportResult>Результат</ReportResult>
+	<DetailsData>ДанныеРасшифровки</DetailsData>
+	<ReportFormType>Main</ReportFormType>
+	<AutoShowState>Auto</AutoShowState>
+	<CustomSettingsFolder>КомпоновщикНастроекПользовательскиеНастройки</CustomSettingsFolder>
+	<ReportResultViewMode>Auto</ReportResultViewMode>
+	<ViewModeApplicationOnSetReportResult>Auto</ViewModeApplicationOnSetReportResult>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаКомандаСформировать" id="27">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаСформировать</CommandName>
+				<ExtendedTooltip name="ФормаКомандаСформироватьРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаКомандаСохранитьФайл" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаСохранитьФайл</CommandName>
+				<ExtendedTooltip name="ФормаКомандаСохранитьФайлРасширеннаяПодсказка" id="23"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="17">
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="18"/>
+			<ChildItems>
+				<InputField name="Период" id="3">
+					<DataPath>Отчет.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="5"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="6">
+					<DataPath>Отчет.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="8"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Путь" id="19">
+			<DataPath>Путь</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<ContextMenu name="ПутьКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ПутьРасширеннаяПодсказка" id="21"/>
+			<Events>
+				<Event name="StartChoice">ПутьНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="СчетДоверительногоУправления" id="9">
+			<DataPath>Отчет.СчетДоверительногоУправления</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="11"/>
+			<Events>
+				<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="КомпоновщикНастроекПользовательскиеНастройки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="КомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="13"/>
+		</UsualGroup>
+		<SpreadSheetDocumentField name="Результат" id="24">
+			<DataPath>Результат</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ContextMenu name="РезультатКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="26"/>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Отчет" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalReportObject._ИнвентаризационнаяВедомость</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Отчет.Организация</Field>
+			</UseAlways>
+			<Save>
+				<Field>Отчет.Период</Field>
+				<Field>Отчет.СчетДоверительногоУправления</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Результат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеРасшифровки" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Путь" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь для сохранения файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>255</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Путь</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаСохранитьФайл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда сохранить файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСохранитьФайл</Action>
+		</Command>
+		<Command name="КомандаСформировать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСформировать</Action>
+		</Command>
+	</Commands>
+</Form>
