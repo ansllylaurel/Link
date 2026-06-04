@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРеквизитыШапки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты шапки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты шапки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитыШапкиРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="Период" id="182">
+					<DataPath>Объект.Период</DataPath>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="183"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="184"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаРасчета" id="130">
+					<DataPath>Объект.ДатаЗаявления</DataPath>
+					<ContextMenu name="ДатаРасчетаКонтекстноеМеню" id="131"/>
+					<ExtendedTooltip name="ДатаРасчетаРасширеннаяПодсказка" id="132"/>
+				</InputField>
+				<LabelField name="Организация" id="49">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВидДоговораДУ" id="188">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид договора ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид договора ДУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВидДоговораДУРасширеннаяПодсказка" id="189"/>
+			<ChildItems>
+				<InputField name="ВидДоговораДУ" id="190">
+					<ContextMenu name="ВидДоговораДУКонтекстноеМеню" id="191"/>
+					<ExtendedTooltip name="ВидДоговораДУРасширеннаяПодсказка" id="192"/>
+					<Events>
+						<Event name="OnChange">ВидДоговораДУПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Стратегия" id="185">
+					<DataPath>Объект.Стратегия</DataPath>
+					<ContextMenu name="СтратегияКонтекстноеМеню" id="186"/>
+					<ExtendedTooltip name="СтратегияРасширеннаяПодсказка" id="187"/>
+					<Events>
+						<Event name="OnChange">СтратегияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительно" id="216">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дополнительно</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="217"/>
+			<ChildItems>
+				<InputField name="Подписант" id="210">
+					<DataPath>Объект.Подписант</DataPath>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ПодписантКонтекстноеМеню" id="211"/>
+					<ExtendedTooltip name="ПодписантРасширеннаяПодсказка" id="212"/>
+					<Events>
+						<Event name="StartChoice">ПодписантНачалоВыбора</Event>
+						<Event name="ChoiceProcessing">ПодписантОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="КаталогСохранения" id="213">
+					<DataPath>Объект.КаталогСохранения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каталог файлов</v8:content>
+						</v8:item>
+					</Title>
+					<ChoiceButton>true</ChoiceButton>
+					<OpenButton>true</OpenButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="КаталогСохраненияКонтекстноеМеню" id="214"/>
+					<ExtendedTooltip name="КаталогСохраненияРасширеннаяПодсказка" id="215"/>
+					<Events>
+						<Event name="StartChoice">КаталогСохраненияНачалоВыбора</Event>
+						<Event name="Opening">КаталогСохраненияОткрытие</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СписокСчетовДУ" id="12">
+			<Representation>List</Representation>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокСчетовДУ</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокСчетовДУКонтекстноеМеню" id="13"/>
+			<AutoCommandBar name="СписокСчетовДУКоманднаяПанель" id="14">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<ButtonGroup name="СписокСчетовДУГруппаФлажки" id="66">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список счетов ДУГруппа флажки</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список счетов ДУГруппа флажки</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="СписокСчетовДУГруппаФлажкиРасширеннаяПодсказка" id="67"/>
+						<ChildItems>
+							<Button name="СписокСчетовДУКомандаУстановитьФлажки" id="45">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаУстановитьФлажки</CommandName>
+								<ExtendedTooltip name="СписокСчетовДУКомандаУстановитьФлажкиРасширеннаяПодсказка" id="46"/>
+							</Button>
+							<Button name="СписокСчетовДУКомандаСнятьФлажки" id="47">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаСнятьФлажки</CommandName>
+								<ExtendedTooltip name="СписокСчетовДУКомандаСнятьФлажкиРасширеннаяПодсказка" id="48"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="СписокСчетовДУКомандаОбновить" id="64">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаОбновить</CommandName>
+						<ExtendedTooltip name="СписокСчетовДУКомандаОбновитьРасширеннаяПодсказка" id="65"/>
+					</Button>
+					<Button name="СписокСчетовДУДобавить" id="221">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.СписокСчетовДУ.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="СписокСчетовДУДобавитьРасширеннаяПодсказка" id="222"/>
+					</Button>
+					<Button name="СписокСчетовДУКомандаУстановитьКодыСчетовДУ" id="193">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаУстановитьКодыСчетовДУ</CommandName>
+						<ExtendedTooltip name="СписокСчетовДУКомандаУстановитьКодыСчетовДУРасширеннаяПодсказка" id="194"/>
+					</Button>
+					<Button name="СписокСчетовДУКомандаПечатьЗаявления" id="84">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаПечатьЗаявления</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сформировать документы</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="СписокСчетовДУКомандаПечатьЗаявленияРасширеннаяПодсказка" id="85"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокСчетовДУРасширеннаяПодсказка" id="15"/>
+			<SearchStringAddition name="СписокСчетовДУСтрокаПоиска" id="16">
+				<AdditionSource>
+					<Item>СписокСчетовДУ</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСчетовДУСтрокаПоискаКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="СписокСчетовДУСтрокаПоискаРасширеннаяПодсказка" id="18"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСчетовДУСостояниеПросмотра" id="19">
+				<AdditionSource>
+					<Item>СписокСчетовДУ</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСчетовДУСостояниеПросмотраКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СписокСчетовДУСостояниеПросмотраРасширеннаяПодсказка" id="21"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокСчетовДУУправлениеПоиском" id="22">
+				<AdditionSource>
+					<Item>СписокСчетовДУ</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСчетовДУУправлениеПоискомКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="СписокСчетовДУУправлениеПоискомРасширеннаяПодсказка" id="24"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">СписокСчетовДУПередНачаломДобавления</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="СписокСчетовДУФлажок" id="204">
+					<DataPath>СписокСчетовДУ.Флажок</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокСчетовДУФлажокКонтекстноеМеню" id="205"/>
+					<ExtendedTooltip name="СписокСчетовДУФлажокРасширеннаяПодсказка" id="206"/>
+				</CheckBoxField>
+				<InputField name="СписокСчетовДУСчетДоверительногоУправления" id="201">
+					<DataPath>СписокСчетовДУ.СчетДоверительногоУправления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceForm>Catalog.СчетаДоверительногоУправления.Form.ФормаСписка</ChoiceForm>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.ВидДоговораДоверительногоУправления</xr:Name>
+							<xr:DataPath xsi:type="xs:string">1/0:1711c4e5-59da-4415-9909-7d3ef0462480</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ChoiceParameters>
+						<app:item name="Отбор.ВидДоговораДоверительногоУправления">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ВидыДоговоровДоверительногоУправления.EnumValue.ИндивидуальныйИнвестиционныйСчет</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="СписокСчетовДУСчетДоверительногоУправленияКонтекстноеМеню" id="202"/>
+					<ExtendedTooltip name="СписокСчетовДУСчетДоверительногоУправленияРасширеннаяПодсказка" id="203"/>
+					<Events>
+						<Event name="OnChange">СписокСчетовДУСчетДоверительногоУправленияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СписокСчетовДУКодСчетаДУ" id="207">
+					<DataPath>СписокСчетовДУ.КодСчетаДУ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовДУКодСчетаДУКонтекстноеМеню" id="208"/>
+					<ExtendedTooltip name="СписокСчетовДУКодСчетаДУРасширеннаяПодсказка" id="209"/>
+				</InputField>
+				<InputField name="СписокСчетовДУВводДенежныхСредств" id="218">
+					<DataPath>СписокСчетовДУ.ВводДенежныхСредств</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовДУВводДенежныхСредствКонтекстноеМеню" id="219"/>
+					<ExtendedTooltip name="СписокСчетовДУВводДенежныхСредствРасширеннаяПодсказка" id="220"/>
+				</InputField>
+				<InputField name="СписокСчетовДУОсновнойБрокерскийДоговор" id="195">
+					<DataPath>СписокСчетовДУ.ОсновнойБрокерскийДоговор</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовДУОсновнойБрокерскийДоговорКонтекстноеМеню" id="196"/>
+					<ExtendedTooltip name="СписокСчетовДУОсновнойБрокерскийДоговорРасширеннаяПодсказка" id="197"/>
+				</InputField>
+				<InputField name="СписокСчетовДУОсновнойКодУБрокера" id="198">
+					<DataPath>СписокСчетовДУ.ОсновнойКодУБрокера</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовДУОсновнойКодУБрокераКонтекстноеМеню" id="199"/>
+					<ExtendedTooltip name="СписокСчетовДУОсновнойКодУБрокераРасширеннаяПодсказка" id="200"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ПечатьЗаявленийВБК</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.КаталогСохранения</Field>
+				<Field>Объект.Подписант</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СписокСчетовДУ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список счетов ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СчетДоверительногоУправления" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОсновнойБрокерскийДоговор" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основной брокерский договор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ДоговорыБрокерскогоОбслуживания</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОсновнойКодУБрокера" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основной код у брокера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодСчетаДУ" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код портфеля у брокера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВводДенежныхСредств" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ввод денежных средств</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ВводДенежныхСредств</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЮрЛицоОрганизации" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юр лицо организации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ШаблонЗаявления" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон заявления брокеру</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ШаблонИнформации" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон информации о счете ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОбновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСнятьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьЗаявления" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать расчета вознаграждения для формы 482</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения для формы 482</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьЗаявления</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьКодыСчетовДУ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить коды портфелей у брокера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить коды счетов ДУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаУстановитьКодыСчетовДУ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

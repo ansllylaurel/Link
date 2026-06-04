@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Проверка клиентов по СМЭВ</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CustomSettingsFolder>ГруппаОтбор</CustomSettingsFolder>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnUpdateUserSettingSetAtServer">ПриОбновленииСоставаПользовательскихНастроекНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<InputField name="ДатаПроверки" id="4">
+					<DataPath>Объект.ДатаПроверки</DataPath>
+					<ContextMenu name="ДатаПроверкиКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаПроверкиРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПроверкиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОбъектОрганизация" id="132">
+					<DataPath>Объект.Организация</DataPath>
+					<ContextMenu name="ОбъектОрганизацияКонтекстноеМеню" id="133"/>
+					<ExtendedTooltip name="ОбъектОрганизацияРасширеннаяПодсказка" id="134"/>
+					<Events>
+						<Event name="OnChange">ОбъектОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="9">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="11"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтбор" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="13"/>
+		</UsualGroup>
+		<Table name="ФизическиеЛица" id="14">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ФизическиеЛица</DataPath>
+			<RowPictureDataPath>ФизическиеЛица.КартинкаСтрок</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.СтатусыФайлов</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</RowsPicture>
+			<ViewStatusLocation>Top</ViewStatusLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ФизическиеЛицаКонтекстноеМеню" id="15"/>
+			<AutoCommandBar name="ФизическиеЛицаКоманднаяПанель" id="16">
+				<ChildItems>
+					<Button name="ФизическиеЛицаКомандаУстановитьФлаги" id="114">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаУстановитьФлаги</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаКомандаУстановитьФлагиРасширеннаяПодсказка" id="115"/>
+					</Button>
+					<Button name="ФизическиеЛицаКомандаСнятьФлаги" id="116">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСнятьФлаги</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаКомандаСнятьФлагиРасширеннаяПодсказка" id="117"/>
+					</Button>
+					<Button name="ФизическиеЛицаКомандаОбновитьСписок" id="128">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаОбновитьСписок</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаКомандаОбновитьСписокРасширеннаяПодсказка" id="129"/>
+					</Button>
+					<Button name="ФизическиеЛицаКомандаОтправитьЗапрос" id="118">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаОтправитьЗапрос</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаКомандаОтправитьЗапросРасширеннаяПодсказка" id="119"/>
+					</Button>
+					<Button name="ФизическиеЛицаКомандаПолучитьОтвет" id="120">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаПолучитьРезультаты</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаКомандаПолучитьОтветРасширеннаяПодсказка" id="121"/>
+					</Button>
+					<Button name="ФизическиеЛицаИзменитьФорму" id="122">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаИзменитьФормуРасширеннаяПодсказка" id="123"/>
+					</Button>
+					<Button name="ФизическиеЛицаСправка" id="124">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Help</CommandName>
+						<ExtendedTooltip name="ФизическиеЛицаСправкаРасширеннаяПодсказка" id="125"/>
+					</Button>
+					<Button name="КомандаИзменитьСоставОтборов" id="135">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаИзменитьСоставОтборов</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="КомандаИзменитьСоставОтборовРасширеннаяПодсказка" id="136"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ФизическиеЛицаРасширеннаяПодсказка" id="17"/>
+			<SearchStringAddition name="ФизическиеЛицаСтрокаПоиска" id="18">
+				<AdditionSource>
+					<Item>ФизическиеЛица</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ФизическиеЛицаСтрокаПоискаКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ФизическиеЛицаСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ФизическиеЛицаСостояниеПросмотра" id="21">
+				<AdditionSource>
+					<Item>ФизическиеЛица</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ФизическиеЛицаСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ФизическиеЛицаСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ФизическиеЛицаУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>ФизическиеЛица</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ФизическиеЛицаУправлениеПоискомКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="ФизическиеЛицаУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ФизическиеЛицаВыбор</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="ФизическиеЛицаФлаг" id="45">
+					<DataPath>ФизическиеЛица.Флаг</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФизическиеЛицаФлагКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ФизическиеЛицаФлагРасширеннаяПодсказка" id="47"/>
+				</CheckBoxField>
+				<ColumnGroup name="ФизическиеЛицаГруппаРезультаты" id="126">
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результаты проверки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Физические лица группа результаты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="ФизическиеЛицаГруппаРезультатыРасширеннаяПодсказка" id="127"/>
+					<ChildItems>
+						<InputField name="ФизическиеЛицаСтатус" id="87">
+							<DataPath>ФизическиеЛица.Результат</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаСтатусКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="ФизическиеЛицаСтатусРасширеннаяПодсказка" id="89"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаКомментарий" id="100">
+							<DataPath>ФизическиеЛица.Комментарий</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаКомментарийКонтекстноеМеню" id="101"/>
+							<ExtendedTooltip name="ФизическиеЛицаКомментарийРасширеннаяПодсказка" id="102"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаДатаПроверки" id="90">
+							<DataPath>ФизическиеЛица.ДатаПоследнейСверки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаДатаПроверкиКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="ФизическиеЛицаДатаПроверкиРасширеннаяПодсказка" id="92"/>
+						</InputField>
+						<CheckBoxField name="ФизическиеЛицаДокументооборотЗавершен" id="103">
+							<DataPath>ФизическиеЛица.Пройдена</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ответ получен</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ФизическиеЛицаДокументооборотЗавершенКонтекстноеМеню" id="104"/>
+							<ExtendedTooltip name="ФизическиеЛицаДокументооборотЗавершенРасширеннаяПодсказка" id="105"/>
+						</CheckBoxField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ФизическиеЛицаГруппаАнкетныеДанные" id="140">
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Физические лица группа анкетные данные</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Физические лица группа анкетные данные</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="ФизическиеЛицаГруппаАнкетныеДанныеРасширеннаяПодсказка" id="141"/>
+					<ChildItems>
+						<InputField name="ФизическиеЛицаФамилия" id="66">
+							<DataPath>ФизическиеЛица.Фамилия</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаФамилияКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="ФизическиеЛицаФамилияРасширеннаяПодсказка" id="68"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаИмя" id="69">
+							<DataPath>ФизическиеЛица.Имя</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаИмяКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="ФизическиеЛицаИмяРасширеннаяПодсказка" id="71"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаОтчество" id="72">
+							<DataPath>ФизическиеЛица.Отчество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаОтчествоКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ФизическиеЛицаОтчествоРасширеннаяПодсказка" id="74"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаСерия" id="75">
+							<DataPath>ФизическиеЛица.Серия</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаСерияКонтекстноеМеню" id="76"/>
+							<ExtendedTooltip name="ФизическиеЛицаСерияРасширеннаяПодсказка" id="77"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаНомер" id="78">
+							<DataPath>ФизическиеЛица.Номер</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаНомерКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ФизическиеЛицаНомерРасширеннаяПодсказка" id="80"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаИНН" id="84">
+							<DataPath>ФизическиеЛица.ИНН</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаИННКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="ФизическиеЛицаИННРасширеннаяПодсказка" id="86"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаСНИЛС" id="81">
+							<DataPath>ФизическиеЛица.СНИЛС</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаСНИЛСКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="ФизическиеЛицаСНИЛСРасширеннаяПодсказка" id="83"/>
+						</InputField>
+						<InputField name="ФизическиеЛицаИсточникАнкеты" id="137">
+							<DataPath>ФизическиеЛица.ИсточникАнкеты</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ФизическиеЛицаИсточникАнкетыКонтекстноеМеню" id="138"/>
+							<ExtendedTooltip name="ФизическиеЛицаИсточникАнкетыРасширеннаяПодсказка" id="139"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<Pages name="ГруппаСтраницы" id="130">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="131"/>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ПроверкаКлиентовПоСМЭВ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизическиеЛица" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физические лица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ФизическоеЛицо" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Физическое лицо</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флаг" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флаг</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаПоследнейСверки" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата последней сверки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пройдена" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат получен</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Результат" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Фамилия" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фамилия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Имя" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отчество" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Серия" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Серия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>15</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номер" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>15</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СНИЛС" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СНИЛС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>15</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИНН" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИНН</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>15</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КартинкаСтрок" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка строк</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИсточникАнкеты" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник анкеты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ИсточникиАнкетИЗаявок</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КомпоновщикНастроек" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>КомпоновщикНастроек.Settings.Filter</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="АдресСКД" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес СКД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Токен" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Токен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаУстановитьФлаги" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флаги</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить флаги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьФлаги</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятьФлаги" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флаги</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить флаги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСнятьФлаги</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтправитьЗапрос" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить запрос</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить запрос</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтправитьЗапрос</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПолучитьРезультаты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить результаты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить результаты (будут проверены все физ.лица, ответы по которым еще не были получены)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПолучитьРезультаты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОбновитьСписок" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F5</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновитьСписок</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаИзменитьСоставОтборов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить состав отборов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда изменить состав отборов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаИзменитьСоставОтборов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

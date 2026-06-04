@@ -1,0 +1,1546 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="147">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="148"/>
+			<ChildItems>
+				<RadioButtonField name="ВидОтчета" id="3">
+					<DataPath>ВидОтчета</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет</v8:content>
+						</v8:item>
+					</Title>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Встроенный</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дополнительный</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ВидОтчетаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ВидОтчетаРасширеннаяПодсказка" id="5"/>
+					<Events>
+						<Event name="OnChange">ВидОтчетаПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="КлючОтчета" id="6">
+					<DataPath>КлючОтчета</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="КлючОтчетаКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="КлючОтчетаРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">КлючОтчетаПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="81">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="82"/>
+			<ChildItems>
+				<Page name="СтраницаПредопределенныеВарианты" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предопределенные варианты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница предопределенные варианты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>КоличествоПредопределенныхВариантов</TitleDataPath>
+					<ExtendedTooltip name="СтраницаПредопределенныеВариантыРасширеннаяПодсказка" id="84"/>
+					<ChildItems>
+						<Table name="ПредопределенныеВарианты" id="9">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПредопределенныеВарианты</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПредопределенныеВариантыКонтекстноеМеню" id="10">
+								<ChildItems>
+									<Button name="ПредопределенныеВариантыКонтекстноеМенюСоздать" id="126">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Создать</CommandName>
+										<ExtendedTooltip name="ПредопределенныеВариантыКонтекстноеМенюСоздатьРасширеннаяПодсказка" id="127"/>
+									</Button>
+									<Button name="ПредопределенныеВариантыКонтекстноеМенюОбновить" id="128">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Обновить</CommandName>
+										<ExtendedTooltip name="ПредопределенныеВариантыКонтекстноеМенюОбновитьРасширеннаяПодсказка" id="129"/>
+									</Button>
+									<Button name="ПредопределенныеВариантыКонтекстноеМенюПропустить" id="130">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Пропустить</CommandName>
+										<ExtendedTooltip name="ПредопределенныеВариантыКонтекстноеМенюПропуститьРасширеннаяПодсказка" id="131"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ПредопределенныеВариантыКоманднаяПанель" id="11">
+								<ChildItems>
+									<Button name="ПредопределенныеВариантыЗаполнить" id="192">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<ExtendedTooltip name="ПредопределенныеВариантыЗаполнитьРасширеннаяПодсказка" id="193"/>
+									</Button>
+									<Button name="ПредопределенныеВариантыВыполнитьДействия" id="149">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыполнитьДействия</CommandName>
+										<ExtendedTooltip name="ПредопределенныеВариантыВыполнитьДействияРасширеннаяПодсказка" id="150"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПредопределенныеВариантыРасширеннаяПодсказка" id="12"/>
+							<SearchStringAddition name="ПредопределенныеВариантыСтрокаПоиска" id="13">
+								<AdditionSource>
+									<Item>ПредопределенныеВарианты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредопределенныеВариантыСтрокаПоискаКонтекстноеМеню" id="14"/>
+								<ExtendedTooltip name="ПредопределенныеВариантыСтрокаПоискаРасширеннаяПодсказка" id="15"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПредопределенныеВариантыСостояниеПросмотра" id="16">
+								<AdditionSource>
+									<Item>ПредопределенныеВарианты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредопределенныеВариантыСостояниеПросмотраКонтекстноеМеню" id="17"/>
+								<ExtendedTooltip name="ПредопределенныеВариантыСостояниеПросмотраРасширеннаяПодсказка" id="18"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПредопределенныеВариантыУправлениеПоиском" id="19">
+								<AdditionSource>
+									<Item>ПредопределенныеВарианты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредопределенныеВариантыУправлениеПоискомКонтекстноеМеню" id="20"/>
+								<ExtendedTooltip name="ПредопределенныеВариантыУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ПредопределенныеВариантыКлючОбъекта" id="144">
+									<DataPath>ПредопределенныеВарианты.КлючОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПредопределенныеВариантыКлючОбъектаКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="ПредопределенныеВариантыКлючОбъектаРасширеннаяПодсказка" id="146"/>
+								</InputField>
+								<InputField name="ПредопределенныеВариантыИмя" id="22">
+									<DataPath>ПредопределенныеВарианты.Имя</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПредопределенныеВариантыИмяКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="ПредопределенныеВариантыИмяРасширеннаяПодсказка" id="24"/>
+								</InputField>
+								<InputField name="ПредопределенныеВариантыПредставление" id="25">
+									<DataPath>ПредопределенныеВарианты.Представление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПредопределенныеВариантыПредставлениеКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ПредопределенныеВариантыПредставлениеРасширеннаяПодсказка" id="27"/>
+								</InputField>
+								<InputField name="ПредопределенныеВариантыДействие" id="95">
+									<DataPath>ПредопределенныеВарианты.Действие</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Создать</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Создать</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Обновить</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Обновить</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Пропустить</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Пропустить</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ПредопределенныеВариантыДействиеКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="ПредопределенныеВариантыДействиеРасширеннаяПодсказка" id="97"/>
+								</InputField>
+								<InputField name="ПредопределенныеВариантыВариантОтчета" id="28">
+									<DataPath>ПредопределенныеВарианты.ВариантОтчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Ключ</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.ПредопределенныеВарианты.CurrentData.КлючОбъекта</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ChoiceParameters>
+										<app:item name="Отбор.ПредопределенныйВариант">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="ПредопределенныеВариантыВариантОтчетаКонтекстноеМеню" id="29"/>
+									<ExtendedTooltip name="ПредопределенныеВариантыВариантОтчетаРасширеннаяПодсказка" id="30"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСохраненныеВарианты" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сохраненные варианты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница сохраненные варианты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>КоличествоСохраненныхВариантов</TitleDataPath>
+					<ExtendedTooltip name="СтраницаСохраненныеВариантыРасширеннаяПодсказка" id="86"/>
+					<ChildItems>
+						<Table name="СохраненныеВарианты" id="31">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СохраненныеВарианты</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СохраненныеВариантыКонтекстноеМеню" id="32">
+								<ChildItems>
+									<Button name="СохраненныеВариантыКонтекстноеМенюСоздать" id="132">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Создать</CommandName>
+										<ExtendedTooltip name="СохраненныеВариантыКонтекстноеМенюСоздатьРасширеннаяПодсказка" id="133"/>
+									</Button>
+									<Button name="СохраненныеВариантыКонтекстноеМенюОбновить" id="134">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Обновить</CommandName>
+										<ExtendedTooltip name="СохраненныеВариантыКонтекстноеМенюОбновитьРасширеннаяПодсказка" id="135"/>
+									</Button>
+									<Button name="СохраненныеВариантыКонтекстноеМенюПропустить" id="136">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Пропустить</CommandName>
+										<ExtendedTooltip name="СохраненныеВариантыКонтекстноеМенюПропуститьРасширеннаяПодсказка" id="137"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="СохраненныеВариантыКоманднаяПанель" id="33">
+								<ChildItems>
+									<Button name="СохраненныеВариантыЗаполнить" id="194">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<ExtendedTooltip name="СохраненныеВариантыЗаполнитьРасширеннаяПодсказка" id="195"/>
+									</Button>
+									<Button name="СохраненныеВариантыВыполнитьДействия" id="151">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыполнитьДействия</CommandName>
+										<ExtendedTooltip name="СохраненныеВариантыВыполнитьДействияРасширеннаяПодсказка" id="152"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СохраненныеВариантыРасширеннаяПодсказка" id="34"/>
+							<SearchStringAddition name="СохраненныеВариантыСтрокаПоиска" id="35">
+								<AdditionSource>
+									<Item>СохраненныеВарианты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СохраненныеВариантыСтрокаПоискаКонтекстноеМеню" id="36"/>
+								<ExtendedTooltip name="СохраненныеВариантыСтрокаПоискаРасширеннаяПодсказка" id="37"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СохраненныеВариантыСостояниеПросмотра" id="38">
+								<AdditionSource>
+									<Item>СохраненныеВарианты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СохраненныеВариантыСостояниеПросмотраКонтекстноеМеню" id="39"/>
+								<ExtendedTooltip name="СохраненныеВариантыСостояниеПросмотраРасширеннаяПодсказка" id="40"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СохраненныеВариантыУправлениеПоиском" id="41">
+								<AdditionSource>
+									<Item>СохраненныеВарианты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СохраненныеВариантыУправлениеПоискомКонтекстноеМеню" id="42"/>
+								<ExtendedTooltip name="СохраненныеВариантыУправлениеПоискомРасширеннаяПодсказка" id="43"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СохраненныеВариантыКлючНастроек" id="44">
+									<DataPath>СохраненныеВарианты.КлючНастроек</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеВариантыКлючНастроекКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="СохраненныеВариантыКлючНастроекРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="СохраненныеВариантыКлючОбъекта" id="47">
+									<DataPath>СохраненныеВарианты.КлючОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеВариантыКлючОбъектаКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="СохраненныеВариантыКлючОбъектаРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="СохраненныеВариантыПредставление" id="53">
+									<DataPath>СохраненныеВарианты.Представление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеВариантыПредставлениеКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="СохраненныеВариантыПредставлениеРасширеннаяПодсказка" id="55"/>
+								</InputField>
+								<InputField name="СохраненныеВариантыПользователь" id="50">
+									<DataPath>СохраненныеВарианты.Пользователь</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеВариантыПользовательКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="СохраненныеВариантыПользовательРасширеннаяПодсказка" id="52"/>
+								</InputField>
+								<ColumnGroup name="СохраненныеВариантыГруппаПользовательСсылка" id="121">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сохраненные варианты группа пользователь ссылка</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сохраненные варианты группа пользователь ссылка</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="СохраненныеВариантыГруппаПользовательСсылкаРасширеннаяПодсказка" id="122"/>
+									<ChildItems>
+										<InputField name="СохраненныеВариантыПользовательСсылка" id="110">
+											<DataPath>СохраненныеВарианты.ПользовательСсылка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.ИдентификаторПользователяИБ</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.СохраненныеВарианты.CurrentData.ПользовательУИД</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="СохраненныеВариантыПользовательСсылкаКонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="СохраненныеВариантыПользовательСсылкаРасширеннаяПодсказка" id="112"/>
+										</InputField>
+										<InputField name="СохраненныеВариантыПользовательСсылкаОрганизация" id="123">
+											<DataPath>СохраненныеВарианты.ПользовательСсылка.Организация</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СохраненныеВариантыПользовательСсылкаОрганизацияКонтекстноеМеню" id="124"/>
+											<ExtendedTooltip name="СохраненныеВариантыПользовательСсылкаОрганизацияРасширеннаяПодсказка" id="125"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СохраненныеВариантыДействие" id="98">
+									<DataPath>СохраненныеВарианты.Действие</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Создать</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Создать</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Обновить</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Обновить</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Пропустить</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Пропустить</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СохраненныеВариантыДействиеКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="СохраненныеВариантыДействиеРасширеннаяПодсказка" id="100"/>
+								</InputField>
+								<InputField name="СохраненныеВариантыВариантОтчета" id="89">
+									<DataPath>СохраненныеВарианты.ВариантОтчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Ключ</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.СохраненныеВарианты.CurrentData.КлючОбъекта</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+										<xr:Link>
+											<xr:Name>Отбор.Автор</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.СохраненныеВарианты.CurrentData.ПользовательСсылка</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ChoiceParameters>
+										<app:item name="Отбор.ПредопределенныйВариант">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="СохраненныеВариантыВариантОтчетаКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="СохраненныеВариантыВариантОтчетаРасширеннаяПодсказка" id="91"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСохраненныеНастройки" id="87">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сохраненные настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница сохраненные настройки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>КоличествоСохраненныхНастроек</TitleDataPath>
+					<ExtendedTooltip name="СтраницаСохраненныеНастройкиРасширеннаяПодсказка" id="88"/>
+					<ChildItems>
+						<Table name="СохраненныеНастройки" id="56">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СохраненныеНастройки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СохраненныеНастройкиКонтекстноеМеню" id="57">
+								<ChildItems>
+									<Button name="СохраненныеНастройкиКонтекстноеМенюСоздать" id="138">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Создать</CommandName>
+										<ExtendedTooltip name="СохраненныеНастройкиКонтекстноеМенюСоздатьРасширеннаяПодсказка" id="139"/>
+									</Button>
+									<Button name="СохраненныеНастройкиКонтекстноеМенюОбновить" id="140">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Обновить</CommandName>
+										<ExtendedTooltip name="СохраненныеНастройкиКонтекстноеМенюОбновитьРасширеннаяПодсказка" id="141"/>
+									</Button>
+									<Button name="СохраненныеНастройкиКонтекстноеМенюПропустить" id="142">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Пропустить</CommandName>
+										<ExtendedTooltip name="СохраненныеНастройкиКонтекстноеМенюПропуститьРасширеннаяПодсказка" id="143"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="СохраненныеНастройкиКоманднаяПанель" id="58">
+								<ChildItems>
+									<Button name="СохраненныеНастройкиЗаполнить" id="196">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<ExtendedTooltip name="СохраненныеНастройкиЗаполнитьРасширеннаяПодсказка" id="197"/>
+									</Button>
+									<Button name="СохраненныеНастройкиВыполнитьДействия" id="153">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыполнитьДействия</CommandName>
+										<ExtendedTooltip name="СохраненныеНастройкиВыполнитьДействияРасширеннаяПодсказка" id="154"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СохраненныеНастройкиРасширеннаяПодсказка" id="59"/>
+							<SearchStringAddition name="СохраненныеНастройкиСтрокаПоиска" id="60">
+								<AdditionSource>
+									<Item>СохраненныеНастройки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СохраненныеНастройкиСтрокаПоискаКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="СохраненныеНастройкиСтрокаПоискаРасширеннаяПодсказка" id="62"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СохраненныеНастройкиСостояниеПросмотра" id="63">
+								<AdditionSource>
+									<Item>СохраненныеНастройки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СохраненныеНастройкиСостояниеПросмотраКонтекстноеМеню" id="64"/>
+								<ExtendedTooltip name="СохраненныеНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="65"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СохраненныеНастройкиУправлениеПоиском" id="66">
+								<AdditionSource>
+									<Item>СохраненныеНастройки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СохраненныеНастройкиУправлениеПоискомКонтекстноеМеню" id="67"/>
+								<ExtendedTooltip name="СохраненныеНастройкиУправлениеПоискомРасширеннаяПодсказка" id="68"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СохраненныеНастройкиКлючНастроек" id="69">
+									<DataPath>СохраненныеНастройки.КлючНастроек</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеНастройкиКлючНастроекКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="СохраненныеНастройкиКлючНастроекРасширеннаяПодсказка" id="71"/>
+								</InputField>
+								<InputField name="СохраненныеНастройкиКлючОбъекта" id="72">
+									<DataPath>СохраненныеНастройки.КлючОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеНастройкиКлючОбъектаКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="СохраненныеНастройкиКлючОбъектаРасширеннаяПодсказка" id="74"/>
+								</InputField>
+								<InputField name="СохраненныеНастройкиПредставление" id="78">
+									<DataPath>СохраненныеНастройки.Представление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеНастройкиПредставлениеКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="СохраненныеНастройкиПредставлениеРасширеннаяПодсказка" id="80"/>
+								</InputField>
+								<InputField name="СохраненныеНастройкиПользователь" id="75">
+									<DataPath>СохраненныеНастройки.Пользователь</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СохраненныеНастройкиПользовательКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="СохраненныеНастройкиПользовательРасширеннаяПодсказка" id="77"/>
+								</InputField>
+								<ColumnGroup name="СохраненныеНастройкиГруппаПользовательСсылка" id="119">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сохраненные настройки группа пользователь ссылка</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сохраненные настройки группа пользователь ссылка</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="СохраненныеНастройкиГруппаПользовательСсылкаРасширеннаяПодсказка" id="120"/>
+									<ChildItems>
+										<InputField name="СохраненныеНастройкиПользовательСсылка" id="113">
+											<DataPath>СохраненныеНастройки.ПользовательСсылка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.ИдентификаторПользователяИБ</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.СохраненныеНастройки.CurrentData.ПользовательУИД</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="СохраненныеНастройкиПользовательСсылкаКонтекстноеМеню" id="114"/>
+											<ExtendedTooltip name="СохраненныеНастройкиПользовательСсылкаРасширеннаяПодсказка" id="115"/>
+										</InputField>
+										<InputField name="СохраненныеНастройкиПользовательСсылкаОрганизация" id="116">
+											<DataPath>СохраненныеНастройки.ПользовательСсылка.Организация</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СохраненныеНастройкиПользовательСсылкаОрганизацияКонтекстноеМеню" id="117"/>
+											<ExtendedTooltip name="СохраненныеНастройкиПользовательСсылкаОрганизацияРасширеннаяПодсказка" id="118"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СохраненныеНастройкиДействие" id="101">
+									<DataPath>СохраненныеНастройки.Действие</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Создать</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Создать</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Обновить</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Обновить</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Пропустить</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Пропустить</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СохраненныеНастройкиДействиеКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="СохраненныеНастройкиДействиеРасширеннаяПодсказка" id="103"/>
+								</InputField>
+								<InputField name="СохраненныеНастройкиВариантОтчета" id="92">
+									<DataPath>СохраненныеНастройки.ВариантОтчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Ключ</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.СохраненныеНастройки.CurrentData.КлючОтчета</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ChoiceParameters>
+										<app:item name="Отбор.ПредопределенныйВариант">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="СохраненныеНастройкиВариантОтчетаКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="СохраненныеНастройкиВариантОтчетаРасширеннаяПодсказка" id="94"/>
+								</InputField>
+								<InputField name="СохраненныеНастройкиНастройкиОтчета" id="198">
+									<DataPath>СохраненныеНастройки.НастройкиОтчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Родитель</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.СохраненныеНастройки.CurrentData.ВариантОтчета</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+										<xr:Link>
+											<xr:Name>Отбор.Автор</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.СохраненныеНастройки.CurrentData.ПользовательСсылка</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ChoiceParameters>
+										<app:item name="Отбор.ПредопределенныйВариант">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="СохраненныеНастройкиНастройкиОтчетаКонтекстноеМеню" id="199"/>
+									<ExtendedTooltip name="СохраненныеНастройкиНастройкиОтчетаРасширеннаяПодсказка" id="200"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСистемныеНастройки" id="155">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключи текущих вариантов/настроек</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница системные настройки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>КоличествоКлючей</TitleDataPath>
+					<ExtendedTooltip name="СтраницаСистемныеНастройкиРасширеннаяПодсказка" id="156"/>
+					<ChildItems>
+						<Table name="СистемныеНастройки" id="157">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СистемныеНастройки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СистемныеНастройкиКонтекстноеМеню" id="158"/>
+							<AutoCommandBar name="СистемныеНастройкиКоманднаяПанель" id="159">
+								<ChildItems>
+									<Button name="СистемныеНастройкиЗаполнить" id="190">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<ExtendedTooltip name="СистемныеНастройкиЗаполнитьРасширеннаяПодсказка" id="191"/>
+									</Button>
+									<Button name="УстановитьКлючи" id="185">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьКлючи</CommandName>
+										<ExtendedTooltip name="УстановитьКлючиРасширеннаяПодсказка" id="186"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СистемныеНастройкиРасширеннаяПодсказка" id="160"/>
+							<SearchStringAddition name="СистемныеНастройкиСтрокаПоиска" id="161">
+								<AdditionSource>
+									<Item>СистемныеНастройки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СистемныеНастройкиСтрокаПоискаКонтекстноеМеню" id="162"/>
+								<ExtendedTooltip name="СистемныеНастройкиСтрокаПоискаРасширеннаяПодсказка" id="163"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СистемныеНастройкиСостояниеПросмотра" id="164">
+								<AdditionSource>
+									<Item>СистемныеНастройки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СистемныеНастройкиСостояниеПросмотраКонтекстноеМеню" id="165"/>
+								<ExtendedTooltip name="СистемныеНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="166"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СистемныеНастройкиУправлениеПоиском" id="167">
+								<AdditionSource>
+									<Item>СистемныеНастройки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СистемныеНастройкиУправлениеПоискомКонтекстноеМеню" id="168"/>
+								<ExtendedTooltip name="СистемныеНастройкиУправлениеПоискомРасширеннаяПодсказка" id="169"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СистемныеНастройкиКлючОбъекта" id="173">
+									<DataPath>СистемныеНастройки.КлючОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СистемныеНастройкиКлючОбъектаКонтекстноеМеню" id="174"/>
+									<ExtendedTooltip name="СистемныеНастройкиКлючОбъектаРасширеннаяПодсказка" id="175"/>
+								</InputField>
+								<InputField name="СистемныеНастройкиПользователь" id="176">
+									<DataPath>СистемныеНастройки.Пользователь</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СистемныеНастройкиПользовательКонтекстноеМеню" id="177"/>
+									<ExtendedTooltip name="СистемныеНастройкиПользовательРасширеннаяПодсказка" id="178"/>
+								</InputField>
+								<InputField name="СистемныеНастройкиНастройки" id="187">
+									<DataPath>СистемныеНастройки.Настройки</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СистемныеНастройкиНастройкиКонтекстноеМеню" id="188"/>
+									<ExtendedTooltip name="СистемныеНастройкиНастройкиРасширеннаяПодсказка" id="189"/>
+								</InputField>
+								<InputField name="СистемныеНастройкиВариантОтчета" id="182">
+									<DataPath>СистемныеНастройки.ВариантОтчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Ключ</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.СистемныеНастройки.CurrentData.КлючОтчета</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="СистемныеНастройкиВариантОтчетаКонтекстноеМеню" id="183"/>
+									<ExtendedTooltip name="СистемныеНастройкиВариантОтчетаРасширеннаяПодсказка" id="184"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._СозданиеВариантовОтчетов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВидОтчета" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КлючОтчета" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДополнительныеОтчетыИОбработки</v8:Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредопределенныеВарианты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предопределенные варианты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>256</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантОтчета" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВариантыОтчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Действие" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КлючОбъекта" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ объекта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="АдресНастроек" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес настроек</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СохраненныеВарианты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохраненные варианты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КлючНастроек" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ настроек</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КлючОбъекта" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ объекта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантОтчета" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВариантыОтчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Действие" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПользовательСсылка" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АдресНастроек" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес настроек</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПользовательУИД" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь УИД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СохраненныеНастройки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохраненные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КлючНастроек" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ настроек</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КлючОбъекта" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ объекта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантОтчета" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВариантыОтчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Действие" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПользовательСсылка" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АдресНастроек" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес настроек</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПользовательУИД" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь УИД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НастройкиОтчета" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВариантыОтчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КлючОтчета" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КоличествоПредопределенныхВариантов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество предопределенных вариантов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоСохраненныхВариантов" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество сохраненных вариантов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоСохраненныхНастроек" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество сохраненных настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СистемныеНастройки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Системные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КлючОбъекта" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ объекта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантОтчета" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВариантыОтчетов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КлючОтчета" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ отчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Настройки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КоличествоКлючей" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ключей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="УстановитьДействие" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить действие</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить действие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьДействиеДляВыделенныхСтрок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Создать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Создать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Обновить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Обновить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Пропустить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Пропустить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыполнитьДействия" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить действия</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить действия</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьДействия</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьКлючи" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить ключи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить ключи</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьКлючи</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Заполнить" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

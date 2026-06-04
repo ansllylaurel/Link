@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаВыполнить" id="59">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаВыполнить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыполнитьРасширеннаяПодсказка" id="60"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРеквизитыШапки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты шапки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты шапки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитыШапкиРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<InputField name="Период" id="4">
+					<DataPath>Объект.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<LabelField name="Организация" id="1">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СчетДоверительногоУправления" id="50">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>2</TitleHeight>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="52"/>
+		</InputField>
+		<UsualGroup name="ГруппаВариантЗаполнения" id="64">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вариант заполнения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вариант заполнения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВариантЗаполненияРасширеннаяПодсказка" id="65"/>
+			<ChildItems>
+				<RadioButtonField name="ВариантЗаполнения" id="47">
+					<DataPath>ВариантЗаполнения</DataPath>
+					<RadioButtonType>Auto</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Ручной выбор</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По виду учета</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ВариантЗаполненияКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ВариантЗаполненияРасширеннаяПодсказка" id="49"/>
+					<Events>
+						<Event name="OnChange">ВариантЗаполненияПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="ВидУчета" id="61">
+					<DataPath>ВидУчета</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ВидУчетаКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ВидУчетаРасширеннаяПодсказка" id="63"/>
+					<Events>
+						<Event name="OnChange">ВидУчетаПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРегистры" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа регистры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа регистры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРегистрыРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаРегистрыНакопления" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистры накопления</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа регистры накопления</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаРегистрыНакопленияРасширеннаяПодсказка" id="44"/>
+					<ChildItems>
+						<Table name="РегистрыНакопленияВыбор" id="11">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>РегистрыНакопленияВыбор</DataPath>
+							<RowPictureDataPath>РегистрыНакопленияВыбор.Picture</RowPictureDataPath>
+							<ContextMenu name="РегистрыНакопленияВыборКонтекстноеМеню" id="12"/>
+							<AutoCommandBar name="РегистрыНакопленияВыборКоманднаяПанель" id="13"/>
+							<ExtendedTooltip name="РегистрыНакопленияВыборРасширеннаяПодсказка" id="14"/>
+							<SearchStringAddition name="РегистрыНакопленияВыборСтрокаПоиска" id="15">
+								<AdditionSource>
+									<Item>РегистрыНакопленияВыбор</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РегистрыНакопленияВыборСтрокаПоискаКонтекстноеМеню" id="16"/>
+								<ExtendedTooltip name="РегистрыНакопленияВыборСтрокаПоискаРасширеннаяПодсказка" id="17"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РегистрыНакопленияВыборСостояниеПросмотра" id="18">
+								<AdditionSource>
+									<Item>РегистрыНакопленияВыбор</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РегистрыНакопленияВыборСостояниеПросмотраКонтекстноеМеню" id="19"/>
+								<ExtendedTooltip name="РегистрыНакопленияВыборСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РегистрыНакопленияВыборУправлениеПоиском" id="21">
+								<AdditionSource>
+									<Item>РегистрыНакопленияВыбор</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РегистрыНакопленияВыборУправлениеПоискомКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="РегистрыНакопленияВыборУправлениеПоискомРасширеннаяПодсказка" id="23"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="РегистрыНакопленияВыборПометка" id="56">
+									<DataPath>РегистрыНакопленияВыбор.Check</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РегистрыНакопленияВыборПометкаКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="РегистрыНакопленияВыборПометкаРасширеннаяПодсказка" id="58"/>
+								</CheckBoxField>
+								<InputField name="РегистрыНакопленияВыборЗначение" id="24">
+									<DataPath>РегистрыНакопленияВыбор.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РегистрыНакопленияВыборЗначениеКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="РегистрыНакопленияВыборЗначениеРасширеннаяПодсказка" id="26"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРегистрыБухгалтерии" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистры бухгалтерии</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа регистры бухгалтерии</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаРегистрыБухгалтерииРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<Table name="РегистрыБухгалтерииВыбор" id="27">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>РегистрыБухгалтерииВыбор</DataPath>
+							<RowPictureDataPath>РегистрыБухгалтерииВыбор.Picture</RowPictureDataPath>
+							<ContextMenu name="РегистрыБухгалтерииВыборКонтекстноеМеню" id="28"/>
+							<AutoCommandBar name="РегистрыБухгалтерииВыборКоманднаяПанель" id="29"/>
+							<ExtendedTooltip name="РегистрыБухгалтерииВыборРасширеннаяПодсказка" id="30"/>
+							<SearchStringAddition name="РегистрыБухгалтерииВыборСтрокаПоиска" id="31">
+								<AdditionSource>
+									<Item>РегистрыБухгалтерииВыбор</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РегистрыБухгалтерииВыборСтрокаПоискаКонтекстноеМеню" id="32"/>
+								<ExtendedTooltip name="РегистрыБухгалтерииВыборСтрокаПоискаРасширеннаяПодсказка" id="33"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РегистрыБухгалтерииВыборСостояниеПросмотра" id="34">
+								<AdditionSource>
+									<Item>РегистрыБухгалтерииВыбор</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РегистрыБухгалтерииВыборСостояниеПросмотраКонтекстноеМеню" id="35"/>
+								<ExtendedTooltip name="РегистрыБухгалтерииВыборСостояниеПросмотраРасширеннаяПодсказка" id="36"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РегистрыБухгалтерииВыборУправлениеПоиском" id="37">
+								<AdditionSource>
+									<Item>РегистрыБухгалтерииВыбор</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РегистрыБухгалтерииВыборУправлениеПоискомКонтекстноеМеню" id="38"/>
+								<ExtendedTooltip name="РегистрыБухгалтерииВыборУправлениеПоискомРасширеннаяПодсказка" id="39"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="РегистрыБухгалтерииВыборПометка" id="53">
+									<DataPath>РегистрыБухгалтерииВыбор.Check</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РегистрыБухгалтерииВыборПометкаКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="РегистрыБухгалтерииВыборПометкаРасширеннаяПодсказка" id="55"/>
+								</CheckBoxField>
+								<InputField name="РегистрыБухгалтерииВыборЗначение" id="40">
+									<DataPath>РегистрыБухгалтерииВыбор.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РегистрыБухгалтерииВыборЗначениеКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="РегистрыБухгалтерииВыборЗначениеРасширеннаяПодсказка" id="42"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ОбнулениеОстатковНаУчетныхРегистрах</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.Период</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="РегистрыНакопленияВыбор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистры накопления выбор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РегистрыБухгалтерииВыбор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистры бухгалтерии выбор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантЗаполнения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант заполнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>ВариантЗаполнения</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВидУчета" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыУчета</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВидУчета</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыполнить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

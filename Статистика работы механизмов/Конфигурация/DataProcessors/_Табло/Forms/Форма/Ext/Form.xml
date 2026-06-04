@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ФормаГруппаПресеты" id="17">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пресеты</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа пресеты</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаПресетыРасширеннаяПодсказка" id="18"/>
+				<ChildItems>
+					<Button name="ФормаКомандаОбновитьНумерациюОбъектов" id="19">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаОбновитьНумерациюОбъектов</CommandName>
+						<ExtendedTooltip name="ФормаКомандаОбновитьНумерациюОбъектовРасширеннаяПодсказка" id="20"/>
+					</Button>
+					<Button name="ФормаКомандаОчиститьНастройкиПользователя" id="21">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаОчиститьНастройкиПользователя</CommandName>
+						<ExtendedTooltip name="ФормаКомандаОчиститьНастройкиПользователяРасширеннаяПодсказка" id="22"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<TextDocumentField name="Выражение" id="23">
+			<DataPath>Объект.Выражение</DataPath>
+			<ContextMenu name="ВыражениеКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="ВыражениеРасширеннаяПодсказка" id="25"/>
+		</TextDocumentField>
+		<UsualGroup name="ГруппаКоманды" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа команды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа команды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<Button name="КомандаВыполнить" id="11">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаВыполнить</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполнить код на языке 1С</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КомандаВыполнитьРасширеннаяПодсказка" id="12"/>
+				</Button>
+				<Button name="КомандаВычислитьНаКлиенте" id="13">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаВычислитьНаКлиенте</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вычислить выражение на клиенте</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КомандаВычислитьНаКлиентеРасширеннаяПодсказка" id="14"/>
+				</Button>
+				<Button name="КомандаВычислитьНаСервере" id="15">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаВычислитьНаСервере</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вычислить выражение на сервере</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КомандаВычислитьНаСервереРасширеннаяПодсказка" id="16"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._Табло</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВычислитьНаКлиенте" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вычислить на клиенте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Например, "1+1"</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВычислитьНаКлиенте</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаВыполнить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Например, "Сообщить(1+1)"</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыполнить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаВычислитьНаСервере" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вычислить на сервере</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Например, "1+1"</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВычислитьНаСервере</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОбновитьНумерациюОбъектов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить нумерацию объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить нумерацию объектов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОбновитьНумерациюОбъектов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОчиститьНастройкиПользователя" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить настройки пользователя…</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда очистить настройки пользователя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОчиститьНастройкиПользователя</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ПараметрыЗаголовка" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры заголовка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры заголовка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПараметрыЗаголовкаРасширеннаяПодсказка" id="74"/>
+			<ChildItems>
+				<InputField name="Период" id="4">
+					<DataPath>Объект.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="1">
+					<DataPath>Объект.Организация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СчетДоверительногоУправления" id="7">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ПутьКФайлу" id="66">
+			<DataPath>Объект.ПутьКФайлу</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь к файлу Excel</v8:content>
+				</v8:item>
+			</Title>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>false</ClearButton>
+			<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="67"/>
+			<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="68"/>
+			<Events>
+				<Event name="StartChoice">ПутьКФайлуНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<Table name="ИмпортируемыеДанные" id="10">
+			<Representation>List</Representation>
+			<TitleLocation>Auto</TitleLocation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ИмпортируемыеДанные</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ИмпортируемыеДанныеКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ИмпортируемыеДанныеКоманднаяПанель" id="12">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ИмпортироватьДанные" id="69">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.ИмпортироватьДанныеИзФайлаExcel</CommandName>
+						<BorderColor>style:ToolTipTextColor</BorderColor>
+						<Picture>
+							<xr:Ref>StdPicture.Refresh</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ИмпортироватьДанныеРасширеннаяПодсказка" id="70"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ИмпортируемыеДанныеРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ИмпортируемыеДанныеСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ИмпортируемыеДанные</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИмпортируемыеДанныеСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ИмпортируемыеДанныеСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИмпортируемыеДанныеСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ИмпортируемыеДанные</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИмпортируемыеДанныеСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ИмпортируемыеДанныеСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИмпортируемыеДанныеУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ИмпортируемыеДанные</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИмпортируемыеДанныеУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ИмпортируемыеДанныеУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">ИмпортируемыеДанныеПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<ColumnGroup name="ДанныеИзИсходногоФайла" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные из исходного файла</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные из исходного файла</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ДанныеИзИсходногоФайлаРасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<LabelField name="ИмпортируемыеДанныеНомерСтроки" id="23">
+							<DataPath>Объект.ИмпортируемыеДанные.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИмпортируемыеДанныеНомерСтрокиКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеНомерСтрокиРасширеннаяПодсказка" id="25"/>
+						</LabelField>
+						<InputField name="ИмпортируемыеДанныеБанкИзФайла" id="26">
+							<DataPath>Объект.ИмпортируемыеДанные.БанкИзФайла</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>22</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="ИмпортируемыеДанныеБанкИзФайлаКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеБанкИзФайлаРасширеннаяПодсказка" id="28"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеБИКБанка" id="29">
+							<DataPath>Объект.ИмпортируемыеДанные.БИКБанка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>8</Width>
+							<ContextMenu name="ИмпортируемыеДанныеБИКБанкаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеБИКБанкаРасширеннаяПодсказка" id="31"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеРасчетныйСчет" id="32">
+							<DataPath>Объект.ИмпортируемыеДанные.РасчетныйСчет</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>20</Width>
+							<ContextMenu name="ИмпортируемыеДанныеРасчетныйСчетКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеРасчетныйСчетРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеВалюта" id="35">
+							<DataPath>Объект.ИмпортируемыеДанные.Валюта</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>5</Width>
+							<ContextMenu name="ИмпортируемыеДанныеВалютаКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеВалютаРасширеннаяПодсказка" id="37"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеСальдоНачальное" id="38">
+							<DataPath>Объект.ИмпортируемыеДанные.СальдоНачальное</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>12</Width>
+							<ContextMenu name="ИмпортируемыеДанныеСальдоНачальноеКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеСальдоНачальноеРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеСальдоКонечное" id="41">
+							<DataPath>Объект.ИмпортируемыеДанные.СальдоКонечное</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>5</Width>
+							<ContextMenu name="ИмпортируемыеДанныеСальдоКонечноеКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеСальдоКонечноеРасширеннаяПодсказка" id="43"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ДанныеВСистеме" id="64">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные в системе</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные в системе</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ДанныеВСистемеРасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<InputField name="ИмпортируемыеДанныеБанкВСистеме" id="44">
+							<DataPath>Объект.ИмпортируемыеДанные.БанкВСистеме</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>20</Width>
+							<ContextMenu name="ИмпортируемыеДанныеБанкВСистемеКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеБанкВСистемеРасширеннаяПодсказка" id="46"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеСчетВСистеме" id="47">
+							<DataPath>Объект.ИмпортируемыеДанные.СчетВСистеме</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>15</Width>
+							<ContextMenu name="ИмпортируемыеДанныеСчетВСистемеКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеСчетВСистемеРасширеннаяПодсказка" id="49"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеВалютаВСистеме" id="50">
+							<DataPath>Объект.ИмпортируемыеДанные.ВалютаВСистеме</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>5</Width>
+							<ContextMenu name="ИмпортируемыеДанныеВалютаВСистемеКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеВалютаВСистемеРасширеннаяПодсказка" id="52"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеВходящийОстаток" id="53">
+							<DataPath>Объект.ИмпортируемыеДанные.ВходящийОстаток</DataPath>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<Width>10</Width>
+							<ContextMenu name="ИмпортируемыеДанныеВходящийОстатокКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеВходящийОстатокРасширеннаяПодсказка" id="55"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеСумма" id="56">
+							<DataPath>Объект.ИмпортируемыеДанные.Сумма</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сумма расчетная</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<Width>10</Width>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="ИмпортируемыеДанныеСуммаКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеСуммаРасширеннаяПодсказка" id="58"/>
+						</InputField>
+						<InputField name="ИмпортируемыеДанныеИсходящийОстаток" id="59">
+							<DataPath>Объект.ИмпортируемыеДанные.ИсходящийОстаток</DataPath>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<Width>10</Width>
+							<ContextMenu name="ИмпортируемыеДанныеИсходящийОстатокКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="ИмпортируемыеДанныеИсходящийОстатокРасширеннаяПодсказка" id="61"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПодвал" id="75">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="76"/>
+			<ChildItems>
+				<CommandBar name="Группа1" id="80">
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<Button name="ОбновитьРегистры" id="71">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<DefaultButton>true</DefaultButton>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.ЗаписатьОстаткиВРегистрыСистемы</CommandName>
+							<BorderColor>style:ToolTipTextColor</BorderColor>
+							<Picture>
+								<xr:Ref>StdPicture.Write</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Записать остатки</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОбновитьРегистрыРасширеннаяПодсказка" id="72"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+				<LabelField name="Поле1" id="77">
+					<DataPath>Объект.ОсновнойРегистратор</DataPath>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="Поле1КонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="Поле1РасширеннаяПодсказка" id="79"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ИмпортОстатковНаРасчетныхСчетахИзExcel</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.Организация</Field>
+				<Field>Объект.Период</Field>
+				<Field>Объект.СчетДоверительногоУправления</Field>
+			</Save>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДанныеВходящийОстаток</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДанныеСальдоНачальное</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ИмпортируемыеДанные.ВходящийОстаток</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Объект.ИмпортируемыеДанные.СальдоНачальное</dcsset:right>
+						<dcsset:presentation xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ВходящийОстатокНеРавенНачальномуСальдо</v8:content>
+							</v8:item>
+						</dcsset:presentation>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:nil="true"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДанныеВходящийОстатокРасширеннаяПодсказка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДанныеСальдоНачальноеРасширеннаяПодсказка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ИмпортируемыеДанные.СальдоНачальное</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Объект.ИмпортируемыеДанные.ВходящийОстаток</dcsset:right>
+						<dcsset:presentation xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подсказка</v8:content>
+							</v8:item>
+						</dcsset:presentation>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Начальное сальдо для счета не равно входящему остатку в системе</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДанныеБанкВСистеме</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ИмпортируемыеДанные.БанкВСистеме</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Не совпадение БИК</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДанныеСчетВСистеме</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ИмпортируемыеДанные.СчетВСистеме</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Orange</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>НЕ НАЙДЕН СЧЕТ В СИСТЕМЕ</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ИмпортироватьДанныеИзФайлаExcel" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импортировать данные из файла excel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импортировать данные из файла excel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИмпортироватьДанныеИзФайлаExcel</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьОстаткиВРегистрыСистемы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать остатки в регистры системы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать остатки в регистры системы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьОстаткиВРегистрыСистемы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Width>300</Width>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
+	<Group>AlwaysHorizontal</Group>
+	<ShowTitle>false</ShowTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Кнопки_Страницы" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопки страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопки страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Кнопки_СтраницыРасширеннаяПодсказка" id="120"/>
+			<ChildItems>
+				<UsualGroup name="Организация_Брокер_Дата" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация брокер дата</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация брокер дата</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Организация_Брокер_ДатаРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<InputField name="ДатаЭкспорта" id="10">
+							<DataPath>Объект.ДатаЭкспорта</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дата</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>10</MaxWidth>
+							<ContextMenu name="ДатаЭкспортаКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ДатаЭкспортаРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="OnChange">ДатаЭкспортаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Брокер" id="110">
+							<DataPath>Объект.Брокер</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Брокер</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<Width>20</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>20</MaxWidth>
+							<ContextMenu name="БрокерКонтекстноеМеню" id="111"/>
+							<ExtendedTooltip name="БрокерРасширеннаяПодсказка" id="112"/>
+							<Events>
+								<Event name="OnChange">БрокерПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="Организация" id="7">
+							<DataPath>Объект.Организация</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<Width>20</Width>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<Pages name="ИнформативныеСтраницы" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Информативные страницы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Информативные страницы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<PagesRepresentation>TabsOnTop</PagesRepresentation>
+					<ExtendedTooltip name="ИнформативныеСтраницыРасширеннаяПодсказка" id="41"/>
+					<ChildItems>
+						<Page name="СтраницаПоручений" id="192">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поручения</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница поручений</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаПорученийРасширеннаяПодсказка" id="193"/>
+							<ChildItems>
+								<Table name="ТаблицаПоручений" id="318">
+									<Representation>List</Representation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>ТаблицаПоручений</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТаблицаПорученийКонтекстноеМеню" id="319"/>
+									<AutoCommandBar name="ТаблицаПорученийКоманднаяПанель" id="320">
+										<ChildItems>
+											<Button name="ТаблицаПорученийОбновить" id="343">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Обновить</CommandName>
+												<ExtendedTooltip name="ТаблицаПорученийОбновитьРасширеннаяПодсказка" id="344"/>
+											</Button>
+											<Button name="ТаблицаПорученийИмпортироватьДанные" id="345">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ИмпортироватьДанные</CommandName>
+												<ExtendedTooltip name="ТаблицаПорученийИмпортироватьДанныеРасширеннаяПодсказка" id="346"/>
+											</Button>
+											<Button name="ТаблицаПорученийЭкспортироватьДанные" id="347">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЭкспортироватьДанные</CommandName>
+												<ExtendedTooltip name="ТаблицаПорученийЭкспортироватьДанныеРасширеннаяПодсказка" id="348"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ТаблицаПорученийРасширеннаяПодсказка" id="321"/>
+									<SearchStringAddition name="ТаблицаПорученийСтрокаПоиска" id="322">
+										<AdditionSource>
+											<Item>ТаблицаПоручений</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаПорученийСтрокаПоискаКонтекстноеМеню" id="323"/>
+										<ExtendedTooltip name="ТаблицаПорученийСтрокаПоискаРасширеннаяПодсказка" id="324"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТаблицаПорученийСостояниеПросмотра" id="325">
+										<AdditionSource>
+											<Item>ТаблицаПоручений</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаПорученийСостояниеПросмотраКонтекстноеМеню" id="326"/>
+										<ExtendedTooltip name="ТаблицаПорученийСостояниеПросмотраРасширеннаяПодсказка" id="327"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТаблицаПорученийУправлениеПоиском" id="328">
+										<AdditionSource>
+											<Item>ТаблицаПоручений</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаПорученийУправлениеПоискомКонтекстноеМеню" id="329"/>
+										<ExtendedTooltip name="ТаблицаПорученийУправлениеПоискомРасширеннаяПодсказка" id="330"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ТаблицаПорученийПоручениеСсылка" id="331">
+											<DataPath>ТаблицаПоручений.ПоручениеСсылка</DataPath>
+											<Enabled>false</Enabled>
+											<EditMode>EnterOnInput</EditMode>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ТаблицаПорученийПоручениеСсылкаКонтекстноеМеню" id="332"/>
+											<ExtendedTooltip name="ТаблицаПорученийПоручениеСсылкаРасширеннаяПодсказка" id="333"/>
+										</InputField>
+										<InputField name="ТаблицаПорученийСчетДоверительногоУправления" id="334">
+											<DataPath>ТаблицаПоручений.СчетДоверительногоУправления</DataPath>
+											<Enabled>false</Enabled>
+											<EditMode>EnterOnInput</EditMode>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ТаблицаПорученийСчетДоверительногоУправленияКонтекстноеМеню" id="335"/>
+											<ExtendedTooltip name="ТаблицаПорученийСчетДоверительногоУправленияРасширеннаяПодсказка" id="336"/>
+										</InputField>
+										<InputField name="ТаблицаПорученийСтатусПоручения1С" id="340">
+											<DataPath>ТаблицаПоручений.СтатусПоручения1С</DataPath>
+											<Enabled>false</Enabled>
+											<EditMode>EnterOnInput</EditMode>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ТаблицаПорученийСтатусПоручения1СКонтекстноеМеню" id="341"/>
+											<ExtendedTooltip name="ТаблицаПорученийСтатусПоручения1СРасширеннаяПодсказка" id="342"/>
+										</InputField>
+										<InputField name="ТаблицаПорученийСтатусПорученияКвик" id="337">
+											<DataPath>ТаблицаПоручений.СтатусПорученияКвик</DataPath>
+											<Enabled>false</Enabled>
+											<EditMode>EnterOnInput</EditMode>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ТаблицаПорученийСтатусПорученияКвикКонтекстноеМеню" id="338"/>
+											<ExtendedTooltip name="ТаблицаПорученийСтатусПорученияКвикРасширеннаяПодсказка" id="339"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="НастройкиЭкспорта" id="69">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки экспорта</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки экспорта</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="НастройкиЭкспортаРасширеннаяПодсказка" id="70"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаНастройкаКвикSQL" id="365">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа настройка квик SQL</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа настройка квик SQL</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаНастройкаКвикSQLРасширеннаяПодсказка" id="366"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНастройкаКвик" id="349">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа настройка квик</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа настройка квик</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>StrongSeparation</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНастройкаКвикРасширеннаяПодсказка" id="350"/>
+											<ChildItems>
+												<InputField name="НомерКвика" id="353">
+													<DataPath>Объект.НомерКвика</DataPath>
+													<Width>10</Width>
+													<ContextMenu name="НомерКвикаКонтекстноеМеню" id="354"/>
+													<ExtendedTooltip name="НомерКвикаРасширеннаяПодсказка" id="355"/>
+												</InputField>
+												<InputField name="АдресФайлаЭкспорта" id="385">
+													<DataPath>АдресФайлаЭкспорта</DataPath>
+													<ContextMenu name="АдресФайлаЭкспортаКонтекстноеМеню" id="386"/>
+													<ExtendedTooltip name="АдресФайлаЭкспортаРасширеннаяПодсказка" id="387"/>
+												</InputField>
+												<InputField name="АдресФайлаОтветов" id="382">
+													<DataPath>АдресФайлаОтветов</DataPath>
+													<ContextMenu name="АдресФайлаОтветовКонтекстноеМеню" id="383"/>
+													<ExtendedTooltip name="АдресФайлаОтветовРасширеннаяПодсказка" id="384"/>
+												</InputField>
+												<InputField name="АдресФайлаЛогов" id="379">
+													<DataPath>АдресФайлаЛогов</DataPath>
+													<ContextMenu name="АдресФайлаЛоговКонтекстноеМеню" id="380"/>
+													<ExtendedTooltip name="АдресФайлаЛоговРасширеннаяПодсказка" id="381"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаНастройкаSQL" id="351">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа настройка SQL</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа настройка SQL</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>StrongSeparation</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНастройкаSQLРасширеннаяПодсказка" id="352"/>
+											<ChildItems>
+												<InputField name="СерверSQL" id="356">
+													<DataPath>Объект.СерверSQL</DataPath>
+													<Width>10</Width>
+													<ContextMenu name="СерверSQLКонтекстноеМеню" id="357"/>
+													<ExtendedTooltip name="СерверSQLРасширеннаяПодсказка" id="358"/>
+												</InputField>
+												<InputField name="БазаДанныхSQL" id="359">
+													<DataPath>Объект.БазаДанныхSQL</DataPath>
+													<Width>30</Width>
+													<ContextMenu name="БазаДанныхSQLКонтекстноеМеню" id="360"/>
+													<ExtendedTooltip name="БазаДанныхSQLРасширеннаяПодсказка" id="361"/>
+												</InputField>
+												<InputField name="ТаблицаПорученийSQL" id="362">
+													<DataPath>Объект.ТаблицаПорученийSQL</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Таблица поручений</v8:content>
+														</v8:item>
+													</Title>
+													<Width>30</Width>
+													<ContextMenu name="ТаблицаПорученийSQLКонтекстноеМеню" id="363"/>
+													<ExtendedTooltip name="ТаблицаПорученийSQLРасширеннаяПодсказка" id="364"/>
+												</InputField>
+												<InputField name="ТаблицаТранзакцийSQL" id="376">
+													<DataPath>Объект.ТаблицаТранзакцийSQL</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Таблица транзакций</v8:content>
+														</v8:item>
+													</Title>
+													<Width>30</Width>
+													<ContextMenu name="ТаблицаТранзакцийSQLКонтекстноеМеню" id="377"/>
+													<ExtendedTooltip name="ТаблицаТранзакцийSQLРасширеннаяПодсказка" id="378"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКнопки" id="369">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="370"/>
+									<ChildItems>
+										<Button name="ПрочитатьДанныеЭкспорта" id="316">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПолучитьДанныеИзФайлов</CommandName>
+											<ExtendedTooltip name="ПрочитатьДанныеЭкспортаРасширеннаяПодсказка" id="317"/>
+										</Button>
+										<Button name="ПолучитьДанныеОбОшибкахИзSQL" id="367">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПолучитьДанныеОбОшибкахИзSQL</CommandName>
+											<ExtendedTooltip name="ПолучитьДанныеОбОшибкахИзSQLРасширеннаяПодсказка" id="368"/>
+										</Button>
+										<Button name="УдалитьДанныеИзФайловЭкспорта" id="394">
+											<Type>UsualButton</Type>
+											<Visible>false</Visible>
+											<CommandName>Form.Command.УдалитьДанныеИзФайловЭкспорта</CommandName>
+											<ExtendedTooltip name="УдалитьДанныеИзФайловЭкспортаРасширеннаяПодсказка" id="395"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<Pages name="СтраницыФайлыЭкспорта" id="299">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страницы файлы экспорта</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страницы файлы экспорта</v8:content>
+										</v8:item>
+									</ToolTip>
+									<PagesRepresentation>TabsOnTop</PagesRepresentation>
+									<ExtendedTooltip name="СтраницыФайлыЭкспортаРасширеннаяПодсказка" id="300"/>
+									<ChildItems>
+										<Page name="СтраницаДанныеФайлаЭкспорта" id="301">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Файл экспорта</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница данные файла экспорта</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="СтраницаДанныеФайлаЭкспортаРасширеннаяПодсказка" id="302"/>
+											<ChildItems>
+												<TextDocumentField name="ДанныеФайлаЭкспорта" id="303">
+													<DataPath>ДанныеФайлаЭкспорта</DataPath>
+													<ContextMenu name="ДанныеФайлаЭкспортаКонтекстноеМеню" id="304"/>
+													<ExtendedTooltip name="ДанныеФайлаЭкспортаРасширеннаяПодсказка" id="305"/>
+												</TextDocumentField>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаДанныеФайлаОтветовКвика" id="311">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Файл ответов</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница данные файла ответов квика</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="СтраницаДанныеФайлаОтветовКвикаРасширеннаяПодсказка" id="312"/>
+											<ChildItems>
+												<TextDocumentField name="ДанныеФайлаОтветовКвика" id="313">
+													<DataPath>ДанныеФайлаОтветовКвика</DataPath>
+													<ContextMenu name="ДанныеФайлаОтветовКвикаКонтекстноеМеню" id="314"/>
+													<ExtendedTooltip name="ДанныеФайлаОтветовКвикаРасширеннаяПодсказка" id="315"/>
+												</TextDocumentField>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаДанныеФайлаЛогов" id="306">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Файл логов</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница данные файла логов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="СтраницаДанныеФайлаЛоговРасширеннаяПодсказка" id="307"/>
+											<ChildItems>
+												<TextDocumentField name="ДанныеФайлаЛогов" id="308">
+													<DataPath>ДанныеФайлаЛогов</DataPath>
+													<ContextMenu name="ДанныеФайлаЛоговКонтекстноеМеню" id="309"/>
+													<ExtendedTooltip name="ДанныеФайлаЛоговРасширеннаяПодсказка" id="310"/>
+												</TextDocumentField>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаДанныеТаблицыСообщенийSQL" id="371">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сообщения из SQL</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница данные таблицы сообщений SQL</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="СтраницаДанныеТаблицыСообщенийSQLРасширеннаяПодсказка" id="372"/>
+											<ChildItems>
+												<TextDocumentField name="СообщенияОбОшибкахИзSQL" id="373">
+													<DataPath>СообщенияОбОшибкахИзSQL</DataPath>
+													<ContextMenu name="СообщенияОбОшибкахИзSQLКонтекстноеМеню" id="374"/>
+													<ExtendedTooltip name="СообщенияОбОшибкахИзSQLРасширеннаяПодсказка" id="375"/>
+												</TextDocumentField>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ЭкспортНеторговыхПорученийВКвик</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>1/0:20c0cd59-ce47-491c-960e-a0850f1c4663</Field>
+				<Field>1/0:be03fc48-d1a3-497c-a69c-da8afb4ffb28</Field>
+				<Field>1/0:c40682fd-e7ba-4ddf-b49a-cf92e8d3fba1</Field>
+				<Field>Объект.БазаДанныхSQL</Field>
+				<Field>Объект.Брокер</Field>
+				<Field>Объект.НомерКвика</Field>
+				<Field>Объект.Организация</Field>
+				<Field>Объект.СерверSQL</Field>
+				<Field>Объект.ТаблицаПорученийSQL</Field>
+				<Field>Объект.ТаблицаТранзакцийSQL</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ТаблицаПоручений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица поручений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПоручениеСсылка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поручение на перевод</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ПоручениеНаПереводДенежныхСредств</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СтатусПорученияКвик" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус Квик</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтатусПоручения1С" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус 1С</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДанныеФайлаЭкспорта" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеФайлаЛогов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеФайлаОтветовКвика" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СообщенияОбОшибкахИзSQL" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайлаЭкспорта" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл экспорта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>АдресФайлаЭкспорта</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="АдресФайлаОтветов" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл ответов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>АдресФайлаОтветов</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="АдресФайлаЛогов" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл логов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>АдресФайлаЛогов</Field>
+			</Save>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НТПФлагИмпорта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>НТПСтатус</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>НТПДокумент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>НТПСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>НТПСвязи</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>НТПДокументПеревод</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НТП.ФлагИмпорта</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#CCFFCC</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Обновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ПолучитьДанныеИзФайлов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные из файлов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные из файлов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПолучитьДанныеИзФайловЭкспорта</Action>
+		</Command>
+		<Command name="ИмпортироватьДанные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импортировать данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импортировать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаИмпортироватьДанные</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ЭкспортироватьДанные" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспортировать данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспортировать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаЭкспортироватьДанные</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ПолучитьДанныеОбОшибкахИзSQL" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные об ошибках из SQL</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные об ошибках из SQL</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПолучитьДанныеОбОшибкахИзSQL</Action>
+		</Command>
+		<Command name="УдалитьДанныеИзФайловЭкспорта" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные из файлов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные из файлов экспорта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалитьДанныеИзФайловЭкспорта</Action>
+		</Command>
+	</Commands>
+</Form>

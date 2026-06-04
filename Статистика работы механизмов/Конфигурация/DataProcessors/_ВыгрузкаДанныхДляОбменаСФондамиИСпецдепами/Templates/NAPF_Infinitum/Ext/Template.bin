@@ -1,0 +1,106 @@
+﻿<xs:schema xmlns:tns="NFONAPFINFINITUM" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="NFONAPFINFINITUM" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="SD_50053_FV">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="record" type="tns:ССНаДату" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SD_50102_EffectiveInterestRate_History">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="record" type="tns:ЭСПНаДату" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Balances_on_the_date">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="record" type="tns:ОстаткиБУНаДату" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ОстаткиБУНаДату">
+		<xs:sequence>
+			<xs:element name="Ext_UK_AgrCode_CD" type="xs:string"/>
+			<xs:element name="Ext_UK_Code" type="xs:string"/>
+			<xs:element name="Ext_Fond_Code" type="xs:string"/>
+			<xs:element name="Posting_Date" type="xs:string"/>
+			<xs:element name="Ext_UK_AgrCode" type="xs:string"/>
+			<xs:element name="FinAccount" type="xs:string"/>
+			<xs:element name="FinType" type="xs:integer"/>
+			<xs:element name="OFR" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ext_Contragent_Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ext_Bank_Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ext_FI_Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ext_Counteragent_Agreement_Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Currency_Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Quantity" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="AmountBU" type="xs:decimal"/>
+			<xs:element name="AmountBU_LCY" type="xs:decimal"/>
+			<xs:element name="INN" type="xs:string" minOccurs="0"/>
+			<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+			<xs:element name="Counteragent_Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="BIC" type="xs:string" minOccurs="0"/>
+			<xs:element name="Bank_Account" type="xs:string" minOccurs="0"/>
+			<xs:element name="ISIN" type="xs:string" minOccurs="0"/>
+			<xs:element name="State_Registration_No" type="xs:string" minOccurs="0"/>
+			<xs:element name="Series" type="xs:string" minOccurs="0"/>
+			<xs:element name="Agreement_Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="External_Agreement_No" type="xs:string" minOccurs="0"/>
+			<xs:element name="Agreement_Date" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ССНаДату">
+		<xs:sequence>
+			<xs:element name="Log">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Ext_FI_Code" type="xs:string"/>
+			<xs:element name="State_Registration_No" type="xs:string" minOccurs="0"/>
+			<xs:element name="ISIN" type="xs:string" minOccurs="0"/>
+			<xs:element name="Series" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ext_Kind_Code" type="xs:string"/>
+			<xs:element name="Date" type="xs:string"/>
+			<xs:element name="Quote_Date" type="xs:string" minOccurs="0"/>
+			<xs:element name="Value" type="xs:decimal"/>
+			<xs:element name="ACI" type="xs:decimal"/>
+			<xs:element name="Fair_Value_Level" type="xs:integer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ЭСПНаДату">
+		<xs:sequence>
+			<xs:element name="Ext_UK_AgrCode" type="xs:string"/>
+			<xs:element name="Ext_FI_Code" type="xs:string"/>
+			<xs:element name="State_Registration_No" type="xs:string" minOccurs="0"/>
+			<xs:element name="ISIN" type="xs:string" minOccurs="0"/>
+			<xs:element name="Series" type="xs:string" minOccurs="0"/>
+			<xs:element name="Trade_Date" type="xs:string" minOccurs="0"/>
+			<xs:element name="Trade_Time" type="xs:string" minOccurs="0"/>
+			<xs:element name="TF_Document_No" type="xs:string" minOccurs="0"/>
+			<xs:element name="Payment_Day" type="xs:string" minOccurs="0"/>
+			<xs:element name="Delivery_Day" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ext_Trade_Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Date" type="xs:string"/>
+			<xs:element name="Effective_Interest_Rate" type="xs:decimal"/>
+			<xs:element name="Prof_judgment_From" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="Prof_judgment_To" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="Comment" type="xs:string" minOccurs="0"/>
+			<xs:element name="Log">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

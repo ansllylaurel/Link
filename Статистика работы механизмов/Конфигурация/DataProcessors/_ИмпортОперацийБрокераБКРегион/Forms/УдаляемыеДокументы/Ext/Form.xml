@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Width>75</Width>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="УдаляемыеДокумены" id="1">
+			<Representation>List</Representation>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>УдаляемыеДокументы</DataPath>
+			<RowPictureDataPath>УдаляемыеДокументы.Picture</RowPictureDataPath>
+			<ContextMenu name="УдаляемыеДокуменыКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="УдаляемыеДокуменыКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="УдаляемыеДокуменыРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="УдаляемыеДокуменыСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>УдаляемыеДокумены</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УдаляемыеДокуменыСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="УдаляемыеДокуменыСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="УдаляемыеДокуменыСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>УдаляемыеДокумены</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УдаляемыеДокуменыСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="УдаляемыеДокуменыСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="УдаляемыеДокуменыУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>УдаляемыеДокумены</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="УдаляемыеДокуменыУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="УдаляемыеДокуменыУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="УдаляемыеДокуменыЗначение" id="14">
+					<DataPath>УдаляемыеДокументы.Value</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УдаляемыеДокуменыЗначениеКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="УдаляемыеДокуменыЗначениеРасширеннаяПодсказка" id="16"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаВопрос" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вопрос</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вопрос</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВопросРасширеннаяПодсказка" id="18"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="19">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прервать?</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="21"/>
+				</LabelDecoration>
+				<Button name="КомандаДа" id="22">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.КомандаДа</CommandName>
+					<ExtendedTooltip name="КомандаДаРасширеннаяПодсказка" id="23"/>
+				</Button>
+				<Button name="КомандаНет" id="24">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаНет</CommandName>
+					<ExtendedTooltip name="КомандаНетРасширеннаяПодсказка" id="25"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ИмпортОперацийБрокераБКРегион</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="УдаляемыеДокументы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удаляемые документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаДа" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Да</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда да</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаДа</Action>
+		</Command>
+		<Command name="КомандаНет" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда нет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаНет</Action>
+		</Command>
+	</Commands>
+</Form>
