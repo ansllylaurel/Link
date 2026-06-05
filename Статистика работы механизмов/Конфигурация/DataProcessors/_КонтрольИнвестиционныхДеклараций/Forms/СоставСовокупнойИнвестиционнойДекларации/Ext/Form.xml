@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Состав совокупной инвестиционной декларации</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОК" id="42">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="43"/>
+			</Button>
+			<Button name="ФормаОтмена" id="40">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="41"/>
+			</Button>
+			<Button name="ФормаКомандаСвернутьВсе" id="70">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаСвернутьВсе</CommandName>
+				<ExtendedTooltip name="ФормаКомандаСвернутьВсеРасширеннаяПодсказка" id="71"/>
+			</Button>
+			<Button name="ФормаКомандаРазвернутьВсе" id="68">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаРазвернутьВсе</CommandName>
+				<ExtendedTooltip name="ФормаКомандаРазвернутьВсеРасширеннаяПодсказка" id="69"/>
+			</Button>
+			<Popup name="ВыборТипаГруппировки" id="62">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выбор типа группировки</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выбор типа группировки</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ВыборТипаГруппировкиРасширеннаяПодсказка" id="63"/>
+				<ChildItems>
+					<Button name="ФормаКомандаГруппировкаПоСчетамДУ" id="66">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаГруппировкаПоСчетамДУ</CommandName>
+						<ExtendedTooltip name="ФормаКомандаГруппировкаПоСчетамДУРасширеннаяПодсказка" id="67"/>
+					</Button>
+					<Button name="ФормаКомандаГруппировкаПоДекларациям" id="64">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаГруппировкаПоДекларациям</CommandName>
+						<ExtendedTooltip name="ФормаКомандаГруппировкаПоДекларациямРасширеннаяПодсказка" id="65"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СоставСовокупнойИнвестДекларации" id="1">
+			<Representation>Tree</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<HeaderHeight>2</HeaderHeight>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СоставСовокупнойИнвестДекларации</DataPath>
+			<ContextMenu name="СоставСовокупнойИнвестДекларацииКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СоставСовокупнойИнвестДекларацииКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СоставСовокупнойИнвестДекларацииСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СоставСовокупнойИнвестДекларации</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСовокупнойИнвестДекларацииСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСовокупнойИнвестДекларацииСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СоставСовокупнойИнвестДекларации</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСовокупнойИнвестДекларацииСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставСовокупнойИнвестДекларацииУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СоставСовокупнойИнвестДекларации</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСовокупнойИнвестДекларацииУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СоставСовокупнойИнвестДекларацииВыбор</Event>
+				<Event name="OnActivateRow">СоставСовокупнойИнвестДекларацииПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="СоставСовокупнойИнвестДекларацииВключен" id="14">
+					<DataPath>СоставСовокупнойИнвестДекларации.Включен</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СоставСовокупнойИнвестДекларацииВключенКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииВключенРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="OnChange">СоставСовокупнойИнвестДекларацииВключенПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СоставСовокупнойИнвестДекларацииОрганизация_ТипИД" id="72">
+					<DataPath>СоставСовокупнойИнвестДекларации.Организация_ТипИД</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставСовокупнойИнвестДекларацииОрганизация_ТипИДКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииОрганизация_ТипИДРасширеннаяПодсказка" id="74"/>
+				</InputField>
+				<InputField name="СоставСовокупнойИнвестДекларацииСчетДУ_ИД" id="75">
+					<DataPath>СоставСовокупнойИнвестДекларации.СчетДУ_ИД</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставСовокупнойИнвестДекларацииСчетДУ_ИДКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииСчетДУ_ИДРасширеннаяПодсказка" id="77"/>
+				</InputField>
+				<LabelField name="СоставСовокупнойИнвестДекларацииРегистрацияСтоимостиАктивов" id="29">
+					<DataPath>СоставСовокупнойИнвестДекларации.РегистрацияСтоимостиАктивов</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleHeight>2</TitleHeight>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="СоставСовокупнойИнвестДекларацииРегистрацияСтоимостиАктивовКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииРегистрацияСтоимостиАктивовРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="СоставСовокупнойИнвестДекларацииСЧА" id="44">
+					<DataPath>СоставСовокупнойИнвестДекларации.СЧА</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставСовокупнойИнвестДекларацииСЧАКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииСЧАРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="СоставСовокупнойИнвестДекларацииРСА" id="47">
+					<DataPath>СоставСовокупнойИнвестДекларации.РСА</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставСовокупнойИнвестДекларацииРСАКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="СоставСовокупнойИнвестДекларацииРСАРасширеннаяПодсказка" id="49"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаСовокупныеПоказатели" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совокупные показатели</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совокупные показатели</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСовокупныеПоказателиРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<InputField name="СовокупнаяСЧА" id="50">
+					<DataPath>СовокупнаяСЧА</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СЧА</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СовокупнаяСЧАКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="СовокупнаяСЧАРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<Button name="КомандаКопироватьСЧА" id="58">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаКопироватьСЧА</CommandName>
+					<ExtendedTooltip name="КомандаКопироватьСЧАРасширеннаяПодсказка" id="59"/>
+				</Button>
+				<InputField name="СовокупнаяРСА" id="53">
+					<DataPath>СовокупнаяРСА</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>РСА</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СовокупнаяРСАКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="СовокупнаяРСАРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<Button name="КомандаКопироватьРСА" id="60">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаКопироватьРСА</CommandName>
+					<ExtendedTooltip name="КомандаКопироватьРСАРасширеннаяПодсказка" id="61"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._КонтрольИнвестиционныхДеклараций</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СоставСовокупнойИнвестДекларации" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состав совокупной инвест декларации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Включен" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вкл.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Организация" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КодСчета" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код счета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РегистрацияСтоимостиАктивов" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистрация стоимости активов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправленияПредставление" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет д/у</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОрганизацияПредставление" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВалютаУчета" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта учета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СЧА" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СЧА</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="РСА" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>РСА</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ИнвестиционнаяДекларация" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвестиционная декларация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИнвестиционныеДекларации</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТипИнвестиционнойДекларации" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип инвестиционной декларации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ТипыИнвестиционныхДеклараций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИнвестиционнаяДекларацияПредставление" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвестиционная декларация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СовокупныйКонтроль" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Совокупный контроль</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПорядокКонтроля" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Порядок контроля</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>3</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Назначение" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назначение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.НазначениеИнвестиционнойДекларации</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Организация_ТипИД" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация / тип инвестиционной декларации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СчетДУ_ИД" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления / инвестиционная декларация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Клиент" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПаевыеИнвестиционныеФонды</v8:Type>
+						<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресСоставаСовокупнойИнвестДекларации" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес состава совокупной инвест декларации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СовокупнаяСЧА" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совокупная СЧА</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СовокупнаяРСА" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совокупная РСА</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимГруппировки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим группировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СоставСовокупнойИнвестДекларации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СоставСовокупнойИнвестДекларации.Включен</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СоставСовокупнойИнвестДекларации.РегистрацияСтоимостиАктивов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаКопироватьСЧА" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать СЧА в буфер обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать СЧА в буфер обмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CloneObject</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаКопироватьСЧА</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаКопироватьРСА" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать РСА в буфер обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать РСА в буфер обмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CloneObject</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаКопироватьРСА</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаГруппировкаПоСчетамДУ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группировка по счетам ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группировка по счетам ДУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаГруппировкаПоСчетамДУ</Action>
+		</Command>
+		<Command name="КомандаГруппировкаПоДекларациям" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группировка по декларациям</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группировка по декларациям</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаГруппировкаПоДекларациям</Action>
+		</Command>
+		<Command name="КомандаСвернутьВсе" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСвернутьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаРазвернутьВсе" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРазвернутьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+</Form>

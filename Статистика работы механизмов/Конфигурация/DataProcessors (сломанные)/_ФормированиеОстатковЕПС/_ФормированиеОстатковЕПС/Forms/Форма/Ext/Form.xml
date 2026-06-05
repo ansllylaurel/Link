@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="СчетДУ" id="1">
+			<DataPath>Объект.СчетДУ</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СчетДУКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="СчетДУРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="ДатаОстатков" id="4">
+			<DataPath>Объект.ДатаОстатков</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаОстатковКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаОстатковРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<CheckBoxField name="ОбнулитьРасходыПриПокупке" id="11">
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОбнулитьРасходыПриПокупкеКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="ОбнулитьРасходыПриПокупкеРасширеннаяПодсказка" id="13"/>
+		</CheckBoxField>
+		<Button name="СформироватьОстаткиЕПС" id="7">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.СформироватьОстаткиЕПС</CommandName>
+			<ExtendedTooltip name="СформироватьОстаткиЕПСРасширеннаяПодсказка" id="8"/>
+		</Button>
+		<Button name="СформироватьОстаткиПоБумагам" id="9">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.СформироватьОстаткиПоБумагам</CommandName>
+			<ExtendedTooltip name="СформироватьОстаткиПоБумагамРасширеннаяПодсказка" id="10"/>
+		</Button>
+		<CheckBoxField name="СтоимостьПокупкиКупонаРасчитатьИзПартии" id="14">
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СтоимостьПокупкиКупонаРасчитатьИзПартииКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="СтоимостьПокупкиКупонаРасчитатьИзПартииРасширеннаяПодсказка" id="16"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ФормированиеОстатковЕПС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.ДатаОстатков</Field>
+				<Field>Объект.СчетДУ</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьОстаткиЕПС" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать остатки ЕПС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать остатки ЕПС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьОстаткиЕПС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СформироватьОстаткиПоБумагам" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать остатки по бумагам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать остатки по бумагам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьОстаткиПоБумагам</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

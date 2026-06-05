@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Период" id="1">
+			<DataPath>Объект.Период</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ПараметрЗапросаНаФормеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="СчетДоверительногоУправления" id="7">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ПараметрЗапросаНаФормеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Организация" id="4">
+			<DataPath>Объект.Организация</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ПараметрЗапросаНаФормеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Группа1" id="51">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<Button name="Заполнить" id="47">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Заполнить</CommandName>
+					<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="48"/>
+				</Button>
+				<Button name="Сохранить" id="49">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Сохранить</CommandName>
+					<ExtendedTooltip name="СохранитьРасширеннаяПодсказка" id="50"/>
+				</Button>
+				<Button name="ИсключитьВсе" id="59">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ИсключитьВсе</CommandName>
+					<ExtendedTooltip name="ИсключитьВсеРасширеннаяПодсказка" id="60"/>
+				</Button>
+				<LabelDecoration name="ПредупреждениеОДатеЗапрета" id="67">
+					<TextColor>style:SpecialTextColor</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внимание! Период меньше даты запрета редактирования. Нельзя сохранить изменения в документе Распределение активов.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредупреждениеОДатеЗапретаКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="ПредупреждениеОДатеЗапретаРасширеннаяПодсказка" id="69"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ИсключаемыеАктивы" id="10">
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ИсключаемыеАктивы</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ИсключаемыеАктивыКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ИсключаемыеАктивыКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="ИсключаемыеАктивыРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ИсключаемыеАктивыСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ИсключаемыеАктивы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИсключаемыеАктивыСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ИсключаемыеАктивыСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИсключаемыеАктивыСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ИсключаемыеАктивы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИсключаемыеАктивыСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ИсключаемыеАктивыСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИсключаемыеАктивыУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ИсключаемыеАктивы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИсключаемыеАктивыУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ИсключаемыеАктивыУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ИсключаемыеАктивыНомерСтроки" id="23">
+					<DataPath>Объект.ИсключаемыеАктивы.LineNumber</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ИсключаемыеАктивыСчетДоверительногоУправления" id="61">
+					<DataPath>Объект.ИсключаемыеАктивы.СчетДоверительногоУправления</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет учета</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыСчетДоверительногоУправленияКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыСчетДоверительногоУправленияРасширеннаяПодсказка" id="63"/>
+				</InputField>
+				<InputField name="ИсключаемыеАктивыДатаИсключения" id="64">
+					<DataPath>Объект.ИсключаемыеАктивы.ДатаИсключения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыДатаИсключенияКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыДатаИсключенияРасширеннаяПодсказка" id="66"/>
+				</InputField>
+				<InputField name="ИсключаемыеАктивыРасчетныйСчет" id="26">
+					<DataPath>Объект.ИсключаемыеАктивы.РасчетныйСчет</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыРасчетныйСчетКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыРасчетныйСчетРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ИсключаемыеАктивыБанк" id="29">
+					<DataPath>Объект.ИсключаемыеАктивы.Банк</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыБанкКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыБанкРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ИсключаемыеАктивыОстатокНаСчете" id="32">
+					<DataPath>Объект.ИсключаемыеАктивы.ОстатокНаСчете</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыОстатокНаСчетеКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыОстатокНаСчетеРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ИсключаемыеАктивыДатаРаспределено" id="53">
+					<DataPath>Объект.ИсключаемыеАктивы.ДатаРаспределено</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата расп.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыДатаРаспределеноКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыДатаРаспределеноРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="ИсключаемыеАктивыРаспределено" id="56">
+					<DataPath>Объект.ИсключаемыеАктивы.Распределено</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыРаспределеноКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыРаспределеноРасширеннаяПодсказка" id="58"/>
+				</InputField>
+				<CheckBoxField name="ИсключаемыеАктивыИсключен" id="41">
+					<DataPath>Объект.ИсключаемыеАктивы.Исключен</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИсключаемыеАктивыИсключенКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыИсключенРасширеннаяПодсказка" id="43"/>
+					<Events>
+						<Event name="OnChange">ИсключаемыеАктивыИсключенПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ИсключаемыеАктивыКомментарий" id="44">
+					<DataPath>Объект.ИсключаемыеАктивы.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИсключаемыеАктивыКомментарийКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ИсключаемыеАктивыКомментарийРасширеннаяПодсказка" id="46"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._КонтрольНаличияВыписокДляРасчетныхСчетов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.ИсключаемыеАктивы"/>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИсключаемыеАктивыРаспределено</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ИсключаемыеАктивы.Распределено</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ИсключаемыеАктивы.Исключен</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Сохранить</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПериодМеньшеДатыЗапретаРедактирования</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Предупреждение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПериодМеньшеДатыЗапретаРедактирования</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+		<Command name="Сохранить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сохранить</Action>
+		</Command>
+		<Command name="ИсключитьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исключить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исключить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИсключитьВсе</Action>
+		</Command>
+	</Commands>
+</Form>

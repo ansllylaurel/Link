@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="1.0" xmlns="http://www.w3.org/1999/xhtml">
+   <xsl:output method="html" omit-xml-declaration="yes" indent="yes"/>
+   <xsl:template name="formatDate">
+      <xsl:param name="yyyy-mm-dd"/>
+      <xsl:choose>
+         <xsl:when test="string-length($yyyy-mm-dd)>0">
+            <xsl:variable name="yyyy" select="substring-before($yyyy-mm-dd, '-')"/>
+            <xsl:variable name="mm-dd" select="substring-after($yyyy-mm-dd, '-')"/>
+            <xsl:variable name="mm" select="substring-before($mm-dd, '-')"/>
+            <xsl:variable name="dd" select="substring-after($mm-dd, '-')"/>
+            <xsl:value-of select="concat($dd, '.',$mm,'.',$yyyy)"/>
+         </xsl:when>
+      </xsl:choose>
+   </xsl:template>
+   <xsl:template match="/">
+      <html>
+         <head>
+            <meta charset="UTF-8"/>
+            <style type="text/css">
+               body { margin: 0; font-family: Arial, sans-serif;font-size:14px; }
+               table { border-collapse: collapse; }
+               td {mso-number-format:\@ !important; vertical-align:middle; mso-char-indent:0;}
+               .bolded { font-weight: bold; }
+               .cent { text-align: center; }
+               .ttop { vertical-align:top; }
+               .vbot { vertical-align: bottom !important; }
+               .num { text-align: right !important; }
+               .sum { text-align: right !important; }
+               .txt { text-align: left !important; }
+               .notice td, .notice th { border: 1px solid black; border-color: black; text-align:center; }
+               .notice th { background-color: #eee; text-align:center; }
+               .rectangle { border: #000 1pt solid; }
+               .linetop { border-top: #000 1pt solid; }
+               .linebottom { border-bottom: #000 1pt solid; }
+               .lineleft { border-left: #000 1pt solid; padding-left: 1mm; }
+               .accent { font-weight: bold; font-size: 11pt; line-height: 1; }
+               .data { font-size: 11pt; vertical-align: top;}
+               .field { font-size: 9pt; line-height: 1.4; height: 5mm; vertical-align: top; }
+               .addit { padding-top:10px; color:#666;}
+               #itbl1 { width: 190mm; margin: 10mm; }
+               #itbl2 { width: 170mm; margin: 10mm; line-height:18px; }
+               #itbl3 { margin: 10mm; line-height:18px; }
+               .move { margin: 10mm; line-height:18px; }
+            </style>
+            <style type="text/css" media="print">
+               #itbl1, #itbl2 {margin: 0 auto 0 auto; }
+            </style>
+         </head>
+         <body>
+            <xsl:for-each select="//CCX99">
+               <div class="move">
+                  <center>
+                     <span class="accent">ОТЧЕТ О ДВИЖЕНИИ ДЕНЕЖНЫХ СРЕДСТВ</span>
+                     <br/>
+                     <span class="accent"> 
+                        <xsl:choose>
+                           <xsl:when test="@DATE_TO = @DATE_FROM">
+                              за
+                              <xsl:call-template name="formatDate">
+                                 <xsl:with-param name="yyyy-mm-dd" select="@DATE_FROM"/>
+                              </xsl:call-template>
+                           </xsl:when>
+                           <xsl:when test="@DATE_TO">
+                              с
+                              <xsl:call-template name="formatDate">
+                                 <xsl:with-param name="yyyy-mm-dd" select="@DATE_FROM"/>
+                              </xsl:call-template>
+                              по
+                              <xsl:call-template name="formatDate">
+                                 <xsl:with-param name="yyyy-mm-dd" select="@DATE_TO"/>
+                              </xsl:call-template>
+                           </xsl:when>
+                        </xsl:choose>
+                     </span>
+                     <br/>
+                     <br/>
+                  </center>
+                  <span class="accent">Наименование Участника клиринга: <xsl:value-of select="@FIRMPURPOSE_PAYMENT"/>
+                  </span>
+                  <br/>
+                  <span class="accent">Идентификатор Участника клиринга: <xsl:value-of select="@REGCODE"/>
+                  </span>
+                  <br/>
+                  <xsl:for-each select="EXTSETTLECODE">
+                     <span class="accent">Расчетный код: <xsl:value-of select="@ID"/>
+                     </span>
+                     <xsl:for-each select="STATEMENT">
+                        <br/>
+                        <br/>
+                        <span class="accent">
+                           <xsl:text>&#160;</xsl:text>
+                           <xsl:value-of select="@ACCOUNT"/>
+                        </span>
+                        <br/>
+                        <span class="accent">
+                           <xsl:text>&#160;</xsl:text>
+                           <xsl:value-of select="@PURPOSE_PAYMENT_ACC"/>
+                        </span>
+                        <xsl:choose>
+                           <xsl:when test="@CURRENCY">
+                              <br/>
+                              <br/>
+                              <span class="accent">Код валюты <xsl:value-of select="@CURRENCY"/>
+                              </span>
+                           </xsl:when>
+                        </xsl:choose>
+                        <br/>
+                        <br/>
+                        <table class="notice" width="100%" cellpadding="4">
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <col width="20%"/>
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <col width="10%"/>
+                           <thead>
+                              <tr>
+                                 <th rowspan="2">Вид операции</th>
+                                 <th rowspan="2">Тип</th>
+                                 <th rowspan="2">Номер документа</th>
+                                 <th colspan="3">Счет - корреспондент</th>
+                                 <th rowspan="2">Комментарии</th>
+                                 <th rowspan="2">Дебет</th>
+                                 <th rowspan="2">Кредит</th>
+                                 <th rowspan="2">Дата</th>
+                                 <th rowspan="2">Время</th>
+                              </tr>
+                              <tr>
+                                 <th>БИК / BIC</th>
+                                 <th>Лицевой счет</th>
+                                 <th>Наименование плательщика / Получателя / <br/>Корреспондирующего счета</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td/>
+                                 <td/>
+                                 <td/>
+                                 <td/>
+                                 <td/>
+                                 <td/>
+                                 <td>Входящий остаток</td>
+                                 <td class="sum">
+                                    <xsl:if test="not((@OPENING_BALANCE&gt;0.00) or (@OPENING_BALANCE=0.00 and @TYPE='P'))">
+                                       <xsl:value-of select="format-number(0-@OPENING_BALANCE, '###,##0.00')"/>
+                                    </xsl:if>
+                                 </td>
+                                 <td class="sum">
+                                    <xsl:if test="(@OPENING_BALANCE&gt;0.00) or (@OPENING_BALANCE=0.00 and @TYPE='P')">
+                                       <xsl:value-of select="format-number(@OPENING_BALANCE, '###,##0.00')"/>
+                                    </xsl:if>
+                                 </td>
+                                 <td>
+                                    <xsl:call-template name="formatDate">
+                                       <xsl:with-param name="yyyy-mm-dd" select="@DATE_OPENING_BALANCE"/>
+                                    </xsl:call-template>
+                                 </td>
+                                 <td/>
+                              </tr>
+                              <!--Рублевые транзакции в блоке ENTRY-->
+                              <xsl:choose>
+                                 <xsl:when test="@CURRENCY='RUB'">
+                                    <xsl:for-each select="ENTRY">
+                                       <tr>
+                                          <td>
+                                             <xsl:value-of select="@CODETYPE"/>
+                                          </td>
+                                          <td>
+                                             <xsl:value-of select="@TRANTYPE"/>
+                                          </td>
+                                          <td>
+                                             <xsl:value-of select="@NUMBER"/>
+                                          </td>
+                                          <!--Атрибуты для кредита и дебета-->
+                                          <xsl:if test="@CREDIT!=''">
+                                             <td>
+                                                <xsl:text>&#160;</xsl:text>
+                                                <xsl:value-of select="@*[name()='PAY_BIC' and string-length(normalize-space(name())) > 0][1]"/>
+                                             </td>
+                                             <td>
+                                                <xsl:text>&#160;</xsl:text>
+                                                <xsl:value-of select="@*[name()='PAY_ACC' and string-length(normalize-space(name())) > 0][1]"/>
+                                             </td>
+                                             <td class="txt">
+                                                <xsl:value-of select="@*[name()='PAY_NAME' and string-length(normalize-space(name())) > 0][1]"/>
+                                             </td>
+                                          </xsl:if>
+                                          <xsl:if test="@DEBIT!=''">
+                                             <td>
+                                                <xsl:text>&#160;</xsl:text>
+                                                <xsl:value-of select="@*[name()='REC_BIC' and string-length(normalize-space(name())) > 0][1]"/>
+                                             </td>
+                                             <td>
+                                                <xsl:text>&#160;</xsl:text>
+                                                <xsl:value-of select="@*[name()='REC_ACC' and string-length(normalize-space(name())) > 0][1]"/>
+                                             </td>
+                                             <td class="txt">
+                                                <xsl:value-of select="@*[name()='REC_NAME' and string-length(normalize-space(name())) > 0][1]"/>
+                                             </td>
+                                          </xsl:if>
+                                          <td class="txt">
+                                             <xsl:value-of select="@PURPOSE_PAYMENT"/>
+                                          </td>
+                                          <td class="sum">
+                                             <xsl:for-each select="@DEBIT">
+                                                <span>
+                                                   <xsl:value-of select="format-number(number(string(.)), '###,##0.00')"/>
+                                                </span>
+                                             </xsl:for-each>
+                                          </td>
+                                          <td class="sum">
+                                             <xsl:for-each select="@CREDIT">
+                                                <span>
+                                                   <xsl:value-of select="format-number(number(string(.)), '###,##0.00')"/>
+                                                </span>
+                                             </xsl:for-each>
+                                          </td>
+                                          <td>
+                                             <xsl:call-template name="formatDate">
+                                                <xsl:with-param name="yyyy-mm-dd" select="@DATE"/>
+                                             </xsl:call-template>
+                                          </td>
+                                          <td class="txt">
+                                             <xsl:value-of select="@TIME"/>
+                                          </td>
+                                       </tr>
+                                    </xsl:for-each>
+                                 </xsl:when>
+                                 <!--Валютные транзакции в блоке ENTRY-->
+                                 <xsl:otherwise>
+                                    <xsl:for-each select="ENTRY">
+                                       <tr>
+                                          <td>
+                                             <xsl:value-of select="@CODETYPE"/>
+                                          </td>
+                                          <td>
+                                             <xsl:value-of select="@TRANTYPE"/>
+                                          </td>
+                                          <td>
+                                             <xsl:value-of select="@NUMBER"/>
+                                          </td>
+                                          <!--Атрибуты для Платежного поручения и мемориального ордера-->
+                                          <xsl:choose>
+                                             <xsl:when test="@TRANSKIND='01'">
+                                                <xsl:choose>
+                                                   <xsl:when test="@CREDIT and OrderingParty">
+                                                      <xsl:for-each select="OrderingParty">
+                                                         <td>
+                                                            <xsl:value-of select="@*[name()='BIC' and string-length(normalize-space(name())) > 0][1]"/>
+                                                         </td>
+                                                         <td>
+                                                            <xsl:text>&#160;</xsl:text>
+                                                            <xsl:value-of select="@*[name()='PARTY_ID' and string-length(normalize-space(name())) > 0][1]"/>
+                                                         </td>
+                                                         <td class="txt">
+                                                            <xsl:value-of select="@*[name()='NAMEADDR' and string-length(normalize-space(name())) > 0][1]"/>
+                                                         </td>
+                                                      </xsl:for-each>
+                                                   </xsl:when>
+                                                   <xsl:when test="@DEBIT and Beneficiary">
+                                                      <xsl:for-each select="Beneficiary">
+                                                         <td>
+                                                            <xsl:value-of select="@*[name()='BIC' and string-length(normalize-space(name())) > 0][1]"/>
+                                                         </td>
+                                                         <td>
+                                                            <xsl:text>&#160;</xsl:text>
+                                                            <xsl:value-of select="@*[name()='PARTY_ID' and string-length(normalize-space(name())) > 0][1]"/>
+                                                         </td>
+                                                         <td class="txt">
+                                                            <xsl:value-of select="@*[name()='NAMEADDR' and string-length(normalize-space(name())) > 0][1]"/>
+                                                         </td>
+                                                      </xsl:for-each>
+                                                   </xsl:when>
+                                                   <xsl:otherwise>
+                                                      <td/>
+                                                      <td/>
+                                                      <td/>
+                                                   </xsl:otherwise>
+                                                </xsl:choose>
+                                             </xsl:when>
+                                             <xsl:otherwise>
+                                                <td>
+                                                   <xsl:value-of select="@*[name()='BIC' and string-length(normalize-space(name())) > 0][1]"/>
+                                                </td>
+                                                <xsl:if test="@CREDIT!=''">
+                                                   <td>
+                                                      <xsl:text>&#160;</xsl:text>
+                                                      <xsl:value-of select="@*[name()='PAY_ACC' and string-length(normalize-space(name())) > 0][1]"/>
+                                                   </td>
+                                                   <td class="txt">
+                                                      <xsl:value-of select="@*[name()='PAY_NAME' and string-length(normalize-space(name())) > 0][1]"/>
+                                                   </td>
+                                                </xsl:if>
+                                                <xsl:if test="@DEBIT!=''">
+                                                   <td>
+                                                      <xsl:text>&#160;</xsl:text>
+                                                      <xsl:value-of select="@*[name()='REC_ACC' and string-length(normalize-space(name())) > 0][1]"/>
+                                                   </td>
+                                                   <td class="txt">
+                                                      <xsl:value-of select="@*[name()='REC_NAME' and string-length(normalize-space(name())) > 0][1]"/>
+                                                   </td>
+                                                </xsl:if>
+                                             </xsl:otherwise>
+                                          </xsl:choose>
+                                          <td class="txt">
+                                             <xsl:value-of select="@PURPOSE_PAYMENT"/>
+                                          </td>
+                                          <td class="sum">
+                                             <xsl:for-each select="@DEBIT">
+                                                <span>
+                                                   <xsl:value-of select="format-number(number(string(.)), '###,##0.00')"/>
+                                                </span>
+                                             </xsl:for-each>
+                                          </td>
+                                          <td class="sum">
+                                             <xsl:for-each select="@CREDIT">
+                                                <span>
+                                                   <xsl:value-of select="format-number(number(string(.)), '###,##0.00')"/>
+                                                </span>
+                                             </xsl:for-each>
+                                          </td>
+                                          <td>
+                                             <xsl:call-template name="formatDate">
+                                                <xsl:with-param name="yyyy-mm-dd" select="@DATE"/>
+                                             </xsl:call-template>
+                                          </td>
+                                          <td class="txt">
+                                             <xsl:value-of select="@TIME"/>
+                                          </td>
+                                       </tr>
+                                    </xsl:for-each>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                              <tr>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td>Итого</td>
+                                 <td class="sum">
+                                    <xsl:value-of select="format-number(number(string(@DEBIT_SUM)), '###,##0.00')"/>
+                                 </td>
+                                 <td class="sum">
+                                    <xsl:value-of select="format-number(number(string(@CREDIT_SUM)), '###,##0.00')"/>
+                                 </td>
+                                 <td/>
+                                 <td/>
+                              </tr>
+                              <tr>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td> </td>
+                                 <td>Исходящий остаток</td>
+                                 <td class="sum">
+                                    <xsl:if test="not((@CLOSING_BALANCE&gt;0.00) or (@CLOSING_BALANCE=0.00 and @TYPE='P'))">
+                                       <xsl:value-of select="format-number(0-@CLOSING_BALANCE, '###,##0.00')"/>
+                                    </xsl:if>
+                                 </td>
+                                 <td class="sum">
+                                    <xsl:if test="(@CLOSING_BALANCE&gt;0.00) or (@CLOSING_BALANCE=0.00 and @TYPE='P')">
+                                       <xsl:value-of select="format-number(@CLOSING_BALANCE, '###,##0.00')"/>
+                                    </xsl:if>
+                                 </td>
+                                 <td>
+                                    <xsl:call-template name="formatDate">
+                                       <xsl:with-param name="yyyy-mm-dd" select="@DATE_CLOSING_BALANCE"/>
+                                    </xsl:call-template>
+                                 </td>
+                                 <td> </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </xsl:for-each>
+                     <br/>
+                     <br/>
+                  </xsl:for-each>
+               </div>
+            </xsl:for-each>
+            <div class="move">
+               <br/>
+               <span>Данный документ передан в электронном виде и подписан усиленной квалифицированной электронной подписью уполномоченного лица Небанковской кредитной организации-центрального контрагента «Национальный Клиринговый Центр» (Акционерное общество) в подсистеме электронного документооборота НКО НКЦ (АО).</span>
+            </div>
+         </body>
+      </html>
+   </xsl:template>
+</xsl:stylesheet>

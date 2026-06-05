@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КомандаВыполнитьСверкуСоСпискомТеррористов" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаВыполнитьСверкуСоСпискомТеррористов</CommandName>
+				<ExtendedTooltip name="КомандаВыполнитьСверкуСоСпискомТеррористовРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="ВыборочнаяПроверка" id="3">
+			<DataPath>Объект.ВыборочнаяПроверка</DataPath>
+			<CheckBoxType>Tumbler</CheckBoxType>
+			<EditFormat>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БЛ=Нет; БИ=Да</v8:content>
+				</v8:item>
+			</EditFormat>
+			<ContextMenu name="ВыборочнаяПроверкаКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ВыборочнаяПроверкаРасширеннаяПодсказка" id="5"/>
+			<Events>
+				<Event name="OnChange">ВыборочнаяПроверкаПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="ГруппаПроверяемыеЛица" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверяемые лица</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаПроверяемыеЛицаРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<Table name="ПроверяемыеЛица" id="6">
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.ПроверяемыеЛица</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ПроверяемыеЛицаКонтекстноеМеню" id="7"/>
+					<AutoCommandBar name="ПроверяемыеЛицаКоманднаяПанель" id="8"/>
+					<ExtendedTooltip name="ПроверяемыеЛицаРасширеннаяПодсказка" id="9"/>
+					<SearchStringAddition name="ПроверяемыеЛицаСтрокаПоиска" id="10">
+						<AdditionSource>
+							<Item>ПроверяемыеЛица</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПроверяемыеЛицаСтрокаПоискаКонтекстноеМеню" id="11"/>
+						<ExtendedTooltip name="ПроверяемыеЛицаСтрокаПоискаРасширеннаяПодсказка" id="12"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПроверяемыеЛицаСостояниеПросмотра" id="13">
+						<AdditionSource>
+							<Item>ПроверяемыеЛица</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПроверяемыеЛицаСостояниеПросмотраКонтекстноеМеню" id="14"/>
+						<ExtendedTooltip name="ПроверяемыеЛицаСостояниеПросмотраРасширеннаяПодсказка" id="15"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПроверяемыеЛицаУправлениеПоиском" id="16">
+						<AdditionSource>
+							<Item>ПроверяемыеЛица</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПроверяемыеЛицаУправлениеПоискомКонтекстноеМеню" id="17"/>
+						<ExtendedTooltip name="ПроверяемыеЛицаУправлениеПоискомРасширеннаяПодсказка" id="18"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ПроверяемыеЛицаНомерСтроки" id="19">
+							<DataPath>Объект.ПроверяемыеЛица.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>1</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ПроверяемыеЛицаНомерСтрокиКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ПроверяемыеЛицаНомерСтрокиРасширеннаяПодсказка" id="21"/>
+						</LabelField>
+						<InputField name="ПроверяемыеЛицаЮрФизЛицо" id="22">
+							<DataPath>Объект.ПроверяемыеЛица.ЮрФизЛицо</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПроверяемыеЛицаЮрФизЛицоКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ПроверяемыеЛицаЮрФизЛицоРасширеннаяПодсказка" id="24"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._СверкаСоСпискомТеррористов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>1/0:86ef79d1-d4f7-4c19-90af-2cb010b4f8b1</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыполнитьСверкуСоСпискомТеррористов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить сверку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить сверку со списком террористов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыполнитьСверкуСоСпискомТеррористов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

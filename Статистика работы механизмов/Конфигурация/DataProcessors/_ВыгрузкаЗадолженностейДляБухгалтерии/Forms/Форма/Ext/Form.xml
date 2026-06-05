@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаВыгрузить" id="90">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаВыгрузить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыгрузитьРасширеннаяПодсказка" id="91"/>
+			</Button>
+			<Button name="ФормаСоздатьПисьмо" id="92">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СоздатьПисьмо</CommandName>
+				<ExtendedTooltip name="ФормаСоздатьПисьмоРасширеннаяПодсказка" id="93"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПериод" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="Период" id="3">
+					<DataPath>Объект.Период</DataPath>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="5"/>
+					<Events>
+						<Event name="OnChange">РеквизитОтбораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="6">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="8"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтборы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<InputField name="СчетДоверительногоУправления" id="11">
+					<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="13"/>
+					<Events>
+						<Event name="OnChange">РеквизитОтбораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ВидыЗадолженностей" id="17">
+					<DataPath>ВидыЗадолженностей</DataPath>
+					<ContextMenu name="ВидыЗадолженностейКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ВидыЗадолженностейРасширеннаяПодсказка" id="19"/>
+					<Events>
+						<Event name="OnChange">РеквизитОтбораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Контрагент" id="14">
+					<DataPath>Объект.Контрагент</DataPath>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="OnChange">РеквизитОтбораПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="НачисленияЗадолженности" id="20">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>НачисленияЗадолженности</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="НачисленияЗадолженностиКонтекстноеМеню" id="21">
+				<ChildItems>
+					<Button name="НачисленияЗадолженностиКонтекстноеМенюНачисленияЗадолженностиОтбор" id="85">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НачисленияЗадолженностиОтбор</CommandName>
+						<ExtendedTooltip name="НачисленияЗадолженностиКонтекстноеМенюНачисленияЗадолженностиОтборРасширеннаяПодсказка" id="86"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="НачисленияЗадолженностиКоманднаяПанель" id="22">
+				<ChildItems>
+					<Button name="НачисленияЗадолженностиНачисленияЗадолженностиУстановитьФлажки" id="83">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НачисленияЗадолженностиУстановитьФлажки</CommandName>
+						<ExtendedTooltip name="НачисленияЗадолженностиНачисленияЗадолженностиУстановитьФлажкиРасширеннаяПодсказка" id="84"/>
+					</Button>
+					<Button name="НачисленияЗадолженностиНачисленияЗадолженностиСнятьФлажки" id="81">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НачисленияЗадолженностиСнятьФлажки</CommandName>
+						<ExtendedTooltip name="НачисленияЗадолженностиНачисленияЗадолженностиСнятьФлажкиРасширеннаяПодсказка" id="82"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="НачисленияЗадолженностиРасширеннаяПодсказка" id="23"/>
+			<SearchStringAddition name="НачисленияЗадолженностиСтрокаПоиска" id="24">
+				<AdditionSource>
+					<Item>НачисленияЗадолженности</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НачисленияЗадолженностиСтрокаПоискаКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="НачисленияЗадолженностиСтрокаПоискаРасширеннаяПодсказка" id="26"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НачисленияЗадолженностиСостояниеПросмотра" id="27">
+				<AdditionSource>
+					<Item>НачисленияЗадолженности</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НачисленияЗадолженностиСостояниеПросмотраКонтекстноеМеню" id="28"/>
+				<ExtendedTooltip name="НачисленияЗадолженностиСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НачисленияЗадолженностиУправлениеПоиском" id="30">
+				<AdditionSource>
+					<Item>НачисленияЗадолженности</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НачисленияЗадолженностиУправлениеПоискомКонтекстноеМеню" id="31"/>
+				<ExtendedTooltip name="НачисленияЗадолженностиУправлениеПоискомРасширеннаяПодсказка" id="32"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateField">НачисленияЗадолженностиПриАктивизацииПоля</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="НачисленияЗадолженностиВыгружать" id="33">
+					<DataPath>НачисленияЗадолженности.Выгружать</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НачисленияЗадолженностиВыгружатьКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиВыгружатьРасширеннаяПодсказка" id="35"/>
+				</CheckBoxField>
+				<LabelField name="НачисленияЗадолженностиНачислениеЗадолженностиДата" id="60">
+					<DataPath>НачисленияЗадолженности.НачислениеЗадолженности.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиНачислениеЗадолженностиДатаКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиНачислениеЗадолженностиДатаРасширеннаяПодсказка" id="62"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиНачислениеЗадолженностиНомер" id="57">
+					<DataPath>НачисленияЗадолженности.НачислениеЗадолженности.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиНачислениеЗадолженностиНомерКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиНачислениеЗадолженностиНомерРасширеннаяПодсказка" id="59"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиСчетДоверительногоУправления" id="63">
+					<DataPath>НачисленияЗадолженности.СчетДоверительногоУправления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиСчетДоверительногоУправленияКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиСчетДоверительногоУправленияРасширеннаяПодсказка" id="65"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиВидЗадолженности" id="66">
+					<DataPath>НачисленияЗадолженности.ВидЗадолженности</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиВидЗадолженностиКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиВидЗадолженностиРасширеннаяПодсказка" id="68"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиКонтрагент" id="69">
+					<DataPath>НачисленияЗадолженности.Контрагент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиКонтрагентКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиКонтрагентРасширеннаяПодсказка" id="71"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиДоговор" id="78">
+					<DataPath>НачисленияЗадолженности.Договор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиДоговорКонтекстноеМеню" id="79"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиДоговорРасширеннаяПодсказка" id="80"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиСумма" id="72">
+					<DataPath>НачисленияЗадолженности.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиСуммаКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиСуммаРасширеннаяПодсказка" id="74"/>
+				</LabelField>
+				<LabelField name="НачисленияЗадолженностиВалюта" id="75">
+					<DataPath>НачисленияЗадолженности.Валюта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НачисленияЗадолженностиВалютаКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="НачисленияЗадолженностиВалютаРасширеннаяПодсказка" id="77"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<InputField name="КаталогВыгрузки" id="87">
+			<DataPath>Объект.КаталогВыгрузки</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceButton>true</ChoiceButton>
+			<OpenButton>true</OpenButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="КаталогВыгрузкиКонтекстноеМеню" id="88"/>
+			<ExtendedTooltip name="КаталогВыгрузкиРасширеннаяПодсказка" id="89"/>
+			<Events>
+				<Event name="StartChoice">КаталогВыгрузкиНачалоВыбора</Event>
+				<Event name="Opening">КаталогВыгрузкиОткрытие</Event>
+			</Events>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ВыгрузкаЗадолженностейДляБухгалтерии</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.КаталогВыгрузки</Field>
+				<Field>Объект.Контрагент</Field>
+				<Field>Объект.Период</Field>
+				<Field>Объект.СчетДоверительногоУправления</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВидыЗадолженностей" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды задолженностей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВидыЗадолженностей</Field>
+			</Save>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="НачисленияЗадолженности" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисления задолженности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выгружать" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выгружать</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="НачислениеЗадолженности" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начисление задолженности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.НачислениеЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетДоверительногоУправления" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВидЗадолженности" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид задолженности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Контрагент" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Валюта" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Договор" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ДоговорыБрокерскогоОбслуживания</v8:Type>
+						<v8:Type>cfg:CatalogRef.Договоры</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НачисленияЗадолженностиСнятьФлажки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисления задолженности снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НачисленияЗадолженностиУправлениеФлажками</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НачисленияЗадолженностиУстановитьФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисления задолженности установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НачисленияЗадолженностиУправлениеФлажками</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НачисленияЗадолженностиОтбор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисления задолженности отбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НачисленияЗадолженностиОтбор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаВыгрузить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выгрузить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВыгрузить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьПисьмо" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать письмо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать письмо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьПисьмо</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="65">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="66"/>
+			<ChildItems>
+				<InputField name="Период" id="50">
+					<DataPath>Объект.Период</DataPath>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="OnChange">ПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="1">
+					<DataPath>Объект.Организация</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СчетДоверительногоУправления" id="115">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="116"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="117"/>
+			<Events>
+				<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ОснованиеОперации" id="141">
+			<DataPath>Объект.ОснованиеОперации</DataPath>
+			<ContextMenu name="ОснованиеОперацииКонтекстноеМеню" id="142"/>
+			<ExtendedTooltip name="ОснованиеОперацииРасширеннаяПодсказка" id="143"/>
+		</InputField>
+		<Table name="СписокПерестраховщиков" id="16">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.СписокПерестраховщиков</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокПерестраховщиковКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="СписокПерестраховщиковКоманднаяПанель" id="18">
+				<ChildItems>
+					<Button name="ЗагрузитьФайл" id="67">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗагрузитьФайлКоманда</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Загрузить файл</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ЗагрузитьФайлРасширеннаяПодсказка" id="68"/>
+					</Button>
+					<Button name="СгруппироватьДанные" id="139">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СгруппироватьДанные</CommandName>
+						<ExtendedTooltip name="СгруппироватьДанныеРасширеннаяПодсказка" id="140"/>
+					</Button>
+					<Button name="ЗаписатьЗакрыть" id="113">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СохранитьЗакрыть</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Записать и закрыть</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ЗаписатьЗакрытьРасширеннаяПодсказка" id="114"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокПерестраховщиковРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="СписокПерестраховщиковСтрокаПоиска" id="20">
+				<AdditionSource>
+					<Item>СписокПерестраховщиков</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПерестраховщиковСтрокаПоискаКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="СписокПерестраховщиковСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокПерестраховщиковСостояниеПросмотра" id="23">
+				<AdditionSource>
+					<Item>СписокПерестраховщиков</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПерестраховщиковСостояниеПросмотраКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СписокПерестраховщиковСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокПерестраховщиковУправлениеПоиском" id="26">
+				<AdditionSource>
+					<Item>СписокПерестраховщиков</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПерестраховщиковУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="СписокПерестраховщиковУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="Файл" id="107">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ФайлРасширеннаяПодсказка" id="108"/>
+					<ChildItems>
+						<LabelField name="СписокПерестраховщиковНомерСтроки" id="29">
+							<DataPath>Объект.СписокПерестраховщиков.LineNumber</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковНомерСтрокиКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="СписокПерестраховщиковНомерСтрокиРасширеннаяПодсказка" id="31"/>
+						</LabelField>
+						<InputField name="СписокПерестраховщиковСчетДоверительногоУправления" id="56">
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>СДУ</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСчетДоверительногоУправленияКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСчетДоверительногоУправленияРасширеннаяПодсказка" id="58"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковПерестраховщик" id="32">
+							<DataPath>Объект.СписокПерестраховщиков.Перестраховщик</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковПерестраховщикКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="СписокПерестраховщиковПерестраховщикРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковИНН" id="69">
+							<DataPath>Объект.СписокПерестраховщиков.ИНН</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковИННКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="СписокПерестраховщиковИННРасширеннаяПодсказка" id="71"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковКодСтраны" id="77">
+							<DataPath>Объект.СписокПерестраховщиков.КодСтраны</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковКодСтраныКонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="СписокПерестраховщиковКодСтраныРасширеннаяПодсказка" id="79"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковКодДоли" id="80">
+							<DataPath>Объект.СписокПерестраховщиков.КодДоли</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="СписокПерестраховщиковКодДолиКонтекстноеМеню" id="81"/>
+							<ExtendedTooltip name="СписокПерестраховщиковКодДолиРасширеннаяПодсказка" id="82"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковСуммаЖизнь240" id="118">
+							<DataPath>Объект.СписокПерестраховщиков.СуммаЖизнь240</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСуммаЖизнь240КонтекстноеМеню" id="119"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСуммаЖизнь240РасширеннаяПодсказка" id="120"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковСуммаИное250" id="121">
+							<DataPath>Объект.СписокПерестраховщиков.СуммаИное250</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСуммаИное250КонтекстноеМеню" id="122"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСуммаИное250РасширеннаяПодсказка" id="123"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковСуммаИное255" id="124">
+							<DataPath>Объект.СписокПерестраховщиков.СуммаИное255</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСуммаИное255КонтекстноеМеню" id="125"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСуммаИное255РасширеннаяПодсказка" id="126"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="Справочник" id="109">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Справочник</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Справочник</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="СправочникРасширеннаяПодсказка" id="110"/>
+					<ChildItems>
+						<InputField name="СписокПерестраховщиковПерестраховщикСправочник" id="89">
+							<DataPath>Объект.СписокПерестраховщиков.ПерестраховщикСправочник</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Перестраховщик</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковПерестраховщикСправочникКонтекстноеМеню" id="90"/>
+							<ExtendedTooltip name="СписокПерестраховщиковПерестраховщикСправочникРасширеннаяПодсказка" id="91"/>
+							<Events>
+								<Event name="OnChange">СписокПерестраховщиковПерестраховщикСправочникПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="СписокПерестраховщиковИННСправочник" id="92">
+							<DataPath>Объект.СписокПерестраховщиков.ИННСправочник</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ИНН</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковИННСправочникКонтекстноеМеню" id="93"/>
+							<ExtendedTooltip name="СписокПерестраховщиковИННСправочникРасширеннаяПодсказка" id="94"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="Предыдущие" id="111">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предыдущие</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предыдущие</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ПредыдущиеРасширеннаяПодсказка" id="112"/>
+					<ChildItems>
+						<InputField name="СписокПерестраховщиковДатаПред" id="127">
+							<DataPath>Объект.СписокПерестраховщиков.ДатаПред</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковДатаПредКонтекстноеМеню" id="128"/>
+							<ExtendedTooltip name="СписокПерестраховщиковДатаПредРасширеннаяПодсказка" id="129"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковСуммаЖизньПред240" id="130">
+							<DataPath>Объект.СписокПерестраховщиков.СуммаЖизньПред240</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСуммаЖизньПред240КонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСуммаЖизньПред240РасширеннаяПодсказка" id="132"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковСуммаИноеПред250" id="133">
+							<DataPath>Объект.СписокПерестраховщиков.СуммаИноеПред250</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСуммаИноеПред250КонтекстноеМеню" id="134"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСуммаИноеПред250РасширеннаяПодсказка" id="135"/>
+						</InputField>
+						<InputField name="СписокПерестраховщиковСуммаИноеПред255" id="136">
+							<DataPath>Объект.СписокПерестраховщиков.СуммаИноеПред255</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокПерестраховщиковСуммаИноеПред255КонтекстноеМеню" id="137"/>
+							<ExtendedTooltip name="СписокПерестраховщиковСуммаИноеПред255РасширеннаяПодсказка" id="138"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ИмпортПерестраховщиков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаXLS" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица XLS</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИНН" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИНН</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Перестраховщик" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перестраховщик</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодСтраны" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код страны</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаЖизнь" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма жизнь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="КодДоли" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код доли</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаИное" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма жизнь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаЖизнь240" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма иное</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаИное250" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма иное</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаИное255" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма иное</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковПерестраховщик</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.ИНН</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.ИННСправочник</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FA6464</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковИНН</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковКодДоли</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.ПерестраховщикКоличество</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FADBF9</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковСуммаЖизнь240</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.СуммаЖизнь240</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.СуммаЖизньПред240</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#00FAFA</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковСуммаИное250</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.СуммаИное250</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.СуммаИноеПред250</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#00FAFA</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковСуммаИное255</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.СуммаИное255</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.СуммаИноеПред255</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#00FAFA</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковПерестраховщикСправочник</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СписокПерестраховщиковИННСправочник</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СписокПерестраховщиков.ПерестраховщикСправочникКоличество</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF099F</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьФайлКоманда" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить файл команда</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить файл команда</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьФайлКоманда</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СохранитьЗакрыть" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СгруппироватьДанные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгруппировать данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгруппировать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СгруппироватьДанные</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

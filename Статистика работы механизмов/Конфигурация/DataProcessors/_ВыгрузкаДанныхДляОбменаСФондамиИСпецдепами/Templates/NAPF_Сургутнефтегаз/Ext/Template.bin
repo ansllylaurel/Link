@@ -1,0 +1,2770 @@
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by S (S) -->
+<!-- edited by sivanov (AVANCORE) 23-08-2017-->
+<!-- edited by gori (homnet) 25-08-2018-->
+<!-- edited by Dobrodeev (region) 10-06-2020-->
+<!-- 1. Изменено свойство СделкаТорговыеФИ\SubCategoryIAS3 стало СделкаТорговыеФИ\SubCategoryIAS39-->
+<!-- 2. Изменено свойство Контрагент\OKVED было decimal стало string-->
+<!-- 3. добавлено значение свойства ФинансовыйИнструмент\PercPayPeriod - 0(неопределено) -->
+<!-- 4. добавлены свойства БухПроводка\QuantityDebit и QuantityCredit (decimal) -->
+<!-- 5. Скорректировано описание свойства СделкаТорговыеФИ\REPO2Amount - Сумма исполнения второй части сделки РЕПО -->
+<!-- 6. Добавлены свойства СделкаТорговыеФИ\ REPO2Price, REPO2PercNomPrice, REPO2ACI, REPO2Rate, REPO2Agreement -->
+<!-- 7. Добавлено свойства комплексного типа ДенежныйПотокПоОблигации: Start_Date и Ext_Offer_Date, скорректировано описание свойства Date -->
+<!-- 8. Добавлено свойство СделкаТорговыеФИ\ REPORate -->
+<!-- 9. Добавлены свойства СделкаТорговыеФИ\ TFCommDate, BRCommDate -->
+<xs:schema xmlns="NAPFEXCHANGE_AVANCORE" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="NAPFEXCHANGE_AVANCORE" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Сообщение">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Заголовок">
+					<xs:annotation>
+						<xs:documentation>В файлах с информацией по доверительному управлению, которые подготавливает управляющая компания, рекомендуетсяуказывать шапку следующего форматадля идентификации данных</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FileVersion" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Версия файла. Следует использовать, если передавались несколько версий файла с данными за один период</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CompanyName" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Наименование организации отправителя</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CompanyINN" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>ИНН организации отправителя</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CompanyKPP" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>КПП организации отправителя</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AgreementNo" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Номер договора доверительного управления</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ClientName" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Наименование организации получателя</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ClientINN" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>ИНН организации получателя</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ClientKPP" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>КПП организации получателя</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="DateCreate" type="xs:date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Дата подготовки файла</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="DateStart" type="xs:date">
+								<xs:annotation>
+									<xs:documentation>Дата начала периода, за который предоставлены данные</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="DateEnd" type="xs:date">
+								<xs:annotation>
+									<xs:documentation>Дата окончания периода, за который предоставлены данные</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Log" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Лог загрузки</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="УправляющаяКомпания">
+					<xs:annotation>
+						<xs:documentation>Справочная информация об управляющей компании</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ExtCode" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Уникальный код управляющей компании</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ShortName" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Сокращенное наименование управляющей компании</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Name" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Полное наименование управляющей компании</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="INN" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>ИНН управляющей компании</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="KPP" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>КПП управляющей компании</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Log" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Лог загрузки</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="СправочнаяИнформация" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>классификаторы и списки</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ДоговорыДУ">
+								<xs:annotation>
+									<xs:documentation>Список договоров доверительного управления (портфели), в том числе портфель собственного размещения (для целей загрузки данных от специализированного депозитария).</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ДоговорДУ" type="ДоговорДУ" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ВидыФИ" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Классификатор возможных видов финансовых инструментов по видам</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ВидФИ" type="ВидФИ" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ФинансовыеИнструменты" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список финансовых инструментов</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ФинансовыйИнструмент" type="ФинансовыйИнструмент" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ТорговыеПлощадки" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список торговых площадок</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ТорговаяПлощадка" type="ТорговаяПлощадка" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Контрагенты" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список контрагентов, эмитентов, брокеров, депозитариев, банков</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Контрагент" type="Контрагент" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ДоговорыКонтрагентов" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список договоров с контрагентами</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ДоговорКонтрагента" type="ДоговорКонтрагента" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="БанковскиеСчета" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список банковских счетов</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="БанковскийСчет" type="БанковскийСчет" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="БрокерскиеСчета" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список брокерских счетов</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="БрокерскийСчет" type="БрокерскийСчет" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="СделкиТорговыеФИ" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Раздел содержит описание операций с финансовыми инструментами. Первичным документом является отчет брокера и договоры по внебиржевым сделкам.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Сделка" type="СделкаТорговыеФИ" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="НеторговыеОперации" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>В этом разделе описываются операции по финансовым инструментам, не связанным с покупкой и продажей, операции движения денежных средств и финансовых активов, прочие операции в рамках договора доверительного управления</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ВидыОпераций" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список типов операций, определяющих экономический смысл операции и методику отражения операций в бухгалтерском учете</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ВидОперации" type="ВидОперации" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Операции" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список операций и параметров операций. Первичные документы - выписки банка, бухгалтерские справки.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Операция" type="Операция" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ДанныеДляРасчетов" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>В этом разделе описывается дополнительная информация, необходимая для проведения расчетов и начислений по финансовым инструментам, а также для подготовки примечаний к бухгалтерской отчетности</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ВидыКотировок" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список видов котировок, например, «Рыночная цена (1)», «Рыночная цена (3)», «Минимальная цена», «Максимальная цена» и т.д.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ВидКотировки" type="ВидКотировки" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Котировки" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список значений биржевых котировок и расчетных цен по каждому финансовому инструменту на дату</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Котировка" type="Котировка" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="КупонныеРасписания" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>График денежного потока по финансовым инструментам (облигациям), включая выплаты купонов и погашения номинала</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Выплата" type="ДенежныйПотокПоОблигации" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ГрафикиДенежногоПотока" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>График денежного потока по прочим финансовым инструментам (депозитам, займам и др.)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Выплата" type="ДенежныйПотокПрочим" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СправедливыеСтоимости" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Справедливая стоимость ценных бумаг и других финансовых инструментов на дату</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="СправедливаяСтоимость" type="СправедливаяСтоимость" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="АмортизированныеСтоимости" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Ставки дисконтирования и амортизированная стоимость финансовых инструментов по партиям на дату</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="АмортизированнаяСтоимость" type="АмортизированнаяСтоимость" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ДанныеПоКредитнымРейтингам" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>В этом разделе описывается данные по кредитным рейтингам, которые присваивают эмитентам и ценным бумагам рейтинговые агентства. Эта информация может передаваться управляющей компанией для целей подготовки примечаний к отчетности</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="РейтинговыеАгентства" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список рейтинговых агентств</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="РейтинговоеАгентство" type="РейтинговоеАгентство" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ШкалыРейтингов" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Классификатор шкал рейтингов</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ШкалаРейтинга" type="ШкалаРейтинга" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ЗначенияРейтингов" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Классификатор значений рейтингов рейтинговой шкалы</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Рейтинг" type="Рейтинг" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ЗначенияПрогнозовРейтингов" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Классификатор прогнозов рейтингов</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ПрогнозныйРейтинг" type="ПрогнозныйРейтинг" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="РейтингиФИ" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список значений рейтингов по каждому финансовому инструменту (облигационному выпуску) на дату</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="РейтингФИ" type="РейтингФИ" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="РейтингиКонтрагентов" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Список значений рейтингов по каждому контрагенту на дату</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="РейтингКонтрагента" type="РейтингКонтрагента" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="РейтингиБанков" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="РейтингБанка" type="РейтингБанка" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ПрочиеКлассификаторы" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Прочие списки и классификаторы</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ИсторияОбъемовВыпуска" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>График изменения объема выпуска финансовых инструментов (ценных бумаг)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ИзменениеОбъемаВыпуска" type="ИзменениОбъемаВыпуска" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ИсторияПризнанияОРЦБ" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>График изменения признака "Обращается на ОРЦБ" по финансовым инструментам (ценным бумагам)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ПризнаниеОРЦБ" type="ПризнаниеОРЦБ" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ИсторияВключенияВТорги" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>График включения/исключения выпуска ценной бумаги в биржевые торги</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ВключениеВТорги" type="ВключениеВТорги" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Отрасли" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Классификатор отраслей контрагентов для подготовки примечаний к отчетности</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Отрасль" type="Отрасли" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ДанныеБухгалтерскогоУчета" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Перечень бухгалтерских проводок по счетам второго порядка</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Проводки" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="БухПроводка" type="БухПроводка" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Аналитика" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="АналитичПризнакиСчетов" type="АналитичПризнакиСчетов" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="ИдентификаторДоговораДУ">
+			<xs:selector xpath="СправочнаяИнформация/ДоговорыДУ/ДоговорДУ"/>
+			<xs:field xpath="ExtCode"/>
+		</xs:key>
+		<xs:key name="ИдентификаторФИ">
+			<xs:selector xpath="СправочнаяИнформация/ФинансовыеИнструменты/ФинансовыйИнструмент"/>
+			<xs:field xpath="ExtCode"/>
+		</xs:key>
+		<xs:key name="ИдентификаторКонтрагента">
+			<xs:selector xpath="СправочнаяИнформация/Контрагенты/Контрагент"/>
+			<xs:field xpath="ExtCode"/>
+		</xs:key>
+		<xs:keyref name="СделкаСсылкаНаДоговорДУ" refer="ИдентификаторДоговораДУ">
+			<xs:selector xpath="СделкиТорговыеФИ/Сделка"/>
+			<xs:field xpath="TrustAgrCode"/>
+		</xs:keyref>
+		<xs:keyref name="СделкаСсылкаНаФи" refer="ИдентификаторФИ">
+			<xs:selector xpath="СделкиТорговыеФИ/Сделка"/>
+			<xs:field xpath="FICode"/>
+		</xs:keyref>
+		<xs:keyref name="НеторговыеОперацииСсылкаНаДоговорДУ" refer="ИдентификаторДоговораДУ">
+			<xs:selector xpath="НеторговыеОперации/Операции/Операция"/>
+			<xs:field xpath="TrustContrCode"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:complexType name="АмортизированнаяСтоимость">
+		<xs:sequence>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TrustAgrCode">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора, который заключен между УК/СД и НПФ (портфель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExtTradeCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код сделки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата, на которую определена ставка дисконтирования и амортизированная стоимость</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EffectiveInterestRate" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Ставка дисконтирования (рыночная или ЭСП) на дату</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AmortizedCost" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Амортизированная стоимость на дату</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="АналитичПризнакиСчетов">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный идентификатор записи об аналитическом признаке, присвоенный системой – источником данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountNo" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Код из рабочего плана счетов (стандартный вариант – номер счета 2 порядка)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcountCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный идентификатор (код) вида аналитического признака, присвоенный системой – источником данных.
+Примечание: рекомендуется согласовать коды аналитических признаков с системой – приемником данных
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcObjectName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Название объекта / справочника, используемого в аналитическом признаке:  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcOrder">
+				<xs:annotation>
+					<xs:documentation>Порядковый номер аналитического признака для данного бухгалтерского счета</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+						<xs:enumeration value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SubcPositionBegin" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Заполняется для признаков, включаемых в лицевой счет - начальная позиция значения признака в лицевом счете. 
+Признаки располагаются не ранее позиции 11 в лицевом счете
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcPositionEnd" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Заполняется для признаков, включаемых в лицевой счет - конечная позиция значения признака в лицевом счете</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="БанковскийСчет">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код банковского счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccKindCode" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>Виды банковских счетов. Произвольный классификатор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BIC" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Банковский идентификационный код</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountNo" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Номер банковского счета (расчетного, депозитного счета)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты банковского счета в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OpeningDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата открытия банковского счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClosingDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата закрытия банковского счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента (банка)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="БрокерскийСчет">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код брокерского счета в системе УК/СД</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountNo" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Клиентский код (номер брокерского счета)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты брокерского счета в соответствии с Общероссийским классификатором валют по умолчанию</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OpeningDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата открытия брокерского счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClosingDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата закрытия брокерского счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента (брокера)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="БухПроводка">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный идентификатор проводки, присвоенный системой – источником данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TransDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата проведения проводки в бухгалтерском учете</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocumDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата исходного документа, с которым связана проводка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Amount" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Сумма проводки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccDebit">
+				<xs:annotation>
+					<xs:documentation>Код из рабочего плана счетов (стандартный вариант - счет 2 порядка)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AccCredit">
+				<xs:annotation>
+					<xs:documentation>Код из рабочего плана счетов (стандартный вариант - счет 2 порядка)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SymbSFPDebit" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Заполняется, если счет дебета связан с доходами / расходами</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SymbSFPCredit" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Заполняется, если счет кредита связан с доходами / расходами</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LedgerAccDebit" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Лицевой счет, составленный по правилам стандарта, с учетом включенных аналитических признаков</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LedgerAccCredit" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Лицевой счет, составленный по правилам стандарта, с учетом включенных аналитических признаков</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование / основное содержание бухгалтерской операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocumentNo" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Номер первичного документа - основания для операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OperTypeCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Идентификатор из справочника заданных видов операций, присвоенного системой – источником данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrRateDebit" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Курс валюты – дебет
+Заполняется, если в лицевом счете дебета код валюты отличается от кода рубля</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrRateCredit" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Курс валюты – кредит
+Заполняется, если в лицевом счете кредита код валюты отличается от кода рубля</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FiscalAccDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата учета операции в налоговом учете. Заполняется, если дата проведения отличается для целей налогового учета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FiscalAccAmount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Принимаемая сумма операции в налоговом учете. Заполняется, если сумма проведения отличается для целей налогового учета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TemporTaxDiffer" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сумма временной разницы
+Заполняется, если сумма проводки по бухгалтерскому учету не совпадает с суммой по налоговому учету
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcDebit1" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Аналитический признак 1 (Дебет)
+Код значения записи (справочника, объекта) признака, применяемого для данного счета.
+Примечание:
+Данная и последующие строки заполняются в соответствии с настроенным порядком аналитических признаков для используемых в проводке счетов (справочник Аналитических признаков), при наличии соответствующего аналитического признака
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcDebit2" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcDebit3" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcDebit4" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcDebit5" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcCredit1" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcCredit2" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcCredit3" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcCredit4" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubcCredit5" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код значения записи (справочника, объекта) признака, применяемого для данного счета </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QuantityDebit" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Количество Дт</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QuantityCredit" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Количество Кт</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ВидКотировки">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вида котировки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование вида котировки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ВидОперации">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код типа операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование типа операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ParentGroup" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вышестоящего типа операции в иерархии</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ВидФИ">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вида финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование вида финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ParentGroup" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вышестоящего Вида финансового инструмента в иерархии УК/СД</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ВключениеВТорги">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи о статусе в биржевых торгах</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TradingFlCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код торговой площадки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата включения в биржевые торги</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OutDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата исключения из биржевых торгов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QuotLevel">
+				<xs:annotation>
+					<xs:documentation>Уровень котировального листа для финансового инструмента, например
+1 – 1 уровень
+2 – 2 уровень
+3 – 3 уровень</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ДенежныйПотокПоОблигации">
+		<xs:annotation>
+			<xs:documentation>Выплата по облигации</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи расписания</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты финансового инструмента в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Расчетная дата выплат купона, дата погашения номинала, дата объявления в открытых источника о принятии эмитентом решений в отношении даты оферты или дате дополнительной оферты.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Start_Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата начала купонного периода, дата начала периода предъявления к погашению для офреты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ext_Offer_Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата оферты/дополнительной офреты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentType">
+				<xs:annotation>
+					<xs:documentation>Тип выплат
+0 - купон 1 - оферта 2 - частичное погашение/ погашение номинала</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Rate" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Ставка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Amount" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Сумма выплат</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Примечание</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ДенежныйПотокПрочим">
+		<xs:annotation>
+			<xs:documentation>Выплата по прочим инструментам</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи графика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RateType">
+				<xs:annotation>
+					<xs:documentation>Тип ставки
+0 - основная ставка 1 - ставка досрочного расторжения 2 - переменная ставка</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Rate" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Ставка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата начала действия</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpireDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата окончания действия</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentType">
+				<xs:annotation>
+					<xs:documentation>Тип выплат
+0 - проценты
+1- Основной долг</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Amount" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Сумма выплат</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ДоговорДУ">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора доверительного управления</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование договора доверительного управления</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UKCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код управляющей компании</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExtFundCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код негосударственного пенсионного фонда</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FundName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование негосударственного пенсионного фонда</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FundsKind" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Вид средств, переданных в доверительное управление для целей раздельного учета пенсионных резервов, пенсионных накоплений и собственных средств или имущества, предназначенного для осуществления уставной деятельности.
+Например,
+ПР – пенсионные резервы
+ПН – пенсионные накопления
+СС – собственные средства</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ПР"/>
+						<xs:enumeration value="ПН"/>
+						<xs:enumeration value="СС"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ДоговорКонтрагента">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора с контрагентом</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TrustAgrCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора ДУ, который заключен между УК/СД и Фондом (портфель), в рамках которого заключен договор</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TransType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Определяет направление договора
+0 - договор с поставщиком 1 - договор с клиентом</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AgrSupplType">
+				<xs:annotation>
+					<xs:documentation>Определяет, является ли договор основным или это дополнительное соглашение</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Description" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Текст содержания (предмет) договора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AgreementNo" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Номер договора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AgreementDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата заключения договора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата начала действия договора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpireDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата окончания действия договора</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AgrCurrencyCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты договора в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PayCurrencyCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты расчетов по договору в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ИзменениОбъемаВыпуска">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи об изменении объема выпуска</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата изменения объема выпуска (начала действия нового значения объема)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NominalValue" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Значение номинала одной бумаги</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssueVolume" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Объем выпуска финансового инструмента в штуках (после изменения)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssueValue" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Объем выпуска финансового инструмента в валюте номинала (после изменения)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты номинала в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комментарий к обстоятельствам (основаниям) изменения объема выпуска</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Контрагент">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IndivEnterpr">
+				<xs:annotation>
+					<xs:documentation>Тип контрагента
+0 - юридическое лицо
+1 - Индивидуальный Предприниматель 
+2 - физическое лиц</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ShortName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Краткое наименование контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Полное наименование контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="INN" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Идентификационный номер налогоплательщика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="KPP" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код причины постановки на учет</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrunchCode" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код отрасли (отраслевой группы), к которой относится контрагент</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Resident">
+				<xs:annotation>
+					<xs:documentation>Признак, является ли контрагент нерезидентом
+0 - нерезидент
+1 - резидент</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LegalAddress" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Юридический адрес контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FactAddress" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Почтовый адрес контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PostalAddress" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Почтовый адрес контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OGRN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ОГРН или ОГРНИП эмитента-резидента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TIN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Идентификационный номер налогоплательщика эмитента - нерезидента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Category" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Классификация контрагента, например
+ 1 - Российская Федерация
+ 2 – Субъекты РФ и органы местного самоуправления
+ 3 – Кредитные организации
+ 4 – Прочие резиденты
+ 5 – Иностранные государства
+ 6 – Банки-нерезиденты
+ 7 - Прочие нерезиденты</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+						<xs:enumeration value="5"/>
+						<xs:enumeration value="6"/>
+						<xs:enumeration value="7"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OKATO" type="xs:string" minOccurs="0"/>
+			<xs:element name="OKSM" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ОКСМ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OKTMO" type="xs:string" minOccurs="0"/>
+			<xs:element name="LastName" type="xs:string" minOccurs="0"/>
+			<xs:element name="FirstName" type="xs:string" minOccurs="0"/>
+			<xs:element name="BirthDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата рождения физического лица</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdentificationNo" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Серия и номер паспорта или иного удостоверения личности</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreditOrganization" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Кредитная или некредитная 
+0 – Нет
+1 - Да
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Non-profit" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Некоммерческая или коммерческая
+0 – Нет
+1 - Да</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Financial" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0 – нефинансовая организация
+1 – финансовая организация
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GovernmentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Вид государственного управления
+1 - Федеральное казначейство
+2 - Финансовые органы
+3 - Внебюджетные фонды
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OKFS" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код ОКФС</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OKVED" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код ОКВЭД</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OKGU" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код ОКОГУ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EconomySectorCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код сектора экономики из формы ОКУД 0420415</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="S11"/>
+						<xs:enumeration value="S111"/>
+						<xs:enumeration value="S112"/>
+						<xs:enumeration value="S121"/>
+						<xs:enumeration value="S122"/>
+						<xs:enumeration value="S124"/>
+						<xs:enumeration value="S125"/>
+						<xs:enumeration value="S1251"/>
+						<xs:enumeration value="S128"/>
+						<xs:enumeration value="S129"/>
+						<xs:enumeration value="S13"/>
+						<xs:enumeration value="S131"/>
+						<xs:enumeration value="S132"/>
+						<xs:enumeration value="S133"/>
+						<xs:enumeration value="S134"/>
+						<xs:enumeration value="S14"/>
+						<xs:enumeration value="S2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Котировка">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи по котировке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата котировки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SourceCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код торговой площадки, ценового центра или информационного агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CalculationsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Режим торгов
+0 - Режим основных торгов: Т0 1 - Режим основных торгов: Т+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="QuotKindCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вида котировки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QuotValue" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Значение котировки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Currency" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты котировки в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Операция">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный номер операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TrustContrCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора доверительного управления, который заключен между УК/СД и НПФ (портфель)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OperTypeCode">
+				<xs:annotation>
+					<xs:documentation>Уникальный код типа операции</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента. Заполняется для операций, связанных с финансовыми инструментами</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TradeCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код сделки/документа. Заполняется для операций, связанных с покупкой и продажей финансовых инструментов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PayerBankAccCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код банковского счета Отправителя. Заполняется, если проходит операция по движению денежных средств</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ReceiverBankAccCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код банковского счета Получателя. Заполняется, если проходит операция по перемещению денежных средств между своими расчетными счетами</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocumentNo" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Внешний номер документа по операции. Для операций движения денежных средств - номер платежного документа (по нумерации контрагента). Для операций поставки/списания - номер акта или иного документа, подтверждающего поставку/продажу</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PostDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата учета операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Описание из документа (например, для платежного документа = назначение платежа</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Quantity" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Количество финансовых инструментов по операции Заполняется только для операций, связанных с финансовыми инструментами</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты сделки в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Amount" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Сумма операции покупки/продажи/оплаты в валюте самой операции (договора, сделки, банковского счета и прочего)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента по операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContAgrCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора с контрагентом по операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CashFlowCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер строки отчета о потоках денежных средств (Приложения 7, 8 к Положению Банка России N 527-П в редакции 4273-У)
+Обязательно для заполнения по операциям движения средств на расчетных счетах.
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Отрасли">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код отрасли (отраслевой группы)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование отрасли (отраслевой группы)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ПризнаниеОРЦБ">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи о статусе (признании)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата признания статуса финансового инструмента (обращающимся или не обращающимся на ОРЦБ)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActiveSecurStatus">
+				<xs:annotation>
+					<xs:documentation>Устанавливаемое значение статуса финансового инструмента
+0 – не обращается на ОРЦБ
+1 – обращается на ОРЦБ</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ПрогнозныйРейтинг">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код прогноза рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ForecastRatingValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Значение прогноза рейтинга. Например, негативный, позитивный, стабильный, развивающийся и др.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Рейтинг">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтинга рейтинговой шкалы</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RACode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ScaleCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код шкалы рейтингов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RatingValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Значение кода рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnifRating" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Значение унифицированного рейтинга, соответствующее данному значению рейтинга в используемой шкале
+A, B, C, D,
+0 (без рейтинга)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="A"/>
+						<xs:enumeration value="B"/>
+						<xs:enumeration value="C"/>
+						<xs:enumeration value="D"/>
+						<xs:enumeration value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="РейтингБанка">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи о рейтинге банка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BankCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента (банка)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата присвоения рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RACode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ScaleCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код шкалы рейтингов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RValueCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код значения рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ForecastRVCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код прогноза рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="РейтингКонтрагента">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи о рейтинге контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента (эмитента, банка и т.д.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата присвоения рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RACode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ScaleCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код шкалы рейтингов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RValueCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код значения рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ForecastRVCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код прогноза рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="РейтинговоеАгентство">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="РейтингФИ">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи о рейтинге финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата присвоения рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RACode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ScaleCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код шкалы рейтингов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RValueCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код значения рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ForecastRVCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код прогноза рейтинга</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="СделкаТорговыеФИ">
+		<xs:annotation>
+			<xs:documentation>Операции с финансовыми инструментами</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код сделки/документа</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TransType">
+				<xs:annotation>
+					<xs:documentation>Тип операции с финансовым инструментом
+0 - покупка 1 - продажа</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CalculationsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Режим торгов
+0 - T0 1 - Т+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TradingFlCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код торговой площадки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TradeDateTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Дата и время сделки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocumentNo" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Внешний номер сделки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Quantity" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Количество финансовых инструментов, участвующих в сделке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Price" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цена финансового инструмента в абсолютном выражении</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты сделки в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Amount" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Сумма сделки в валюте сделки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ACI" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Начисленный купонный доход</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента (или брокера) по сделке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContAgrCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора с контрагентом по сделке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrokerCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код брокера (контрагента)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrokerAgrCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора с брокером</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrokerAccCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код брокерского счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TFCommCurrencyCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цифровой код комиссии биржи в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFCommAmount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Комиссия биржи с НДС в валюте комиссии биржи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TFCommDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата отражения комиссии биржи по брокерскому счету</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrCommCurrencyCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код валюты комиссии брокера</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BrCommAmount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сумма комиссии брокера в валюте комиссии брокера</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BRCommDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата отражения комиссии брокера по брокерскому счету</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Текстовый комментарий к сделке</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PayDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата оплаты финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DelivDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата поставки финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPOTrade">
+				<xs:annotation>
+					<xs:documentation>Тип операции РЕПО
+0 - нет 1 – Прямое 2 – Обратное
+3 – Двойное РЕПО (короткая позиция)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="REPORate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ставка РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO1Code" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Для сделок РЕПО указывается уникальный код сделки первой части РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2PlanDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Плановая дата исполнения 2 части сделки РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2Price" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цена исполнения второй части сделки РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2Amount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<!--					<xs:documentation>Цена исполнения второй части сделки РЕПО</xs:documentation>-->
+					<xs:documentation>Сумма исполнения второй части сделки РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2PercNomPrice" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цена финансового инструмента в процентах от номинала по второй части РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2ACI" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Начисленный купонный доход на дату второй части РЕПО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2Rate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Курс по 2 части сделки, в валюте сделки (валютный своп)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REPO2Agreement" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный идентификатор договора в валюте второй части сделки (рублевый, владелец - контрагент адресной сделки или брокер)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TrustAgrCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора, который заключен между УК/СД и НПФ (портфель), в рамках которого совершена торговая операция</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Address">
+				<xs:annotation>
+					<xs:documentation>Признак адресности сделки
+0 - Нет
+1 – Да</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EIR" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Эффективная ставка процента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Минимальное значение диапазона рыночной ставки (профессиональное суждение). Если процентная ставка по договору ниже значения минимальной рыночной ставки, то в качестве эффективной ставки процента принимается минимальная рыночная процентная ставка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Максимальное значение диапазона рыночной ставки (профессиональное суждение). Если процентная ставка по договору выше значения максимальной рыночной ставки, то в качестве эффективной ставки процента принимается максимальная рыночная процентная ставка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CategoryFI">
+				<xs:annotation>
+					<xs:documentation>Классификация ценных бумаг при первоначальном признании
+1 - Ценные бумаги, оцениваемые по справедливой стоимости через прибыль или убыток
+2 - Долговые ценные бумаги, удерживаемые до погашения ценные
+Необязательно
+бумаги
+3 - Имеющиеся в наличии для продажи
+4 - Долговые ценные бумаги (включая векселя), учитываемые по амортизированной стоимости (кроме долговых ценных бумаг, удерживаемых до погашения)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+						<xs:enumeration value="5"/>
+						<xs:enumeration value="6"/>
+						<xs:enumeration value="7"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PercNomPrice" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Цена финансового инструмента в процентах от номинала</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubCategoryIAS39">
+				<xs:annotation>
+					<xs:documentation>Подкатегория ценной бумаги по IAS 39
+1 - Ценные бумаги, удерживаемые для торговли; 
+2 - Ценные бумаги, классифицируемые как оцениваемые по справедливой стоимости, изменения которой отражаются в составе прибыли или убытка при первоначальном признании
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SubCategoryIFRS9">
+				<xs:annotation>
+					<xs:documentation>Подкатегория ценной бумаги по IFRS 9
+1 - В обязательном порядке классифицируемые как оцениваемые по справедливой стоимости через прибыль или убыток 
+2 - Классифицируемые как оцениваемые по справедливой стоимости через прибыль или убыток по усмотрению организации
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="InvestType">
+				<xs:annotation>
+					<xs:documentation>Тип инвестиций
+1 – Ассоциированное предприятие
+2 – Совместно контролируемое предприятие
+3 – Дочернее предприятие
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PurchaseOnPlacement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>признак первичного размещения: 1 - да 0 - нет</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="СправедливаяСтоимость">
+		<xs:sequence>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код записи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FICode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TrustAgrCode">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора, который заключен между УК/СД и НПФ (портфель</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата, на которую определена справедливая стоимость</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QuotValue" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>Значение котировки справедливой стоимости</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SourceCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код торговой площадки, ценового центра или информационного агентства по данным которого определена справедливая стоимость</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FairValueLevel">
+				<xs:annotation>
+					<xs:documentation>Уровень иерархии справедливой стоимости</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SourceDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Дата используемой котировки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SourceQuotKindCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вида базовой котировки, которая использовалась для определения справедливой стоимости</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ТорговаяПлощадка">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код торговой площадки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование торговой площадки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StockKind">
+				<xs:annotation>
+					<xs:documentation>Признак, определяющий, является ли торговая площадка биржевой</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="УправляющаяКомпания">
+		<xs:annotation>
+			<xs:documentation>Сведения управляющей компании</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ShortName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Краткое наименование контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Полное наименование контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="INN" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Идентификационный номер налогоплательщика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="KPP" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код причины постановки на учет</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ФинансовыйИнструмент">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FIKindCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код вида финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ShortName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Краткое наименование финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Полное наименование финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurrencyCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Цифровой код валюты финансового инструмента в соответствии с Общероссийским классификатором валют</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RepaymDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата погашения финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegistrNo" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер государственной регистрации ценной бумаги</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ISIN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Международный идентификационный код ценной бумаги</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PrincipAmount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номинал финансового инструмента (ценной бумаги) при выпуске</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssuerCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код эмитента (контрагента)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Series" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Выпуск или серия ценной бумаги</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssueDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата выпуска финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssueVolume" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Первоначальный объем выпуска финансового инструмента в штуках</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssueAmount" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Первоначальный объем выпуска финансового инструмента в валюте номинала</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaceStartDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата начала размещения финансового инструмента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IndexPrincipAmount" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Признак, является ли финансовый инструмент долговой ценной бумагой с индексируемым номиналом</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DerivativeFI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Производный финансовый инструмент</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DerivativeFIType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Вид производного финансового инструмента 1. Фьючерс
+2. Форвард
+3. Опцион
+4. Своп
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DerivativeFIForHedging" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ПФИ, используемые для хеджирования</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BuiltInDerivativeFI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Встроенный производный финансовый инструмент</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FITypeCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код типа ценной бумаги в соответствии с формой ОКУД 0420415</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="BON1"/>
+						<xs:enumeration value="BON2"/>
+						<xs:enumeration value="BON3"/>
+						<xs:enumeration value="BON4"/>
+						<xs:enumeration value="BON5"/>
+						<xs:enumeration value="BON6"/>
+						<xs:enumeration value="BON7"/>
+						<xs:enumeration value="DS1"/>
+						<xs:enumeration value="DS2"/>
+						<xs:enumeration value="SS1"/>
+						<xs:enumeration value="SS2"/>
+						<xs:enumeration value="SHS1"/>
+						<xs:enumeration value="SHS2"/>
+						<xs:enumeration value="SHS3"/>
+						<xs:enumeration value="SHS4"/>
+						<xs:enumeration value="SHS5"/>
+						<xs:enumeration value="SHS6"/>
+						<xs:enumeration value="SHS7"/>
+						<xs:enumeration value="SHS8"/>
+						<xs:enumeration value="BIL1"/>
+						<xs:enumeration value="BIL2"/>
+						<xs:enumeration value="BIL3"/>
+						<xs:enumeration value="BIL4"/>
+						<xs:enumeration value="BIL5"/>
+						<xs:enumeration value="BIL6"/>
+						<xs:enumeration value="BIL7"/>
+						<xs:enumeration value="DR"/>
+						<xs:enumeration value="CON"/>
+						<xs:enumeration value="WTS"/>
+						<xs:enumeration value="OPN"/>
+						<xs:enumeration value="ENC"/>
+						<xs:enumeration value="KSU"/>
+						<xs:enumeration value="ISU"/>
+						<xs:enumeration value="OTHER"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EIR" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Эффективная ставка процента (указывается только для депозитов и займов)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Минимальное значение диапазона рыночной ставки (профессиональное суждение). Если процентная ставка по договору ниже значения минимальной рыночной ставки, то в качестве эффективной ставки процента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxRate" type="xs:decimal" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Максимальное значение диапазона рыночной ставки (профессиональное суждение). Если процентная ставка по договору выше значения максимальной рыночной ставки, то в качестве эффективной ставки процента принимается максимальная рыночная процентная ставка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CategoryFI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Классификация финансового инструмента при первоначальном признании (значение по умолчанию для депозитов и займов)
+IAS 39
+1 - Ценные бумаги, оцениваемые по справедливой стоимости через прибыль или убыток
+2 - Долговые ценные бумаги, удерживаемые до погашения ценные бумаги
+3 - Имеющиеся в наличии для продажи
+4 - Долговые ценные бумаги (включая векселя), учитываемые по амортизированной стоимости (кроме долговых ценных бумаг, удерживаемых до погашения)
+IFRS 9
+5- Ценные бумаги, оцениваемые по амортизированной стоимости;
+6 - Ценные бумаги, оцениваемые по справедливой стоимости через прочий совокупный доход;
+7 - Ценные бумаги, оцениваемые по справедливой стоимости через прибыль или убыток
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+						<xs:enumeration value="5"/>
+						<xs:enumeration value="6"/>
+						<xs:enumeration value="7"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BankAccNo" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код банковского (депозитного) счета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PercStartDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата начала расчета процентов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractorCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код контрагента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContrAgrCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный код договора с контрагентом</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RecurrDeposit" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Признак, определяющий, является ли депозит пополняемым</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PercBasis" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Способ начисления процентов 
+0 - Простой (без капитализации)
+ 1 - Сложный (с капитализацией)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CapitalPeriod" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сроки капитализации процентов
+0 - Ежемесячно 
+1 - Ежеквартально
+2 - Ежегодно
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PercPayPeriod" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Признак определяет периодичность выплаты процентов.
+Например,
+0 - неопределено
+1 - ежемесячно 
+2 - ежеквартально
+3 - ежегодно 
+4 - по полугодиям 
+5 - в конце срока 
+6 - в дату размещения</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+						<xs:enumeration value="5"/>
+						<xs:enumeration value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ШкалаРейтинга">
+		<xs:sequence>
+			<xs:element name="ExtCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код шкалы рейтингов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Наименование шкалы рейтингов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RACode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Уникальный код рейтингового агентства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Log" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Лог загрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
