@@ -1,0 +1,2762 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="211">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="212"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаРеквизитыШапки" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа реквизиты шапки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа реквизиты шапки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРеквизитыШапкиРасширеннаяПодсказка" id="2"/>
+					<ChildItems>
+						<RadioButtonField name="ВариантРасчета" id="6">
+							<DataPath>Объект.ВариантРасчета</DataPath>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>ИИС</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вознаграждение агента</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>ПИФ</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Прочие</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">3</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ВариантРасчетаКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="ВариантРасчетаРасширеннаяПодсказка" id="8"/>
+							<Events>
+								<Event name="OnChange">РежимРасчетаПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<InputField name="Организация" id="295">
+							<DataPath>Объект.Организация</DataPath>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="296"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="297"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="ОрганизацияНадпись" id="49">
+							<DataPath>Объект.Организация</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ОрганизацияНадписьКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ОрганизацияНадписьРасширеннаяПодсказка" id="51"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<CommandBar name="КоманднаяПанельФормы" id="209">
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="КоманднаяПанельФормыРасширеннаяПодсказка" id="210"/>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройкиВариантаРасчета" id="215">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиВариантаРасчетаРасширеннаяПодсказка" id="216"/>
+			<ChildItems>
+				<InputField name="ВидВознаграждения" id="217">
+					<DataPath>Объект.ВидВознаграждения</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>22</MaxWidth>
+					<ContextMenu name="ВидВознагражденияКонтекстноеМеню" id="218"/>
+					<ExtendedTooltip name="ВидВознагражденияРасширеннаяПодсказка" id="219"/>
+					<Events>
+						<Event name="OnChange">ВидВознагражденияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПериодичностьРасчета" id="220">
+					<DataPath>Объект.ПериодичностьРасчета</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Периодичность</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Периодичность расчета</v8:content>
+						</v8:item>
+					</ToolTip>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>20</MaxWidth>
+					<ContextMenu name="ПериодичностьРасчетаКонтекстноеМеню" id="221"/>
+					<ExtendedTooltip name="ПериодичностьРасчетаРасширеннаяПодсказка" id="222"/>
+					<Events>
+						<Event name="OnChange">ПериодичностьРасчетаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаРасчета" id="130">
+					<DataPath>Объект.ДатаРасчета</DataPath>
+					<ContextMenu name="ДатаРасчетаКонтекстноеМеню" id="131"/>
+					<ExtendedTooltip name="ДатаРасчетаРасширеннаяПодсказка" id="132"/>
+					<Events>
+						<Event name="OnChange">ДатаРасчетаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="БазовыйПериод" id="226">
+					<DataPath>БазовыйПериод</DataPath>
+					<TextColor>web:Green</TextColor>
+					<ContextMenu name="БазовыйПериодКонтекстноеМеню" id="227"/>
+					<ExtendedTooltip name="БазовыйПериодРасширеннаяПодсказка" id="228"/>
+				</LabelField>
+				<InputField name="АгентскийДоговор" id="125">
+					<DataPath>Объект.АгентскийДоговор</DataPath>
+					<CreateButton>false</CreateButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="АгентскийДоговорКонтекстноеМеню" id="126"/>
+					<ExtendedTooltip name="АгентскийДоговорРасширеннаяПодсказка" id="127"/>
+					<Events>
+						<Event name="OnChange">АгентскийДоговорПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКаталогФайловExcel" id="358">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа каталог файлов excel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа каталог файлов excel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКаталогФайловExcelРасширеннаяПодсказка" id="359"/>
+			<ChildItems>
+				<InputField name="КаталогФайловExcel" id="360">
+					<DataPath>КаталогФайловExcel</DataPath>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="КаталогФайловExcelКонтекстноеМеню" id="361"/>
+					<ExtendedTooltip name="КаталогФайловExcelРасширеннаяПодсказка" id="362"/>
+					<Events>
+						<Event name="StartChoice">КаталогФайловExcelНачалоВыбора</Event>
+						<Event name="Opening">КаталогФайловExcelОткрытие</Event>
+					</Events>
+				</InputField>
+				<Button name="КомандаПодготовитьФайлыДляЭДО" id="363">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаПодготовитьФайлыДляЭДО</CommandName>
+					<ExtendedTooltip name="КомандаПодготовитьФайлыДляЭДОРасширеннаяПодсказка" id="364"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЗаполнить" id="233">
+			<Group>AlwaysHorizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗаполнитьРасширеннаяПодсказка" id="234"/>
+			<ChildItems>
+				<CommandBar name="КоманднаяПанельФормыДополнительная" id="213">
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedTooltip name="КоманднаяПанельФормыДополнительнаяРасширеннаяПодсказка" id="214"/>
+					<ChildItems>
+						<Button name="ВознагражденияУправляющегоКомандаОбновить" id="64">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.КомандаОбновить</CommandName>
+							<ExtendedTooltip name="ВознагражденияУправляющегоКомандаОбновитьРасширеннаяПодсказка" id="65"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+				<UsualGroup name="ГруппаОтбор" id="231">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Без отбора</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показать / скрыть настройки отбора</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>80</Width>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<Representation>None</Representation>
+					<TitleDataPath>ПредставлениеОтбора</TitleDataPath>
+					<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="232"/>
+					<ChildItems>
+						<CommandBar name="ГруппаКомандыОтбора" id="238">
+							<HorizontalStretch>false</HorizontalStretch>
+							<ExtendedTooltip name="ГруппаКомандыОтбораРасширеннаяПодсказка" id="239"/>
+							<ChildItems>
+								<ButtonGroup name="ГруппаКомандыОтбора1" id="240">
+									<ExtendedTooltip name="ГруппаКомандыОтбора1РасширеннаяПодсказка" id="241"/>
+									<ChildItems>
+										<Button name="ОтключитьОтбор" id="242">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.КомандаОтключитьОтбор</CommandName>
+											<ExtendedTooltip name="ОтключитьОтборРасширеннаяПодсказка" id="243"/>
+										</Button>
+										<Button name="ВосстановитьПараметрыОтбора" id="343">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ВосстановитьПараметрыОтбора</CommandName>
+											<ExtendedTooltip name="ВосстановитьПараметрыОтбораРасширеннаяПодсказка" id="344"/>
+										</Button>
+										<Button name="СохранитьПараметрыОтбора" id="345">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.СохранитьПараметрыОтбора</CommandName>
+											<ExtendedTooltip name="СохранитьПараметрыОтбораРасширеннаяПодсказка" id="346"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+								<Button name="ВосстановитьПараметры" id="244">
+									<Type>CommandBarButton</Type>
+									<Visible>false</Visible>
+									<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияАгента</CommandName>
+									<ExtendedTooltip name="ВосстановитьПараметрыРасширеннаяПодсказка" id="245"/>
+								</Button>
+								<Button name="СохранитьПараметры" id="246">
+									<Type>CommandBarButton</Type>
+									<Visible>false</Visible>
+									<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияУКЗаРазмещение</CommandName>
+									<ExtendedTooltip name="СохранитьПараметрыРасширеннаяПодсказка" id="247"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<UsualGroup name="ГруппаОтборСчетаДУ" id="329">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор счет ДУ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор счет ДУ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтборСчетаДУРасширеннаяПодсказка" id="330"/>
+							<ChildItems>
+								<InputField name="ОтборСчетДоверительногоУправленияВСписке" id="331">
+									<DataPath>ОтборСчетДоверительногоУправленияВСписке</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет внутреннего учета</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>БЛ=Равно; БИ='В списке'</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="ОтборСчетДоверительногоУправленияВСпискеКонтекстноеМеню" id="332"/>
+									<ExtendedTooltip name="ОтборСчетДоверительногоУправленияВСпискеРасширеннаяПодсказка" id="333"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборСчетДоверительногоУправления" id="235">
+									<DataPath>ОтборСчетДоверительногоУправления[0].Value</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>60</Width>
+									<DropListButton>true</DropListButton>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChooseType>false</ChooseType>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Организация</xr:Name>
+											<xr:DataPath xsi:type="xs:string">1/0:37f053fe-3df5-4695-a5d5-04cd2186a222</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="ОтборСчетДоверительногоУправленияКонтекстноеМеню" id="236"/>
+									<ExtendedTooltip name="ОтборСчетДоверительногоУправленияРасширеннаяПодсказка" id="237"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборСчетДоверительногоУправленияСписок" id="337">
+									<DataPath>ОтборСчетДоверительногоУправления</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>60</Width>
+									<ClearButton>true</ClearButton>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ОтборСчетДоверительногоУправленияСписокКонтекстноеМеню" id="338"/>
+									<ExtendedTooltip name="ОтборСчетДоверительногоУправленияСписокРасширеннаяПодсказка" id="339"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтборКлиенты" id="318">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор клиенты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор клиенты</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтборКлиентыРасширеннаяПодсказка" id="319"/>
+							<ChildItems>
+								<InputField name="ОтборКлиентВСписке" id="320">
+									<DataPath>ОтборКлиентВСписке</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Клиент</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>БЛ=Равно; БИ='В списке'</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="ОтборКлиентВСпискеКонтекстноеМеню" id="321"/>
+									<ExtendedTooltip name="ОтборКлиентВСпискеРасширеннаяПодсказка" id="322"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборКлиент" id="292">
+									<DataPath>ОтборКлиент[0].Value</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>60</Width>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="ОтборКлиентКонтекстноеМеню" id="293"/>
+									<ExtendedTooltip name="ОтборКлиентРасширеннаяПодсказка" id="294"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборКлиентСписок" id="326">
+									<DataPath>ОтборКлиент</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>60</Width>
+									<ClearButton>true</ClearButton>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ОтборКлиентСписокКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="ОтборКлиентСписокРасширеннаяПодсказка" id="328"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтборВидыДоговоровДУ" id="307">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор виды договоров ДУ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор виды договоров ДУ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтборВидыДоговоровДУРасширеннаяПодсказка" id="308"/>
+							<ChildItems>
+								<InputField name="ОтборВидДоговораДоверительногоУправленияВСписке" id="309">
+									<DataPath>ОтборВидДоговораДоверительногоУправленияВСписке</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид договора ДУ</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>БЛ=Равно; БИ='В списке'</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="ОтборВидДоговораДоверительногоУправленияВСпискеКонтекстноеМеню" id="310"/>
+									<ExtendedTooltip name="ОтборВидДоговораДоверительногоУправленияВСпискеРасширеннаяПодсказка" id="311"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборВидДоговораДоверительногоУправления" id="281">
+									<DataPath>ОтборВидДоговораДоверительногоУправления[0].Value</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>60</Width>
+									<DropListButton>true</DropListButton>
+									<ClearButton>true</ClearButton>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ОтборВидДоговораДоверительногоУправленияКонтекстноеМеню" id="282"/>
+									<ExtendedTooltip name="ОтборВидДоговораДоверительногоУправленияРасширеннаяПодсказка" id="283"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборВидДоговораДоверительногоУправленияСписок" id="315">
+									<DataPath>ОтборВидДоговораДоверительногоУправления</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>60</Width>
+									<ClearButton>true</ClearButton>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ОтборВидДоговораДоверительногоУправленияСписокКонтекстноеМеню" id="316"/>
+									<ExtendedTooltip name="ОтборВидДоговораДоверительногоУправленияСписокРасширеннаяПодсказка" id="317"/>
+									<Events>
+										<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ОтборСтратегияИндивидуальногоИнвестирования" id="289">
+							<DataPath>ОтборСтратегияИндивидуальногоИнвестирования</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="ОтборСтратегияИндивидуальногоИнвестированияКонтекстноеМеню" id="290"/>
+							<ExtendedTooltip name="ОтборСтратегияИндивидуальногоИнвестированияРасширеннаяПодсказка" id="291"/>
+							<Events>
+								<Event name="OnChange">ЭлементОтбораПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ПанельФормы" id="68">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ПанельФормыРасширеннаяПодсказка" id="69"/>
+			<ChildItems>
+				<Page name="СтраницаВознаграждениеУправляющего" id="70">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вознаграждение управляющего</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница вознаграждение управляющего</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаВознаграждениеУправляющегоРасширеннаяПодсказка" id="71"/>
+					<ChildItems>
+						<Table name="ВознагражденияУправляющего" id="12">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ВознагражденияУправляющего</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВознагражденияУправляющегоКонтекстноеМеню" id="13">
+								<ChildItems>
+									<Button name="КонтекстноеМенюКомандаПечатьРасчетаВознаграждения" id="284">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияТекущейСтроки</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Расшифровка расчета</v8:content>
+											</v8:item>
+										</Title>
+										<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+										<ExtendedTooltip name="КонтекстноеМенюКомандаПечатьРасчетаВознагражденияРасширеннаяПодсказка" id="285"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ВознагражденияУправляющегоКоманднаяПанель" id="14">
+								<ChildItems>
+									<ButtonGroup name="ВознагражденияУправляющегоГруппаФлажки" id="66">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вознаграждения управляющего группа флажки</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вознаграждения управляющего группа флажки</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ВознагражденияУправляющегоГруппаФлажкиРасширеннаяПодсказка" id="67"/>
+										<ChildItems>
+											<Button name="ВознагражденияУправляющегоКомандаУстановитьФлажки" id="45">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаУстановитьФлажки</CommandName>
+												<ExtendedTooltip name="ВознагражденияУправляющегоКомандаУстановитьФлажкиРасширеннаяПодсказка" id="46"/>
+											</Button>
+											<Button name="ВознагражденияУправляющегоКомандаСнятьФлажки" id="47">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаСнятьФлажки</CommandName>
+												<ExtendedTooltip name="ВознагражденияУправляющегоКомандаСнятьФлажкиРасширеннаяПодсказка" id="48"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="ВознагражденияУправляющегоКомандаСоздатьНачисления" id="62">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаСоздатьНачисления</CommandName>
+										<ExtendedTooltip name="ВознагражденияУправляющегоКомандаСоздатьНачисленияРасширеннаяПодсказка" id="63"/>
+									</Button>
+									<Popup name="ВознагражденияУправляющегоГруппаПечать" id="79">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Печать</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вознаграждения управляющего группа печать</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.Print</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="ВознагражденияУправляющегоГруппаПечатьРасширеннаяПодсказка" id="80"/>
+										<ChildItems>
+											<Button name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияДляБухгалтерии" id="77">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияДляБухгалтерии</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>(Устарела) Расчет вознаграждения для бухгалтерии</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияДляБухгалтерииРасширеннаяПодсказка" id="78"/>
+											</Button>
+											<Button name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияДляФормы482" id="84">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияДляФормы482</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Расчет вознаграждения для формы 482</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияДляФормы482РасширеннаяПодсказка" id="85"/>
+											</Button>
+											<Button name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияЗаПериодДляБухгалтерии" id="180">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияЗаПериодДляБухгалтерии</CommandName>
+												<ExtendedTooltip name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияЗаПериодДляБухгалтерииРасширеннаяПодсказка" id="181"/>
+											</Button>
+											<Button name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияПоПИФ" id="199">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияПоПИФ</CommandName>
+												<ExtendedTooltip name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияПоПИФРасширеннаяПодсказка" id="200"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознаграждения" id="229">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.КомандаПечатьРасчетаВознаграждения</CommandName>
+										<ExtendedTooltip name="ВознагражденияУправляющегоКомандаПечатьРасчетаВознагражденияРасширеннаяПодсказка" id="230"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВознагражденияУправляющегоРасширеннаяПодсказка" id="15"/>
+							<SearchStringAddition name="ВознагражденияУправляющегоСтрокаПоиска" id="16">
+								<AdditionSource>
+									<Item>ВознагражденияУправляющего</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознагражденияУправляющегоСтрокаПоискаКонтекстноеМеню" id="17"/>
+								<ExtendedTooltip name="ВознагражденияУправляющегоСтрокаПоискаРасширеннаяПодсказка" id="18"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВознагражденияУправляющегоСостояниеПросмотра" id="19">
+								<AdditionSource>
+									<Item>ВознагражденияУправляющего</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознагражденияУправляющегоСостояниеПросмотраКонтекстноеМеню" id="20"/>
+								<ExtendedTooltip name="ВознагражденияУправляющегоСостояниеПросмотраРасширеннаяПодсказка" id="21"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВознагражденияУправляющегоУправлениеПоиском" id="22">
+								<AdditionSource>
+									<Item>ВознагражденияУправляющего</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознагражденияУправляющегоУправлениеПоискомКонтекстноеМеню" id="23"/>
+								<ExtendedTooltip name="ВознагражденияУправляющегоУправлениеПоискомРасширеннаяПодсказка" id="24"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ВознагражденияУправляющегоВыбор</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="ВознагражденияУправляющегоФлажок" id="39">
+									<DataPath>ВознагражденияУправляющего.Флажок</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВознагражденияУправляющегоФлажокКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоФлажокРасширеннаяПодсказка" id="41"/>
+								</CheckBoxField>
+								<InputField name="ВознагражденияУправляющегоСчетДоверительногоУправления" id="25">
+									<DataPath>ВознагражденияУправляющего.СчетДоверительногоУправления</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="ВознагражденияУправляющегоСчетДоверительногоУправленияКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоСчетДоверительногоУправленияРасширеннаяПодсказка" id="27"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоСтратегия" id="42">
+									<DataPath>ВознагражденияУправляющего.Стратегия</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоСтратегияКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоСтратегияРасширеннаяПодсказка" id="44"/>
+								</InputField>
+								<ColumnGroup name="ВознагражденияУправляющегоГруппаВознаграждение" id="55">
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждения управляющего группа вознаграждение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ВознагражденияУправляющегоГруппаВознаграждениеРасширеннаяПодсказка" id="56"/>
+									<ChildItems>
+										<LabelField name="ВознагражденияУправляющегоОписание" id="223">
+											<DataPath>ВознагражденияУправляющего.Описание</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расчет</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<CellHyperlink>true</CellHyperlink>
+											<TextColor>web:Green</TextColor>
+											<ContextMenu name="ВознагражденияУправляющегоОписаниеКонтекстноеМеню" id="224"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоОписаниеРасширеннаяПодсказка" id="225"/>
+										</LabelField>
+										<InputField name="ВознагражденияУправляющегоСтавка" id="52">
+											<DataPath>ВознагражденияУправляющего.Ставка</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознагражденияУправляющегоСтавкаКонтекстноеМеню" id="53"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоСтавкаРасширеннаяПодсказка" id="54"/>
+										</InputField>
+										<InputField name="ВознагражденияУправляющегоСуммаВознаграждения" id="28">
+											<DataPath>ВознагражденияУправляющего.СуммаВознаграждения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознагражденияУправляющегоСуммаВознагражденияКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоСуммаВознагражденияРасширеннаяПодсказка" id="30"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ВознагражденияУправляющегоГруппаНачисление" id="57">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Начисление</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждения управляющего группа начисление</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ВознагражденияУправляющегоГруппаНачислениеРасширеннаяПодсказка" id="58"/>
+									<ChildItems>
+										<InputField name="ВознагражденияУправляющегоНачисление" id="31">
+											<DataPath>ВознагражденияУправляющего.Начисление</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Документ</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="ВознагражденияУправляющегоНачислениеКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоНачислениеРасширеннаяПодсказка" id="33"/>
+										</InputField>
+										<InputField name="ВознагражденияУправляющегоПериодНачисления" id="286">
+											<DataPath>ВознагражденияУправляющего.ПериодНачисления</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>10</MaxWidth>
+											<ContextMenu name="ВознагражденияУправляющегоПериодНачисленияКонтекстноеМеню" id="287"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоПериодНачисленияРасширеннаяПодсказка" id="288"/>
+										</InputField>
+										<InputField name="ВознагражденияУправляющегоСуммаНачисления" id="59">
+											<DataPath>ВознагражденияУправляющего.СуммаНачисления</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознагражденияУправляющегоСуммаНачисленияКонтекстноеМеню" id="60"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоСуммаНачисленияРасширеннаяПодсказка" id="61"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ВознагражденияУправляющегоГруппаПодписант" id="347">
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Данные подписанта</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждения управляющего группа подписант</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="ВознагражденияУправляющегоГруппаПодписантРасширеннаяПодсказка" id="348"/>
+									<ChildItems>
+										<InputField name="ВознагражденияУправляющегоПодписант" id="349">
+											<DataPath>ВознагражденияУправляющего.Подписант</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознагражденияУправляющегоПодписантКонтекстноеМеню" id="350"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоПодписантРасширеннаяПодсказка" id="351"/>
+											<Events>
+												<Event name="StartChoice">ВознагражденияУправляющегоПодписантНачалоВыбора</Event>
+												<Event name="ChoiceProcessing">ВознагражденияУправляющегоПодписантОбработкаВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ВознагражденияУправляющегоСтруктураПодписантОтКлиента" id="352">
+											<DataPath>ВознагражденияУправляющего.СтруктураПодписантОтКлиента</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознагражденияУправляющегоСтруктураПодписантОтКлиентаКонтекстноеМеню" id="353"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоСтруктураПодписантОтКлиентаРасширеннаяПодсказка" id="354"/>
+										</InputField>
+										<CheckBoxField name="ВознагражденияУправляющегоНуженПодписант" id="355">
+											<DataPath>ВознагражденияУправляющего.НуженПодписант</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВознагражденияУправляющегоНуженПодписантКонтекстноеМеню" id="356"/>
+											<ExtendedTooltip name="ВознагражденияУправляющегоНуженПодписантРасширеннаяПодсказка" id="357"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаВознаграждениеАгента" id="94">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вознаграждение агента</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница вознаграждение агента</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаВознаграждениеАгентаРасширеннаяПодсказка" id="95"/>
+					<ChildItems>
+						<Table name="ВознаграждениеАгента" id="96">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ВознаграждениеАгента</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВознаграждениеАгентаКонтекстноеМеню" id="97"/>
+							<AutoCommandBar name="ВознаграждениеАгентаКоманднаяПанель" id="98">
+								<ChildItems>
+									<Popup name="ВознаграждениеАгентаПечать" id="182">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Печать</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Печать</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.Print</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="ВознаграждениеАгентаПечатьРасширеннаяПодсказка" id="183"/>
+										<ChildItems>
+											<Button name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгента" id="121">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияАгента</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Расчет вознаграждения</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаРасширеннаяПодсказка" id="122"/>
+											</Button>
+											<Button name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаВБРР" id="365">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияАгентаВБРР</CommandName>
+												<ExtendedTooltip name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаВБРРРасширеннаяПодсказка" id="366"/>
+											</Button>
+											<Button name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаМКБ" id="184">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияАгентаМКБ</CommandName>
+												<ExtendedTooltip name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаМКБРасширеннаяПодсказка" id="185"/>
+											</Button>
+											<Button name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаДВБ" id="197">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияАгентаДВБ</CommandName>
+												<ExtendedTooltip name="ВознаграждениеАгентаКомандаПечатьРасчетаВознагражденияАгентаДВБРасширеннаяПодсказка" id="198"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВознаграждениеАгентаРасширеннаяПодсказка" id="99"/>
+							<SearchStringAddition name="ВознаграждениеАгентаСтрокаПоиска" id="100">
+								<AdditionSource>
+									<Item>ВознаграждениеАгента</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознаграждениеАгентаСтрокаПоискаКонтекстноеМеню" id="101"/>
+								<ExtendedTooltip name="ВознаграждениеАгентаСтрокаПоискаРасширеннаяПодсказка" id="102"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВознаграждениеАгентаСостояниеПросмотра" id="103">
+								<AdditionSource>
+									<Item>ВознаграждениеАгента</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознаграждениеАгентаСостояниеПросмотраКонтекстноеМеню" id="104"/>
+								<ExtendedTooltip name="ВознаграждениеАгентаСостояниеПросмотраРасширеннаяПодсказка" id="105"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВознаграждениеАгентаУправлениеПоиском" id="106">
+								<AdditionSource>
+									<Item>ВознаграждениеАгента</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознаграждениеАгентаУправлениеПоискомКонтекстноеМеню" id="107"/>
+								<ExtendedTooltip name="ВознаграждениеАгентаУправлениеПоискомРасширеннаяПодсказка" id="108"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ВознаграждениеАгентаСчетДоверительногоУправления" id="109">
+									<DataPath>ВознаграждениеАгента.СчетДоверительногоУправления</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознаграждениеАгентаСчетДоверительногоУправленияКонтекстноеМеню" id="110"/>
+									<ExtendedTooltip name="ВознаграждениеАгентаСчетДоверительногоУправленияРасширеннаяПодсказка" id="111"/>
+								</InputField>
+								<InputField name="ВознаграждениеАгентаСтратегия" id="112">
+									<DataPath>ВознаграждениеАгента.Стратегия</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознаграждениеАгентаСтратегияКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="ВознаграждениеАгентаСтратегияРасширеннаяПодсказка" id="114"/>
+								</InputField>
+								<ColumnGroup name="ВознагражденияАгентаГруппаВознаграждение" id="128">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждения агента группа вознаграждение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ВознагражденияАгентаГруппаВознаграждениеРасширеннаяПодсказка" id="129"/>
+									<ChildItems>
+										<InputField name="ВознаграждениеАгентаСтавка" id="115">
+											<DataPath>ВознаграждениеАгента.Ставка</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознаграждениеАгентаСтавкаКонтекстноеМеню" id="116"/>
+											<ExtendedTooltip name="ВознаграждениеАгентаСтавкаРасширеннаяПодсказка" id="117"/>
+										</InputField>
+										<InputField name="ВознаграждениеАгентаСуммаВознаграждения" id="118">
+											<DataPath>ВознаграждениеАгента.СуммаВознаграждения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознаграждениеАгентаСуммаВознагражденияКонтекстноеМеню" id="119"/>
+											<ExtendedTooltip name="ВознаграждениеАгентаСуммаВознагражденияРасширеннаяПодсказка" id="120"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ВознаграждениеАгентаГруппаВознаграждениеПлатаЗаРазмещение" id="186">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждение (плата за размещение)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждение агента группа вознаграждение плата за размещение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ВознаграждениеАгентаГруппаВознаграждениеПлатаЗаРазмещениеРасширеннаяПодсказка" id="187"/>
+									<ChildItems>
+										<InputField name="ВознаграждениеАгентаСтавкаПлатаЗаРазмещение" id="188">
+											<DataPath>ВознаграждениеАгента.СтавкаПлатаЗаРазмещение</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознаграждениеАгентаСтавкаПлатаЗаРазмещениеКонтекстноеМеню" id="189"/>
+											<ExtendedTooltip name="ВознаграждениеАгентаСтавкаПлатаЗаРазмещениеРасширеннаяПодсказка" id="190"/>
+										</InputField>
+										<InputField name="ВознаграждениеАгентаСуммаВознагражденияПлатаЗаРазмещение" id="191">
+											<DataPath>ВознаграждениеАгента.СуммаВознагражденияПлатаЗаРазмещение</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВознаграждениеАгентаСуммаВознагражденияПлатаЗаРазмещениеКонтекстноеМеню" id="192"/>
+											<ExtendedTooltip name="ВознаграждениеАгентаСуммаВознагражденияПлатаЗаРазмещениеРасширеннаяПодсказка" id="193"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<CheckBoxField name="ВознаграждениеАгентаДоговорЗакрыт" id="248">
+									<DataPath>ВознаграждениеАгента.ДоговорЗакрыт</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВознаграждениеАгентаДоговорЗакрытКонтекстноеМеню" id="249"/>
+									<ExtendedTooltip name="ВознаграждениеАгентаДоговорЗакрытРасширеннаяПодсказка" id="250"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаВознаграждениеУправляющегоПлатаЗаРазмещение" id="133">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плата за размещение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница вознаграждение управляющего плата за размещение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаВознаграждениеУправляющегоПлатаЗаРазмещениеРасширеннаяПодсказка" id="134"/>
+					<ChildItems>
+						<InputField name="ПериодДляПечати" id="194">
+							<DataPath>ПериодДляПечати</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период печати</v8:content>
+								</v8:item>
+							</Title>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ПериодДляПечатиКонтекстноеМеню" id="195"/>
+							<ExtendedTooltip name="ПериодДляПечатиРасширеннаяПодсказка" id="196"/>
+							<Events>
+								<Event name="OnChange">ПериодДляПечатиПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="ВознагражденияУправляющегоПлатаЗаРазмещение" id="135">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеКонтекстноеМеню" id="136"/>
+							<AutoCommandBar name="ВознагражденияУправляющегоПлатаЗаРазмещениеКоманднаяПанель" id="137">
+								<ChildItems>
+									<ButtonGroup name="ВознагражденияУправляющегоПлатаЗаРазмещениеГруппаФлажки" id="171">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вознаграждения управляющего (плата за размещение) группа флажки</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вознаграждения управляющего группа флажки</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеГруппаФлажкиРасширеннаяПодсказка" id="172"/>
+										<ChildItems>
+											<Button name="ВознагражденияУправляющегоПлатаЗаРазмещениеУстановитьФлажкиПлатаЗаРазмещение" id="173">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.УстановитьФлажкиПлатаЗаРазмещение</CommandName>
+												<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеУстановитьФлажкиПлатаЗаРазмещениеРасширеннаяПодсказка" id="174"/>
+											</Button>
+											<Button name="ВознагражденияУправляющегоПлатаЗаРазмещениеСнятьФлажкиПлатаЗаРазмещение" id="175">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СнятьФлажкиПлатаЗаРазмещение</CommandName>
+												<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСнятьФлажкиПлатаЗаРазмещениеРасширеннаяПодсказка" id="176"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="КомандаПечатьРасчетаВознагражденияУКЗаРазмещение" id="169">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.КомандаПечатьРасчетаВознагражденияУКЗаРазмещение</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.Print</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="КомандаПечатьРасчетаВознагражденияУКЗаРазмещениеРасширеннаяПодсказка" id="170"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеРасширеннаяПодсказка" id="138"/>
+							<SearchStringAddition name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтрокаПоиска" id="139">
+								<AdditionSource>
+									<Item>ВознагражденияУправляющегоПлатаЗаРазмещение</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтрокаПоискаКонтекстноеМеню" id="140"/>
+								<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтрокаПоискаРасширеннаяПодсказка" id="141"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВознагражденияУправляющегоПлатаЗаРазмещениеСостояниеПросмотра" id="142">
+								<AdditionSource>
+									<Item>ВознагражденияУправляющегоПлатаЗаРазмещение</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСостояниеПросмотраКонтекстноеМеню" id="143"/>
+								<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСостояниеПросмотраРасширеннаяПодсказка" id="144"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВознагражденияУправляющегоПлатаЗаРазмещениеУправлениеПоиском" id="145">
+								<AdditionSource>
+									<Item>ВознагражденияУправляющегоПлатаЗаРазмещение</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеУправлениеПоискомКонтекстноеМеню" id="146"/>
+								<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеУправлениеПоискомРасширеннаяПодсказка" id="147"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ВознагражденияУправляющегоПлатаЗаРазмещениеФлажок" id="157">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.Флажок</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеФлажокКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеФлажокРасширеннаяПодсказка" id="159"/>
+								</CheckBoxField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеПериод" id="177">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.Период</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеПериодКонтекстноеМеню" id="178"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеПериодРасширеннаяПодсказка" id="179"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеСчетДоверительногоУправления" id="148">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.СчетДоверительногоУправления</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСчетДоверительногоУправленияКонтекстноеМеню" id="149"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСчетДоверительногоУправленияРасширеннаяПодсказка" id="150"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтратегия" id="160">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.Стратегия</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтратегияКонтекстноеМеню" id="161"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтратегияРасширеннаяПодсказка" id="162"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтавка" id="163">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.Ставка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтавкаКонтекстноеМеню" id="164"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСтавкаРасширеннаяПодсказка" id="165"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеСуммаВознаграждения" id="151">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.СуммаВознаграждения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСуммаВознагражденияКонтекстноеМеню" id="152"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСуммаВознагражденияРасширеннаяПодсказка" id="153"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеНачисление" id="154">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.Начисление</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеНачислениеКонтекстноеМеню" id="155"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеНачислениеРасширеннаяПодсказка" id="156"/>
+								</InputField>
+								<InputField name="ВознагражденияУправляющегоПлатаЗаРазмещениеСуммаНачисления" id="166">
+									<DataPath>ВознагражденияУправляющегоПлатаЗаРазмещение.СуммаНачисления</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВознагражденияУправляющегоПлатаЗаРазмещениеСуммаНачисленияКонтекстноеМеню" id="167"/>
+									<ExtendedTooltip name="ВознагражденияУправляющегоПлатаЗаРазмещениеСуммаНачисленияРасширеннаяПодсказка" id="168"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРасшифровкаРасчета" id="72">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расшифровка расчета</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница расшифровка расчета</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаРасшифровкаРасчетаРасширеннаяПодсказка" id="73"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="РасшифровкаРасчетаВознаграждения" id="81">
+							<DataPath>РасшифровкаРасчетаВознаграждения</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="РасшифровкаРасчетаВознагражденияКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="РасшифровкаРасчетаВознагражденияРасширеннаяПодсказка" id="83"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаПрочее" id="279">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="280"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПодписанты" id="305">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подписанты</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПодписантыРасширеннаяПодсказка" id="306"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПодписант" id="251">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки подписанта</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки подписанта</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>100</Width>
+							<Behavior>PopUp</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаПодписантРасширеннаяПодсказка" id="252"/>
+							<ChildItems>
+								<InputField name="Подписант" id="201">
+									<DataPath>Подписант</DataPath>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Организация</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+											<xr:ValueChange>DontChange</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="ПодписантКонтекстноеМеню" id="202"/>
+									<ExtendedTooltip name="ПодписантРасширеннаяПодсказка" id="203"/>
+									<Events>
+										<Event name="OnChange">ПодписантПриИзменении</Event>
+										<Event name="StartChoice">ПодписантНачалоВыбора</Event>
+										<Event name="ChoiceProcessing">ПодписантОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<LabelField name="ПодписантДолжность" id="206">
+									<DataPath>ПодписантДолжность</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Должность</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ПодписантДолжностьКонтекстноеМеню" id="207"/>
+									<ExtendedTooltip name="ПодписантДолжностьРасширеннаяПодсказка" id="208"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПодписантБухгалтер" id="253">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки подписанта бухгалтера</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки подписанта бухгалтера</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>100</Width>
+							<Behavior>PopUp</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаПодписантБухгалтерРасширеннаяПодсказка" id="254"/>
+							<ChildItems>
+								<InputField name="ПодписантБухгалтер" id="255">
+									<DataPath>ПодписантБухгалтер</DataPath>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Организация</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+											<xr:ValueChange>DontChange</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="ПодписантБухгалтерКонтекстноеМеню" id="256"/>
+									<ExtendedTooltip name="ПодписантБухгалтерРасширеннаяПодсказка" id="257"/>
+									<Events>
+										<Event name="OnChange">ПодписантБухгалтерПриИзменении</Event>
+										<Event name="StartChoice">ПодписантБухгалтерНачалоВыбора</Event>
+										<Event name="ChoiceProcessing">ПодписантБухгалтерОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<LabelField name="ПодписантБухгалтерДолжность" id="258">
+									<DataPath>ПодписантБухгалтерДолжность</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Должность</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ПодписантБухгалтерДолжностьКонтекстноеМеню" id="259"/>
+									<ExtendedTooltip name="ПодписантБухгалтерДолжностьРасширеннаяПодсказка" id="260"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСлужебныеНастройки" id="298">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Служебные настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Width>16</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаСлужебныеНастройкиРасширеннаяПодсказка" id="299"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьДанныеБухгалтерииОбУдержанномВознаграждении" id="300">
+							<DataPath>ЗаполнятьДанныеБухгалтерииОбУдержанномВознаграждении</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗаполнятьДанныеБухгалтерииОбУдержанномВознагражденииКонтекстноеМеню" id="301"/>
+							<ExtendedTooltip name="ЗаполнятьДанныеБухгалтерииОбУдержанномВознагражденииРасширеннаяПодсказка" id="302"/>
+						</CheckBoxField>
+						<CheckBoxField name="ВыводитьКартинкиВРасшифровке" id="340">
+							<DataPath>ВыводитьКартинкиВРасшифровке</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если отключить, то картинки (логотипы) из шаблона расшифровки не будут выведены.
+Отключение вывода картинок можно попробовать при ошибке Excel "Данные не могут быть
+вставлены из-за несоответствия формы и размеров области копирования и области вставки".</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВыводитьКартинкиВРасшифровкеКонтекстноеМеню" id="341"/>
+							<ExtendedTooltip name="ВыводитьКартинкиВРасшифровкеРасширеннаяПодсказка" id="342"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РасчетВознагражденияУправляющего</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВознагражденияУправляющего" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вознаграждения управляющего</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СчетДоверительногоУправления" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СуммаВознаграждения" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма вознаграждения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Начисление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начисление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+						<v8:Type>cfg:DocumentRef.НачислениеЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Стратегия" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стратегия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ставка" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаНачисления" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма начисления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Описание" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОшибкаРасчета" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка расчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасшифровкаОшибки" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расшифровка ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОшибкаРасчетаНачисления" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка расчета начисления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РасшифровкаОшибкиНачисления" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расшифровка ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПериодНачисления" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период начисления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:StandardPeriod</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Подписант" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подписант</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтруктураПодписантОтКлиента" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Структура подписант от клиента</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="НуженПодписант" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нужен подписант</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Клиент" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НастройкаРасчета" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка расчета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.НастройкиРасчета</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="РасшифровкаРасчетаВознаграждения" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка расчета вознаграждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеПоРасчетуВознаграждения" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные по расчету вознаграждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ВознаграждениеАгента" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вознаграждение агента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СчетДоверительногоУправления" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Стратегия" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стратегия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ставка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаВознаграждения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма вознаграждения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СтавкаПлатаЗаРазмещение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка (плата за размещение)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ШкалыПроцентныхСтавок</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаВознагражденияПлатаЗаРазмещение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма вознаграждения (плата за размещение)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДоговорЗакрыт" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договор закрыт</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВознагражденияУправляющегоПлатаЗаРазмещение" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вознаграждения управляющего</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СчетДоверительногоУправления" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СуммаВознаграждения" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма вознаграждения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Начисление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начисление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.НачислениеЗадолженности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Стратегия" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стратегия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ставка" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СуммаНачисления" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма начисления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Период" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПериодДляПечати" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период для печати</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Подписант" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>Подписант</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПодписантДолжность" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант должность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПодписантДолжность</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="БазовыйПериод" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Базовый период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресДанныхРасшифровки" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес данных расшифровки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборСчетДоверительногоУправления" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет внутреннего учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборСчетДоверительногоУправления</Field>
+			</Save>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПредставлениеОтбора" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодписантБухгалтер" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бухгалтер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПодписантБухгалтер</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПодписантБухгалтерДолжность" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант бухгалтер должность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПодписантБухгалтерДолжность</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОтборВидДоговораДоверительногоУправления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид договора ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборВидДоговораДоверительногоУправления</Field>
+			</Save>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:EnumRef.ВидыДоговоровДоверительногоУправления</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОтборСтратегияИндивидуальногоИнвестирования" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стратегия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтратегииИндивидуальногоИнвестирования</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборСтратегияИндивидуальногоИнвестирования</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="АдресДанныхБухгалтерииОбУдержанномВознаграждении" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес данных бухгалтерии об удержанном вознаграждении</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборКлиент" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборКлиент</Field>
+			</Save>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="ЗаполнятьДанныеБухгалтерииОбУдержанномВознаграждении" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять данные бухгалтерии об удержанном вознаграждении</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ЗаполнятьДанныеБухгалтерииОбУдержанномВознаграждении</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СтруктураДанныхКонтактногоЛица" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура данных контактного лица</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+			<Save>
+				<Field>СтруктураДанныхКонтактногоЛица</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СтруктураДанныхКонтактногоЛицаБухгалтера" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура данных контактного лица бухгалтера</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+			<Save>
+				<Field>СтруктураДанныхКонтактногоЛицаБухгалтера</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СуффиксОрганизации" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Суффикс организации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборВидДоговораДоверительногоУправленияВСписке" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор вида договора ДУ в списке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборВидДоговораДоверительногоУправленияВСписке</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОтборКлиентВСписке" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор клиента в списке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборКлиентВСписке</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОтборСчетДоверительногоУправленияВСписке" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор счета ДУ в списке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтборСчетДоверительногоУправленияВСписке</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЭтоПолноправныйПользователь" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это полноправный пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодписантОснованиеПолномочий" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант основание полномочий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПодписантОснованиеПолномочий</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВыводитьКартинкиВРасшифровке" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выводить картинки в расшифровке расчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВыводитьКартинкиВРасшифровке</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КлючТекущихПараметровОтбора" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ текущих параметров отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогФайловExcel" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог файлов Excel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ВознагражденияУправляющегоСуммаВознаграждения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ВознагражденияУправляющего.ОшибкаРасчета</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" kind="AutoFont"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ошибка расчета</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ВознагражденияУправляющегоСуммаНачисления</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ВознагражденияУправляющего.ОшибкаРасчетаНачисления</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" kind="AutoFont"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ошибка расчета</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОбновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСнятьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСоздатьНачисления" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать начисления...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать начисления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ОперацииБэкОфиса">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Use>
+			<Action>КомандаСоздатьНачисления</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияДляБухгалтерии" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать расчета вознаграждения для бухгалтерии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения для бухгалтерии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияДляБухгалтерии</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияДляФормы482" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать расчета вознаграждения для формы 482</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения для формы 482</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияДляФормы482</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияАгента" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать расчета вознаграждения агента</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения агента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияАгента</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияУКЗаРазмещение" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения УКЗа размещение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияУКЗаРазмещение</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьФлажкиПлатаЗаРазмещение" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки плата за размещение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСнятьФлажкиПлатаЗаРазмещение</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьФлажкиПлатаЗаРазмещение" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки плата за размещение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьФлажкиПлатаЗаРазмещение</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияЗаПериодДляБухгалтерии" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет вознаграждения за период для бухгалтерии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения для формы 482</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияЗаПериодДляБухгалтерии</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияАгентаМКБ" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет вознаграждения (МКБ)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения агента МКБ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияАгентаМКБ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияАгентаДВБ" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет вознаграждения (ДВБ)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения агента МКБ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияАгентаДВБ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияПоПИФ" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет вознаграждения УК по ПИФ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения для формы 482</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияПоПИФ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознаграждения" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка расчета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка расчета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПечатьРасчетаВознаграждения</Action>
+		</Command>
+		<Command name="КомандаОтключитьОтбор" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить отбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить отбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ClearFilter</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОтключитьОтбор</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияТекущейСтроки" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет вознаграждения текущей строки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать расчета вознаграждения текущей строки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПечатьРасчетаВознагражденияТекущейСтроки</Action>
+			<AssociatedTableElementId xsi:type="xs:string">ВознагражденияУправляющего</AssociatedTableElementId>
+		</Command>
+		<Command name="СохранитьПараметрыОтбора" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить параметры отбора</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСохранитьПараметрыОтбора</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ВосстановитьПараметрыОтбора" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить параметры отбора</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.RestoreValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВосстановитьПараметрыОтбора</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="КомандаПодготовитьФайлыДляЭДО" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подготовить файлы для ЭДО</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда подготовить файлы для ЭДО</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПодготовитьФайлыДляЭДО</Action>
+		</Command>
+		<Command name="КомандаПечатьРасчетаВознагражденияАгентаВБРР" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет вознаграждения (ВБРР)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда печать расчета вознаграждения агента ВБРР</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьРасчетаВознагражденияАгентаВБРР</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

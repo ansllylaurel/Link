@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<ExternalDataSource uuid="8b8ab6df-a1f6-4602-814e-144920082636">
+		<InternalInfo>
+			<xr:GeneratedType name="ExternalDataSourceManager.RiskControl" category="Manager">
+				<xr:TypeId>b7f660a1-9ba7-4540-b2e9-845ef1a5a5ae</xr:TypeId>
+				<xr:ValueId>384f9646-65d4-48ea-9864-3913501d8a98</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExternalDataSourceTablesManager.RiskControl" category="TablesManager">
+				<xr:TypeId>0f34c415-e456-4be5-a44d-d94226926720</xr:TypeId>
+				<xr:ValueId>52c91a74-305b-4209-8b58-7a509f4bc5d7</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExternalDataSourceCubesManager.RiskControl" category="CubesManager">
+				<xr:TypeId>e5e11933-6d7b-49ce-847f-d8b64ab768e6</xr:TypeId>
+				<xr:ValueId>0cbe180b-3274-411d-b4e8-dd3f24ed8c9f</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>RiskControl</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Risk Control</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DataLockControlMode>Automatic</DataLockControlMode>
+		</Properties>
+		<ChildObjects>
+			<Table>T_Log</Table>
+			<Table>T_Scenario_Groups</Table>
+			<Table>T_Scenario_Indexes</Table>
+			<Table>T_Scenario_Indexes_Reinvestment_Replacement</Table>
+			<Table>T_Scenario_Indexes_Values</Table>
+			<Table>T_Scenario_Model_Yields</Table>
+			<Table>T_Scenarios</Table>
+			<Table>T_Sessions</Table>
+			<Table>VW_Assets1C8</Table>
+			<Table>VW_Clients</Table>
+			<Table>VW_Scenario_Statuses</Table>
+			<Function uuid="19c334c6-002d-4ce7-bc47-bdcd34ba5562">
+				<Properties>
+					<Name>F_Bond_Index_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Function: Bond Index VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @VaRPercent DECIMAL(5, 2), @HorizonTradeDays INT, @MOEXIndexID INT, @HistoricalPeriodYears INT</Comment>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.F_Bond_Index_VaR(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="84f1ce75-d042-4106-b75d-ca7c8fc12cbe">
+				<Properties>
+					<Name>F_GCurve_Index_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Function: G-Curve Index VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @VaRPercent DECIMAL(5, 2), @HorizonTradeDays INT, @DurationYears DECIMAL(8, 2) = 1.00, @HistoricalPeriodYears INT</Comment>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.F_GCurve_Index_VaR(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="22e26987-5ee2-4202-8af9-f5549420b335">
+				<Properties>
+					<Name>F_GCurve_Yield</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Function: G-Curve Yield</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@Date DATE, @DurationYears DECIMAL(8, 2) = 1.</Comment>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.F_GCurve_Yield(&amp;1, &amp;2)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="023aa94f-9c7d-4096-85a7-be314e0398fb">
+				<Properties>
+					<Name>F_MOEX_Index_Yield</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Function: MOEX Index Yield</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@Date DATE, @MOEXIndexID INT</Comment>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.F_MOEX_Index_Yield(&amp;1, &amp;2)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="ac75a403-34af-4106-b950-907ae602cbd2">
+				<Properties>
+					<Name>F_Stock_Index_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Function: Stock Index VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @VaRPercent DECIMAL(5, 2), @HorizonTradeDays INT, @MOEXIndexID INT = 171, @HistoricalPeriodYears INT</Comment>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.F_Stock_Index_VaR(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="b0a360f7-db86-4dba-a7e9-3088e9cc5e10">
+				<Properties>
+					<Name>P_Add_Scenario_Portfolio_Guaranty</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Add Scenario Portfolio Guaranty</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@ClientCode NVARCHAR(50), @ClientName NVARCHAR(255) = NULL, @StartDate DATE, @EndDate DATE, @Yield DECIMAL(18, 6) = NULL, @GuarantedYield DECIMAL(18, 6) = NULL, @MinYield DECIMAL(18, 6) = NULL, @GuarantyValue DECIMAL(38, 4) = NULL</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Add_Scenario_Portfolio_Guaranty(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5, &amp;6, &amp;7, &amp;8)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="bf1106ae-f170-484e-8a14-2ebf88e99299">
+				<Properties>
+					<Name>P_Mark_Scenario_As_Deprecated</Name>
+					<Synonym/>
+					<Comment>@AssetDate DATE, @CalcID INT, @ClientCodes NVARCHAR(MAX) = NULL, @StageNames NVARCHAR(MAX) = NULL</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Mark_Scenario_As_Deprecated(&amp;1, &amp;2, &amp;3, &amp;4)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="e30f0b4a-8f4b-46c6-8ee0-649977247214">
+				<Properties>
+					<Name>P_Scenario_Copy_Indexes_Values</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Copy Indexes Values</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDateFrom DATE, @AssetDateTo DATE = NULL, @CalcIDFrom INT, @CalcIDTo INT = NULL, @DatabaseFrom BIT, @DatabaseTo BIT, @ScenarioIDs NVARCHAR(MAX) = NULL, @ForceInsert BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Copy_Indexes_Values(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5, &amp;6, &amp;7, &amp;8, &amp;9)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="9241a6c4-d843-42be-8019-0a518e8e1ab1">
+				<Properties>
+					<Name>P_Scenario_Credit_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Credit VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @ClientCodes NVARCHAR(MAX), @EndDate DATE = NULL, @NumberOfRolls INT = 10000, @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Credit_VaR(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5, &amp;6)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="26c94f1f-bfe4-45ce-88ab-61ba523c9c02">
+				<Properties>
+					<Name>P_Scenario_Data_For_Report</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Data For Report</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @ClientCodes NVARCHAR(MAX), @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Data_For_Report(&amp;1, &amp;2, &amp;3, &amp;4)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="4eaf0384-b29e-4d8b-ab71-7e9e427deb7a">
+				<Properties>
+					<Name>P_Scenario_Fill_Portfolio</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Fill Portfolio</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @ClientCodes NVARCHAR(MAX), @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Fill_Portfolio(&amp;1, &amp;2, &amp;3, &amp;4)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="56274c14-298b-4475-95a7-7a24f367152a">
+				<Properties>
+					<Name>P_Scenario_Full_Calculate</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Full Calculate</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @CalcID INT, @ClientCodes NVARCHAR(MAX), @EndDate DATE = NULL, @IncludeHTMAndAmortBonds BIT = 1, @MarketForHTMAndAmortBonds BIT = 0, @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Full_Calculate(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5, &amp;6, &amp;7, &amp;8)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="2f879523-0a1e-42d9-947b-dba769c61277">
+				<Properties>
+					<Name>P_Scenario_Market_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Market VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@AssetDate DATE, @ClientCodes NVARCHAR(MAX), @IncludeHTMAndAmortBonds BIT = 1, @MarketForHTMAndAmortBonds BIT = 0, @IsClientGroups BIT = 0, @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Market_VaR(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5, &amp;6, &amp;7)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="deb7a250-9deb-4643-9967-af4d03482bbf">
+				<Properties>
+					<Name>P_Scenario_Currency_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Currency VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@Date DATE, @CurrencyID INT = NULL, @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Currency_VaR;1(&amp;1, &amp;2, &amp;3, &amp;4)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+		</ChildObjects>
+	</ExternalDataSource>
+</MetaDataObject>
