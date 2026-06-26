@@ -1534,96 +1534,72 @@
 		File_Id = РаботаСВнешнимиСистемами.ПолучитьИдентификаторФайлаВExternals(
 			Источник, ИдентификаторОрганизации, ИмяФайла, ХешСумма, Соединение);
 		
+		РаботаСВнешнимиСистемами.ADODBC_ЗакрытьСоединение(Соединение);
+		Соединение = Неопределено;
+		
 		Если File_Id = Неопределено Тогда
-			РаботаСВнешнимиСистемами.ADODBC_ЗакрытьСоединение(Соединение);
-			Соединение = Неопределено;
 			ЛогироватьСообщение("Не удалось получить идентификатор сохранённого файла в Externals", УровеньЖурналаРегистрации.Предупреждение, "СохранитьФайлИРеестрВExternals");
 			Возврат;
 		КонецЕсли;
 		
+		ПараметрыСоединения = Новый ПараметрыСоединенияВнешнегоИсточникаДанных;
+		ПараметрыСоединения.СтрокаСоединения = РаботаСВнешнимиСистемами.СтрокаСоединенияСExternals();
+		
+		Попытка
+			ВнешниеИсточникиДанных.Externals.УстановитьОбщиеПараметрыСоединения(ПараметрыСоединения);
+			ВнешниеИсточникиДанных.Externals.УстановитьСоединение();
+		Исключение
+			Информация = ИнформацияОбОшибке();
+			ЛогироватьСообщение("Ошибка подключения к Externals: " + ПодробноеПредставлениеОшибки(Информация), УровеньЖурналаРегистрации.Ошибка, "СохранитьФайлИРеестрВExternals");
+			Возврат;
+		КонецПопытки;
+		
 		Fund_Name        = ?(ЗначениеЗаполнено(ПИФ), Лев(СокрЛП(Строка(ПИФ)), 100), "");
 		Compilation_Date = ?(ЗначениеЗаполнено(ДатаРеестра), ДатаРеестра, ТекущаяДата());
 		
-		ТекстУдаления = 
-			"DELETE FROM Externals.dbo.Register_Of_Unit_Holders
-			|WHERE File_Id = &File_Id";
-		ТекстУдаления = СтрЗаменить(ТекстУдаления, "&File_Id", Формат(File_Id, "ЧГ=0"));
+		НаборЗаписей = ВнешниеИсточникиДанных.Externals.Таблицы.dbo_Register_Of_Unit_Holders.СоздатьНаборЗаписей();
+		НаборЗаписей.Отбор.File_Id.Установить(File_Id);
 		
-		Команда = Новый COMОбъект("ADODB.Command");
-		Команда.CommandText = 
-			"INSERT INTO Externals.dbo.Register_Of_Unit_Holders
-			|	(File_Id, Fund_Name, Compilation_Date, Personal_Account_Number, Is_Nominee,
-			|	 Number_Of_Units, Size_Of_Share, Full_Name, Birthday, Registration_Info,
-			|	 Registration_Address, Fact_Address, Bank_Account)
-			|VALUES
-			|	(?, ?, ?, ?, CONVERT(Bit, ?), ?, ?, ?, ?, ?, ?, ?, ?)";
+		Для Каждого СтрокаП Из ТаблицаПайщиков Цикл
+			НоваяЗапись = НаборЗаписей.Добавить();
+			НоваяЗапись.File_Id                  = File_Id;
+			НоваяЗапись.Fund_Name                = Fund_Name;
+			НоваяЗапись.Compilation_Date         = Compilation_Date;
+			НоваяЗапись.Personal_Account_Number  = Лев(СтрокаП.Personal_Account_Number, 50);
+			НоваяЗапись.Is_Nominee               = (СтрокаП.Is_Nominee = 1);
+			НоваяЗапись.Number_Of_Units          = СтрокаП.Number_Of_Units;
+			НоваяЗапись.Size_Of_Share            = СтрокаП.Size_Of_Share;
+			НоваяЗапись.Full_Name                = Лев(СокрЛП(Строка(СтрокаП.Идентификатор)), 255);
+			
+			Если ЗначениеЗаполнено(СтрокаП.ДатаРождения) Тогда
+				НоваяЗапись.Birthday = Формат(СтрокаП.ДатаРождения, "ДФ=yyyy-MM-dd");
+			Иначе
+				НоваяЗапись.Birthday = NULL;
+			КонецЕсли;
+			
+			РегИнфо = СокрЛП(Строка(СтрокаП.СерияПаспорта) + " " + Строка(СтрокаП.НомерПаспорта));
+			Если ЗначениеЗаполнено(СтрокаП.ИНН) Тогда
+				РегИнфо = РегИнфо + ?(ЗначениеЗаполнено(РегИнфо), " ", "") + "ИНН " + Строка(СтрокаП.ИНН);
+			КонецЕсли;
+			Если ЗначениеЗаполнено(СтрокаП.ОГРН) Тогда
+				РегИнфо = РегИнфо + ?(ЗначениеЗаполнено(РегИнфо), " ", "") + "ОГРН " + Строка(СтрокаП.ОГРН);
+			КонецЕсли;
+			НоваяЗапись.Registration_Info    = Лев(РегИнфо, 255);
+			
+			Адрес = Лев(СокрЛП(Строка(СтрокаП.Адрес)), 255);
+			НоваяЗапись.Registration_Address = Адрес;
+			НоваяЗапись.Fact_Address         = Адрес;
+			НоваяЗапись.Bank_Account         = Лев(СокрЛП(Строка(СтрокаП.РасчетныйСчет)), 255);
+		КонецЦикла;
 		
-		Команда.CommandType     = 1;
-		Команда.Prepared        = "True";
-		Команда.NamedParameters = "True";
-		Команда.Parameters.Append(Команда.CreateParameter("@File_Id",                 20,  1, 10));
-		Команда.Parameters.Append(Команда.CreateParameter("@Fund_Name",               200, 1, 100));
-		Команда.Parameters.Append(Команда.CreateParameter("@Compilation_Date",        135, 1, 8));
-		Команда.Parameters.Append(Команда.CreateParameter("@Personal_Account_Number", 200, 1, 50));
-		Команда.Parameters.Append(Команда.CreateParameter("@Is_Nominee",              3,   1, 1));
-		Команда.Parameters.Append(Команда.CreateParameter("@Number_Of_Units",         5,   1, 8));
-		Команда.Parameters.Append(Команда.CreateParameter("@Size_Of_Share",           5,   1, 8));
-		Команда.Parameters.Append(Команда.CreateParameter("@Full_Name",               200, 1, 255));
-		Команда.Parameters.Append(Команда.CreateParameter("@Birthday",                135, 1, 8));
-		Команда.Parameters.Append(Команда.CreateParameter("@Registration_Info",       200, 1, 255));
-		Команда.Parameters.Append(Команда.CreateParameter("@Registration_Address",    200, 1, 255));
-		Команда.Parameters.Append(Команда.CreateParameter("@Fact_Address",            200, 1, 255));
-		Команда.Parameters.Append(Команда.CreateParameter("@Bank_Account",            200, 1, 255));
-		
-		Команда.ActiveConnection = Соединение;
-		
+		ВнешниеИсточникиДанных.Externals.НачатьТранзакцию();
 		Попытка
-			Соединение.BeginTrans();
-			
-			Соединение.Execute(ТекстУдаления);
-			
-			Для Каждого СтрокаП Из ТаблицаПайщиков Цикл
-				РегИнфо = СокрЛП(Строка(СтрокаП.СерияПаспорта) + " " + Строка(СтрокаП.НомерПаспорта));
-				Если ЗначениеЗаполнено(СтрокаП.ИНН) Тогда
-					РегИнфо = РегИнфо + ?(ЗначениеЗаполнено(РегИнфо), " ", "") + "ИНН " + Строка(СтрокаП.ИНН);
-				КонецЕсли;
-				Если ЗначениеЗаполнено(СтрокаП.ОГРН) Тогда
-					РегИнфо = РегИнфо + ?(ЗначениеЗаполнено(РегИнфо), " ", "") + "ОГРН " + Строка(СтрокаП.ОГРН);
-				КонецЕсли;
-				Адрес = Лев(СокрЛП(Строка(СтрокаП.Адрес)), 255);
-				
-				Команда.Parameters("@File_Id").Value                 = File_Id;
-				Команда.Parameters("@Fund_Name").Value                = Fund_Name;
-				Команда.Parameters("@Compilation_Date").Value         = Compilation_Date;
-				Команда.Parameters("@Personal_Account_Number").Value  = Лев(СтрокаП.Personal_Account_Number, 50);
-				Команда.Parameters("@Is_Nominee").Value               = ?(СтрокаП.Is_Nominee = 1, 1, 0);
-				Команда.Parameters("@Number_Of_Units").Value          = СтрокаП.Number_Of_Units;
-				Команда.Parameters("@Size_Of_Share").Value            = СтрокаП.Size_Of_Share;
-				Команда.Parameters("@Full_Name").Value                = Лев(СокрЛП(Строка(СтрокаП.Идентификатор)), 255);
-				
-				Если ЗначениеЗаполнено(СтрокаП.ДатаРождения) Тогда
-					Команда.Parameters("@Birthday").Value = СтрокаП.ДатаРождения;
-				Иначе
-					Команда.Parameters("@Birthday").Value = NULL;
-				КонецЕсли;
-				
-				Команда.Parameters("@Registration_Info").Value    = Лев(РегИнфо, 255);
-				Команда.Parameters("@Registration_Address").Value = Адрес;
-				Команда.Parameters("@Fact_Address").Value         = Адрес;
-				Команда.Parameters("@Bank_Account").Value         = Лев(СокрЛП(Строка(СтрокаП.РасчетныйСчет)), 255);
-				
-				Команда.Execute();
-			КонецЦикла;
-			
-			Соединение.CommitTrans();
-			
+			НаборЗаписей.Записать(Истина);
+			ВнешниеИсточникиДанных.Externals.ЗафиксироватьТранзакцию();
 		Исключение
-			Соединение.RollbackTrans();
+			ВнешниеИсточникиДанных.Externals.ОтменитьТранзакцию();
 			ВызватьИсключение;
 		КонецПопытки;
-		
-		РаботаСВнешнимиСистемами.ADODBC_ЗакрытьСоединение(Соединение);
-		Соединение = Неопределено;
 		
 		ЛогироватьСообщение(СтрШаблон("Файл ""%1"" и реестр (записей: %2) сохранены в Externals", ИмяФайла, ТаблицаПайщиков.Количество()), УровеньЖурналаРегистрации.Информация, "СохранитьФайлИРеестрВExternals");
 			
