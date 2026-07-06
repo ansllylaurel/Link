@@ -29,7 +29,17 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Номер договора</v8:content>
+					<v8:content>Номер ген. соглашения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СведенияОДепозитныхВкладах.НомерПодтверждения</dataPath>
+			<field>НомерПодтверждения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ подтверждения / депозитного договора</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -277,6 +287,7 @@
 	РеквизитыОрганизации.КраткоеНаименованиеПоУставу КАК НаименованиеУК,
 	ПРЕДСТАВЛЕНИЕ(_ДействующиеДепозитныеВклады.ДепозитныйВклад.БанковскийСчет.Банк) КАК НаименованиеБанка,
 	_ДействующиеДепозитныеВклады.ДепозитныйВклад.БанковскийСчет.Договор.НомерДоговора КАК НомерДоговора,
+	_ДействующиеДепозитныеВклады.ДепозитныйВклад.НомерПодтверждения КАК НомерПодтверждения,
 	_ДействующиеДепозитныеВклады.ДепозитныйВклад.БанковскийСчет.Договор.ДатаЗаключения КАК ДатаДоговора,
 	"Депозит" КАК ВидРазмещения,
 	ВЫБОР
@@ -598,11 +609,28 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Номер договора</v8:content>
+					<v8:content>Номер ген. соглашения</v8:content>
 				</v8:item>
 			</title>
 			<valueType>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДепозитныеВклады</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДействующиеДепозиты.НомерПодтверждения</dataPath>
+			<field>НомерПодтверждения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ подтверждения / депозитного договора</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>70</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
@@ -716,6 +744,12 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СведенияОДепозитныхВкладах.ДепозитныйВклад</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СведенияОДепозитныхВкладах.НомерДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СведенияОДепозитныхВкладах.НомерПодтверждения</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СведенияОДепозитныхВкладах.ВидРазмещения</dcsset:field>
@@ -854,6 +888,12 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДействующиеДепозиты.Банк</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДействующиеДепозиты.НомерДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДействующиеДепозиты.НомерПодтверждения</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДействующиеДепозиты.ДатаРегистрации</dcsset:field>
