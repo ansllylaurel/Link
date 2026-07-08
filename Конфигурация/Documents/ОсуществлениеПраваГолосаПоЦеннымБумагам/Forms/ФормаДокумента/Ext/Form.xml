@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="300">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="301"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="101"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="201"/>
+				</InputField>
+				<InputField name="Дата" id="2">
+					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="102"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="202"/>
+				</InputField>
+				<InputField name="Организация" id="3">
+					<DataPath>Объект.Организация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="103"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="203"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсновныеРеквизиты" id="302">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновныеРеквизитыРасширеннаяПодсказка" id="303"/>
+			<ChildItems>
+				<InputField name="ЦеннаяБумага" id="4">
+					<DataPath>Объект.ЦеннаяБумага</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЦеннаяБумагаКонтекстноеМеню" id="104"/>
+					<ExtendedTooltip name="ЦеннаяБумагаРасширеннаяПодсказка" id="204"/>
+				</InputField>
+				<InputField name="ДатаГолосования" id="5">
+					<DataPath>Объект.ДатаГолосования</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаГолосованияКонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="ДатаГолосованияРасширеннаяПодсказка" id="205"/>
+				</InputField>
+				<UsualGroup name="ГруппаСобрание" id="304">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСобраниеРасширеннаяПодсказка" id="305"/>
+					<ChildItems>
+						<InputField name="ДатаСобранияНачало" id="6">
+							<DataPath>Объект.ДатаСобранияНачало</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаСобранияНачалоКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ДатаСобранияНачалоРасширеннаяПодсказка" id="206"/>
+						</InputField>
+						<InputField name="ДатаСобранияОкончание" id="7">
+							<DataPath>Объект.ДатаСобранияОкончание</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаСобранияОкончаниеКонтекстноеМеню" id="107"/>
+							<ExtendedTooltip name="ДатаСобранияОкончаниеРасширеннаяПодсказка" id="207"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ПовесткаДня" id="8">
+					<DataPath>Объект.ПовесткаДня</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<MultiLine>true</MultiLine>
+					<Height>2</Height>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>90</MaxWidth>
+					<ContextMenu name="ПовесткаДняКонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="ПовесткаДняРасширеннаяПодсказка" id="208"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Клиенты" id="9">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>Объект.Клиенты</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КлиентыКонтекстноеМеню" id="109"/>
+			<AutoCommandBar name="КлиентыКоманднаяПанель" id="10">
+				<ChildItems>
+					<Button name="КлиентыЗаполнитьКлиентов" id="11">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьКлиентов</CommandName>
+						<ExtendedTooltip name="КлиентыЗаполнитьКлиентовРасширеннаяПодсказка" id="211"/>
+					</Button>
+					<Button name="КлиентыУдалитьПоВидуДоговора" id="12">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.УдалитьКлиентовПоВидуДоговора</CommandName>
+						<ExtendedTooltip name="КлиентыУдалитьПоВидуДоговораРасширеннаяПодсказка" id="212"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КлиентыРасширеннаяПодсказка" id="209"/>
+			<ChildItems>
+				<InputField name="КлиентыСчетДоверительногоУправления" id="13">
+					<DataPath>Объект.Клиенты.СчетДоверительногоУправления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КлиентыСчетДоверительногоУправленияКонтекстноеМеню" id="113"/>
+					<ExtendedTooltip name="КлиентыСчетДоверительногоУправленияРасширеннаяПодсказка" id="213"/>
+				</InputField>
+				<InputField name="КлиентыКлиент" id="14">
+					<DataPath>Объект.Клиенты.Клиент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КлиентыКлиентКонтекстноеМеню" id="114"/>
+					<ExtendedTooltip name="КлиентыКлиентРасширеннаяПодсказка" id="214"/>
+				</InputField>
+				<InputField name="КлиентыВидДоговора" id="15">
+					<DataPath>Объект.Клиенты.ВидДоговора</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КлиентыВидДоговораКонтекстноеМеню" id="115"/>
+					<ExtendedTooltip name="КлиентыВидДоговораРасширеннаяПодсказка" id="215"/>
+				</InputField>
+				<InputField name="КлиентыКоличество" id="16">
+					<DataPath>Объект.Клиенты.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КлиентыКоличествоКонтекстноеМеню" id="116"/>
+					<ExtendedTooltip name="КлиентыКоличествоРасширеннаяПодсказка" id="216"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="ВопросыПовестки" id="17">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>Объект.ВопросыПовестки</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ВопросыПовесткиКонтекстноеМеню" id="117"/>
+			<AutoCommandBar name="ВопросыПовесткиКоманднаяПанель" id="18"/>
+			<ExtendedTooltip name="ВопросыПовесткиРасширеннаяПодсказка" id="217"/>
+			<ChildItems>
+				<InputField name="ВопросыПовесткиВопросПовесткиДня" id="19">
+					<DataPath>Объект.ВопросыПовестки.ВопросПовесткиДня</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="ВопросыПовесткиВопросПовесткиДняКонтекстноеМеню" id="119"/>
+					<ExtendedTooltip name="ВопросыПовесткиВопросПовесткиДняРасширеннаяПодсказка" id="219"/>
+				</InputField>
+				<InputField name="ВопросыПовесткиВариантГолосования" id="20">
+					<DataPath>Объект.ВопросыПовестки.ВариантГолосования</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВопросыПовесткиВариантГолосованияКонтекстноеМеню" id="120"/>
+					<ExtendedTooltip name="ВопросыПовесткиВариантГолосованияРасширеннаяПодсказка" id="220"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПодвал" id="306">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="307"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="21">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>90</MaxWidth>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="121"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="221"/>
+				</InputField>
+				<InputField name="Ответственный" id="22">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="122"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="222"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ОсуществлениеПраваГолосаПоЦеннымБумагам</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьКлиентов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по остаткам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить список клиентов по остаткам ценной бумаги на дату голосования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьКлиентов</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="УдалитьКлиентовПоВидуДоговора" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить по виду договора</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить из списка клиентов строки с выбранным видом договора</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалитьКлиентовПоВидуДоговора</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+	</Commands>
+</Form>
