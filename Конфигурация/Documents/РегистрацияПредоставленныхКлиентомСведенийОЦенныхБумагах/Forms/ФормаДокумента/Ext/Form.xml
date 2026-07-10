@@ -355,18 +355,18 @@
 								<ColumnGroup name="НастройкиГруппа1" id="377">
 									<ExtendedTooltip name="НастройкиГруппа1РасширеннаяПодсказка" id="378"/>
 									<ChildItems>
-										<InputField name="НастройкиНастройка" id="368">
-											<DataPath>Объект.НастройкиУчета.Настройка</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="НастройкиНастройкаКонтекстноеМеню" id="369"/>
-											<ExtendedTooltip name="НастройкиНастройкаРасширеннаяПодсказка" id="370"/>
-										</InputField>
 										<InputField name="НастройкиУчетныйАктивЕПС" id="362">
 											<DataPath>Объект.НастройкиУчета.УчетныйАктивЕПС</DataPath>
 											<EditMode>EnterOnInput</EditMode>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ContextMenu name="НастройкиУчетныйАктивЕПСКонтекстноеМеню" id="363"/>
 											<ExtendedTooltip name="НастройкиУчетныйАктивЕПСРасширеннаяПодсказка" id="364"/>
+										</InputField>
+										<InputField name="НастройкиНастройка" id="368">
+											<DataPath>Объект.НастройкиУчета.Настройка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НастройкиНастройкаКонтекстноеМеню" id="369"/>
+											<ExtendedTooltip name="НастройкиНастройкаРасширеннаяПодсказка" id="370"/>
 										</InputField>
 									</ChildItems>
 								</ColumnGroup>
@@ -462,34 +462,18 @@
 							<ContextMenu name="ЭСПКонтекстноеМеню" id="175"/>
 							<AutoCommandBar name="ЭСПКоманднаяПанель" id="176">
 								<ChildItems>
-									<Popup name="ЭСПГруппа5" id="407">
+									<Button name="КомандаЗаполнитьЭСП" id="214">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.КомандаЗаполнитьЭСП</CommandName>
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Заполнить ЭСП</v8:content>
+												<v8:content>Заполнить</v8:content>
 											</v8:item>
 										</Title>
-										<ExtendedTooltip name="ЭСПГруппа5РасширеннаяПодсказка" id="408"/>
-										<ChildItems>
-											<Button name="КомандаЗаполнитьЭСП" id="214">
-												<Type>CommandBarButton</Type>
-												<Representation>PictureAndText</Representation>
-												<CommandName>Form.Command.КомандаЗаполнитьЭСП</CommandName>
-												<Title>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Фиксированная от клиента </v8:content>
-													</v8:item>
-												</Title>
-												<ExtendedTooltip name="КомандаЗаполнитьЭСПРасширеннаяПодсказка" id="215"/>
-											</Button>
-											<Button name="ЭСПКомандаЗаполнитьРасчетонойЭСП" id="409">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.КомандаЗаполнитьРасчетнойЭСП</CommandName>
-												<ExtendedTooltip name="ЭСПКомандаЗаполнитьРасчетонойЭСПРасширеннаяПодсказка" id="410"/>
-											</Button>
-										</ChildItems>
-									</Popup>
+										<ExtendedTooltip name="КомандаЗаполнитьЭСПРасширеннаяПодсказка" id="215"/>
+									</Button>
 									<Button name="КомандаПроверитьЭСПНаРыночность" id="327">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.КомандаПроверитьЭСПНаРыночность</CommandName>
@@ -773,6 +757,10 @@
 					<v8:content>Заполнить ЭСП</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>КомандаЗаполнитьЭСП</Action>
 			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
@@ -885,21 +873,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаЗаполнитьНастройкуПоКлиенту</Action>
-		</Command>
-		<Command name="КомандаЗаполнитьРасчетнойЭСП" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Расчетная ЭСП</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Команда заполнить расчетной ЭСП</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>КомандаЗаполнитьРасчетнойЭСП</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

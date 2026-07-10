@@ -20,14 +20,14 @@
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>Формирование ввода денежных средств от пайщика</v8:content>
+						<v8:content>(автоматически) Формирование ввода денежных средств от пайщика при загрузке банковской выписки</v8:content>
 					</v8:item>
 				</Title>
 				<ToolTip/>
 				<TabOrder>1</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:ForestGreen</LineColor>
+				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>0</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -36,7 +36,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="0" left="310" bottom="50" right="560"/>
+				<Location top="0" left="100" bottom="40" right="440"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -65,10 +65,10 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="435" y="50"/>
-					<Point x="435" y="60"/>
-					<Point x="435" y="60"/>
-					<Point x="435" y="71"/>
+					<Point x="270" y="40"/>
+					<Point x="270" y="50"/>
+					<Point x="270" y="50"/>
+					<Point x="270" y="60"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -76,7 +76,7 @@
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
-						<Item>Разделение1</Item>
+						<Item>ОтправкаВЛККДанныхОПоступленииДенежныхСредствНаТранзитныйСчетПИФ</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -102,7 +102,7 @@
 				<TabOrder>7</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:IndianRed</LineColor>
+				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>2</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -111,7 +111,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="310" left="310" bottom="340" right="560"/>
+				<Location top="200" left="140" bottom="220" right="400"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -136,8 +136,8 @@
 				<ToolTip/>
 				<TabOrder>8</TabOrder>
 				<BackColor>auto</BackColor>
-				<TextColor>web:IndianRed</TextColor>
-				<LineColor>web:IndianRed</LineColor>
+				<TextColor>style:FormTextColor</TextColor>
+				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>3</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -147,9 +147,9 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="310" y="325"/>
-					<Point x="220" y="325"/>
-					<Point x="220" y="365"/>
+					<Point x="140" y="210"/>
+					<Point x="120" y="210"/>
+					<Point x="120" y="240"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -157,7 +157,7 @@
 						<PortIndex>1</PortIndex>
 					</From>
 					<To>
-						<Item>ФормированиеВыводаДенежныхСредствПайщикуПриЗагрузкеВыписки</Item>
+						<Item>ВозвратДенежныхСредствПайщику</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -182,8 +182,8 @@
 				<ToolTip/>
 				<TabOrder>9</TabOrder>
 				<BackColor>auto</BackColor>
-				<TextColor>web:ForestGreen</TextColor>
-				<LineColor>web:ForestGreen</LineColor>
+				<TextColor>style:FormTextColor</TextColor>
+				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>4</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -193,9 +193,9 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="560" y="325"/>
-					<Point x="650" y="325"/>
-					<Point x="650" y="365"/>
+					<Point x="400" y="210"/>
+					<Point x="420" y="210"/>
+					<Point x="420" y="240"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -203,7 +203,7 @@
 						<PortIndex>3</PortIndex>
 					</From>
 					<To>
-						<Item>ФормированиеПереводаДССТранзитногоСчетаНаРасчетныйПриЗагрузкеВыписки</Item>
+						<Item>ФормированиеПлатежногоПорученияНаПереводДенежныхСредствСТранзитногоСчетаНаРасчетный</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -238,7 +238,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="235" left="255" bottom="285" right="615"/>
+				<Location top="140" left="100" bottom="180" right="440"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -284,10 +284,10 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="435" y="285"/>
-					<Point x="435" y="297"/>
-					<Point x="435" y="297"/>
-					<Point x="435" y="310"/>
+					<Point x="270" y="180"/>
+					<Point x="270" y="190"/>
+					<Point x="270" y="190"/>
+					<Point x="270" y="200"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -310,11 +310,11 @@
 		</ConnectionLine>
 		<Activity id="35" uuid="1ab80754-8219-4552-9ea8-18da588f2fe2">
 			<Properties>
-				<Name>ФормированиеВыводаДенежныхСредствПайщикуПриЗагрузкеВыписки</Name>
+				<Name>ВозвратДенежныхСредствПайщику</Name>
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Формирование вывода денежных средств пайщику при зыгрузке банковской выписки</v8:content>
+						<v8:content>(автоматически) Формирование платежного поручения на возврат денежных средств пайщику</v8:content>
 					</v8:item>
 				</Title>
 				<ToolTip/>
@@ -330,13 +330,13 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="365" left="40" bottom="415" right="400"/>
+				<Location top="240" left="20" bottom="300" right="220"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
 				<Picture/>
 				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(автоматически) Формирование вывода денежных средств пайщику при зыгрузке банковской выписки</TaskDescription>
+				<TaskDescription>(автоматически) Формирование платежного поручения на возврат денежных средств пайщику</TaskDescription>
 				<Explanation/>
 				<Group>false</Group>
 				<AddressingAttributes>
@@ -351,7 +351,7 @@
 			<Events>
 				<Event name="InteractiveActivationProcessing"/>
 				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">ФормированиеВыводаДенежныхСредствПайщикуПриЗагрузкеВыпискиПриСозданииЗадач</Event>
+				<Event name="OnCreateTask">ВозвратДенежныхСредствПайщикуПриСозданииЗадач</Event>
 				<Event name="OnExecute"/>
 				<Event name="CheckExecutionProcessing"/>
 				<Event name="BeforeExecute"/>
@@ -371,25 +371,23 @@
 				<ZOrder>8</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
-				<Font ref="style:TextFont" kind="StyleItem" scale="100"/>
+				<Font kind="AutoFont"/>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="40" y="390"/>
-					<Point x="25" y="390"/>
-					<Point x="25" y="663"/>
-					<Point x="435" y="663"/>
-					<Point x="435" y="678"/>
+					<Point x="120" y="300"/>
+					<Point x="120" y="570"/>
+					<Point x="380" y="570"/>
 				</PivotPoints>
 				<Connect>
 					<From>
-						<Item>ФормированиеВыводаДенежныхСредствПайщикуПриЗагрузкеВыписки</Item>
-						<PortIndex>1</PortIndex>
+						<Item>ВозвратДенежныхСредствПайщику</Item>
+						<PortIndex>4</PortIndex>
 					</From>
 					<To>
 						<Item>Завершение</Item>
-						<PortIndex>2</PortIndex>
+						<PortIndex>1</PortIndex>
 					</To>
 				</Connect>
 				<Line width="1" gap="false">
@@ -403,11 +401,11 @@
 		</ConnectionLine>
 		<Activity id="37" uuid="e92dbff6-9e81-4cff-88be-836a72f568be">
 			<Properties>
-				<Name>ФормированиеПереводаДССТранзитногоСчетаНаРасчетныйПриЗагрузкеВыписки</Name>
+				<Name>ФормированиеПлатежногоПорученияНаПереводДенежныхСредствСТранзитногоСчетаНаРасчетный</Name>
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Формирование перевода денежных средств с транзитного счета на расчетный при загрузке выписки банка</v8:content>
+						<v8:content>(автоматически) Формирование платежного поручения на перевод денежных средств с транзитного счета на расчетный</v8:content>
 					</v8:item>
 				</Title>
 				<ToolTip/>
@@ -423,13 +421,13 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="365" left="470" bottom="415" right="830"/>
+				<Location top="240" left="280" bottom="300" right="560"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
 				<Picture/>
 				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(автоматически) Формирование перевода денежных средств с транзитного счета на расчетный при загрузке выписки банка</TaskDescription>
+				<TaskDescription>(автоматически) Формирование платежного поручения на перевод денежных средств с транзитного счета на расчетный</TaskDescription>
 				<Explanation/>
 				<Group>false</Group>
 				<AddressingAttributes>
@@ -444,7 +442,7 @@
 			<Events>
 				<Event name="InteractiveActivationProcessing"/>
 				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">ФормированиеПереводаДССТранзитногоСчетаНаРасчетныйПриЗагрузкеВыпискиПриСозданииЗадач</Event>
+				<Event name="OnCreateTask">ФормированиеПлатежногоПорученияНаПереводДенежныхСредствСТранзитногоСчетаНаРасчетныйПриСозданииЗадач</Event>
 				<Event name="OnExecute"/>
 				<Event name="CheckExecutionProcessing"/>
 				<Event name="BeforeExecute"/>
@@ -469,14 +467,14 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="650" y="415"/>
-					<Point x="650" y="427"/>
-					<Point x="650" y="427"/>
-					<Point x="650" y="440"/>
+					<Point x="420" y="300"/>
+					<Point x="420" y="310"/>
+					<Point x="420" y="310"/>
+					<Point x="420" y="320"/>
 				</PivotPoints>
 				<Connect>
 					<From>
-						<Item>ФормированиеПереводаДССТранзитногоСчетаНаРасчетныйПриЗагрузкеВыписки</Item>
+						<Item>ФормированиеПлатежногоПорученияНаПереводДенежныхСредствСТранзитногоСчетаНаРасчетный</Item>
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
@@ -506,7 +504,7 @@
 				<TabOrder>20</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:CadetBlue</LineColor>
+				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>11</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -515,7 +513,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="678" left="395" bottom="718" right="475"/>
+				<Location top="560" left="380" bottom="580" right="460"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -548,7 +546,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="440" left="470" bottom="510" right="830"/>
+				<Location top="320" left="240" bottom="380" right="600"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -594,17 +592,18 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="470" y="475"/>
-					<Point x="435" y="475"/>
-					<Point x="435" y="504"/>
+					<Point x="420" y="380"/>
+					<Point x="420" y="390"/>
+					<Point x="420" y="390"/>
+					<Point x="420" y="400"/>
 				</PivotPoints>
 				<Connect>
 					<From>
 						<Item>ЗагрузкаДанныхОтДКПоЗачислениюПаев</Item>
-						<PortIndex>1</PortIndex>
+						<PortIndex>4</PortIndex>
 					</From>
 					<To>
-						<Item>Разделение2</Item>
+						<Item>ОтправкаВЛККДанныхОЗачисленииПаев</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -639,7 +638,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="535" left="40" bottom="585" right="400"/>
+				<Location top="400" left="240" bottom="460" right="600"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -685,10 +684,10 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="220" y="585"/>
-					<Point x="220" y="602"/>
-					<Point x="435" y="602"/>
-					<Point x="435" y="620"/>
+					<Point x="420" y="460"/>
+					<Point x="420" y="470"/>
+					<Point x="420" y="470"/>
+					<Point x="420" y="480"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -696,7 +695,7 @@
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
-						<Item>Слияние1</Item>
+						<Item>ЗагрузкаДетальногоОтчетаПоИсполненнымОперациямОтДК</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -731,7 +730,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="100" left="40" bottom="150" right="400"/>
+				<Location top="60" left="140" bottom="120" right="400"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -777,10 +776,10 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="220" y="150"/>
-					<Point x="220" y="167"/>
-					<Point x="435" y="167"/>
-					<Point x="435" y="185"/>
+					<Point x="270" y="120"/>
+					<Point x="270" y="130"/>
+					<Point x="270" y="130"/>
+					<Point x="270" y="140"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -788,7 +787,7 @@
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
-						<Item>Слияние2</Item>
+						<Item>ЗагрузкаООВПиОНВП</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -801,15 +800,20 @@
 				<EndArrow>Filled</EndArrow>
 			</Properties>
 		</ConnectionLine>
-		<Split id="82" uuid="63b427d9-439a-4e09-8148-f1e4aed82c2b">
+		<Activity id="80" uuid="09e3075c-1012-4ed3-a546-67c898077efb">
 			<Properties>
-				<Name>Разделение1</Name>
-				<Title/>
+				<Name>ЗагрузкаДетальногоОтчетаПоИсполненнымОперациямОтДК</Name>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(автоматически) Загрузка детального отчета по исполненным операциям за день от ДК</v8:content>
+					</v8:item>
+				</Title>
 				<ToolTip/>
-				<TabOrder>21</TabOrder>
+				<TabOrder>18</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:IndianRed</LineColor>
+				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>18</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -818,20 +822,40 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="71" left="410" bottom="101" right="460"/>
+				<Location top="480" left="240" bottom="540" right="600"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
 				<Picture/>
 				<PictureSize>AutoSize</PictureSize>
+				<TaskDescription>(автоматически) Загрузка детального отчета по исполненным операциям за день от ДК</TaskDescription>
+				<Explanation/>
+				<Group>false</Group>
+				<AddressingAttributes>
+					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
+						<Value xsi:nil="true"/>
+					</AddressingAttribute>
+					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
+						<Value xsi:nil="true"/>
+					</AddressingAttribute>
+				</AddressingAttributes>
 			</Properties>
-		</Split>
-		<ConnectionLine id="83">
+			<Events>
+				<Event name="InteractiveActivationProcessing"/>
+				<Event name="BeforeCreateTasks"/>
+				<Event name="OnCreateTask">ЗагрузкаДетальногоОтчетаПоИсполненнымОперациямОтДКПриСозданииЗадач</Event>
+				<Event name="OnExecute">ЗагрузкаДетальногоОтчетаПоИсполненнымОперациямОтДКПриВыполнении</Event>
+				<Event name="CheckExecutionProcessing"/>
+				<Event name="BeforeExecute"/>
+				<Event name="BeforeExecuteInteractively"/>
+			</Events>
+		</Activity>
+		<ConnectionLine id="81">
 			<Properties>
-				<Name>Линия3</Name>
+				<Name>Линия4</Name>
 				<Title/>
 				<ToolTip/>
-				<TabOrder>22</TabOrder>
+				<TabOrder>19</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
@@ -844,483 +868,18 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="435" y="101"/>
-					<Point x="435" y="125"/>
-					<Point x="470" y="125"/>
+					<Point x="420" y="540"/>
+					<Point x="420" y="550"/>
+					<Point x="420" y="550"/>
+					<Point x="420" y="560"/>
 				</PivotPoints>
 				<Connect>
 					<From>
-						<Item>Разделение1</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>ЭкспортДанныхОПоступленииДенежныхСредствВПервуюФормуМКБ</Item>
-						<PortIndex>1</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<ConnectionLine id="85">
-			<Properties>
-				<Name>Линия6</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>24</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>20</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="435" y="101"/>
-					<Point x="435" y="125"/>
-					<Point x="400" y="125"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>Разделение1</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>ОтправкаВЛККДанныхОПоступленииДенежныхСредствНаТранзитныйСчетПИФ</Item>
-						<PortIndex>3</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Activity id="86" uuid="34676eaa-b73d-4a7c-944e-7e36b22fecd4">
-			<Properties>
-				<Name>ЭкспортДанныхОЗачисленииПаевВПервуюФормуМКБ</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Экспорт данных о зачислении паев в первую форму МКБ</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>25</TabOrder>
-				<BackColor>web:Wheat</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>21</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="535" left="470" bottom="585" right="830"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(автоматически) Экспорт данных о зачислении паев в первую форму МКБ</TaskDescription>
-				<Explanation/>
-				<Group>false</Group>
-				<AddressingAttributes>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-				</AddressingAttributes>
-			</Properties>
-			<Events>
-				<Event name="InteractiveActivationProcessing"/>
-				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">ЭкспортДанныхОЗачисленииПаевВПервуюФормуМКБПриСозданииЗадач</Event>
-				<Event name="OnExecute">ЭкспортДанныхОЗачисленииПаевВПервуюФормуМКБПриВыполнении</Event>
-				<Event name="CheckExecutionProcessing"/>
-				<Event name="BeforeExecute"/>
-				<Event name="BeforeExecuteInteractively"/>
-			</Events>
-		</Activity>
-		<ConnectionLine id="87">
-			<Properties>
-				<Name>Линия7</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>26</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>22</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="650" y="585"/>
-					<Point x="650" y="602"/>
-					<Point x="435" y="602"/>
-					<Point x="435" y="620"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>ЭкспортДанныхОЗачисленииПаевВПервуюФормуМКБ</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>Слияние1</Item>
-						<PortIndex>2</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Activity id="88" uuid="89fb6e15-3e86-41e0-bd98-a41ef9e59f66">
-			<Properties>
-				<Name>ЭкспортДанныхОПоступленииДенежныхСредствВПервуюФормуМКБ</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Экспорт данных о поступлении денежных средств в первую форму МКБ</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>27</TabOrder>
-				<BackColor>web:Wheat</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>23</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="100" left="470" bottom="150" right="830"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(автоматически) Экспорт данных о поступлении денежных средств в первую форму МКБ</TaskDescription>
-				<Explanation/>
-				<Group>false</Group>
-				<AddressingAttributes>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
-						<Value xmlns:d7p1="http://v8.1c.ru/8.3/xcf/readable" xsi:type="d7p1:DesignTimeRef">Catalog.ГруппыПользователей.EmptyRef</Value>
-					</AddressingAttribute>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-				</AddressingAttributes>
-			</Properties>
-			<Events>
-				<Event name="InteractiveActivationProcessing"/>
-				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">ЭкспортДанныхОПоступленииДенежныхСредствВПервуюФормуМКБПриСозданииЗадач</Event>
-				<Event name="OnExecute">ЭкспортДанныхОПоступленииДенежныхСредствВПервуюФормуМКБПриВыполнении</Event>
-				<Event name="CheckExecutionProcessing"/>
-				<Event name="BeforeExecute"/>
-				<Event name="BeforeExecuteInteractively"/>
-			</Events>
-		</Activity>
-		<ConnectionLine id="89">
-			<Properties>
-				<Name>Линия10</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>28</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>24</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="650" y="150"/>
-					<Point x="650" y="167"/>
-					<Point x="435" y="167"/>
-					<Point x="435" y="185"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>ЭкспортДанныхОПоступленииДенежныхСредствВПервуюФормуМКБ</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>Слияние2</Item>
-						<PortIndex>2</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Split id="90" uuid="4074dc76-7534-44fb-8789-ab9aaab61dcd">
-			<Properties>
-				<Name>Разделение2</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>29</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:IndianRed</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>25</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="504" left="410" bottom="534" right="460"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-			</Properties>
-		</Split>
-		<ConnectionLine id="91">
-			<Properties>
-				<Name>Линия11</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>30</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>26</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="435" y="534"/>
-					<Point x="435" y="560"/>
-					<Point x="400" y="560"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>Разделение2</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>ОтправкаВЛККДанныхОЗачисленииПаев</Item>
-						<PortIndex>3</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Join id="94" uuid="9ad1b443-4f2e-498a-b338-5a431f3df2d6">
-			<Properties>
-				<Name>Слияние1</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>33</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:ForestGreen</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>27</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="620" left="410" bottom="650" right="460"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-			</Properties>
-		</Join>
-		<ConnectionLine id="95">
-			<Properties>
-				<Name>Линия18</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>34</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>28</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="435" y="650"/>
-					<Point x="435" y="664"/>
-					<Point x="435" y="664"/>
-					<Point x="435" y="678"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>Слияние1</Item>
+						<Item>ЗагрузкаДетальногоОтчетаПоИсполненнымОперациямОтДК</Item>
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
 						<Item>Завершение</Item>
-						<PortIndex>2</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<ConnectionLine id="96">
-			<Properties>
-				<Name>Линия19</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>35</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>29</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="435" y="534"/>
-					<Point x="435" y="560"/>
-					<Point x="470" y="560"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>Разделение2</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>ЭкспортДанныхОЗачисленииПаевВПервуюФормуМКБ</Item>
-						<PortIndex>1</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Join id="97" uuid="5dd11708-d0d5-4024-a96f-4b5a7217d948">
-			<Properties>
-				<Name>Слияние2</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>36</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>web:ForestGreen</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>30</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="185" left="410" bottom="215" right="460"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-			</Properties>
-		</Join>
-		<ConnectionLine id="98">
-			<Properties>
-				<Name>Линия5</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>37</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>31</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="435" y="215"/>
-					<Point x="435" y="225"/>
-					<Point x="435" y="225"/>
-					<Point x="435" y="235"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>Слияние2</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>ЗагрузкаООВПиОНВП</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>

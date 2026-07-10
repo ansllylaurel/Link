@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
 	<AutoTime>CurrentOrLast</AutoTime>
 	<UsePostingMode>Auto</UsePostingMode>
 	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -33,12 +33,14 @@
 					<ContextMenu name="ДатаКонтекстноеМеню" id="102"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="202"/>
 				</InputField>
-				<InputField name="Организация" id="3">
+				<LabelField name="Организация" id="3">
 					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
 					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="103"/>
 					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="203"/>
-				</InputField>
+				</LabelField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаОсновныеРеквизиты" id="302">
@@ -52,6 +54,12 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ЦеннаяБумагаКонтекстноеМеню" id="104"/>
 					<ExtendedTooltip name="ЦеннаяБумагаРасширеннаяПодсказка" id="204"/>
+				</InputField>
+				<InputField name="ДатаФиксации" id="326">
+					<DataPath>Объект.ДатаФиксации</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаФиксацииКонтекстноеМеню" id="327"/>
+					<ExtendedTooltip name="ДатаФиксацииРасширеннаяПодсказка" id="328"/>
 				</InputField>
 				<InputField name="ДатаГолосования" id="5">
 					<DataPath>Объект.ДатаГолосования</DataPath>
@@ -82,10 +90,10 @@
 				<InputField name="ПовесткаДня" id="8">
 					<DataPath>Объект.ПовесткаДня</DataPath>
 					<EditMode>EnterOnInput</EditMode>
-					<MultiLine>true</MultiLine>
-					<Height>2</Height>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<MaxWidth>90</MaxWidth>
+					<Height>2</Height>
+					<MultiLine>true</MultiLine>
 					<ContextMenu name="ПовесткаДняКонтекстноеМеню" id="108"/>
 					<ExtendedTooltip name="ПовесткаДняРасширеннаяПодсказка" id="208"/>
 				</InputField>
@@ -115,6 +123,30 @@
 				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="КлиентыРасширеннаяПодсказка" id="209"/>
+			<SearchStringAddition name="КлиентыСтрокаПоиска" id="308">
+				<AdditionSource>
+					<Item>Клиенты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КлиентыСтрокаПоискаКонтекстноеМеню" id="309"/>
+				<ExtendedTooltip name="КлиентыСтрокаПоискаРасширеннаяПодсказка" id="310"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КлиентыСостояниеПросмотра" id="311">
+				<AdditionSource>
+					<Item>Клиенты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КлиентыСостояниеПросмотраКонтекстноеМеню" id="312"/>
+				<ExtendedTooltip name="КлиентыСостояниеПросмотраРасширеннаяПодсказка" id="313"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КлиентыУправлениеПоиском" id="314">
+				<AdditionSource>
+					<Item>Клиенты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КлиентыУправлениеПоискомКонтекстноеМеню" id="315"/>
+				<ExtendedTooltip name="КлиентыУправлениеПоискомРасширеннаяПодсказка" id="316"/>
+			</SearchControlAddition>
 			<ChildItems>
 				<InputField name="КлиентыСчетДоверительногоУправления" id="13">
 					<DataPath>Объект.Клиенты.СчетДоверительногоУправления</DataPath>
@@ -134,12 +166,6 @@
 					<ContextMenu name="КлиентыВидДоговораКонтекстноеМеню" id="115"/>
 					<ExtendedTooltip name="КлиентыВидДоговораРасширеннаяПодсказка" id="215"/>
 				</InputField>
-				<InputField name="КлиентыКоличество" id="16">
-					<DataPath>Объект.Клиенты.Количество</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="КлиентыКоличествоКонтекстноеМеню" id="116"/>
-					<ExtendedTooltip name="КлиентыКоличествоРасширеннаяПодсказка" id="216"/>
-				</InputField>
 			</ChildItems>
 		</Table>
 		<Table name="ВопросыПовестки" id="17">
@@ -153,6 +179,30 @@
 			<ContextMenu name="ВопросыПовесткиКонтекстноеМеню" id="117"/>
 			<AutoCommandBar name="ВопросыПовесткиКоманднаяПанель" id="18"/>
 			<ExtendedTooltip name="ВопросыПовесткиРасширеннаяПодсказка" id="217"/>
+			<SearchStringAddition name="ВопросыПовесткиСтрокаПоиска" id="317">
+				<AdditionSource>
+					<Item>ВопросыПовестки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ВопросыПовесткиСтрокаПоискаКонтекстноеМеню" id="318"/>
+				<ExtendedTooltip name="ВопросыПовесткиСтрокаПоискаРасширеннаяПодсказка" id="319"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ВопросыПовесткиСостояниеПросмотра" id="320">
+				<AdditionSource>
+					<Item>ВопросыПовестки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ВопросыПовесткиСостояниеПросмотраКонтекстноеМеню" id="321"/>
+				<ExtendedTooltip name="ВопросыПовесткиСостояниеПросмотраРасширеннаяПодсказка" id="322"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ВопросыПовесткиУправлениеПоиском" id="323">
+				<AdditionSource>
+					<Item>ВопросыПовестки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ВопросыПовесткиУправлениеПоискомКонтекстноеМеню" id="324"/>
+				<ExtendedTooltip name="ВопросыПовесткиУправлениеПоискомРасширеннаяПодсказка" id="325"/>
+			</SearchControlAddition>
 			<ChildItems>
 				<InputField name="ВопросыПовесткиВопросПовесткиДня" id="19">
 					<DataPath>Объект.ВопросыПовестки.ВопросПовесткиДня</DataPath>
@@ -183,12 +233,14 @@
 					<ContextMenu name="КомментарийКонтекстноеМеню" id="121"/>
 					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="221"/>
 				</InputField>
-				<InputField name="Ответственный" id="22">
+				<LabelField name="Ответственный" id="22">
 					<DataPath>Объект.Ответственный</DataPath>
+					<TitleLocation>None</TitleLocation>
 					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="122"/>
 					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="222"/>
-				</InputField>
+				</LabelField>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
