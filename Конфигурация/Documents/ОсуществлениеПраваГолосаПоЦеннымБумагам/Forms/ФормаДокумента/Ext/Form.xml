@@ -94,11 +94,17 @@
 				</UsualGroup>
 				<InputField name="ПовесткаДня" id="8">
 					<DataPath>Объект.ПовесткаДня</DataPath>
-					<EditMode>EnterOnInput</EditMode>
+					<ReadOnly>true</ReadOnly>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<MaxWidth>90</MaxWidth>
 					<Height>2</Height>
 					<MultiLine>true</MultiLine>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполняется автоматически по строкам таблицы "Вопросы повестки"</v8:content>
+						</v8:item>
+					</ToolTip>
 					<ContextMenu name="ПовесткаДняКонтекстноеМеню" id="108"/>
 					<ExtendedTooltip name="ПовесткаДняРасширеннаяПодсказка" id="208"/>
 				</InputField>
@@ -211,6 +217,9 @@
 				<ContextMenu name="ВопросыПовесткиУправлениеПоискомКонтекстноеМеню" id="324"/>
 				<ExtendedTooltip name="ВопросыПовесткиУправлениеПоискомРасширеннаяПодсказка" id="325"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="AfterDeleteRow">ВопросыПовесткиПослеУдаления</Event>
+			</Events>
 			<ChildItems>
 				<InputField name="ВопросыПовесткиВопросПовесткиДня" id="19">
 					<DataPath>Объект.ВопросыПовестки.ВопросПовесткиДня</DataPath>
@@ -218,6 +227,9 @@
 					<MultiLine>true</MultiLine>
 					<ContextMenu name="ВопросыПовесткиВопросПовесткиДняКонтекстноеМеню" id="119"/>
 					<ExtendedTooltip name="ВопросыПовесткиВопросПовесткиДняРасширеннаяПодсказка" id="219"/>
+					<Events>
+						<Event name="OnChange">ВопросыПовесткиВопросПовесткиДняПриИзменении</Event>
+					</Events>
 				</InputField>
 				<InputField name="ВопросыПовесткиВариантГолосования" id="20">
 					<DataPath>Объект.ВопросыПовестки.ВариантГолосования</DataPath>
