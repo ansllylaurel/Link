@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПереименоватьФайлы" id="47">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПереименоватьФайлы</CommandName>
+				<ExtendedTooltip name="ФормаПереименоватьФайлыРасширеннаяПодсказка" id="48"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="80">
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="81"/>
+			<ChildItems>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Дата</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="1">
+					<DataPath>Объект.Организация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СписокСчетов" id="49">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>СписокСчетов</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокСчетовКонтекстноеМеню" id="50"/>
+			<AutoCommandBar name="СписокСчетовКоманднаяПанель" id="51">
+				<ChildItems>
+					<Button name="СписокСчетовОтметитьВсе" id="82">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтметитьВсе</CommandName>
+						<ExtendedTooltip name="СписокСчетовОтметитьВсеРасширеннаяПодсказка" id="83"/>
+					</Button>
+					<Button name="СписокСчетовСнятьВсе" id="84">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СнятьВсе</CommandName>
+						<ExtendedTooltip name="СписокСчетовСнятьВсеРасширеннаяПодсказка" id="85"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокСчетовРасширеннаяПодсказка" id="52"/>
+			<SearchStringAddition name="СписокСчетовСтрокаПоиска" id="53">
+				<AdditionSource>
+					<Item>СписокСчетов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСчетовСтрокаПоискаКонтекстноеМеню" id="54"/>
+				<ExtendedTooltip name="СписокСчетовСтрокаПоискаРасширеннаяПодсказка" id="55"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСчетовСостояниеПросмотра" id="56">
+				<AdditionSource>
+					<Item>СписокСчетов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСчетовСостояниеПросмотраКонтекстноеМеню" id="57"/>
+				<ExtendedTooltip name="СписокСчетовСостояниеПросмотраРасширеннаяПодсказка" id="58"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокСчетовУправлениеПоиском" id="59">
+				<AdditionSource>
+					<Item>СписокСчетов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСчетовУправлениеПоискомКонтекстноеМеню" id="60"/>
+				<ExtendedTooltip name="СписокСчетовУправлениеПоискомРасширеннаяПодсказка" id="61"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="СписокСчетовПометка" id="68">
+					<DataPath>СписокСчетов.Пометка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокСчетовПометкаКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="СписокСчетовПометкаРасширеннаяПодсказка" id="70"/>
+				</CheckBoxField>
+				<InputField name="СписокСчетовСчетДоверительногУправления" id="62">
+					<DataPath>СписокСчетов.СчетДоверительногУправления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовСчетДоверительногУправленияКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="СписокСчетовСчетДоверительногУправленияРасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="СписокСчетовБанк" id="71">
+					<DataPath>СписокСчетов.Банк</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовБанкКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="СписокСчетовБанкРасширеннаяПодсказка" id="73"/>
+				</InputField>
+				<InputField name="СписокСчетовРасчетныйСчет" id="65">
+					<DataPath>СписокСчетов.НомерСчета</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовРасчетныйСчетКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="СписокСчетовРасчетныйСчетРасширеннаяПодсказка" id="67"/>
+				</InputField>
+				<InputField name="СписокСчетовВалюта" id="86">
+					<DataPath>СписокСчетов.Валюта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовВалютаКонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="СписокСчетовВалютаРасширеннаяПодсказка" id="88"/>
+				</InputField>
+				<CheckBoxField name="СписокСчетовТранзитныйПИФ" id="74">
+					<DataPath>СписокСчетов.ТранзитныйПИФ</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокСчетовТранзитныйПИФКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="СписокСчетовТранзитныйПИФРасширеннаяПодсказка" id="76"/>
+				</CheckBoxField>
+				<InputField name="СписокСчетовИмяИсходногоФайла" id="77">
+					<DataPath>СписокСчетов.ИмяИсходногоФайла</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСчетовИмяИсходногоФайлаКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="СписокСчетовИмяИсходногоФайлаРасширеннаяПодсказка" id="79"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._КопированиеВыписокБанкаПИФ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокСчетов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список счетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СчетДоверительногУправления" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительног управления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+					</Edit>
+				</Column>
+				<Column name="НомерСчета" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер счета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+					</Edit>
+				</Column>
+				<Column name="Пометка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пометка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Банк" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Банк</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+					</Edit>
+				</Column>
+				<Column name="ТранзитныйПИФ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Транзитный</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+					</Edit>
+				</Column>
+				<Column name="ИмяИсходногоФайла" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя исходного файла</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>1000</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеБанка" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление банка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Валюта" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПереименоватьФайлы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать файлы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переименовать файлы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПереименоватьФайлы</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОтметитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтметитьВсе</Action>
+		</Command>
+		<Command name="СнятьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьВсе</Action>
+		</Command>
+	</Commands>
+</Form>

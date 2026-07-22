@@ -1,0 +1,1620 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Мастер создания задач в первой форме</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаФон" id="230">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа фон</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа фон</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>web:WhiteSmoke</BackColor>
+			<ExtendedTooltip name="ГруппаФонРасширеннаяПодсказка" id="231"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКоманды" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="2"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаКомандыФормы" id="13">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа команды формы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа команды формы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыФормыРасширеннаяПодсказка" id="14"/>
+							<ChildItems>
+								<Button name="Обновить" id="3">
+									<Type>UsualButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<CommandName>Form.Command.Обновить</CommandName>
+									<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="4"/>
+								</Button>
+								<Button name="СоздатьЗадачи" id="5">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СоздатьИзменитьЗадачи</CommandName>
+									<ExtendedTooltip name="СоздатьЗадачиРасширеннаяПодсказка" id="6"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<CommandBar name="ГруппаСтандартныеКоманды" id="7">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа стандартные команды</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа стандартные команды</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаСтандартныеКомандыРасширеннаяПодсказка" id="8"/>
+							<ChildItems>
+								<Button name="ИзменитьФорму" id="9">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+									<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="10"/>
+								</Button>
+								<Button name="Справка" id="11">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.Help</CommandName>
+									<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="12"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДопКоманды" id="97">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа доп команды</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа доп команды</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДопКомандыРасширеннаяПодсказка" id="98"/>
+					<ChildItems>
+						<Button name="УстановитьВсеФлажки" id="101">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.УстановитьВсеФлажки</CommandName>
+							<ExtendedTooltip name="УстановитьВсеФлажкиРасширеннаяПодсказка" id="102"/>
+						</Button>
+						<Button name="СнятьВсеФлажки" id="99">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.СнятьВсеФлажки</CommandName>
+							<ExtendedTooltip name="СнятьВсеФлажкиРасширеннаяПодсказка" id="100"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПараметрыЗадач" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа параметры задач</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа параметры задач</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПараметрыЗадачРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблицаОсновныеПараметры" id="17">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основные параметры</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="12" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа таблица основные параметры</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаТаблицаОсновныеПараметрыРасширеннаяПодсказка" id="18"/>
+							<ChildItems>
+								<Table name="ПараметрыЗадач" id="19">
+									<Representation>List</Representation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>ПараметрыЗадач</DataPath>
+									<RowPictureDataPath>ПараметрыЗадач.СтатусКартинка</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.СтатусыФайлов</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</RowsPicture>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ПараметрыЗадачКонтекстноеМеню" id="20"/>
+									<AutoCommandBar name="ПараметрыЗадачКоманднаяПанель" id="21">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ПараметрыЗадачРасширеннаяПодсказка" id="22"/>
+									<SearchStringAddition name="ПараметрыЗадачСтрокаПоиска" id="23">
+										<AdditionSource>
+											<Item>ПараметрыЗадач</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПараметрыЗадачСтрокаПоискаКонтекстноеМеню" id="24"/>
+										<ExtendedTooltip name="ПараметрыЗадачСтрокаПоискаРасширеннаяПодсказка" id="25"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ПараметрыЗадачСостояниеПросмотра" id="26">
+										<AdditionSource>
+											<Item>ПараметрыЗадач</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПараметрыЗадачСостояниеПросмотраКонтекстноеМеню" id="27"/>
+										<ExtendedTooltip name="ПараметрыЗадачСостояниеПросмотраРасширеннаяПодсказка" id="28"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ПараметрыЗадачУправлениеПоиском" id="29">
+										<AdditionSource>
+											<Item>ПараметрыЗадач</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ПараметрыЗадачУправлениеПоискомКонтекстноеМеню" id="30"/>
+										<ExtendedTooltip name="ПараметрыЗадачУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnActivateRow">ПараметрыЗадачПриАктивизацииСтроки</Event>
+										<Event name="BeforeRowChange">ПараметрыЗадачПередНачаломИзменения</Event>
+									</Events>
+									<ChildItems>
+										<CheckBoxField name="ПараметрыЗадачФлажок" id="35">
+											<DataPath>ПараметрыЗадач.Флажок</DataPath>
+											<TitleBackColor>web:GhostWhite</TitleBackColor>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<HeaderPicture>
+												<xr:Ref>StdPicture.AppearanceCheckBox</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</HeaderPicture>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПараметрыЗадачФлажокКонтекстноеМеню" id="36"/>
+											<ExtendedTooltip name="ПараметрыЗадачФлажокРасширеннаяПодсказка" id="37"/>
+										</CheckBoxField>
+										<InputField name="ПараметрыЗадачБанк" id="44">
+											<DataPath>ПараметрыЗадач.Банк</DataPath>
+											<TitleBackColor>web:GhostWhite</TitleBackColor>
+											<HorizontalAlign>Left</HorizontalAlign>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ПараметрыЗадачБанкКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="ПараметрыЗадачБанкРасширеннаяПодсказка" id="46"/>
+										</InputField>
+										<InputField name="ПараметрыЗадачДатаРазмещения" id="41">
+											<DataPath>ПараметрыЗадач.ДатаРазмещения</DataPath>
+											<TitleBackColor>web:GhostWhite</TitleBackColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>15</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=dd.MM.yyyy</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=dd.MM.yyyy</v8:content>
+												</v8:item>
+											</EditFormat>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ПараметрыЗадачДатаРазмещенияКонтекстноеМеню" id="42"/>
+											<ExtendedTooltip name="ПараметрыЗадачДатаРазмещенияРасширеннаяПодсказка" id="43"/>
+										</InputField>
+										<InputField name="ПараметрыЗадачВидДоговора" id="47">
+											<DataPath>ПараметрыЗадач.ВидДоговора</DataPath>
+											<TitleBackColor>web:GhostWhite</TitleBackColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ПараметрыЗадачВидДоговораКонтекстноеМеню" id="48"/>
+											<ExtendedTooltip name="ПараметрыЗадачВидДоговораРасширеннаяПодсказка" id="49"/>
+										</InputField>
+										<ColumnGroup name="Задача" id="111">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Задача</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Задача</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>25</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Group>Horizontal</Group>
+											<TitleBackColor>web:GhostWhite</TitleBackColor>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ЗадачаРасширеннаяПодсказка" id="112"/>
+											<ChildItems>
+												<InputField name="ПараметрыЗадачНомерЗадачи" id="38">
+													<DataPath>ПараметрыЗадач.НомерЗадачи</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>№</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<HorizontalAlign>Left</HorizontalAlign>
+													<EditMode>EnterOnInput</EditMode>
+													<CellHyperlink>true</CellHyperlink>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<TextColor>style:FieldSelectionBackColor</TextColor>
+													<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+													<ContextMenu name="ПараметрыЗадачНомерЗадачиКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="ПараметрыЗадачНомерЗадачиРасширеннаяПодсказка" id="40"/>
+												</InputField>
+												<InputField name="ПараметрыЗадачСтатус" id="108">
+													<DataPath>ПараметрыЗадач.СтатусПервойФормы</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Статус</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<HorizontalAlign>Left</HorizontalAlign>
+													<EditMode>EnterOnInput</EditMode>
+													<CellHyperlink>true</CellHyperlink>
+													<Width>15</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<TextColor>style:FieldSelectionBackColor</TextColor>
+													<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+													<ContextMenu name="ПараметрыЗадачСтатусКонтекстноеМеню" id="109"/>
+													<ExtendedTooltip name="ПараметрыЗадачСтатусРасширеннаяПодсказка" id="110"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаТабличныеДанные" id="113">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Табличные данные</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="style:NormalTextFont" faceName="Arial" height="10" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа табличные данные</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТабличныеДанныеРасширеннаяПодсказка" id="114"/>
+							<ChildItems>
+								<UsualGroup name="УчетнаяСистема" id="50">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учетная система</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="12" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учетная система</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="УчетнаяСистемаРасширеннаяПодсказка" id="51"/>
+									<ChildItems>
+										<LabelDecoration name="ОписаниеПараметров" id="235">
+											<Width>50</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<TextColor>style:FieldSelectionBackColor</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<TitleHeight>1</TitleHeight>
+											<ContextMenu name="ОписаниеПараметровКонтекстноеМеню" id="236"/>
+											<ExtendedTooltip name="ОписаниеПараметровРасширеннаяПодсказка" id="237"/>
+										</LabelDecoration>
+										<Table name="ПараметрыЗадачДанныеРаспоряжений" id="52">
+											<Representation>List</Representation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<InitialTreeView>ExpandAllLevels</InitialTreeView>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений</DataPath>
+											<BackColor>style:ReportGroup2BackColor</BackColor>
+											<TitleTextColor>style:FieldSelectionBackColor</TitleTextColor>
+											<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийКонтекстноеМеню" id="53"/>
+											<AutoCommandBar name="ПараметрыЗадачДанныеРаспоряженийКоманднаяПанель" id="54">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийРасширеннаяПодсказка" id="55"/>
+											<SearchStringAddition name="ПараметрыЗадачДанныеРаспоряженийСтрокаПоиска" id="56">
+												<AdditionSource>
+													<Item>ПараметрыЗадачДанныеРаспоряжений</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийСтрокаПоискаКонтекстноеМеню" id="57"/>
+												<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ПараметрыЗадачДанныеРаспоряженийСостояниеПросмотра" id="59">
+												<AdditionSource>
+													<Item>ПараметрыЗадачДанныеРаспоряжений</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийСостояниеПросмотраКонтекстноеМеню" id="60"/>
+												<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийСостояниеПросмотраРасширеннаяПодсказка" id="61"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ПараметрыЗадачДанныеРаспоряженийУправлениеПоиском" id="62">
+												<AdditionSource>
+													<Item>ПараметрыЗадачДанныеРаспоряжений</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийУправлениеПоискомКонтекстноеМеню" id="63"/>
+												<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="BeforeRowChange">ПараметрыЗадачДанныеРаспоряженийПередНачаломИзменения</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ПараметрыЗадачДанныеРаспоряженийКодСчета" id="172">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.КодСчета</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код счета</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийКодСчетаКонтекстноеМеню" id="173"/>
+													<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийКодСчетаРасширеннаяПодсказка" id="174"/>
+												</InputField>
+												<InputField name="ПараметрыЗадачДанныеРаспоряженийСчетДоверительногоУправления" id="169">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.СчетДоверительногоУправления</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Портфель</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<CellHyperlink>true</CellHyperlink>
+													<Width>20</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийСчетДоверительногоУправленияКонтекстноеМеню" id="170"/>
+													<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийСчетДоверительногоУправленияРасширеннаяПодсказка" id="171"/>
+												</InputField>
+												<InputField name="ПараметрыЗадачДанныеРаспоряженийСумма" id="175">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.Сумма</DataPath>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийСуммаКонтекстноеМеню" id="176"/>
+													<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийСуммаРасширеннаяПодсказка" id="177"/>
+												</InputField>
+												<InputField name="ПараметрыЗадачДанныеРаспоряженийСтавка" id="178">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.Ставка</DataPath>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийСтавкаКонтекстноеМеню" id="179"/>
+													<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийСтавкаРасширеннаяПодсказка" id="180"/>
+												</InputField>
+												<InputField name="ПараметрыЗадачДанныеРаспоряженийПериодичностьВыплатыПроцентов" id="184">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.ПериодичностьВыплатыПроцентов</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выплата %</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийПериодичностьВыплатыПроцентовКонтекстноеМеню" id="185"/>
+													<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийПериодичностьВыплатыПроцентовРасширеннаяПодсказка" id="186"/>
+												</InputField>
+												<LabelField name="ПараметрыЗадачДанныеРаспоряженийДоВостребования" id="187">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.ДоВостребования</DataPath>
+													<Enabled>false</Enabled>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийДоВостребованияКонтекстноеМеню" id="188"/>
+													<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийДоВостребованияРасширеннаяПодсказка" id="189"/>
+												</LabelField>
+												<ColumnGroup name="ПериодРазмещения" id="228">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Период размещения</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Период размещения</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Width>20</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Group>Horizontal</Group>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<ShowInHeader>true</ShowInHeader>
+													<ExtendedTooltip name="ПериодРазмещенияРасширеннаяПодсказка" id="229"/>
+													<ChildItems>
+														<InputField name="ПараметрыЗадачДанныеРаспоряженийДатаВозврата" id="190">
+															<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.ДатаВозврата</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>по</v8:content>
+																</v8:item>
+															</Title>
+															<TitleBackColor>web:GhostWhite</TitleBackColor>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<TextEdit>false</TextEdit>
+															<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийДатаВозвратаКонтекстноеМеню" id="191"/>
+															<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийДатаВозвратаРасширеннаяПодсказка" id="192"/>
+														</InputField>
+														<InputField name="ПараметрыЗадачДанныеРаспоряженийСрок" id="181">
+															<DataPath>Items.ПараметрыЗадач.CurrentData.ДанныеРаспоряжений.Срок</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>в днях</v8:content>
+																</v8:item>
+															</Title>
+															<TitleBackColor>web:GhostWhite</TitleBackColor>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<TextEdit>false</TextEdit>
+															<ContextMenu name="ПараметрыЗадачДанныеРаспоряженийСрокКонтекстноеМеню" id="182"/>
+															<ExtendedTooltip name="ПараметрыЗадачДанныеРаспоряженийСрокРасширеннаяПодсказка" id="183"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ПерваяФорма" id="115">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Первая форма</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="12" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Первая форма</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Collapsed>true</Collapsed>
+									<ExtendedTooltip name="ПерваяФормаРасширеннаяПодсказка" id="116"/>
+									<ChildItems>
+										<LabelDecoration name="НомерЗадачи" id="232">
+											<TextColor>style:FieldSelectionBackColor</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<TitleHeight>1</TitleHeight>
+											<ContextMenu name="НомерЗадачиКонтекстноеМеню" id="233"/>
+											<ExtendedTooltip name="НомерЗадачиРасширеннаяПодсказка" id="234"/>
+											<Events>
+												<Event name="Click">СсылкаНаЗадачуНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<Table name="ПараметрыЗадачТабличныеДанныеПервойФормы" id="117">
+											<Representation>List</Representation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы</DataPath>
+											<BackColor>web:AliceBlue</BackColor>
+											<TitleTextColor>style:FieldSelectionBackColor</TitleTextColor>
+											<TitleFont ref="style:NormalTextFont" faceName="Segoe UI Semibold" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ПараметрыЗадачТабличныеДанныеПервойФормыКонтекстноеМеню" id="118"/>
+											<AutoCommandBar name="ПараметрыЗадачТабличныеДанныеПервойФормыКоманднаяПанель" id="119">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ПараметрыЗадачТабличныеДанныеПервойФормыРасширеннаяПодсказка" id="120"/>
+											<SearchStringAddition name="ПараметрыЗадачТабличныеДанныеПервойФормыСтрокаПоиска" id="121">
+												<AdditionSource>
+													<Item>ПараметрыЗадачТабличныеДанныеПервойФормы</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ПараметрыЗадачТабличныеДанныеПервойФормыСтрокаПоискаКонтекстноеМеню" id="122"/>
+												<ExtendedTooltip name="ПараметрыЗадачТабличныеДанныеПервойФормыСтрокаПоискаРасширеннаяПодсказка" id="123"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ПараметрыЗадачТабличныеДанныеПервойФормыСостояниеПросмотра" id="124">
+												<AdditionSource>
+													<Item>ПараметрыЗадачТабличныеДанныеПервойФормы</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ПараметрыЗадачТабличныеДанныеПервойФормыСостояниеПросмотраКонтекстноеМеню" id="125"/>
+												<ExtendedTooltip name="ПараметрыЗадачТабличныеДанныеПервойФормыСостояниеПросмотраРасширеннаяПодсказка" id="126"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ПараметрыЗадачТабличныеДанныеПервойФормыУправлениеПоиском" id="127">
+												<AdditionSource>
+													<Item>ПараметрыЗадачТабличныеДанныеПервойФормы</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ПараметрыЗадачТабличныеДанныеПервойФормыУправлениеПоискомКонтекстноеМеню" id="128"/>
+												<ExtendedTooltip name="ПараметрыЗадачТабличныеДанныеПервойФормыУправлениеПоискомРасширеннаяПодсказка" id="129"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="BeforeRowChange">ПараметрыЗадачТабличныеДанныеПервойФормыПередНачаломИзменения</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ТабличныеДанныеПервойФормыКодСчета" id="202">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.КодСчета</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код счета</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<HeaderPicture>
+														<xr:Ref>CommonPicture.ПерваяФорма</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</HeaderPicture>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ТабличныеДанныеПервойФормыКодСчетаКонтекстноеМеню" id="203"/>
+													<ExtendedTooltip name="ТабличныеДанныеПервойФормыКодСчетаРасширеннаяПодсказка" id="204"/>
+												</InputField>
+												<InputField name="ТабличныеДанныеПервойФормыСчетДоверительногоУправления" id="199">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.СчетДоверительногоУправления</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Портфель</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<CellHyperlink>true</CellHyperlink>
+													<Width>20</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ТабличныеДанныеПервойФормыСчетДоверительногоУправленияКонтекстноеМеню" id="200"/>
+													<ExtendedTooltip name="ТабличныеДанныеПервойФормыСчетДоверительногоУправленияРасширеннаяПодсказка" id="201"/>
+												</InputField>
+												<InputField name="ТабличныеДанныеПервойФормыСумма" id="205">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.Сумма</DataPath>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ТабличныеДанныеПервойФормыСуммаКонтекстноеМеню" id="206"/>
+													<ExtendedTooltip name="ТабличныеДанныеПервойФормыСуммаРасширеннаяПодсказка" id="207"/>
+												</InputField>
+												<InputField name="ТабличныеДанныеПервойФормыСтавка" id="208">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.Ставка</DataPath>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ТабличныеДанныеПервойФормыСтавкаКонтекстноеМеню" id="209"/>
+													<ExtendedTooltip name="ТабличныеДанныеПервойФормыСтавкаРасширеннаяПодсказка" id="210"/>
+												</InputField>
+												<InputField name="ТабличныеДанныеПервойФормыПериодичностьВыплатыПроцентов" id="214">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.ПериодичностьВыплатыПроцентов</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выплата %</v8:content>
+														</v8:item>
+													</Title>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ТабличныеДанныеПервойФормыПериодичностьВыплатыПроцентовКонтекстноеМеню" id="215"/>
+													<ExtendedTooltip name="ТабличныеДанныеПервойФормыПериодичностьВыплатыПроцентовРасширеннаяПодсказка" id="216"/>
+												</InputField>
+												<LabelField name="ТабличныеДанныеПервойФормыДоВостребования" id="217">
+													<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.ДоВостребования</DataPath>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="ТабличныеДанныеПервойФормыДоВостребованияКонтекстноеМеню" id="218"/>
+													<ExtendedTooltip name="ТабличныеДанныеПервойФормыДоВостребованияРасширеннаяПодсказка" id="219"/>
+												</LabelField>
+												<ColumnGroup name="ПериодРазмещенияДанныеПервойФормы" id="226">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Период размещения</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Период размещения данные первой формы</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Width>30</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Group>Horizontal</Group>
+													<TitleBackColor>web:GhostWhite</TitleBackColor>
+													<ShowInHeader>true</ShowInHeader>
+													<ExtendedTooltip name="ПериодРазмещенияДанныеПервойФормыРасширеннаяПодсказка" id="227"/>
+													<ChildItems>
+														<InputField name="ТабличныеДанныеПервойФормыДатаРазмещения" id="220">
+															<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.ДатаРазмещения</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>с</v8:content>
+																</v8:item>
+															</Title>
+															<TitleBackColor>web:GhostWhite</TitleBackColor>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<TextEdit>false</TextEdit>
+															<ContextMenu name="ТабличныеДанныеПервойФормыДатаРазмещенияКонтекстноеМеню" id="221"/>
+															<ExtendedTooltip name="ТабличныеДанныеПервойФормыДатаРазмещенияРасширеннаяПодсказка" id="222"/>
+														</InputField>
+														<InputField name="ТабличныеДанныеПервойФормыДатаВозврата" id="223">
+															<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.ДатаВозврата</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>по</v8:content>
+																</v8:item>
+															</Title>
+															<TitleBackColor>web:GhostWhite</TitleBackColor>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<TextEdit>false</TextEdit>
+															<ContextMenu name="ТабличныеДанныеПервойФормыДатаВозвратаКонтекстноеМеню" id="224"/>
+															<ExtendedTooltip name="ТабличныеДанныеПервойФормыДатаВозвратаРасширеннаяПодсказка" id="225"/>
+														</InputField>
+														<InputField name="ТабличныеДанныеПервойФормыСрок" id="211">
+															<DataPath>Items.ПараметрыЗадач.CurrentData.ТабличныеДанныеПервойФормы.Срок</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>в днях</v8:content>
+																</v8:item>
+															</Title>
+															<TitleBackColor>web:GhostWhite</TitleBackColor>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<TextEdit>false</TextEdit>
+															<ContextMenu name="ТабличныеДанныеПервойФормыСрокКонтекстноеМеню" id="212"/>
+															<ExtendedTooltip name="ТабличныеДанныеПервойФормыСрокРасширеннаяПодсказка" id="213"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Распоряжения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПараметрыЗадач" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры задач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СтатусКартинка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Флажок" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерЗадачи" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтатусПервойФормы" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус первой формы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаРазмещения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата размещения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Банк" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Банк</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВидДоговора" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДанныеДляЭкспорта" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные для экспорта</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДанныеРаспоряжений" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные распоряжений</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТабличныеДанныеПервойФормы" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Табличные данные первой формы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<AdditionalColumns table="ПараметрыЗадач.ДанныеРаспоряжений">
+					<Column name="Статус" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Статус</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>1</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="СчетДоверительногоУправления" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет доверительного управления</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КодСчета" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Код счета</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>25</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Сумма" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="Ставка" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ставка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="Срок" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Срок</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>5</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="ПериодичностьВыплатыПроцентов" id="7">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Периодичность выплаты процентов</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.ПериодичностиВыплатыПроцентов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ДоВостребования" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До востребования</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ДатаВозврата" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата возврата</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="Распоряжение" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Распоряжение</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:DocumentRef.Распоряжение</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="ПараметрыЗадач.ТабличныеДанныеПервойФормы">
+					<Column name="Статус" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Статус</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>1</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="СчетДоверительногоУправления" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет доверительного управления</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КодСчета" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Код счета</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>25</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Сумма" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="Ставка" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ставка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ПроцентнаяСтавка</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="Срок" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Срок</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>5</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="ПериодичностьВыплатыПроцентов" id="7">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Периодичность выплаты процентов</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.ПериодичностиВыплатыПроцентов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ДоВостребования" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До востребования</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ДатаРазмещения" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата размещения</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="ДатаВозврата" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата возврата</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДопСвойства" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доп свойства</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Организация" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Сервер_1Ф" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервер 1 Ф</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>15</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачФлажок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.СтатусКартинка</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийДатаВозврата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСрок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ДанныеРаспоряжений.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийДатаВозврата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСрок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ДанныеРаспоряжений.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДатаРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДатаВозврата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСрок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ТабличныеДанныеПервойФормы.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыКодСчета</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСтавка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыПериодичностьВыплатыПроцентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДоВостребования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДатаРазмещения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДатаВозврата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСрок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ТабличныеДанныеПервойФормы.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:use>false</dcsset:use>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыДатаРазмещения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ДатаРазмещения</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ПараметрыЗадач.ТабличныеДанныеПервойФормы.ДатаРазмещения</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="true" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:use>false</dcsset:use>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТабличныеДанныеПервойФормыСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПараметрыЗадачДанныеРаспоряженийСумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ДанныеРаспоряжений.КодСчета</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">ПараметрыЗадач.ТабличныеДанныеПервойФормы.КодСчета</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПараметрыЗадач.ДанныеРаспоряжений.Сумма</dcsset:left>
+							<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">ПараметрыЗадач.ТабличныеДанныеПервойФормы.Сумма</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="true" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Обновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Обновить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СоздатьИзменитьЗадачи" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать (изменить)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать изменить задачи</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьИзменитьЗадачи</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="УстановитьВсеФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьВсеФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СнятьВсеФлажки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьВсеФлажки</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+</Form>

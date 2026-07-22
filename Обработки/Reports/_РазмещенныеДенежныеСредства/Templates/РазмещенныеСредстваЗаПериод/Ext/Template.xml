@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасчетныйСчет</dataPath>
+			<field>РасчетныйСчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвестиционныйСчет</dataPath>
+			<field>ИнвестиционныйСчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МНО</dataPath>
+			<field>МНО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Портфель</dataPath>
+			<field>Портфель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПогашенияПослеПоследнейПролонгации</dataPath>
+			<field>ДатаПогашенияПослеПоследнейПролонгации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата погашения после последней пролонгации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПервоначальногоПогашения</dataPath>
+			<field>ДатаПервоначальногоПогашения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата первоначального погашения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаименованиеБанка</dataPath>
+			<field>НаименованиеБанка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование банка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидРазмещения</dataPath>
+			<field>ВидРазмещения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид размещения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокРазмещения</dataPath>
+			<field>СрокРазмещения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок размещения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДоговораСУправляющейКомпанией</dataPath>
+			<field>НомерДоговораСУправляющейКомпанией</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора с управляющей компанией</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнейУплатыПроцентов</dataPath>
+			<field>ДатаПоследнейУплатыПроцентов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последней уплаты процентов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПролонгаций</dataPath>
+			<field>КоличествоПролонгаций</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество пролонгаций</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентПоДоговору</dataPath>
+			<field>ПроцентПоДоговору</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент по договору</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаправлениеДеятельности</dataPath>
+			<field>НаправлениеДеятельности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Направление деятельности</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейДоПогашения</dataPath>
+			<field>ДнейДоПогашения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней до погашения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРазмещения</dataPath>
+			<field>ДатаРазмещения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата размещения</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДоговора</dataPath>
+			<field>НомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолученныеПроценты</dataPath>
+			<field>ПолученныеПроценты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полученные проценты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодичностьУплатыПроцентов</dataPath>
+			<field>ПериодичностьУплатыПроцентов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Периодичность уплаты процентов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентПриДосрочномПогашении</dataPath>
+			<field>ПроцентПриДосрочномПогашении</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент при досрочном погашении</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаДоговора</dataPath>
+			<field>ДатаДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаращенныеПроценты</dataPath>
+			<field>НаращенныеПроценты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наращенные проценты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УправляющаяКомпания</dataPath>
+			<field>УправляющаяКомпания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляющая компания</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРазмещенныхСредств</dataPath>
+			<field>СуммаРазмещенныхСредств</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма размещенных средств</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерБанковскогоСчета</dataPath>
+			<field>НомерБанковскогоСчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер банковского счета</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РейтингФитч</dataPath>
+			<field>РейтингФитч</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рейтинг фитч</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РейтингМудис</dataPath>
+			<field>РейтингМудис</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рейтинг мудис</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РейтингСиЭндПи</dataPath>
+			<field>РейтингСиЭндПи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рейтинг си энд пи</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаСчета</dataPath>
+			<field>ВалютаСчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта счета</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитныйВклад</dataPath>
+			<field>ДепозитныйВклад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектРазмещения</dataPath>
+			<field>ОбъектРазмещения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект размещения</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Язык</dataPath>
+			<field>Язык</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрФизЛицо</dataPath>
+			<field>ЮрФизЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МаксПериод</dataPath>
+			<field>МаксПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КредитныйИнструмент</dataPath>
+			<field>КредитныйИнструмент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипКредитногоИнструмента</dataPath>
+			<field>ТипКредитногоИнструмента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидКредитногоИнструмента</dataPath>
+			<field>ВидКредитногоИнструмента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаДействияУсловий</dataPath>
+			<field>ДатаНачалаДействияУсловий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПогашения</dataPath>
+			<field>ДатаПогашения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Процент</dataPath>
+			<field>Процент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодичностьВыплатыПроцентов</dataPath>
+			<field>ПериодичностьВыплатыПроцентов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РеквизитыОрганизации.КраткоеНаименованиеПоУставу КАК УправляющаяКомпания,
+	ДенежныеСредстваМНООстаткиИОбороты.СчетДоверительногоУправления.НомерДоговора КАК НомерДоговораСУправляющейКомпанией,
+	"МНО" КАК ВидРазмещения,
+	ДенежныеСредстваМНООстаткиИОбороты.РасчетныйСчет.Банк КАК НаименованиеБанка,
+	ДенежныеСредстваМНООстаткиИОбороты.СчетДоверительногоУправления.ВидДоговораДоверительногоУправления КАК НаправлениеДеятельности,
+	ДенежныеСредстваМНООстаткиИОбороты.РасчетныйСчет.Валюта КАК ВалютаСчета,
+	ДенежныеСредстваМНООстаткиИОбороты.РасчетныйСчет.ДоговорМНО.НомерДоговора КАК НомерДоговора,
+	ДенежныеСредстваМНООстаткиИОбороты.РасчетныйСчет.ДоговорМНО.ДатаЗаключения КАК ДатаДоговора,
+	ДенежныеСредстваМНООстаткиИОбороты.РасчетныйСчет.НомерСчета КАК НомерБанковскогоСчета,
+	ДенежныеСредстваМНООстаткиИОбороты.СуммаКонечныйОстаток + ДенежныеСредстваМНООстаткиИОбороты.СуммаРасход КАК СуммаРазмещенныхСредств,
+	ДенежныеСредстваМНООстаткиИОбороты.МНО.Процент КАК ПроцентПоДоговору,
+	ДенежныеСредстваМНООстаткиИОбороты.МНО.Дата КАК ДатаРазмещения,
+	ДенежныеСредстваМНООстаткиИОбороты.МНО.ДатаВозврата КАК ДатаПервоначальногоПогашения,
+	ДенежныеСредстваМНООстаткиИОбороты.МНО.ДатаВозврата КАК ДатаПогашенияПослеПоследнейПролонгации,
+	ПриходыПроцентовПоМНО.Сумма КАК ПолученныеПроценты,
+	ПриходыПроцентовПоМНО.МаксПериод КАК ДатаПоследнейУплатыПроцентов,
+	0 КАК НаращенныеПроценты,
+	ЗНАЧЕНИЕ(Перечисление.ПериодичностиВыплатыПроцентов.ВКонцеСрока) КАК ПериодичностьУплатыПроцентов,
+	0 КАК ПроцентПриДосрочномПогашении,
+	0 КАК КоличествоПролонгаций,
+	ВЫБОР
+		КОГДА ДенежныеСредстваМНООстаткиИОбороты.МНО.ДатаВозврата &lt; &amp;КонецПериода
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(&amp;КонецПериода, ДенежныеСредстваМНООстаткиИОбороты.МНО.ДатаВозврата, ДЕНЬ)
+	КОНЕЦ КАК ДнейДоПогашения,
+	РАЗНОСТЬДАТ(ДенежныеСредстваМНООстаткиИОбороты.МНО.Дата, ДенежныеСредстваМНООстаткиИОбороты.МНО.ДатаВозврата, ДЕНЬ) КАК СрокРазмещения,
+	"" КАК РейтингМудис,
+	"" КАК РейтингФитч,
+	"" КАК РейтингСиЭндПи,
+	ДенежныеСредстваМНООстаткиИОбороты.МНО КАК ОбъектРазмещения
+ИЗ
+	РегистрНакопления.ДенежныеСредстваМНО.ОстаткиИОбороты(
+			&amp;НачалоПериода,
+			&amp;КонецПериода,
+			Период,
+			,
+			Организация = &amp;Организация
+				И СчетДоверительногоУправления = &amp;СчетДоверительногоУправления) КАК ДенежныеСредстваМНООстаткиИОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛиц.СрезПоследних(
+				&amp;КонецПериода,
+				Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)
+					И Подразделение = ЗНАЧЕНИЕ(Справочник.Подразделения.ГруппаКомпаний)) КАК РеквизитыОрганизации
+		ПО ДенежныеСредстваМНООстаткиИОбороты.Организация.ЮрФизЛицо = РеквизитыОрганизации.ЮрФизЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ВЫРАЗИТЬ(ОстаткиДенежныхСредств.Регистратор КАК Документ.ПриходПроцентовМНО).МНО КАК МНО,
+			СУММА(ОстаткиДенежныхСредств.Сумма) КАК Сумма,
+			МАКСИМУМ(ОстаткиДенежныхСредств.Период) КАК МаксПериод
+		ИЗ
+			РегистрНакопления.ОстаткиДенежныхСредств КАК ОстаткиДенежныхСредств
+		ГДЕ
+			ОстаткиДенежныхСредств.Активность
+			И ОстаткиДенежныхСредств.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			И ОстаткиДенежныхСредств.Организация = &amp;Организация
+			И ОстаткиДенежныхСредств.СчетДоверительногоУправления = &amp;СчетДоверительногоУправления
+			И ОстаткиДенежныхСредств.ВидДвиженияДенежныхСредств = ЗНАЧЕНИЕ(Перечисление.ВидыДвиженийДенежныхСредств.ПриходПроцентовМНО)
+		
+		СГРУППИРОВАТЬ ПО
+			ОстаткиДенежныхСредств.Регистратор) КАК ПриходыПроцентовПоМНО
+		ПО ДенежныеСредстваМНООстаткиИОбороты.МНО = ПриходыПроцентовПоМНО.МНО
+ГДЕ
+	&amp;ВариантОтчета = "Основной"
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РеквизитыОрганизации.КраткоеНаименованиеПоУставу,
+	ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.СчетДоверительногоУправления.НомерДоговора,
+	"Депозит",
+	ДепозитныеВклады.БанковскийСчет.Банк,
+	ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.СчетДоверительногоУправления.ВидДоговораДоверительногоУправления,
+	ДепозитныеВклады.БанковскийСчет.Валюта,
+	ДепозитныеВклады.БанковскийСчет.Договор.НомерДоговора,
+	ДепозитныеВклады.БанковскийСчет.Договор.ДатаЗаключения,
+	ДепозитныеВклады.БанковскийСчет.НомерСчета,
+	ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.СуммаКонечныйОстаток + ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.СуммаРасход,
+	УсловияКредитныхИнструментовСрезПоследних.Процент,
+	ДепозитныеВклады.ДатаРегистрации,
+	УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения,
+	УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения,
+	ПриходыПроцентовПоДепозитнымВкладам.Сумма,
+	ПриходыПроцентовПоДепозитнымВкладам.МаксПериод,
+	0,
+	УсловияКредитныхИнструментовСрезПоследних.ПериодичностьВыплатыПроцентов,
+	ДепозитныеВклады.ПроцентнаяСтавкаПриДосрочномЗакрытии,
+	КоличествоРазличныхДатПогашения.Количество - 1,
+	ВЫБОР
+		КОГДА УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения &lt; &amp;КонецПериода
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(&amp;КонецПериода, УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения, ДЕНЬ)
+	КОНЕЦ,
+	РАЗНОСТЬДАТ(ДепозитныеВклады.ДатаРегистрации, УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения, ДЕНЬ),
+	"",
+	"",
+	"",
+	ДепозитныеВклады.Ссылка
+ИЗ
+	РегистрНакопления.ДенежныеСредстваВКредитныхИнструментах.ОстаткиИОбороты(
+			&amp;НачалоПериода,
+			&amp;КонецПериода,
+			Период,
+			,
+			Организация = &amp;Организация
+				И СчетДоверительногоУправления = &amp;СчетДоверительногоУправления
+				И ТипКредитногоИнструмента = ЗНАЧЕНИЕ(Перечисление.ТипыКредитныхИнструментов.ДепозитныйВклад)) КАК ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ДепозитныеВклады КАК ДепозитныеВклады
+		ПО ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.КредитныйИнструмент = ДепозитныеВклады.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛиц.СрезПоследних(
+				&amp;КонецПериода,
+				Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)
+					И Подразделение = ЗНАЧЕНИЕ(Справочник.Подразделения.ГруппаКомпаний)) КАК РеквизитыОрганизации
+		ПО ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.Организация.ЮрФизЛицо = РеквизитыОрганизации.ЮрФизЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент КАК КредитныйИнструмент,
+			УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения КАК ДатаПогашения,
+			УсловияКредитныхИнструментовСрезПоследних.ПериодичностьВыплатыПроцентов КАК ПериодичностьВыплатыПроцентов,
+			УсловияКредитныхИнструментовСрезПоследних.Процент КАК Процент,
+			УсловияКредитныхИнструментовСрезПоследних.Контрагент КАК Контрагент
+		ИЗ
+			(ВЫБРАТЬ
+				УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент КАК КредитныйИнструмент,
+				МАКСИМУМ(УсловияКредитныхИнструментовСрезПоследних.ДатаНачалаДействияУсловий) КАК ДатаНачалаДействияУсловий
+			ИЗ
+				РегистрСведений.УсловияКредитныхИнструментов.СрезПоследних(&amp;КонецПериода, ДатаНачалаДействияУсловий &lt;= &amp;КонецПериода) КАК УсловияКредитныхИнструментовСрезПоследних
+			ГДЕ
+				УсловияКредитныхИнструментовСрезПоследних.Действует
+			
+			СГРУППИРОВАТЬ ПО
+				УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент) КАК АктуальныеДатыНачалаДействия
+				ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияКредитныхИнструментов.СрезПоследних(&amp;КонецПериода, ДатаНачалаДействияУсловий &lt;= &amp;КонецПериода) КАК УсловияКредитныхИнструментовСрезПоследних
+				ПО АктуальныеДатыНачалаДействия.КредитныйИнструмент = УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент
+					И АктуальныеДатыНачалаДействия.ДатаНачалаДействияУсловий = УсловияКредитныхИнструментовСрезПоследних.ДатаНачалаДействияУсловий) КАК УсловияКредитныхИнструментовСрезПоследних
+		ПО ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.КредитныйИнструмент = УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент КАК ДепозитныйВклад,
+			КОЛИЧЕСТВО(РАЗЛИЧНЫЕ УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения) КАК Количество
+		ИЗ
+			(ВЫБРАТЬ
+				УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент КАК КредитныйИнструмент,
+				УсловияКредитныхИнструментовСрезПоследних.ДатаПогашения КАК ДатаПогашения
+			ИЗ
+				(ВЫБРАТЬ
+					УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент КАК КредитныйИнструмент,
+					МАКСИМУМ(УсловияКредитныхИнструментовСрезПоследних.ДатаНачалаДействияУсловий) КАК ДатаНачалаДействияУсловий
+				ИЗ
+					РегистрСведений.УсловияКредитныхИнструментов.СрезПоследних(&amp;КонецПериода, ДатаНачалаДействияУсловий &lt;= &amp;КонецПериода) КАК УсловияКредитныхИнструментовСрезПоследних
+				ГДЕ
+					УсловияКредитныхИнструментовСрезПоследних.Действует
+				
+				СГРУППИРОВАТЬ ПО
+					УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент) КАК АктуальныеДатыНачалаДействия
+					ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияКредитныхИнструментов.СрезПоследних(&amp;КонецПериода, ДатаНачалаДействияУсловий &lt;= &amp;КонецПериода) КАК УсловияКредитныхИнструментовСрезПоследних
+					ПО АктуальныеДатыНачалаДействия.КредитныйИнструмент = УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент
+						И АктуальныеДатыНачалаДействия.ДатаНачалаДействияУсловий = УсловияКредитныхИнструментовСрезПоследних.ДатаНачалаДействияУсловий) КАК УсловияКредитныхИнструментовСрезПоследних
+		
+		СГРУППИРОВАТЬ ПО
+			УсловияКредитныхИнструментовСрезПоследних.КредитныйИнструмент) КАК КоличествоРазличныхДатПогашения
+		ПО ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.КредитныйИнструмент = КоличествоРазличныхДатПогашения.ДепозитныйВклад
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ПроцентыПоКредитнымИнструментам.КредитныйИнструмент КАК ДепозитныйВклад,
+			СУММА(ПроцентыПоКредитнымИнструментам.Сумма) КАК Сумма,
+			МАКСИМУМ(ПроцентыПоКредитнымИнструментам.Период) КАК МаксПериод
+		ИЗ
+			РегистрСведений.ПроцентыПоКредитнымИнструментам КАК ПроцентыПоКредитнымИнструментам
+		ГДЕ
+			ПроцентыПоКредитнымИнструментам.Активность
+			И ПроцентыПоКредитнымИнструментам.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			И ПроцентыПоКредитнымИнструментам.Организация = &amp;Организация
+			И ПроцентыПоКредитнымИнструментам.СчетДоверительногоУправления = &amp;СчетДоверительногоУправления
+			И ТИПЗНАЧЕНИЯ(ПроцентыПоКредитнымИнструментам.КредитныйИнструмент) = ТИП(Справочник.ДепозитарныеСчета)
+		
+		СГРУППИРОВАТЬ ПО
+			ПроцентыПоКредитнымИнструментам.КредитныйИнструмент) КАК ПриходыПроцентовПоДепозитнымВкладам
+		ПО ДенежныеСредстваВКредитныхИнструментахОстаткиИОбороты.КредитныйИнструмент = ПриходыПроцентовПоДепозитнымВкладам.ДепозитныйВклад</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчетДоверительногоУправления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет доверительного управления</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВариантОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вариант отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УправляющаяКомпания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерДоговораСУправляющейКомпанией</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидРазмещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаименованиеБанка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаправлениеДеятельности</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВалютаСчета</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерБанковскогоСчета</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаРазмещенныхСредств</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентПоДоговору</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаРазмещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПервоначальногоПогашения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПогашенияПослеПоследнейПролонгации</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПолученныеПроценты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнейУплатыПроцентов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаращенныеПроценты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПериодичностьУплатыПроцентов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентПриДосрочномПогашении</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПролонгаций</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДнейДоПогашения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрокРазмещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рейтинги</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РейтингМудис</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Moody's</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РейтингФитч</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Fitch</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РейтингСиЭндПи</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>S&amp;P</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектРазмещения</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>2443ada5-9c65-427e-8465-01dcef3436c5</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>41a141ba-531a-4c91-97ee-bd3b80197720</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>22432397-1764-44f9-b210-8c83901884b2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетДоверительногоУправления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>d5b9257b-421c-454b-a5f0-a916a1612092</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаРазмещения</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ТолькоДепозиты</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Депозиты</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УправляющаяКомпания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерДоговораСУправляющейКомпанией</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидРазмещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаименованиеБанка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаправлениеДеятельности</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВалютаСчета</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерБанковскогоСчета</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаРазмещенныхСредств</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентПоДоговору</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаРазмещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПервоначальногоПогашения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПогашенияПослеПоследнейПролонгации</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПолученныеПроценты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнейУплатыПроцентов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаращенныеПроценты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПериодичностьУплатыПроцентов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентПриДосрочномПогашении</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПролонгаций</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДнейДоПогашения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрокРазмещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рейтинги</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РейтингМудис</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Moody's</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РейтингФитч</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Fitch</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РейтингСиЭндПи</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>S&amp;P</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектРазмещения</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>2443ada5-9c65-427e-8465-01dcef3436c5</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>41a141ba-531a-4c91-97ee-bd3b80197720</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>22432397-1764-44f9-b210-8c83901884b2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетДоверительногоУправления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>d5b9257b-421c-454b-a5f0-a916a1612092</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаРазмещения</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

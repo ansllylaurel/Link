@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CommandBar name="ГруппаКоманднаяПанельЖурналОперацийБэкОфиса" id="222">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа командная панель журнал операций бэк офиса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа командная панель журнал операций бэк офиса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<CommandSource>Item.ЖурналОперацийБэкОфиса</CommandSource>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельЖурналОперацийБэкОфисаРасширеннаяПодсказка" id="223"/>
+			<ChildItems>
+				<Button name="ЖурналОперацийБэкОфисаУдалить" id="266">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Item.ЖурналОперацийБэкОфиса.StandardCommand.Delete</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаУдалитьРасширеннаяПодсказка" id="267"/>
+				</Button>
+				<Button name="ЖурналОперацийБэкОфисаНайти" id="268">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Item.ЖурналОперацийБэкОфиса.StandardCommand.Find</CommandName>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаНайтиРасширеннаяПодсказка" id="269"/>
+				</Button>
+				<Button name="ЖурналОперацийБэкОфисаОтменитьПоиск" id="270">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Item.ЖурналОперацийБэкОфиса.StandardCommand.CancelSearch</CommandName>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаОтменитьПоискРасширеннаяПодсказка" id="271"/>
+				</Button>
+				<ButtonGroup name="ЖурналОперацийБэкОфисаГруппаВыборПериод" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Журнал операций бэк офиса группа выбор период</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Журнал операций бэк офиса группа выбор период</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаГруппаВыборПериодРасширеннаяПодсказка" id="52"/>
+					<ChildItems>
+						<Button name="ЖурналОперацийБэкОфисаКомандаВыбратьПериод" id="272">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.КомандаВыбратьПериод</CommandName>
+							<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаВыбратьПериодРасширеннаяПодсказка" id="273"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<Button name="ЖурналОперацийБэкОфисаКомандаСтруктураПодчиненности" id="274">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.КомандаСтруктураПодчиненности</CommandName>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаСтруктураПодчиненностиРасширеннаяПодсказка" id="275"/>
+				</Button>
+				<Button name="ЖурналОперацийБэкОфисаКомандаСоздатьНаОсновании" id="276">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.КомандаСоздатьНаОсновании</CommandName>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаСоздатьНаОснованииРасширеннаяПодсказка" id="277"/>
+				</Button>
+				<ButtonGroup name="ЖурналОперацийБэкОфисаГруппаПроведение" id="69">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Журнал операций бэк офиса группа проведение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Журнал операций бэк офиса группа проведение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаГруппаПроведениеРасширеннаяПодсказка" id="70"/>
+					<ChildItems>
+						<Button name="ЖурналОперацийБэкОфисаКомандаПровести" id="278">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.КомандаПровести</CommandName>
+							<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаПровестиРасширеннаяПодсказка" id="279"/>
+						</Button>
+						<Button name="ЖурналОперацийБэкОфисаКомандаОтменаПроведения" id="280">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.КомандаОтменаПроведения</CommandName>
+							<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаОтменаПроведенияРасширеннаяПодсказка" id="281"/>
+						</Button>
+						<Popup name="ЖурналОперацийБэкОфисаГруппаДвиженияДокумента" id="332">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Журнал операций бэк офиса группа движения документа</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Журнал операций бэк офиса группа движения документа</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>StdPicture.DebitCredit</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<Representation>Picture</Representation>
+							<ExtendedTooltip name="ЖурналОперацийБэкОфисаГруппаДвиженияДокументаРасширеннаяПодсказка" id="333"/>
+							<ChildItems>
+								<Button name="ЖурналОперацийБэкОфисаКомандаДвиженияДокумента" id="334">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаДвиженияДокумента</CommandName>
+									<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаДвиженияДокументаРасширеннаяПодсказка" id="335"/>
+								</Button>
+								<Button name="ЖурналОперацийБэкОфисаКомандаПроводкиДокумента" id="330">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаПроводкиДокумента</CommandName>
+									<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаПроводкиДокументаРасширеннаяПодсказка" id="331"/>
+								</Button>
+							</ChildItems>
+						</Popup>
+					</ChildItems>
+				</ButtonGroup>
+				<Button name="ЖурналОперацийБэкОфисаКомандаОткрытьТиповуюФормуСписка" id="282">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.КомандаОткрытьТиповуюФормуСписка</CommandName>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаОткрытьТиповуюФормуСпискаРасширеннаяПодсказка" id="283"/>
+				</Button>
+				<Button name="ЖурналОперацийБэкОфисаКомандаОткрытьФормуВерификации" id="284">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.КомандаОткрытьФормуВерификации</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Верификация</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомандаОткрытьФормуВерификацииРасширеннаяПодсказка" id="285"/>
+				</Button>
+				<Button name="ЖурналОперацийБэкОфисаИзменитьФорму" id="262">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаИзменитьФормуРасширеннаяПодсказка" id="263"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<UsualGroup name="ГруппаКомпоновщикНастроекЖураналаОперацийБэкОфиса" id="110">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа компоновщик настроек журанала операций бэк офиса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомпоновщикНастроекЖураналаОперацийБэкОфисаРасширеннаяПодсказка" id="111"/>
+		</UsualGroup>
+		<ViewStatusAddition name="ДополнениеСостоянияПросмотраБэкОфис" id="324">
+			<AdditionSource>
+				<Item>ЖурналОперацийБэкОфиса</Item>
+				<Type>ViewStatusRepresentation</Type>
+			</AdditionSource>
+			<ContextMenu name="ДополнениеСостоянияПросмотраБэкОфисКонтекстноеМеню" id="325"/>
+			<ExtendedTooltip name="ДополнениеСостоянияПросмотраБэкОфисРасширеннаяПодсказка" id="326"/>
+		</ViewStatusAddition>
+		<Table name="ЖурналОперацийБэкОфиса" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ЖурналОперацийБэкОфиса</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ГруппаКомпоновщикНастроекЖураналаОперацийБэкОфиса</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ЖурналОперацийБэкОфисаКонтекстноеМеню" id="2">
+				<ChildItems>
+					<ButtonGroup name="ГруппаВыборПериодКонтекст" id="83">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа выбор период контекст</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа выбор период контекст</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ГруппаВыборПериодКонтекстРасширеннаяПодсказка" id="84"/>
+						<ChildItems>
+							<Button name="СписокКонтекстноеМенюВыбратьПериод" id="85">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаВыбратьПериод</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выбрать период</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СписокКонтекстноеМенюВыбратьПериодРасширеннаяПодсказка" id="86"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ГруппаПроведениеКонтекст" id="93">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа проведение контекст</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа проведение контекст</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ГруппаПроведениеКонтекстРасширеннаяПодсказка" id="94"/>
+						<ChildItems>
+							<Button name="СписокКонтекстноеМенюПровести" id="97">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаПровести</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Провести</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СписокКонтекстноеМенюПровестиРасширеннаяПодсказка" id="98"/>
+							</Button>
+							<Button name="СписокКонтекстноеМенюОтменаПроведения" id="95">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаОтменаПроведения</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отмена проведения</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СписокКонтекстноеМенюОтменаПроведенияРасширеннаяПодсказка" id="96"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="СписокКонтекстноеМенюКомандаСтруктураПодчиненности" id="125">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСтруктураПодчиненности</CommandName>
+						<ExtendedTooltip name="СписокКонтекстноеМенюКомандаСтруктураПодчиненностиРасширеннаяПодсказка" id="126"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="ЖурналОперацийБэкОфисаКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ЖурналОперацийБэкОфисаРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ЖурналОперацийБэкОфисаСтрокаПоиска" id="306">
+				<AdditionSource>
+					<Item>ЖурналОперацийБэкОфиса</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЖурналОперацийБэкОфисаСтрокаПоискаКонтекстноеМеню" id="307"/>
+				<ExtendedTooltip name="ЖурналОперацийБэкОфисаСтрокаПоискаРасширеннаяПодсказка" id="308"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЖурналОперацийБэкОфисаСостояниеПросмотра" id="309">
+				<AdditionSource>
+					<Item>ЖурналОперацийБэкОфиса</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЖурналОперацийБэкОфисаСостояниеПросмотраКонтекстноеМеню" id="310"/>
+				<ExtendedTooltip name="ЖурналОперацийБэкОфисаСостояниеПросмотраРасширеннаяПодсказка" id="311"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЖурналОперацийБэкОфисаУправлениеПоиском" id="312">
+				<AdditionSource>
+					<Item>ЖурналОперацийБэкОфиса</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЖурналОперацийБэкОфисаУправлениеПоискомКонтекстноеМеню" id="313"/>
+				<ExtendedTooltip name="ЖурналОперацийБэкОфисаУправлениеПоискомРасширеннаяПодсказка" id="314"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<PictureField name="ЖурналОперацийБэкОфисаКартинка" id="186">
+					<DataPath>ЖурналОперацийБэкОфиса.Картинка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СтатусыДокументов4х16</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ЖурналОперацийБэкОфисаКартинкаКонтекстноеМеню" id="187"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаКартинкаРасширеннаяПодсказка" id="188"/>
+				</PictureField>
+				<LabelField name="ЖурналОперацийБэкОфисаДата" id="189">
+					<DataPath>ЖурналОперацийБэкОфиса.Дата</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаДатаКонтекстноеМеню" id="190"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаДатаРасширеннаяПодсказка" id="191"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаПредставлениеВидаОперации" id="192">
+					<DataPath>ЖурналОперацийБэкОфиса.ПредставлениеВидаОперации</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид операции</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ЖурналОперацийБэкОфисаПредставлениеВидаОперацииКонтекстноеМеню" id="193"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаПредставлениеВидаОперацииРасширеннаяПодсказка" id="194"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаНомер" id="195">
+					<DataPath>ЖурналОперацийБэкОфиса.Номер</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаНомерКонтекстноеМеню" id="196"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаНомерРасширеннаяПодсказка" id="197"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаСчетДоверительногоУправления" id="198">
+					<DataPath>ЖурналОперацийБэкОфиса.СчетДоверительногоУправления</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет д/у</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ЖурналОперацийБэкОфисаСчетДоверительногоУправленияКонтекстноеМеню" id="199"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаСчетДоверительногоУправленияРасширеннаяПодсказка" id="200"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаБрокер" id="201">
+					<DataPath>ЖурналОперацийБэкОфиса.Брокер</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаБрокерКонтекстноеМеню" id="202"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаБрокерРасширеннаяПодсказка" id="203"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаМестоХранения" id="204">
+					<DataPath>ЖурналОперацийБэкОфиса.МестоХранения</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаМестоХраненияКонтекстноеМеню" id="205"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаМестоХраненияРасширеннаяПодсказка" id="206"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаРынок" id="207">
+					<DataPath>ЖурналОперацийБэкОфиса.Рынок</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаРынокКонтекстноеМеню" id="208"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаРынокРасширеннаяПодсказка" id="209"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаЦеннаяБумага" id="210">
+					<DataPath>ЖурналОперацийБэкОфиса.ЦеннаяБумага</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаЦеннаяБумагаКонтекстноеМеню" id="211"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаЦеннаяБумагаРасширеннаяПодсказка" id="212"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаСумма" id="213">
+					<DataPath>ЖурналОперацийБэкОфиса.Сумма</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаСуммаКонтекстноеМеню" id="214"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаСуммаРасширеннаяПодсказка" id="215"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаКомментарий" id="216">
+					<DataPath>ЖурналОперацийБэкОфиса.Комментарий</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаКомментарийКонтекстноеМеню" id="217"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаКомментарийРасширеннаяПодсказка" id="218"/>
+				</LabelField>
+				<LabelField name="ЖурналОперацийБэкОфисаОтветственный" id="219">
+					<DataPath>ЖурналОперацийБэкОфиса.Ответственный</DataPath>
+					<ContextMenu name="ЖурналОперацийБэкОфисаОтветственныйКонтекстноеМеню" id="220"/>
+					<ExtendedTooltip name="ЖурналОперацийБэкОфисаОтветственныйРасширеннаяПодсказка" id="221"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ЖурналОперацийБэкОфиса" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал операций бэк-офиса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~ЖурналОперацийБэкОфиса.Биржа</Field>
+				<Field>~ЖурналОперацийБэкОфиса.ВидДокумента</Field>
+				<Field>~ЖурналОперацийБэкОфиса.Представление</Field>
+				<Field>ЖурналОперацийБэкОфиса.Брокер</Field>
+				<Field>ЖурналОперацийБэкОфиса.ВидОперации</Field>
+				<Field>ЖурналОперацийБэкОфиса.Дата</Field>
+				<Field>ЖурналОперацийБэкОфиса.Документ</Field>
+				<Field>ЖурналОперацийБэкОфиса.Картинка</Field>
+				<Field>ЖурналОперацийБэкОфиса.Комментарий</Field>
+				<Field>ЖурналОперацийБэкОфиса.МестоХранения</Field>
+				<Field>ЖурналОперацийБэкОфиса.Организация</Field>
+				<Field>ЖурналОперацийБэкОфиса.Ответственный</Field>
+				<Field>ЖурналОперацийБэкОфиса.Рынок</Field>
+				<Field>ЖурналОперацийБэкОфиса.Состояние</Field>
+				<Field>ЖурналОперацийБэкОфиса.СчетДоверительногоУправления</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РегистрСведенийЖурналОперацийБэкОфиса.*,
+	ВЫБОР
+		КОГДА РегистрСведенийЖурналОперацийБэкОфиса.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияДокументов.ПомеченНаУдаление) ТОГДА 0
+		КОГДА РегистрСведенийЖурналОперацийБэкОфиса.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияДокументов.Проведен) ИЛИ РегистрСведенийЖурналОперацийБэкОфиса.ВидОперации В(&amp;ВидыОперацийСЗапрещеннымПроведением) ТОГДА 1
+		КОГДА РегистрСведенийЖурналОперацийБэкОфиса.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияДокументов.Записан) ТОГДА 2
+		ИНАЧЕ 3
+	КОНЕЦ КАК Картинка
+ИЗ
+	РегистрСведений.ЖурналОперацийБэкОфиса КАК РегистрСведенийЖурналОперацийБэкОфиса</QueryText>
+				<MainTable>InformationRegister.ЖурналОперацийБэкОфиса</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Период" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+			<Save>
+				<Field>Период.EndDate</Field>
+				<Field>Период.StartDate</Field>
+				<Field>Период.Variant</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыбратьПериод" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выбрать период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выбрать период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SetDateInterval</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВыбратьПериод</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСоздатьНаОсновании" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать на основании</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда создать на основании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСоздатьНаОсновании</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПровести" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда провести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Post</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПровести</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтменаПроведения" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена проведения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда отмена проведения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UndoPosting</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОтменаПроведения</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОткрытьТиповуюФормуСписка" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть типовую форму списка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда открыть типовую форму списка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Form</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОткрытьТиповуюФормуСписка</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСтруктураПодчиненности" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура подчиненности</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура подчиненности</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СтруктураПодчиненностиДокумента</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСтруктураПодчиненности</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОткрытьФормуВерификации" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть форму верификации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда открыть форму верификации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОткрытьФормуВерификации</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПроводкиДокумента" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводки документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда проводки документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DebitCredit</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПроводкиДокумента</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДвиженияДокумента" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда движения документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаДвиженияДокумента</Action>
+		</Command>
+	</Commands>
+</Form>

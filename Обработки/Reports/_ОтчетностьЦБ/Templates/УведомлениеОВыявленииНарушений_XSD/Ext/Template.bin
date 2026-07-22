@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xserializer="http://www.it.ru/Schemas/Avior/XSerializer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:av="http://www.it.ru/Schemas/Avior/УРКИ" targetNamespace="http://www.it.ru/Schemas/Avior/УРКИ" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!--========== Глобальные элементы (документы) ==========-->
+  <xs:element name="УведомлениеОВыявленииНарушений" type="av:УведомлениеОВыявленииНарушений_УведомлениеОВыявленииНарушений">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Уведомление о выявлении нарушения (несоответствия) при осуществлении контроля в отношении страховщика</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Уведомление о выявлении нарушения (несоответствия) при осуществлении контроля в отношении страховщика</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <!--========== Комплексные типы ==========-->
+  <xs:complexType name="Files">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Files</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Files</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="File" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="Name" type="xs:string" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ДаНет">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Да/Нет</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Да/Нет</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ДаНетКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ВидУчастникаКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Вид участника</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Вид участника</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ВидУчастникаКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ОрганизационноПравоваяФормаКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Организационно-правовая форма</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Организационно-правовая форма</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ОрганизационноПравоваяФормаКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СпецДепАффЛицоСтраховщика">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Является ли специализированный депозитарий аффилированным лицом страховщика</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Является ли специализированный депозитарий аффилированным лицом страховщика</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:СпецДепАффЛицоСтраховщикаКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="КодОснованияАффилированности">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Основание аффилированности</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Основание аффилированности</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:КодОснованияАффилированностиКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="КодНарушения">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Код нарушения</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Код нарушения</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:КодНарушенияКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="УведомлениеОВыявленииНарушений_УведомлениеОВыявленииНарушений">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Уведомление о выявлении нарушения (несоответствия) при осуществлении контроля в отношении страховщика</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Уведомление о выявлении нарушения (несоответствия) при осуществлении контроля в отношении страховщика</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Files" type="av:Files" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Files</description>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="СпецДепозитарий" type="av:СпецДепозитарий_СпецДепозитарий" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Информация и сведения о специализированном депозитарии</description>
+          </xs:appinfo>
+          <xs:documentation>Информация и сведения о специализированном депозитарии</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Страховщик" type="av:Страховщик_Страховщик" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Реквизиты страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>Реквизиты страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="УправляющаяКомпания" type="av:УправляющаяКомпания_УправляющаяКомпания" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</description>
+          </xs:appinfo>
+          <xs:documentation>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ВыявлениеУстранениеНарушения" type="av:ВыявлениеУстранениеНарушения_ВыявлениеУстранениеНарушения" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Уведомление о выявлении нарушения (несоответствия)</description>
+          </xs:appinfo>
+          <xs:documentation>Уведомление о выявлении нарушения (несоответствия)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="СопроводительноеПисьмо" type="av:СопроводительноеПисьмо_СопроводительноеПисьмо" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Сопроводительное письмо</description>
+          </xs:appinfo>
+          <xs:documentation>Сопроводительное письмо</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="externalId" type="av:Guid" />
+    <xs:attribute name="internalId" type="av:Guid" />
+    <xs:attribute name="appVersion" type="av:String" use="required" fixed="2.16.3" />
+    <xs:attribute name="appDescription" type="av:String" />
+  </xs:complexType>
+  <xs:complexType name="СпецДепозитарий_СпецДепозитарий">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Информация и сведения о специализированном депозитарии</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Информация и сведения о специализированном депозитарии</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ПолноеНаименованиеСпецДеп" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное фирменное наименование</description>
+          </xs:appinfo>
+          <xs:documentation>Полное фирменное наименование</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="СокращенноеНаименованиеСпецДеп" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Сокращенное фирменное наименование</description>
+          </xs:appinfo>
+          <xs:documentation>Сокращенное фирменное наименование</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИНН1" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ИНН</description>
+          </xs:appinfo>
+          <xs:documentation>ИНН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОГРН1" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОГРН</description>
+          </xs:appinfo>
+          <xs:documentation>ОГРН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаЛицензии" type="av:Date" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата выдачи лицензии  на осуществлениие депозитарной деятельности</description>
+          </xs:appinfo>
+          <xs:documentation>Дата выдачи лицензии  на осуществлениие депозитарной деятельности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="НомерЛицензии" type="av:_ХХXХХХХXХXХХХХГдеХЧислоОт09НомерЛицензииНаОсуществлениеДепозитарнойДеятельности" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер лицензии на осуществление депозитарной деятельности</description>
+          </xs:appinfo>
+          <xs:documentation>Номер лицензии на осуществление депозитарной деятельности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаЛицензииСпецДепИнвФонд" type="av:Date" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата выдачи лицензии  на осуществлениие деятельности специализированного депозитария инвестиционных фондов, паевых инвестиционных фондов и негосударственных пенсионных фондов</description>
+          </xs:appinfo>
+          <xs:documentation>Дата выдачи лицензии  на осуществлениие деятельности специализированного депозитария инвестиционных фондов, паевых инвестиционных фондов и негосударственных пенсионных фондов</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="НомерЛицензииСпецДепИнвФонд" type="av:_ХХХХХХХХХХХГдеХЧислоОт09НомерЛицензииСпециализированногоДепозитария" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер лицензии на осуществление деятельности специализированного депозитария инвестиционных фондов, паевых инвестиционных фондов и негосударственных пенсионных фондов</description>
+          </xs:appinfo>
+          <xs:documentation>Номер лицензии на осуществление деятельности специализированного депозитария инвестиционных фондов, паевых инвестиционных фондов и негосударственных пенсионных фондов</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="РегНомерКредитОрг" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Регистрационный номер кредитной организации в соответствии с Книгой государственной регистрации кредитных организаций</description>
+          </xs:appinfo>
+          <xs:documentation>Регистрационный номер кредитной организации в соответствии с Книгой государственной регистрации кредитных организаций</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="АффЛицоСтраховщика" type="av:СпецДепАффЛицоСтраховщика" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Является ли специализированный депозитарий аффилированным лицом страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>Является ли специализированный депозитарий аффилированным лицом страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОснованиеАффилир" type="av:КодОснованияАффилированности" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Основание аффилированности</description>
+          </xs:appinfo>
+          <xs:documentation>Основание аффилированности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Страховщик_Страховщик">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Реквизиты страховщика</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Реквизиты страховщика</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ПолноеНаименованиеСтраховщика" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="НомерРегистрЗаписи" type="av:_4ЦифрыРегистрационныйНомер" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Регистрационный номер записи страховщика  в едином государственном реестре субъектов страхового дела (далее - ЕГРССД)</description>
+          </xs:appinfo>
+          <xs:documentation>Регистрационный номер записи страховщика  в едином государственном реестре субъектов страхового дела (далее - ЕГРССД)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИНН2" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ИНН</description>
+          </xs:appinfo>
+          <xs:documentation>ИНН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОГРН2" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОГРН</description>
+          </xs:appinfo>
+          <xs:documentation>ОГРН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="УправляющаяКомпания_УправляющаяКомпания">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="УправляющияКомпанияСтраховщика" type="av:УправляющияКомпанияСтраховщика" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</description>
+          </xs:appinfo>
+          <xs:documentation>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="УправляющияКомпанияСтраховщика_1_УправляющияКомпанияСтраховщика_1">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Реквизиты управляющей компании страховщика</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Реквизиты управляющей компании страховщика</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ПолноеНаименованиеУК" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование управляющей компании страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование управляющей компании страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИНН3" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ИНН</description>
+          </xs:appinfo>
+          <xs:documentation>ИНН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОГРН3" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОГРН</description>
+          </xs:appinfo>
+          <xs:documentation>ОГРН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаЛицензииУК" type="av:Date" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата выдачи лицензии управляющей компании</description>
+          </xs:appinfo>
+          <xs:documentation>Дата выдачи лицензии управляющей компании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИнойИдентификаторКолОрг" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер лицензии управляющей компании</description>
+          </xs:appinfo>
+          <xs:documentation>Номер лицензии управляющей компании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ВыявлениеУстранениеНарушения_ВыявлениеУстранениеНарушения">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Уведомление о выявлении нарушения (несоответствия)</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Уведомление о выявлении нарушения (несоответствия)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ДатаСовершенияНарушения1" type="av:Date" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата совершения нарушения (возникновения несоответствия)</description>
+          </xs:appinfo>
+          <xs:documentation>Дата совершения нарушения (возникновения несоответствия)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаВыявления1" type="av:Date" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата выявления нарушения (несоответствия)</description>
+          </xs:appinfo>
+          <xs:documentation>Дата выявления нарушения (несоответствия)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаУведомленияВыявления" type="av:Date" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата уведомления о выявлении нарушения (несоответствия)</description>
+          </xs:appinfo>
+          <xs:documentation>Дата уведомления о выявлении нарушения (несоответствия)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="НомерУведомленияВыявления" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер уведомления о выявлении нарушения (несоответствия)</description>
+          </xs:appinfo>
+          <xs:documentation>Номер уведомления о выявлении нарушения (несоответствия)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КодНарушения1" type="av:КодНарушения1" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код нарушения по классификатору нарушения</description>
+          </xs:appinfo>
+          <xs:documentation>Код нарушения по классификатору нарушения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="УказанияНаНормы" type="av:УказанияНаНормы" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Указание на норму (нормы) нормативного правового акта Российской Федерации, нормативного акта Банка России или иного документа, требования которых нарушены</description>
+          </xs:appinfo>
+          <xs:documentation>Указание на норму (нормы) нормативного правового акта Российской Федерации, нормативного акта Банка России или иного документа, требования которых нарушены</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="СодержаниеНарушения" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Содержание выявленного нарушения (несоответствия)</description>
+          </xs:appinfo>
+          <xs:documentation>Содержание выявленного нарушения (несоответствия)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СопроводительноеПисьмо_СопроводительноеПисьмо">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Сопроводительное письмо</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Сопроводительное письмо</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ВидУчастника" type="av:ВидУчастникаКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Вид участника</description>
+          </xs:appinfo>
+          <xs:documentation>Вид участника</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ПолноеНаименование" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование организации на русском языке</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование организации на русском языке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КраткоеНаименование" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Сокращенное наименование организации на русском языке</description>
+          </xs:appinfo>
+          <xs:documentation>Сокращенное наименование организации на русском языке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ФИОРуководителя" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Фамилия, имя, отчество руководителя организации</description>
+          </xs:appinfo>
+          <xs:documentation>Фамилия, имя, отчество руководителя организации</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИНН" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ИНН</description>
+          </xs:appinfo>
+          <xs:documentation>ИНН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОГРН" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОГРН</description>
+          </xs:appinfo>
+          <xs:documentation>ОГРН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="АдресМестаНахождения" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Адрес места нахождения организации</description>
+          </xs:appinfo>
+          <xs:documentation>Адрес места нахождения организации</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="АдресЭП" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Адрес электронной почты</description>
+          </xs:appinfo>
+          <xs:documentation>Адрес электронной почты</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КонтактныйТелефон" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Контактный телефон</description>
+          </xs:appinfo>
+          <xs:documentation>Контактный телефон</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="НомерРегистрации" type="av:_ИсходящийНомер" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Исходящий номер</description>
+          </xs:appinfo>
+          <xs:documentation>Исходящий номер</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаРегистрации" type="av:Date" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата исходящего</description>
+          </xs:appinfo>
+          <xs:documentation>Дата исходящего</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КраткоеСодержаниеПисьма" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Краткое содержание письма</description>
+          </xs:appinfo>
+          <xs:documentation>Краткое содержание письма</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДолжностьПодписавшегоЛица" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Должность подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Должность подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ФамилияПодписавшегоЛица" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Фамилия подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Фамилия подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИмяПодписавшегоЛица" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Имя подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Имя подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОтчествоПодписавшегоЛица" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Отчество подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Отчество подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="УправляющияКомпанияСтраховщика">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation>Реквизиты управляющей (их) компании (ий) страховщика (при наличии)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="УправляющияКомпанияСтраховщика_1" type="av:УправляющияКомпанияСтраховщика_1_УправляющияКомпанияСтраховщика_1" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Реквизиты управляющей компании страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>Реквизиты управляющей компании страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="КодНарушения1">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Строка_КодНарушения1" type="av:Строка_КодНарушения1" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:appinfo>
+            <description />
+          </xs:appinfo>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Строка_КодНарушения1">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Код нарушения по классификатору нарушения</description>
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Нарушения1" type="av:КодНарушения" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код нарушения по классификатору нарушения</description>
+          </xs:appinfo>
+          <xs:documentation>Код нарушения по классификатору нарушения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="УказанияНаНормы">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Строка_УказанияНаНормы" type="av:Строка_УказанияНаНормы" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:appinfo>
+            <description />
+          </xs:appinfo>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Строка_УказанияНаНормы">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Указание на норму (нормы) нормативного правового акта Российской Федерации, нормативного акта Банка России или иного документа, требования которых нарушены</description>
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Норма" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Нормы правового акета</description>
+          </xs:appinfo>
+          <xs:documentation>Нормы правового акета</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!--========== Простые типы ==========-->
+  <xs:simpleType name="Boolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="Date">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+  <xs:simpleType name="Guid">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Integer">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="Long">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="Double">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="String">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="_ХХXХХХХXХXХХХХГдеХЧислоОт09НомерЛицензииНаОсуществлениеДепозитарнойДеятельности">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>(ХХX-ХХХХX-ХXХХХХ, где Х - число от 0-9) Номер лицензии на осуществление депозитарной деятельности</description>
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation>(ХХX-ХХХХX-ХXХХХХ, где Х - число от 0-9) Номер лицензии на осуществление депозитарной деятельности</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{3}\-\d{5}\-\d{6}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="_ХХХХХХХХХХХГдеХЧислоОт09НомерЛицензииСпециализированногоДепозитария">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>(ХХ-ХХХ-Х-ХХХХХ, где Х - число от 0-9) Номер лицензии специализированного депозитария </description>
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation>(ХХ-ХХХ-Х-ХХХХХ, где Х - число от 0-9) Номер лицензии специализированного депозитария </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{2}\-\d{3}\-\d{1}\-\d{5}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="_4ЦифрыРегистрационныйНомер">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>(4 цифры) Регистрационный номер</description>
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation>(4 цифры) Регистрационный номер</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{4}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="_ИсходящийНомер">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Исходящий номер</description>
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation>Исходящий номер</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\S(.*\S)?" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ВидУчастникаКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Вид участника</description>
+      </xs:appinfo>
+      <xs:documentation>Вид участника</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="АИФ">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Акционерные инвестиционные фонды</description>
+          </xs:appinfo>
+          <xs:documentation>Акционерные инвестиционные фонды</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="НПФ">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Негосударственные пенсионные фонды</description>
+          </xs:appinfo>
+          <xs:documentation>Негосударственные пенсионные фонды</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="УК">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Управляющие компании</description>
+          </xs:appinfo>
+          <xs:documentation>Управляющие компании</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="СД">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Спецдепозитарии</description>
+          </xs:appinfo>
+          <xs:documentation>Спецдепозитарии</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Брокер">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Брокеры</description>
+          </xs:appinfo>
+          <xs:documentation>Брокеры</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ОрганизационноПравоваяФормаКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Организационно-правовая форма</description>
+      </xs:appinfo>
+      <xs:documentation>Организационно-правовая форма</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="001">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОАО</description>
+          </xs:appinfo>
+          <xs:documentation>ОАО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ЗАО</description>
+          </xs:appinfo>
+          <xs:documentation>ЗАО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="003">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ООО</description>
+          </xs:appinfo>
+          <xs:documentation>ООО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="004">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОДО</description>
+          </xs:appinfo>
+          <xs:documentation>ОДО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="005">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Фонд</description>
+          </xs:appinfo>
+          <xs:documentation>Фонд</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="006">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ПАО</description>
+          </xs:appinfo>
+          <xs:documentation>ПАО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="007">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>АО</description>
+          </xs:appinfo>
+          <xs:documentation>АО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="СпецДепАффЛицоСтраховщикаКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Является ли специализированный депозитарий аффилированным лицом страховщика</description>
+      </xs:appinfo>
+      <xs:documentation>Является ли специализированный депозитарий аффилированным лицом страховщика</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>является</description>
+          </xs:appinfo>
+          <xs:documentation>является</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>не является</description>
+          </xs:appinfo>
+          <xs:documentation>не является</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="КодОснованияАффилированностиКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Основание аффилированности</description>
+      </xs:appinfo>
+      <xs:documentation>Основание аффилированности</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>1 - специализированный депозитарий принадлежит к той группе лиц, к которой принадлежит данная страховая организация</description>
+          </xs:appinfo>
+          <xs:documentation>1 - специализированный депозитарий принадлежит к той группе лиц, к которой принадлежит данная страховая организация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>2 - страховщик имеет право распоряжаться более чем 20 процентами общего количества голосов, проходящихся на голосующие акции (доли), составляющие уставный капитал специализированного депозитария</description>
+          </xs:appinfo>
+          <xs:documentation>2 - страховщик имеет право распоряжаться более чем 20 процентами общего количества голосов, проходящихся на голосующие акции (доли), составляющие уставный капитал специализированного депозитария</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>3 - специализированный депозитарий имеет право распоряжаться более чем 20 процентами общего количества голосов, приходящихся на голосующие акции либо составляющие уставный (складочный) капитал вклады, доли страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>3 - специализированный депозитарий имеет право распоряжаться более чем 20 процентами общего количества голосов, приходящихся на голосующие акции либо составляющие уставный (складочный) капитал вклады, доли страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="КодНарушенияКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Код нарушения</description>
+      </xs:appinfo>
+      <xs:documentation>Код нарушения</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>01 - непредставление документов страховщиком для осуществления специализированным депозитарием контрольных функций</description>
+          </xs:appinfo>
+          <xs:documentation>01 - непредставление документов страховщиком для осуществления специализированным депозитарием контрольных функций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>02 - неполное представление документов страховщиком для осуществления специализированным депозитарием контрольных функций</description>
+          </xs:appinfo>
+          <xs:documentation>02 - неполное представление документов страховщиком для осуществления специализированным депозитарием контрольных функций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>03 - несвоевременное представление документов страховщиком для осуществления специализированным депозитарием контрольных функций</description>
+          </xs:appinfo>
+          <xs:documentation>03 - несвоевременное представление документов страховщиком для осуществления специализированным депозитарием контрольных функций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>04 - нарушение страховщиком требований к составу активов, принимаемых для покрытия собственных средств (капитала)</description>
+          </xs:appinfo>
+          <xs:documentation>04 - нарушение страховщиком требований к составу активов, принимаемых для покрытия собственных средств (капитала)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>05 - нарушение страховщиком требований к составу активов, принимаемых для покрытия страховых резервов</description>
+          </xs:appinfo>
+          <xs:documentation>05 - нарушение страховщиком требований к составу активов, принимаемых для покрытия страховых резервов</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>06 - нарушение страховщиком качественных требований к активам, принимаемым для покрытия страховых резервов</description>
+          </xs:appinfo>
+          <xs:documentation>06 - нарушение страховщиком качественных требований к активам, принимаемым для покрытия страховых резервов</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>07 - нарушение страховщиком качественных требований к активам, принимаемым для покрытия собственных средств (капитала) страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>07 - нарушение страховщиком качественных требований к активам, принимаемым для покрытия собственных средств (капитала) страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>08 - нарушение страховщиком требований к структуре активов, принимаемых для покрытия страховых резервов</description>
+          </xs:appinfo>
+          <xs:documentation>08 - нарушение страховщиком требований к структуре активов, принимаемых для покрытия страховых резервов</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>09 - нарушение страховщиком требований к структуре активов, принимаемых для покрытия собственных средств (капитала)</description>
+          </xs:appinfo>
+          <xs:documentation>09 - нарушение страховщиком требований к структуре активов, принимаемых для покрытия собственных средств (капитала)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>10 - нарушение страховщиком требований к уровню рейтинга активов, принимаемых для покрытия страховых резервов</description>
+          </xs:appinfo>
+          <xs:documentation>10 - нарушение страховщиком требований к уровню рейтинга активов, принимаемых для покрытия страховых резервов</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>11 - нарушение страховщиком требований к уровню рейтинга активов, принимаемых для покрытия собственных средств (капитала)</description>
+          </xs:appinfo>
+          <xs:documentation>11 - нарушение страховщиком требований к уровню рейтинга активов, принимаемых для покрытия собственных средств (капитала)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>12 - общая стоимость активов, в которые инвестированы средства страховых резервов, меньше суммарной величины страховых резервов страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>12 - общая стоимость активов, в которые инвестированы средства страховых резервов, меньше суммарной величины страховых резервов страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>13 - общая стоимость активов, в которые инвестированы собственные средства (капитал) страховщика, меньше суммарной величины собственных средств (капитала) страховщика</description>
+          </xs:appinfo>
+          <xs:documentation>13 - общая стоимость активов, в которые инвестированы собственные средства (капитал) страховщика, меньше суммарной величины собственных средств (капитала) страховщика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>14 - иные нарушения</description>
+          </xs:appinfo>
+          <xs:documentation>14 - иные нарушения</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ДаНетКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Да/Нет</description>
+      </xs:appinfo>
+      <xs:documentation>Да/Нет</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Да">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Да</description>
+          </xs:appinfo>
+          <xs:documentation>Да</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Нет">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Нет</description>
+          </xs:appinfo>
+          <xs:documentation>Нет</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

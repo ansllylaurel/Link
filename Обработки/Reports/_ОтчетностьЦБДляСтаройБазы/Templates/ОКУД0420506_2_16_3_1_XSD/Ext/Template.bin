@@ -1,0 +1,2195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xserializer="http://www.it.ru/Schemas/Avior/XSerializer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:av="http://www.it.ru/Schemas/Avior/УРКИ" targetNamespace="http://www.it.ru/Schemas/Avior/УРКИ" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!--========== Глобальные элементы (документы) ==========-->
+  <xs:element name="ОКУД0420506_2_16_3_1" type="av:ОКУД0420506_2_16_3_1_ОКУД0420506_2_16_3_1">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Отчет об инвестировании средств пенсионных накоплений</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Отчет об инвестировании средств пенсионных накоплений</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <!--========== Комплексные типы ==========-->
+  <xs:complexType name="Files">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Files</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Files</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="File" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="Name" type="xs:string" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ДаНет">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Да/Нет</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Да/Нет</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ДаНетКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СтатусИнвестРезервовАИФКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Статус инвестиционных резервов акционерного инвестиционного фонда</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Статус инвестиционных резервов акционерного инвестиционного фонда</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:СтатусИнвестРезервовАИФКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ОрганВыдавшийЛицензиюКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Орган выдавший лицензию</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Орган выдавший лицензию</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ОрганВыдавшийЛицензиюКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Voc002Код">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Наименование субъекта Российской Федерации</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Наименование субъекта Российской Федерации</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:Voc002КодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ОрганизационноПравоваяФормаКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Организационно-правовая форма</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Организационно-правовая форма</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ОрганизационноПравоваяФормаКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ВидУчастникаКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Вид участника</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Вид участника</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ВидУчастникаКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ПериодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>отчетный период</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>отчетный период</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ПериодКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ПредназначеныДляКИКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Предназначены для квалифицированных инвесторов</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Предназначены для квалифицированных инвесторов</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:ПредназначеныДляКИКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="КатегорияПИФКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Категория паевого инвестиционного фонда</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Категория паевого инвестиционного фонда</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:КатегорияПИФКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="МесяцКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Месяц</description>
+        <type>Vocabulary</type>
+        <baseTypes />
+      </xs:appinfo>
+      <xs:documentation>Месяц</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Код" type="av:МесяцКодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Код</description>
+          </xs:appinfo>
+          <xs:documentation>Код</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Описание" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Описание</description>
+          </xs:appinfo>
+          <xs:documentation>Описание</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Активно" type="av:Boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Активно</description>
+          </xs:appinfo>
+          <xs:documentation>Активно</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ОКУД0420506_2_16_3_1_ОКУД0420506_2_16_3_1">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Отчет об инвестировании средств пенсионных накоплений</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Отчет об инвестировании средств пенсионных накоплений</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Files" type="av:Files" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Files</description>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОтчетнаяДата" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Информация предоставлена по состоянию на</description>
+          </xs:appinfo>
+          <xs:documentation>Информация предоставлена по состоянию на</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОтчетныйПериод" type="av:ПериодКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Отчетный период</description>
+          </xs:appinfo>
+          <xs:documentation>Отчетный период</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Год" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Отчетный год</description>
+          </xs:appinfo>
+          <xs:documentation>Отчетный год</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Раздел1_ОтчетОбИнвестирПенсНак" type="av:Раздел1_ОтчетОбИнвестирПенсНак_Раздел1_ОтчетОбИнвестирПенсНак" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Отчет об инвестировании средств пенсионных накоплений</description>
+          </xs:appinfo>
+          <xs:documentation>Отчет об инвестировании средств пенсионных накоплений</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="СопроводительноеПисьмо" type="av:СопроводительноеПисьмо_СопроводительноеПисьмо" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Сопроводительное письмо</description>
+          </xs:appinfo>
+          <xs:documentation>Сопроводительное письмо</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ПодписьРуководителяУКНПФ" type="av:ПодписьРуководителяУКНПФ_ПодписьРуководителяУКНПФ" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Руководитель управляющей компании негосударственного пенсионного фонда (лицо, исполняющее обязанности руководителя управляющей компании негосударственного пенсионного фонда)</description>
+          </xs:appinfo>
+          <xs:documentation>Руководитель управляющей компании негосударственного пенсионного фонда (лицо, исполняющее обязанности руководителя управляющей компании негосударственного пенсионного фонда)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ПодписьУполномоченногоЛица" type="av:ПодписьУполномоченногоЛица_ПодписьУполномоченногоЛица" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Уполномоченное лицо специализированного депозитария негосударственного пенсионного фонда</description>
+          </xs:appinfo>
+          <xs:documentation>Уполномоченное лицо специализированного депозитария негосударственного пенсионного фонда</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="externalId" type="av:Guid" />
+    <xs:attribute name="internalId" type="av:Guid" />
+    <xs:attribute name="appVersion" type="av:String" use="required" fixed="2.16.3.1" />
+    <xs:attribute name="appDescription" type="av:String" />
+  </xs:complexType>
+  <xs:complexType name="Раздел1_ОтчетОбИнвестирПенсНак_Раздел1_ОтчетОбИнвестирПенсНак">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Отчет об инвестировании средств пенсионных накоплений</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Отчет об инвестировании средств пенсионных накоплений</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Таблица_Раздел1ОтчетОбИнвестирСредств" type="av:Таблица_Раздел1ОтчетОбИнвестирСредств" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Таблица: Отчет об инвестировании средств пенсионных накоплений</description>
+          </xs:appinfo>
+          <xs:documentation>Таблица: Отчет об инвестировании средств пенсионных накоплений</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СопроводительноеПисьмо_СопроводительноеПисьмо">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Сопроводительное письмо</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Сопроводительное письмо</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ВидУчастника" type="av:ВидУчастникаКод" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Вид участника</description>
+          </xs:appinfo>
+          <xs:documentation>Вид участника</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ПолноеНаименование" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование организации на русском языке</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование организации на русском языке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КраткоеНаименование" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Сокращенное наименование организации на русском языке</description>
+          </xs:appinfo>
+          <xs:documentation>Сокращенное наименование организации на русском языке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ФИОРуководителя" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Фамилия, имя, отчество руководителя организации</description>
+          </xs:appinfo>
+          <xs:documentation>Фамилия, имя, отчество руководителя организации</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИНН" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ИНН</description>
+          </xs:appinfo>
+          <xs:documentation>ИНН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОГРН" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОГРН</description>
+          </xs:appinfo>
+          <xs:documentation>ОГРН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="АдресМестаНахождения" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Адрес места нахождения организации</description>
+          </xs:appinfo>
+          <xs:documentation>Адрес места нахождения организации</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="АдресЭП" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Адрес электронной почты</description>
+          </xs:appinfo>
+          <xs:documentation>Адрес электронной почты</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КонтактныйТелефон" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Контактный телефон</description>
+          </xs:appinfo>
+          <xs:documentation>Контактный телефон</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="НомерРегистрации" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Исходящий номер</description>
+          </xs:appinfo>
+          <xs:documentation>Исходящий номер</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДатаРегистрации" type="av:Date" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата исходящего</description>
+          </xs:appinfo>
+          <xs:documentation>Дата исходящего</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="КраткоеСодержаниеПисьма" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Краткое содержание письма</description>
+          </xs:appinfo>
+          <xs:documentation>Краткое содержание письма</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ДолжностьПодписавшегоЛица" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Должность подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Должность подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ФамилияПодписавшегоЛица" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Фамилия подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Фамилия подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ИмяПодписавшегоЛица" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Имя подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Имя подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ОтчествоПодписавшегоЛица" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Отчество подписавшего лица</description>
+          </xs:appinfo>
+          <xs:documentation>Отчество подписавшего лица</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ПодписьРуководителяУКНПФ_ПодписьРуководителяУКНПФ">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Руководитель управляющей компании негосударственного пенсионного фонда (лицо, исполняющее обязанности руководителя управляющей компании негосударственного пенсионного фонда)</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Руководитель управляющей компании негосударственного пенсионного фонда (лицо, исполняющее обязанности руководителя управляющей компании негосударственного пенсионного фонда)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ФИО" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Инициалы, Фамилия</description>
+          </xs:appinfo>
+          <xs:documentation>Инициалы, Фамилия</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ПодписьУполномоченногоЛица_ПодписьУполномоченногоЛица">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Уполномоченное лицо специализированного депозитария негосударственного пенсионного фонда</description>
+        <type>ComplexClass</type>
+        <baseTypes>
+          <baseType>IncomingPackage</baseType>
+          <baseType>DatabaseObject</baseType>
+        </baseTypes>
+      </xs:appinfo>
+      <xs:documentation>Уполномоченное лицо специализированного депозитария негосударственного пенсионного фонда</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ФИО2" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Инициалы, Фамилия</description>
+          </xs:appinfo>
+          <xs:documentation>Инициалы, Фамилия</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Таблица_Раздел1ОтчетОбИнвестирСредств">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation>Таблица: Отчет об инвестировании средств пенсионных накоплений</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element name="Строка_Раздел1НомерГрафы" type="av:Таб_Раздел1Заголовок_Строка_Раздел1НомерГрафы" minOccurs="0">
+          <xs:annotation>
+            <xs:appinfo>
+              <description>1|2|3|4|5|6|7|8|9|10|11</description>
+            </xs:appinfo>
+            <xs:documentation>1|2|3|4|5|6|7|8|9|10|11</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+      <xs:element name="Таб_Раздел1Строки_1" type="av:Таб_Раздел1Строки_1" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:appinfo>
+            <description />
+          </xs:appinfo>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Таб_Раздел1Заголовок_Строка_Раздел1НомерГрафы">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Разд1Гр1Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер строки|1</description>
+          </xs:appinfo>
+          <xs:documentation>Номер строки|1</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр2Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование управляющей компании|2</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование управляющей компании|2</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр3Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Идентификационный номер налогоплательщика (ИНН) управляющей компании|3</description>
+          </xs:appinfo>
+          <xs:documentation>Идентификационный номер налогоплательщика (ИНН) управляющей компании|3</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр4Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование негосударственного пенсионного фонда|4</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование негосударственного пенсионного фонда|4</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр5Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Идентификационный номер налогоплательщика (ИНН) негосударственного пенсионного фонда|5</description>
+          </xs:appinfo>
+          <xs:documentation>Идентификационный номер налогоплательщика (ИНН) негосударственного пенсионного фонда|5</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр6Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер договора доверительного управления средствами пенсионных накоплений|6</description>
+          </xs:appinfo>
+          <xs:documentation>Номер договора доверительного управления средствами пенсионных накоплений|6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр7Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата заключения договора доверительного управления средствами пенсионных накоплений|7</description>
+          </xs:appinfo>
+          <xs:documentation>Дата заключения договора доверительного управления средствами пенсионных накоплений|7</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр8Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Стоимость чистых активов на начало отчетного года, рублей|8</description>
+          </xs:appinfo>
+          <xs:documentation>Стоимость чистых активов на начало отчетного года, рублей|8</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр9Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Поступление активов в доверительное управление управляющей компании за отчетный период, рублей|9</description>
+          </xs:appinfo>
+          <xs:documentation>Поступление активов в доверительное управление управляющей компании за отчетный период, рублей|9</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр10Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Изъятие активов из доверительного управления управляющей компании за отчетный период, рублей|10</description>
+          </xs:appinfo>
+          <xs:documentation>Изъятие активов из доверительного управления управляющей компании за отчетный период, рублей|10</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Разд1Гр11Стр1Заголовок" type="av:String" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Стоимость чистых активов на конец отчетного периода, рублей|11</description>
+          </xs:appinfo>
+          <xs:documentation>Стоимость чистых активов на конец отчетного периода, рублей|11</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Таб_Раздел1Строки_1">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Таблица: Отчет об инвестировании средств пенсионных накоплений</description>
+        <type>Report</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Кол1_НомерСтрокиНПФ" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер строки</description>
+          </xs:appinfo>
+          <xs:documentation>Номер строки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол2_ПолнНаимУК" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование управляющей компании</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование управляющей компании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол3_ИНН_НПФ" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Идентификационный номер налогоплательщика (ИНН) управляющей компании</description>
+          </xs:appinfo>
+          <xs:documentation>Идентификационный номер налогоплательщика (ИНН) управляющей компании</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол4_ПолноеНаименНПФ" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Полное наименование негосударственного пенсионного фонда</description>
+          </xs:appinfo>
+          <xs:documentation>Полное наименование негосударственного пенсионного фонда</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол5_ИНН_НПФ" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Идентификационный номер налогоплательщика (ИНН) негосударственного пенсионного фонда</description>
+          </xs:appinfo>
+          <xs:documentation>Идентификационный номер налогоплательщика (ИНН) негосударственного пенсионного фонда</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол6_НомерДоговораУправления" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Номер договора доверительного управления средствами пенсионных накоплений</description>
+          </xs:appinfo>
+          <xs:documentation>Номер договора доверительного управления средствами пенсионных накоплений</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол7_ДатЗаключДоговора" type="av:String" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Дата заключения договора доверительного управления средствами пенсионных накоплений</description>
+          </xs:appinfo>
+          <xs:documentation>Дата заключения договора доверительного управления средствами пенсионных накоплений</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол8_СтоимЧистАктивов" type="av:Double" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Стоимость чистых активов на начало отчетного года, рублей</description>
+          </xs:appinfo>
+          <xs:documentation>Стоимость чистых активов на начало отчетного года, рублей</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол9_ПоступлениеАктивов" type="av:Double" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Поступление активов в доверительное управление управляющей компании за отчетный период, рублей</description>
+          </xs:appinfo>
+          <xs:documentation>Поступление активов в доверительное управление управляющей компании за отчетный период, рублей</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол10_ИзъятиеАктивов" type="av:Double" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Изъятие активов из доверительного управления управляющей компании за отчетный период, рублей</description>
+          </xs:appinfo>
+          <xs:documentation>Изъятие активов из доверительного управления управляющей компании за отчетный период, рублей</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Кол11_СтоимЧистАктивовНаКонецОтчПериода" type="av:Double" minOccurs="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Стоимость чистых активов на конец отчетного периода, рублей</description>
+          </xs:appinfo>
+          <xs:documentation>Стоимость чистых активов на конец отчетного периода, рублей</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!--========== Простые типы ==========-->
+  <xs:simpleType name="Boolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="Date">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+  <xs:simpleType name="Guid">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Integer">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="Long">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="Double">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="String">
+    <xs:annotation>
+      <xs:appinfo>
+        <description />
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="_ДатаВФорматеДДММГГГГИли00000000">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Дата в формате ДД.ММ.ГГГГ или 00.00.0000</description>
+        <type>SimpleClass</type>
+      </xs:appinfo>
+      <xs:documentation>Дата в формате ДД.ММ.ГГГГ или 00.00.0000</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="^([0-2][1-9]|[1-2][0-9]|[3][0-1])[.]([0][1]|[0][3-9]|[1][0-2])[.]([1][9][0-9][0-9]|[2][0][0-9][0-9]|[2][1][0][0])$|^([0-2][1-9]|[1-2][0-9])[.]([0][2])[.]([1][9][0-9][0-9]|[2][0][0-9][0-9]|[2][1][0][0])$|^(00.00.0000)$" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="СтатусИнвестРезервовАИФКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Статус инвестиционных резервов акционерного инвестиционного фонда</description>
+      </xs:appinfo>
+      <xs:documentation>Статус инвестиционных резервов акционерного инвестиционного фонда</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="001">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>инвестиционные резервы переданы управляющей компании</description>
+          </xs:appinfo>
+          <xs:documentation>инвестиционные резервы переданы управляющей компании</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>заключен договор о передаче управляющей компании полномочий единоличного исполнительного органа акционерного инвестиционного фонда</description>
+          </xs:appinfo>
+          <xs:documentation>заключен договор о передаче управляющей компании полномочий единоличного исполнительного органа акционерного инвестиционного фонда</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="003">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>инвестиционные резервы не переданы управляющей компании и договор о передаче управляющей компании полномочий единоличного исполнительного органа акционерного инвестиционного фонда не заключен</description>
+          </xs:appinfo>
+          <xs:documentation>инвестиционные резервы не переданы управляющей компании и договор о передаче управляющей компании полномочий единоличного исполнительного органа акционерного инвестиционного фонда не заключен</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ОрганВыдавшийЛицензиюКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Орган выдавший лицензию</description>
+      </xs:appinfo>
+      <xs:documentation>Орган выдавший лицензию</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="001">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ФСФР России</description>
+          </xs:appinfo>
+          <xs:documentation>ФСФР России</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ФКЦБ России</description>
+          </xs:appinfo>
+          <xs:documentation>ФКЦБ России</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="003">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Банк России</description>
+          </xs:appinfo>
+          <xs:documentation>Банк России</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Voc002КодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Наименование субъекта Российской Федерации</description>
+      </xs:appinfo>
+      <xs:documentation>Наименование субъекта Российской Федерации</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Адыгея (Адыгея)</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Адыгея (Адыгея)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Алтай</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Алтай</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Башкортостан</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Башкортостан</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Бурятия</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Бурятия</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Дагестан</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Дагестан</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Ингушетия</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Ингушетия</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Кабардино-Балкарская Республика</description>
+          </xs:appinfo>
+          <xs:documentation>Кабардино-Балкарская Республика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Калмыкия</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Калмыкия</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Карачаево-Черкесская Республика</description>
+          </xs:appinfo>
+          <xs:documentation>Карачаево-Черкесская Республика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Карелия</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Карелия</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Коми</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Коми</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Марий Эл</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Марий Эл</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Мордовия</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Мордовия</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Саха (Якутия)</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Саха (Якутия)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Северная Осетия - Алания</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Северная Осетия - Алания</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Татарстан (Татарстан)</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Татарстан (Татарстан)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="17">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Тыва</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Тыва</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="18">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Удмуртская Республика</description>
+          </xs:appinfo>
+          <xs:documentation>Удмуртская Республика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Хакасия</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Хакасия</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Чеченская Республика</description>
+          </xs:appinfo>
+          <xs:documentation>Чеченская Республика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="21">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Чувашская Республика</description>
+          </xs:appinfo>
+          <xs:documentation>Чувашская Республика</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="22">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Алтайский край</description>
+          </xs:appinfo>
+          <xs:documentation>Алтайский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="75">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Забайкальский край</description>
+          </xs:appinfo>
+          <xs:documentation>Забайкальский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="41">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Камчатский край</description>
+          </xs:appinfo>
+          <xs:documentation>Камчатский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Краснодарский край</description>
+          </xs:appinfo>
+          <xs:documentation>Краснодарский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="24">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Красноярский край</description>
+          </xs:appinfo>
+          <xs:documentation>Красноярский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="59">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Пермский край</description>
+          </xs:appinfo>
+          <xs:documentation>Пермский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="25">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Приморский край</description>
+          </xs:appinfo>
+          <xs:documentation>Приморский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ставропольский край</description>
+          </xs:appinfo>
+          <xs:documentation>Ставропольский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="27">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Хабаровский край</description>
+          </xs:appinfo>
+          <xs:documentation>Хабаровский край</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="28">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Амурская область</description>
+          </xs:appinfo>
+          <xs:documentation>Амурская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="29">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Архангельская область</description>
+          </xs:appinfo>
+          <xs:documentation>Архангельская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="30">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Астраханская область</description>
+          </xs:appinfo>
+          <xs:documentation>Астраханская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="31">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Белгородская область</description>
+          </xs:appinfo>
+          <xs:documentation>Белгородская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Брянская область</description>
+          </xs:appinfo>
+          <xs:documentation>Брянская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="33">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Владимирская область</description>
+          </xs:appinfo>
+          <xs:documentation>Владимирская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="34">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Волгоградская область</description>
+          </xs:appinfo>
+          <xs:documentation>Волгоградская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="35">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Вологодская область</description>
+          </xs:appinfo>
+          <xs:documentation>Вологодская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="36">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Воронежская область</description>
+          </xs:appinfo>
+          <xs:documentation>Воронежская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="37">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ивановская область</description>
+          </xs:appinfo>
+          <xs:documentation>Ивановская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="38">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Иркутская область</description>
+          </xs:appinfo>
+          <xs:documentation>Иркутская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Калининградская область</description>
+          </xs:appinfo>
+          <xs:documentation>Калининградская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Калужская область</description>
+          </xs:appinfo>
+          <xs:documentation>Калужская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="42">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Кемеровская область</description>
+          </xs:appinfo>
+          <xs:documentation>Кемеровская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="43">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Кировская область</description>
+          </xs:appinfo>
+          <xs:documentation>Кировская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="44">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Костромская область</description>
+          </xs:appinfo>
+          <xs:documentation>Костромская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="45">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Курганская область</description>
+          </xs:appinfo>
+          <xs:documentation>Курганская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="46">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Курская область</description>
+          </xs:appinfo>
+          <xs:documentation>Курская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="47">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ленинградская область</description>
+          </xs:appinfo>
+          <xs:documentation>Ленинградская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="48">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Липецкая область</description>
+          </xs:appinfo>
+          <xs:documentation>Липецкая область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="49">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Магаданская область</description>
+          </xs:appinfo>
+          <xs:documentation>Магаданская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="50">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Московская область</description>
+          </xs:appinfo>
+          <xs:documentation>Московская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="51">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Мурманская область</description>
+          </xs:appinfo>
+          <xs:documentation>Мурманская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="52">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Нижегородская область</description>
+          </xs:appinfo>
+          <xs:documentation>Нижегородская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="53">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Новгородская область</description>
+          </xs:appinfo>
+          <xs:documentation>Новгородская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="54">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Новосибирская область</description>
+          </xs:appinfo>
+          <xs:documentation>Новосибирская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="55">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Омская область</description>
+          </xs:appinfo>
+          <xs:documentation>Омская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="56">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Оренбургская область</description>
+          </xs:appinfo>
+          <xs:documentation>Оренбургская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="57">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Орловская область</description>
+          </xs:appinfo>
+          <xs:documentation>Орловская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="58">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Пензенская область</description>
+          </xs:appinfo>
+          <xs:documentation>Пензенская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="60">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Псковская область</description>
+          </xs:appinfo>
+          <xs:documentation>Псковская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="61">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ростовская область</description>
+          </xs:appinfo>
+          <xs:documentation>Ростовская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="62">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Рязанская область</description>
+          </xs:appinfo>
+          <xs:documentation>Рязанская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="63">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Самарская область</description>
+          </xs:appinfo>
+          <xs:documentation>Самарская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="64">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Саратовская область</description>
+          </xs:appinfo>
+          <xs:documentation>Саратовская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="65">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Сахалинская область</description>
+          </xs:appinfo>
+          <xs:documentation>Сахалинская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="66">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Свердловская область</description>
+          </xs:appinfo>
+          <xs:documentation>Свердловская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="67">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Смоленская область</description>
+          </xs:appinfo>
+          <xs:documentation>Смоленская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="68">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Тамбовская область</description>
+          </xs:appinfo>
+          <xs:documentation>Тамбовская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="69">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Тверская область</description>
+          </xs:appinfo>
+          <xs:documentation>Тверская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="70">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Томская область</description>
+          </xs:appinfo>
+          <xs:documentation>Томская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="71">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Тульская область</description>
+          </xs:appinfo>
+          <xs:documentation>Тульская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="72">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Тюменская область</description>
+          </xs:appinfo>
+          <xs:documentation>Тюменская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="73">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ульяновская область</description>
+          </xs:appinfo>
+          <xs:documentation>Ульяновская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="74">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Челябинская область</description>
+          </xs:appinfo>
+          <xs:documentation>Челябинская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="76">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ярославская область</description>
+          </xs:appinfo>
+          <xs:documentation>Ярославская область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="77">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Москва</description>
+          </xs:appinfo>
+          <xs:documentation>Москва</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="78">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Санкт-Петербург</description>
+          </xs:appinfo>
+          <xs:documentation>Санкт-Петербург</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="79">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Еврейская автономная область</description>
+          </xs:appinfo>
+          <xs:documentation>Еврейская автономная область</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="83">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ненецкий автономный округ</description>
+          </xs:appinfo>
+          <xs:documentation>Ненецкий автономный округ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="86">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ханты-Мансийский автономный округ - Югра</description>
+          </xs:appinfo>
+          <xs:documentation>Ханты-Мансийский автономный округ - Югра</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="87">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Чукотский автономный округ</description>
+          </xs:appinfo>
+          <xs:documentation>Чукотский автономный округ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="89">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Ямало-Ненецкий автономный округ</description>
+          </xs:appinfo>
+          <xs:documentation>Ямало-Ненецкий автономный округ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="82">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Республика Крым</description>
+          </xs:appinfo>
+          <xs:documentation>Республика Крым</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="92">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Севастополь</description>
+          </xs:appinfo>
+          <xs:documentation>Севастополь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ОрганизационноПравоваяФормаКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Организационно-правовая форма</description>
+      </xs:appinfo>
+      <xs:documentation>Организационно-правовая форма</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="001">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОАО</description>
+          </xs:appinfo>
+          <xs:documentation>ОАО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ЗАО</description>
+          </xs:appinfo>
+          <xs:documentation>ЗАО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="003">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ООО</description>
+          </xs:appinfo>
+          <xs:documentation>ООО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="004">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ОДО</description>
+          </xs:appinfo>
+          <xs:documentation>ОДО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ВидУчастникаКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Вид участника</description>
+      </xs:appinfo>
+      <xs:documentation>Вид участника</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="АИФ">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Акционерные инвестиционные фонды</description>
+          </xs:appinfo>
+          <xs:documentation>Акционерные инвестиционные фонды</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="НПФ">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Негосударственные пенсионные фонды</description>
+          </xs:appinfo>
+          <xs:documentation>Негосударственные пенсионные фонды</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="УК">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Управляющие компании</description>
+          </xs:appinfo>
+          <xs:documentation>Управляющие компании</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="СД">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Спецдепозитарии</description>
+          </xs:appinfo>
+          <xs:documentation>Спецдепозитарии</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Брокер">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Брокеры</description>
+          </xs:appinfo>
+          <xs:documentation>Брокеры</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ПериодКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>отчетный период</description>
+      </xs:appinfo>
+      <xs:documentation>отчетный период</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>первый квартал</description>
+          </xs:appinfo>
+          <xs:documentation>первый квартал</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>первое полугодие</description>
+          </xs:appinfo>
+          <xs:documentation>первое полугодие</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>девять месяцев</description>
+          </xs:appinfo>
+          <xs:documentation>девять месяцев</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>год</description>
+          </xs:appinfo>
+          <xs:documentation>год</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ПредназначеныДляКИКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Предназначены для квалифицированных инвесторов</description>
+      </xs:appinfo>
+      <xs:documentation>Предназначены для квалифицированных инвесторов</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Да</description>
+          </xs:appinfo>
+          <xs:documentation>Да</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Нет</description>
+          </xs:appinfo>
+          <xs:documentation>Нет</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="КатегорияПИФКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Категория паевого инвестиционного фонда</description>
+      </xs:appinfo>
+      <xs:documentation>Категория паевого инвестиционного фонда</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд денежного рынка</description>
+          </xs:appinfo>
+          <xs:documentation>фонд денежного рынка</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд облигаций</description>
+          </xs:appinfo>
+          <xs:documentation>фонд облигаций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд акций</description>
+          </xs:appinfo>
+          <xs:documentation>фонд акций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд смешанных инвестиций</description>
+          </xs:appinfo>
+          <xs:documentation>фонд смешанных инвестиций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд прямых инвестиций</description>
+          </xs:appinfo>
+          <xs:documentation>фонд прямых инвестиций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд особо рисковых (венчурных) инвестиций</description>
+          </xs:appinfo>
+          <xs:documentation>фонд особо рисковых (венчурных) инвестиций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд фондов</description>
+          </xs:appinfo>
+          <xs:documentation>фонд фондов</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>рентный фонд</description>
+          </xs:appinfo>
+          <xs:documentation>рентный фонд</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд недвижимости</description>
+          </xs:appinfo>
+          <xs:documentation>фонд недвижимости</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="010">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ипотечный фонд</description>
+          </xs:appinfo>
+          <xs:documentation>ипотечный фонд</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="011">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>индексный фонд</description>
+          </xs:appinfo>
+          <xs:documentation>индексный фонд</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="012">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>кредитный фонд</description>
+          </xs:appinfo>
+          <xs:documentation>кредитный фонд</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="013">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд товарного рынка</description>
+          </xs:appinfo>
+          <xs:documentation>фонд товарного рынка</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="014">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>хедж-фонд</description>
+          </xs:appinfo>
+          <xs:documentation>хедж-фонд</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="015">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд художественных ценностей</description>
+          </xs:appinfo>
+          <xs:documentation>фонд художественных ценностей</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="016">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>фонд долгосрочных прямых инвестиций</description>
+          </xs:appinfo>
+          <xs:documentation>фонд долгосрочных прямых инвестиций</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="МесяцКодКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Месяц</description>
+      </xs:appinfo>
+      <xs:documentation>Месяц</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="001">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>январь</description>
+          </xs:appinfo>
+          <xs:documentation>январь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>февраль</description>
+          </xs:appinfo>
+          <xs:documentation>февраль</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="003">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>март</description>
+          </xs:appinfo>
+          <xs:documentation>март</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="004">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>апрель</description>
+          </xs:appinfo>
+          <xs:documentation>апрель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="005">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>май</description>
+          </xs:appinfo>
+          <xs:documentation>май</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="006">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>июнь</description>
+          </xs:appinfo>
+          <xs:documentation>июнь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="007">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>июль</description>
+          </xs:appinfo>
+          <xs:documentation>июль</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="008">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>август</description>
+          </xs:appinfo>
+          <xs:documentation>август</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="009">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>сентябрь</description>
+          </xs:appinfo>
+          <xs:documentation>сентябрь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="010">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>октябрь</description>
+          </xs:appinfo>
+          <xs:documentation>октябрь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="011">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>ноябрь</description>
+          </xs:appinfo>
+          <xs:documentation>ноябрь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="012">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>декабрь</description>
+          </xs:appinfo>
+          <xs:documentation>декабрь</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ДаНетКод">
+    <xs:annotation>
+      <xs:appinfo>
+        <description>Да/Нет</description>
+      </xs:appinfo>
+      <xs:documentation>Да/Нет</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Да">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Да</description>
+          </xs:appinfo>
+          <xs:documentation>Да</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Нет">
+        <xs:annotation>
+          <xs:appinfo>
+            <description>Нет</description>
+          </xs:appinfo>
+          <xs:documentation>Нет</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

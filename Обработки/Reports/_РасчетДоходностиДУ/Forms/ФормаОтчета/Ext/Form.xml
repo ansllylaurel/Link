@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<ReportResult>Результат</ReportResult>
+	<ReportFormType>Main</ReportFormType>
+	<AutoShowState>Auto</AutoShowState>
+	<ReportResultViewMode>Auto</ReportResultViewMode>
+	<ViewModeApplicationOnSetReportResult>Auto</ViewModeApplicationOnSetReportResult>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСформировать" id="37">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.Generate</CommandName>
+				<ExtendedTooltip name="ФормаСформироватьРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ФормаКомандаПоказатьНастройки" id="39">
+				<Type>CommandBarButton</Type>
+				<Check>true</Check>
+				<CommandName>Form.Command.КомандаПоказатьНастройки</CommandName>
+				<ExtendedTooltip name="ФормаКомандаПоказатьНастройкиРасширеннаяПодсказка" id="40"/>
+			</Button>
+			<Button name="ФормаКомандаВыгрузитьВРиски" id="200">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаВыгрузитьВРиски</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыгрузитьВРискиРасширеннаяПодсказка" id="201"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаВариантОтчета" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вариант отчета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вариант отчета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВариантОтчетаРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<InputField name="ВариантОтчета" id="41">
+					<DataPath>Отчет.ВариантОтчета</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ВариантОтчетаКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ВариантОтчетаРасширеннаяПодсказка" id="43"/>
+					<Events>
+						<Event name="OnChange">ВариантОтчетаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="1">
+					<DataPath>Отчет.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПериод" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<InputField name="Период" id="4">
+					<DataPath>Отчет.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="ПредыдущаяДата" id="87">
+					<DataPath>Отчет.ПериодДляСравнения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предыдущая дата</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредыдущаяДатаКонтекстноеМеню" id="88"/>
+					<ExtendedTooltip name="ПредыдущаяДатаРасширеннаяПодсказка" id="89"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРезультатВидыДоговоров" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа результат виды договоров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа результат виды договоров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРезультатВидыДоговоровРасширеннаяПодсказка" id="13"/>
+			<ChildItems>
+				<SpreadSheetDocumentField name="Результат" id="7">
+					<DataPath>Результат</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="РезультатКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="9"/>
+				</SpreadSheetDocumentField>
+				<UsualGroup name="ГруппаНастройки" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройкиДоходности" id="83">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки доходности</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки доходности</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиДоходностиРасширеннаяПодсказка" id="84"/>
+							<ChildItems>
+								<InputField name="ВидВалюты" id="193">
+									<DataPath>Отчет.ВидВалюты</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Валюта учёта</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">ВалютаУчета</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Валюта цели расчёта</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">ВалютаЦелиРасчета</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВидВалютыКонтекстноеМеню" id="194"/>
+									<ExtendedTooltip name="ВидВалютыРасширеннаяПодсказка" id="195"/>
+								</InputField>
+								<InputField name="ВидПлановойДоходности" id="147">
+									<DataPath>Отчет.ВидПлановойДоходности</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Негативная доходность</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Негативная</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Нейтральная доходность</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Нейтральная</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Позитивная доходность</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Позитивная</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВидПлановойДоходностиКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="ВидПлановойДоходностиРасширеннаяПодсказка" id="149"/>
+								</InputField>
+								<CheckBoxField name="СкрытьФизЛиц" id="48">
+									<DataPath>Отчет.СкрытьФизЛиц</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СкрытьФизЛицКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="СкрытьФизЛицРасширеннаяПодсказка" id="50"/>
+								</CheckBoxField>
+								<UsualGroup name="ГруппаСравнениеСПериодом" id="54">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа сравнение с периодом</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа сравнение с периодом</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСравнениеСПериодомРасширеннаяПодсказка" id="55"/>
+									<ChildItems>
+										<CheckBoxField name="СравнитьСПериодом" id="56">
+											<DataPath>Отчет.СравнитьСПериодом</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СравнитьСПериодомКонтекстноеМеню" id="57"/>
+											<ExtendedTooltip name="СравнитьСПериодомРасширеннаяПодсказка" id="58"/>
+										</CheckBoxField>
+										<InputField name="ПериодДляСравнения" id="59">
+											<DataPath>Отчет.ПериодДляСравнения</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="ПериодДляСравненияКонтекстноеМеню" id="60"/>
+											<ExtendedTooltip name="ПериодДляСравненияРасширеннаяПодсказка" id="61"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПечатьСРасшифровкой" id="142">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа печать с расшифровкой</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа печать с расшифровкой</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПечатьСРасшифровкойРасширеннаяПодсказка" id="143"/>
+									<ChildItems>
+										<CheckBoxField name="ПечатьСРасшифровкой" id="62">
+											<DataPath>Отчет.ПечатьСРасшифровкой</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПечатьСРасшифровкойКонтекстноеМеню" id="63"/>
+											<ExtendedTooltip name="ПечатьСРасшифровкойРасширеннаяПодсказка" id="64"/>
+										</CheckBoxField>
+										<InputField name="УровеньРасшифровки" id="144">
+											<DataPath>Отчет.УровеньРасшифровки</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ListChoiceMode>true</ListChoiceMode>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="УровеньРасшифровкиКонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="УровеньРасшифровкиРасширеннаяПодсказка" id="146"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<Table name="ГруппировкиОтчета" id="90">
+									<Representation>List</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<MaxHeight>3</MaxHeight>
+									<Header>false</Header>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<DataPath>Отчет.ГруппировкиОтчета</DataPath>
+									<RowPictureDataPath>Отчет.ГруппировкиОтчета.Picture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>CheckAll</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Pickup</ExcludedCommand>
+										<ExcludedCommand>SelectAll</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+										<ExcludedCommand>UncheckAll</ExcludedCommand>
+									</CommandSet>
+									<ContextMenu name="ГруппировкиОтчетаКонтекстноеМеню" id="91"/>
+									<AutoCommandBar name="ГруппировкиОтчетаКоманднаяПанель" id="92">
+										<ChildItems>
+											<Button name="ГруппировкиОтчетаПереместитьВверх" id="106">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ГруппировкиОтчета.StandardCommand.MoveUp</CommandName>
+												<ExtendedTooltip name="ГруппировкиОтчетаПереместитьВверхРасширеннаяПодсказка" id="107"/>
+											</Button>
+											<Button name="ГруппировкиОтчетаПереместитьВниз" id="108">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ГруппировкиОтчета.StandardCommand.MoveDown</CommandName>
+												<ExtendedTooltip name="ГруппировкиОтчетаПереместитьВнизРасширеннаяПодсказка" id="109"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ГруппировкиОтчетаРасширеннаяПодсказка" id="93"/>
+									<SearchStringAddition name="ГруппировкиОтчетаСтрокаПоиска" id="94">
+										<AdditionSource>
+											<Item>ГруппировкиОтчета</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ГруппировкиОтчетаСтрокаПоискаКонтекстноеМеню" id="95"/>
+										<ExtendedTooltip name="ГруппировкиОтчетаСтрокаПоискаРасширеннаяПодсказка" id="96"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ГруппировкиОтчетаСостояниеПросмотра" id="97">
+										<AdditionSource>
+											<Item>ГруппировкиОтчета</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ГруппировкиОтчетаСостояниеПросмотраКонтекстноеМеню" id="98"/>
+										<ExtendedTooltip name="ГруппировкиОтчетаСостояниеПросмотраРасширеннаяПодсказка" id="99"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ГруппировкиОтчетаУправлениеПоиском" id="100">
+										<AdditionSource>
+											<Item>ГруппировкиОтчета</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ГруппировкиОтчетаУправлениеПоискомКонтекстноеМеню" id="101"/>
+										<ExtendedTooltip name="ГруппировкиОтчетаУправлениеПоискомРасширеннаяПодсказка" id="102"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<CheckBoxField name="ГруппировкиОтчетаПометка" id="110">
+											<DataPath>Отчет.ГруппировкиОтчета.Check</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ГруппировкиОтчетаПометкаКонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="ГруппировкиОтчетаПометкаРасширеннаяПодсказка" id="112"/>
+										</CheckBoxField>
+										<InputField name="ГруппировкиОтчетаЗначение" id="103">
+											<DataPath>Отчет.ГруппировкиОтчета.Value</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ГруппировкиОтчетаЗначениеКонтекстноеМеню" id="104"/>
+											<ExtendedTooltip name="ГруппировкиОтчетаЗначениеРасширеннаяПодсказка" id="105"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<UsualGroup name="ГруппаОтбор" id="198">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отбор</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отбор</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>DontUse</ThroughAlign>
+									<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="199"/>
+									<ChildItems>
+										<CheckBoxField name="ОтборПоДоговорам" id="179">
+											<DataPath>Отчет.ОтборПоДоговорам</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отбор</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<CheckBoxType>Tumbler</CheckBoxType>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ='по видам договоров'; БИ='по договорам'</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ОтборПоДоговорамКонтекстноеМеню" id="180"/>
+											<ExtendedTooltip name="ОтборПоДоговорамРасширеннаяПодсказка" id="181"/>
+											<Events>
+												<Event name="OnChange">ОтборПоДоговорамПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<UsualGroup name="ГруппаСписокДоговоров" id="182">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа список договоров</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа список договоров</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСписокДоговоровРасширеннаяПодсказка" id="183"/>
+											<ChildItems>
+												<InputField name="ИдентификаторСпискаДоговоров" id="190">
+													<DataPath>Отчет.ИдентификаторСпискаДоговоров</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<ListChoiceMode>true</ListChoiceMode>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ИдентификаторСпискаДоговоровКонтекстноеМеню" id="191"/>
+													<ExtendedTooltip name="ИдентификаторСпискаДоговоровРасширеннаяПодсказка" id="192"/>
+												</InputField>
+												<Button name="СписокДоговоровДобавить" id="184">
+													<Type>UsualButton</Type>
+													<CommandName>Form.Command.СписокДоговоровДобавить</CommandName>
+													<ExtendedTooltip name="СписокДоговоровДобавитьРасширеннаяПодсказка" id="185"/>
+												</Button>
+												<Button name="СписокДоговоровРедактировать" id="186">
+													<Type>UsualButton</Type>
+													<CommandName>Form.Command.СписокДоговоровРедактировать</CommandName>
+													<ExtendedTooltip name="СписокДоговоровРедактироватьРасширеннаяПодсказка" id="187"/>
+												</Button>
+												<Button name="СписокДоговоровУдалить" id="188">
+													<Type>UsualButton</Type>
+													<CommandName>Form.Command.СписокДоговоровУдалить</CommandName>
+													<ExtendedTooltip name="СписокДоговоровУдалитьРасширеннаяПодсказка" id="189"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<Table name="ВидыДоговоровДоверительногоУправления" id="14">
+											<Representation>List</Representation>
+											<TitleLocation>Top</TitleLocation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<MaxWidth>35</MaxWidth>
+											<Header>false</Header>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>Отчет.ВидыДоговоровДоверительногоУправления</DataPath>
+											<RowPictureDataPath>Отчет.ВидыДоговоровДоверительногоУправления.Picture</RowPictureDataPath>
+											<CommandSet>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+												<ExcludedCommand>Delete</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>Pickup</ExcludedCommand>
+												<ExcludedCommand>SelectAll</ExcludedCommand>
+												<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+												<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+												<ExcludedCommand>SortListAsc</ExcludedCommand>
+												<ExcludedCommand>SortListDesc</ExcludedCommand>
+											</CommandSet>
+											<ContextMenu name="ВидыДоговоровДоверительногоУправленияКонтекстноеМеню" id="15"/>
+											<AutoCommandBar name="ВидыДоговоровДоверительногоУправленияКоманднаяПанель" id="16">
+												<ChildItems>
+													<Button name="ВидыДоговоровДоверительногоУправленияУстановитьФлажки" id="30">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ВидыДоговоровДоверительногоУправления.StandardCommand.CheckAll</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияУстановитьФлажкиРасширеннаяПодсказка" id="31"/>
+													</Button>
+													<Button name="ВидыДоговоровДоверительногоУправленияСнятьФлажки" id="32">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ВидыДоговоровДоверительногоУправления.StandardCommand.UncheckAll</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСнятьФлажкиРасширеннаяПодсказка" id="33"/>
+													</Button>
+												</ChildItems>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияРасширеннаяПодсказка" id="17"/>
+											<SearchStringAddition name="ВидыДоговоровДоверительногоУправленияСтрокаПоиска" id="18">
+												<AdditionSource>
+													<Item>ВидыДоговоровДоверительногоУправления</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ВидыДоговоровДоверительногоУправленияСтрокаПоискаКонтекстноеМеню" id="19"/>
+												<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ВидыДоговоровДоверительногоУправленияСостояниеПросмотра" id="21">
+												<AdditionSource>
+													<Item>ВидыДоговоровДоверительногоУправления</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ВидыДоговоровДоверительногоУправленияСостояниеПросмотраКонтекстноеМеню" id="22"/>
+												<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ВидыДоговоровДоверительногоУправленияУправлениеПоиском" id="24">
+												<AdditionSource>
+													<Item>ВидыДоговоровДоверительногоУправления</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ВидыДоговоровДоверительногоУправленияУправлениеПоискомКонтекстноеМеню" id="25"/>
+												<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<CheckBoxField name="ВидыДоговоровДоверительногоУправленияПометка" id="34">
+													<DataPath>Отчет.ВидыДоговоровДоверительногоУправления.Check</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВидыДоговоровДоверительногоУправленияПометкаКонтекстноеМеню" id="35"/>
+													<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияПометкаРасширеннаяПодсказка" id="36"/>
+												</CheckBoxField>
+												<InputField name="ВидыДоговоровДоверительногоУправленияЗначение" id="27">
+													<DataPath>Отчет.ВидыДоговоровДоверительногоУправления.Value</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ВидыДоговоровДоверительногоУправленияЗначениеКонтекстноеМеню" id="28"/>
+													<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияЗначениеРасширеннаяПодсказка" id="29"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+										<CheckBoxField name="РассчитыватьСЧАПоПисьмуЦБ" id="170">
+											<DataPath>Отчет.РассчитыватьСЧАБезПослаблений</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="РассчитыватьСЧАПоПисьмуЦБКонтекстноеМеню" id="171"/>
+											<ExtendedTooltip name="РассчитыватьСЧАПоПисьмуЦБРасширеннаяПодсказка" id="172"/>
+											<Events>
+												<Event name="OnChange">РассчитыватьСЧАПоПисьмуЦБПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<Table name="ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений" id="150">
+											<Representation>List</Representation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<Header>false</Header>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<DataPath>Отчет.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений</DataPath>
+											<RowPictureDataPath>Отчет.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений.Picture</RowPictureDataPath>
+											<ContextMenu name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийКонтекстноеМеню" id="151"/>
+											<AutoCommandBar name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийКоманднаяПанель" id="152">
+												<Autofill>false</Autofill>
+												<ChildItems>
+													<Button name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуУстановитьФлажки" id="166">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Item.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений.StandardCommand.CheckAll</CommandName>
+														<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+														<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуУстановитьФлажкиРасширеннаяПодсказка" id="167"/>
+													</Button>
+													<Button name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуСнятьФлажки" id="168">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Item.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений.StandardCommand.UncheckAll</CommandName>
+														<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+														<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуСнятьФлажкиРасширеннаяПодсказка" id="169"/>
+													</Button>
+												</ChildItems>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийРасширеннаяПодсказка" id="153"/>
+											<SearchStringAddition name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийСтрокаПоиска" id="154">
+												<AdditionSource>
+													<Item>ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийСтрокаПоискаКонтекстноеМеню" id="155"/>
+												<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийСтрокаПоискаРасширеннаяПодсказка" id="156"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийСостояниеПросмотра" id="157">
+												<AdditionSource>
+													<Item>ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийСостояниеПросмотраКонтекстноеМеню" id="158"/>
+												<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийСостояниеПросмотраРасширеннаяПодсказка" id="159"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийУправлениеПоиском" id="160">
+												<AdditionSource>
+													<Item>ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийУправлениеПоискомКонтекстноеМеню" id="161"/>
+												<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияСЧАБезПослабленийУправлениеПоискомРасширеннаяПодсказка" id="162"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<CheckBoxField name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуПометка" id="173">
+													<DataPath>Отчет.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений.Check</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуПометкаКонтекстноеМеню" id="174"/>
+													<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуПометкаРасширеннаяПодсказка" id="175"/>
+												</CheckBoxField>
+												<InputField name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуЗначение" id="163">
+													<DataPath>Отчет.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений.Value</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуЗначениеКонтекстноеМеню" id="164"/>
+													<ExtendedTooltip name="ВидыДоговоровДоверительногоУправленияРасчетСЧАПоПисьмуЗначениеРасширеннаяПодсказка" id="165"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНастройкиБиржевыхИндексов" id="85">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки биржевых индексов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки биржевых индексов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиБиржевыхИндексовРасширеннаяПодсказка" id="86"/>
+							<ChildItems>
+								<Table name="НастройкиБиржевыхИндексов" id="113">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>Отчет.НастройкиБиржевыхИндексов</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="НастройкиБиржевыхИндексовКонтекстноеМеню" id="114"/>
+									<AutoCommandBar name="НастройкиБиржевыхИндексовКоманднаяПанель" id="115">
+										<ChildItems>
+											<Popup name="НастройкиБиржевыхИндексовГруппаПодбор" id="135">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Подбор</v8:content>
+													</v8:item>
+												</Title>
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Настройки биржевых индексов группа подбор</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="НастройкиБиржевыхИндексовГруппаПодборРасширеннаяПодсказка" id="136"/>
+												<ChildItems>
+													<Button name="БиржевыеИндексыКомандаПодбор" id="81">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.КомандаПодборБиржевойИндекс</CommandName>
+														<ExtendedTooltip name="БиржевыеИндексыКомандаПодборРасширеннаяПодсказка" id="82"/>
+													</Button>
+													<Button name="НастройкиБиржевыхИндексовКомандаПодборНастройкиРасчета" id="137">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.КомандаПодборНастройкиРасчета</CommandName>
+														<ExtendedTooltip name="НастройкиБиржевыхИндексовКомандаПодборНастройкиРасчетаРасширеннаяПодсказка" id="138"/>
+													</Button>
+												</ChildItems>
+											</Popup>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="НастройкиБиржевыхИндексовРасширеннаяПодсказка" id="116"/>
+									<SearchStringAddition name="НастройкиБиржевыхИндексовСтрокаПоиска" id="117">
+										<AdditionSource>
+											<Item>НастройкиБиржевыхИндексов</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиБиржевыхИндексовСтрокаПоискаКонтекстноеМеню" id="118"/>
+										<ExtendedTooltip name="НастройкиБиржевыхИндексовСтрокаПоискаРасширеннаяПодсказка" id="119"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="НастройкиБиржевыхИндексовСостояниеПросмотра" id="120">
+										<AdditionSource>
+											<Item>НастройкиБиржевыхИндексов</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиБиржевыхИндексовСостояниеПросмотраКонтекстноеМеню" id="121"/>
+										<ExtendedTooltip name="НастройкиБиржевыхИндексовСостояниеПросмотраРасширеннаяПодсказка" id="122"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="НастройкиБиржевыхИндексовУправлениеПоиском" id="123">
+										<AdditionSource>
+											<Item>НастройкиБиржевыхИндексов</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиБиржевыхИндексовУправлениеПоискомКонтекстноеМеню" id="124"/>
+										<ExtendedTooltip name="НастройкиБиржевыхИндексовУправлениеПоискомРасширеннаяПодсказка" id="125"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="НастройкиБиржевыхИндексовБиржевойИндекс" id="126">
+											<DataPath>Отчет.НастройкиБиржевыхИндексов.БиржевойИндекс</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НастройкиБиржевыхИндексовБиржевойИндексКонтекстноеМеню" id="127"/>
+											<ExtendedTooltip name="НастройкиБиржевыхИндексовБиржевойИндексРасширеннаяПодсказка" id="128"/>
+										</InputField>
+										<CheckBoxField name="НастройкиБиржевыхИндексовСреднеарифметическое" id="129">
+											<DataPath>Отчет.НастройкиБиржевыхИндексов.Среднеарифметическое</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="НастройкиБиржевыхИндексовСреднеарифметическоеКонтекстноеМеню" id="130"/>
+											<ExtendedTooltip name="НастройкиБиржевыхИндексовСреднеарифметическоеРасширеннаяПодсказка" id="131"/>
+										</CheckBoxField>
+										<InputField name="НастройкиБиржевыхИндексовКоличествоЗначений" id="139">
+											<DataPath>Отчет.НастройкиБиржевыхИндексов.КоличествоЗначений</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>8</MaxWidth>
+											<ContextMenu name="НастройкиБиржевыхИндексовКоличествоЗначенийКонтекстноеМеню" id="140"/>
+											<ExtendedTooltip name="НастройкиБиржевыхИндексовКоличествоЗначенийРасширеннаяПодсказка" id="141"/>
+										</InputField>
+										<InputField name="НастройкиБиржевыхИндексовВалютаКонвертации" id="132">
+											<DataPath>Отчет.НастройкиБиржевыхИндексов.ВалютаКонвертации</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>6</MaxWidth>
+											<ContextMenu name="НастройкиБиржевыхИндексовВалютаКонвертацииКонтекстноеМеню" id="133"/>
+											<ExtendedTooltip name="НастройкиБиржевыхИндексовВалютаКонвертацииРасширеннаяПодсказка" id="134"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Отчет" id="1">
+			<Type>
+				<v8:Type>cfg:ReportObject._РасчетДоходностиДУ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>1/0:5dae8ae6-7de6-4a1d-96ce-a517041ae3eb</Field>
+				<Field>Отчет.БиржевыеИндексы</Field>
+				<Field>Отчет.ВариантОтчета</Field>
+				<Field>Отчет.ВидВалюты</Field>
+				<Field>Отчет.ВидПлановойДоходности</Field>
+				<Field>Отчет.ВидыДоговоровДоверительногоУправления</Field>
+				<Field>Отчет.ВидыДоговоровДоверительногоУправленияСЧАБезПослаблений</Field>
+				<Field>Отчет.ГруппировкиОтчета</Field>
+				<Field>Отчет.ИдентификаторСпискаДоговоров</Field>
+				<Field>Отчет.НастройкиБиржевыхИндексов</Field>
+				<Field>Отчет.ОтборПоДоговорам</Field>
+				<Field>Отчет.Период</Field>
+				<Field>Отчет.ПериодДляСравнения</Field>
+				<Field>Отчет.ПечатьСРасшифровкой</Field>
+				<Field>Отчет.РассчитыватьСЧАБезПослаблений</Field>
+				<Field>Отчет.СкрытьФизЛиц</Field>
+				<Field>Отчет.СпискиДоговоров</Field>
+				<Field>Отчет.СравнитьСПериодом</Field>
+				<Field>Отчет.УровеньРасшифровки</Field>
+			</Save>
+			<Columns>
+				<AdditionalColumns table="Отчет.НастройкиБиржевыхИндексов">
+					<Column name="БиржевойИндекс" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Биржевой индекс</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.БиржевыеИндексы</v8:Type>
+						</Type>
+					</Column>
+					<Column name="Среднеарифметическое" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Среднеарифм.</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВалютаКонвертации" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КоличествоЗначений" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кол-во знач.</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>19</v8:Digits>
+								<v8:FractionDigits>2</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="БазаРасчета" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>База расчета</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="Результат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаПоказатьНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда показать настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПоказатьНастройки</Action>
+		</Command>
+		<Command name="КомандаПодборБиржевойИндекс" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Биржевые индексы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда подбор биржевой индекс</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПодборБиржевойИндекс</Action>
+		</Command>
+		<Command name="КомандаПодборНастройкиРасчета" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки расчета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда подбор настройки расчета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПодборНастройкиРасчета</Action>
+		</Command>
+		<Command name="СписокДоговоровДобавить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить новый список договоров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить новый список договоров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокДоговоровДобавить</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СписокДоговоровРедактировать" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать список договоров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать список договоров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокДоговоровРедактировать</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СписокДоговоровУдалить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить список договоров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить список договоров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокДоговоровУдалить</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="КомандаВыгрузитьВРиски" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить в Риски</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить в базу Рисков</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыгрузитьВРиски</Action>
+		</Command>
+	</Commands>
+</Form>

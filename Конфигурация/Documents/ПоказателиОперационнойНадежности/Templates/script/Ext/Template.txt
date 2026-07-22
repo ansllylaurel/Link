@@ -1,0 +1,131 @@
+﻿<html>
+	<head>
+	    <script language='JavaScript' type='text/javascript'>
+	                 
+			function findLineDifferences(text1, text2) {
+
+			  const m = text1.length;
+			  const n = text2.length;
+
+			  // Создаем таблицу для хранения длин НОП
+			  const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+
+			  // Заполняем таблицу
+			  for (let i = 1; i <= m; i++) {
+			    for (let j = 1; j <= n; j++) {
+			      if (text1[i - 1] === text2[j - 1]) {
+			        dp[i][j] = dp[i - 1][j - 1] + 1;
+			      } else {
+			        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+			      }
+			    }
+			  }
+
+			  // Восстанавливаем НОП
+			  let i = m;
+			  let j = n;
+			  let lcs = "";  
+			  indexes_1 = [];
+			  indexes_2 = [];
+			  
+			  while (i > 0 && j > 0) {
+			    if (text1[i - 1] === text2[j - 1]) {
+			      lcs = text1[i - 1] + lcs;
+			      indexes_1.push(i - 1);
+			      indexes_2.push(j - 1);
+			      i--;
+			      j--;
+			    } else {
+			      if (dp[i - 1][j] > dp[i][j - 1]) {
+			        i--;
+			      } else {
+			        j--;
+			      }
+			    }
+			  }
+
+			  indexes_1.reverse();
+			  indexes_2.reverse();
+
+			  fragments_1 = [];
+			  fragments_2 = [];
+			  
+			  // Добавляем части строк, идущей перед подпоследовательностью
+			  if (indexes_1[0] > 0) {
+			     data = [];
+			     data.push(0);
+			     data.push(text1.substring(0, indexes_1[0]));
+			     fragments_1.push(data);
+			  }
+			  if (indexes_2[0] > 0) {
+			     data = [];
+			     data.push(0);
+			     data.push(text2.substring(0, indexes_2[0]));
+			     fragments_2.push(data);
+			  }
+                   
+			  // Добавляем части строк находящиеся между символами подпоследовательности
+			  for (let i = 1; i < indexes_1.length; i++) {
+			   
+			    if (indexes_1[i - 1] + 1 < indexes_1[i]) {
+			      data = [];
+			      data.push(i);
+			      data.push(text1.substring(indexes_1[i - 1] + 1, indexes_1[i]));
+			      fragments_1.push(data);
+			    }	
+			   
+			    if (indexes_2[i - 1] + 1 < indexes_2[i]) {
+			      data = [];
+			      data.push(i);
+			      data.push(text2.substring(indexes_2[i - 1] + 1, indexes_2[i]));
+			      fragments_2.push(data);
+			    }	
+			   
+			  }
+              
+              let suffix1 = "";     
+              let suffix2 = "";
+			  // Добавляем части строк, идущие после подпоследовательности
+			  if (indexes_1[indexes_1.length - 1] < m - 1) {
+			  	suffix1 = text1.substring(indexes_1[indexes_1.length - 1] + 1);
+			  } 
+			  if (indexes_2[indexes_2.length - 1] < n - 1) {
+			  	suffix2 = text2.substring(indexes_2[indexes_2.length - 1] + 1);
+			  } 
+              
+              if (lcs === "") {
+              	suffix1 = text1;
+              	suffix2 = text2;
+              }
+                   
+			  let dataobject = {
+			    lcsString  : lcs,
+			    fragments1 : fragments_1,
+			    fragments2 : fragments_2,
+			    suff1      : suffix1,
+			    suff2      : suffix2
+			  }   
+			   
+			  //document.getElementById('text').innerHTML = lcs;
+			  //document.getElementById('text1').innerHTML = "fr1:" + fragments_1.toString(); 
+			  //document.getElementById('text2').innerHTML = "fr2:" + fragments_2.toString(); 
+			  //document.getElementById('text3').innerHTML = "ind1:" + indexes_1.toString(); 
+			  //document.getElementById('text4').innerHTML = "ind2:" + indexes_2.toString(); 
+			  
+              return JSON.stringify(dataobject);
+              
+			} 
+			
+	    </script> 
+	</head>        
+<body>
+    <h5 id='text'></h1>
+    <h5 id='text1'></h1>
+    <h5 id='text2'></h1>
+    <h5 id='text3'></h1>
+    <h5 id='text4'></h1>
+    <h5 id='text5'></h1>
+    <h5 id='text6'></h1>
+    <h5 id='text7'></h1>
+</body>
+</html>                                                                

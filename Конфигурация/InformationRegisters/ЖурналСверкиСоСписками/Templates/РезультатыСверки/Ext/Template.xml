@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПаевойИнвестиционныйФонд</dataPath>
+			<field>ПаевойИнвестиционныйФонд</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партия</dataPath>
+			<field>Партия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пайщик</dataPath>
+			<field>Пайщик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнейСверки</dataPath>
+			<field>ДатаПоследнейСверки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время последней сверки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пройдена</dataPath>
+			<field>Пройдена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПорядокСтатусаПроверки</dataPath>
+			<field>ПорядокСтатусаПроверки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус проверки</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРасторжения</dataPath>
+			<field>ДатаРасторжения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расторжения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДУ</dataPath>
+			<field>СчетДУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСмерти</dataPath>
+			<field>ДатаСмерти</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрФизЛицо</dataPath>
+			<field>ЮрФизЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юр/физ лицо</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Язык</dataPath>
+			<field>Язык</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоКлиент</dataPath>
+			<field>ЭтоКлиент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это клиент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДоговора</dataPath>
+			<field>НомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИНН_ДатаРождения</dataPath>
+			<field>ИНН_ДатаРождения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИНН/Дата рождения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления КАК СчетДУ,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения КАК ДатаРасторжения,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.НомерДоговора КАК НомерДоговора,
+	ДолиПайщиковВИнвестиционномФондеОстатки.Пайщик КАК ЮрФизЛицо
+ПОМЕСТИТЬ _Клиенты
+ИЗ
+	РегистрНакопления.ДолиПайщиковВИнвестиционномФонде.Остатки(&amp;Период, Организация = &amp;Организация) КАК ДолиПайщиковВИнвестиционномФондеОстатки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыДоверительногоУправления.СрезПоследних(&amp;Период, Организация = &amp;Организация) КАК КлиентыДоверительногоУправленияСрезПоследних
+		ПО ДолиПайщиковВИнвестиционномФондеОстатки.ПаевойИнвестиционныйФонд = КлиентыДоверительногоУправленияСрезПоследних.Клиент
+			И ДолиПайщиковВИнвестиционномФондеОстатки.Организация = КлиентыДоверительногоУправленияСрезПоследних.Организация
+			И (КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+				ИЛИ &amp;СверятьЗакрытыеСчетаИСвязанныеЛица
+					И РАЗНОСТЬДАТ(КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения, &amp;Период, ДЕНЬ) &lt; 365
+				ИЛИ КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения &gt;= &amp;Период)
+			И (НЕ &amp;ИсключитьНоминальныхДержателейПаев
+				ИЛИ ДолиПайщиковВИнвестиционномФондеОстатки.Партия.Заявка.ВидПайщика &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ВидыПайщиков.НоминальныйДержатель))
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.НомерДоговора,
+	ЗаявкаПайщика.Пайщик
+ИЗ
+	Документ.ЗаявкаПайщика КАК ЗаявкаПайщика
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыДоверительногоУправления.СрезПоследних(&amp;Период, Организация = &amp;Организация) КАК КлиентыДоверительногоУправленияСрезПоследних
+		ПО ЗаявкаПайщика.ПаевойИнвестиционныйФонд = КлиентыДоверительногоУправленияСрезПоследних.Клиент
+			И ЗаявкаПайщика.Организация = КлиентыДоверительногоУправленияСрезПоследних.Организация
+			И (ЗаявкаПайщика.Многократная)
+			И (НЕ ЗаявкаПайщика.ПометкаУдаления)
+			И (ЗаявкаПайщика.ВидПайщика &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ВидыПайщиков.НоминальныйДержатель)
+				ИЛИ НЕ &amp;ИсключитьНоминальныхДержателейПаев)
+			И (КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+				ИЛИ &amp;СверятьЗакрытыеСчетаИСвязанныеЛица
+					И РАЗНОСТЬДАТ(КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения, &amp;Период, ДЕНЬ) &lt; 365
+				ИЛИ КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения &gt;= &amp;Период)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.ДатаРасторжения,
+	КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления.НомерДоговора,
+	КлиентыДоверительногоУправленияСрезПоследних.Клиент
+ИЗ
+	РегистрСведений.КлиентыДоверительногоУправления.СрезПоследних(
+			&amp;Период,
+			Организация = &amp;Организация
+				И (СчетДоверительногоУправления.ДатаРасторжения &gt;= &amp;Период
+					ИЛИ &amp;СверятьЗакрытыеСчетаИСвязанныеЛица
+						И РАЗНОСТЬДАТ(СчетДоверительногоУправления.ДатаРасторжения, &amp;Период, ДЕНЬ) &lt; 365
+					ИЛИ СчетДоверительногоУправления.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1))) КАК КлиентыДоверительногоУправленияСрезПоследних
+ГДЕ
+	ТИПЗНАЧЕНИЯ(КлиентыДоверительногоУправленияСрезПоследних.Клиент) = ТИП(Справочник.ЮрФизЛица)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	_Клиенты.СчетДУ КАК СчетДУ,
+	_Клиенты.ДатаРасторжения КАК ДатаРасторжения,
+	_Клиенты.НомерДоговора КАК НомерДоговора,
+	АнкетаФизическогоЛицаПредставителиВыгодоприобретатели.ЮрФизЛицо КАК ЮрФизЛицо
+ПОМЕСТИТЬ _СвязанныеЛица
+ИЗ
+	_Клиенты КАК _Клиенты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыФизическихЛицАнкетные.СрезПоследних(
+				&amp;Период,
+				ЮрФизЛицо В
+						(ВЫБРАТЬ
+							_Клиенты.ЮрФизЛицо
+						ИЗ
+							_Клиенты КАК _Клиенты)
+					И Организация = &amp;Организация
+					И Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)) КАК РеквизитыФизическихЛицАнкетныеСрезПоследних
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.АнкетаФизическогоЛица.ПредставителиВыгодоприобретатели КАК АнкетаФизическогоЛицаПредставителиВыгодоприобретатели
+			ПО РеквизитыФизическихЛицАнкетныеСрезПоследних.Регистратор = АнкетаФизическогоЛицаПредставителиВыгодоприобретатели.Ссылка
+		ПО _Клиенты.ЮрФизЛицо = РеквизитыФизическихЛицАнкетныеСрезПоследних.ЮрФизЛицо
+			И (&amp;СверятьЗакрытыеСчетаИСвязанныеЛица)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	_Клиенты.СчетДУ,
+	_Клиенты.ДатаРасторжения,
+	_Клиенты.НомерДоговора,
+	АнкетаЮридическогоЛицаПредставителиВыгодоприобретатели.ЮрФизЛицо
+ИЗ
+	_Клиенты КАК _Клиенты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛицАнкетные.СрезПоследних(
+				&amp;Период,
+				ЮрФизЛицо В
+						(ВЫБРАТЬ
+							_Клиенты.ЮрФизЛицо
+						ИЗ
+							_Клиенты КАК _Клиенты)
+					И Организация = &amp;Организация
+					И Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)) КАК РеквизитыЮридическихЛицАнкетныеСрезПоследних
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.АнкетаЮридическогоЛица.ПредставителиВыгодоприобретатели КАК АнкетаЮридическогоЛицаПредставителиВыгодоприобретатели
+			ПО РеквизитыЮридическихЛицАнкетныеСрезПоследних.Регистратор = АнкетаЮридическогоЛицаПредставителиВыгодоприобретатели.Ссылка
+		ПО _Клиенты.ЮрФизЛицо = РеквизитыЮридическихЛицАнкетныеСрезПоследних.ЮрФизЛицо
+			И (&amp;СверятьЗакрытыеСчетаИСвязанныеЛица)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВЫРАЗИТЬ(ВложенныйЗапрос.ЮрФизЛицо КАК Справочник.ЮрФизЛица).Наименование КАК ЮрФизЛицо,
+	ВЫБОР
+		КОГДА ЖурналСверкиСоСписками.Пройдена ЕСТЬ NULL
+			ТОГДА 2
+		ИНАЧЕ ВЫБОР
+				КОГДА ЖурналСверкиСоСписками.Пройдена
+					ТОГДА 3
+				ИНАЧЕ 1
+			КОНЕЦ
+	КОНЕЦ КАК ПорядокСтатусаПроверки,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЖурналСверкиСоСписками.Пройдена, ЛОЖЬ)
+			ТОГДА ЗНАЧЕНИЕ(Справочник.СчетаДоверительногоУправления.ПустаяСсылка)
+		ИНАЧЕ ВложенныйЗапрос.СчетДУ
+	КОНЕЦ КАК СчетДУ,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЖурналСверкиСоСписками.Пройдена, ЛОЖЬ)
+			ТОГДА ""
+		ИНАЧЕ ВложенныйЗапрос.НомерДоговора
+	КОНЕЦ КАК НомерДоговора,
+	ВЫБОР
+		КОГДА ВложенныйЗапрос.ДатаРасторжения &lt; &amp;Период
+			ТОГДА ВложенныйЗапрос.ДатаРасторжения
+		ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
+	КОНЕЦ КАК ДатаРасторжения,
+	ЕСТЬNULL(РеквизитыЮридическихЛицАнкетныеСрезПоследних.ИНН, РеквизитыФизическихЛицАнкетныеСрезПоследних.ДатаРождения) КАК ИНН_ДатаРождения,
+	РеквизитыФизическихЛицАнкетныеСрезПоследних.ДатаСмерти КАК ДатаСмерти,
+	ЖурналСверкиСоСписками.Пройдена КАК Пройдена,
+	ЖурналСверкиСоСписками.ДатаПоследнейСверки КАК ДатаПоследнейСверки,
+	ВЫРАЗИТЬ(ЖурналСверкиСоСписками.Комментарий КАК СТРОКА(1000)) КАК Комментарий,
+	ЖурналСверкиСоСписками.Ответственный КАК Ответственный
+ИЗ
+	(ВЫБРАТЬ
+		_Клиенты.СчетДУ КАК СчетДУ,
+		_Клиенты.ДатаРасторжения КАК ДатаРасторжения,
+		_Клиенты.НомерДоговора КАК НомерДоговора,
+		_Клиенты.ЮрФизЛицо КАК ЮрФизЛицо,
+		ИСТИНА КАК ЭтоКлиент
+	ИЗ
+		_Клиенты КАК _Клиенты
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		_СвязанныеЛица.СчетДУ,
+		_СвязанныеЛица.ДатаРасторжения,
+		_СвязанныеЛица.НомерДоговора,
+		_СвязанныеЛица.ЮрФизЛицо,
+		ЛОЖЬ
+	ИЗ
+		_СвязанныеЛица КАК _СвязанныеЛица) КАК ВложенныйЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыФизическихЛицАнкетные.СрезПоследних(
+				&amp;Период,
+				Организация = &amp;Организация
+					И Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)) КАК РеквизитыФизическихЛицАнкетныеСрезПоследних
+		ПО ВложенныйЗапрос.ЮрФизЛицо = РеквизитыФизическихЛицАнкетныеСрезПоследних.ЮрФизЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛицАнкетные.СрезПоследних(
+				&amp;Период,
+				Организация = &amp;Организация
+					И Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)) КАК РеквизитыЮридическихЛицАнкетныеСрезПоследних
+		ПО ВложенныйЗапрос.ЮрФизЛицо = РеквизитыЮридическихЛицАнкетныеСрезПоследних.ЮрФизЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЖурналСверкиСоСписками КАК ЖурналСверкиСоСписками
+		ПО (ЖурналСверкиСоСписками.ЮрФизЛицо = ВложенныйЗапрос.ЮрФизЛицо)
+			И (ЖурналСверкиСоСписками.Период = НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ))
+			И (ЖурналСверкиСоСписками.ВидПеречня = &amp;ВидПеречня)
+			И (ЖурналСверкиСоСписками.Организация = &amp;Организация
+				ИЛИ ЖурналСверкиСоСписками.Организация = ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)
+					И НЕ ЖурналСверкиСоСписками.ВидПеречня = ЗНАЧЕНИЕ(Справочник.ВидыПеречнейОбъектов.СписокТеррористов))
+ГДЕ
+	(НЕ ЕСТЬNULL(ЖурналСверкиСоСписками.Пройдена, ЛОЖЬ)
+			ИЛИ (ВложенныйЗапрос.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+				ИЛИ ВложенныйЗапрос.ДатаРасторжения &gt; &amp;Период)
+				И ВложенныйЗапрос.ЭтоКлиент)
+
+УПОРЯДОЧИТЬ ПО
+	ВЫРАЗИТЬ(ВложенныйЗапрос.ЮрФизЛицо КАК Справочник.ЮрФизЛица).Наименование</query>
+	</dataSet>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидПеречня</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид перечня</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыПеречнейОбъектов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЗаголовокОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заголовок отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СверятьЗакрытыеСчетаИСвязанныеЛица</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сверять закрытые счета и связанные лица</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ИсключитьНоминальныхДержателейПаев</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Исключить номинальных держателей паев</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядкуВГруппировке</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ п/п</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЮрФизЛицо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИНН_ДатаРождения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет доверительного управления</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СчетДУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НомерДоговора</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаРасторжения</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаСмерти</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнейСверки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Комментарий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ответственный</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПеречня</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СверятьЗакрытыеСчетаИСвязанныеЛица</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ИсключитьНоминальныхДержателейПаев</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ПорядокСтатусаПроверки</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорядокСтатусаПроверки</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:Red</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверка не пройдена</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ПорядокСтатусаПроверки</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорядокСтатусаПроверки</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:DarkRed</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверка не выполнялась</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ПорядокСтатусаПроверки</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПорядокСтатусаПроверки</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">3</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверка пройдена</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СистемныеПоля.НомерПоПорядкуВГруппировке</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧГ=0</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПорядокСтатусаПроверки</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

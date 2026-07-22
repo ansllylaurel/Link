@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Поручения на движение денежных средств</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="140">
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>true</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="141"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="142">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="143"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="144">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="145"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="146"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="147">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="148"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="149"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="150">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="151"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="152"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<PictureField name="ЕстьФайлы" id="252">
+					<DataPath>Список.ЕстьФайлы</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.Скрепка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.Скрепка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="ЕстьФайлыКонтекстноеМеню" id="253"/>
+					<ExtendedTooltip name="ЕстьФайлыРасширеннаяПодсказка" id="254"/>
+				</PictureField>
+				<LabelField name="СписокДата" id="153">
+					<DataPath>Список.Дата</DataPath>
+					<ContextMenu name="СписокДатаКонтекстноеМеню" id="154"/>
+					<ExtendedTooltip name="СписокДатаРасширеннаяПодсказка" id="155"/>
+				</LabelField>
+				<LabelField name="СписокНомер" id="156">
+					<DataPath>Список.Номер</DataPath>
+					<ContextMenu name="СписокНомерКонтекстноеМеню" id="157"/>
+					<ExtendedTooltip name="СписокНомерРасширеннаяПодсказка" id="158"/>
+				</LabelField>
+				<PictureField name="СписокСогласование" id="249">
+					<DataPath>Список.Согласование</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Согл.</v8:content>
+						</v8:item>
+					</Title>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СостоянияСогласованияДокументов</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="СписокСогласованиеКонтекстноеМеню" id="250"/>
+					<ExtendedTooltip name="СписокСогласованиеРасширеннаяПодсказка" id="251"/>
+				</PictureField>
+				<LabelField name="СписокОрганизация" id="159">
+					<DataPath>Список.Организация</DataPath>
+					<ContextMenu name="СписокОрганизацияКонтекстноеМеню" id="160"/>
+					<ExtendedTooltip name="СписокОрганизацияРасширеннаяПодсказка" id="161"/>
+				</LabelField>
+				<LabelField name="СписокСчетДоверительногоУправления" id="162">
+					<DataPath>Список.СчетДоверительногоУправления</DataPath>
+					<ContextMenu name="СписокСчетДоверительногоУправленияКонтекстноеМеню" id="163"/>
+					<ExtendedTooltip name="СписокСчетДоверительногоУправленияРасширеннаяПодсказка" id="164"/>
+				</LabelField>
+				<LabelField name="СписокРасчетныйСчет" id="168">
+					<DataPath>Список.РасчетныйСчет</DataPath>
+					<ContextMenu name="СписокРасчетныйСчетКонтекстноеМеню" id="169"/>
+					<ExtendedTooltip name="СписокРасчетныйСчетРасширеннаяПодсказка" id="170"/>
+				</LabelField>
+				<LabelField name="СписокРасчетныйСчетПолучатель" id="171">
+					<DataPath>Список.РасчетныйСчетПолучатель</DataPath>
+					<ContextMenu name="СписокРасчетныйСчетПолучательКонтекстноеМеню" id="172"/>
+					<ExtendedTooltip name="СписокРасчетныйСчетПолучательРасширеннаяПодсказка" id="173"/>
+				</LabelField>
+				<LabelField name="СписокСумма" id="174">
+					<DataPath>Список.Сумма</DataPath>
+					<ContextMenu name="СписокСуммаКонтекстноеМеню" id="175"/>
+					<ExtendedTooltip name="СписокСуммаРасширеннаяПодсказка" id="176"/>
+				</LabelField>
+				<LabelField name="СписокОтветственный" id="180">
+					<DataPath>Список.Ответственный</DataPath>
+					<ContextMenu name="СписокОтветственныйКонтекстноеМеню" id="181"/>
+					<ExtendedTooltip name="СписокОтветственныйРасширеннаяПодсказка" id="182"/>
+				</LabelField>
+				<LabelField name="СписокКомментарий" id="183">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="СписокКомментарийКонтекстноеМеню" id="184"/>
+					<ExtendedTooltip name="СписокКомментарийРасширеннаяПодсказка" id="185"/>
+				</LabelField>
+				<LabelField name="СписокНомерВходящегоДокумента" id="186">
+					<DataPath>Список.НомерВходящегоДокумента</DataPath>
+					<ContextMenu name="СписокНомерВходящегоДокументаКонтекстноеМеню" id="187"/>
+					<ExtendedTooltip name="СписокНомерВходящегоДокументаРасширеннаяПодсказка" id="188"/>
+				</LabelField>
+				<LabelField name="СписокДатаВходящегоДокумента" id="189">
+					<DataPath>Список.ДатаВходящегоДокумента</DataPath>
+					<ContextMenu name="СписокДатаВходящегоДокументаКонтекстноеМеню" id="190"/>
+					<ExtendedTooltip name="СписокДатаВходящегоДокументаРасширеннаяПодсказка" id="191"/>
+				</LabelField>
+				<LabelField name="СписокОписаниеДенежныхСредств" id="192">
+					<DataPath>Список.ОписаниеДенежныхСредств</DataPath>
+					<ContextMenu name="СписокОписаниеДенежныхСредствКонтекстноеМеню" id="193"/>
+					<ExtendedTooltip name="СписокОписаниеДенежныхСредствРасширеннаяПодсказка" id="194"/>
+				</LabelField>
+				<CheckBoxField name="СписокВыводВсехАктивов" id="195">
+					<DataPath>Список.ВыводВсехАктивов</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокВыводВсехАктивовКонтекстноеМеню" id="196"/>
+					<ExtendedTooltip name="СписокВыводВсехАктивовРасширеннаяПодсказка" id="197"/>
+				</CheckBoxField>
+				<LabelField name="СписокСпособПередачи" id="198">
+					<DataPath>Список.СпособПередачи</DataPath>
+					<ContextMenu name="СписокСпособПередачиКонтекстноеМеню" id="199"/>
+					<ExtendedTooltip name="СписокСпособПередачиРасширеннаяПодсказка" id="200"/>
+				</LabelField>
+				<CheckBoxField name="СписокЧерезАгента" id="201">
+					<DataPath>Список.ЧерезАгента</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокЧерезАгентаКонтекстноеМеню" id="202"/>
+					<ExtendedTooltip name="СписокЧерезАгентаРасширеннаяПодсказка" id="203"/>
+				</CheckBoxField>
+				<LabelField name="СписокДатаИВремяПолучения" id="204">
+					<DataPath>Список.ДатаИВремяПолучения</DataPath>
+					<ContextMenu name="СписокДатаИВремяПолученияКонтекстноеМеню" id="205"/>
+					<ExtendedTooltip name="СписокДатаИВремяПолученияРасширеннаяПодсказка" id="206"/>
+				</LabelField>
+				<LabelField name="СписокВидДвиженияДенежныхСредств" id="207">
+					<DataPath>Список.ВидДвиженияДенежныхСредств</DataPath>
+					<ContextMenu name="СписокВидДвиженияДенежныхСредствКонтекстноеМеню" id="208"/>
+					<ExtendedTooltip name="СписокВидДвиженияДенежныхСредствРасширеннаяПодсказка" id="209"/>
+				</LabelField>
+				<LabelField name="СписокВидОперации" id="210">
+					<DataPath>Список.ВидОперации</DataPath>
+					<ContextMenu name="СписокВидОперацииКонтекстноеМеню" id="211"/>
+					<ExtendedTooltip name="СписокВидОперацииРасширеннаяПодсказка" id="212"/>
+				</LabelField>
+				<LabelField name="СписокДатаИсполненияС" id="213">
+					<DataPath>Список.ДатаИсполненияС</DataPath>
+					<ContextMenu name="СписокДатаИсполненияСКонтекстноеМеню" id="214"/>
+					<ExtendedTooltip name="СписокДатаИсполненияСРасширеннаяПодсказка" id="215"/>
+				</LabelField>
+				<LabelField name="СписокДатаИсполненияПо" id="216">
+					<DataPath>Список.ДатаИсполненияПо</DataPath>
+					<ContextMenu name="СписокДатаИсполненияПоКонтекстноеМеню" id="217"/>
+					<ExtendedTooltip name="СписокДатаИсполненияПоРасширеннаяПодсказка" id="218"/>
+				</LabelField>
+				<LabelField name="СписокНазначениеПлатежа" id="219">
+					<DataPath>~Список.НазначениеПлатежа</DataPath>
+					<ContextMenu name="СписокНазначениеПлатежаКонтекстноеМеню" id="220"/>
+					<ExtendedTooltip name="СписокНазначениеПлатежаРасширеннаяПодсказка" id="221"/>
+				</LabelField>
+				<LabelField name="СписокВалюта" id="222">
+					<DataPath>Список.Валюта</DataPath>
+					<ContextMenu name="СписокВалютаКонтекстноеМеню" id="223"/>
+					<ExtendedTooltip name="СписокВалютаРасширеннаяПодсказка" id="224"/>
+				</LabelField>
+				<LabelField name="СписокТипЗадолженности" id="225">
+					<DataPath>Список.ТипЗадолженности</DataPath>
+					<ContextMenu name="СписокТипЗадолженностиКонтекстноеМеню" id="226"/>
+					<ExtendedTooltip name="СписокТипЗадолженностиРасширеннаяПодсказка" id="227"/>
+				</LabelField>
+				<CheckBoxField name="СписокПоручениеНаПереводМеждуСчетамиДУ" id="228">
+					<DataPath>~Список.ПоручениеНаПереводМеждуСчетамиДУ</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокПоручениеНаПереводМеждуСчетамиДУКонтекстноеМеню" id="229"/>
+					<ExtendedTooltip name="СписокПоручениеНаПереводМеждуСчетамиДУРасширеннаяПодсказка" id="230"/>
+				</CheckBoxField>
+				<LabelField name="СписокКонтрагент" id="231">
+					<DataPath>Список.Контрагент</DataPath>
+					<ContextMenu name="СписокКонтрагентКонтекстноеМеню" id="232"/>
+					<ExtendedTooltip name="СписокКонтрагентРасширеннаяПодсказка" id="233"/>
+				</LabelField>
+				<LabelField name="СписокКонтрагентДоговорТекстом" id="234">
+					<DataPath>~Список.КонтрагентДоговорТекстом</DataPath>
+					<ContextMenu name="СписокКонтрагентДоговорТекстомКонтекстноеМеню" id="235"/>
+					<ExtendedTooltip name="СписокКонтрагентДоговорТекстомРасширеннаяПодсказка" id="236"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПоручениеНаДвижениеДенежныхСредств.Номер КАК Номер,
+	ПоручениеНаДвижениеДенежныхСредств.Дата КАК Дата,
+	ПоручениеНаДвижениеДенежныхСредств.Организация КАК Организация,
+	ПоручениеНаДвижениеДенежныхСредств.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	ПоручениеНаДвижениеДенежныхСредств.ТипЗадолженности КАК ТипЗадолженности,
+	ПоручениеНаДвижениеДенежныхСредств.РасчетныйСчет КАК РасчетныйСчет,
+	ПоручениеНаДвижениеДенежныхСредств.РасчетныйСчетПолучатель КАК РасчетныйСчетПолучатель,
+	ПоручениеНаДвижениеДенежныхСредств.Сумма КАК Сумма,
+	ПоручениеНаДвижениеДенежныхСредств.Валюта КАК Валюта,
+	ПоручениеНаДвижениеДенежныхСредств.НомерВходящегоДокумента КАК НомерВходящегоДокумента,
+	ПоручениеНаДвижениеДенежныхСредств.ДатаВходящегоДокумента КАК ДатаВходящегоДокумента,
+	ПоручениеНаДвижениеДенежныхСредств.ОписаниеДенежныхСредств КАК ОписаниеДенежныхСредств,
+	ПоручениеНаДвижениеДенежныхСредств.ВыводВсехАктивов КАК ВыводВсехАктивов,
+	ПоручениеНаДвижениеДенежныхСредств.СпособПередачи КАК СпособПередачи,
+	ПоручениеНаДвижениеДенежныхСредств.ЧерезАгента КАК ЧерезАгента,
+	ПоручениеНаДвижениеДенежныхСредств.ДатаИВремяПолучения КАК ДатаИВремяПолучения,
+	ПоручениеНаДвижениеДенежныхСредств.ВидДвиженияДенежныхСредств КАК ВидДвиженияДенежныхСредств,
+	ПоручениеНаДвижениеДенежныхСредств.ВидОперации КАК ВидОперации,
+	ПоручениеНаДвижениеДенежныхСредств.ДатаИсполненияС КАК ДатаИсполненияС,
+	ПоручениеНаДвижениеДенежныхСредств.ДатаИсполненияПо КАК ДатаИсполненияПо,
+	ПоручениеНаДвижениеДенежныхСредств.Ответственный КАК Ответственный,
+	ПоручениеНаДвижениеДенежныхСредств.Комментарий КАК Комментарий,
+	ПоручениеНаДвижениеДенежныхСредств.Контрагент КАК Контрагент,
+	ВЫБОР
+		КОГДА НЕ СогласованиеПорученийНаВыводАктивов.Основание ЕСТЬ NULL
+			ТОГДА 3
+		КОГДА ПоручениеНаДвижениеДенежныхСредств.Дата &lt; &amp;ДатаНачалаСогласованияПоручений
+				ИЛИ ПоручениеНаДвижениеДенежныхСредств.ТипЗадолженности = ЗНАЧЕНИЕ(Перечисление.ТипыЗадолженности.Дебиторская)
+				ИЛИ ПоручениеНаДвижениеДенежныхСредств.СчетДоверительногоУправления.ВидДоговораДоверительногоУправления = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровДоверительногоУправления.ИндивидуальныйИнвестиционныйСчет)
+				ИЛИ НЕ ПоручениеНаДвижениеДенежныхСредств.Проведен
+			ТОГДА 0
+		КОГДА АкцептованиеОперацийСрезПоследних.Операция ЕСТЬ NULL
+			ТОГДА 1
+		ИНАЧЕ 2
+	КОНЕЦ КАК Согласование,
+	ВЫБОР
+		КОГДА НаличиеФайлов.ЕстьФайлы ЕСТЬ NULL
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЕстьФайлы
+ИЗ
+	Документ.ПоручениеНаДвижениеДенежныхСредств КАК ПоручениеНаДвижениеДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АкцептованиеОпераций.СрезПоследних(&amp;ТекущаяДата, ВидАкцепта = ЗНАЧЕНИЕ(Перечисление.ВидыАкцептов.ПоручениеНаВыводАктивов)) КАК АкцептованиеОперацийСрезПоследних
+		ПО (АкцептованиеОперацийСрезПоследних.Организация = ПоручениеНаДвижениеДенежныхСредств.Организация)
+			И (АкцептованиеОперацийСрезПоследних.Операция = ПоручениеНаДвижениеДенежныхСредств.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
+			СогласованиеПорученийНаВыводАктивов.Основание КАК Основание
+		ИЗ
+			БизнесПроцесс.СогласованиеПорученийНаВыводАктивов КАК СогласованиеПорученийНаВыводАктивов
+		ГДЕ
+			СогласованиеПорученийНаВыводАктивов.Отменен
+			И НЕ СогласованиеПорученийНаВыводАктивов.ПометкаУдаления) КАК СогласованиеПорученийНаВыводАктивов
+		ПО ПоручениеНаДвижениеДенежныхСредств.Ссылка = СогласованиеПорученийНаВыводАктивов.Основание
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НаличиеФайлов КАК НаличиеФайлов
+		ПО ПоручениеНаДвижениеДенежныхСредств.Ссылка = НаличиеФайлов.ВладелецФайла</QueryText>
+				<MainTable>Document.ПоручениеНаДвижениеДенежныхСредств</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТипЗадолженности</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ДнейДоДатыВывода</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ПоручениеИсполнено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ВыводВсехАктивов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Yellow</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТипЗадолженности</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ДатаВыводаНаступила</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ПоручениеИсполнено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ВыводВсехАктивов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:IndianRed</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТипЗадолженности</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ПоручениеИсполнено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ВыводВсехАктивов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+</Form>

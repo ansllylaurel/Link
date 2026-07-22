@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Родитель" id="7">
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="РодительКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<UsualGroup name="ГруппаОсновныеРеквизиты" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаОсновныеРеквизитыРасширеннаяПодсказка" id="56"/>
+			<ChildItems>
+				<InputField name="Эмитент" id="10">
+					<DataPath>Объект.Эмитент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЭмитентКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ЭмитентРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<UsualGroup name="ГруппаСерияИНомер" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа серия и номер</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа код и наименование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСерияИНомерРасширеннаяПодсказка" id="54"/>
+					<ChildItems>
+						<InputField name="Серия" id="19">
+							<DataPath>Объект.Серия</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СерияКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="СерияРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="Номер" id="25">
+							<DataPath>Объект.Номер</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НомерКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНоминалИВалюта" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа номинал и валюта</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа код и наименование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНоминалИВалютаРасширеннаяПодсказка" id="52"/>
+					<ChildItems>
+						<InputField name="Номинал" id="13">
+							<DataPath>Объект.Номинал</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НоминалКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="НоминалРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="ВалютаНоминала" id="16">
+							<DataPath>Объект.ВалютаНоминала</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ВалютаНоминалаКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ВалютаНоминалаРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ДатаСоставления" id="37">
+					<DataPath>Объект.ДатаСоставления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаСоставленияКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ДатаСоставленияРасширеннаяПодсказка" id="39"/>
+					<Events>
+						<Event name="OnChange">ДатаСоставленияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТипВекселя" id="22">
+					<DataPath>Объект.ТипВекселя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТипВекселяКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ТипВекселяРасширеннаяПодсказка" id="24"/>
+					<Events>
+						<Event name="OnChange">ТипВекселяПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПроценты" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проценты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа проценты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="ГруппаПроцентыРасширеннаяПодсказка" id="60"/>
+			<ChildItems>
+				<InputField name="ПроцентГодовых" id="28">
+					<DataPath>Объект.ПроцентГодовых</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПроцентГодовыхКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ПроцентГодовыхРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ДатаНачалаНачисленияПроцентов" id="43">
+					<DataPath>Объект.ДатаНачалаНачисленияПроцентов</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаНачалаНачисленияПроцентовКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ДатаНачалаНачисленияПроцентовРасширеннаяПодсказка" id="45"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПогашение" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Погашение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа погашение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаПогашениеРасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<InputField name="ВариантПогашения" id="31">
+					<DataPath>Объект.ВариантПогашения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВариантПогашенияКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ВариантПогашенияРасширеннаяПодсказка" id="33"/>
+					<Events>
+						<Event name="OnChange">ВариантПогашенияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДнейДоПогашения" id="34">
+					<DataPath>Объект.ДнейДоПогашения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДнейДоПогашенияКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ДнейДоПогашенияРасширеннаяПодсказка" id="36"/>
+					<Events>
+						<Event name="OnChange">ДнейДоПогашенияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаПогашения" id="40">
+					<DataPath>Объект.ДатаПогашения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаПогашенияКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ДатаПогашенияРасширеннаяПодсказка" id="42"/>
+				</InputField>
+				<InputField name="ПогаситьНеПозднее" id="46">
+					<DataPath>Объект.ПогаситьНеПозднее</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПогаситьНеПозднееКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ПогаситьНеПозднееРасширеннаяПодсказка" id="48"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаУсловияРасчетаПроцентов" id="72">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия расчета процентов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа условия расчета процентов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаУсловияРасчетаПроцентовРасширеннаяПодсказка" id="73"/>
+			<ChildItems>
+				<Table name="УсловияРасчетаПроцентовВекселей" id="74">
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<MaxHeight>4</MaxHeight>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<DataPath>УсловияРасчетаПроцентовВекселей</DataPath>
+					<RowPictureDataPath>УсловияРасчетаПроцентовВекселей.DefaultPicture</RowPictureDataPath>
+					<CommandSet>
+						<ExcludedCommand>CancelSearch</ExcludedCommand>
+						<ExcludedCommand>ChangeHistory</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Create</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+						<ExcludedCommand>Find</ExcludedCommand>
+						<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+						<ExcludedCommand>ListSettings</ExcludedCommand>
+						<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+						<ExcludedCommand>OutputList</ExcludedCommand>
+						<ExcludedCommand>Refresh</ExcludedCommand>
+						<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+						<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+						<ExcludedCommand>SearchHistory</ExcludedCommand>
+						<ExcludedCommand>SetDateInterval</ExcludedCommand>
+						<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+					</CommandSet>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="УсловияРасчетаПроцентовВекселейКонтекстноеМеню" id="75"/>
+					<AutoCommandBar name="УсловияРасчетаПроцентовВекселейКоманднаяПанель" id="76">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="УсловияРасчетаПроцентовВекселейРасширеннаяПодсказка" id="77"/>
+					<SearchStringAddition name="УсловияРасчетаПроцентовВекселейСтрокаПоиска" id="78">
+						<AdditionSource>
+							<Item>УсловияРасчетаПроцентовВекселей</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УсловияРасчетаПроцентовВекселейСтрокаПоискаКонтекстноеМеню" id="79"/>
+						<ExtendedTooltip name="УсловияРасчетаПроцентовВекселейСтрокаПоискаРасширеннаяПодсказка" id="80"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="УсловияРасчетаПроцентовВекселейСостояниеПросмотра" id="81">
+						<AdditionSource>
+							<Item>УсловияРасчетаПроцентовВекселей</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УсловияРасчетаПроцентовВекселейСостояниеПросмотраКонтекстноеМеню" id="82"/>
+						<ExtendedTooltip name="УсловияРасчетаПроцентовВекселейСостояниеПросмотраРасширеннаяПодсказка" id="83"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="УсловияРасчетаПроцентовВекселейУправлениеПоиском" id="84">
+						<AdditionSource>
+							<Item>УсловияРасчетаПроцентовВекселей</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="УсловияРасчетаПроцентовВекселейУправлениеПоискомКонтекстноеМеню" id="85"/>
+						<ExtendedTooltip name="УсловияРасчетаПроцентовВекселейУправлениеПоискомРасширеннаяПодсказка" id="86"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="УсловияРасчетаПроцентовВекселейПериод" id="87">
+							<DataPath>УсловияРасчетаПроцентовВекселей.Period</DataPath>
+							<ContextMenu name="УсловияРасчетаПроцентовВекселейПериодКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="УсловияРасчетаПроцентовВекселейПериодРасширеннаяПодсказка" id="89"/>
+						</LabelField>
+						<LabelField name="УсловияРасчетаПроцентовВекселейНастройкаРасчета" id="93">
+							<DataPath>УсловияРасчетаПроцентовВекселей.НастройкаРасчета</DataPath>
+							<ContextMenu name="УсловияРасчетаПроцентовВекселейНастройкаРасчетаКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="УсловияРасчетаПроцентовВекселейНастройкаРасчетаРасширеннаяПодсказка" id="95"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодвал" id="70">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="71"/>
+			<ChildItems>
+				<LabelDecoration name="СсылкаОбновить" id="67">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Элементы данного справочника загружаются из внешней системы. Обновить?</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="СсылкаОбновитьКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="СсылкаОбновитьРасширеннаяПодсказка" id="69"/>
+					<Events>
+						<Event name="Click">СсылкаОбновитьНажатие</Event>
+					</Events>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаКодИНаименование" id="49">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа код и наименование</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа код и наименование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодИНаименованиеРасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<InputField name="Наименование" id="4">
+							<DataPath>Объект.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<InputField name="Код" id="1">
+							<DataPath>Объект.Code</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Комментарий" id="64">
+					<DataPath>Объект.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="66"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Векселя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="УсловияРасчетаПроцентовВекселей" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия расчета процентов векселей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.УсловияРасчетаПроцентовВекселей</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

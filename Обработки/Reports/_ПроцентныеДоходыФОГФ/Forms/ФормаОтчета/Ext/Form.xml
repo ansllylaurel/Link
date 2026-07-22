@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<ReportFormType>Main</ReportFormType>
+	<AutoShowState>Auto</AutoShowState>
+	<ReportResultViewMode>Auto</ReportResultViewMode>
+	<ViewModeApplicationOnSetReportResult>Auto</ViewModeApplicationOnSetReportResult>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаКомандаВыполнитьОтчет" id="20">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаВыполнитьОтчет</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыполнитьОтчетРасширеннаяПодсказка" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="10">
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<InputField name="Период" id="1">
+					<DataPath>Отчет.Период</DataPath>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<LabelField name="Организация" id="4">
+					<DataPath>Отчет.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="12">
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="13"/>
+			<ChildItems>
+				<InputField name="СчетДоверительногоУправления" id="7">
+					<DataPath>Отчет.СчетДоверительногоУправления</DataPath>
+					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="ПодписантРуководитель" id="36">
+					<DataPath>ПодписантРуководитель</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Руководитель</v8:content>
+						</v8:item>
+					</Title>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ПодписантРуководительКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ПодписантРуководительРасширеннаяПодсказка" id="38"/>
+					<Events>
+						<Event name="StartChoice">ПодписантНачалоВыбора</Event>
+						<Event name="Clearing">ПодписантОчистка</Event>
+						<Event name="ChoiceProcessing">ПодписантОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПодписантГлавбух" id="39">
+					<DataPath>ПодписантГлавбух</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Главный бухгалтер</v8:content>
+						</v8:item>
+					</Title>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ПодписантГлавбухКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ПодписантГлавбухРасширеннаяПодсказка" id="41"/>
+					<Events>
+						<Event name="StartChoice">ПодписантНачалоВыбора</Event>
+						<Event name="Clearing">ПодписантОчистка</Event>
+						<Event name="ChoiceProcessing">ПодписантОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<PictureDecoration name="ДекорацияАвтоСумма" id="42">
+					<Width>3</Width>
+					<Height>1</Height>
+					<Picture>
+						<xr:Ref>CommonPicture.Сумма</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияАвтоСуммаКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="ДекорацияАвтоСуммаExtendedTooltip" id="44"/>
+				</PictureDecoration>
+				<InputField name="ПолеСумма" id="45">
+					<DataPath>ПолеСумма</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<Width>12</Width>
+					<ContextMenu name="ПолеСуммаКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ПолеСуммаExtendedTooltip" id="47"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Группа3" id="22">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<Page name="Группа4" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Государственные</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="РезультатГос" id="17">
+							<DataPath>РезультатГос</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="РезультатГосКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="РезультатГосРасширеннаяПодсказка" id="19"/>
+							<Events>
+								<Event name="OnActivate">РезультатГосПриАктивизацииОбласти</Event>
+							</Events>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+				<Page name="Группа5" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Корпоративные по ставке в соответствии с пп 1 п. 4 ст. 284 НК РФ</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="РезультатКорп15" id="30">
+							<DataPath>РезультатКорп15</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="РезультатКорп15КонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="РезультатКорп15РасширеннаяПодсказка" id="32"/>
+							<Events>
+								<Event name="OnActivate">РезультатКорп15ПриАктивизацииОбласти</Event>
+							</Events>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+				<Page name="Группа6" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Корпоративные по ставке в соответствии с п. 1 ст. 284 НК РФ</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="РезультатКорп20" id="33">
+							<DataPath>РезультатКорп20</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="РезультатКорп20КонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="РезультатКорп20РасширеннаяПодсказка" id="35"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Отчет" id="1">
+			<Type>
+				<v8:Type>cfg:ReportObject._ПроцентныеДоходыФОГФ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>1/0:33bbff8e-c674-4de5-8f42-9d97d4443021</Field>
+				<Field>Отчет.Организация</Field>
+				<Field>Отчет.Период</Field>
+				<Field>Отчет.СчетДоверительногоУправления</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="РезультатГос" id="2">
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатКорп20" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат корп20</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатКорп15" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат корп15</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодписантГлавбух" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант главбух</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПодписантГлавбух</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПодписантРуководитель" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписант руководитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПодписантРуководитель</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НастройкиОтчета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ПолеСумма" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле сумма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>20</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КэшВыделеннойОбласти" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кэш выделенной области</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыполнитьОтчет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда выполнить отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаВыполнитьОтчет</Action>
+		</Command>
+	</Commands>
+</Form>

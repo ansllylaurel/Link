@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="32">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Шкала" id="7">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Шкала</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ШкалаКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="ШкалаКоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="ШкалаРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="ШкалаСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>Шкала</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ШкалаСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ШкалаСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ШкалаСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>Шкала</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ШкалаСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ШкалаСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ШкалаУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Шкала</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ШкалаУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ШкалаУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ШкалаНомерСтроки" id="20">
+					<DataPath>Объект.Шкала.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ШкалаНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ШкалаНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<ColumnGroup name="ШкалаГруппаЗначение" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ШкалаГруппаЗначениеРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<InputField name="ШкалаМинимальноеЗначение" id="23">
+							<DataPath>Объект.Шкала.МинимальноеЗначение</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>от</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ШкалаМинимальноеЗначениеКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="ШкалаМинимальноеЗначениеРасширеннаяПодсказка" id="25"/>
+						</InputField>
+						<InputField name="ШкалаМаксимальноеЗначение" id="26">
+							<DataPath>Объект.Шкала.МаксимальноеЗначение</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>до</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ШкалаМаксимальноеЗначениеКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ШкалаМаксимальноеЗначениеРасширеннаяПодсказка" id="28"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="ШкалаПроцентнаяСтавка" id="29">
+					<DataPath>Объект.Шкала.ПроцентнаяСтавка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ШкалаПроцентнаяСтавкаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ШкалаПроцентнаяСтавкаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ШкалыПроцентныхСтавок</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:d6daffc5-0214-453b-941c-882759a91919</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

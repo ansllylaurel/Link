@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<Page name="ГруппаОсновное" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа основное</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="33"/>
+					<ChildItems>
+						<InputField name="Основание" id="10">
+							<DataPath>Объект.Основание</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ОснованиеКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ОснованиеРасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="Пайщик" id="13">
+							<DataPath>Объект.Пайщик</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПайщикКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ПайщикРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="Комментарий" id="19">
+							<DataPath>Объект.Комментарий</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КомментарийКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<CheckBoxField name="Стартован" id="22">
+							<DataPath>Объект.Started</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СтартованКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="СтартованРасширеннаяПодсказка" id="24"/>
+						</CheckBoxField>
+						<CheckBoxField name="Завершен" id="25">
+							<DataPath>Объект.Completed</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗавершенКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ЗавершенРасширеннаяПодсказка" id="27"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаКартаМаршрута" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Карта маршрута</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа карта маршрута</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаКартаМаршрутаРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<GraphicalSchemaField name="КартаМаршрута" id="36">
+							<DataPath>КартаМаршрута</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="КартаМаршрутаКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="КартаМаршрутаРасширеннаяПодсказка" id="38"/>
+						</GraphicalSchemaField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:BusinessProcessObject.ОбменПаев</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КартаМаршрута" id="2">
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/graphscheme">d5p1:FlowchartContextType</v8:Type>
+			</Type>
+			<Settings xmlns:d4p1="http://v8.1c.ru/8.2/data/graphscheme" xsi:type="d4p1:FlowchartContextType">
+				<d4p1:backColor>style:FieldBackColor</d4p1:backColor>
+				<d4p1:enableGrid>false</d4p1:enableGrid>
+				<d4p1:drawGridMode>None</d4p1:drawGridMode>
+				<d4p1:gridHorizontalStep>20</d4p1:gridHorizontalStep>
+				<d4p1:gridVerticalStep>20</d4p1:gridVerticalStep>
+				<d4p1:bpUUID>00000000-0000-0000-0000-000000000000</d4p1:bpUUID>
+				<d4p1:useOutput>Auto</d4p1:useOutput>
+				<d4p1:printPropItem>
+					<d4p1:key>6</d4p1:key>
+					<d4p1:val>10</d4p1:val>
+				</d4p1:printPropItem>
+				<d4p1:printPropItem>
+					<d4p1:key>7</d4p1:key>
+					<d4p1:val>10</d4p1:val>
+				</d4p1:printPropItem>
+				<d4p1:printPropItem>
+					<d4p1:key>8</d4p1:key>
+					<d4p1:val>10</d4p1:val>
+				</d4p1:printPropItem>
+				<d4p1:printPropItem>
+					<d4p1:key>9</d4p1:key>
+					<d4p1:val>10</d4p1:val>
+				</d4p1:printPropItem>
+				<d4p1:printPropItem>
+					<d4p1:key>13</d4p1:key>
+					<d4p1:val>0</d4p1:val>
+				</d4p1:printPropItem>
+				<d4p1:printPropItem>
+					<d4p1:key>16</d4p1:key>
+					<d4p1:val>0</d4p1:val>
+				</d4p1:printPropItem>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДатаНомер" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДатаНомерРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРеквизиты" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитыРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<InputField name="ПаевойИнвестиционныйФонд" id="10">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПаевойИнвестиционныйФондКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ПаевойИнвестиционныйФондРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ПаевойИнвестиционныйФондПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОснованиеРасчета" id="426">
+					<ListChoiceMode>true</ListChoiceMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">e6b1915b-d7fd-41bc-a0f9-767198223c58.45f992f0-5118-40e9-a693-1812141043c8</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">e6b1915b-d7fd-41bc-a0f9-767198223c58.89c48207-50d3-4465-b9ed-5ec8565ab4b8</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ОснованиеРасчетаКонтекстноеМеню" id="427"/>
+					<ExtendedTooltip name="ОснованиеРасчетаРасширеннаяПодсказка" id="428"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="НалоговаяБаза" id="227">
+			<Representation>List</Representation>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<DataPath>Объект.НалоговаяБаза</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="НалоговаяБазаКонтекстноеМеню" id="228"/>
+			<AutoCommandBar name="НалоговаяБазаКоманднаяПанель" id="229">
+				<ChildItems>
+					<Button name="НалоговаяБазаЗаполнить" id="273">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Заполнить</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="НалоговаяБазаЗаполнитьРасширеннаяПодсказка" id="274"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="НалоговаяБазаРасширеннаяПодсказка" id="230"/>
+			<SearchStringAddition name="НалоговаяБазаСтрокаПоиска" id="231">
+				<AdditionSource>
+					<Item>НалоговаяБаза</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НалоговаяБазаСтрокаПоискаКонтекстноеМеню" id="232"/>
+				<ExtendedTooltip name="НалоговаяБазаСтрокаПоискаРасширеннаяПодсказка" id="233"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НалоговаяБазаСостояниеПросмотра" id="234">
+				<AdditionSource>
+					<Item>НалоговаяБаза</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НалоговаяБазаСостояниеПросмотраКонтекстноеМеню" id="235"/>
+				<ExtendedTooltip name="НалоговаяБазаСостояниеПросмотраРасширеннаяПодсказка" id="236"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НалоговаяБазаУправлениеПоиском" id="237">
+				<AdditionSource>
+					<Item>НалоговаяБаза</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НалоговаяБазаУправлениеПоискомКонтекстноеМеню" id="238"/>
+				<ExtendedTooltip name="НалоговаяБазаУправлениеПоискомРасширеннаяПодсказка" id="239"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnStartEdit">НалоговаяБазаПриНачалеРедактирования</Event>
+				<Event name="OnChange">НалоговаяБаза1ПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="НалоговаяБазаНомерСтроки" id="288">
+					<DataPath>Объект.НалоговаяБаза.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НалоговаяБазаНомерСтрокиКонтекстноеМеню" id="289"/>
+					<ExtendedTooltip name="НалоговаяБазаНомерСтрокиРасширеннаяПодсказка" id="290"/>
+				</LabelField>
+				<ColumnGroup name="НалоговаяБазаГруппа1" id="391">
+					<ExtendedTooltip name="НалоговаяБазаГруппа1РасширеннаяПодсказка" id="392"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаПайщик" id="385">
+							<DataPath>Объект.НалоговаяБаза.Пайщик</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="НалоговаяБазаПайщикКонтекстноеМеню" id="386"/>
+							<ExtendedTooltip name="НалоговаяБазаПайщикРасширеннаяПодсказка" id="387"/>
+						</InputField>
+						<InputField name="НалоговаяБазаПаевойИнвестиционныйФонд" id="432">
+							<DataPath>Объект.НалоговаяБаза.ПаевойИнвестиционныйФонд</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChooseType>false</ChooseType>
+							<TextEdit>false</TextEdit>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="НалоговаяБазаПаевойИнвестиционныйФондКонтекстноеМеню" id="433"/>
+							<ExtendedTooltip name="НалоговаяБазаПаевойИнвестиционныйФондРасширеннаяПодсказка" id="434"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа8" id="269">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа8</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НалоговаяБазаГруппа8РасширеннаяПодсказка" id="270"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаВидДохода" id="300">
+							<DataPath>Объект.НалоговаяБаза.ВидДохода</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаВидДоходаКонтекстноеМеню" id="301"/>
+							<ExtendedTooltip name="НалоговаяБазаВидДоходаРасширеннаяПодсказка" id="302"/>
+						</InputField>
+						<InputField name="НалоговаяБазаСуммаДохода" id="312">
+							<DataPath>Объект.НалоговаяБаза.СуммаДохода</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаДоходаКонтекстноеМеню" id="313"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаДоходаРасширеннаяПодсказка" id="314"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа3" id="271">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа3</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа3</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НалоговаяБазаГруппа3РасширеннаяПодсказка" id="272"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаВидВычета" id="303">
+							<DataPath>Объект.НалоговаяБаза.ВидВычета</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаВидВычетаКонтекстноеМеню" id="304"/>
+							<ExtendedTooltip name="НалоговаяБазаВидВычетаРасширеннаяПодсказка" id="305"/>
+						</InputField>
+						<InputField name="НалоговаяБазаСуммаРасхода" id="315">
+							<DataPath>Объект.НалоговаяБаза.СуммаВычета</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаРасходаКонтекстноеМеню" id="316"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаРасходаРасширеннаяПодсказка" id="317"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа6" id="435">
+					<ExtendedTooltip name="НалоговаяБазаГруппа6РасширеннаяПодсказка" id="436"/>
+					<ChildItems>
+						<ColumnGroup name="НалоговаяБазаГруппа9" id="443">
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="НалоговаяБазаГруппа9РасширеннаяПодсказка" id="444"/>
+							<ChildItems>
+								<InputField name="НалоговаяБазаКоэффициентВладения" id="440">
+									<DataPath>Объект.НалоговаяБаза.КоэффициентВладенияЦБ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НалоговаяБазаКоэффициентВладенияКонтекстноеМеню" id="441"/>
+									<ExtendedTooltip name="НалоговаяБазаКоэффициентВладенияРасширеннаяПодсказка" id="442"/>
+								</InputField>
+								<InputField name="НалоговаяБазаВидИнвестиционногоВычета" id="403">
+									<DataPath>Объект.НалоговаяБаза.ВидИнвестиционногоВычета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НалоговаяБазаВидИнвестиционногоВычетаКонтекстноеМеню" id="404"/>
+									<ExtendedTooltip name="НалоговаяБазаВидИнвестиционногоВычетаРасширеннаяПодсказка" id="405"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<InputField name="НалоговаяБазаСуммаИнвестВычет" id="406">
+							<DataPath>Объект.НалоговаяБаза.СуммаИнвестВычета</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаИнвестВычетКонтекстноеМеню" id="407"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаИнвестВычетРасширеннаяПодсказка" id="408"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа7" id="409">
+					<ExtendedTooltip name="НалоговаяБазаГруппа7РасширеннаяПодсказка" id="410"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаСуммаНалога" id="321">
+							<DataPath>Объект.НалоговаяБаза.СуммаНалога</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаНалогаКонтекстноеМеню" id="322"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаНалогаРасширеннаяПодсказка" id="323"/>
+						</InputField>
+						<InputField name="НалоговаяБазаСуммаНалогаСПревышения" id="414">
+							<DataPath>Объект.НалоговаяБаза.СуммаНалогаСПревышения</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаНалогаСПревышенияКонтекстноеМеню" id="415"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаНалогаСПревышенияРасширеннаяПодсказка" id="416"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа5" id="286">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа5</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа5</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НалоговаяБазаГруппа5РасширеннаяПодсказка" id="287"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаСумма2НДФЛДоход" id="306">
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСумма2НДФЛДоходКонтекстноеМеню" id="307"/>
+							<ExtendedTooltip name="НалоговаяБазаСумма2НДФЛДоходРасширеннаяПодсказка" id="308"/>
+						</InputField>
+						<InputField name="НалоговаяБазаСумма2НДФЛВычет" id="353">
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСумма2НДФЛВычетКонтекстноеМеню" id="354"/>
+							<ExtendedTooltip name="НалоговаяБазаСумма2НДФЛВычетРасширеннаяПодсказка" id="355"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа4" id="284">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа4</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база группа4</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НалоговаяБазаГруппа4РасширеннаяПодсказка" id="285"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаСтавкаНДФЛ" id="318">
+							<DataPath>Объект.НалоговаяБаза.СтавкаНДФЛ</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСтавкаНДФЛКонтекстноеМеню" id="319"/>
+							<ExtendedTooltip name="НалоговаяБазаСтавкаНДФЛРасширеннаяПодсказка" id="320"/>
+						</InputField>
+						<InputField name="НалоговаяБазаСтавкаНДФЛПовышенная" id="411">
+							<DataPath>Объект.НалоговаяБаза.СтавкаНДФЛПовышенная</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСтавкаНДФЛПовышеннаяКонтекстноеМеню" id="412"/>
+							<ExtendedTooltip name="НалоговаяБазаСтавкаНДФЛПовышеннаяРасширеннаяПодсказка" id="413"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="НалоговаяБазаГруппа2" id="393">
+					<ExtendedTooltip name="НалоговаяБазаГруппа2РасширеннаяПодсказка" id="394"/>
+					<ChildItems>
+						<InputField name="НалоговаяБазаСуммаНДФЛДоходРанееПолученный" id="395">
+							<DataPath>Объект.НалоговаяБаза.ДоходСНачалаГода</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаНДФЛДоходРанееПолученныйКонтекстноеМеню" id="396"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаНДФЛДоходРанееПолученныйРасширеннаяПодсказка" id="397"/>
+						</InputField>
+						<InputField name="НалоговаяБазаСуммаНДФЛВычетРанееПолученный" id="398">
+							<DataPath>Объект.НалоговаяБаза.ВычетСНачалаГода</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяБазаСуммаНДФЛВычетРанееПолученныйКонтекстноеМеню" id="399"/>
+							<ExtendedTooltip name="НалоговаяБазаСуммаНДФЛВычетРанееПолученныйРасширеннаяПодсказка" id="400"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="НалоговаяБазаИнвестВычетРанееПолученный" id="417">
+					<DataPath>Объект.НалоговаяБаза.ИнвестВычетСНачалаГода</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НалоговаяБазаИнвестВычетРанееПолученныйКонтекстноеМеню" id="418"/>
+					<ExtendedTooltip name="НалоговаяБазаИнвестВычетРанееПолученныйРасширеннаяПодсказка" id="419"/>
+				</InputField>
+				<InputField name="НалоговаяБазаОснование" id="388">
+					<DataPath>Объект.НалоговаяБаза.Основание</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НалоговаяБазаОснованиеКонтекстноеМеню" id="389"/>
+					<ExtendedTooltip name="НалоговаяБазаОснованиеРасширеннаяПодсказка" id="390"/>
+				</InputField>
+				<InputField name="НалоговаяБазаВидНалогооблагаемойБазы" id="429">
+					<DataPath>Объект.НалоговаяБаза.ВидНалогооблагаемойБазы</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НалоговаяБазаВидНалогооблагаемойБазыКонтекстноеМеню" id="430"/>
+					<ExtendedTooltip name="НалоговаяБазаВидНалогооблагаемойБазыРасширеннаяПодсказка" id="431"/>
+				</InputField>
+				<InputField name="НалоговаяБазаСчетДоверительногоУправления" id="437">
+					<DataPath>Объект.НалоговаяБаза.СчетДоверительногоУправления</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НалоговаяБазаСчетДоверительногоУправленияКонтекстноеМеню" id="438"/>
+					<ExtendedTooltip name="НалоговаяБазаСчетДоверительногоУправленияРасширеннаяПодсказка" id="439"/>
+				</InputField>
+				<ColumnGroup name="НалоговаяБазаГруппа10" id="445">
+					<ExtendedTooltip name="НалоговаяБазаГруппа10РасширеннаяПодсказка" id="446"/>
+					<ChildItems>
+						<CheckBoxField name="НалоговаяБазаПрименятьИнвестВычетПоЗаявлению" id="420">
+							<DataPath>Объект.НалоговаяБаза.ПрименятьИнвестВычетПоЗаявлению</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НалоговаяБазаПрименятьИнвестВычетПоЗаявлениюКонтекстноеМеню" id="421"/>
+							<ExtendedTooltip name="НалоговаяБазаПрименятьИнвестВычетПоЗаявлениюРасширеннаяПодсказка" id="422"/>
+							<Events>
+								<Event name="OnChange">НалоговаяБазаПрименятьИнвестВычетПоЗаявлениюПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="НалоговаяБазаРучноеРедактирование" id="447">
+							<DataPath>Объект.НалоговаяБаза.РучноеРедактирование</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НалоговаяБазаРучноеРедактированиеКонтекстноеМеню" id="448"/>
+							<ExtendedTooltip name="НалоговаяБазаРучноеРедактированиеРасширеннаяПодсказка" id="449"/>
+						</CheckBoxField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПодвал" id="99">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="100"/>
+			<ChildItems>
+				<LabelField name="Ответственный" id="93">
+					<DataPath>Объект.Ответственный</DataPath>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="94"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="95"/>
+				</LabelField>
+				<InputField name="Комментарий" id="96">
+					<DataPath>Объект.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="97"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="98"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РасчетНДФЛПайщиков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.НалоговаяБаза"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+	</Commands>
+</Form>

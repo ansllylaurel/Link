@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Опции" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Опции</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Опции</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ОпцииРасширеннаяПодсказка" id="6"/>
+			<ChildItems>
+				<Page name="ЗагрузкаБаланса" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка баланса</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка баланса</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ЗагрузкаБалансаРасширеннаяПодсказка" id="8"/>
+					<ChildItems>
+						<Button name="КомандаПолучитьБалансДенСредствПрод" id="1">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаПолучитьБалансДенСредствПрод</CommandName>
+							<ExtendedTooltip name="КомандаПолучитьБалансДенСредствПродРасширеннаяПодсказка" id="2"/>
+						</Button>
+						<Button name="КомандаПолучитьБалансДенСредствТест" id="3">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаПолучитьБалансДенСредствТест</CommandName>
+							<ExtendedTooltip name="КомандаПолучитьБалансДенСредствТестРасширеннаяПодсказка" id="4"/>
+						</Button>
+					</ChildItems>
+				</Page>
+				<Page name="Контроль" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контроль</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контроль</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="КонтрольРасширеннаяПодсказка" id="10"/>
+					<ChildItems>
+						<InputField name="ДатаКонтроля" id="15">
+							<DataPath>Объект.ДатаВыгрузки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дата контроля</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаКонтроляКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="ДатаКонтроляРасширеннаяПодсказка" id="17"/>
+						</InputField>
+						<Button name="КомандаКонтрольПрод" id="11">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаКонтрольПрод</CommandName>
+							<ExtendedTooltip name="КомандаКонтрольПродРасширеннаяПодсказка" id="12"/>
+						</Button>
+						<Button name="КомандаКонтрольТест" id="13">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаКонтрольТест</CommandName>
+							<ExtendedTooltip name="КомандаКонтрольТестРасширеннаяПодсказка" id="14"/>
+						</Button>
+						<LabelDecoration name="Декорация2" id="86">
+							<ContextMenu name="Декорация2КонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="88"/>
+						</LabelDecoration>
+						<Table name="КонтрольОстатков" id="18">
+							<Representation>List</Representation>
+							<TitleLocation>Top</TitleLocation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>КонтрольОстатков</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Остатки по отчетам брокеров</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="КонтрольОстатковКонтекстноеМеню" id="19"/>
+							<AutoCommandBar name="КонтрольОстатковКоманднаяПанель" id="20">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="КонтрольОстатковРасширеннаяПодсказка" id="21"/>
+							<SearchStringAddition name="КонтрольОстатковСтрокаПоиска" id="22">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>КонтрольОстатков</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтрольОстатковСтрокаПоискаКонтекстноеМеню" id="23"/>
+								<ExtendedTooltip name="КонтрольОстатковСтрокаПоискаРасширеннаяПодсказка" id="24"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КонтрольОстатковСостояниеПросмотра" id="25">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>КонтрольОстатков</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтрольОстатковСостояниеПросмотраКонтекстноеМеню" id="26"/>
+								<ExtendedTooltip name="КонтрольОстатковСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КонтрольОстатковУправлениеПоиском" id="28">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>КонтрольОстатков</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтрольОстатковУправлениеПоискомКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="КонтрольОстатковУправлениеПоискомРасширеннаяПодсказка" id="30"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="КонтрольОстатковBrokerName" id="43">
+									<DataPath>КонтрольОстатков.BrokerName</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковBrokerNameКонтекстноеМеню" id="44"/>
+									<ExtendedTooltip name="КонтрольОстатковBrokerNameРасширеннаяПодсказка" id="45"/>
+								</InputField>
+								<InputField name="КонтрольОстатковDepoAccount" id="31">
+									<DataPath>КонтрольОстатков.DepoAccount</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковDepoAccountКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="КонтрольОстатковDepoAccountРасширеннаяПодсказка" id="33"/>
+								</InputField>
+								<InputField name="КонтрольОстатковAssuranceCompany" id="46">
+									<DataPath>КонтрольОстатков.AssuranceCompany</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковAssuranceCompanyКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="КонтрольОстатковAssuranceCompanyРасширеннаяПодсказка" id="48"/>
+								</InputField>
+								<InputField name="КонтрольОстатковContract" id="40">
+									<DataPath>КонтрольОстатков.Contract</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковContractКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="КонтрольОстатковContractРасширеннаяПодсказка" id="42"/>
+								</InputField>
+								<InputField name="КонтрольОстатковOutBalance" id="34">
+									<DataPath>КонтрольОстатков.OutBalance</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковOutBalanceКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="КонтрольОстатковOutBalanceРасширеннаяПодсказка" id="36"/>
+								</InputField>
+								<InputField name="КонтрольОстатковCurrency" id="52">
+									<DataPath>КонтрольОстатков.Currency</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковCurrencyКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="КонтрольОстатковCurrencyРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<InputField name="КонтрольОстатковImported" id="37">
+									<DataPath>КонтрольОстатков.Imported</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковImportedКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="КонтрольОстатковImportedРасширеннаяПодсказка" id="39"/>
+								</InputField>
+								<InputField name="КонтрольОстатковBalanceData" id="49">
+									<DataPath>КонтрольОстатков.BalanceData</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковBalanceDataКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="КонтрольОстатковBalanceDataРасширеннаяПодсказка" id="51"/>
+								</InputField>
+								<InputField name="КонтрольОстатковCurExpense" id="89">
+									<DataPath>КонтрольОстатков.CurExpense</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковCurExpenseКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="КонтрольОстатковCurExpenseРасширеннаяПодсказка" id="91"/>
+								</InputField>
+								<InputField name="КонтрольОстатковCurReport" id="92">
+									<DataPath>КонтрольОстатков.CurReport</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КонтрольОстатковCurReportКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="КонтрольОстатковCurReportРасширеннаяПодсказка" id="94"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<LabelDecoration name="Декорация1" id="83">
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="85"/>
+						</LabelDecoration>
+						<Table name="ВходящиеОстаткиПоСК" id="55">
+							<Representation>List</Representation>
+							<TitleLocation>Top</TitleLocation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ВходящиеОстаткиПоСК</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Входящие остатки в рублях по СК из системы 1С</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВходящиеОстаткиПоСККонтекстноеМеню" id="56"/>
+							<AutoCommandBar name="ВходящиеОстаткиПоСККоманднаяПанель" id="57">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВходящиеОстаткиПоСКРасширеннаяПодсказка" id="58"/>
+							<SearchStringAddition name="ВходящиеОстаткиПоСКСтрокаПоиска" id="59">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>ВходящиеОстаткиПоСК</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВходящиеОстаткиПоСКСтрокаПоискаКонтекстноеМеню" id="60"/>
+								<ExtendedTooltip name="ВходящиеОстаткиПоСКСтрокаПоискаРасширеннаяПодсказка" id="61"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВходящиеОстаткиПоСКСостояниеПросмотра" id="62">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>ВходящиеОстаткиПоСК</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВходящиеОстаткиПоСКСостояниеПросмотраКонтекстноеМеню" id="63"/>
+								<ExtendedTooltip name="ВходящиеОстаткиПоСКСостояниеПросмотраРасширеннаяПодсказка" id="64"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВходящиеОстаткиПоСКУправлениеПоиском" id="65">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>ВходящиеОстаткиПоСК</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВходящиеОстаткиПоСКУправлениеПоискомКонтекстноеМеню" id="66"/>
+								<ExtendedTooltip name="ВходящиеОстаткиПоСКУправлениеПоискомРасширеннаяПодсказка" id="67"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ВходящиеОстаткиПоСКAssuranceCompany" id="68">
+									<DataPath>ВходящиеОстаткиПоСК.AssuranceCompany</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВходящиеОстаткиПоСКAssuranceCompanyКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ВходящиеОстаткиПоСКAssuranceCompanyРасширеннаяПодсказка" id="70"/>
+								</InputField>
+								<InputField name="ВходящиеОстаткиПоСКContract" id="80">
+									<DataPath>ВходящиеОстаткиПоСК.Contract</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВходящиеОстаткиПоСКContractКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="ВходящиеОстаткиПоСКContractРасширеннаяПодсказка" id="82"/>
+								</InputField>
+								<InputField name="ВходящиеОстаткиПоСКInBalance" id="77">
+									<DataPath>ВходящиеОстаткиПоСК.InBalance</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВходящиеОстаткиПоСКInBalanceКонтекстноеМеню" id="78"/>
+									<ExtendedTooltip name="ВходящиеОстаткиПоСКInBalanceРасширеннаяПодсказка" id="79"/>
+								</InputField>
+								<InputField name="ВходящиеОстаткиПоСКBalanceData" id="74">
+									<DataPath>ВходящиеОстаткиПоСК.BalanceData</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВходящиеОстаткиПоСКBalanceDataКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ВходящиеОстаткиПоСКBalanceDataРасширеннаяПодсказка" id="76"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ЗагрузкаБалансаДенежныхСредствСК</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КонтрольОстатков" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль остатков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="DepoAccount" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Брокерский счет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="OutBalance" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исходящий остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Imported" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработано</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Contract" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договор с СК</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="BrokerName" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Брокер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="AssuranceCompany" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СК</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="BalanceData" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата баланса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Currency" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта остатков</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="CurExpense" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КурсВалюты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="CurReport" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта в отчете</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВходящиеОстаткиПоСК" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Входящие остатки по Страховым Компаниям</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="AssuranceCompany" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СК</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Currency" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="BalanceData" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата баланса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="InBalance" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Входящий остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Contract" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договор с СК</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаПолучитьБалансДенСредствТест" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные о балансе денежных средств страховых компаний (тест)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда получить баланс ден средств тест</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПолучитьБалансДенСредствТест</Action>
+		</Command>
+		<Command name="КомандаПолучитьБалансДенСредствПрод" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные о балансе денежных средств страховых компаний (прод)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда получить баланс ден средств прод</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПолучитьБалансДенСредствПрод</Action>
+		</Command>
+		<Command name="КомандаКонтрольТест" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль остатков (тест)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда контроль тест</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаКонтрольТест</Action>
+		</Command>
+		<Command name="КомандаКонтрольПрод" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль остатков (прод)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда контроль прод</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаКонтрольПрод</Action>
+		</Command>
+	</Commands>
+</Form>

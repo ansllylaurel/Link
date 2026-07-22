@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЭкспортКонтактнойИнформации" id="23">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЭкспортКонтактнойИнформации</CommandName>
+				<ExtendedTooltip name="ФормаЭкспортКонтактнойИнформацииРасширеннаяПодсказка" id="24"/>
+			</Button>
+			<Button name="ФормаЗаполнитьАнкетамиТекущихДоговров" id="25">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьАнкетамиТекущихДоговров</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗаполнитьАнкетамиТекущихДоговровРасширеннаяПодсказка" id="26"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Организация" id="1">
+			<DataPath>Объект.Организация</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+		</LabelField>
+		<Pages name="ГруппаСтраница" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страница</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страница</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницаРасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<Page name="ГруппаАнкеты" id="29">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анкеты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа анкеты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаАнкетыРасширеннаяПодсказка" id="30"/>
+					<ChildItems>
+						<Table name="АнкетыФизическихЛиц" id="4">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.АнкетыФизическихЛиц</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="АнкетыФизическихЛицКонтекстноеМеню" id="5"/>
+							<AutoCommandBar name="АнкетыФизическихЛицКоманднаяПанель" id="6"/>
+							<ExtendedTooltip name="АнкетыФизическихЛицРасширеннаяПодсказка" id="7"/>
+							<SearchStringAddition name="АнкетыФизическихЛицСтрокаПоиска" id="8">
+								<AdditionSource>
+									<Item>АнкетыФизическихЛиц</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АнкетыФизическихЛицСтрокаПоискаКонтекстноеМеню" id="9"/>
+								<ExtendedTooltip name="АнкетыФизическихЛицСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="АнкетыФизическихЛицСостояниеПросмотра" id="11">
+								<AdditionSource>
+									<Item>АнкетыФизическихЛиц</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АнкетыФизическихЛицСостояниеПросмотраКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="АнкетыФизическихЛицСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="АнкетыФизическихЛицУправлениеПоиском" id="14">
+								<AdditionSource>
+									<Item>АнкетыФизическихЛиц</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="АнкетыФизическихЛицУправлениеПоискомКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="АнкетыФизическихЛицУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="АнкетыФизическихЛицНомерСтроки" id="17">
+									<DataPath>Объект.АнкетыФизическихЛиц.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АнкетыФизическихЛицНомерСтрокиКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="АнкетыФизическихЛицНомерСтрокиРасширеннаяПодсказка" id="19"/>
+								</LabelField>
+								<InputField name="АнкетыФизическихЛицАнкетаФизическогоЛица" id="20">
+									<DataPath>Объект.АнкетыФизическихЛиц.АнкетаФизическогоЛица</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АнкетыФизическихЛицАнкетаФизическогоЛицаКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="АнкетыФизическихЛицАнкетаФизическогоЛицаРасширеннаяПодсказка" id="22"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаРасхождения" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расхождения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа расхождения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаРасхожденияРасширеннаяПодсказка" id="32"/>
+					<ChildItems>
+						<Button name="ФормаПоказатьРасхождения" id="36">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПоказатьРасхождения</CommandName>
+							<ExtendedTooltip name="ФормаПоказатьРасхожденияРасширеннаяПодсказка" id="37"/>
+						</Button>
+						<SpreadSheetDocumentField name="Результат" id="33">
+							<DataPath>Результат</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="РезультатКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="35"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ЭкспортКонтактнойИнформацииФизЛицВБухгалтерию</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Результат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЭкспортКонтактнойИнформации" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспорт контактной информации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспорт контактной информации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЭкспортКонтактнойИнформации</Action>
+		</Command>
+		<Command name="ЗаполнитьАнкетамиТекущихДоговров" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить анкетами текущих договров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить анкетами текущих договров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьАнкетамиТекущихДоговров</Action>
+		</Command>
+		<Command name="ПоказатьРасхождения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать расхождения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать расхождения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьРасхождения</Action>
+		</Command>
+	</Commands>
+</Form>

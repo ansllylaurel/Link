@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет доверительного управления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПравоустанавливающегоДокумента</dataPath>
+			<field>ВидПравоустанавливающегоДокумента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид правоустанавливающего документа</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:string">Соглашение об ЭДО</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Соглашение об ЭДО</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Договор ДУ с условиями ЭДО</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор ДУ с условиями ЭДО</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">ДС к Договору ДУ</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДС к Договору ДУ</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПравоустанавливающийДокумент</dataPath>
+			<field>ПравоустанавливающийДокумент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Правоустанавливающий документ</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнформационнаяСистема</dataPath>
+			<field>ИнформационнаяСистема</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаИспользованияЭДО</dataPath>
+			<field>ДатаНачалаИспользованияЭДО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОкончанияИспользованияЭДО</dataPath>
+			<field>ДатаОкончанияИспользованияЭДО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРасторженияСоглашенияОбЭДО</dataPath>
+			<field>ДатаРасторженияСоглашенияОбЭДО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расторжения соглашения об ЭДО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаДУ</dataPath>
+			<field>ДатаНачалаДУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала ДУ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПрекращенияДУ</dataPath>
+			<field>ДатаПрекращенияДУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата прекращения ДУ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗаключенияСоглашенияОбЭДО</dataPath>
+			<field>ДатаЗаключенияСоглашенияОбЭДО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата заключения соглашения об ЭДО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОператорЭДО</dataPath>
+			<field>ОператорЭДО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оператор ЭДО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СайтЭДО</dataPath>
+			<field>СайтЭДО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сайт ЭДО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СчетаДоверительногоУправления.Организация КАК Организация,
+	СчетаДоверительногоУправления.Ссылка КАК СчетДоверительногоУправления,
+	СчетаДоверительногоУправления.ДатаЗаключения КАК ДатаЗаключения,
+	СчетаДоверительногоУправления.ДатаРасторжения КАК ДатаРасторжения
+ПОМЕСТИТЬ _ДействующиеДоговорыДУ
+ИЗ
+	Справочник.СчетаДоверительногоУправления КАК СчетаДоверительногоУправления
+ГДЕ
+	СчетаДоверительногоУправления.Организация = &amp;Организация
+	И СчетаДоверительногоУправления.ДатаЗаключения &lt;= &amp;ДатаОкончания
+	И (СчетаДоверительногоУправления.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ СчетаДоверительногоУправления.ДатаРасторжения &gt;= &amp;ДатаНачала)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_ДействующиеДоговорыДУ.Организация КАК Организация,
+	_ДействующиеДоговорыДУ.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	ВложенныйЗапрос.Клиент КАК Клиент,
+	ВЫБОР
+		КОГДА ВложенныйЗапрос.ДатаНачала &lt; _ДействующиеДоговорыДУ.ДатаЗаключения
+			ТОГДА _ДействующиеДоговорыДУ.ДатаЗаключения
+		ИНАЧЕ ВложенныйЗапрос.ДатаНачала
+	КОНЕЦ КАК ДатаНачалаДУ,
+	ЕСТЬNULL(ВложенныйЗапрос.ДатаПрекращения, _ДействующиеДоговорыДУ.ДатаРасторжения) КАК ДатаПрекращенияДУ
+ПОМЕСТИТЬ _КлиентыДоверительногоУправления
+ИЗ
+	_ДействующиеДоговорыДУ КАК _ДействующиеДоговорыДУ
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			_ДействующиеДоговорыДУ.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+			КлиентыДоверительногоУправления.Клиент КАК Клиент,
+			КлиентыДоверительногоУправления.Период КАК ДатаНачала,
+			МИНИМУМ(КлиентыДоверительногоУправления1.Период) КАК ДатаПрекращения
+		ИЗ
+			_ДействующиеДоговорыДУ КАК _ДействующиеДоговорыДУ
+				ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыДоверительногоУправления КАК КлиентыДоверительногоУправления
+				ПО _ДействующиеДоговорыДУ.Организация = КлиентыДоверительногоУправления.Организация
+					И _ДействующиеДоговорыДУ.СчетДоверительногоУправления = КлиентыДоверительногоУправления.СчетДоверительногоУправления
+				ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыДоверительногоУправления КАК КлиентыДоверительногоУправления1
+				ПО _ДействующиеДоговорыДУ.Организация = КлиентыДоверительногоУправления1.Организация
+					И _ДействующиеДоговорыДУ.СчетДоверительногоУправления = КлиентыДоверительногоУправления1.СчетДоверительногоУправления
+					И (КлиентыДоверительногоУправления.Период &lt; КлиентыДоверительногоУправления1.Период)
+					И (КлиентыДоверительногоУправления.Клиент &lt;&gt; КлиентыДоверительногоУправления1.Клиент)
+		
+		СГРУППИРОВАТЬ ПО
+			_ДействующиеДоговорыДУ.СчетДоверительногоУправления,
+			КлиентыДоверительногоУправления.Клиент,
+			КлиентыДоверительногоУправления.Период) КАК ВложенныйЗапрос
+		ПО _ДействующиеДоговорыДУ.СчетДоверительногоУправления = ВложенныйЗапрос.СчетДоверительногоУправления
+ГДЕ
+	ВЫБОР
+			КОГДА ВложенныйЗапрос.ДатаНачала &lt; _ДействующиеДоговорыДУ.ДатаЗаключения
+				ТОГДА _ДействующиеДоговорыДУ.ДатаЗаключения
+			ИНАЧЕ ВложенныйЗапрос.ДатаНачала
+		КОНЕЦ &lt;= &amp;ДатаОкончания
+	И (ЕСТЬNULL(ВложенныйЗапрос.ДатаПрекращения, _ДействующиеДоговорыДУ.ДатаРасторжения) = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ ЕСТЬNULL(ВложенныйЗапрос.ДатаПрекращения, _ДействующиеДоговорыДУ.ДатаРасторжения) &gt;= &amp;ДатаНачала)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_КлиентыДоверительногоУправления.Организация КАК Организация,
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	Договоры.Ссылка КАК Договор,
+	"Соглашение об ЭДО" КАК ВидПравоустанавливающегоДокумента,
+	Договоры.ДатаЗаключения КАК ДатаЗаключения,
+	ЕСТЬNULL(УсловияДоговоровОбщие.ДатаРасторжения, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаРасторжения,
+	УсловияСоглашенийОбЭДО.ИнформационнаяСистема КАК ИнформационнаяСистема,
+	ЕСТЬNULL(УсловияСоглашенийОбЭДО.ДатаНачалаИспользованияЭДО, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаНачалаИспользованияЭДО,
+	ЕСТЬNULL(УсловияСоглашенийОбЭДО.ДатаОкончанияИспользованияЭДО, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаОкончанияИспользованияЭДО
+ПОМЕСТИТЬ _УсловияСоглашенийОбЭДО
+ИЗ
+	_КлиентыДоверительногоУправления КАК _КлиентыДоверительногоУправления
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Договоры КАК Договоры
+		ПО (Договоры.Организация = _КлиентыДоверительногоУправления.Организация)
+			И (Договоры.ВидДоговора = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоров.СоглашениеОбЭДО))
+			И (Договоры.Контрагент = _КлиентыДоверительногоУправления.Клиент)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияДоговоровОбщие КАК УсловияДоговоровОбщие
+		ПО (Договоры.Ссылка = УсловияДоговоровОбщие.Договор)
+			И (УсловияДоговоровОбщие.ДатаРасторжения &lt;&gt; ДАТАВРЕМЯ(1, 1, 1))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияСоглашенийОбЭДО КАК УсловияСоглашенийОбЭДО
+		ПО (Договоры.Организация = УсловияСоглашенийОбЭДО.Организация)
+			И (Договоры.Ссылка = УсловияСоглашенийОбЭДО.Договор)
+ГДЕ
+	Договоры.ДатаЗаключения &lt;= &amp;ДатаОкончания
+	И (ЕСТЬNULL(УсловияДоговоровОбщие.ДатаРасторжения, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ УсловияДоговоровОбщие.ДатаРасторжения &gt;= &amp;ДатаНачала)
+	И НЕ Договоры.ПометкаУдаления
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	_КлиентыДоверительногоУправления.Организация,
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления,
+	УсловияСоглашенийОбЭДО.Договор,
+	"ДС к Договору ДУ",
+	УсловияСоглашенийОбЭДО.Договор.ДатаЗаключения,
+	ЕСТЬNULL(УсловияДоговоровОбщие.ДатаРасторжения, ДАТАВРЕМЯ(1, 1, 1)),
+	УсловияСоглашенийОбЭДО.ИнформационнаяСистема,
+	ЕСТЬNULL(УсловияСоглашенийОбЭДО.ДатаНачалаИспользованияЭДО, ДАТАВРЕМЯ(1, 1, 1)),
+	ЕСТЬNULL(УсловияСоглашенийОбЭДО.ДатаОкончанияИспользованияЭДО, ДАТАВРЕМЯ(1, 1, 1))
+ИЗ
+	_КлиентыДоверительногоУправления КАК _КлиентыДоверительногоУправления
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.УсловияСоглашенийОбЭДО КАК УсловияСоглашенийОбЭДО
+		ПО _КлиентыДоверительногоУправления.Организация = УсловияСоглашенийОбЭДО.Организация
+			И (УсловияСоглашенийОбЭДО.Договор.ВидДоговора = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоров.ДополнительноеСоглашение))
+			И (УсловияСоглашенийОбЭДО.Договор.Основание = _КлиентыДоверительногоУправления.СчетДоверительногоУправления)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияДоговоровОбщие КАК УсловияДоговоровОбщие
+		ПО (УсловияСоглашенийОбЭДО.Договор = УсловияДоговоровОбщие.Договор)
+			И (УсловияДоговоровОбщие.ДатаРасторжения &lt;&gt; ДАТАВРЕМЯ(1, 1, 1))
+ГДЕ
+	УсловияСоглашенийОбЭДО.Договор.ДатаЗаключения &lt;= &amp;ДатаОкончания
+	И (ЕСТЬNULL(УсловияДоговоровОбщие.ДатаРасторжения, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ УсловияДоговоровОбщие.ДатаРасторжения &gt;= &amp;ДатаНачала)
+	И НЕ УсловияСоглашенийОбЭДО.Договор.ПометкаУдаления
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	_КлиентыДоверительногоУправления.Организация,
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления,
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления,
+	"Договор ДУ с условиями ЭДО",
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления.ДатаЗаключения,
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления.ДатаРасторжения,
+	УсловияСоглашенийОбЭДО.ИнформационнаяСистема,
+	ЕСТЬNULL(УсловияСоглашенийОбЭДО.ДатаНачалаИспользованияЭДО, ДАТАВРЕМЯ(1, 1, 1)),
+	ЕСТЬNULL(УсловияСоглашенийОбЭДО.ДатаОкончанияИспользованияЭДО, ДАТАВРЕМЯ(1, 1, 1))
+ИЗ
+	_КлиентыДоверительногоУправления КАК _КлиентыДоверительногоУправления
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.УсловияСоглашенийОбЭДО КАК УсловияСоглашенийОбЭДО
+		ПО _КлиентыДоверительногоУправления.Организация = УсловияСоглашенийОбЭДО.Организация
+			И _КлиентыДоверительногоУправления.СчетДоверительногоУправления = УсловияСоглашенийОбЭДО.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_КлиентыДоверительногоУправления.Организация КАК Организация,
+	_КлиентыДоверительногоУправления.Клиент КАК Клиент,
+	_КлиентыДоверительногоУправления.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	_КлиентыДоверительногоУправления.ДатаНачалаДУ КАК ДатаНачалаДУ,
+	_КлиентыДоверительногоУправления.ДатаПрекращенияДУ КАК ДатаПрекращенияДУ,
+	_УсловияСоглашенийОбЭДО.ВидПравоустанавливающегоДокумента КАК ВидПравоустанавливающегоДокумента,
+	_УсловияСоглашенийОбЭДО.Договор КАК ПравоустанавливающийДокумент,
+	_УсловияСоглашенийОбЭДО.ДатаЗаключения КАК ДатаЗаключенияСоглашенияОбЭДО,
+	_УсловияСоглашенийОбЭДО.ДатаРасторжения КАК ДатаРасторженияСоглашенияОбЭДО,
+	_УсловияСоглашенийОбЭДО.ИнформационнаяСистема КАК ИнформационнаяСистема,
+	_УсловияСоглашенийОбЭДО.ДатаНачалаИспользованияЭДО КАК ДатаНачалаИспользованияЭДО,
+	_УсловияСоглашенийОбЭДО.ДатаОкончанияИспользованияЭДО КАК ДатаОкончанияИспользованияЭДО,
+	ЗначенияДополнительныхСведенийОператорЭДО.Значение КАК ОператорЭДО,
+	ЗначенияДополнительныхСведенийСайтИС.Значение КАК СайтЭДО
+ИЗ
+	_КлиентыДоверительногоУправления КАК _КлиентыДоверительногоУправления
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ _УсловияСоглашенийОбЭДО КАК _УсловияСоглашенийОбЭДО
+		ПО _КлиентыДоверительногоУправления.Организация = _УсловияСоглашенийОбЭДО.Организация
+			И _КлиентыДоверительногоУправления.СчетДоверительногоУправления = _УсловияСоглашенийОбЭДО.СчетДоверительногоУправления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЗначенияДополнительныхСведений КАК ЗначенияДополнительныхСведенийСайтИС
+		ПО (_УсловияСоглашенийОбЭДО.ИнформационнаяСистема = ЗначенияДополнительныхСведенийСайтИС.Объект)
+			И (ЗначенияДополнительныхСведенийСайтИС.Свойство.Ключ = "СайтИС")
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЗначенияДополнительныхСведений КАК ЗначенияДополнительныхСведенийОператорЭДО
+		ПО (_УсловияСоглашенийОбЭДО.ИнформационнаяСистема = ЗначенияДополнительныхСведенийОператорЭДО.Объект)
+			И (ЗначенияДополнительныхСведенийОператорЭДО.Свойство.Ключ = "ОператорЭДО")
+ГДЕ
+	_КлиентыДоверительногоУправления.ДатаНачалаДУ &lt;= &amp;ДатаОкончания
+	И _КлиентыДоверительногоУправления.ДатаПрекращенияДУ &gt;= &amp;ДатаНачала
+	И _УсловияСоглашенийОбЭДО.ДатаНачалаИспользованияЭДО &lt;= &amp;ДатаОкончания
+	И (_УсловияСоглашенийОбЭДО.ДатаОкончанияИспользованияЭДО = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ _УсловияСоглашенийОбЭДО.ДатаОкончанияИспользованияЭДО &gt;= &amp;ДатаНачала)</query>
+	</dataSet>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Клиент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ВидПравоустанавливающегоДокумента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПравоустанавливающийДокумент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнформационнаяСистема</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаНачалаИспользованияЭДО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаОкончанияИспользованияЭДО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОператорЭДО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СайтЭДО</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Клиент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>394c9b4b-c0c7-4d4c-b3ab-b1cc6aed1766</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СчетДоверительногоУправления</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>f6fdc8e7-a06e-4456-8673-526e52e8bab1</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидПравоустанавливающегоДокумента</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>95cf708f-8fa7-4e69-b717-65b93b06b16f</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИнформационнаяСистема</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>e073d66d-463e-4b3f-ba76-ed25343c908c</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Клиент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПравоустанавливающийДокумент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

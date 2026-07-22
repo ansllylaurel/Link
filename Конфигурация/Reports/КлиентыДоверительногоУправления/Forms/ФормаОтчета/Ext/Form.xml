@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<CommandBarLocation>None</CommandBarLocation>
+	<ReportFormType>Main</ReportFormType>
+	<AutoShowState>Auto</AutoShowState>
+	<ReportResultViewMode>Auto</ReportResultViewMode>
+	<ViewModeApplicationOnSetReportResult>Auto</ViewModeApplicationOnSetReportResult>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаБыстрыеНастройкиОтчета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые настройки отчета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые настройки отчета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаБыстрыеНастройкиОтчетаРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<Button name="КомандаСформироватьОтчет" id="12">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.КомандаСформироватьОтчет</CommandName>
+					<ExtendedTooltip name="КомандаСформироватьОтчетРасширеннаяПодсказка" id="13"/>
+				</Button>
+				<InputField name="Период" id="1">
+					<DataPath>Отчет.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<CheckBoxField name="ОтборПоСчетуДоверительногоУправления" id="38">
+					<DataPath>ОтборПоСчетуДоверительногоУправления</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор по клиенту:</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтборПоСчетуДоверительногоУправленияКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ОтборПоСчетуДоверительногоУправленияРасширеннаяПодсказка" id="40"/>
+					<Events>
+						<Event name="OnChange">ОтборПоСчетуДоверительногоУправленияПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СчетДоверительногоУправления" id="41">
+					<DataPath>Отчет.СчетДоверительногоУправления</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<CheckBoxField name="ТолькоДействующие" id="4">
+					<DataPath>Отчет.ТолькоДействующие</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТолькоДействующиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ТолькоДействующиеРасширеннаяПодсказка" id="6"/>
+				</CheckBoxField>
+				<LabelField name="Организация" id="44">
+					<DataPath>Отчет.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<CommandBar name="КоманднаяПанельТабличногоДокумента" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель табличного документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель табличного документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="КоманднаяПанельТабличногоДокументаРасширеннаяПодсказка" id="15"/>
+			<ChildItems>
+				<ButtonGroup name="КоманднаяПанельТабличногоДокументаГруппаПоиск" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель табличного документа группа поиск</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель табличного документа группа поиск</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="КоманднаяПанельТабличногоДокументаГруппаПоискРасширеннаяПодсказка" id="23"/>
+					<ChildItems>
+						<Button name="Найти" id="24">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.Find</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="НайтиРасширеннаяПодсказка" id="25"/>
+						</Button>
+						<Button name="НайтиСледующий" id="26">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.FindNext</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="НайтиСледующийРасширеннаяПодсказка" id="27"/>
+						</Button>
+						<Button name="НайтиПредыдущий" id="28">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.FindPrevious</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="НайтиПредыдущийРасширеннаяПодсказка" id="29"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<ButtonGroup name="КоманднаяПанельТабличногоДокументаГруппаГруппы" id="30">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель табличного документа группа группы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель табличного документа группа группы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="КоманднаяПанельТабличногоДокументаГруппаГруппыРасширеннаяПодсказка" id="31"/>
+					<ChildItems>
+						<Button name="ОтображатьГруппировки" id="32">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.ShowGroups</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ОтображатьГруппировкиРасширеннаяПодсказка" id="33"/>
+						</Button>
+						<Button name="СвернутьВсеГруппы" id="34">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.CollapseAllGroups</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="СвернутьВсеГруппыРасширеннаяПодсказка" id="35"/>
+						</Button>
+						<Button name="РазвернутьВсеГруппы" id="36">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.ExpandAllGroups</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="РазвернутьВсеГруппыРасширеннаяПодсказка" id="37"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+			</ChildItems>
+		</CommandBar>
+		<SpreadSheetDocumentField name="ТабличныйДокумент" id="9">
+			<DataPath>ТабличныйДокумент</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<VerticalScrollBar>true</VerticalScrollBar>
+			<HorizontalScrollBar>true</HorizontalScrollBar>
+			<ViewScalingMode>Normal</ViewScalingMode>
+			<ContextMenu name="ТабличныйДокументКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="ТабличныйДокументРасширеннаяПодсказка" id="11"/>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Отчет" id="1">
+			<Type>
+				<v8:Type>cfg:ReportObject.КлиентыДоверительногоУправления</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТабличныйДокумент" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Табличный документ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПоСчетуДоверительногоУправления" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор по счету доверительного управления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаСформироватьОтчет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСформироватьОтчет</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

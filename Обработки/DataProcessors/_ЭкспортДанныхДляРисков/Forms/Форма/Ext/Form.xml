@@ -1,0 +1,836 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="18"/>
+			<Events>
+				<Event name="OnCurrentPageChange">ГруппаСтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="Выгрузка" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выгрузка</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выгрузка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="ВыгрузкаРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройки" id="187">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="188"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаШапка" id="15">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа шапка</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа шапка</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="16"/>
+									<ChildItems>
+										<InputField name="Период" id="4">
+											<DataPath>Объект.Период</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ПериодКонтекстноеМеню" id="5"/>
+											<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="6"/>
+										</InputField>
+										<InputField name="Организация" id="1">
+											<DataPath>Объект.Организация</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+											<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+											<Events>
+												<Event name="OnChange">ОрганизацияПриИзменении</Event>
+											</Events>
+										</InputField>
+										<Button name="ВыгрузитьДанные" id="7">
+											<Type>UsualButton</Type>
+											<DefaultButton>true</DefaultButton>
+											<CommandName>Form.Command.ВыгрузитьДанные</CommandName>
+											<ExtendedTooltip name="ВыгрузитьДанныеРасширеннаяПодсказка" id="8"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ТаблицыДляВыгрузки" id="23">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Таблицы для выгрузки:</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:FormTextColor</TitleTextColor>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Таблицы для выгрузки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<Group>Vertical</Group>
+									<ExtendedTooltip name="ТаблицыДляВыгрузкиРасширеннаяПодсказка" id="24"/>
+									<ChildItems>
+										<CheckBoxField name="ВыгрузитьВсе" id="105">
+											<DataPath>ВыгрузитьВсе</DataPath>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="ВыгрузитьВсеКонтекстноеМеню" id="106"/>
+											<ExtendedTooltip name="ВыгрузитьВсеРасширеннаяПодсказка" id="107"/>
+											<Events>
+												<Event name="OnChange">ВыгрузитьВсеПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<UsualGroup name="ГруппаСделки" id="43">
+											<Visible>false</Visible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа сделки</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа сделки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСделкиРасширеннаяПодсказка" id="44"/>
+											<ChildItems>
+												<CheckBoxField name="ВыгрузитьОперации" id="37">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Dbo.Operations1C8</v8:content>
+														</v8:item>
+													</Title>
+													<TitleTextColor>style:FormTextColor</TitleTextColor>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВыгрузитьОперацииКонтекстноеМеню" id="38"/>
+													<ExtendedTooltip name="ВыгрузитьОперацииРасширеннаяПодсказка" id="39"/>
+												</CheckBoxField>
+												<LabelDecoration name="Декорация1" id="45">
+													<Enabled>false</Enabled>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выгружаются сделки с ЦБ и операции с ДС.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Декорация1КонтекстноеМеню" id="46"/>
+													<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="47"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКлиенты" id="48">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа клиенты</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа клиенты</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКлиентыРасширеннаяПодсказка" id="49"/>
+											<ChildItems>
+												<CheckBoxField name="ВыгрузитьКлиентов" id="40">
+													<DataPath>Объект.СправочникСчетов</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Dbo.Clients1C8</v8:content>
+														</v8:item>
+													</Title>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВыгрузитьКлиентовКонтекстноеМеню" id="41"/>
+													<ExtendedTooltip name="ВыгрузитьКлиентовРасширеннаяПодсказка" id="42"/>
+												</CheckBoxField>
+												<LabelDecoration name="Декорация2" id="50">
+													<Enabled>false</Enabled>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выгружаются данные по клиентам ДУ.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Декорация2КонтекстноеМеню" id="51"/>
+													<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="52"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаДепозиты" id="97">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа депозиты</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа депозиты</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаДепозитыРасширеннаяПодсказка" id="98"/>
+											<ChildItems>
+												<CheckBoxField name="ВыгрузитьДепозиты" id="99">
+													<DataPath>Объект.Депозиты</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Dbo.Deposits1C8</v8:content>
+														</v8:item>
+													</Title>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВыгрузитьДепозитыКонтекстноеМеню" id="100"/>
+													<ExtendedTooltip name="ВыгрузитьДепозитыРасширеннаяПодсказка" id="101"/>
+												</CheckBoxField>
+												<LabelDecoration name="Декорация5" id="102">
+													<Enabled>false</Enabled>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выгружаются данные по депозитам и МНО.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Декорация5КонтекстноеМеню" id="103"/>
+													<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="104"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаРепо" id="108">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа репо</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа репо</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаРепоРасширеннаяПодсказка" id="109"/>
+											<ChildItems>
+												<CheckBoxField name="ВыгрузитьСделкиРепо" id="110">
+													<DataPath>Объект.СделкиРепо</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Dbo.Repo1C8</v8:content>
+														</v8:item>
+													</Title>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВыгрузитьСделкиРепоКонтекстноеМеню" id="111"/>
+													<ExtendedTooltip name="ВыгрузитьСделкиРепоРасширеннаяПодсказка" id="112"/>
+												</CheckBoxField>
+												<LabelDecoration name="Декорация6" id="113">
+													<Enabled>false</Enabled>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выгружаются сделки Репо.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Декорация6КонтекстноеМеню" id="114"/>
+													<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="115"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаАктивы" id="61">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа активы</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа активы</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ThroughAlign>Use</ThroughAlign>
+											<ExtendedTooltip name="ГруппаАктивыРасширеннаяПодсказка" id="62"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаФлагДекорация" id="150">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа флаг декорация</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа флаг декорация</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ShowTitle>false</ShowTitle>
+													<ThroughAlign>Use</ThroughAlign>
+													<ExtendedTooltip name="ГруппаФлагДекорацияРасширеннаяПодсказка" id="151"/>
+													<ChildItems>
+														<CheckBoxField name="ВыгрузитьАктивы" id="63">
+															<DataPath>Объект.Активы</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Dbo.Assets1C8</v8:content>
+																</v8:item>
+															</Title>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ВыгрузитьАктивыКонтекстноеМеню" id="64"/>
+															<ExtendedTooltip name="ВыгрузитьАктивыРасширеннаяПодсказка" id="65"/>
+															<Events>
+																<Event name="OnChange">ВыгрузитьАктивыПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<LabelDecoration name="Декорация4" id="66">
+															<Enabled>false</Enabled>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Выгружаются данные по активам клиентов ДУ.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="Декорация4КонтекстноеМеню" id="67"/>
+															<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="68"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаНастройкиАссетс" id="148">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Настройки</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа настройки ассетс</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>StrongSeparation</Representation>
+													<ThroughAlign>Use</ThroughAlign>
+													<ExtendedTooltip name="ГруппаНастройкиАссетсРасширеннаяПодсказка" id="149"/>
+													<ChildItems>
+														<UsualGroup name="ГруппаОтборПоСчету" id="135">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа отбор по счету</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа отбор по счету</v8:content>
+																</v8:item>
+															</ToolTip>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаОтборПоСчетуРасширеннаяПодсказка" id="136"/>
+															<ChildItems>
+																<InputField name="СчетДоверительногоУправления" id="137">
+																	<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Счет доверительного управления</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleLocation>Top</TitleLocation>
+																	<Width>32</Width>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="138"/>
+																	<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="139"/>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+														<CheckBoxField name="ВыгрузитьДатыПервыхПартий" id="152">
+															<DataPath>ВыгрузитьДатыПервыхПартий</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ВыгрузитьДатыПервыхПартийКонтекстноеМеню" id="153"/>
+															<ExtendedTooltip name="ВыгрузитьДатыПервыхПартийРасширеннаяПодсказка" id="154"/>
+														</CheckBoxField>
+														<CheckBoxField name="СформироватьОтчет" id="145">
+															<DataPath>СформироватьОтчет</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="СформироватьОтчетКонтекстноеМеню" id="146"/>
+															<ExtendedTooltip name="СформироватьОтчетРасширеннаяПодсказка" id="147"/>
+															<Events>
+																<Event name="OnChange">СформироватьОтчетПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКотировки" id="74">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа котировки</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа котировки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКотировкиРасширеннаяПодсказка" id="75"/>
+											<ChildItems>
+												<CheckBoxField name="Котировки" id="119">
+													<DataPath>Объект.Котировки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Dbo.Quotes1C8</v8:content>
+														</v8:item>
+													</Title>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="КотировкиКонтекстноеМеню" id="120"/>
+													<ExtendedTooltip name="КотировкиРасширеннаяПодсказка" id="121"/>
+													<Events>
+														<Event name="OnChange">КотировкиПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<LabelDecoration name="Декорация3" id="122">
+													<Enabled>false</Enabled>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выгружаются котировки ЦБ.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Декорация3КонтекстноеМеню" id="123"/>
+													<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="124"/>
+												</LabelDecoration>
+												<CheckBoxField name="ОтборПоБумаге" id="125">
+													<DataPath>ОтборПоБумаге</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ОтборПоБумагеКонтекстноеМеню" id="126"/>
+													<ExtendedTooltip name="ОтборПоБумагеРасширеннаяПодсказка" id="127"/>
+													<Events>
+														<Event name="OnChange">ОтборПоБумагеПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаОтборПоЦБ" id="131">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа отбор по ЦБ</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа отбор по ЦБ</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>StrongSeparation</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаОтборПоЦБРасширеннаяПодсказка" id="132"/>
+											<ChildItems>
+												<InputField name="ЦеннаяБумага" id="128">
+													<DataPath>Объект.ЦеннаяБумага</DataPath>
+													<TitleLocation>Left</TitleLocation>
+													<Width>32</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ЦеннаяБумагаКонтекстноеМеню" id="129"/>
+													<ExtendedTooltip name="ЦеннаяБумагаРасширеннаяПодсказка" id="130"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтчетРасхожденияЦен" id="133">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отчет расхождения цен</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отчет расхождения цен</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтчетРасхожденияЦенРасширеннаяПодсказка" id="134"/>
+							<ChildItems>
+								<HTMLDocumentField name="ОтчетРасхожденияЦен" id="197">
+									<DataPath>ОтчетРасхожденияЦен</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ОтчетРасхожденияЦенКонтекстноеМеню" id="198"/>
+									<ExtendedTooltip name="ОтчетРасхожденияЦенРасширеннаяПодсказка" id="199"/>
+								</HTMLDocumentField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Сверка" id="157">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сверка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сверка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СверкаРасширеннаяПодсказка" id="158"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапка2" id="162">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа шапка2</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа шапка2</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапка2РасширеннаяПодсказка" id="163"/>
+							<ChildItems>
+								<InputField name="Период2" id="159">
+									<DataPath>Объект.Период</DataPath>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="Период2КонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="Период2РасширеннаяПодсказка" id="161"/>
+								</InputField>
+								<InputField name="Организация2" id="164">
+									<DataPath>Объект.Организация</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="Организация2КонтекстноеМеню" id="165"/>
+									<ExtendedTooltip name="Организация2РасширеннаяПодсказка" id="166"/>
+								</InputField>
+								<Button name="СверитьДанные" id="167">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СверитьДанные</CommandName>
+									<ExtendedTooltip name="СверитьДанныеРасширеннаяПодсказка" id="168"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ТаблицыДляСверки" id="169">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Таблицы сверки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Таблицы для сверки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ТаблицыДляСверкиРасширеннаяПодсказка" id="170"/>
+							<ChildItems>
+								<CheckBoxField name="СверитьАктивы" id="171">
+									<DataPath>Объект.Активы</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Dbo.Assets1C8</v8:content>
+										</v8:item>
+									</Title>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СверитьАктивыКонтекстноеМеню" id="172"/>
+									<ExtendedTooltip name="СверитьАктивыРасширеннаяПодсказка" id="173"/>
+								</CheckBoxField>
+								<UsualGroup name="ГруппаОтборПоСчету2" id="174">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отбор по счету2</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отбор по счету2</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОтборПоСчету2РасширеннаяПодсказка" id="175"/>
+									<ChildItems>
+										<InputField name="СчетДоверительногоУправления2" id="176">
+											<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<Width>32</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СчетДоверительногоУправления2КонтекстноеМеню" id="177"/>
+											<ExtendedTooltip name="СчетДоверительногоУправления2РасширеннаяПодсказка" id="178"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтчетСверкиДанных" id="192">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отчет сверки данных</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отчет сверки данных</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтчетСверкиДанныхРасширеннаяПодсказка" id="193"/>
+							<ChildItems>
+								<HTMLDocumentField name="ОтчетСверкиДанных" id="194">
+									<DataPath>ОтчетСверкиДанных</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ОтчетСверкиДанныхКонтекстноеМеню" id="195"/>
+									<ExtendedTooltip name="ОтчетСверкиДанныхРасширеннаяПодсказка" id="196"/>
+								</HTMLDocumentField>
+								<Button name="СохранитьОтчет" id="185">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СохранитьОтчет</CommandName>
+									<ExtendedTooltip name="СохранитьОтчетРасширеннаяПодсказка" id="186"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._ЭкспортДанныхДляРисков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Объект.СчетДоверительногоУправления</Field>
+			</UseAlways>
+			<Save>
+				<Field>1/0:0e49f97c-8a07-4054-9e77-7196a6210cad</Field>
+				<Field>Объект.Период</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВыгрузитьВсе" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить все</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПоБумаге" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор по бумаге</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтчетСверкиДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет сверки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СформироватьОтчет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет о бумагах без цен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыгрузитьДатыПервыхПартий" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить даты первых партий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтчетРасхожденияЦен" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет расхождения цен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыгрузитьДанные" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыгрузитьДанные</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СверитьДанные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сверить данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сверить данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СверитьДанные</Action>
+		</Command>
+		<Command name="СохранитьОтчет" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить отчет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьОтчет</Action>
+		</Command>
+	</Commands>
+</Form>

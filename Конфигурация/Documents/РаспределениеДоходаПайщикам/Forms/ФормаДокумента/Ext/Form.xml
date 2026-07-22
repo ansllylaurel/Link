@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщиеРеквизиты" id="102">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбщиеРеквизитыРасширеннаяПодсказка" id="103"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СчетДоверительногоУправления" id="10">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<Visible>false</Visible>
+			<Enabled>false</Enabled>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<UsualGroup name="ГруппаПИФ" id="106">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ПИФ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ПИФ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПИФРасширеннаяПодсказка" id="107"/>
+			<ChildItems>
+				<InputField name="ПаевойИнвестиционныйФонд" id="13">
+					<DataPath>Объект.ПаевойИнвестиционныйФонд</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПаевойИнвестиционныйФондКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ПаевойИнвестиционныйФондРасширеннаяПодсказка" id="15"/>
+					<Events>
+						<Event name="OnChange">ПаевойИнвестиционныйФондПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Основание" id="25">
+			<DataPath>Объект.Основание</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОснованиеКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ОснованиеРасширеннаяПодсказка" id="27"/>
+			<Events>
+				<Event name="OnChange">ОснованиеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаОпределениеДохода" id="104">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа определение дохода</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа определение дохода</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОпределениеДоходаРасширеннаяПодсказка" id="105"/>
+			<ChildItems>
+				<InputField name="ДатаОпределенияСпискаЛиц" id="16">
+					<DataPath>Объект.ДатаОпределенияСпискаЛиц</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаОпределенияСпискаЛицКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ДатаОпределенияСпискаЛицРасширеннаяПодсказка" id="18"/>
+					<Events>
+						<Event name="OnChange">ДатаОпределенияДоходаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СуммаДоходаКРаспределению" id="19">
+					<DataPath>Объект.СуммаДоходаКРаспределению</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма дохода</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СуммаДоходаКРаспределениюКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="СуммаДоходаКРаспределениюРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="КоличествоПаев" id="22">
+					<DataPath>Объект.КоличествоПаев</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КоличествоПаевКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="КоличествоПаевРасширеннаяПодсказка" id="24"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПлановаяДатаОплаты" id="28">
+			<DataPath>Объект.ПлановаяДатаОплаты</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПлановаяДатаОплатыКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ПлановаяДатаОплатыРасширеннаяПодсказка" id="30"/>
+		</InputField>
+		<Pages name="Страницы" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<Page name="ГруппаРаспределениеДохода" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение дохода</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаРаспределениеДоходаРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<Table name="РаспределениеДохода" id="47">
+							<Representation>List</Representation>
+							<Footer>true</Footer>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.РаспределениеДохода</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РаспределениеДоходаКонтекстноеМеню" id="48"/>
+							<AutoCommandBar name="РаспределениеДоходаКоманднаяПанель" id="49">
+								<ChildItems>
+									<Button name="ФормаЗаполнить" id="108">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РаспределитьДоход</CommandName>
+										<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="109"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="РаспределениеДоходаРасширеннаяПодсказка" id="50"/>
+							<SearchStringAddition name="РаспределениеДоходаСтрокаПоиска" id="51">
+								<AdditionSource>
+									<Item>РаспределениеДохода</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспределениеДоходаСтрокаПоискаКонтекстноеМеню" id="52"/>
+								<ExtendedTooltip name="РаспределениеДоходаСтрокаПоискаРасширеннаяПодсказка" id="53"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РаспределениеДоходаСостояниеПросмотра" id="54">
+								<AdditionSource>
+									<Item>РаспределениеДохода</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспределениеДоходаСостояниеПросмотраКонтекстноеМеню" id="55"/>
+								<ExtendedTooltip name="РаспределениеДоходаСостояниеПросмотраРасширеннаяПодсказка" id="56"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РаспределениеДоходаУправлениеПоиском" id="57">
+								<AdditionSource>
+									<Item>РаспределениеДохода</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РаспределениеДоходаУправлениеПоискомКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="РаспределениеДоходаУправлениеПоискомРасширеннаяПодсказка" id="59"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="РаспределениеДоходаНомерСтроки" id="60">
+									<DataPath>Объект.РаспределениеДохода.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РаспределениеДоходаНомерСтрокиКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="РаспределениеДоходаНомерСтрокиРасширеннаяПодсказка" id="62"/>
+								</LabelField>
+								<InputField name="РаспределениеДоходаПайщик" id="63">
+									<DataPath>Объект.РаспределениеДохода.Пайщик</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РаспределениеДоходаПайщикКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="РаспределениеДоходаПайщикРасширеннаяПодсказка" id="65"/>
+								</InputField>
+								<InputField name="РаспределениеДоходаПолучательДохода" id="66">
+									<DataPath>Объект.РаспределениеДохода.ПолучательДохода</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РаспределениеДоходаПолучательДоходаКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="РаспределениеДоходаПолучательДоходаРасширеннаяПодсказка" id="68"/>
+								</InputField>
+								<InputField name="РаспределениеДоходаКоличествоПаев" id="69">
+									<DataPath>Объект.РаспределениеДохода.КоличествоПаев</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>Объект.РаспределениеДохода.TotalКоличествоПаев</FooterDataPath>
+									<ContextMenu name="РаспределениеДоходаКоличествоПаевКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="РаспределениеДоходаКоличествоПаевРасширеннаяПодсказка" id="71"/>
+								</InputField>
+								<InputField name="РаспределениеДоходаСуммаДохода" id="72">
+									<DataPath>Объект.РаспределениеДохода.СуммаДохода</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>Объект.РаспределениеДохода.TotalСуммаДохода</FooterDataPath>
+									<ContextMenu name="РаспределениеДоходаСуммаДоходаКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="РаспределениеДоходаСуммаДоходаРасширеннаяПодсказка" id="74"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаНачислениеНДФЛ" id="75">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начисление НДФЛ</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаНачислениеНДФЛРасширеннаяПодсказка" id="76"/>
+					<ChildItems>
+						<Table name="НачислениеНДФЛ" id="77">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.НачислениеНДФЛ</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НачислениеНДФЛКонтекстноеМеню" id="78"/>
+							<AutoCommandBar name="НачислениеНДФЛКоманднаяПанель" id="79">
+								<ChildItems>
+									<Button name="НачислениеНДФЛНачислитьНДФЛ" id="110">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РассчитатьНДФЛ</CommandName>
+										<ExtendedTooltip name="НачислениеНДФЛНачислитьНДФЛРасширеннаяПодсказка" id="111"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="НачислениеНДФЛРасширеннаяПодсказка" id="80"/>
+							<SearchStringAddition name="НачислениеНДФЛСтрокаПоиска" id="81">
+								<AdditionSource>
+									<Item>НачислениеНДФЛ</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НачислениеНДФЛСтрокаПоискаКонтекстноеМеню" id="82"/>
+								<ExtendedTooltip name="НачислениеНДФЛСтрокаПоискаРасширеннаяПодсказка" id="83"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НачислениеНДФЛСостояниеПросмотра" id="84">
+								<AdditionSource>
+									<Item>НачислениеНДФЛ</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НачислениеНДФЛСостояниеПросмотраКонтекстноеМеню" id="85"/>
+								<ExtendedTooltip name="НачислениеНДФЛСостояниеПросмотраРасширеннаяПодсказка" id="86"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НачислениеНДФЛУправлениеПоиском" id="87">
+								<AdditionSource>
+									<Item>НачислениеНДФЛ</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НачислениеНДФЛУправлениеПоискомКонтекстноеМеню" id="88"/>
+								<ExtendedTooltip name="НачислениеНДФЛУправлениеПоискомРасширеннаяПодсказка" id="89"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="НачислениеНДФЛНомерСтроки" id="90">
+									<DataPath>Объект.НачислениеНДФЛ.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НачислениеНДФЛНомерСтрокиКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="НачислениеНДФЛНомерСтрокиРасширеннаяПодсказка" id="92"/>
+								</LabelField>
+								<InputField name="НачислениеНДФЛПолучательДохода" id="93">
+									<DataPath>Объект.НачислениеНДФЛ.ПолучательДохода</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НачислениеНДФЛПолучательДоходаКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="НачислениеНДФЛПолучательДоходаРасширеннаяПодсказка" id="95"/>
+								</InputField>
+								<InputField name="НачислениеНДФЛСуммаДохода" id="112">
+									<DataPath>Объект.НачислениеНДФЛ.СуммаДохода</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НачислениеНДФЛСуммаДоходаКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="НачислениеНДФЛСуммаДоходаРасширеннаяПодсказка" id="114"/>
+									<Events>
+										<Event name="OnChange">НачислениеНДФЛСуммаДоходаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="НачислениеНДФЛСтавкаНДФЛ" id="96">
+									<DataPath>Объект.НачислениеНДФЛ.СтавкаНДФЛ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НачислениеНДФЛСтавкаНДФЛКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="НачислениеНДФЛСтавкаНДФЛРасширеннаяПодсказка" id="98"/>
+									<Events>
+										<Event name="OnChange">НачислениеНДФЛСтавкаНДФЛПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="НачислениеНДФЛСуммаНДФЛ" id="99">
+									<DataPath>Объект.НачислениеНДФЛ.СуммаНДФЛ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НачислениеНДФЛСуммаНДФЛКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="НачислениеНДФЛСуммаНДФЛРасширеннаяПодсказка" id="101"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<LabelField name="Ответственный" id="31">
+			<DataPath>Объект.Ответственный</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="33"/>
+		</LabelField>
+		<InputField name="Комментарий" id="34">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="35"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="36"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РаспределениеДоходаПайщикам</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.НачислениеНДФЛ"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РаспределитьДоход" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить доход</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить доход</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РаспределитьДоход</Action>
+		</Command>
+		<Command name="РассчитатьНДФЛ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать НДФЛ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НачислитьНДФЛ</Action>
+		</Command>
+	</Commands>
+</Form>

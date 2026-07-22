@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockWholeInterface</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОтправитьПисьмо" id="80">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОтправитьПисьмо</CommandName>
+				<ExtendedTooltip name="ФормаОтправитьПисьмоРасширеннаяПодсказка" id="81"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="СчетВнутреннегоУчета" id="1">
+			<DataPath>СчетВнутреннегоУчета</DataPath>
+			<ContextMenu name="СчетВнутреннегоУчетаКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="СчетВнутреннегоУчетаРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">СчетВнутреннегоУчетаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТемаПисьма" id="62">
+			<DataPath>ТемаПисьма</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тема</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ТемаПисьмаКонтекстноеМеню" id="63"/>
+			<ExtendedTooltip name="ТемаПисьмаРасширеннаяПодсказка" id="64"/>
+		</InputField>
+		<InputField name="АдресОтправителя" id="51">
+			<DataPath>АдресОтправителя</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправитель</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="АдресОтправителяКонтекстноеМеню" id="52"/>
+			<ExtendedTooltip name="АдресОтправителяРасширеннаяПодсказка" id="53"/>
+			<Events>
+				<Event name="OnChange">АдресОтправителяПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="СписокПолучателей" id="77">
+			<DataPath>СписокПолучателей</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получатели</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="СписокПолучателейКонтекстноеМеню" id="78"/>
+			<ExtendedTooltip name="СписокПолучателейРасширеннаяПодсказка" id="79"/>
+		</InputField>
+		<FormattedDocumentField name="ТекстПисьма" id="70">
+			<DataPath>ТекстПисьма</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>None</TitleLocation>
+			<Height>5</Height>
+			<ContextMenu name="ТекстПисьмаКонтекстноеМеню" id="71"/>
+			<ExtendedTooltip name="ТекстПисьмаРасширеннаяПодсказка" id="72"/>
+		</FormattedDocumentField>
+		<UsualGroup name="ГруппаСписокОтчетов" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список отчетов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСписокОтчетовРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКаталогИПеремещение" id="82">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа каталог и перемещение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКаталогИПеремещениеРасширеннаяПодсказка" id="83"/>
+					<ChildItems>
+						<InputField name="Каталог" id="46">
+							<DataPath>Каталог</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="КаталогКонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="КаталогРасширеннаяПодсказка" id="48"/>
+							<Events>
+								<Event name="StartChoice">КаталогНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="ПереместитьВОтправленные" id="65">
+							<DataPath>ПереместитьВОтправленные</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПереместитьВОтправленныеКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="ПереместитьВОтправленныеРасширеннаяПодсказка" id="67"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="СписокОтчетов" id="23">
+					<Representation>List</Representation>
+					<Width>95</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<HeightInTableRows>10</HeightInTableRows>
+					<AutoAddIncomplete>false</AutoAddIncomplete>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>СписокОтчетов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вложения</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СписокОтчетовКонтекстноеМеню" id="24"/>
+					<AutoCommandBar name="СписокОтчетовКоманднаяПанель" id="25">
+						<ChildItems>
+							<Button name="СписокОтчетовСписокОтчетовУстановитьВсе" id="58">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СписокОтчетовУстановитьВсе</CommandName>
+								<ExtendedTooltip name="СписокОтчетовСписокОтчетовУстановитьВсеРасширеннаяПодсказка" id="59"/>
+							</Button>
+							<Button name="СписокОтчетовСписокОтчетовСнятьВсе" id="60">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СписокОтчетовСнятьВсе</CommandName>
+								<ExtendedTooltip name="СписокОтчетовСписокОтчетовСнятьВсеРасширеннаяПодсказка" id="61"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокОтчетовРасширеннаяПодсказка" id="26"/>
+					<SearchStringAddition name="СписокОтчетовСтрокаПоиска" id="27">
+						<AdditionSource>
+							<Item>СписокОтчетов</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОтчетовСтрокаПоискаКонтекстноеМеню" id="28"/>
+						<ExtendedTooltip name="СписокОтчетовСтрокаПоискаРасширеннаяПодсказка" id="29"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокОтчетовСостояниеПросмотра" id="30">
+						<AdditionSource>
+							<Item>СписокОтчетов</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОтчетовСостояниеПросмотраКонтекстноеМеню" id="31"/>
+						<ExtendedTooltip name="СписокОтчетовСостояниеПросмотраРасширеннаяПодсказка" id="32"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокОтчетовУправлениеПоиском" id="33">
+						<AdditionSource>
+							<Item>СписокОтчетов</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОтчетовУправлениеПоискомКонтекстноеМеню" id="34"/>
+						<ExtendedTooltip name="СписокОтчетовУправлениеПоискомРасширеннаяПодсказка" id="35"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeAddRow">СписокОтчетовПередНачаломДобавления</Event>
+					</Events>
+					<ChildItems>
+						<CheckBoxField name="СписокОтчетовОтправить" id="36">
+							<DataPath>СписокОтчетов.Отправить</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СписокОтчетовОтправитьКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="СписокОтчетовОтправитьРасширеннаяПодсказка" id="38"/>
+						</CheckBoxField>
+						<InputField name="СписокОтчетовОтчет" id="39">
+							<DataPath>СписокОтчетов.Отчет</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="СписокОтчетовОтчетКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="СписокОтчетовОтчетРасширеннаяПодсказка" id="41"/>
+							<Events>
+								<Event name="OnChange">СписокОтчетовОтчетПриИзменении</Event>
+								<Event name="StartChoice">СписокОтчетовОтчетНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокОтчетов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Columns>
+				<Column name="Отправить" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправить</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Отчет" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПолноеИмяФайла" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя файла</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СчетВнутреннегоУчета" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет внутреннего учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Каталог" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="АдресОтправителя" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес отправителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ТемаПисьма" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тема письма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПереместитьВОтправленные" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переместить в "Отправленные"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстПисьма" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст письма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:fd="http://v8.1c.ru/8.2/data/formatted-document">fd:FormattedDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ГруппаОтчетов" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Отчеты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокПолучателей" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список получателей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОтправитьПисьмо" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить письмо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить письмо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтправитьПисьмо</Action>
+		</Command>
+		<Command name="СписокОтчетовУстановитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список отчетов установить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокОтчетовУстановитьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СписокОтчетовСнятьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список отчетов снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокОтчетовСнятьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СписокПолучателейУстановитьВсе" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список получателей установить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокПолучателейУстановитьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СписокПолучателейСнятьВсе" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список получателей снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокПолучателейСнятьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="СчетДоверительногоУправления">
+			<Type>
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ГруппаОтчетов">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Отчеты</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

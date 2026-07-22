@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ЗадолженностиПоНКД</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Портфель</dataPath>
+			<field>Портфель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Основание</dataPath>
+			<field>Основание</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦеннаяБумага</dataPath>
+			<field>ЦеннаяБумага</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ценная бумага</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗадолженности</dataPath>
+			<field>ТипЗадолженности</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвестиционныйСчет</dataPath>
+			<field>ИнвестиционныйСчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВыплатыПлан</dataPath>
+			<field>ДатаВыплатыПлан</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата выплаты план</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВыплатыФакт</dataPath>
+			<field>ДатаВыплатыФакт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата выплаты факт</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Аванс</dataPath>
+			<field>Аванс</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗадолженности</dataPath>
+			<field>СуммаЗадолженности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма задолженности</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗадолженности</dataPath>
+			<field>ВидЗадолженности</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Облигация</dataPath>
+			<field>Облигация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДефолта</dataPath>
+			<field>ТипДефолта</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ДефолтыПоОблигациямСрезПоследних.Облигация КАК Облигация,
+	ДефолтыПоОблигациямСрезПоследних.СтатусДефолта КАК СтатусДефолта
+ПОМЕСТИТЬ _ДефолтныеБумаги
+ИЗ
+	РегистрСведений.ДефолтыПоОблигациям.СрезПоследних(&amp;Период, СтатусДефолта В (ЗНАЧЕНИЕ(Перечисление.СтатусыДефолтаПоОблигациям.Дефолт), ЗНАЧЕНИЕ(Перечисление.СтатусыДефолтаПоОблигациям.ТехническийДефолт))) КАК ДефолтыПоОблигациямСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗадолженностиПоДенежнымСредствамОстатки.ВидЗадолженности КАК ВидЗадолженности,
+	ЗадолженностиПоДенежнымСредствамОстатки.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	ЗадолженностиПоДенежнымСредствамОстатки.Валюта КАК Валюта,
+	ЗадолженностиПоДенежнымСредствамОстатки.Контрагент КАК Контрагент,
+	ЗадолженностиПоДенежнымСредствамОстатки.СуммаКупонаОстаток КАК СуммаЗадолженности,
+	ЗадолженностиПоДенежнымСредствамОстатки.Основание.Дата КАК ДатаДокумента,
+	ВЫБОР
+		КОГДА ЗадолженностиПоДенежнымСредствамОстатки.Основание ССЫЛКА Документ.ПогашениеКупона
+			ТОГДА ВЫРАЗИТЬ(ЗадолженностиПоДенежнымСредствамОстатки.Основание КАК Документ.ПогашениеКупона).Облигация
+		КОГДА ЗадолженностиПоДенежнымСредствамОстатки.Основание ССЫЛКА Документ.ПогашениеЦеннойБумаги
+			ТОГДА ВЫРАЗИТЬ(ЗадолженностиПоДенежнымСредствамОстатки.Основание КАК Документ.ПогашениеЦеннойБумаги).ЦеннаяБумага
+		КОГДА ЗадолженностиПоДенежнымСредствамОстатки.Основание ССЫЛКА Документ.ВводЦенныхБумаг
+			ТОГДА ВводЦенныхБумагЦенныеБумаги.ЦеннаяБумага
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.Облигации.ПустаяСсылка)
+	КОНЕЦ КАК ЦеннаяБумага,
+	ЗадолженностиПоДенежнымСредствамОстатки.Основание КАК Основание
+ПОМЕСТИТЬ _Купоны
+ИЗ
+	РегистрНакопления.ЗадолженностиПоДенежнымСредствам.Остатки(
+			&amp;Период,
+			Организация = &amp;Организация
+				И ВидЗадолженности В (ЗНАЧЕНИЕ(Справочник.ВидыЗадолженности.ПоПогашениюКупона), ЗНАЧЕНИЕ(Справочник.ВидыЗадолженности.ПоПоследнемуПогашениюКупона))) КАК ЗадолженностиПоДенежнымСредствамОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ВводЦенныхБумаг.ЦенныеБумаги КАК ВводЦенныхБумагЦенныеБумаги
+		ПО (ВводЦенныхБумагЦенныеБумаги.Ссылка = ЗадолженностиПоДенежнымСредствамОстатки.Основание)
+			И (ВводЦенныхБумагЦенныеБумаги.ДебиторскаяЗадолженностьКупон &gt; 0)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_Купоны.ВидЗадолженности КАК ВидЗадолженности,
+	_Купоны.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	_Купоны.Валюта КАК Валюта,
+	_Купоны.СуммаЗадолженности КАК СуммаЗадолженности,
+	ВЫБОР
+		КОГДА _Купоны.Контрагент = ЗНАЧЕНИЕ(Справочник.ЮрФизЛица.ПустаяСсылка)
+			ТОГДА _Купоны.ЦеннаяБумага.Эмитент
+		ИНАЧЕ _Купоны.Контрагент
+	КОНЕЦ КАК Контрагент,
+	_Купоны.ЦеннаяБумага КАК ЦеннаяБумага,
+	ВЫБОР
+		КОГДА КупонныйДоходПоОблигациям.ДатаВыплатыПлан ЕСТЬ NULL
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Купоны.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		КОГДА КупонныйДоходПоОблигациям.ДатаВыплатыПлан = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Купоны.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		ИНАЧЕ КупонныйДоходПоОблигациям.ДатаВыплатыПлан
+	КОНЕЦ КАК ДатаВыплатыПлан,
+	ВЫБОР
+		КОГДА КупонныйДоходПоОблигациям.ДатаВыплатыФакт ЕСТЬ NULL
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Купоны.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		КОГДА КупонныйДоходПоОблигациям.ДатаВыплатыФакт = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Купоны.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		ИНАЧЕ ДОБАВИТЬКДАТЕ(КупонныйДоходПоОблигациям.ДатаВыплатыФакт, ДЕНЬ, 4)
+	КОНЕЦ КАК ДатаВыплатыФакт,
+	_Купоны.Основание КАК Основание
+ПОМЕСТИТЬ _КупоныСДатами
+ИЗ
+	_Купоны КАК _Купоны
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КупонныйДоходПоОблигациям КАК КупонныйДоходПоОблигациям
+		ПО _Купоны.ЦеннаяБумага = КупонныйДоходПоОблигациям.Облигация
+			И (НАЧАЛОПЕРИОДА(_Купоны.ДатаДокумента, ДЕНЬ) = КупонныйДоходПоОблигациям.ДатаОкончанияКупона)
+ГДЕ
+	НЕ _Купоны.ЦеннаяБумага В
+				(ВЫБРАТЬ
+					_ДефолтныеБумаги.Облигация
+				ИЗ
+					_ДефолтныеБумаги)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗадолженностиПоДенежнымСредствамОстатки.ВидЗадолженности КАК ВидЗадолженности,
+	ЗадолженностиПоДенежнымСредствамОстатки.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	ЗадолженностиПоДенежнымСредствамОстатки.Валюта КАК Валюта,
+	ЗадолженностиПоДенежнымСредствамОстатки.Контрагент КАК Контрагент,
+	ЗадолженностиПоДенежнымСредствамОстатки.СуммаОстаток КАК СуммаЗадолженности,
+	ЗадолженностиПоДенежнымСредствамОстатки.Основание.Дата КАК ДатаДокумента,
+	ВЫБОР
+		КОГДА ЗадолженностиПоДенежнымСредствамОстатки.Основание ССЫЛКА Документ.ПогашениеЦеннойБумаги
+			ТОГДА ВЫРАЗИТЬ(ЗадолженностиПоДенежнымСредствамОстатки.Основание КАК Документ.ПогашениеЦеннойБумаги).ЦеннаяБумага
+		КОГДА ЗадолженностиПоДенежнымСредствамОстатки.Основание ССЫЛКА Документ.ВводЦенныхБумаг
+			ТОГДА ВводЦенныхБумагЦенныеБумаги.ЦеннаяБумага
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.Облигации.ПустаяСсылка)
+	КОНЕЦ КАК ЦеннаяБумага,
+	ЗадолженностиПоДенежнымСредствамОстатки.Основание КАК Основание
+ПОМЕСТИТЬ _Тело
+ИЗ
+	РегистрНакопления.ЗадолженностиПоДенежнымСредствам.Остатки(
+			&amp;Период,
+			Организация = &amp;Организация
+				И ВидЗадолженности В (ЗНАЧЕНИЕ(Справочник.ВидыЗадолженности.ПоПогашениюОблигации), ЗНАЧЕНИЕ(Справочник.ВидыЗадолженности.ПоПоследнемуПогашениюОблигации))) КАК ЗадолженностиПоДенежнымСредствамОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ВводЦенныхБумаг.ЦенныеБумаги КАК ВводЦенныхБумагЦенныеБумаги
+		ПО (ВводЦенныхБумагЦенныеБумаги.Ссылка = ЗадолженностиПоДенежнымСредствамОстатки.Основание)
+			И (ВводЦенныхБумагЦенныеБумаги.ДебиторскаяЗадолженность &gt; 0)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_Тело.ВидЗадолженности КАК ВидЗадолженности,
+	_Тело.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	_Тело.Валюта КАК Валюта,
+	_Тело.СуммаЗадолженности КАК СуммаЗадолженности,
+	ВЫБОР
+		КОГДА _Тело.Контрагент = ЗНАЧЕНИЕ(Справочник.ЮрФизЛица.ПустаяСсылка)
+			ТОГДА _Тело.ЦеннаяБумага.Эмитент
+		ИНАЧЕ _Тело.Контрагент
+	КОНЕЦ КАК Контрагент,
+	_Тело.ЦеннаяБумага КАК ЦеннаяБумага,
+	ВЫБОР
+		КОГДА НоминалыЦенныхБумаг.ДатаВыплатыПлан ЕСТЬ NULL
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Тело.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		КОГДА НоминалыЦенныхБумаг.ДатаВыплатыПлан = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Тело.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		ИНАЧЕ НоминалыЦенныхБумаг.ДатаВыплатыПлан
+	КОНЕЦ КАК ДатаВыплатыПлан,
+	ВЫБОР
+		КОГДА НоминалыЦенныхБумаг.ДатаВыплатыФакт ЕСТЬ NULL
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Тело.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		КОГДА НоминалыЦенныхБумаг.ДатаВыплатыФакт = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(_Тело.ДатаДокумента, ДЕНЬ), ДЕНЬ, 4)
+		ИНАЧЕ ДОБАВИТЬКДАТЕ(НоминалыЦенныхБумаг.ДатаВыплатыФакт, ДЕНЬ, 4)
+	КОНЕЦ КАК ДатаВыплатыФакт,
+	_Тело.Основание КАК Основание
+ПОМЕСТИТЬ _ТелоСДатами
+ИЗ
+	_Тело КАК _Тело
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НоминалыЦенныхБумаг КАК НоминалыЦенныхБумаг
+		ПО _Тело.ЦеннаяБумага = НоминалыЦенныхБумаг.ЦеннаяБумага
+			И (НАЧАЛОПЕРИОДА(_Тело.ДатаДокумента, ДЕНЬ) = НоминалыЦенныхБумаг.Период)
+ГДЕ
+	НЕ _Тело.ЦеннаяБумага В
+				(ВЫБРАТЬ
+					_ДефолтныеБумаги.Облигация
+				ИЗ
+					_ДефолтныеБумаги)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_ТелоСДатами.ВидЗадолженности КАК ВидЗадолженности,
+	_ТелоСДатами.СчетДоверительногоУправления КАК СчетДоверительногоУправления,
+	_ТелоСДатами.Валюта КАК Валюта,
+	_ТелоСДатами.СуммаЗадолженности КАК СуммаЗадолженности,
+	_ТелоСДатами.Контрагент КАК Контрагент,
+	_ТелоСДатами.ЦеннаяБумага КАК ЦеннаяБумага,
+	_ТелоСДатами.ДатаВыплатыПлан КАК ДатаВыплатыПлан,
+	_ТелоСДатами.ДатаВыплатыФакт КАК ДатаВыплатыФакт,
+	_ТелоСДатами.Основание КАК Основание
+ИЗ
+	_ТелоСДатами КАК _ТелоСДатами
+ГДЕ
+	_ТелоСДатами.ДатаВыплатыФакт &lt; НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	_КупоныСДатами.ВидЗадолженности,
+	_КупоныСДатами.СчетДоверительногоУправления,
+	_КупоныСДатами.Валюта,
+	_КупоныСДатами.СуммаЗадолженности,
+	_КупоныСДатами.Контрагент,
+	_КупоныСДатами.ЦеннаяБумага,
+	_КупоныСДатами.ДатаВыплатыПлан,
+	_КупоныСДатами.ДатаВыплатыФакт,
+	_КупоныСДатами.Основание
+ИЗ
+	_КупоныСДатами КАК _КупоныСДатами
+ГДЕ
+	_КупоныСДатами.ДатаВыплатыФакт &lt; НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ)</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗадолженности</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Валюта</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидЗадолженности</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Основание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаВыплатыПлан</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаВыплатыФакт</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубъектАналитики</dataPath>
+			<field>СубъектАналитики</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПоказателя</dataPath>
+			<field>ВидПоказателя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВнебиржевыеСделки</dataPath>
+			<field>ВнебиржевыеСделки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внебиржевые сделки (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СделкиРПС</dataPath>
+			<field>СделкиРПС</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделки РПС (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДвадцатьПроцентовОтАктивов</dataPath>
+			<field>ДвадцатьПроцентовОтАктивов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>20% от активов (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АктивыНаНачалоПериода</dataPath>
+			<field>АктивыНаНачалоПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активы на начало периода (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СвободныйЛимит</dataPath>
+			<field>СвободныйЛимит</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свободный лимит (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДоговора</dataPath>
+			<field>НомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодКлиента</dataPath>
+			<field>КодКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Брокер</dataPath>
+			<field>Брокер</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СчетаДоверительногоУправления.Ссылка КАК СДУ,
+	ЕСТЬNULL(КодыСДУУГПБ.Код, ЕСТЬNULL(КодыСДУБКРегион.Код, "")) КАК КодКлиента,
+	СчетаДоверительногоУправления.НомерДоговора КАК НомерДоговора
+ПОМЕСТИТЬ _СДУ
+ИЗ
+	Справочник.СчетаДоверительногоУправления КАК СчетаДоверительногоУправления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыСчетовДоверительногоУправленияУБрокеров.СрезПоследних(, Брокер = &amp;ГПБ) КАК КодыСДУУГПБ
+		ПО СчетаДоверительногоУправления.Ссылка = КодыСДУУГПБ.СчетДоверительногоУправления
+			И СчетаДоверительногоУправления.Организация = КодыСДУУГПБ.Организация
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыСчетовДоверительногоУправленияУБрокеров.СрезПоследних(, Брокер = &amp;БКРегион) КАК КодыСДУБКРегион
+		ПО СчетаДоверительногоУправления.Ссылка = КодыСДУБКРегион.СчетДоверительногоУправления
+			И СчетаДоверительногоУправления.Организация = КодыСДУБКРегион.Организация
+ГДЕ
+	(СчетаДоверительногоУправления.Ссылка В (&amp;СчетаДоверительногоУправления)
+			ИЛИ СчетаДоверительногоУправления.ВидДоговораДоверительногоУправления В (&amp;ВидыДоговоровДоверительногоУправления))
+	И (СчетаДоверительногоУправления.ДатаРасторжения = ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ СчетаДоверительногоУправления.ДатаРасторжения &gt;= &amp;НачалоПериода)
+	И СчетаДоверительногоУправления.Организация = &amp;Организация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ФинансовыеПоказателиСрезПоследних.СубъектАналитики КАК СДУ,
+	ФинансовыеПоказателиСрезПоследних.Значение КАК АктивыНаНачалоПериода,
+	ФинансовыеПоказателиСрезПоследних.Значение * 0.2 КАК ДвадцатьПроцентовОтАктивов
+ПОМЕСТИТЬ _АктивыСДУ
+ИЗ
+	РегистрСведений.ФинансовыеПоказатели.СрезПоследних(
+			&amp;НачалоПериода,
+			Организация = &amp;Организация
+				И ВидПоказателя = ЗНАЧЕНИЕ(Справочник.ВидыФинансовыхПоказателей.СтоимостьЧистыхАктивов_Рынок)
+				И СубъектАналитики ССЫЛКА Справочник.СчетаДоверительногоУправления
+				И СубъектАналитики В
+					(ВЫБРАТЬ
+						_СДУ.СДУ КАК СДУ
+					ИЗ
+						_СДУ КАК _СДУ)) КАК ФинансовыеПоказателиСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОперацииСЦеннымиБумагами.СчетДоверительногоУправления КАК СДУ,
+	ОперацииСЦеннымиБумагами.Валюта КАК Валюта,
+	ВЫБОР
+		КОГДА ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.Сделка
+				И ОперацииСЦеннымиБумагами.Операция.РежимПереговорныхСделок
+			ТОГДА 1
+		ИНАЧЕ 2
+	КОНЕЦ КАК Тип,
+	СУММА(ВЫБОР
+			КОГДА &amp;УчитыватьНКДВСуммеСделок
+				ТОГДА ОперацииСЦеннымиБумагами.Сумма + ОперацииСЦеннымиБумагами.СуммаКупона
+			ИНАЧЕ ОперацииСЦеннымиБумагами.Сумма
+		КОНЕЦ) КАК Сумма,
+	НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.ДатаОперации, ДЕНЬ) КАК ДатаКурса
+ПОМЕСТИТЬ _СуммыСделок
+ИЗ
+	РегистрСведений.ОперацииСЦеннымиБумагами КАК ОперацииСЦеннымиБумагами
+ГДЕ
+	ОперацииСЦеннымиБумагами.Организация = &amp;Организация
+	И ОперацииСЦеннымиБумагами.СчетДоверительногоУправления В
+			(ВЫБРАТЬ
+				_СДУ.СДУ КАК СДУ
+			ИЗ
+				_СДУ КАК _СДУ)
+	И (ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.Сделка
+			ИЛИ ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.СделкаРЕПО)
+	И ВЫБОР
+			КОГДА ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.Сделка
+				ТОГДА ОперацииСЦеннымиБумагами.Операция.РежимПереговорныхСделок
+						ИЛИ ОперацииСЦеннымиБумагами.Операция.МестоХранения В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.МестаХранения.ВнебиржевойРынок))
+			ИНАЧЕ ОперацииСЦеннымиБумагами.Операция.МестоХранения В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.МестаХранения.ВнебиржевойРынок))
+		КОНЕЦ
+	И ОперацииСЦеннымиБумагами.ДатаОперации МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	ОперацииСЦеннымиБумагами.СчетДоверительногоУправления,
+	ОперацииСЦеннымиБумагами.Валюта,
+	ВЫБОР
+		КОГДА ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.Сделка
+				И ОперацииСЦеннымиБумагами.Операция.РежимПереговорныхСделок
+			ТОГДА 1
+		ИНАЧЕ 2
+	КОНЕЦ,
+	НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.ДатаОперации, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КурсыВалют.Период КАК Период,
+	КурсыВалют.Валюта КАК Валюта,
+	КурсыВалют.Курс КАК Курс,
+	КурсыВалют.Кратность КАК Кратность
+ПОМЕСТИТЬ _КурсыВалют
+ИЗ
+	РегистрСведений.КурсыВалют КАК КурсыВалют
+ГДЕ
+	КурсыВалют.Период В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				_СуммыСделок.ДатаКурса КАК ДатаКурса
+			ИЗ
+				_СуммыСделок КАК _СуммыСделок)
+	И КурсыВалют.Валюта В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				_СуммыСделок.Валюта КАК Валюта
+			ИЗ
+				_СуммыСделок КАК _СуммыСделок)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_СуммыСделок.СДУ КАК СДУ,
+	СУММА(ВЫБОР
+			КОГДА _СуммыСделок.Тип = 1
+				ТОГДА ВЫБОР
+						КОГДА _КурсыВалют.Кратность = 0
+							ТОГДА 0
+						ИНАЧЕ _СуммыСделок.Сумма * _КурсыВалют.Курс / _КурсыВалют.Кратность
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК СделкиРПС,
+	СУММА(ВЫБОР
+			КОГДА _СуммыСделок.Тип = 2
+				ТОГДА ВЫБОР
+						КОГДА _КурсыВалют.Кратность = 0
+							ТОГДА 0
+						ИНАЧЕ _СуммыСделок.Сумма * _КурсыВалют.Курс / _КурсыВалют.Кратность
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ВнебиржевыеСделки
+ПОМЕСТИТЬ _СуммыСделокВРублях
+ИЗ
+	_СуммыСделок КАК _СуммыСделок
+		ЛЕВОЕ СОЕДИНЕНИЕ _КурсыВалют КАК _КурсыВалют
+		ПО _СуммыСделок.Валюта = _КурсыВалют.Валюта
+			И _СуммыСделок.ДатаКурса = _КурсыВалют.Период
+
+СГРУППИРОВАТЬ ПО
+	_СуммыСделок.СДУ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КлиентыДоверительногоУправленияСрезПоследних.Клиент КАК Клиент,
+	_СДУ.СДУ КАК СчетДоверительногоУправления,
+	_СДУ.КодКлиента КАК КодКлиента,
+	_СДУ.НомерДоговора КАК НомерДоговора,
+	ЕСТЬNULL(_АктивыСДУ.АктивыНаНачалоПериода, 0) КАК АктивыНаНачалоПериода,
+	ЕСТЬNULL(_АктивыСДУ.ДвадцатьПроцентовОтАктивов, 0) КАК ДвадцатьПроцентовОтАктивов,
+	ЕСТЬNULL(_СуммыСделокВРублях.СделкиРПС, 0) КАК СделкиРПС,
+	ЕСТЬNULL(_СуммыСделокВРублях.ВнебиржевыеСделки, 0) КАК ВнебиржевыеСделки,
+	ЕСТЬNULL(_АктивыСДУ.ДвадцатьПроцентовОтАктивов, 0) - ЕСТЬNULL(_СуммыСделокВРублях.СделкиРПС, 0) - ЕСТЬNULL(_СуммыСделокВРублях.ВнебиржевыеСделки, 0) КАК СвободныйЛимит
+ИЗ
+	_СДУ КАК _СДУ
+		ЛЕВОЕ СОЕДИНЕНИЕ _АктивыСДУ КАК _АктивыСДУ
+		ПО _СДУ.СДУ = _АктивыСДУ.СДУ
+		ЛЕВОЕ СОЕДИНЕНИЕ _СуммыСделокВРублях КАК _СуммыСделокВРублях
+		ПО _СДУ.СДУ = _СуммыСделокВРублях.СДУ
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыДоверительногоУправления.СрезПоследних КАК КлиентыДоверительногоУправленияСрезПоследних
+		ПО _СДУ.СДУ = КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаИсполнения</dataPath>
+			<field>ДатаИсполнения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата исполнения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСделки</dataPath>
+			<field>ДатаСделки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата сделки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦеннаяБумага</dataPath>
+			<field>ЦеннаяБумага</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>ЦеннаяБумагаНаименование</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СДУ</dataPath>
+			<field>СДУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СДУ</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦБ</dataPath>
+			<field>ВидЦБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид ЦБ</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СДУНомерДоговора</dataPath>
+			<field>СДУНомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДоверительногоУправления</dataPath>
+			<field>СчетДоверительногоУправления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Брокер</dataPath>
+			<field>Брокер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СДУКодКлиента</dataPath>
+			<field>СДУКодКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КлиентДУ</dataPath>
+			<field>КлиентДУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент ДУ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦеннаяБумагаНаименование</dataPath>
+			<field>ЦеннаяБумагаНаименование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ценная бумага наименование</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Язык</dataPath>
+			<field>Язык</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрФизЛицо</dataPath>
+			<field>ЮрФизЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидКода</dataPath>
+			<field>ВидКода</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПаевойИнвестиционныйФонд</dataPath>
+			<field>ПаевойИнвестиционныйФонд</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОперацииСЦеннымиБумагами.СчетДоверительногоУправления КАК СДУ,
+	ОперацииСЦеннымиБумагами.Валюта КАК Валюта,
+	НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.ДатаОперации, ДЕНЬ) КАК ДатаСделки,
+	ОперацииСЦеннымиБумагами.ЦеннаяБумага КАК ЦеннаяБумага,
+	ОперацииСЦеннымиБумагами.Рынок КАК ВидЦБ,
+	СУММА(ВЫБОР
+			КОГДА &amp;УчитыватьНКДВСуммеСделок
+				ТОГДА ОперацииСЦеннымиБумагами.Сумма + ОперацииСЦеннымиБумагами.СуммаКупона
+			ИНАЧЕ ОперацииСЦеннымиБумагами.Сумма
+		КОНЕЦ) КАК Сумма,
+	ВЫБОР
+		КОГДА ОперацииСЦеннымиБумагами.Операция.РаздельноеИсполнение
+			ТОГДА НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.Операция.ДатаПоставки, ДЕНЬ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.ДатаОперации, ДЕНЬ)
+	КОНЕЦ КАК ДатаИсполнения
+ПОМЕСТИТЬ _ДанныеСделок
+ИЗ
+	РегистрСведений.ОперацииСЦеннымиБумагами КАК ОперацииСЦеннымиБумагами
+ГДЕ
+	ОперацииСЦеннымиБумагами.Организация = &amp;Организация
+	И (ОперацииСЦеннымиБумагами.СчетДоверительногоУправления В (&amp;СчетаДоверительногоУправления)
+			ИЛИ ОперацииСЦеннымиБумагами.СчетДоверительногоУправления.ВидДоговораДоверительногоУправления В (&amp;ВидыДоговоровДоверительногоУправления))
+	И (ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.Сделка
+			ИЛИ ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.СделкаРЕПО)
+	И ВЫБОР
+			КОГДА ОперацииСЦеннымиБумагами.Операция ССЫЛКА Документ.Сделка
+				ТОГДА ОперацииСЦеннымиБумагами.Операция.РежимПереговорныхСделок
+						ИЛИ ОперацииСЦеннымиБумагами.Операция.МестоХранения В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.МестаХранения.ВнебиржевойРынок))
+			ИНАЧЕ ОперацииСЦеннымиБумагами.Операция.МестоХранения В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.МестаХранения.ВнебиржевойРынок))
+		КОНЕЦ
+	И ОперацииСЦеннымиБумагами.ДатаОперации МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	ОперацииСЦеннымиБумагами.СчетДоверительногоУправления,
+	ОперацииСЦеннымиБумагами.Валюта,
+	ОперацииСЦеннымиБумагами.ЦеннаяБумага,
+	НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.ДатаОперации, ДЕНЬ),
+	ВЫБОР
+		КОГДА ОперацииСЦеннымиБумагами.Операция.РаздельноеИсполнение
+			ТОГДА НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.Операция.ДатаПоставки, ДЕНЬ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(ОперацииСЦеннымиБумагами.ДатаОперации, ДЕНЬ)
+	КОНЕЦ,
+	ОперацииСЦеннымиБумагами.Рынок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КурсыВалют.Период КАК Период,
+	КурсыВалют.Валюта КАК Валюта,
+	КурсыВалют.Курс КАК Курс,
+	КурсыВалют.Кратность КАК Кратность
+ПОМЕСТИТЬ _КурсыВалют
+ИЗ
+	РегистрСведений.КурсыВалют КАК КурсыВалют
+ГДЕ
+	КурсыВалют.Валюта В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				_ДанныеСделок.Валюта КАК Валюта
+			ИЗ
+				_ДанныеСделок КАК _ДанныеСделок)
+	И КурсыВалют.Период В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				_ДанныеСделок.ДатаСделки КАК ДатаСделки
+			ИЗ
+				_ДанныеСделок КАК _ДанныеСделок)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КлиентыДоверительногоУправленияСрезПоследних.Клиент КАК КлиентДУ,
+	_ДанныеСделок.СДУ КАК СДУ,
+	ЕСТЬNULL(КодыСДУГПБ.Код, ЕСТЬNULL(КодыСДУБКРегион.Код, "")) КАК СДУКодКлиента,
+	_ДанныеСделок.СДУ.НомерДоговора КАК СДУНомерДоговора,
+	_ДанныеСделок.ДатаСделки КАК ДатаСделки,
+	_ДанныеСделок.ЦеннаяБумага КАК ЦеннаяБумага,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Акции)
+			ТОГДА "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Акции).Эмитент.Наименование) + ", " + ВЫБОР
+					КОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Акции).ГосударственныйРегистрационныйНомер &lt;&gt; ""
+						ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Акции).ГосударственныйРегистрационныйНомер
+					ИНАЧЕ ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+				КОНЕЦ + ", " + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Акции).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Векселя)
+			ТОГДА "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Векселя).Эмитент.Наименование) + ", " + ВЫБОР
+					КОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Векселя).Номер &lt;&gt; ""
+						ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Векселя).Номер
+					ИНАЧЕ ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+				КОНЕЦ + ", " + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Векселя).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.ДепозитарныеРасписки)
+			ТОГДА "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ДепозитарныеРасписки).Эмитент.Наименование) + ", " + ВЫБОР
+					КОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ДепозитарныеРасписки).РегистрационныйНомер &lt;&gt; ""
+						ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ДепозитарныеРасписки).РегистрационныйНомер
+					ИНАЧЕ ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+				КОНЕЦ + ", " + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ДепозитарныеРасписки).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Доли)
+			ТОГДА "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Доли).ЮрЛицо.Наименование) + ", " + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Доли).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Закладные)
+			ТОГДА  "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Закладные).Банк.ЮрФизЛицо.Наименование) + ", " + ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.ИпотечныеСертификатыУчастия)
+			ТОГДА "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ИпотечныеСертификатыУчастия).Эмитент.Наименование) + ", " + ВЫБОР
+					КОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ИпотечныеСертификатыУчастия).ГосударственныйРегистрационныйНомер &lt;&gt; ""
+						ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ИпотечныеСертификатыУчастия).ГосударственныйРегистрационныйНомер
+					ИНАЧЕ ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+				КОНЕЦ + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ИпотечныеСертификатыУчастия).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Облигации)
+			ТОГДА "" + ЕСТЬNULL(РеквизитыЮридическихЛицСрезПоследних.СокращенноеНаименование, ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Облигации).Эмитент.Наименование) + ", " + ВЫБОР
+					КОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Облигации).ГосударственныйРегистрационныйНомер &lt;&gt; ""
+						ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Облигации).ГосударственныйРегистрационныйНомер
+					ИНАЧЕ ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+				КОНЕЦ + ", " + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Облигации).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Паи)
+			ТОГДА "" + РеквизитыПИФСрезПоследних.КраткоеНаименованиеФонда + ", " + ВЫБОР
+					КОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Паи).ГосударственныйРегистрационныйНомер &lt;&gt; ""
+						ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Паи).ГосударственныйРегистрационныйНомер
+					ИНАЧЕ ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+				КОНЕЦ + ", " + ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Паи).ВалютаНоминала.Наименование
+		КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.ПроизводныеФинансовыеИнструменты)
+			ТОГДА "" + ЕСТЬNULL(КодыВТорговыхСистемахСрезПоследнихISIN.Код, КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Код)
+		ИНАЧЕ _ДанныеСделок.ЦеннаяБумага.Наименование
+	КОНЕЦ КАК ЦеннаяБумагаНаименование,
+	_ДанныеСделок.ВидЦБ КАК ВидЦБ,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(_КурсыВалют.Кратность, 0) = 0
+			ТОГДА 0
+		ИНАЧЕ _ДанныеСделок.Сумма * _КурсыВалют.Курс / _КурсыВалют.Кратность
+	КОНЕЦ КАК Сумма,
+	_ДанныеСделок.ДатаИсполнения КАК ДатаИсполнения
+ИЗ
+	_ДанныеСделок КАК _ДанныеСделок
+		ЛЕВОЕ СОЕДИНЕНИЕ _КурсыВалют КАК _КурсыВалют
+		ПО _ДанныеСделок.Валюта = _КурсыВалют.Валюта
+			И _ДанныеСделок.ДатаСделки = _КурсыВалют.Период
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыСчетовДоверительногоУправленияУБрокеров.СрезПоследних(, Брокер = &amp;ГПБ) КАК КодыСДУГПБ
+		ПО _ДанныеСделок.СДУ.Организация = КодыСДУГПБ.Организация
+			И _ДанныеСделок.СДУ = КодыСДУГПБ.СчетДоверительногоУправления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыСчетовДоверительногоУправленияУБрокеров.СрезПоследних(, Брокер = &amp;БКРегион) КАК КодыСДУБКРегион
+		ПО _ДанныеСделок.СДУ.Организация = КодыСДУБКРегион.Организация
+			И _ДанныеСделок.СДУ = КодыСДУБКРегион.СчетДоверительногоУправления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыДоверительногоУправления.СрезПоследних КАК КлиентыДоверительногоУправленияСрезПоследних
+		ПО _ДанныеСделок.СДУ = КлиентыДоверительногоУправленияСрезПоследних.СчетДоверительногоУправления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛиц.СрезПоследних(
+				&amp;Период,
+				Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)
+					И Подразделение = ЗНАЧЕНИЕ(Справочник.Подразделения.ГруппаКомпаний)) КАК РеквизитыЮридическихЛицСрезПоследних
+		ПО (ВЫБОР
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Акции)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Акции).Эмитент.ЮрФизЛицо
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Векселя)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Векселя).Эмитент.ЮрФизЛицо
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.ДепозитарныеРасписки)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ДепозитарныеРасписки).Эмитент.ЮрФизЛицо
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Доли)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Доли).ЮрЛицо
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.ИпотечныеСертификатыУчастия)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.ИпотечныеСертификатыУчастия).Эмитент.ЮрФизЛицо
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Облигации)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Облигации).Эмитент.ЮрФизЛицо
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП( Справочник.Закладные)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Закладные).Банк.ЮрФизЛицо
+			КОНЕЦ = РеквизитыЮридическихЛицСрезПоследних.ЮрФизЛицо)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыВТорговыхСистемах.СрезПоследних(&amp;Период, ВидКода = ЗНАЧЕНИЕ(Перечисление.ВидыКодовВторговыхСистемах.ISIN)) КАК КодыВТорговыхСистемахСрезПоследнихISIN
+		ПО _ДанныеСделок.ЦеннаяБумага = КодыВТорговыхСистемахСрезПоследнихISIN.Объект
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыПИФ.СрезПоследних(&amp;Период, ) КАК РеквизитыПИФСрезПоследних
+		ПО (ВЫБОР
+				КОГДА ТИПЗНАЧЕНИЯ(_ДанныеСделок.ЦеннаяБумага) = ТИП(Справочник.Паи)
+					ТОГДА ВЫРАЗИТЬ(_ДанныеСделок.ЦеннаяБумага КАК Справочник.Паи).ПаевойИнвестиционныйФонд = РеквизитыПИФСрезПоследних.ПаевойИнвестиционныйФонд
+				ИНАЧЕ ЛОЖЬ
+			КОНЕЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыВТорговыхСистемах.СрезПоследних(&amp;Период, ВидКода = ЗНАЧЕНИЕ(Перечисление.ВидыКодовВТорговыхСистемах.КодНаММВБ)) КАК КодыВТорговыхСистемахСрезПоследнихКодНаММВБ
+		ПО _ДанныеСделок.ЦеннаяБумага = КодыВТорговыхСистемахСрезПоследнихКодНаММВБ.Объект
+УПОРЯДОЧИТЬ ПО
+	ДатаСделки</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>АктивыНаНачалоПериода</dataPath>
+		<expression>Сумма(АктивыНаНачалоПериода)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВнебиржевыеСделки</dataPath>
+		<expression>Сумма(ВнебиржевыеСделки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДвадцатьПроцентовОтАктивов</dataPath>
+		<expression>Сумма(ДвадцатьПроцентовОтАктивов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СвободныйЛимит</dataPath>
+		<expression>Сумма(СвободныйЛимит)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СделкиРПС</dataPath>
+		<expression>Сумма(СделкиРПС)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчетаДоверительногоУправления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета доверительного управления</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>УчитыватьНКДВСуммеСделок</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Учитывать НКД в сумме сделок</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидыДоговоровДоверительногоУправления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Виды договоров доверительного управления</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыДоговоровДоверительногоУправления</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ГПБ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ГПБ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.БрокерскиеКомпании</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>БКРегион</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>БКРегион</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.БрокерскиеКомпании</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Клиент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АктивыНаНачалоПериода</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДвадцатьПроцентовОтАктивов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СделкиРПС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВнебиржевыеСделки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СвободныйЛимит</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаИсполнения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦеннаяБумага</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаИсполнения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КлиентДУ</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетаДоверительногоУправления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>d1240333-64e6-4e48-a548-433f31d7488d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>АктивыНаНачалоПериода</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ВнебиржевыеСделки</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДвадцатьПроцентовОтАктивов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СвободныйЛимит</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СделкиРПС</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Сумма</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=0,00</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Клиент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemField">
+						<dcsset:field>Клиент</dcsset:field>
+						<dcsset:orderType>Asc</dcsset:orderType>
+					</dcsset:item>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Клиент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>АктивыНаНачалоПериода</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДвадцатьПроцентовОтАктивов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СделкиРПС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВнебиржевыеСделки</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СвободныйЛимит</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Клиент</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СчетДоверительногоУправления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КодКлиента</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>НомерДоговора</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>АктивыНаНачалоПериода</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДвадцатьПроцентовОтАктивов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СделкиРПС</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВнебиржевыеСделки</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СвободныйЛимит</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>КлиентДУ</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КлиентДУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СДУ</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СДУКодКлиента</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СДУНомерДоговора</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>СДУ</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СДУ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СДУКодКлиента</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СДУНомерДоговора</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Сумма</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДатаСделки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЦеннаяБумага</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ВидЦБ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Сумма</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДатаИсполнения</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

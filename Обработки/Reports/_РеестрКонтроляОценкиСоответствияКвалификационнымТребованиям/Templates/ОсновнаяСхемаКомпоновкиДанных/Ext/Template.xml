@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата оценки</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ДатаОценки</presentationExpression>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОценки</dataPath>
+			<field>ДатаОценки</field>
+			<useRestriction>
+				<field>true</field>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РезультатОценки</dataPath>
+			<field>РезультатОценки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат оценки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заместитель</dataPath>
+			<field>Заместитель</field>
+			<presentationExpression>ФИО</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Примечание</dataPath>
+			<field>Примечание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примечание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФИО</dataPath>
+			<field>ФИО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ФИО</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Должность</dataPath>
+			<field>Должность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодРеквизиты</dataPath>
+			<field>ПериодРеквизиты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период реквизиты</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодДолжность</dataPath>
+			<field>ПериодДолжность</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период должность</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВнутреннийДокумент.Ссылка КАК Ссылка,
+	ВнутреннийДокумент.ДатаОценки КАК ДатаОценки,
+	ВнутреннийДокумент.Заместитель КАК Заместитель,
+	Сотрудники.ЮрФизЛицо КАК ЮрФизЛицоЗаместитель
+ПОМЕСТИТЬ _Документы
+ИЗ
+	Документ.ВнутреннийДокумент КАК ВнутреннийДокумент
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Сотрудники КАК Сотрудники
+		ПО ВнутреннийДокумент.Заместитель = Сотрудники.Ссылка
+ГДЕ
+	ВнутреннийДокумент.ДатаОценки МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+	И ВнутреннийДокумент.Проведен
+	И ВнутреннийДокумент.Организация = &amp;Организация
+	И ВнутреннийДокумент.ВидВнутреннегоДокумента = ЗНАЧЕНИЕ(Справочник.ВидыВнутреннихДокументов.Приказ)
+	И ВнутреннийДокумент.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийВнутреннихДокументов.НазначениеИсполняющегоОбязанности)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_Документы.Ссылка КАК Ссылка,
+	_Документы.Заместитель КАК Заместитель,
+	РеквизитыСотрудниковОрганизации.Фамилия + " " + РеквизитыСотрудниковОрганизации.Имя + " " + РеквизитыСотрудниковОрганизации.Отчество КАК ФИО,
+	СотрудникиОрганизации.Должность КАК Должность,
+	_Документы.ДатаОценки КАК ДатаОценки,
+	"Соответствует" КАК РезультатОценки,
+	"" КАК Примечание
+ИЗ
+	_Документы КАК _Документы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			_Документы.Ссылка КАК Ссылка,
+			МАКСИМУМ(СотрудникиОрганизации.Период) КАК ПериодДолжность,
+			МАКСИМУМ(РеквизитыСотрудниковОрганизации.Период) КАК ПериодРеквизиты
+		ИЗ
+			_Документы КАК _Документы
+				ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СотрудникиОрганизации КАК СотрудникиОрганизации
+				ПО (СотрудникиОрганизации.Организация = &amp;Организация)
+					И _Документы.Заместитель = СотрудникиОрганизации.Сотрудник
+					И _Документы.ДатаОценки &gt;= СотрудникиОрганизации.Период
+				ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыСотрудниковОрганизации КАК РеквизитыСотрудниковОрганизации
+				ПО (РеквизитыСотрудниковОрганизации.Организация = &amp;Организация)
+					И _Документы.ЮрФизЛицоЗаместитель = РеквизитыСотрудниковОрганизации.ЮрФизЛицо
+					И (РеквизитыСотрудниковОрганизации.Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский))
+		
+		СГРУППИРОВАТЬ ПО
+			_Документы.Ссылка) КАК ВложенныйЗапрос
+		ПО _Документы.Ссылка = ВложенныйЗапрос.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СотрудникиОрганизации КАК СотрудникиОрганизации
+		ПО (ВложенныйЗапрос.ПериодДолжность = СотрудникиОрганизации.Период)
+			И (СотрудникиОрганизации.Организация = &amp;Организация)
+			И _Документы.Заместитель = СотрудникиОрганизации.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыСотрудниковОрганизации КАК РеквизитыСотрудниковОрганизации
+		ПО (ВложенныйЗапрос.ПериодРеквизиты = РеквизитыСотрудниковОрганизации.Период)
+			И (РеквизитыСотрудниковОрганизации.Организация = &amp;Организация)
+			И _Документы.ЮрФизЛицоЗаместитель = РеквизитыСотрудниковОрганизации.ЮрФизЛицо
+			И (РеквизитыСотрудниковОрганизации.Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский))</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заместитель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Должность</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РезультатОценки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Примечание</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаОценки</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Заместитель</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Должность</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

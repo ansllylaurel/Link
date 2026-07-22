@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Сравнение импортируемого списка с загруженным ранее</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ТаблицаСравнения" id="1">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТаблицаСравнения</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаСравненияКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаСравненияКоманднаяПанель" id="3">
+				<ChildItems>
+					<Button name="ТаблицаСравненияКомандаИмпортировать" id="52">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.Command.КомандаИмпортировать</CommandName>
+						<ExtendedTooltip name="ТаблицаСравненияКомандаИмпортироватьРасширеннаяПодсказка" id="53"/>
+					</Button>
+					<Button name="ТаблицаСравненияОтмена" id="60">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Cancel</CommandName>
+						<ExtendedTooltip name="ТаблицаСравненияОтменаРасширеннаяПодсказка" id="61"/>
+					</Button>
+					<Button name="ТаблицаСравненияПереместитьВверх" id="56">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ТаблицаСравнения.StandardCommand.MoveUp</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ТаблицаСравненияПереместитьВверхРасширеннаяПодсказка" id="57"/>
+					</Button>
+					<Button name="ТаблицаСравненияПереместитьВниз" id="58">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ТаблицаСравнения.StandardCommand.MoveDown</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ТаблицаСравненияПереместитьВнизРасширеннаяПодсказка" id="59"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаСравненияРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаСравненияСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаСравнения</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСравненияСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаСравненияСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаСравненияСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаСравнения</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСравненияСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаСравненияСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаСравненияУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаСравнения</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСравненияУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаСравненияУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="ТаблицаСравненияГруппа5" id="65">
+					<Width>50</Width>
+					<ExtendedTooltip name="ТаблицаСравненияГруппа5РасширеннаяПодсказка" id="66"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияСтатус" id="38">
+							<DataPath>ТаблицаСравнения.Статус</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>50</Width>
+							<ContextMenu name="ТаблицаСравненияСтатусКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ТаблицаСравненияСтатусРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<ColumnGroup name="ТаблицаСравненияГруппа6" id="67">
+							<Width>50</Width>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="ТаблицаСравненияГруппа6РасширеннаяПодсказка" id="68"/>
+							<ChildItems>
+								<InputField name="ТаблицаСравненияИНН" id="20">
+									<DataPath>ТаблицаСравнения.INN</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>25</Width>
+									<ContextMenu name="ТаблицаСравненияИННКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ТаблицаСравненияИННРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<InputField name="ТаблицаСравненияОГРН" id="23">
+									<DataPath>ТаблицаСравнения.OGRN</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>25</Width>
+									<ContextMenu name="ТаблицаСравненияОГРНКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ТаблицаСравненияОГРНРасширеннаяПодсказка" id="25"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТаблицаСравненияГруппа1" id="44">
+					<ExtendedTooltip name="ТаблицаСравненияГруппа1РасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияНаименованиеТекущее" id="14">
+							<DataPath>ТаблицаСравнения.НаименованиеТекущее</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияНаименованиеТекущееКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="ТаблицаСравненияНаименованиеТекущееРасширеннаяПодсказка" id="16"/>
+						</InputField>
+						<InputField name="ТаблицаСравненияНаименованиеНовое" id="17">
+							<DataPath>ТаблицаСравнения.name</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияНаименованиеНовоеКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="ТаблицаСравненияНаименованиеНовоеРасширеннаяПодсказка" id="19"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТаблицаСравненияГруппа2" id="46">
+					<ExtendedTooltip name="ТаблицаСравненияГруппа2РасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияДатаВключенияТекущая" id="26">
+							<DataPath>ТаблицаСравнения.ДатаВключенияТекущая</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияДатаВключенияТекущаяКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ТаблицаСравненияДатаВключенияТекущаяРасширеннаяПодсказка" id="28"/>
+						</InputField>
+						<InputField name="ТаблицаСравненияДатаВключенияНовая" id="29">
+							<DataPath>ТаблицаСравнения.date_from</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияДатаВключенияНоваяКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ТаблицаСравненияДатаВключенияНоваяРасширеннаяПодсказка" id="31"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТаблицаСравненияГруппа8" id="83">
+					<ExtendedTooltip name="ТаблицаСравненияГруппа8РасширеннаяПодсказка" id="84"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияДатаОснованияТекущая" id="80">
+							<DataPath>ТаблицаСравнения.ДатаОснованияТекущая</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияДатаОснованияТекущаяКонтекстноеМеню" id="81"/>
+							<ExtendedTooltip name="ТаблицаСравненияДатаОснованияТекущаяРасширеннаяПодсказка" id="82"/>
+						</InputField>
+						<InputField name="ТаблицаСравненияdate_basement" id="77">
+							<DataPath>ТаблицаСравнения.date_basement</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияdate_basementКонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="ТаблицаСравненияdate_basementРасширеннаяПодсказка" id="79"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТаблицаСравненияГруппа3" id="48">
+					<ExtendedTooltip name="ТаблицаСравненияГруппа3РасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияКомментарийТекущий" id="32">
+							<DataPath>ТаблицаСравнения.КомментарийТекущий</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияКомментарийТекущийКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ТаблицаСравненияКомментарийТекущийРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="ТаблицаСравненияКомментарийНовый" id="35">
+							<DataPath>ТаблицаСравнения.comment</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияКомментарийНовыйКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ТаблицаСравненияКомментарийНовыйРасширеннаяПодсказка" id="37"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТаблицаСравненияГруппа7" id="69">
+					<ExtendedTooltip name="ТаблицаСравненияГруппа7РасширеннаяПодсказка" id="70"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияТипСвязиТекущий" id="71">
+							<DataPath>ТаблицаСравнения.ТипСвязиТекущий</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияТипСвязиТекущийКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ТаблицаСравненияТипСвязиТекущийРасширеннаяПодсказка" id="73"/>
+						</InputField>
+						<InputField name="ТаблицаСравненияТипСвязиНовый" id="74">
+							<DataPath>ТаблицаСравнения.relation</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаСравненияТипСвязиНовыйКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="ТаблицаСравненияТипСвязиНовыйРасширеннаяПодсказка" id="76"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТаблицаСравненияГруппа4" id="50">
+					<ExtendedTooltip name="ТаблицаСравненияГруппа4РасширеннаяПодсказка" id="51"/>
+					<ChildItems>
+						<InputField name="ТаблицаСравненияДействие" id="41">
+							<DataPath>ТаблицаСравнения.Действие</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>30</Width>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Оставить без изменений</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Оставить без изменений</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Удалить</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Удалить</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Взять из файла</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Взять из файла</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ТаблицаСравненияДействиеКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ТаблицаСравненияДействиеРасширеннаяПодсказка" id="43"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<CheckBoxField name="ТолькоОтличия" id="62">
+			<DataPath>ТолькоОтличия</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ТолькоОтличияКонтекстноеМеню" id="63"/>
+			<ExtendedTooltip name="ТолькоОтличияРасширеннаяПодсказка" id="64"/>
+			<Events>
+				<Event name="OnChange">ТолькоОтличияПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject._УправлениеСвязаннымиЛицами</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТолькоОтличия" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать только отличия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаСравнения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица сравнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="НаименованиеТекущее" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование текущее</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="name" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование новое</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="INN" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИНН</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="OGRN" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ОГРН</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаВключенияТекущая" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата включения текущая</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="date_from" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата включения новая</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="КомментарийТекущий" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий текущий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="comment" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий новый</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Действие" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="id" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Id</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьОтличия" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть отличия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТипСвязиТекущий" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип связи текущий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="relation" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип связи новый</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="date_basement" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата основания новая</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаОснованияТекущая" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата основания текущая</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресТаблицыСравнения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес таблицы сравнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияНаименованиеТекущее</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияНаименованиеНовое</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаСравнения.НаименованиеТекущее</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ТаблицаСравнения.НаименованиеНовое</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияДатаВключенияТекущая</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияДатаВключенияНовая</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаСравнения.ДатаВключенияТекущая</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ТаблицаСравнения.ДатаВключенияНовая</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияКомментарийТекущий</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияКомментарийНовый</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаСравнения.КомментарийТекущий</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ТаблицаСравнения.КомментарийНовый</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияТипСвязиТекущий</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ТаблицаСравненияТипСвязиНовый</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаСравнения.ТипСвязиТекущий</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ТаблицаСравнения.ТипСвязиНовый</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаИмпортировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импортировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаИмпортировать</Action>
+		</Command>
+	</Commands>
+</Form>

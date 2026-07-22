@@ -1,0 +1,2552 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнить" id="87">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Заполнить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="88"/>
+			</Button>
+			<Button name="ФормаЗаполнитьИтоги" id="443">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.ЗаполнитьИтоги</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьИтогиРасширеннаяПодсказка" id="444"/>
+			</Button>
+			<Button name="ФормаПечатьДокумента" id="448">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПечатьДокумента</CommandName>
+				<ExtendedTooltip name="ФормаПечатьДокументаРасширеннаяПодсказка" id="449"/>
+			</Button>
+			<Button name="ФормаПечатьИВыгрузка" id="441">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПечатьИВыгрузка</CommandName>
+				<ExtendedTooltip name="ФормаПечатьИВыгрузкаРасширеннаяПодсказка" id="442"/>
+			</Button>
+			<Button name="ФормаПоказатьРасчетФинансовыхПоказателей" id="454">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаПоказатьРасчетФинансовыхПоказателей</CommandName>
+				<ExtendedTooltip name="ФормаПоказатьРасчетФинансовыхПоказателейРасширеннаяПодсказка" id="455"/>
+			</Button>
+			<Button name="ФормаПоказатьРасчетРезервов" id="859">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаПоказатьРасчетРезервов</CommandName>
+				<ExtendedTooltip name="ФормаПоказатьРасчетРезервовРасширеннаяПодсказка" id="860"/>
+			</Button>
+			<Button name="ФормаКонтрольСЧА" id="867">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаКонтрольСЧА</CommandName>
+				<ExtendedTooltip name="ФормаКонтрольСЧАРасширеннаяПодсказка" id="868"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщиеРеквизиты" id="89">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа общие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбщиеРеквизитыРасширеннаяПодсказка" id="90"/>
+			<ChildItems>
+				<CheckBoxField name="РучнойВвод" id="820">
+					<DataPath>Объект.РучнойВвод</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Режим заполнения</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Авто; БИ=Ручной</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="РучнойВводКонтекстноеМеню" id="821"/>
+					<ExtendedTooltip name="РучнойВводРасширеннаяПодсказка" id="822"/>
+					<Events>
+						<Event name="OnChange">РучнойВводПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПрочиеРеквизиты" id="94">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа прочие реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа прочие реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПрочиеРеквизитыРасширеннаяПодсказка" id="95"/>
+			<ChildItems>
+				<InputField name="СчетДоверительногоУправления" id="10">
+					<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Организация</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="СчетДоверительногоУправленияНомерДоговора" id="979">
+					<DataPath>Объект.СчетДоверительногоУправления.НомерДоговора</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ договора</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СчетДоверительногоУправленияНомерДоговораКонтекстноеМеню" id="980"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияНомерДоговораРасширеннаяПодсказка" id="981"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаИтоговаяСтоимость" id="313">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа итоговая стоимость</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа итоговая стоимость</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИтоговаяСтоимостьРасширеннаяПодсказка" id="314"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаФинПоказатели" id="875">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Финансовые показатели</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Финансовые показатели</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаФинПоказателиРасширеннаяПодсказка" id="876"/>
+					<ChildItems>
+						<InputField name="СЧАРынок" id="315">
+							<DataPath>Объект.СЧАРынок</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>СЧА</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ContextMenu name="СЧАРынокКонтекстноеМеню" id="316"/>
+							<ExtendedTooltip name="СЧАРынокРасширеннаяПодсказка" id="317"/>
+						</InputField>
+						<InputField name="РСА" id="400">
+							<DataPath>Объект.РСА</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>РСА</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ContextMenu name="РСАКонтекстноеМеню" id="401"/>
+							<ExtendedTooltip name="РСАРасширеннаяПодсказка" id="402"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПИФ" id="415">
+					<EnableContentChange>true</EnableContentChange>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ПИФ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПИФРасширеннаяПодсказка" id="416"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПоказателиПИФ" id="847">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показатели ПИФ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показатели ПИФ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаПоказателиПИФРасширеннаяПодсказка" id="848"/>
+							<ChildItems>
+								<InputField name="СтоимостьПая" id="412">
+									<DataPath>Объект.СтоимостьПая</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>Left</TitleLocation>
+									<ContextMenu name="СтоимостьПаяКонтекстноеМеню" id="413"/>
+									<ExtendedTooltip name="СтоимостьПаяРасширеннаяПодсказка" id="414"/>
+								</InputField>
+								<InputField name="КоличествоПаев" id="417">
+									<DataPath>КоличествоПаев</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество паев</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<Width>18</Width>
+									<ContextMenu name="КоличествоПаевКонтекстноеМеню" id="418"/>
+									<ExtendedTooltip name="КоличествоПаевРасширеннаяПодсказка" id="419"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНачислениеРезервов" id="845">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Начисление резервов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа начисление резервов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаНачислениеРезервовРасширеннаяПодсказка" id="846"/>
+							<ChildItems>
+								<UsualGroup name="Группа2" id="877">
+									<EnableContentChange>true</EnableContentChange>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="878"/>
+									<ChildItems>
+										<InputField name="НачислениеРезервовСуммаНаВознаграждениеУправляющего" id="836">
+											<DataPath>НачислениеРезервовПИФ.СуммаНаВознаграждениеУправляющего</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>На вознаграждение управляющего</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<ContextMenu name="НачислениеРезервовСуммаНаВознаграждениеУправляющегоКонтекстноеМеню" id="837"/>
+											<ExtendedTooltip name="НачислениеРезервовСуммаНаВознаграждениеУправляющегоРасширеннаяПодсказка" id="838"/>
+											<Events>
+												<Event name="OnChange">НачислениеРезервовСуммаНаВознаграждениеУправляющегоПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="НачислениеРезервовСуммаНаУслугиДепозитария" id="839">
+											<DataPath>НачислениеРезервовПИФ.СуммаНаУслугиДепозитария</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>На услуги депозитария</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<ContextMenu name="НачислениеРезервовСуммаНаУслугиДепозитарияКонтекстноеМеню" id="840"/>
+											<ExtendedTooltip name="НачислениеРезервовСуммаНаУслугиДепозитарияРасширеннаяПодсказка" id="841"/>
+											<Events>
+												<Event name="OnChange">НачислениеРезервовСуммаНаУслугиДепозитарияПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа1" id="865">
+									<EnableContentChange>true</EnableContentChange>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="866"/>
+									<ChildItems>
+										<Button name="КомандаРассчитатьРезервы" id="863">
+											<Type>UsualButton</Type>
+											<Visible>false</Visible>
+											<CommandName>Form.Command.КомандаРассчитатьРезервы</CommandName>
+											<ExtendedTooltip name="КомандаРассчитатьРезервыРасширеннаяПодсказка" id="864"/>
+										</Button>
+										<InputField name="НачислениеРезервовСуммаНаПрочиеРасходы" id="842">
+											<DataPath>НачислениеРезервовПИФ.СуммаНаПрочиеРасходы</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>На прочие расходы</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<ContextMenu name="НачислениеРезервовСуммаНаПрочиеРасходыКонтекстноеМеню" id="843"/>
+											<ExtendedTooltip name="НачислениеРезервовСуммаНаПрочиеРасходыРасширеннаяПодсказка" id="844"/>
+											<Events>
+												<Event name="OnChange">НачислениеРезервовСуммаНаПрочиеРасходыПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<Page name="СтраницаЦенныеБумаги" id="459">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ценные бумаги</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница ценные бумаги</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>РегистрацияСтоимости.СтоимостиПереоценки.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="СтраницаЦенныеБумагиРасширеннаяПодсказка" id="460"/>
+					<ChildItems>
+						<Table name="СтоимостиПереоценки" id="540">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>РегистрацияСтоимости.СтоимостиПереоценки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СтоимостиПереоценкиКонтекстноеМеню" id="541"/>
+							<AutoCommandBar name="СтоимостиПереоценкиКоманднаяПанель" id="542">
+								<ChildItems>
+									<Button name="СтоимостиПереоценкиРасшифроватьРасчетСтоимостиЦБ1" id="982">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РасшифроватьРасчетСтоимостиЦБ</CommandName>
+										<ExtendedTooltip name="СтоимостиПереоценкиРасшифроватьРасчетСтоимостиЦБ1РасширеннаяПодсказка" id="983"/>
+									</Button>
+									<Popup name="СтоимостиПереоценкиРежимОтображения1" id="984">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Режим отображения</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Режим отображения таблицы ценных бумаг</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СтоимостиПереоценкиРежимОтображения1РасширеннаяПодсказка" id="985"/>
+										<ChildItems>
+											<Button name="СтоимостиПереоценкиКомандаРежимОтображенияКраткий1" id="986">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРежимОтображенияКраткий</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Краткий</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СтоимостиПереоценкиКомандаРежимОтображенияКраткий1РасширеннаяПодсказка" id="987"/>
+											</Button>
+											<Button name="СтоимостиПереоценкиКомандаРежимОтображенияПолный1" id="988">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРежимОтображенияПолный</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Полный</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СтоимостиПереоценкиКомандаРежимОтображенияПолный1РасширеннаяПодсказка" id="989"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СтоимостиПереоценкиРасширеннаяПодсказка" id="543"/>
+							<SearchStringAddition name="СтоимостиПереоценкиСтрокаПоиска" id="544">
+								<AdditionSource>
+									<Item>СтоимостиПереоценки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтоимостиПереоценкиСтрокаПоискаКонтекстноеМеню" id="545"/>
+								<ExtendedTooltip name="СтоимостиПереоценкиСтрокаПоискаРасширеннаяПодсказка" id="546"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СтоимостиПереоценкиСостояниеПросмотра" id="547">
+								<AdditionSource>
+									<Item>СтоимостиПереоценки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтоимостиПереоценкиСостояниеПросмотраКонтекстноеМеню" id="548"/>
+								<ExtendedTooltip name="СтоимостиПереоценкиСостояниеПросмотраРасширеннаяПодсказка" id="549"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СтоимостиПереоценкиУправлениеПоиском" id="550">
+								<AdditionSource>
+									<Item>СтоимостиПереоценки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СтоимостиПереоценкиУправлениеПоискомКонтекстноеМеню" id="551"/>
+								<ExtendedTooltip name="СтоимостиПереоценкиУправлениеПоискомРасширеннаяПодсказка" id="552"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СтоимостиПереоценкиВыбор</Event>
+								<Event name="OnChange">СтоимостиПереоценкиПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СтоимостиПереоценкиНомерСтроки" id="553">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СтоимостиПереоценкиНомерСтрокиКонтекстноеМеню" id="554"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиНомерСтрокиРасширеннаяПодсказка" id="555"/>
+								</LabelField>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаРынокЦеннаяБумага" id="622">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа рынок ценная бумага</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа рынок ценная бумага</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаРынокЦеннаяБумагаРасширеннаяПодсказка" id="623"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиРынок" id="559">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Рынок</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>5</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СтоимостиПереоценкиРынокКонтекстноеМеню" id="560"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиРынокРасширеннаяПодсказка" id="561"/>
+											<Events>
+												<Event name="OnChange">СтоимостиПереоценкиРынокПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиЦеннаяБумага" id="556">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ЦеннаяБумага</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиЦеннаяБумагаКонтекстноеМеню" id="557"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиЦеннаяБумагаРасширеннаяПодсказка" id="558"/>
+											<Events>
+												<Event name="OnChange">СтоимостиПереоценкиЦеннаяБумагаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаПартияСтрокаПартии" id="624">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа партия строка партии</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа партия строка партии</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаПартияСтрокаПартииРасширеннаяПодсказка" id="625"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиПартия" id="562">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Партия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиПартияКонтекстноеМеню" id="563"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиПартияРасширеннаяПодсказка" id="564"/>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиСтрокаПартии" id="565">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СтрокаПартии</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиСтрокаПартииКонтекстноеМеню" id="566"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиСтрокаПартииРасширеннаяПодсказка" id="567"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СтоимостиПереоценкиКоличество" id="592">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтоимостиПереоценкиКоличествоКонтекстноеМеню" id="593"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКоличествоРасширеннаяПодсказка" id="594"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиКоличествоПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаЦены" id="633">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа цены</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа цены</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаЦеныРасширеннаяПодсказка" id="634"/>
+									<ChildItems>
+										<ColumnGroup name="СтоимостиПереоценкиГруппаЦенаКотировки" id="626">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Котировка</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стоимости переоценки группа цена котировки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СтоимостиПереоценкиГруппаЦенаКотировкиРасширеннаяПодсказка" id="627"/>
+											<ChildItems>
+												<InputField name="СтоимостиПереоценкиЦенаКотировки" id="568">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ЦенаКотировки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<ContextMenu name="СтоимостиПереоценкиЦенаКотировкиКонтекстноеМеню" id="569"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиЦенаКотировкиРасширеннаяПодсказка" id="570"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиЦенаКотировкиПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СтоимостиПереоценкиВалютаКотировки" id="574">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаКотировки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>3</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиВалютаКотировкиКонтекстноеМеню" id="575">
+														<ChildItems>
+															<Button name="СтоимостиПереоценкиЗадатьВалютуКотировки" id="1009">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.ЗадатьВалютуКотировки</CommandName>
+																<ExtendedTooltip name="СтоимостиПереоценкиЗадатьВалютуКотировкиРасширеннаяПодсказка" id="1010"/>
+															</Button>
+														</ChildItems>
+													</ContextMenu>
+													<ExtendedTooltip name="СтоимостиПереоценкиВалютаКотировкиРасширеннаяПодсказка" id="576"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиВалютаКотировкиПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="СтоимостиПереоценкиГруппаЦена" id="628">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стоимости переоценки группа цена</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СтоимостиПереоценкиГруппаЦенаРасширеннаяПодсказка" id="629"/>
+											<ChildItems>
+												<InputField name="СтоимостиПереоценкиЦена" id="571">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Цена</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиЦенаКонтекстноеМеню" id="572"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиЦенаРасширеннаяПодсказка" id="573"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиЦенаПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СтоимостиПереоценкиВалютаНоминала" id="630">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаНоминала</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Валюта цены</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>3</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиВалютаНоминалаКонтекстноеМеню" id="631"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиВалютаНоминалаРасширеннаяПодсказка" id="632"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаКупоны" id="635">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа купоны</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа купоны</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаКупоныРасширеннаяПодсказка" id="636"/>
+									<ChildItems>
+										<ColumnGroup name="СтоимостиПереоценкиГруппаЦенаКотировкиКупона" id="637">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Котировка купона</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стоимости переоценки группа цена котировки купона</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СтоимостиПереоценкиГруппаЦенаКотировкиКупонаРасширеннаяПодсказка" id="638"/>
+											<ChildItems>
+												<InputField name="СтоимостиПереоценкиЦенаКотировкиКупона" id="598">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ЦенаКотировкиКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<ContextMenu name="СтоимостиПереоценкиЦенаКотировкиКупонаКонтекстноеМеню" id="599"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиЦенаКотировкиКупонаРасширеннаяПодсказка" id="600"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиЦенаКотировкиКупонаПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СтоимостиПереоценкиВалютаКотировкиКупона" id="607">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаКотировкиКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>3</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиВалютаКотировкиКупонаКонтекстноеМеню" id="608">
+														<ChildItems>
+															<Button name="СтоимостиПереоценкиЗадатьВалютуКотировкиКупона" id="1011">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.ЗадатьВалютуКотировкиКупона</CommandName>
+																<ExtendedTooltip name="СтоимостиПереоценкиЗадатьВалютуКотировкиКупонаРасширеннаяПодсказка" id="1012"/>
+															</Button>
+														</ChildItems>
+													</ContextMenu>
+													<ExtendedTooltip name="СтоимостиПереоценкиВалютаКотировкиКупонаРасширеннаяПодсказка" id="609"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиВалютаКотировкиКупонаПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="СтоимостиПереоценкиГруппаЦенаКупона" id="639">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена купона</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стоимости переоценки группа цена купона</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СтоимостиПереоценкиГруппаЦенаКупонаРасширеннаяПодсказка" id="640"/>
+											<ChildItems>
+												<InputField name="СтоимостиПереоценкиЦенаКупона" id="601">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ЦенаКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиЦенаКупонаКонтекстноеМеню" id="602"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиЦенаКупонаРасширеннаяПодсказка" id="603"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиЦенаКупонаПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СтоимостиПереоценкиВалютаНоминала1" id="641">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаНоминала</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Валюта цены купона</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>3</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиВалютаНоминала1КонтекстноеМеню" id="642"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиВалютаНоминала1РасширеннаяПодсказка" id="643"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаСуммы" id="644">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа суммы</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа суммы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаСуммыРасширеннаяПодсказка" id="645"/>
+									<ChildItems>
+										<ColumnGroup name="СтоимостиПереоценкиГруппаСумма" id="648">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стоимости переоценки группа сумма</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СтоимостиПереоценкиГруппаСуммаРасширеннаяПодсказка" id="649"/>
+											<ChildItems>
+												<InputField name="СтоимостиПереоценкиСумма" id="595">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>7</Width>
+													<ContextMenu name="СтоимостиПереоценкиСуммаКонтекстноеМеню" id="596"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиСуммаРасширеннаяПодсказка" id="597"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиСуммаПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СтоимостиПереоценкиВалютаНоминала2" id="650">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаНоминала</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>3</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиВалютаНоминала2КонтекстноеМеню" id="651"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиВалютаНоминала2РасширеннаяПодсказка" id="652"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="СтоимостиПереоценкиГруппаСуммаКупона" id="646">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма купона</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стоимости переоценки группа сумма купона</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="СтоимостиПереоценкиГруппаСуммаКупонаРасширеннаяПодсказка" id="647"/>
+											<ChildItems>
+												<InputField name="СтоимостиПереоценкиСуммаКупона" id="604">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>7</Width>
+													<ContextMenu name="СтоимостиПереоценкиСуммаКупонаКонтекстноеМеню" id="605"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиСуммаКупонаРасширеннаяПодсказка" id="606"/>
+													<Events>
+														<Event name="OnChange">СтоимостиПереоценкиСуммаКупонаПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СтоимостиПереоценкиВалютаНоминала3" id="653">
+													<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаНоминала</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>3</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="СтоимостиПереоценкиВалютаНоминала3КонтекстноеМеню" id="654"/>
+													<ExtendedTooltip name="СтоимостиПереоценкиВалютаНоминала3РасширеннаяПодсказка" id="655"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СтоимостиПереоценкиКурсВалютыНоминала" id="619">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.КурсВалютыНоминала</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="СтоимостиПереоценкиКурсВалютыНоминалаКонтекстноеМеню" id="620"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКурсВалютыНоминалаРасширеннаяПодсказка" id="621"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиКурсВалютыНоминалаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаСуммыВВалютеУчета" id="656">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа суммы в валюте учета</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа суммы в валюте учета</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаСуммыВВалютеУчетаРасширеннаяПодсказка" id="657"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиСуммаВВалютеУчета" id="610">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаВВалютеУчета</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма в валюте учета</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиСуммаВВалютеУчетаКонтекстноеМеню" id="611"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиСуммаВВалютеУчетаРасширеннаяПодсказка" id="612"/>
+											<Events>
+												<Event name="OnChange">СтоимостиПереоценкиСуммаВВалютеУчетаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиСуммаКупонаВВалютеУчета" id="613">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаКупонаВВалютеУчета</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма купона в валюте учета</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиСуммаКупонаВВалютеУчетаКонтекстноеМеню" id="614"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиСуммаКупонаВВалютеУчетаРасширеннаяПодсказка" id="615"/>
+											<Events>
+												<Event name="OnChange">СтоимостиПереоценкиСуммаКупонаВВалютеУчетаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СтоимостиПереоценкиСуммаВсего" id="879">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаВсегоВВалютеУчета</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтоимостиПереоценкиСуммаВсегоКонтекстноеМеню" id="880"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиСуммаВсегоРасширеннаяПодсказка" id="881"/>
+								</InputField>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаВидЦеныУровеньОценки" id="668">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа вид цены уровень оценки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа вид цены уровень оценки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаВидЦеныУровеньОценкиРасширеннаяПодсказка" id="669"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиВидЦены" id="577">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВидЦены</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиВидЦеныКонтекстноеМеню" id="578"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиВидЦеныРасширеннаяПодсказка" id="579"/>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиУровеньОценки" id="580">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.УровеньОценки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>3</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СтоимостиПереоценкиУровеньОценкиКонтекстноеМеню" id="581"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиУровеньОценкиРасширеннаяПодсказка" id="582"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СтоимостиПереоценкиГруппаДатаЦеныИсточник" id="670">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа дата цены источник</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимости переоценки группа дата цены источник</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтоимостиПереоценкиГруппаДатаЦеныИсточникРасширеннаяПодсказка" id="671"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиДатаЦены" id="583">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ДатаЦены</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиДатаЦеныКонтекстноеМеню" id="584"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиДатаЦеныРасширеннаяПодсказка" id="585"/>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиИсточник" id="586">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Источник</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СтоимостиПереоценкиИсточникКонтекстноеМеню" id="587"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиИсточникРасширеннаяПодсказка" id="588"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СтоимостиПереоценкиПримечание" id="616">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Примечание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтоимостиПереоценкиПримечаниеКонтекстноеМеню" id="617"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиПримечаниеРасширеннаяПодсказка" id="618"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Table name="СтоимостиПереоценкиКраткий" id="890">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>РегистрацияСтоимости.СтоимостиПереоценки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СтоимостиПереоценкиКраткийКонтекстноеМеню" id="891"/>
+							<AutoCommandBar name="СтоимостиПереоценкиКраткийКоманднаяПанель" id="892">
+								<ChildItems>
+									<Button name="СтоимостиПереоценкиРасшифроватьРасчетСтоимостиЦБ" id="855">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РасшифроватьРасчетСтоимостиЦБ</CommandName>
+										<ExtendedTooltip name="СтоимостиПереоценкиРасшифроватьРасчетСтоимостиЦБРасширеннаяПодсказка" id="856"/>
+									</Button>
+									<Popup name="СтоимостиПереоценкиРежимОтображения2" id="869">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Режим отображения</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Режим отображения таблицы ценных бумаг</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СтоимостиПереоценкиРежимОтображения2РасширеннаяПодсказка" id="870"/>
+										<ChildItems>
+											<Button name="СтоимостиПереоценкиКомандаРежимОтображенияКраткий2" id="871">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРежимОтображенияКраткий</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Краткий</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СтоимостиПереоценкиКомандаРежимОтображенияКраткий2РасширеннаяПодсказка" id="872"/>
+											</Button>
+											<Button name="СтоимостиПереоценкиКомандаРежимОтображенияПолный2" id="873">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаРежимОтображенияПолный</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Полный</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СтоимостиПереоценкиКомандаРежимОтображенияПолный2РасширеннаяПодсказка" id="874"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СтоимостиПереоценкиКраткийРасширеннаяПодсказка" id="893"/>
+							<SearchStringAddition name="СтоимостиПереоценкиКраткийСтрокаПоиска" id="894">
+								<AdditionSource>
+									<Item>СтоимостиПереоценкиКраткий</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтоимостиПереоценкиКраткийСтрокаПоискаКонтекстноеМеню" id="895"/>
+								<ExtendedTooltip name="СтоимостиПереоценкиКраткийСтрокаПоискаРасширеннаяПодсказка" id="896"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СтоимостиПереоценкиКраткийСостояниеПросмотра" id="897">
+								<AdditionSource>
+									<Item>СтоимостиПереоценкиКраткий</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтоимостиПереоценкиКраткийСостояниеПросмотраКонтекстноеМеню" id="898"/>
+								<ExtendedTooltip name="СтоимостиПереоценкиКраткийСостояниеПросмотраРасширеннаяПодсказка" id="899"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СтоимостиПереоценкиКраткийУправлениеПоиском" id="900">
+								<AdditionSource>
+									<Item>СтоимостиПереоценкиКраткий</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СтоимостиПереоценкиКраткийУправлениеПоискомКонтекстноеМеню" id="901"/>
+								<ExtendedTooltip name="СтоимостиПереоценкиКраткийУправлениеПоискомРасширеннаяПодсказка" id="902"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СтоимостиПереоценкиВыбор</Event>
+								<Event name="OnChange">СтоимостиПереоценкиПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СтоимостиПереоценкиКраткийНомерСтроки" id="903">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийНомерСтрокиКонтекстноеМеню" id="904"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийНомерСтрокиРасширеннаяПодсказка" id="905"/>
+								</LabelField>
+								<InputField name="СтоимостиПереоценкиКраткийРынок" id="909">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Рынок</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийРынокКонтекстноеМеню" id="910"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийРынокРасширеннаяПодсказка" id="911"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиРынокПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийЦеннаяБумага" id="906">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ЦеннаяБумага</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>40</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийЦеннаяБумагаКонтекстноеМеню" id="907"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийЦеннаяБумагаРасширеннаяПодсказка" id="908"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиЦеннаяБумагаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийКоличество" id="942">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтоимостиПереоценкиКраткийКоличествоКонтекстноеМеню" id="943"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийКоличествоРасширеннаяПодсказка" id="944"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиКоличествоПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="СтоимостиПереоценкиКраткийГруппа1" id="969">
+									<Group>InCell</Group>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийГруппа1РасширеннаяПодсказка" id="970"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиКраткийЦена" id="921">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Цена</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>15</Width>
+											<ContextMenu name="СтоимостиПереоценкиКраткийЦенаКонтекстноеМеню" id="922"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиКраткийЦенаРасширеннаяПодсказка" id="923"/>
+											<Events>
+												<Event name="OnChange">СтоимостиПереоценкиЦенаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиКраткийВалютаНоминала" id="971">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаНоминала</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Валюта цен</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>1</Width>
+											<ContextMenu name="СтоимостиПереоценкиКраткийВалютаНоминалаКонтекстноеМеню" id="972"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиКраткийВалютаНоминалаРасширеннаяПодсказка" id="973"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СтоимостиПереоценкиКраткийГруппа2" id="974">
+									<Group>InCell</Group>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийГруппа2РасширеннаяПодсказка" id="975"/>
+									<ChildItems>
+										<InputField name="СтоимостиПереоценкиКраткийЦенаКупона" id="951">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ЦенаКупона</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена купона</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>15</Width>
+											<ContextMenu name="СтоимостиПереоценкиКраткийЦенаКупонаКонтекстноеМеню" id="952"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиКраткийЦенаКупонаРасширеннаяПодсказка" id="953"/>
+											<Events>
+												<Event name="OnChange">СтоимостиПереоценкиЦенаКупонаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="СтоимостиПереоценкиКраткийВалютаНоминала1" id="976">
+											<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВалютаНоминала</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>1</Width>
+											<ContextMenu name="СтоимостиПереоценкиКраткийВалютаНоминала1КонтекстноеМеню" id="977"/>
+											<ExtendedTooltip name="СтоимостиПереоценкиКраткийВалютаНоминала1РасширеннаяПодсказка" id="978"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СтоимостиПереоценкиКраткийСуммаВВалютеУчета" id="960">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаВВалютеУчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>13</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийСуммаВВалютеУчетаКонтекстноеМеню" id="961"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийСуммаВВалютеУчетаРасширеннаяПодсказка" id="962"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиСуммаВВалютеУчетаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийСуммаКупонаВВалютеУчета" id="963">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаКупонаВВалютеУчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>13</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийСуммаКупонаВВалютеУчетаКонтекстноеМеню" id="964"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийСуммаКупонаВВалютеУчетаРасширеннаяПодсказка" id="965"/>
+									<Events>
+										<Event name="OnChange">СтоимостиПереоценкиСуммаКупонаВВалютеУчетаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийСуммаВсего" id="966">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.СуммаВсегоВВалютеУчета</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>15</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийСуммаВсегоКонтекстноеМеню" id="967"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийСуммаВсегоРасширеннаяПодсказка" id="968"/>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийВидЦены" id="927">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ВидЦены</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>14</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийВидЦеныКонтекстноеМеню" id="928"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийВидЦеныРасширеннаяПодсказка" id="929"/>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийУровеньОценки" id="930">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.УровеньОценки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ур.</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Уровень оценки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийУровеньОценкиКонтекстноеМеню" id="931"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийУровеньОценкиРасширеннаяПодсказка" id="932"/>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийДатаЦены" id="933">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.ДатаЦены</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>7</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийДатаЦеныКонтекстноеМеню" id="934"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийДатаЦеныРасширеннаяПодсказка" id="935"/>
+								</InputField>
+								<InputField name="СтоимостиПереоценкиКраткийИсточник" id="936">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.Источник</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>16</Width>
+									<ContextMenu name="СтоимостиПереоценкиКраткийИсточникКонтекстноеМеню" id="937"/>
+									<ExtendedTooltip name="СтоимостиПереоценкиКраткийИсточникРасширеннаяПодсказка" id="938"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<UsualGroup name="ГруппаЦенныеБумагиИтоги" id="861">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Итоги по ценным бумагам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ценные бумаги итоги</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦенныеБумагиИтогиРасширеннаяПодсказка" id="862"/>
+							<ChildItems>
+								<InputField name="ЦенныеБумагиСумма" id="849">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.TotalСуммаВВалютеУчета</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЦенныеБумагиСуммаКонтекстноеМеню" id="850"/>
+									<ExtendedTooltip name="ЦенныеБумагиСуммаРасширеннаяПодсказка" id="851"/>
+								</InputField>
+								<InputField name="ЦенныеБумагиКупон" id="852">
+									<DataPath>РегистрацияСтоимости.СтоимостиПереоценки.TotalСуммаКупонаВВалютеУчета</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма купона</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЦенныеБумагиКупонКонтекстноеМеню" id="853"/>
+									<ExtendedTooltip name="ЦенныеБумагиКупонРасширеннаяПодсказка" id="854"/>
+								</InputField>
+								<InputField name="ИтогоЦенныеБумаги" id="830">
+									<DataPath>ИтогоЦенныеБумаги</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Всего</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ИтогоЦенныеБумагиКонтекстноеМеню" id="831"/>
+									<ExtendedTooltip name="ИтогоЦенныеБумагиРасширеннаяПодсказка" id="832"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПрочиеАктивыИОбязательства" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Активы, не относящиеся к ЦБ</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница прочие активы и обязательства</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="СтраницаПрочиеАктивыИОбязательстваРасширеннаяПодсказка" id="22"/>
+					<ChildItems>
+						<Table name="АктивыНеОтносящиесяКЦеннымБумагам" id="166">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамКонтекстноеМеню" id="167"/>
+							<AutoCommandBar name="АктивыНеОтносящиесяКЦеннымБумагамКоманднаяПанель" id="168">
+								<ChildItems>
+									<Button name="АктивыНеОтносящиесяКЦеннымБумагамРасшифровкаСтоимостиАктиваПоРыночнойСтавке" id="990">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РасшифровкаСтоимостиАктиваПоРыночнойСтавке</CommandName>
+										<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамРасшифровкаСтоимостиАктиваПоРыночнойСтавкеРасширеннаяПодсказка" id="991"/>
+									</Button>
+									<Button name="АктивыНеОтносящиесяКЦеннымБумагамИзменитьВалютуСтроки" id="1024">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаИзменитьВалютуСтроки</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамИзменитьВалютуСтрокиРасширеннаяПодсказка" id="1025"/>
+									</Button>
+									<Button name="АктивыНеОтносящиесяКЦеннымБумагамКнопкаРезервы" id="1017">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаПоказатьСкрытьКолонкуРезервы</CommandName>
+										<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамКнопкаРезервыРасширеннаяПодсказка" id="1018"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамРасширеннаяПодсказка" id="169"/>
+							<SearchStringAddition name="АктивыНеОтносящиесяКЦеннымБумагамСтрокаПоиска" id="170">
+								<AdditionSource>
+									<Item>АктивыНеОтносящиесяКЦеннымБумагам</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамСтрокаПоискаКонтекстноеМеню" id="171"/>
+								<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамСтрокаПоискаРасширеннаяПодсказка" id="172"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="АктивыНеОтносящиесяКЦеннымБумагамСостояниеПросмотра" id="173">
+								<AdditionSource>
+									<Item>АктивыНеОтносящиесяКЦеннымБумагам</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамСостояниеПросмотраКонтекстноеМеню" id="174"/>
+								<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамСостояниеПросмотраРасширеннаяПодсказка" id="175"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="АктивыНеОтносящиесяКЦеннымБумагамУправлениеПоиском" id="176">
+								<AdditionSource>
+									<Item>АктивыНеОтносящиесяКЦеннымБумагам</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамУправлениеПоискомКонтекстноеМеню" id="177"/>
+								<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамУправлениеПоискомРасширеннаяПодсказка" id="178"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">АктивыНеОтносящиесяКЦеннымБумагамПриОкончанииРедактирования</Event>
+								<Event name="Selection">АктивыНеОтносящиесяКЦеннымБумагамВыбор</Event>
+								<Event name="BeforeAddRow">АктивыНеОтносящиесяКЦеннымБумагамПередНачаломДобавления</Event>
+								<Event name="BeforeDeleteRow">АктивыНеОтносящиесяКЦеннымБумагамПередУдалением</Event>
+								<Event name="BeforeEditEnd">АктивыНеОтносящиесяКЦеннымБумагамПередОкончаниемРедактирования</Event>
+								<Event name="BeforeRowChange">АктивыНеОтносящиесяКЦеннымБумагамПередНачаломИзменения</Event>
+								<Event name="OnStartEdit">АктивыНеОтносящиесяКЦеннымБумагамПриНачалеРедактирования</Event>
+								<Event name="AfterDeleteRow">АктивыНеОтносящиесяКЦеннымБумагамПослеУдаления</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="АктивыНеОтносящиесяКЦеннымБумагамНомерСтроки" id="179">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамНомерСтрокиКонтекстноеМеню" id="180"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамНомерСтрокиРасширеннаяПодсказка" id="181"/>
+								</LabelField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамВидАктива" id="420">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.ВидАктива</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамВидАктиваКонтекстноеМеню" id="421"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамВидАктиваРасширеннаяПодсказка" id="422"/>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамСубъектАналитики" id="432">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.СубъектАналитики</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамСубъектАналитикиКонтекстноеМеню" id="433"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамСубъектАналитикиРасширеннаяПодсказка" id="434"/>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамОснование" id="435">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.Основание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамОснованиеКонтекстноеМеню" id="436"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамОснованиеРасширеннаяПодсказка" id="437"/>
+								</InputField>
+								<ColumnGroup name="АктивыНеОтносящиесяКЦеннымБумагамГруппаСуммаВВалютеАктива" id="1022">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма до вычета резерва</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма в валюте актива</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамГруппаСуммаВВалютеАктиваРасширеннаяПодсказка" id="1023"/>
+									<ChildItems>
+										<InputField name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРынок" id="194">
+											<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.СуммаРынок</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма до вычета резерва</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокКонтекстноеМеню" id="195"/>
+											<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокРасширеннаяПодсказка" id="196"/>
+											<Events>
+												<Event name="OnChange">АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="АктивыНеОтносящиесяКЦеннымБумагамВалютаСтроки" id="344">
+											<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.ВалютаСтроки</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамВалютаСтрокиКонтекстноеМеню" id="345"/>
+											<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамВалютаСтрокиРасширеннаяПодсказка" id="346"/>
+											<Events>
+												<Event name="OnChange">АктивыНеОтносящиесяКЦеннымБумагамВалютаСтрокиПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРезерваВВалютеУчета" id="1019">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.СуммаРезерваВВалютеУчета</DataPath>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРезерваВВалютеУчетаКонтекстноеМеню" id="1020"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРезерваВВалютеУчетаРасширеннаяПодсказка" id="1021"/>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокВВалютеУчета" id="456">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.СуммаРынокВВалютеУчета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма в валюте учета</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокВВалютеУчетаКонтекстноеМеню" id="457"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокВВалютеУчетаРасширеннаяПодсказка" id="458"/>
+									<Events>
+										<Event name="OnChange">АктивыНеОтносящиесяКЦеннымБумагамСуммаРынокВВалютеУчетаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамВидЗадолженности" id="429">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.ВидЗадолженности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамВидЗадолженностиКонтекстноеМеню" id="430"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамВидЗадолженностиРасширеннаяПодсказка" id="431"/>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамКонтрагент" id="423">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.Контрагент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамКонтрагентКонтекстноеМеню" id="424"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамКонтрагентРасширеннаяПодсказка" id="425"/>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамУровеньОценки" id="1006">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.УровеньОценки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамУровеньОценкиКонтекстноеМеню" id="1007"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамУровеньОценкиРасширеннаяПодсказка" id="1008"/>
+								</InputField>
+								<InputField name="АктивыНеОтносящиесяКЦеннымБумагамПримечание" id="395">
+									<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.Примечание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивыНеОтносящиесяКЦеннымБумагамПримечаниеКонтекстноеМеню" id="396"/>
+									<ExtendedTooltip name="АктивыНеОтносящиесяКЦеннымБумагамПримечаниеРасширеннаяПодсказка" id="397"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<InputField name="ИтогоАктивыНеОтносящиесяКЦБ" id="833">
+							<DataPath>Объект.АктивыНеОтносящиесяКЦеннымБумагам.TotalСуммаРынокВВалютеУчета</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Итого</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИтогоАктивыНеОтносящиесяКЦБКонтекстноеМеню" id="834"/>
+							<ExtendedTooltip name="ИтогоАктивыНеОтносящиесяКЦБРасширеннаяПодсказка" id="835"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПрочиеЦенныеБумаги" id="674">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ценные бумаги для целей контроля ИД</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ценные бумаги для цели контроля ИД</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="СтраницаПрочиеЦенныеБумагиРасширеннаяПодсказка" id="675"/>
+					<ChildItems>
+						<Table name="ПрочиеЦенныеБумаги" id="676">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПрочиеЦенныеБумагиКонтекстноеМеню" id="677"/>
+							<AutoCommandBar name="ПрочиеЦенныеБумагиКоманднаяПанель" id="678">
+								<ChildItems>
+									<Button name="ПрочиеЦенныеБумагиРасшифроватьРасчетСтоимостиЦБ" id="857">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РасшифроватьРасчетСтоимостиЦБ</CommandName>
+										<ExtendedTooltip name="ПрочиеЦенныеБумагиРасшифроватьРасчетСтоимостиЦБРасширеннаяПодсказка" id="858"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПрочиеЦенныеБумагиРасширеннаяПодсказка" id="679"/>
+							<SearchStringAddition name="ПрочиеЦенныеБумагиСтрокаПоиска" id="680">
+								<AdditionSource>
+									<Item>ПрочиеЦенныеБумаги</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПрочиеЦенныеБумагиСтрокаПоискаКонтекстноеМеню" id="681"/>
+								<ExtendedTooltip name="ПрочиеЦенныеБумагиСтрокаПоискаРасширеннаяПодсказка" id="682"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПрочиеЦенныеБумагиСостояниеПросмотра" id="683">
+								<AdditionSource>
+									<Item>ПрочиеЦенныеБумаги</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПрочиеЦенныеБумагиСостояниеПросмотраКонтекстноеМеню" id="684"/>
+								<ExtendedTooltip name="ПрочиеЦенныеБумагиСостояниеПросмотраРасширеннаяПодсказка" id="685"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПрочиеЦенныеБумагиУправлениеПоиском" id="686">
+								<AdditionSource>
+									<Item>ПрочиеЦенныеБумаги</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПрочиеЦенныеБумагиУправлениеПоискомКонтекстноеМеню" id="687"/>
+								<ExtendedTooltip name="ПрочиеЦенныеБумагиУправлениеПоискомРасширеннаяПодсказка" id="688"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПрочиеЦенныеБумагиВыбор</Event>
+								<Event name="OnChange">ПрочиеЦенныеБумагиПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПрочиеЦенныеБумагиНомерСтроки" id="763">
+									<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ПрочиеЦенныеБумагиНомерСтрокиКонтекстноеМеню" id="764"/>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиНомерСтрокиРасширеннаяПодсказка" id="765"/>
+								</LabelField>
+								<ColumnGroup name="ПрочиеЦенныеБумагиГруппаРынокЦеннаяБумага" id="737">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа рынок ценная бумага</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа рынок ценная бумага</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаРынокЦеннаяБумагаРасширеннаяПодсказка" id="738"/>
+									<ChildItems>
+										<InputField name="ПрочиеЦенныеБумагиРынок" id="769">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.Рынок</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиРынокКонтекстноеМеню" id="770"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиРынокРасширеннаяПодсказка" id="771"/>
+											<Events>
+												<Event name="OnChange">ПрочиеЦенныеБумагиРынокПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ПрочиеЦенныеБумагиЦеннаяБумага" id="766">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ЦеннаяБумага</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиЦеннаяБумагаКонтекстноеМеню" id="767"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиЦеннаяБумагаРасширеннаяПодсказка" id="768"/>
+											<Events>
+												<Event name="OnChange">ПрочиеЦенныеБумагиЦеннаяБумагаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПрочиеЦенныеБумагиГруппаПартияСтрокаПартии" id="739">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа партия строка партии</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа партия строка партии</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаПартияСтрокаПартииРасширеннаяПодсказка" id="740"/>
+									<ChildItems>
+										<InputField name="ПрочиеЦенныеБумагиПартия" id="772">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.Партия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиПартияКонтекстноеМеню" id="773"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиПартияРасширеннаяПодсказка" id="774"/>
+										</InputField>
+										<InputField name="ПрочиеЦенныеБумагиСтрокаПартии" id="775">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.СтрокаПартии</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиСтрокаПартииКонтекстноеМеню" id="776"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиСтрокаПартииРасширеннаяПодсказка" id="777"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПрочиеЦенныеБумагиГруппаЦены" id="741">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа цены</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа цены</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаЦеныРасширеннаяПодсказка" id="742"/>
+									<ChildItems>
+										<ColumnGroup name="ПрочиеЦенныеБумагиГруппаЦенаКотировки" id="745">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Котировка</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Прочие ценные бумаги группа цена котировки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаЦенаКотировкиРасширеннаяПодсказка" id="746"/>
+											<ChildItems>
+												<InputField name="ПрочиеЦенныеБумагиЦенаКотировки" id="778">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ЦенаКотировки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиЦенаКотировкиКонтекстноеМеню" id="779"/>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиЦенаКотировкиРасширеннаяПодсказка" id="780"/>
+													<Events>
+														<Event name="OnChange">ПрочиеЦенныеБумагиЦенаКотировкиПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="ПрочиеЦенныеБумагиВалютаКотировки" id="784">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ВалютаКотировки</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиВалютаКотировкиКонтекстноеМеню" id="785">
+														<ChildItems>
+															<Button name="ПрочиеЦенныеБумагиЗадатьВалютуКотировки" id="1013">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.ЗадатьВалютуКотировки</CommandName>
+																<ExtendedTooltip name="ПрочиеЦенныеБумагиЗадатьВалютуКотировкиРасширеннаяПодсказка" id="1014"/>
+															</Button>
+														</ChildItems>
+													</ContextMenu>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиВалютаКотировкиРасширеннаяПодсказка" id="786"/>
+													<Events>
+														<Event name="OnChange">ПрочиеЦенныеБумагиВалютаКотировкиПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ПрочиеЦенныеБумагиГруппаЦена" id="743">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Прочие ценные бумаги группа цена</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаЦенаРасширеннаяПодсказка" id="744"/>
+											<ChildItems>
+												<InputField name="ПрочиеЦенныеБумагиЦена" id="781">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.Цена</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиЦенаКонтекстноеМеню" id="782"/>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиЦенаРасширеннаяПодсказка" id="783"/>
+												</InputField>
+												<InputField name="ПрочиеЦенныеБумагиВалютаНоминала" id="814">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ВалютаНоминала</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиВалютаНоминалаКонтекстноеМеню" id="815"/>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиВалютаНоминалаРасширеннаяПодсказка" id="816"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПрочиеЦенныеБумагиГруппаКупоны" id="747">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа купоны</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа купоны</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаКупоныРасширеннаяПодсказка" id="748"/>
+									<ChildItems>
+										<ColumnGroup name="ПрочиеЦенныеБумагиГруппаЦенаКотировкиКупона" id="749">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Котировка купона</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Прочие ценные бумаги группа цена котировки купона</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаЦенаКотировкиКупонаРасширеннаяПодсказка" id="750"/>
+											<ChildItems>
+												<InputField name="ПрочиеЦенныеБумагиЦенаКотировкиКупона" id="799">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ЦенаКотировкиКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиЦенаКотировкиКупонаКонтекстноеМеню" id="800"/>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиЦенаКотировкиКупонаРасширеннаяПодсказка" id="801"/>
+													<Events>
+														<Event name="OnChange">ПрочиеЦенныеБумагиЦенаКотировкиКупонаПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="ПрочиеЦенныеБумагиВалютаКотировкиКупона" id="805">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ВалютаКотировкиКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиВалютаКотировкиКупонаКонтекстноеМеню" id="806">
+														<ChildItems>
+															<Button name="ПрочиеЦенныеБумагиЗадатьВалютуКотировкиКупона" id="1015">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.ЗадатьВалютуКотировкиКупона</CommandName>
+																<ExtendedTooltip name="ПрочиеЦенныеБумагиЗадатьВалютуКотировкиКупонаРасширеннаяПодсказка" id="1016"/>
+															</Button>
+														</ChildItems>
+													</ContextMenu>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиВалютаКотировкиКупонаРасширеннаяПодсказка" id="807"/>
+													<Events>
+														<Event name="OnChange">ПрочиеЦенныеБумагиВалютаКотировкиКупонаПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ПрочиеЦенныеБумагиГруппаЦенаКупона" id="751">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена купона</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Прочие ценные бумаги группа цена купона</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаЦенаКупонаРасширеннаяПодсказка" id="752"/>
+											<ChildItems>
+												<InputField name="ПрочиеЦенныеБумагиЦенаКупона" id="802">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ЦенаКупона</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиЦенаКупонаКонтекстноеМеню" id="803"/>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиЦенаКупонаРасширеннаяПодсказка" id="804"/>
+												</InputField>
+												<InputField name="ПрочиеЦенныеБумагиВалютаНоминала1" id="817">
+													<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ВалютаНоминала</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ПрочиеЦенныеБумагиВалютаНоминала1КонтекстноеМеню" id="818"/>
+													<ExtendedTooltip name="ПрочиеЦенныеБумагиВалютаНоминала1РасширеннаяПодсказка" id="819"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ПрочиеЦенныеБумагиКурсВалютыНоминала" id="811">
+									<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.КурсВалютыНоминала</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПрочиеЦенныеБумагиКурсВалютыНоминалаКонтекстноеМеню" id="812"/>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиКурсВалютыНоминалаРасширеннаяПодсказка" id="813"/>
+								</InputField>
+								<ColumnGroup name="ПрочиеЦенныеБумагиГруппаВидЦеныУровеньОценки" id="759">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа вид цены уровень оценки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа вид цены уровень оценки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаВидЦеныУровеньОценкиРасширеннаяПодсказка" id="760"/>
+									<ChildItems>
+										<InputField name="ПрочиеЦенныеБумагиВидЦены" id="787">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ВидЦены</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиВидЦеныКонтекстноеМеню" id="788"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиВидЦеныРасширеннаяПодсказка" id="789"/>
+										</InputField>
+										<InputField name="ПрочиеЦенныеБумагиУровеньОценки" id="790">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.УровеньОценки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиУровеньОценкиКонтекстноеМеню" id="791"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиУровеньОценкиРасширеннаяПодсказка" id="792"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПрочиеЦенныеБумагиГруппаДатаЦеныИсточник" id="761">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа дата цены источник</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочие ценные бумаги группа дата цены источник</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиГруппаДатаЦеныИсточникРасширеннаяПодсказка" id="762"/>
+									<ChildItems>
+										<InputField name="ПрочиеЦенныеБумагиДатаЦены" id="793">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.ДатаЦены</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиДатаЦеныКонтекстноеМеню" id="794"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиДатаЦеныРасширеннаяПодсказка" id="795"/>
+										</InputField>
+										<InputField name="ПрочиеЦенныеБумагиИсточник" id="796">
+											<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.Источник</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПрочиеЦенныеБумагиИсточникКонтекстноеМеню" id="797"/>
+											<ExtendedTooltip name="ПрочиеЦенныеБумагиИсточникРасширеннаяПодсказка" id="798"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ПрочиеЦенныеБумагиПримечание" id="808">
+									<DataPath>РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.Примечание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПрочиеЦенныеБумагиПримечаниеКонтекстноеМеню" id="809"/>
+									<ExtendedTooltip name="ПрочиеЦенныеБумагиПримечаниеРасширеннаяПодсказка" id="810"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаОтветственныйКомментарий" id="828">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ответственный / комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаОтветственныйКомментарийРасширеннаяПодсказка" id="829"/>
+			<ChildItems>
+				<LabelField name="Ответственный" id="13">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>25</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="15"/>
+				</LabelField>
+				<InputField name="Комментарий" id="16">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="18"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РегистрацияСтоимостиАктивов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.АктивыНеОтносящиесяКЦеннымБумагам"/>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВидУчета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыУчета</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоПаев" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество паев</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>24</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РегистрацияСтоимости" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистрация стоимости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentObject.РегистрацияСтоимостиПереоценки</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>РегистрацияСтоимости.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг">
+					<Column name="ВалютаНоминала" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта номинала</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="РегистрацияСтоимости.СтоимостиПереоценки">
+					<Column name="ВалютаНоминала" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта номинала</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВалютаУчета" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта учета</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СуммаВсегоВВалютеУчета" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="НачислениеРезервовПИФ" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисление резервов ПИФ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentObject.НачислениеРезервовПИФ</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>НачислениеРезервовПИФ.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ИтогоЦенныеБумаги" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ценные бумаги</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоПИФ" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это ПИФ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайлаXML" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес файла XML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолныйРежимОтображенияТаблицыЦенныхБумаг" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полный режим отображения таблицы ценных бумаг</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПолныйРежимОтображенияТаблицыЦенныхБумаг</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КорзинаЦенныхБумаг" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Корзина ц/ б</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НачислениеСписаниеРезервов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисление списание резервов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentObject.НачислениеСписаниеРезервов</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>НачислениеСписаниеРезервов.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СтоимостиПереоценкиВалютаКотировкиКупона</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СтоимостиПереоценкиВалютаНоминала1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СтоимостиПереоценкиВалютаНоминала3</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СтоимостиПереоценкиКраткийВалютаНоминала1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РегистрацияСтоимости.СтоимостиПереоценки.Рынок</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.РынкиЦенныхБумаг.Облигации</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ПрочиеЦенныеБумагиВалютаНоминала1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РегистрацияСтоимости.СтоимостиПрочихЦенныхБумаг.Рынок</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.РынкиЦенныхБумаг.Облигации</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаполнить</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПечатьИВыгрузка" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузка СЧА/РСА</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать и выгрузка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьИВыгрузка</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьИтоги" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить общие суммы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить итоги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаполнитьИтоги</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПечатьДокумента" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПечатьДокумента</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РасшифроватьРасчетСтоимостиЦБ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровать расчет </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровать расчет стоимости ценной бумаги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SyncContents</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаРасшифроватьРасчетСтоимостиЦБ</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПерейтиКПереоценке" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть регистрацию стоимости</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к документу с регистрацией стоимости ценной бумаги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Document</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПерейтиКПереоценке</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПоказатьРасчетФинансовыхПоказателей" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать расчет финансовых показателей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда показать расчет финансовых показателей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПоказатьРасчетФинансовыхПоказателей</Action>
+		</Command>
+		<Command name="КомандаПоказатьРасчетРезервов" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка расчета резервов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать расшифровку расчета резервов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SyncContents</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПоказатьРасчетРезервов</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="КомандаРассчитатьРезервы" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать резервы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать резервы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаРассчитатьРезервы</Action>
+		</Command>
+		<Command name="КомандаКонтрольСЧА" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль СЧА</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль СЧА</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаКонтрольСЧА</Action>
+		</Command>
+		<Command name="КомандаРежимОтображенияКраткий" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим отображения краткий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим отображения краткий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПереключитьРежимОтображения</Action>
+		</Command>
+		<Command name="КомандаРежимОтображенияПолный" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим отображения полный</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим отображения полный</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПереключитьРежимОтображения</Action>
+		</Command>
+		<Command name="РасшифровкаСтоимостиАктиваПоРыночнойСтавке" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка стоимости по рыночной ставке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка стоимости актива по рыночной ставке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаРасшифровкаСтоимостиАктиваПоРыночнойСтавке</Action>
+		</Command>
+		<Command name="ЗадатьВалютуКотировки" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задать валюту котировки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задать валюту котировки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗадатьВалютуКотировки</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗадатьВалютуКотировкиКупона" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задать валюту котировки купона</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задать валюту котировки купона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗадатьВалютуКотировкиКупона</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПоказатьСкрытьКолонкуРезервы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать резервы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда показать скрыть колонку резервы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПоказатьСкрытьКолонкуРезервы</Action>
+		</Command>
+		<Command name="КомандаИзменитьВалютуСтроки" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить валюту строки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда изменить валюту строки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаИзменитьВалютуСтроки</Action>
+			<AssociatedTableElementId xsi:type="xs:string">АктивыНеОтносящиесяКЦеннымБумагам</AssociatedTableElementId>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:8e57a02e-5962-4350-b8a2-fe289e9175c3</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

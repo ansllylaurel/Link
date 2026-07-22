@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="50">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="51"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="7">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СчетДоверительногоУправления" id="10">
+			<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Основание" id="13">
+			<DataPath>Объект.Основание</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОснованиеКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ОснованиеРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<UsualGroup name="Группа2" id="52">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<InputField name="ДатаСвидетельства" id="19">
+					<DataPath>Объект.ДатаСвидетельства</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаСвидетельстваКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ДатаСвидетельстваРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="Регистратор" id="16">
+					<DataPath>Объект.Регистратор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="РегистраторКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="РегистраторРасширеннаяПодсказка" id="18"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ОбъектыНедвижимости" id="28">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ОбъектыНедвижимости</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ОбъектыНедвижимостиКонтекстноеМеню" id="29"/>
+			<AutoCommandBar name="ОбъектыНедвижимостиКоманднаяПанель" id="30">
+				<ChildItems>
+					<Button name="ОбъектыНедвижимостиПодборИмущества" id="54">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПодборИмущества</CommandName>
+						<ExtendedTooltip name="ОбъектыНедвижимостиПодборИмуществаРасширеннаяПодсказка" id="55"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ОбъектыНедвижимостиРасширеннаяПодсказка" id="31"/>
+			<SearchStringAddition name="ОбъектыНедвижимостиСтрокаПоиска" id="32">
+				<AdditionSource>
+					<Item>ОбъектыНедвижимости</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОбъектыНедвижимостиСтрокаПоискаКонтекстноеМеню" id="33"/>
+				<ExtendedTooltip name="ОбъектыНедвижимостиСтрокаПоискаРасширеннаяПодсказка" id="34"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ОбъектыНедвижимостиСостояниеПросмотра" id="35">
+				<AdditionSource>
+					<Item>ОбъектыНедвижимости</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОбъектыНедвижимостиСостояниеПросмотраКонтекстноеМеню" id="36"/>
+				<ExtendedTooltip name="ОбъектыНедвижимостиСостояниеПросмотраРасширеннаяПодсказка" id="37"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ОбъектыНедвижимостиУправлениеПоиском" id="38">
+				<AdditionSource>
+					<Item>ОбъектыНедвижимости</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ОбъектыНедвижимостиУправлениеПоискомКонтекстноеМеню" id="39"/>
+				<ExtendedTooltip name="ОбъектыНедвижимостиУправлениеПоискомРасширеннаяПодсказка" id="40"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ОбъектыНедвижимостиНомерСтроки" id="41">
+					<DataPath>Объект.ОбъектыНедвижимости.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОбъектыНедвижимостиНомерСтрокиКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ОбъектыНедвижимостиНомерСтрокиРасширеннаяПодсказка" id="43"/>
+				</LabelField>
+				<InputField name="ОбъектыНедвижимостиОбъектНедвижимости" id="44">
+					<DataPath>Объект.ОбъектыНедвижимости.ОбъектНедвижимости</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОбъектыНедвижимостиОбъектНедвижимостиКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ОбъектыНедвижимостиОбъектНедвижимостиРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ОбъектыНедвижимостиНомерСвидетельства" id="47">
+					<DataPath>Объект.ОбъектыНедвижимости.НомерСвидетельства</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОбъектыНедвижимостиНомерСвидетельстваКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ОбъектыНедвижимостиНомерСвидетельстваРасширеннаяПодсказка" id="49"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<LabelField name="Ответственный" id="22">
+			<DataPath>Объект.Ответственный</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="24"/>
+		</LabelField>
+		<InputField name="Комментарий" id="25">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="27"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.СведенияОРегистрацииПраваСобственности</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПодборИмущества" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор имущества</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор имущества</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодборИмущества</Action>
+		</Command>
+	</Commands>
+</Form>

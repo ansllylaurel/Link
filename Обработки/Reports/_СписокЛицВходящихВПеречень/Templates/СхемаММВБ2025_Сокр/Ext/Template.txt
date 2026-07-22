@@ -1,0 +1,88 @@
+﻿<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.micex.ru/insiders_document" xmlns:tns="http://www.micex.ru/insiders_document" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="insiders_document" type="tns:insiders_document"/>
+	<xs:complexType name="insiders_document">
+		<xs:sequence>
+			<xs:element name="organization_info" type="tns:organization_info"/>
+			<xs:element name="insiders" type="tns:insiders" minOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="created" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="organization_info">
+		<xs:sequence>
+			<xs:element name="full_name" type="xs:string" />
+			<xs:element name="short_name" type="xs:string" />
+			<xs:element name="category" type="xs:string" />
+			<xs:element name="inn" type="xs:string" />
+			<xs:element name="ogrn" type="xs:string" />
+			<xs:element name="address" type="xs:string" />
+			<xs:element name="post_address" type="xs:string" />
+			<xs:element name="website_address" type="xs:string" />
+			<xs:element name="contact_person" type="xs:string" />
+			<xs:element name="phone" type="xs:string" />
+			<xs:element name="fax" type="xs:string" />
+			<xs:element name="email" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="insiders">
+		<xs:sequence>
+			<xs:element name="organizations" type="tns:organizations" minOccurs="0"/>
+			<xs:element name="persons" type="tns:persons" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="organizations">
+		<xs:sequence>
+			<xs:element name="organization" type="tns:organization" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="persons">
+		<xs:sequence>
+			<xs:element name="person" type="tns:person" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="organization">
+    <xs:all>
+      <xs:element name="inc_date" type="xs:date"/>
+      <xs:element name="inc_reason" type="xs:string"/>
+      <xs:element name="inc_category" type="xs:string"/>
+      <xs:element name="inc_financial_instrument" type="xs:string"/>
+      <xs:element name="exc_date" type="xs:date" minOccurs="0"/>
+      <xs:element name="exc_reason" type="xs:string" minOccurs="0"/>
+      <xs:element name="exc_category" type="xs:string"/>
+      <xs:element name="exc_financial_instrument" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="inn" type="xs:string"/>
+      <xs:element name="ogrn" type="xs:string"/>
+      <xs:element name="kio" type="xs:string"/>
+      <xs:element name="okcm" type="xs:string"/>
+      <xs:element name="registration_number" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:all>
+      <xs:element name="inc_date" type="xs:date"/>
+      <xs:element name="inc_reason" type="xs:string"/>
+      <xs:element name="inc_category" type="xs:string"/>
+      <xs:element name="inc_financial_instrument" type="xs:string"/>
+      <xs:element name="inc_org_fullname" type="xs:string"/>
+      <xs:element name="inc_job" type="xs:string"/>
+      <xs:element name="exc_date" type="xs:date" minOccurs="0"/>
+      <xs:element name="exc_reason" type="xs:string" minOccurs="0" />
+      <xs:element name="exc_category" type="xs:string" />
+      <xs:element name="exc_financial_instrument" type="xs:string" />
+      <xs:element name="exc_org_fullname" type="xs:string" />
+      <xs:element name="exc_job" type="xs:string" />
+      <xs:element name="last_name" type="xs:string" minOccurs="0" />
+      <xs:element name="first_name" type="xs:string" minOccurs="0" />
+      <xs:element name="middle_name" type="xs:string" minOccurs="0" />
+      <xs:element name="birth_date" type="xs:date" minOccurs="0" />
+      <xs:element name="birth_place" type="xs:string"  minOccurs="0"/>
+      <xs:element name="doc_sn" type="xs:string" />
+      <xs:element name="doc_organ" type="xs:string" minOccurs="0"/>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+      <xs:element name="post_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="phone" type="xs:string" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

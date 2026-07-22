@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаОк" id="26">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаОк</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаКомандаОкРасширеннаяПодсказка" id="27"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СохраняемыеРазделы" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<DataPath>СохраняемыеРазделы</DataPath>
+			<RowPictureDataPath>СохраняемыеРазделы.Picture</RowPictureDataPath>
+			<ContextMenu name="СохраняемыеРазделыКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СохраняемыеРазделыКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="СохраняемыеРазделыРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СохраняемыеРазделыСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СохраняемыеРазделы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СохраняемыеРазделыСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СохраняемыеРазделыСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СохраняемыеРазделыСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СохраняемыеРазделы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СохраняемыеРазделыСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СохраняемыеРазделыСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СохраняемыеРазделыУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СохраняемыеРазделы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СохраняемыеРазделыУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СохраняемыеРазделыУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="СохраняемыеРазделыПометка" id="17">
+					<DataPath>СохраняемыеРазделы.Check</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СохраняемыеРазделыПометкаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СохраняемыеРазделыПометкаРасширеннаяПодсказка" id="19"/>
+				</CheckBoxField>
+				<InputField name="СохраняемыеРазделыПредставление" id="20">
+					<DataPath>СохраняемыеРазделы.Presentation</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="СохраняемыеРазделыПредставлениеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СохраняемыеРазделыПредставлениеРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="СохраняемыеРазделыЗначение" id="14">
+					<DataPath>СохраняемыеРазделы.Value</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СохраняемыеРазделыЗначениеКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СохраняемыеРазделыЗначениеРасширеннаяПодсказка" id="16"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СохраняемыеРазделы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохраняемые разделы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОк" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>R</Shortcut>
+			<Action>КомандаОк</Action>
+		</Command>
+	</Commands>
+</Form>

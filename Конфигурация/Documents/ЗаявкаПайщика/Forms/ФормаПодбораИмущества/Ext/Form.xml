@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаПеренестиВДокумент" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаПеренестиВДокумент</CommandName>
+				<ExtendedTooltip name="ФормаКомандаПеренестиВДокументРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ОстаткиИмущества" id="3">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ОстаткиИмущества</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ОстаткиИмуществаКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="ОстаткиИмуществаКоманднаяПанель" id="5">
+				<ChildItems>
+					<Button name="ОстаткиИмуществаКомандаУстановитьФлажки" id="34">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаУстановитьФлажки</CommandName>
+						<ExtendedTooltip name="ОстаткиИмуществаКомандаУстановитьФлажкиРасширеннаяПодсказка" id="35"/>
+					</Button>
+					<Button name="ОстаткиИмуществаКомандаСнятьФлажки" id="36">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСнятьФлажки</CommandName>
+						<ExtendedTooltip name="ОстаткиИмуществаКомандаСнятьФлажкиРасширеннаяПодсказка" id="37"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ОстаткиИмуществаРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="ОстаткиИмуществаСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>ОстаткиИмущества</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОстаткиИмуществаСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="ОстаткиИмуществаСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ОстаткиИмуществаСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>ОстаткиИмущества</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОстаткиИмуществаСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="ОстаткиИмуществаСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ОстаткиИмуществаУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>ОстаткиИмущества</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ОстаткиИмуществаУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="ОстаткиИмуществаУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ОстаткиИмуществаФлажок" id="16">
+					<DataPath>ОстаткиИмущества.Флажок</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОстаткиИмуществаФлажокКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ОстаткиИмуществаФлажокРасширеннаяПодсказка" id="18"/>
+				</CheckBoxField>
+				<InputField name="ОстаткиИмуществаОснование" id="19">
+					<DataPath>ОстаткиИмущества.Основание</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОстаткиИмуществаОснованиеКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ОстаткиИмуществаОснованиеРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="ОстаткиИмуществаВидИмущества" id="22">
+					<DataPath>ОстаткиИмущества.ВидИмущества</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОстаткиИмуществаВидИмуществаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ОстаткиИмуществаВидИмуществаРасширеннаяПодсказка" id="24"/>
+				</InputField>
+				<InputField name="ОстаткиИмуществаИмущество" id="25">
+					<DataPath>ОстаткиИмущества.Имущество</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОстаткиИмуществаИмуществоКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ОстаткиИмуществаИмуществоРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="ОстаткиИмуществаКоличество" id="28">
+					<DataPath>ОстаткиИмущества.Количество</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОстаткиИмуществаКоличествоКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ОстаткиИмуществаКоличествоРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ОстаткиИмуществаСумма" id="31">
+					<DataPath>ОстаткиИмущества.Сумма</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОстаткиИмуществаСуммаКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ОстаткиИмуществаСуммаРасширеннаяПодсказка" id="33"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ОстаткиИмущества" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остатки имущества</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Флажок" id="1">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Основание" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаявкаПайщика</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВидИмущества" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид имущества</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыАктивов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Имущество" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имущество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ОбъектыНедвижимости</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЦенныеБумагиСумма</v8:TypeSet>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаПеренестиВДокумент" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести в документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести в документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПеренестиВДокумент</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьФлажки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьФлажки</Action>
+		</Command>
+		<Command name="КомандаСнятьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСнятьФлажки</Action>
+		</Command>
+	</Commands>
+</Form>

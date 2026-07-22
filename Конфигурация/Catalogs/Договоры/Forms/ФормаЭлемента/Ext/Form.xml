@@ -1,0 +1,1668 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Width>80</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КомандаПоказатьСчетаИИсполнителей" id="198">
+				<Type>CommandBarButton</Type>
+				<CommandName>Catalog.Договоры.Command.ПоказатьСчетаИИсполнителей</CommandName>
+				<DataPath>Объект.Ref</DataPath>
+				<ExtendedTooltip name="КомандаПоказатьСчетаИИсполнителейРасширеннаяПодсказка" id="199"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтрокаШапки1" id="180">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа строка шапки1</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа строка шапки1</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтрокаШапки1РасширеннаяПодсказка" id="181"/>
+			<ChildItems>
+				<InputField name="ВидДоговора" id="62">
+					<DataPath>Объект.ВидДоговора</DataPath>
+					<ContextMenu name="ВидДоговораКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ВидДоговораРасширеннаяПодсказка" id="64"/>
+					<Events>
+						<Event name="OnChange">ВидДоговораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="Организация" id="38">
+					<DataPath>Объект.Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="40"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВидДоговораАренды" id="341">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид договора аренды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид договора аренды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВидДоговораАрендыРасширеннаяПодсказка" id="342"/>
+			<ChildItems>
+				<InputField name="ВидДоговораАренды" id="343">
+					<DataPath>ВидДоговораАренды</DataPath>
+					<ContextMenu name="ВидДоговораАрендыКонтекстноеМеню" id="344"/>
+					<ExtendedTooltip name="ВидДоговораАрендыРасширеннаяПодсказка" id="345"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНомерДата" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<InputField name="НомерДоговора" id="19">
+					<DataPath>Объект.НомерДоговора</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>17</MaxWidth>
+					<ContextMenu name="НомерДоговораКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="НомерДоговораРасширеннаяПодсказка" id="21"/>
+					<Events>
+						<Event name="OnChange">НомерДоговораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаЗаключения" id="13">
+					<DataPath>Объект.ДатаЗаключения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаЗаключенияКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ДатаЗаключенияРасширеннаяПодсказка" id="15"/>
+					<Events>
+						<Event name="OnChange">ДатаЗаключенияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаРасторжения" id="238">
+					<DataPath>ДатаРасторжения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ДатаРасторженияКонтекстноеМеню" id="239"/>
+					<ExtendedTooltip name="ДатаРасторженияРасширеннаяПодсказка" id="240"/>
+				</InputField>
+				<Button name="КомандаЗакрытьДоговор" id="196">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.КомандаЗакрытьДоговор</CommandName>
+					<ExtendedTooltip name="КомандаЗакрытьДоговорРасширеннаяПодсказка" id="197"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВидДокумента" id="349">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВидДокументаРасширеннаяПодсказка" id="350"/>
+			<ChildItems>
+				<CheckBoxField name="ВидДокументДляПредставленияДоговор" id="354">
+					<DataPath>ВидДокументаДляПредставленияДоговор</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВидДокументДляПредставленияДоговорКонтекстноеМеню" id="355"/>
+					<ExtendedTooltip name="ВидДокументДляПредставленияДоговорРасширеннаяПодсказка" id="356"/>
+					<Events>
+						<Event name="OnChange">ВидДокументДляПредставленияДоговорПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ВидДокументаДляПредставления" id="351">
+					<DataPath>Объект.ВидДокументаДляПредставления</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="ВидДокументаДляПредставленияКонтекстноеМеню" id="352"/>
+					<ExtendedTooltip name="ВидДокументаДляПредставленияРасширеннаяПодсказка" id="353"/>
+					<Events>
+						<Event name="OnChange">ВидДокументаДляПредставленияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Контрагент" id="10">
+			<DataPath>Объект.Контрагент</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КонтрагентКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">КонтрагентПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаОснование" id="285">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОснованиеРасширеннаяПодсказка" id="286"/>
+			<ChildItems>
+				<InputField name="Основание" id="73">
+					<DataPath>Объект.Основание</DataPath>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ОснованиеКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ОснованиеРасширеннаяПодсказка" id="75"/>
+					<Events>
+						<Event name="OnChange">ОснованиеПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСвязатьСоСчетомДУ" id="206">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа связать со счетом ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа связать со счетом ДУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСвязатьСоСчетомДУРасширеннаяПодсказка" id="207"/>
+			<ChildItems>
+				<CheckBoxField name="СвязатьСоСчетомДУ" id="203">
+					<DataPath>СвязатьСоСчетомДУ</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СвязатьСоСчетомДУКонтекстноеМеню" id="204"/>
+					<ExtendedTooltip name="СвязатьСоСчетомДУРасширеннаяПодсказка" id="205"/>
+					<Events>
+						<Event name="OnChange">СвязатьСоСчетомДУПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СчетДоверительногоУправления" id="200">
+					<DataPath>СчетДоверительногоУправления</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<CreateButton>false</CreateButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Организация</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="201"/>
+					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="202"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаИзменениеВознаграждения" id="280">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИзменениеВознагражденияРасширеннаяПодсказка" id="281"/>
+			<ChildItems>
+				<CheckBoxField name="ИзменениеВознаграждения" id="277">
+					<DataPath>ИзменениеВознаграждения</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИзменениеВознагражденияКонтекстноеМеню" id="278"/>
+					<ExtendedTooltip name="ИзменениеВознагражденияРасширеннаяПодсказка" id="279"/>
+					<Events>
+						<Event name="OnChange">ИзменениеВознагражденияПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ДатаИзмененияВознаграждения" id="282">
+					<DataPath>Объект.ДатаИзмененияВознаграждения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата изменения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Если изменения касаются расчета вознаграждения в будущем периоде (например, с начала следующего года), то укажите дату начала будущего периода, в противном случае укажите дату соглашения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ДатаИзмененияВознагражденияКонтекстноеМеню" id="283"/>
+					<ExtendedTooltip name="ДатаИзмененияВознагражденияРасширеннаяПодсказка" id="284"/>
+				</InputField>
+				<LabelDecoration name="ОткрытьНастройкиРасчетаВознаграждения" id="287">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть настройки расчета вознаграждения</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ОткрытьНастройкиРасчетаВознагражденияКонтекстноеМеню" id="288"/>
+					<ExtendedTooltip name="ОткрытьНастройкиРасчетаВознагражденияРасширеннаяПодсказка" id="289"/>
+					<Events>
+						<Event name="Click">ОткрытьНастройкиРасчетаВознагражденияНажатие</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаУсловияДоговоров" id="79">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа условия договоров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаУсловияДоговоровРасширеннаяПодсказка" id="80"/>
+			<ChildItems>
+				<Page name="ГруппаУсловияДоговоровОбщие" id="172">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие условия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие условия</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаУсловияДоговоровОбщиеРасширеннаяПодсказка" id="173"/>
+					<ChildItems>
+						<Table name="УсловияДоговоровОбщие" id="144">
+							<Height>5</Height>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>УсловияДоговоровОбщие</DataPath>
+							<RowPictureDataPath>УсловияДоговоровОбщие.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="УсловияДоговоровОбщиеКонтекстноеМеню" id="145"/>
+							<AutoCommandBar name="УсловияДоговоровОбщиеКоманднаяПанель" id="146"/>
+							<ExtendedTooltip name="УсловияДоговоровОбщиеРасширеннаяПодсказка" id="147"/>
+							<SearchStringAddition name="УсловияДоговоровОбщиеСтрокаПоиска" id="148">
+								<AdditionSource>
+									<Item>УсловияДоговоровОбщие</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОбщиеСтрокаПоискаКонтекстноеМеню" id="149"/>
+								<ExtendedTooltip name="УсловияДоговоровОбщиеСтрокаПоискаРасширеннаяПодсказка" id="150"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УсловияДоговоровОбщиеСостояниеПросмотра" id="151">
+								<AdditionSource>
+									<Item>УсловияДоговоровОбщие</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОбщиеСостояниеПросмотраКонтекстноеМеню" id="152"/>
+								<ExtendedTooltip name="УсловияДоговоровОбщиеСостояниеПросмотраРасширеннаяПодсказка" id="153"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УсловияДоговоровОбщиеУправлениеПоиском" id="154">
+								<AdditionSource>
+									<Item>УсловияДоговоровОбщие</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОбщиеУправлениеПоискомКонтекстноеМеню" id="155"/>
+								<ExtendedTooltip name="УсловияДоговоровОбщиеУправлениеПоискомРасширеннаяПодсказка" id="156"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="УсловияДоговоровОбщиеПериод" id="157">
+									<DataPath>УсловияДоговоровОбщие.Period</DataPath>
+									<ContextMenu name="УсловияДоговоровОбщиеПериодКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="УсловияДоговоровОбщиеПериодРасширеннаяПодсказка" id="159"/>
+								</LabelField>
+								<LabelField name="УсловияДоговоровОбщиеДатаРасторжения" id="163">
+									<DataPath>УсловияДоговоровОбщие.ДатаРасторжения</DataPath>
+									<ContextMenu name="УсловияДоговоровОбщиеДатаРасторженияКонтекстноеМеню" id="164"/>
+									<ExtendedTooltip name="УсловияДоговоровОбщиеДатаРасторженияРасширеннаяПодсказка" id="165"/>
+								</LabelField>
+								<ColumnGroup name="УсловияДоговоровОбщиеГруппаСрокОплаты" id="304">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия договоров общие группа срок оплаты</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия договоров общие группа срок оплаты</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="УсловияДоговоровОбщиеГруппаСрокОплатыРасширеннаяПодсказка" id="305"/>
+									<ChildItems>
+										<LabelField name="УсловияДоговоровОбщиеВариантНачалаСрока" id="386">
+											<DataPath>УсловияДоговоровОбщие.ВариантНачалаСрока</DataPath>
+											<ContextMenu name="УсловияДоговоровОбщиеВариантНачалаСрокаКонтекстноеМеню" id="387"/>
+											<ExtendedTooltip name="УсловияДоговоровОбщиеВариантНачалаСрокаРасширеннаяПодсказка" id="388"/>
+										</LabelField>
+										<LabelField name="УсловияДоговоровОбщиеСрокОплаты" id="169">
+											<DataPath>УсловияДоговоровОбщие.СрокОплаты</DataPath>
+											<ContextMenu name="УсловияДоговоровОбщиеСрокОплатыКонтекстноеМеню" id="170"/>
+											<ExtendedTooltip name="УсловияДоговоровОбщиеСрокОплатыРасширеннаяПодсказка" id="171"/>
+										</LabelField>
+										<LabelField name="УсловияДоговоровОбщиеВариантДлиныСрока" id="166">
+											<DataPath>УсловияДоговоровОбщие.ВариантДлиныСрока</DataPath>
+											<ContextMenu name="УсловияДоговоровОбщиеВариантДлиныСрокаКонтекстноеМеню" id="167"/>
+											<ExtendedTooltip name="УсловияДоговоровОбщиеВариантДлиныСрокаРасширеннаяПодсказка" id="168"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+						<InputField name="НаименованиеВладельцаДляДокументов" id="193">
+							<DataPath>Объект.НаименованиеВладельцаДляДокументов</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MaxHeight>3</MaxHeight>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="НаименованиеВладельцаДляДокументовКонтекстноеМеню" id="194"/>
+							<ExtendedTooltip name="НаименованиеВладельцаДляДокументовРасширеннаяПодсказка" id="195"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаУсловияАгентскихДоговоров" id="174">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия агентских договоров</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа условия агентских договоров</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаУсловияАгентскихДоговоровРасширеннаяПодсказка" id="175"/>
+					<ChildItems>
+						<Table name="УсловияАгентскихДоговоров" id="83">
+							<Height>5</Height>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>УсловияАгентскихДоговоров</DataPath>
+							<RowPictureDataPath>УсловияАгентскихДоговоров.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="УсловияАгентскихДоговоровКонтекстноеМеню" id="84"/>
+							<AutoCommandBar name="УсловияАгентскихДоговоровКоманднаяПанель" id="85"/>
+							<ExtendedTooltip name="УсловияАгентскихДоговоровРасширеннаяПодсказка" id="86"/>
+							<SearchStringAddition name="УсловияАгентскихДоговоровСтрокаПоиска" id="87">
+								<AdditionSource>
+									<Item>УсловияАгентскихДоговоров</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияАгентскихДоговоровСтрокаПоискаКонтекстноеМеню" id="88"/>
+								<ExtendedTooltip name="УсловияАгентскихДоговоровСтрокаПоискаРасширеннаяПодсказка" id="89"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УсловияАгентскихДоговоровСостояниеПросмотра" id="90">
+								<AdditionSource>
+									<Item>УсловияАгентскихДоговоров</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияАгентскихДоговоровСостояниеПросмотраКонтекстноеМеню" id="91"/>
+								<ExtendedTooltip name="УсловияАгентскихДоговоровСостояниеПросмотраРасширеннаяПодсказка" id="92"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УсловияАгентскихДоговоровУправлениеПоиском" id="93">
+								<AdditionSource>
+									<Item>УсловияАгентскихДоговоров</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияАгентскихДоговоровУправлениеПоискомКонтекстноеМеню" id="94"/>
+								<ExtendedTooltip name="УсловияАгентскихДоговоровУправлениеПоискомРасширеннаяПодсказка" id="95"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="УсловияАгентскихДоговоровПериод" id="96">
+									<DataPath>УсловияАгентскихДоговоров.Period</DataPath>
+									<ContextMenu name="УсловияАгентскихДоговоровПериодКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="УсловияАгентскихДоговоровПериодРасширеннаяПодсказка" id="98"/>
+								</LabelField>
+								<ColumnGroup name="УсловияАгентскихДоговоровГруппаВознаграждениеЗаСопровождение" id="178">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждение за сопровождение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия агентских договоров группа вознаграждение за сопровождение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="УсловияАгентскихДоговоровГруппаВознаграждениеЗаСопровождениеРасширеннаяПодсказка" id="179"/>
+									<ChildItems>
+										<LabelField name="УсловияАгентскихДоговоровСтавкаВознаграждения" id="108">
+											<DataPath>УсловияАгентскихДоговоров.СтавкаВознаграждения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ставка</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="УсловияАгентскихДоговоровСтавкаВознагражденияКонтекстноеМеню" id="109"/>
+											<ExtendedTooltip name="УсловияАгентскихДоговоровСтавкаВознагражденияРасширеннаяПодсказка" id="110"/>
+										</LabelField>
+										<LabelField name="УсловияАгентскихДоговоровБазаДляРасчетаВознаграждения" id="105">
+											<DataPath>УсловияАгентскихДоговоров.БазаДляРасчетаВознаграждения</DataPath>
+											<ContextMenu name="УсловияАгентскихДоговоровБазаДляРасчетаВознагражденияКонтекстноеМеню" id="106"/>
+											<ExtendedTooltip name="УсловияАгентскихДоговоровБазаДляРасчетаВознагражденияРасширеннаяПодсказка" id="107"/>
+										</LabelField>
+										<LabelField name="УсловияАгентскихДоговоровПериодичностьРасчетаВознаграждения" id="102">
+											<DataPath>УсловияАгентскихДоговоров.ПериодичностьРасчетаВознаграждения</DataPath>
+											<ContextMenu name="УсловияАгентскихДоговоровПериодичностьРасчетаВознагражденияКонтекстноеМеню" id="103"/>
+											<ExtendedTooltip name="УсловияАгентскихДоговоровПериодичностьРасчетаВознагражденияРасширеннаяПодсказка" id="104"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="УсловияАгентскихДоговоровГруппаВознаграждениеЗаПривлечение" id="182">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вознаграждение за привлечение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия агентских договоров группа вознаграждение за привлечение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="УсловияАгентскихДоговоровГруппаВознаграждениеЗаПривлечениеРасширеннаяПодсказка" id="183"/>
+									<ChildItems>
+										<LabelField name="УсловияАгентскихДоговоровСтавкаВознагражденияЗаПривлечение" id="184">
+											<DataPath>УсловияАгентскихДоговоров.СтавкаВознагражденияЗаПривлечение</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ставка</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="УсловияАгентскихДоговоровСтавкаВознагражденияЗаПривлечениеКонтекстноеМеню" id="185"/>
+											<ExtendedTooltip name="УсловияАгентскихДоговоровСтавкаВознагражденияЗаПривлечениеРасширеннаяПодсказка" id="186"/>
+										</LabelField>
+										<LabelField name="УсловияАгентскихДоговоровБазаДляРасчетаВознагражденияЗаПривлечение" id="241">
+											<DataPath>УсловияАгентскихДоговоров.БазаДляРасчетаВознагражденияЗаПривлечение</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>База для расчета</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="УсловияАгентскихДоговоровБазаДляРасчетаВознагражденияЗаПривлечениеКонтекстноеМеню" id="242"/>
+											<ExtendedTooltip name="УсловияАгентскихДоговоровБазаДляРасчетаВознагражденияЗаПривлечениеРасширеннаяПодсказка" id="243"/>
+										</LabelField>
+										<LabelField name="УсловияАгентскихДоговоровПериодичностьРасчетаВознагражденияЗаПривлечение" id="244">
+											<DataPath>УсловияАгентскихДоговоров.ПериодичностьРасчетаВознагражденияЗаПривлечение</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Периодичность расчета</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="УсловияАгентскихДоговоровПериодичностьРасчетаВознагражденияЗаПривлечениеКонтекстноеМеню" id="245"/>
+											<ExtendedTooltip name="УсловияАгентскихДоговоровПериодичностьРасчетаВознагражденияЗаПривлечениеРасширеннаяПодсказка" id="246"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаУсловияДоговоровОказанияАудиторскихУслуг" id="176">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия договоров оказания аудиторских услуг</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа условия договоров оказания аудиторских услуг</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаУсловияДоговоровОказанияАудиторскихУслугРасширеннаяПодсказка" id="177"/>
+					<ChildItems>
+						<Table name="УсловияДоговоровОказанияАудиторскихУслуг" id="113">
+							<Visible>false</Visible>
+							<Height>5</Height>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>УсловияДоговоровОказанияАудиторскихУслуг</DataPath>
+							<RowPictureDataPath>УсловияДоговоровОказанияАудиторскихУслуг.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугКонтекстноеМеню" id="114"/>
+							<AutoCommandBar name="УсловияДоговоровОказанияАудиторскихУслугКоманднаяПанель" id="115"/>
+							<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугРасширеннаяПодсказка" id="116"/>
+							<SearchStringAddition name="УсловияДоговоровОказанияАудиторскихУслугСтрокаПоиска" id="117">
+								<AdditionSource>
+									<Item>УсловияДоговоровОказанияАудиторскихУслуг</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСтрокаПоискаКонтекстноеМеню" id="118"/>
+								<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСтрокаПоискаРасширеннаяПодсказка" id="119"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УсловияДоговоровОказанияАудиторскихУслугСостояниеПросмотра" id="120">
+								<AdditionSource>
+									<Item>УсловияДоговоровОказанияАудиторскихУслуг</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСостояниеПросмотраКонтекстноеМеню" id="121"/>
+								<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСостояниеПросмотраРасширеннаяПодсказка" id="122"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УсловияДоговоровОказанияАудиторскихУслугУправлениеПоиском" id="123">
+								<AdditionSource>
+									<Item>УсловияДоговоровОказанияАудиторскихУслуг</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугУправлениеПоискомКонтекстноеМеню" id="124"/>
+								<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугУправлениеПоискомРасширеннаяПодсказка" id="125"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="УсловияДоговоровОказанияАудиторскихУслугПериод" id="126">
+									<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.Period</DataPath>
+									<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугПериодКонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугПериодРасширеннаяПодсказка" id="128"/>
+								</LabelField>
+								<LabelField name="УсловияДоговоровОказанияАудиторскихУслугДатаНачалаПредоставленияУслуг" id="247">
+									<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ДатаНачалаПредоставленияУслуг</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугДатаНачалаПредоставленияУслугКонтекстноеМеню" id="248"/>
+									<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугДатаНачалаПредоставленияУслугРасширеннаяПодсказка" id="249"/>
+								</LabelField>
+								<LabelField name="УсловияДоговоровОказанияАудиторскихУслугДатаОкончанияПредоставленияУслуг" id="250">
+									<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ДатаОкончанияПредоставленияУслуг</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугДатаОкончанияПредоставленияУслугКонтекстноеМеню" id="251"/>
+									<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугДатаОкончанияПредоставленияУслугРасширеннаяПодсказка" id="252"/>
+								</LabelField>
+								<ColumnGroup name="УсловияАудиторскихУслугГруппаВидыГодовойОтчетности" id="302">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия аудиторских услуг группа виды годовой отчетности</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия аудиторских услуг группа виды годовой отчетности</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="УсловияАудиторскихУслугГруппаВидыГодовойОтчетностиРасширеннаяПодсказка" id="303"/>
+									<ChildItems>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугГодоваяБухгалтерскаяОтчетность" id="132">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ГодоваяБухгалтерскаяОтчетность</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Годовая бух.</v8:content>
+												</v8:item>
+											</Title>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугГодоваяБухгалтерскаяОтчетностьКонтекстноеМеню" id="133"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугГодоваяБухгалтерскаяОтчетностьРасширеннаяПодсказка" id="134"/>
+										</CheckBoxField>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугГодоваяКонсолидированнаяОтчетность" id="138">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ГодоваяКонсолидированнаяОтчетность</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Годовая консолидированная</v8:content>
+												</v8:item>
+											</Title>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугГодоваяКонсолидированнаяОтчетностьКонтекстноеМеню" id="139"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугГодоваяКонсолидированнаяОтчетностьРасширеннаяПодсказка" id="140"/>
+										</CheckBoxField>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугГодоваяФинансоваяОтчетность" id="290">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ГодоваяФинансоваяОтчетность</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугГодоваяФинансоваяОтчетностьКонтекстноеМеню" id="291"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугГодоваяФинансоваяОтчетностьРасширеннаяПодсказка" id="292"/>
+										</CheckBoxField>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугОтчетностьВОтношенииИмуществаПИФ" id="296">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ОтчетностьВОтношенииИмуществаПИФ</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугОтчетностьВОтношенииИмуществаПИФКонтекстноеМеню" id="297"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугОтчетностьВОтношенииИмуществаПИФРасширеннаяПодсказка" id="298"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="УсловияАудиторскихУслугГруппаВидыПромежуточнойОтчетности" id="306">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия аудиторских услуг группа виды промежуточной отчетности</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условия аудиторских услуг группа виды промежуточной отчетности</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="УсловияАудиторскихУслугГруппаВидыПромежуточнойОтчетностиРасширеннаяПодсказка" id="307"/>
+									<ChildItems>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяБухгалтерскаяОтчетность" id="135">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ПромежуточнаяБухгалтерскаяОтчетность</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Промежуточная бух.</v8:content>
+												</v8:item>
+											</Title>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяБухгалтерскаяОтчетностьКонтекстноеМеню" id="136"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяБухгалтерскаяОтчетностьРасширеннаяПодсказка" id="137"/>
+										</CheckBoxField>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяКонсолидированнаяОтчетность" id="141">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ПромежуточнаяКонсолидированнаяОтчетность</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Промежуточная консолидированная</v8:content>
+												</v8:item>
+											</Title>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяКонсолидированнаяОтчетностьКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяКонсолидированнаяОтчетностьРасширеннаяПодсказка" id="143"/>
+										</CheckBoxField>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяФинансоваяОтчетность" id="293">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.ПромежуточнаяФинансоваяОтчетность</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяФинансоваяОтчетностьКонтекстноеМеню" id="294"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугПромежуточнаяФинансоваяОтчетностьРасширеннаяПодсказка" id="295"/>
+										</CheckBoxField>
+										<CheckBoxField name="УсловияДоговоровОказанияАудиторскихУслугБухгалтерскаяФинансоваяПоФормированиюИИнвестированиюПН" id="299">
+											<DataPath>УсловияДоговоровОказанияАудиторскихУслуг.БухгалтерскаяФинансоваяПоФормированиюИИнвестированиюПН</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугБухгалтерскаяФинансоваяПоФормированиюИИнвестированиюПНКонтекстноеМеню" id="300"/>
+											<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугБухгалтерскаяФинансоваяПоФормированиюИИнвестированиюПНРасширеннаяПодсказка" id="301"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+						<Table name="УсловияДоговоровОказанияАудиторскихУслугСвернутые" id="357">
+							<SelectionMode>SingleRow</SelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>УсловияДоговоровОказанияАудиторскихУслугСвернутые</DataPath>
+							<RowPictureDataPath>УсловияДоговоровОказанияАудиторскихУслугСвернутые.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеКонтекстноеМеню" id="358"/>
+							<AutoCommandBar name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеКоманднаяПанель" id="359">
+								<ChildItems>
+									<Button name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеДобавить" id="379">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ДобавитьУсловияДОАУ</CommandName>
+										<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеДобавитьРасширеннаяПодсказка" id="380"/>
+									</Button>
+									<Button name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеУдалитьУсловияДОАУ" id="381">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УдалитьУсловияДОАУ</CommandName>
+										<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеУдалитьУсловияДОАУРасширеннаяПодсказка" id="382"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеРасширеннаяПодсказка" id="360"/>
+							<SearchStringAddition name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСтрокаПоиска" id="361">
+								<AdditionSource>
+									<Item>УсловияДоговоровОказанияАудиторскихУслугСвернутые</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСтрокаПоискаКонтекстноеМеню" id="362"/>
+								<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСтрокаПоискаРасширеннаяПодсказка" id="363"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСостояниеПросмотра" id="364">
+								<AdditionSource>
+									<Item>УсловияДоговоровОказанияАудиторскихУслугСвернутые</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСостояниеПросмотраКонтекстноеМеню" id="365"/>
+								<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСостояниеПросмотраРасширеннаяПодсказка" id="366"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеУправлениеПоиском" id="367">
+								<AdditionSource>
+									<Item>УсловияДоговоровОказанияАудиторскихУслугСвернутые</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеУправлениеПоискомКонтекстноеМеню" id="368"/>
+								<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеУправлениеПоискомРасширеннаяПодсказка" id="369"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">УсловияДоговоровОказанияАудиторскихУслугСвернутыеВыбор</Event>
+								<Event name="OnGetDataAtServer">УсловияДоговоровОказанияАудиторскихУслугСвернутыеПриПолученииДанныхНаСервере</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеПериод" id="376">
+									<DataPath>УсловияДоговоровОказанияАудиторскихУслугСвернутые.Период</DataPath>
+									<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеПериодКонтекстноеМеню" id="377"/>
+									<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеПериодРасширеннаяПодсказка" id="378"/>
+								</LabelField>
+								<LabelField name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеВидыОтчетности" id="370">
+									<DataPath>УсловияДоговоровОказанияАудиторскихУслугСвернутые.ВидыОтчетности</DataPath>
+									<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеВидыОтчетностиКонтекстноеМеню" id="371"/>
+									<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеВидыОтчетностиРасширеннаяПодсказка" id="372"/>
+								</LabelField>
+								<LabelField name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСтоимость" id="383">
+									<DataPath>УсловияДоговоровОказанияАудиторскихУслугСвернутые.Стоимость</DataPath>
+									<ContextMenu name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСтоимостьКонтекстноеМеню" id="384"/>
+									<ExtendedTooltip name="УсловияДоговоровОказанияАудиторскихУслугСвернутыеСтоимостьРасширеннаяПодсказка" id="385"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаУсловияДоговоровЗалога" id="253">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия договоров залога</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа условия договоров залога</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаУсловияДоговоровЗалогаРасширеннаяПодсказка" id="254"/>
+					<ChildItems>
+						<Table name="УсловияДоговоровЗалога" id="255">
+							<Height>5</Height>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>УсловияДоговоровЗалога</DataPath>
+							<RowPictureDataPath>УсловияДоговоровЗалога.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="УсловияДоговоровЗалогаКонтекстноеМеню" id="256"/>
+							<AutoCommandBar name="УсловияДоговоровЗалогаКоманднаяПанель" id="257"/>
+							<ExtendedTooltip name="УсловияДоговоровЗалогаРасширеннаяПодсказка" id="258"/>
+							<SearchStringAddition name="УсловияДоговоровЗалогаСтрокаПоиска" id="259">
+								<AdditionSource>
+									<Item>УсловияДоговоровЗалога</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровЗалогаСтрокаПоискаКонтекстноеМеню" id="260"/>
+								<ExtendedTooltip name="УсловияДоговоровЗалогаСтрокаПоискаРасширеннаяПодсказка" id="261"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УсловияДоговоровЗалогаСостояниеПросмотра" id="262">
+								<AdditionSource>
+									<Item>УсловияДоговоровЗалога</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровЗалогаСостояниеПросмотраКонтекстноеМеню" id="263"/>
+								<ExtendedTooltip name="УсловияДоговоровЗалогаСостояниеПросмотраРасширеннаяПодсказка" id="264"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УсловияДоговоровЗалогаУправлениеПоиском" id="265">
+								<AdditionSource>
+									<Item>УсловияДоговоровЗалога</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияДоговоровЗалогаУправлениеПоискомКонтекстноеМеню" id="266"/>
+								<ExtendedTooltip name="УсловияДоговоровЗалогаУправлениеПоискомРасширеннаяПодсказка" id="267"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="УсловияДоговоровЗалогаПериод" id="268">
+									<DataPath>УсловияДоговоровЗалога.Period</DataPath>
+									<ContextMenu name="УсловияДоговоровЗалогаПериодКонтекстноеМеню" id="269"/>
+									<ExtendedTooltip name="УсловияДоговоровЗалогаПериодРасширеннаяПодсказка" id="270"/>
+								</LabelField>
+								<LabelField name="УсловияДоговоровЗалогаПредметЗалога" id="274">
+									<DataPath>УсловияДоговоровЗалога.ПредметЗалога</DataPath>
+									<ContextMenu name="УсловияДоговоровЗалогаПредметЗалогаКонтекстноеМеню" id="275"/>
+									<ExtendedTooltip name="УсловияДоговоровЗалогаПредметЗалогаРасширеннаяПодсказка" id="276"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительныеСоглашения" id="308">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доп. соглашения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа дополнительные соглашения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаДополнительныеСоглашенияРасширеннаяПодсказка" id="309"/>
+					<ChildItems>
+						<Table name="ДополнительныеСоглашения" id="310">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ДополнительныеСоглашения</DataPath>
+							<RowPictureDataPath>ДополнительныеСоглашения.DefaultPicture</RowPictureDataPath>
+							<CommandSet>
+								<ExcludedCommand>CreateFolder</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ДополнительныеСоглашенияКонтекстноеМеню" id="311"/>
+							<AutoCommandBar name="ДополнительныеСоглашенияКоманднаяПанель" id="312"/>
+							<ExtendedTooltip name="ДополнительныеСоглашенияРасширеннаяПодсказка" id="313"/>
+							<SearchStringAddition name="ДополнительныеСоглашенияСтрокаПоиска" id="314">
+								<AdditionSource>
+									<Item>ДополнительныеСоглашения</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДополнительныеСоглашенияСтрокаПоискаКонтекстноеМеню" id="315"/>
+								<ExtendedTooltip name="ДополнительныеСоглашенияСтрокаПоискаРасширеннаяПодсказка" id="316"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДополнительныеСоглашенияСостояниеПросмотра" id="317">
+								<AdditionSource>
+									<Item>ДополнительныеСоглашения</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДополнительныеСоглашенияСостояниеПросмотраКонтекстноеМеню" id="318"/>
+								<ExtendedTooltip name="ДополнительныеСоглашенияСостояниеПросмотраРасширеннаяПодсказка" id="319"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДополнительныеСоглашенияУправлениеПоиском" id="320">
+								<AdditionSource>
+									<Item>ДополнительныеСоглашения</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДополнительныеСоглашенияУправлениеПоискомКонтекстноеМеню" id="321"/>
+								<ExtendedTooltip name="ДополнительныеСоглашенияУправлениеПоискомРасширеннаяПодсказка" id="322"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДополнительныеСоглашенияСсылка" id="323">
+									<DataPath>ДополнительныеСоглашения.Ссылка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доп.соглашение</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДополнительныеСоглашенияСсылкаКонтекстноеМеню" id="324"/>
+									<ExtendedTooltip name="ДополнительныеСоглашенияСсылкаРасширеннаяПодсказка" id="325"/>
+								</LabelField>
+								<LabelField name="ДополнительныеСоглашенияНомерДоговора" id="329">
+									<DataPath>ДополнительныеСоглашения.НомерДоговора</DataPath>
+									<ContextMenu name="ДополнительныеСоглашенияНомерДоговораКонтекстноеМеню" id="330"/>
+									<ExtendedTooltip name="ДополнительныеСоглашенияНомерДоговораРасширеннаяПодсказка" id="331"/>
+								</LabelField>
+								<LabelField name="ДополнительныеСоглашенияДатаЗаключения" id="332">
+									<DataPath>ДополнительныеСоглашения.ДатаЗаключения</DataPath>
+									<ContextMenu name="ДополнительныеСоглашенияДатаЗаключенияКонтекстноеМеню" id="333"/>
+									<ExtendedTooltip name="ДополнительныеСоглашенияДатаЗаключенияРасширеннаяПодсказка" id="334"/>
+								</LabelField>
+								<LabelField name="ДополнительныеСоглашенияДатаРасторжения" id="326">
+									<DataPath>ДополнительныеСоглашения.ДатаРасторжения</DataPath>
+									<ContextMenu name="ДополнительныеСоглашенияДатаРасторженияКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="ДополнительныеСоглашенияДатаРасторженияРасширеннаяПодсказка" id="328"/>
+								</LabelField>
+								<LabelField name="ДополнительныеСоглашенияДатаНачалаПредоставленияУслуг" id="335">
+									<DataPath>ДополнительныеСоглашения.ДатаНачалаПредоставленияУслуг</DataPath>
+									<ContextMenu name="ДополнительныеСоглашенияДатаНачалаПредоставленияУслугКонтекстноеМеню" id="336"/>
+									<ExtendedTooltip name="ДополнительныеСоглашенияДатаНачалаПредоставленияУслугРасширеннаяПодсказка" id="337"/>
+								</LabelField>
+								<LabelField name="ДополнительныеСоглашенияДатаОкончанияПредоставленияУслуг" id="338">
+									<DataPath>ДополнительныеСоглашения.ДатаОкончанияПредоставленияУслуг</DataPath>
+									<ContextMenu name="ДополнительныеСоглашенияДатаОкончанияПредоставленияУслугКонтекстноеМеню" id="339"/>
+									<ExtendedTooltip name="ДополнительныеСоглашенияДатаОкончанияПредоставленияУслугРасширеннаяПодсказка" id="340"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСвязанныеСчетаВУ" id="208">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета в/у</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Связанные счета в/у</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаСвязанныеСчетаВУРасширеннаяПодсказка" id="209"/>
+					<ChildItems>
+						<Table name="ДоговорыСчетовДоверительногоУправления" id="210">
+							<Height>5</Height>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ДоговорыСчетовДоверительногоУправления</DataPath>
+							<RowPictureDataPath>ДоговорыСчетовДоверительногоУправления.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ДоговорыСчетовДоверительногоУправленияКонтекстноеМеню" id="211"/>
+							<AutoCommandBar name="ДоговорыСчетовДоверительногоУправленияКоманднаяПанель" id="212"/>
+							<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияРасширеннаяПодсказка" id="213"/>
+							<SearchStringAddition name="ДоговорыСчетовДоверительногоУправленияСтрокаПоиска" id="214">
+								<AdditionSource>
+									<Item>ДоговорыСчетовДоверительногоУправления</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДоговорыСчетовДоверительногоУправленияСтрокаПоискаКонтекстноеМеню" id="215"/>
+								<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияСтрокаПоискаРасширеннаяПодсказка" id="216"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДоговорыСчетовДоверительногоУправленияСостояниеПросмотра" id="217">
+								<AdditionSource>
+									<Item>ДоговорыСчетовДоверительногоУправления</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДоговорыСчетовДоверительногоУправленияСостояниеПросмотраКонтекстноеМеню" id="218"/>
+								<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияСостояниеПросмотраРасширеннаяПодсказка" id="219"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДоговорыСчетовДоверительногоУправленияУправлениеПоиском" id="220">
+								<AdditionSource>
+									<Item>ДоговорыСчетовДоверительногоУправления</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДоговорыСчетовДоверительногоУправленияУправлениеПоискомКонтекстноеМеню" id="221"/>
+								<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияУправлениеПоискомРасширеннаяПодсказка" id="222"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДоговорыСчетовДоверительногоУправленияПериод" id="223">
+									<DataPath>ДоговорыСчетовДоверительногоУправления.Period</DataPath>
+									<ContextMenu name="ДоговорыСчетовДоверительногоУправленияПериодКонтекстноеМеню" id="224"/>
+									<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияПериодРасширеннаяПодсказка" id="225"/>
+								</LabelField>
+								<LabelField name="ДоговорыСчетовДоверительногоУправленияСчетДоверительногоУправления" id="229">
+									<DataPath>ДоговорыСчетовДоверительногоУправления.СчетДоверительногоУправления</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет внутреннего учета</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДоговорыСчетовДоверительногоУправленияСчетДоверительногоУправленияКонтекстноеМеню" id="230"/>
+									<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияСчетДоверительногоУправленияРасширеннаяПодсказка" id="231"/>
+								</LabelField>
+								<CheckBoxField name="ДоговорыСчетовДоверительногоУправленияАктивный" id="235">
+									<DataPath>ДоговорыСчетовДоверительногоУправления.Активный</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДоговорыСчетовДоверительногоУправленияАктивныйКонтекстноеМеню" id="236"/>
+									<ExtendedTooltip name="ДоговорыСчетовДоверительногоУправленияАктивныйРасширеннаяПодсказка" id="237"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="Описание" id="346">
+			<DataPath>Объект.Описание</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ОписаниеКонтекстноеМеню" id="347"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="348"/>
+		</InputField>
+		<UsualGroup name="ГруппаПодвал" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="61"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНаименованиеИКод" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа наименование и код</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа наименование и код</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНаименованиеИКодРасширеннаяПодсказка" id="44"/>
+					<ChildItems>
+						<InputField name="Наименование" id="4">
+							<DataPath>Объект.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<InputField name="Код" id="1">
+							<DataPath>Объект.Code</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Комментарий" id="54">
+					<DataPath>Объект.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="56"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Договоры</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="УстановленСрокОплаты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установлен срок оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="УсловияАгентскихДоговоров" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия агентских договоров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.УсловияАгентскихДоговоров</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="УсловияДоговоровОказанияАудиторскихУслуг" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия договоров оказания аудиторских услуг</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.УсловияДоговоровОказанияАудиторскихУслуг</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="УсловияДоговоровОбщие" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия договоров общие</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.УсловияДоговоровОбщие</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СчетДоверительногоУправления" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет внутреннего учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СвязатьСоСчетомДУ" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связать со счетом в/у</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоговорыСчетовДоверительногоУправления" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договоры счетов доверительного управления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.ДоговорыСчетовДоверительногоУправления</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДатаРасторжения" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расторжения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="УсловияДоговоровЗалога" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия договоров залога</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.УсловияДоговоровЗалога</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПредКонтрагент" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пред контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЮрФизЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИзменениеВознаграждения" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменение вознаграждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ДополнительныеСоглашения" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные соглашения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникДоговоры.Ссылка КАК Ссылка,
+	СправочникДоговоры.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникДоговоры.Родитель КАК Родитель,
+	СправочникДоговоры.ЭтоГруппа КАК ЭтоГруппа,
+	СправочникДоговоры.Код КАК Код,
+	СправочникДоговоры.Наименование КАК Наименование,
+	СправочникДоговоры.Организация КАК Организация,
+	СправочникДоговоры.Основание КАК Основание,
+	СправочникДоговоры.Контрагент КАК Контрагент,
+	СправочникДоговоры.ВидДоговора КАК ВидДоговора,
+	СправочникДоговоры.НомерДоговора КАК НомерДоговора,
+	СправочникДоговоры.ДатаЗаключения КАК ДатаЗаключения,
+	СправочникДоговоры.Комментарий КАК Комментарий,
+	СправочникДоговоры.НаименованиеВладельцаДляДокументов КАК НаименованиеВладельцаДляДокументов,
+	СправочникДоговоры.ДатаИзмененияВознаграждения КАК ДатаИзмененияВознаграждения,
+	СправочникДоговоры.Предопределенный КАК Предопределенный,
+	СправочникДоговоры.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	УсловияДоговоровОбщие.ДатаРасторжения КАК ДатаРасторжения,
+	УсловияДоговоровОказанияАудиторскихУслуг.ДатаНачалаПредоставленияУслуг КАК ДатаНачалаПредоставленияУслуг,
+	УсловияДоговоровОказанияАудиторскихУслуг.ДатаОкончанияПредоставленияУслуг КАК ДатаОкончанияПредоставленияУслуг
+ИЗ
+	Справочник.Договоры КАК СправочникДоговоры
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияДоговоровОбщие КАК УсловияДоговоровОбщие
+		ПО СправочникДоговоры.Ссылка = УсловияДоговоровОбщие.Договор
+			И СправочникДоговоры.ДатаЗаключения = УсловияДоговоровОбщие.Период
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УсловияДоговоровОказанияАудиторскихУслуг КАК УсловияДоговоровОказанияАудиторскихУслуг
+		ПО СправочникДоговоры.Ссылка = УсловияДоговоровОказанияАудиторскихУслуг.Договор
+			И СправочникДоговоры.ДатаЗаключения = УсловияДоговоровОказанияАудиторскихУслуг.Период</QueryText>
+				<MainTable>Catalog.Договоры</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоговора</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыДоговоров.ДополнительноеСоглашение</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВидДоговораАренды" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид договора аренды</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыДоговоровАренды</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидДокументаДляПредставленияДоговор" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид документа для представления: Договор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УсловияДоговоровОказанияАудиторскихУслугСвернутые" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия договоров оказания аудиторских услуг свернутые</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	УсловияДоговоровОказанияАудиторскихУслуг.Договор КАК Договор,
+	УсловияДоговоровОказанияАудиторскихУслуг.Период КАК Период,
+	ВЫРАЗИТЬ("" КАК СТРОКА(1024)) КАК ВидыОтчетности,
+	ВЫРАЗИТЬ(0 КАК ЧИСЛО(19, 2)) КАК Стоимость
+ИЗ
+	РегистрСведений.УсловияДоговоровОказанияАудиторскихУслуг КАК УсловияДоговоровОказанияАудиторскихУслуг</QueryText>
+				<KeyType>FieldValue</KeyType>
+				<KeyField>Период</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаЗакрытьДоговор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть договор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗакрытьДоговор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьУсловияДОАУ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить условия ДОАУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьУсловияДоговоровОказанияАудиторскихУслуг</Action>
+		</Command>
+		<Command name="УдалитьУсловияДОАУ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить условия ДОАУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалитьУсловияДоговоровОказанияАудиторскихУслуг</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ДоговорДО">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Договоры</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.УсловияДоговоровОказанияАудиторскихУслуг.StandardCommand.OpenByValue.Договор</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.УсловияАгентскихДоговоров.Command.УсловияАгентскихДоговоров</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИНН</dataPath>
+			<field>ИНН</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидАктива</dataPath>
+			<field>ВидАктива</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид актива</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолноеНаименованиеПоУставу</dataPath>
+			<field>ПолноеНаименованиеПоУставу</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КраткоеНаименованиеПоУставу</dataPath>
+			<field>КраткоеНаименованиеПоУставу</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрЛицо</dataPath>
+			<field>ЮрЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юр лицо</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КПП</dataPath>
+			<field>КПП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодВХКомпани</dataPath>
+			<field>КодВХКомпани</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код ВХКомпани</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субъект</dataPath>
+			<field>Субъект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаОбъектов</dataPath>
+			<field>ГруппаОбъектов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Шкала</dataPath>
+			<field>Шкала</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВнешняяСистема</dataPath>
+			<field>ВнешняяСистема</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Язык</dataPath>
+			<field>Язык</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрФизЛицо</dataPath>
+			<field>ЮрФизЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Агрегатор</dataPath>
+			<field>Агрегатор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РейтинговоеАгентство</dataPath>
+			<field>РейтинговоеАгентство</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПаевойИнвестиционныйФонд</dataPath>
+			<field>ПаевойИнвестиционныйФонд</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮридическоеЛицо</dataPath>
+			<field>ЮридическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РодительскоеЮридическоеЛицо</dataPath>
+			<field>РодительскоеЮридическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипСвязи</dataPath>
+			<field>ТипСвязи</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Эмитенты.ВидАктива КАК ВидАктива,
+	Эмитенты.ЮрЛицо КАК ЮрЛицо
+ПОМЕСТИТЬ _Эмитенты
+ИЗ
+	(ВЫБРАТЬ РАЗЛИЧНЫЕ
+		ОстаткиЦенныхБумаг.Рынок КАК ВидАктива,
+		ВЫБОР
+			КОГДА ОстаткиЦенныхБумаг.Рынок = ЗНАЧЕНИЕ(Перечисление.РынкиЦенныхБумаг.Акции)
+				ТОГДА ВЫРАЗИТЬ(ОстаткиЦенныхБумаг.ЦеннаяБумага КАК Справочник.Акции).Эмитент.ЮрФизЛицо
+			КОГДА ОстаткиЦенныхБумаг.Рынок = ЗНАЧЕНИЕ(Перечисление.РынкиЦенныхБумаг.Облигации)
+				ТОГДА ВЫРАЗИТЬ(ОстаткиЦенныхБумаг.ЦеннаяБумага КАК Справочник.Облигации).Эмитент.ЮрФизЛицо
+			КОГДА ОстаткиЦенныхБумаг.Рынок = ЗНАЧЕНИЕ(Перечисление.РынкиЦенныхБумаг.Паи)
+				ТОГДА РеквизитыПИФСрезПоследних.УправляющаяКомпания.ЮрФизЛицо
+			КОГДА ОстаткиЦенныхБумаг.Рынок = ЗНАЧЕНИЕ(Перечисление.РынкиЦенныхБумаг.Векселя)
+				ТОГДА ВЫРАЗИТЬ(ОстаткиЦенныхБумаг.ЦеннаяБумага КАК Справочник.Векселя).Эмитент.ЮрФизЛицо
+			КОГДА ОстаткиЦенныхБумаг.Рынок = ЗНАЧЕНИЕ(Перечисление.РынкиЦенныхБумаг.ИпотечныеСертификатыУчастия)
+				ТОГДА ВЫРАЗИТЬ(ОстаткиЦенныхБумаг.ЦеннаяБумага КАК Справочник.ИпотечныеСертификатыУчастия).Эмитент.ЮрФизЛицо
+			КОГДА ОстаткиЦенныхБумаг.Рынок = ЗНАЧЕНИЕ(Перечисление.РынкиЦенныхБумаг.ДепозитарныеРасписки)
+				ТОГДА ВЫРАЗИТЬ(ОстаткиЦенныхБумаг.ЦеннаяБумага КАК Справочник.ДепозитарныеРасписки).Эмитент.ЮрФизЛицо
+			ИНАЧЕ ЗНАЧЕНИЕ(Справочник.ЮрФизЛица.ПустаяСсылка)
+		КОНЕЦ КАК ЮрЛицо
+	ИЗ
+		РегистрНакопления.ОстаткиЦенныхБумаг КАК ОстаткиЦенныхБумаг
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыПИФ.СрезПоследних(, ) КАК РеквизитыПИФСрезПоследних
+			ПО (ВЫРАЗИТЬ(ОстаткиЦенныхБумаг.ЦеннаяБумага КАК Справочник.Паи).ПаевойИнвестиционныйФонд = РеквизитыПИФСрезПоследних.ПаевойИнвестиционныйФонд)
+	ГДЕ
+		ОстаткиЦенныхБумаг.Организация = &amp;Организация
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		ВЫБОР
+			КОГДА ОстаткиДенежныхСредств.Брокер = ЗНАЧЕНИЕ(Справочник.БрокерскиеКомпании.ПустаяСсылка)
+				ТОГДА "Банк"
+			ИНАЧЕ "Брокер"
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ОстаткиДенежныхСредств.Брокер = ЗНАЧЕНИЕ(Справочник.БрокерскиеКомпании.ПустаяСсылка)
+				ТОГДА ОстаткиДенежныхСредств.РасчетныйСчет.Банк.ЮрФизЛицо
+			ИНАЧЕ ОстаткиДенежныхСредств.Брокер.ЮрФизЛицо
+		КОНЕЦ
+	ИЗ
+		РегистрНакопления.ОстаткиДенежныхСредств КАК ОстаткиДенежныхСредств
+	ГДЕ
+		ОстаткиДенежныхСредств.Организация = &amp;Организация) КАК Эмитенты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	_Эмитенты.ВидАктива КАК ВидАктива,
+	ЕСТЬNULL(СвязанныеЮридическиеЛицаСрезПоследних.РодительскоеЮридическоеЛицо, _Эмитенты.ЮрЛицо) КАК ЮрЛицо
+ПОМЕСТИТЬ _ГоловныеЭмитенты
+ИЗ
+	_Эмитенты КАК _Эмитенты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СвязанныеЮридическиеЛица.СрезПоследних(, ТипСвязи = ЗНАЧЕНИЕ(Справочник.ТипыСвязейЮрФизЛиц.ГоловнаяОрганизация)) КАК СвязанныеЮридическиеЛицаСрезПоследних
+		ПО _Эмитенты.ЮрЛицо = СвязанныеЮридическиеЛицаСрезПоследних.ЮридическоеЛицо И СвязанныеЮридическиеЛицаСрезПоследних.Действует
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА _ГоловныеЭмитенты.ЮрЛицо = ЗНАЧЕНИЕ(Справочник.ЮрФизЛица.ПустаяСсылка)
+			ТОГДА "!Юр. лицо не задано"
+		ИНАЧЕ _ГоловныеЭмитенты.ЮрЛицо
+	КОНЕЦ КАК ЮрЛицо,
+	_ГоловныеЭмитенты.ВидАктива КАК ВидАктива,
+	РеквизитыЮридическихЛицСрезПоследних.КраткоеНаименованиеПоУставу КАК КраткоеНаименованиеПоУставу,
+	РеквизитыЮридическихЛицСрезПоследних.ПолноеНаименованиеПоУставу КАК ПолноеНаименованиеПоУставу,
+	РеквизитыЮридическихЛицСрезПоследних.ИНН КАК ИНН,
+	РеквизитыЮридическихЛицСрезПоследних.КПП КАК КПП,
+	КодыВоВнешнихСистемахСрезПоследних.Код КАК КодВХКомпани
+ИЗ
+	_ГоловныеЭмитенты КАК _ГоловныеЭмитенты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РеквизитыЮридическихЛиц.СрезПоследних(
+				,
+				Язык = ЗНАЧЕНИЕ(Справочник.Языки.Русский)
+					И Подразделение = ЗНАЧЕНИЕ(Справочник.Подразделения.ГруппаКомпаний)) КАК РеквизитыЮридическихЛицСрезПоследних
+		ПО _ГоловныеЭмитенты.ЮрЛицо = РеквизитыЮридическихЛицСрезПоследних.ЮрФизЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КодыВоВнешнихСистемах.СрезПоследних(, ВнешняяСистема = ЗНАЧЕНИЕ(Справочник.ВнешниеСистемы.ХКомпани)) КАК КодыВоВнешнихСистемахСрезПоследних
+		ПО _ГоловныеЭмитенты.ЮрЛицо = КодыВоВнешнихСистемахСрезПоследних.Объект
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Рейтинги.СрезПоследних(
+				,
+				Субъект В
+					(ВЫБРАТЬ
+						_ГоловныеЭмитенты.ЮрЛицо
+					ИЗ
+						_ГоловныеЭмитенты)) КАК РейтингиСрезПоследних
+		ПО _ГоловныеЭмитенты.ЮрЛицо = РейтингиСрезПоследних.Субъект
+ГДЕ
+	РейтингиСрезПоследних.Субъект ЕСТЬ NULL
+
+УПОРЯДОЧИТЬ ПО
+	ЮрЛицо</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЮрЛицо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидАктива</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КраткоеНаименованиеПоУставу</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПолноеНаименованиеПоУставу</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИНН</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КПП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КодВХКомпани</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>bb959681-3dc5-436c-aba6-ff79b8104717</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Эмитенты без рейтинга</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

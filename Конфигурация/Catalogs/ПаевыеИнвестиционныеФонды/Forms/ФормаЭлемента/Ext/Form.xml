@@ -1,0 +1,963 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНаименованиеИКод" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа наименование и код</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНаименованиеИКодРасширеннаяПодсказка" id="35"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсновные" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновныеРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<InputField name="ПолноеНаименование" id="10">
+					<DataPath>ПолноеНаименованиеФонда</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное наименование</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПолноеНаименованиеКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ПолноеНаименованиеРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<UsualGroup name="ГруппаТипИКатегорияФонда" id="71">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа тип и категория фонда</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа наименование и код</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТипИКатегорияФондаРасширеннаяПодсказка" id="72"/>
+					<ChildItems>
+						<InputField name="Тип" id="7">
+							<DataPath>Объект.Тип</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТипКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ТипРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<InputField name="Категория" id="28">
+							<DataPath>Объект.Категория</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КатегорияКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="КатегорияРасширеннаяПодсказка" id="30"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="УправляющаяКомпания" id="13">
+					<DataPath>УправляющаяКомпания</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УправляющаяКомпанияКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="УправляющаяКомпанияРасширеннаяПодсказка" id="15"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="43"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаПравилаИЛицензия" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правила и лицензия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница правила и лицензия</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПравилаИЛицензияРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНомерИДатаПравил" id="38">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа номер и дата правил</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа номер и дата правил</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНомерИДатаПравилРасширеннаяПодсказка" id="39"/>
+							<ChildItems>
+								<InputField name="НомерПравил" id="22">
+									<DataPath>Объект.НомерПравил</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НомерПравилКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="НомерПравилРасширеннаяПодсказка" id="24"/>
+								</InputField>
+								<InputField name="ДатаПравил" id="25">
+									<DataPath>Объект.ДатаПравил</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДатаПравилКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ДатаПравилРасширеннаяПодсказка" id="27"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ОрганУтвердившийПравила" id="19">
+							<DataPath>Объект.ОрганУтвердившийПравила</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОрганУтвердившийПравилаКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ОрганУтвердившийПравилаРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="ОрганВыдавшийЛицензию" id="16">
+							<DataPath>Объект.ОрганВыдавшийЛицензию</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОрганВыдавшийЛицензиюКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ОрганВыдавшийЛицензиюРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="ДатаПрекращения" id="73">
+							<DataPath>Объект.ДатаПрекращения</DataPath>
+							<ContextMenu name="ДатаПрекращенияКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="ДатаПрекращенияРасширеннаяПодсказка" id="75"/>
+						</InputField>
+						<Table name="УсловияПравилПаевогоИнвестиционногоФонда" id="88">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>УсловияПравилПаевогоИнвестиционногоФонда</DataPath>
+							<RowPictureDataPath>УсловияПравилПаевогоИнвестиционногоФонда.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаКонтекстноеМеню" id="89"/>
+							<AutoCommandBar name="УсловияПравилПаевогоИнвестиционногоФондаКоманднаяПанель" id="90"/>
+							<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаРасширеннаяПодсказка" id="91"/>
+							<SearchStringAddition name="УсловияПравилПаевогоИнвестиционногоФондаСтрокаПоиска" id="92">
+								<AdditionSource>
+									<Item>УсловияПравилПаевогоИнвестиционногоФонда</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаСтрокаПоискаКонтекстноеМеню" id="93"/>
+								<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаСтрокаПоискаРасширеннаяПодсказка" id="94"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УсловияПравилПаевогоИнвестиционногоФондаСостояниеПросмотра" id="95">
+								<AdditionSource>
+									<Item>УсловияПравилПаевогоИнвестиционногоФонда</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаСостояниеПросмотраКонтекстноеМеню" id="96"/>
+								<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаСостояниеПросмотраРасширеннаяПодсказка" id="97"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УсловияПравилПаевогоИнвестиционногоФондаУправлениеПоиском" id="98">
+								<AdditionSource>
+									<Item>УсловияПравилПаевогоИнвестиционногоФонда</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаУправлениеПоискомКонтекстноеМеню" id="99"/>
+								<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаУправлениеПоискомРасширеннаяПодсказка" id="100"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="УсловияПравилПаевогоИнвестиционногоФондаПериод" id="101">
+									<DataPath>УсловияПравилПаевогоИнвестиционногоФонда.Period</DataPath>
+									<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаПериодКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаПериодРасширеннаяПодсказка" id="103"/>
+								</LabelField>
+								<CheckBoxField name="УсловияПравилПаевогоИнвестиционногоФондаПредназначенДляКвалИнвесторов" id="119">
+									<DataPath>УсловияПравилПаевогоИнвестиционногоФонда.ПредназначенДляКвалИнвесторов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Для квал.инвестора</v8:content>
+										</v8:item>
+									</Title>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаПредназначенДляКвалИнвесторовКонтекстноеМеню" id="120"/>
+									<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаПредназначенДляКвалИнвесторовРасширеннаяПодсказка" id="121"/>
+								</CheckBoxField>
+								<LabelField name="УсловияПравилПаевогоИнвестиционногоФондаМинимальнаяСуммаЗачисления" id="107">
+									<DataPath>УсловияПравилПаевогоИнвестиционногоФонда.МинимальнаяСуммаЗачисления</DataPath>
+									<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаМинимальнаяСуммаЗачисленияКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаМинимальнаяСуммаЗачисленияРасширеннаяПодсказка" id="109"/>
+								</LabelField>
+								<LabelField name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаВознаграждениеУправляющего" id="170">
+									<DataPath>УсловияПравилПаевогоИнвестиционногоФонда.НастройкаРасчетаРезервовЗаВознаграждениеУправляющего</DataPath>
+									<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаВознаграждениеУправляющегоКонтекстноеМеню" id="171"/>
+									<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаВознаграждениеУправляющегоРасширеннаяПодсказка" id="172"/>
+								</LabelField>
+								<LabelField name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаВознаграждениеДепозитария" id="173">
+									<DataPath>УсловияПравилПаевогоИнвестиционногоФонда.НастройкаРасчетаРезервовЗаВознаграждениеДепозитария</DataPath>
+									<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаВознаграждениеДепозитарияКонтекстноеМеню" id="174"/>
+									<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаВознаграждениеДепозитарияРасширеннаяПодсказка" id="175"/>
+								</LabelField>
+								<LabelField name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаПрочиеВозмещаемыеРасходыУправляющего" id="176">
+									<DataPath>УсловияПравилПаевогоИнвестиционногоФонда.НастройкаРасчетаРезервовЗаПрочиеВозмещаемыеРасходыУправляющего</DataPath>
+									<ContextMenu name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаПрочиеВозмещаемыеРасходыУправляющегоКонтекстноеМеню" id="177"/>
+									<ExtendedTooltip name="УсловияПравилПаевогоИнвестиционногоФондаНастройкаРасчетаРезервовЗаПрочиеВозмещаемыеРасходыУправляющегоРасширеннаяПодсказка" id="178"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКонтактныеЛица" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контактные лица</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница контактные лица</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаКонтактныеЛицаРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<Table name="КонтактныеЛица" id="46">
+							<HeightInTableRows>5</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>КонтактныеЛица</DataPath>
+							<RowPictureDataPath>КонтактныеЛица.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="КонтактныеЛицаКонтекстноеМеню" id="47"/>
+							<AutoCommandBar name="КонтактныеЛицаКоманднаяПанель" id="48"/>
+							<ExtendedTooltip name="КонтактныеЛицаРасширеннаяПодсказка" id="49"/>
+							<SearchStringAddition name="КонтактныеЛицаСтрокаПоиска" id="79">
+								<AdditionSource>
+									<Item>КонтактныеЛица</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтактныеЛицаСтрокаПоискаКонтекстноеМеню" id="80"/>
+								<ExtendedTooltip name="КонтактныеЛицаСтрокаПоискаРасширеннаяПодсказка" id="81"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КонтактныеЛицаСостояниеПросмотра" id="82">
+								<AdditionSource>
+									<Item>КонтактныеЛица</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтактныеЛицаСостояниеПросмотраКонтекстноеМеню" id="83"/>
+								<ExtendedTooltip name="КонтактныеЛицаСостояниеПросмотраРасширеннаяПодсказка" id="84"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КонтактныеЛицаУправлениеПоиском" id="85">
+								<AdditionSource>
+									<Item>КонтактныеЛица</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтактныеЛицаУправлениеПоискомКонтекстноеМеню" id="86"/>
+								<ExtendedTooltip name="КонтактныеЛицаУправлениеПоискомРасширеннаяПодсказка" id="87"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="КонтактныеЛицаКонтактноеЛицо" id="59">
+									<DataPath>КонтактныеЛица.КонтактноеЛицо</DataPath>
+									<ContextMenu name="КонтактныеЛицаКонтактноеЛицоКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="КонтактныеЛицаКонтактноеЛицоРасширеннаяПодсказка" id="61"/>
+								</LabelField>
+								<LabelField name="КонтактныеЛицаДолжность" id="62">
+									<DataPath>КонтактныеЛица.Должность</DataPath>
+									<Width>25</Width>
+									<ContextMenu name="КонтактныеЛицаДолжностьКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="КонтактныеЛицаДолжностьРасширеннаяПодсказка" id="64"/>
+								</LabelField>
+								<LabelField name="КонтактныеЛицаОснованиеПолномочий" id="65">
+									<DataPath>КонтактныеЛица.ОснованиеПолномочий</DataPath>
+									<ContextMenu name="КонтактныеЛицаОснованиеПолномочийКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="КонтактныеЛицаОснованиеПолномочийРасширеннаяПодсказка" id="67"/>
+								</LabelField>
+								<LabelField name="КонтактныеЛицаКомментарий" id="68">
+									<DataPath>КонтактныеЛица.Комментарий</DataPath>
+									<ContextMenu name="КонтактныеЛицаКомментарийКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="КонтактныеЛицаКомментарийРасширеннаяПодсказка" id="70"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДополненияПравил" id="122">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнения правил</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница дополнения правил</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаДополненияПравилРасширеннаяПодсказка" id="123"/>
+					<ChildItems>
+						<Table name="ДополненияПравил" id="124">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ДополненияПравил</DataPath>
+							<RowPictureDataPath>ДополненияПравил.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ДополненияПравилКонтекстноеМеню" id="125"/>
+							<AutoCommandBar name="ДополненияПравилКоманднаяПанель" id="126"/>
+							<ExtendedTooltip name="ДополненияПравилРасширеннаяПодсказка" id="127"/>
+							<SearchStringAddition name="ДополненияПравилСтрокаПоиска" id="128">
+								<AdditionSource>
+									<Item>ДополненияПравил</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДополненияПравилСтрокаПоискаКонтекстноеМеню" id="129"/>
+								<ExtendedTooltip name="ДополненияПравилСтрокаПоискаРасширеннаяПодсказка" id="130"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДополненияПравилСостояниеПросмотра" id="131">
+								<AdditionSource>
+									<Item>ДополненияПравил</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДополненияПравилСостояниеПросмотраКонтекстноеМеню" id="132"/>
+								<ExtendedTooltip name="ДополненияПравилСостояниеПросмотраРасширеннаяПодсказка" id="133"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДополненияПравилУправлениеПоиском" id="134">
+								<AdditionSource>
+									<Item>ДополненияПравил</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДополненияПравилУправлениеПоискомКонтекстноеМеню" id="135"/>
+								<ExtendedTooltip name="ДополненияПравилУправлениеПоискомРасширеннаяПодсказка" id="136"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДополненияПравилНаименование" id="137">
+									<DataPath>ДополненияПравил.Description</DataPath>
+									<ContextMenu name="ДополненияПравилНаименованиеКонтекстноеМеню" id="138"/>
+									<ExtendedTooltip name="ДополненияПравилНаименованиеРасширеннаяПодсказка" id="139"/>
+								</LabelField>
+								<LabelField name="ДополненияПравилНомерДоговора" id="155">
+									<DataPath>ДополненияПравил.НомерДоговора</DataPath>
+									<ContextMenu name="ДополненияПравилНомерДоговораКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ДополненияПравилНомерДоговораРасширеннаяПодсказка" id="157"/>
+								</LabelField>
+								<LabelField name="ДополненияПравилДатаЗаключения" id="158">
+									<DataPath>ДополненияПравил.ДатаЗаключения</DataPath>
+									<ContextMenu name="ДополненияПравилДатаЗаключенияКонтекстноеМеню" id="159"/>
+									<ExtendedTooltip name="ДополненияПравилДатаЗаключенияРасширеннаяПодсказка" id="160"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРеестрПайщиков" id="179">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реестр пайщиков</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница реестр пайщиков</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаРеестрПайщиковРасширеннаяПодсказка" id="180"/>
+					<ChildItems>
+						<InputField name="ДатаРеестраПайщиков" id="239">
+							<DataPath>ДатаРеестраПайщиков</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дата реестра</v8:content>
+								</v8:item>
+							</Title>
+							<DropListButton>true</DropListButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаРеестраПайщиковКонтекстноеМеню" id="240"/>
+							<ExtendedTooltip name="ДатаРеестраПайщиковРасширеннаяПодсказка" id="241"/>
+							<Events>
+								<Event name="OnChange">ДатаРеестраПайщиковПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="РеестрПайщиков" id="181">
+							<CommandBarLocation>Top</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>РеестрПайщиков</DataPath>
+							<RowPictureDataPath>РеестрПайщиков.DefaultPicture</RowPictureDataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>GetURL</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+							</CommandSet>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="РеестрПайщиковКонтекстноеМеню" id="182"/>
+							<AutoCommandBar name="РеестрПайщиковКоманднаяПанель" id="183"/>
+							<ExtendedTooltip name="РеестрПайщиковРасширеннаяПодсказка" id="184"/>
+							<SearchStringAddition name="РеестрПайщиковСтрокаПоиска" id="185">
+								<AdditionSource>
+									<Item>РеестрПайщиков</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеестрПайщиковСтрокаПоискаКонтекстноеМеню" id="186"/>
+								<ExtendedTooltip name="РеестрПайщиковСтрокаПоискаРасширеннаяПодсказка" id="187"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РеестрПайщиковСостояниеПросмотра" id="188">
+								<AdditionSource>
+									<Item>РеестрПайщиков</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеестрПайщиковСостояниеПросмотраКонтекстноеМеню" id="189"/>
+								<ExtendedTooltip name="РеестрПайщиковСостояниеПросмотраРасширеннаяПодсказка" id="190"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РеестрПайщиковУправлениеПоиском" id="191">
+								<AdditionSource>
+									<Item>РеестрПайщиков</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РеестрПайщиковУправлениеПоискомКонтекстноеМеню" id="192"/>
+								<ExtendedTooltip name="РеестрПайщиковУправлениеПоискомРасширеннаяПодсказка" id="193"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="РеестрПайщиковCompilation_Date" id="200">
+									<DataPath>РеестрПайщиков.Compilation_Date</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата составления</v8:content>
+										</v8:item>
+									</Title>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=dd.MM.yyyy</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="РеестрПайщиковCompilation_DateКонтекстноеМеню" id="201"/>
+									<ExtendedTooltip name="РеестрПайщиковCompilation_DateРасширеннаяПодсказка" id="202"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковBank_Account" id="194">
+									<DataPath>РеестрПайщиков.Bank_Account</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Банковский счет</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковBank_AccountКонтекстноеМеню" id="195"/>
+									<ExtendedTooltip name="РеестрПайщиковBank_AccountРасширеннаяПодсказка" id="196"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковBirthday" id="197">
+									<DataPath>РеестрПайщиков.Birthday</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>День рождения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковBirthdayКонтекстноеМеню" id="198"/>
+									<ExtendedTooltip name="РеестрПайщиковBirthdayРасширеннаяПодсказка" id="199"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковFact_Address" id="203">
+									<DataPath>РеестрПайщиков.Fact_Address</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес фактический</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковFact_AddressКонтекстноеМеню" id="204"/>
+									<ExtendedTooltip name="РеестрПайщиковFact_AddressРасширеннаяПодсказка" id="205"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковFile_Id" id="206">
+									<DataPath>РеестрПайщиков.File_Id</DataPath>
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ID файла</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковFile_IdКонтекстноеМеню" id="207"/>
+									<ExtendedTooltip name="РеестрПайщиковFile_IdРасширеннаяПодсказка" id="208"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковFull_Name" id="209">
+									<DataPath>РеестрПайщиков.Full_Name</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ФИО / Наименование</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковFull_NameКонтекстноеМеню" id="210"/>
+									<ExtendedTooltip name="РеестрПайщиковFull_NameРасширеннаяПодсказка" id="211"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковFund_Name" id="212">
+									<DataPath>РеестрПайщиков.Fund_Name</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Название фонда</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковFund_NameКонтекстноеМеню" id="213"/>
+									<ExtendedTooltip name="РеестрПайщиковFund_NameРасширеннаяПодсказка" id="214"/>
+								</LabelField>
+								<CheckBoxField name="РеестрПайщиковIs_Nominee" id="215">
+									<DataPath>РеестрПайщиков.Is_Nominee</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номинальный держатель</v8:content>
+										</v8:item>
+									</Title>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеестрПайщиковIs_NomineeКонтекстноеМеню" id="216"/>
+									<ExtendedTooltip name="РеестрПайщиковIs_NomineeРасширеннаяПодсказка" id="217"/>
+								</CheckBoxField>
+								<LabelField name="РеестрПайщиковNumber_Of_Units" id="218">
+									<DataPath>РеестрПайщиков.Number_Of_Units</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество паев</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковNumber_Of_UnitsКонтекстноеМеню" id="219"/>
+									<ExtendedTooltip name="РеестрПайщиковNumber_Of_UnitsРасширеннаяПодсказка" id="220"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковPersonal_Account_Number" id="221">
+									<DataPath>РеестрПайщиков.Personal_Account_Number</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Лицевой счет</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковPersonal_Account_NumberКонтекстноеМеню" id="222"/>
+									<ExtendedTooltip name="РеестрПайщиковPersonal_Account_NumberРасширеннаяПодсказка" id="223"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковRegistration_Address" id="224">
+									<DataPath>РеестрПайщиков.Registration_Address</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес регистрации</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковRegistration_AddressКонтекстноеМеню" id="225"/>
+									<ExtendedTooltip name="РеестрПайщиковRegistration_AddressРасширеннаяПодсказка" id="226"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковRegistration_Info" id="227">
+									<DataPath>РеестрПайщиков.Registration_Info</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Данные документа / Рег. инфо</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковRegistration_InfoКонтекстноеМеню" id="228"/>
+									<ExtendedTooltip name="РеестрПайщиковRegistration_InfoРасширеннаяПодсказка" id="229"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковSize_Of_Share" id="230">
+									<DataPath>РеестрПайщиков.Size_Of_Share</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доля (%)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РеестрПайщиковSize_Of_ShareКонтекстноеМеню" id="231"/>
+									<ExtendedTooltip name="РеестрПайщиковSize_Of_ShareРасширеннаяПодсказка" id="232"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковСсылка" id="233">
+									<DataPath>~РеестрПайщиков.Ссылка</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="РеестрПайщиковСсылкаКонтекстноеМеню" id="234"/>
+									<ExtendedTooltip name="РеестрПайщиковСсылкаРасширеннаяПодсказка" id="235"/>
+								</LabelField>
+								<LabelField name="РеестрПайщиковСтандартнаяКартинка" id="236">
+									<DataPath>РеестрПайщиков.DefaultPicture</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="РеестрПайщиковСтандартнаяКартинкаКонтекстноеМеню" id="237"/>
+									<ExtendedTooltip name="РеестрПайщиковСтандартнаяКартинкаРасширеннаяПодсказка" id="238"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<LabelDecoration name="СсылкаОбновить" id="76">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Элементы данного справочника загружаются из внешней системы. Обновить?</v8:content>
+				</v8:item>
+			</Title>
+			<Hyperlink>true</Hyperlink>
+			<ContextMenu name="СсылкаОбновитьКонтекстноеМеню" id="77"/>
+			<ExtendedTooltip name="СсылкаОбновитьРасширеннаяПодсказка" id="78"/>
+			<Events>
+				<Event name="Click">СсылкаОбновитьНажатие</Event>
+			</Events>
+		</LabelDecoration>
+		<InputField name="Комментарий" id="31">
+			<DataPath>Объект.Комментарий</DataPath>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="33"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПаевыеИнвестиционныеФонды</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КонтактныеЛица" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контактные лица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.КонтактныеЛица</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="УсловияПравилПаевогоИнвестиционногоФонда" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия правил паевого инвестиционного фонда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.УсловияПравилПаевогоИнвестиционногоФонда</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДополненияПравил" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнения правил</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.Договоры</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="УправляющаяКомпания" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляющая компания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.УправляющиеКомпании</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолноеНаименованиеФонда" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полное наименование фонда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РеестрПайщиков" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реестр пайщиков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	dbo_Register_Of_Unit_Holders.File_Id КАК File_Id,
+	dbo_Register_Of_Unit_Holders.Fund_Name КАК Fund_Name,
+	dbo_Register_Of_Unit_Holders.Compilation_Date КАК Compilation_Date,
+	dbo_Register_Of_Unit_Holders.Personal_Account_Number КАК Personal_Account_Number,
+	dbo_Register_Of_Unit_Holders.Is_Nominee КАК Is_Nominee,
+	dbo_Register_Of_Unit_Holders.Full_Name КАК Full_Name,
+	dbo_Register_Of_Unit_Holders.Birthday КАК Birthday,
+	dbo_Register_Of_Unit_Holders.Registration_Info КАК Registration_Info,
+	dbo_Register_Of_Unit_Holders.Registration_Address КАК Registration_Address,
+	dbo_Register_Of_Unit_Holders.Fact_Address КАК Fact_Address,
+	dbo_Register_Of_Unit_Holders.Bank_Account КАК Bank_Account,
+	dbo_Register_Of_Unit_Holders.Number_Of_Units КАК Number_Of_Units,
+	dbo_Register_Of_Unit_Holders.Size_Of_Share КАК Size_Of_Share
+ИЗ
+	ВнешнийИсточникДанных.Externals.Таблица.dbo_Register_Of_Unit_Holders КАК dbo_Register_Of_Unit_Holders
+ГДЕ
+	dbo_Register_Of_Unit_Holders.Fund_Name = &amp;Fund_Name</QueryText>
+				<MainTable>ExternalDataSource.Externals.Table.dbo_Register_Of_Unit_Holders</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Compilation_Date</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemAuto"/>
+							</dcsset:groupItems>
+						</dcsset:item>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДатаРеестраПайщиков" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата реестра пайщиков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>
