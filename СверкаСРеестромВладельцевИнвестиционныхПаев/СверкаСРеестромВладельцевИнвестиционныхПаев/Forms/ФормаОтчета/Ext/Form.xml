@@ -5,7 +5,6 @@
 	<AutoShowState>Auto</AutoShowState>
 	<ReportResultViewMode>Auto</ReportResultViewMode>
 	<ViewModeApplicationOnSetReportResult>Auto</ViewModeApplicationOnSetReportResult>
-	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 		<ChildItems>
@@ -48,16 +47,6 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПараметрыСтрока1РасширеннаяПодсказка" id="93"/>
 					<ChildItems>
-						<CheckBoxField name="СверятьСExternals" id="96">
-							<DataPath>СверятьСExternals</DataPath>
-							<TitleLocation>Right</TitleLocation>
-							<CheckBoxType>Switcher</CheckBoxType>
-							<ContextMenu name="СверятьСExternalsКонтекстноеМеню" id="97"/>
-							<ExtendedTooltip name="СверятьСExternalsРасширеннаяПодсказка" id="98"/>
-							<Events>
-								<Event name="OnChange">СверятьСExternalsПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
 						<InputField name="ДатаСверки" id="81">
 							<DataPath>ДатаСписка</DataPath>
 							<Width>12</Width>
@@ -65,16 +54,6 @@
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 							<ContextMenu name="ДатаСверкиКонтекстноеМеню" id="82"/>
 							<ExtendedTooltip name="ДатаСверкиРасширеннаяПодсказка" id="83"/>
-						</InputField>
-						<InputField name="ПутьКПапке" id="48">
-							<DataPath>Отчет.ПутьКПапке</DataPath>
-							<ChoiceButton>true</ChoiceButton>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="ПутьКПапкеКонтекстноеМеню" id="49"/>
-							<ExtendedTooltip name="ПутьКПапкеРасширеннаяПодсказка" id="50"/>
-							<Events>
-								<Event name="StartChoice">ПутьКПапкеНачалоВыбора</Event>
-							</Events>
 						</InputField>
 						<LabelField name="Организация" id="1">
 							<DataPath>Отчет.Организация</DataPath>
@@ -86,6 +65,41 @@
 							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
 							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
 						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="114">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="115"/>
+					<ChildItems>
+						<CheckBoxField name="СверятьСExternals" id="96">
+							<DataPath>СверятьСExternals</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Tumbler</CheckBoxType>
+							<ContextMenu name="СверятьСExternalsКонтекстноеМеню" id="97"/>
+							<ExtendedTooltip name="СверятьСExternalsРасширеннаяПодсказка" id="98"/>
+							<Events>
+								<Event name="OnChange">СверятьСExternalsПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ПутьКПапке" id="48">
+							<DataPath>Отчет.ПутьКПапке</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ChoiceButton>true</ChoiceButton>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПутьКПапкеКонтекстноеМеню" id="49"/>
+							<ExtendedTooltip name="ПутьКПапкеРасширеннаяПодсказка" id="50"/>
+							<Events>
+								<Event name="StartChoice">ПутьКПапкеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="СохранятьДанныеРеестраВExternals" id="78">
+							<DataPath>Отчет.СохранятьДанныеРеестраВExternals</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СохранятьДанныеРеестраВExternalsКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="СохранятьДанныеРеестраВExternalsРасширеннаяПодсказка" id="80"/>
+						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаПараметрыСтрока2" id="94">
@@ -100,15 +114,14 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПараметрыСтрока2РасширеннаяПодсказка" id="95"/>
 					<ChildItems>
-						<CheckBoxField name="СохранятьДанныеРеестраВExternals" id="78">
-							<DataPath>Отчет.СохранятьДанныеРеестраВExternals</DataPath>
-							<TitleLocation>Right</TitleLocation>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="СохранятьДанныеРеестраВExternalsКонтекстноеМеню" id="79"/>
-							<ExtendedTooltip name="СохранятьДанныеРеестраВExternalsРасширеннаяПодсказка" id="80"/>
-						</CheckBoxField>
 						<CheckBoxField name="ПоказыватьСовпавшиеДанные" id="84">
 							<DataPath>ПоказыватьСовпавшиеДанные</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отображать только расхождения</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ПоказыватьСовпавшиеДанныеКонтекстноеМеню" id="85"/>
@@ -117,32 +130,14 @@
 								<Event name="OnChange">ПоказыватьСовпавшиеДанныеПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
-						<CheckBoxField name="ПоказыватьСверкуАдресов" id="87">
-							<DataPath>ПоказыватьСверкуАдресов</DataPath>
-							<TitleLocation>Right</TitleLocation>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ПоказыватьСверкуАдресовКонтекстноеМеню" id="88"/>
-							<ExtendedTooltip name="ПоказыватьСверкуАдресовРасширеннаяПодсказка" id="89"/>
-							<Events>
-								<Event name="OnChange">ПоказыватьСверкуАдресовПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="ГруппаПараметрыСтрока3" id="100">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Параметры строка 3</v8:content>
-						</v8:item>
-					</Title>
-					<Group>Horizontal</Group>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаПараметрыСтрока3РасширеннаяПодсказка" id="101"/>
-					<ChildItems>
 						<CheckBoxField name="ИгнорироватьПустоеУРегистратора" id="102">
 							<DataPath>Отчет.ИгнорироватьПустоеУРегистратора</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не считать расхождение отсутствие данных у СР</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ИгнорироватьПустоеУРегистратораКонтекстноеМеню" id="103"/>
@@ -161,8 +156,54 @@
 								<Event name="OnChange">ПараметрыСверкиПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПараметрыСтрока3" id="100">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры строка 3</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПараметрыСтрока3РасширеннаяПодсказка" id="101"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация1" id="116">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не сверять:</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="117"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="118"/>
+						</LabelDecoration>
+						<CheckBoxField name="ПоказыватьСверкуАдресов" id="87">
+							<DataPath>ПоказыватьСверкуАдресов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адреса</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПоказыватьСверкуАдресовКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="ПоказыватьСверкуАдресовРасширеннаяПодсказка" id="89"/>
+							<Events>
+								<Event name="OnChange">ПоказыватьСверкуАдресовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
 						<CheckBoxField name="НеСверятьОрганыРегистрации" id="108">
 							<DataPath>Отчет.НеСверятьОрганыРегистрации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Органы регистрации паспортов</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="НеСверятьОрганыРегистрацииКонтекстноеМеню" id="109"/>
@@ -173,6 +214,12 @@
 						</CheckBoxField>
 						<CheckBoxField name="НеСверятьРасчетныеСчета" id="111">
 							<DataPath>Отчет.НеСверятьРасчетныеСчета</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расчетные счета</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="НеСверятьРасчетныеСчетаКонтекстноеМеню" id="112"/>
@@ -203,6 +250,7 @@
 					<ChangeRowOrder>false</ChangeRowOrder>
 					<Width>35</Width>
 					<AutoMaxWidth>false</AutoMaxWidth>
+					<Header>false</Header>
 					<AutoInsertNewRow>true</AutoInsertNewRow>
 					<EnableStartDrag>true</EnableStartDrag>
 					<EnableDrag>true</EnableDrag>
@@ -241,6 +289,7 @@
 					<ChildItems>
 						<InputField name="ТаблицаРезультатовПредставлениеФайла" id="68">
 							<DataPath>ТаблицаРезультатов.ПредставлениеФайла</DataPath>
+							<TitleLocation>None</TitleLocation>
 							<EditMode>EnterOnInput</EditMode>
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 							<ContextMenu name="ТаблицаРезультатовПредставлениеФайлаКонтекстноеМеню" id="69"/>
