@@ -68,10 +68,21 @@
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="Группа2" id="114">
+					<Group>Horizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="115"/>
 					<ChildItems>
+						<LabelDecoration name="ДекорацияФайл" id="119">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Файл</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияФайлКонтекстноеМеню" id="120"/>
+							<ExtendedTooltip name="ДекорацияФайлРасширеннаяПодсказка" id="121"/>
+						</LabelDecoration>
 						<CheckBoxField name="СверятьСExternals" id="96">
 							<DataPath>СверятьСExternals</DataPath>
 							<TitleLocation>None</TitleLocation>
@@ -82,6 +93,16 @@
 								<Event name="OnChange">СверятьСExternalsПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
+						<LabelDecoration name="ДекорацияExternals" id="122">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Externals</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияExternalsКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="ДекорацияExternalsРасширеннаяПодсказка" id="124"/>
+						</LabelDecoration>
 						<InputField name="ПутьКПапке" id="48">
 							<DataPath>Отчет.ПутьКПапке</DataPath>
 							<TitleLocation>None</TitleLocation>
@@ -114,20 +135,14 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПараметрыСтрока2РасширеннаяПодсказка" id="95"/>
 					<ChildItems>
-						<CheckBoxField name="ПоказыватьСовпавшиеДанные" id="84">
-							<DataPath>ПоказыватьСовпавшиеДанные</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Отображать только расхождения</v8:content>
-								</v8:item>
-							</Title>
+						<CheckBoxField name="ОтображатьТолькоРасхождения" id="84">
+							<DataPath>ОтображатьТолькоРасхождения</DataPath>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ПоказыватьСовпавшиеДанныеКонтекстноеМеню" id="85"/>
-							<ExtendedTooltip name="ПоказыватьСовпавшиеДанныеРасширеннаяПодсказка" id="86"/>
+							<ContextMenu name="ОтображатьТолькоРасхожденияКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="ОтображатьТолькоРасхожденияРасширеннаяПодсказка" id="86"/>
 							<Events>
-								<Event name="OnChange">ПоказыватьСовпавшиеДанныеПриИзменении</Event>
+								<Event name="OnChange">НастройкиОтображенияПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
 						<CheckBoxField name="ИгнорироватьПустоеУРегистратора" id="102">
@@ -180,8 +195,8 @@
 							<ContextMenu name="Декорация1КонтекстноеМеню" id="117"/>
 							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="118"/>
 						</LabelDecoration>
-						<CheckBoxField name="ПоказыватьСверкуАдресов" id="87">
-							<DataPath>ПоказыватьСверкуАдресов</DataPath>
+						<CheckBoxField name="НеСверятьАдреса" id="87">
+							<DataPath>НеСверятьАдреса</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -190,10 +205,10 @@
 							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ПоказыватьСверкуАдресовКонтекстноеМеню" id="88"/>
-							<ExtendedTooltip name="ПоказыватьСверкуАдресовРасширеннаяПодсказка" id="89"/>
+							<ContextMenu name="НеСверятьАдресаКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="НеСверятьАдресаРасширеннаяПодсказка" id="89"/>
 							<Events>
-								<Event name="OnChange">ПоказыватьСверкуАдресовПриИзменении</Event>
+								<Event name="OnChange">НастройкиОтображенияПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
 						<CheckBoxField name="НеСверятьОрганыРегистрации" id="108">
@@ -498,22 +513,22 @@
 				</v8:DateQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПоказыватьСовпавшиеДанные" id="90">
+		<Attribute name="ОтображатьТолькоРасхождения" id="90">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Показать совпавшие данные</v8:content>
+					<v8:content>Отображать только расхождения</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ПоказыватьСверкуАдресов" id="91">
+		<Attribute name="НеСверятьАдреса" id="91">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Показать сверку адресов</v8:content>
+					<v8:content>Не сверять адреса</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
