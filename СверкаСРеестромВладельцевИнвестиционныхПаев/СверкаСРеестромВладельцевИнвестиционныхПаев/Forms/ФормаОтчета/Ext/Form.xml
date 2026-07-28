@@ -73,36 +73,44 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="115"/>
 					<ChildItems>
-						<LabelDecoration name="ДекорацияФайл" id="119">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Файл</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ДекорацияФайлКонтекстноеМеню" id="120"/>
-							<ExtendedTooltip name="ДекорацияФайлРасширеннаяПодсказка" id="121"/>
-						</LabelDecoration>
-						<CheckBoxField name="СверятьСExternals" id="96">
+						<RadioButtonField name="СверятьСExternals" id="96">
 							<DataPath>СверятьСExternals</DataPath>
 							<TitleLocation>None</TitleLocation>
-							<CheckBoxType>Tumbler</CheckBoxType>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Файл</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:boolean">false</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Externals</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:boolean">true</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
 							<ContextMenu name="СверятьСExternalsКонтекстноеМеню" id="97"/>
 							<ExtendedTooltip name="СверятьСExternalsРасширеннаяПодсказка" id="98"/>
 							<Events>
 								<Event name="OnChange">СверятьСExternalsПриИзменении</Event>
 							</Events>
-						</CheckBoxField>
-						<LabelDecoration name="ДекорацияExternals" id="122">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Externals</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ДекорацияExternalsКонтекстноеМеню" id="123"/>
-							<ExtendedTooltip name="ДекорацияExternalsРасширеннаяПодсказка" id="124"/>
-						</LabelDecoration>
+						</RadioButtonField>
 						<InputField name="ПутьКПапке" id="48">
 							<DataPath>Отчет.ПутьКПапке</DataPath>
 							<TitleLocation>None</TitleLocation>
