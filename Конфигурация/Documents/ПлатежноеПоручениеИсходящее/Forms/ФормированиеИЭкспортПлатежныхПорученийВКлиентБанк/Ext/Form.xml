@@ -24,7 +24,6 @@
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
-		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаНастройки" id="163">
@@ -40,6 +39,7 @@
 					<v8:content>Группа настройки</v8:content>
 				</v8:item>
 			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
 			<Group>Horizontal</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
@@ -61,6 +61,45 @@
 					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="134"/>
 					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="135"/>
 				</LabelField>
+				<RadioButtonField name="Режим" id="743" DisplayImportance="VeryHigh">
+					<DataPath>Режим</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<RadioButtonType>RadioButtons</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Формирование и выгрузка</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">ФормированиеИВыгрузка</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Только выгрузка</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">Выгрузка</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<BorderColor>style:AccentColor</BorderColor>
+					<ContextMenu name="РежимКонтекстноеМеню" id="744"/>
+					<ExtendedTooltip name="РежимРасширеннаяПодсказка" id="745"/>
+					<Events>
+						<Event name="OnChange">РежимПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаОтбор" id="668">
@@ -626,6 +665,16 @@
 										<Event name="OnChange">ДокументыДляФормированияПлатежныхПорученийФормироватьПриИзменении</Event>
 									</Events>
 								</CheckBoxField>
+								<CheckBoxField name="ДокументыДляФормированияПлатежныхПорученийПроверено" id="740">
+									<DataPath>ДокументыДляФормированияПлатежныхПоручений.Проверено</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДокументыДляФормированияПлатежныхПорученийПровереноКонтекстноеМеню" id="741"/>
+									<ExtendedTooltip name="ДокументыДляФормированияПлатежныхПорученийПровереноРасширеннаяПодсказка" id="742"/>
+									<Events>
+										<Event name="OnChange">ДокументыДляФормированияПлатежныхПорученийПровереноПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
 								<ColumnGroup name="ДокументыДляФормированияПлатежныхПорученийГруппаГруппировка" id="647">
 									<EnableContentChange>true</EnableContentChange>
 									<Title>
@@ -858,12 +907,6 @@
 									<ContextMenu name="ДокументыДляФормированияПлатежныхПорученийНазначениеПлатежаКонтекстноеМеню" id="725"/>
 									<ExtendedTooltip name="ДокументыДляФормированияПлатежныхПорученийНазначениеПлатежаРасширеннаяПодсказка" id="726"/>
 								</InputField>
-								<InputField name="ДокументыДляФормированияПлатежныхПорученийОписаниеОшибок" id="612">
-									<DataPath>ДокументыДляФормированияПлатежныхПоручений.ОписаниеОшибок</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<ContextMenu name="ДокументыДляФормированияПлатежныхПорученийОписаниеОшибокКонтекстноеМеню" id="613"/>
-									<ExtendedTooltip name="ДокументыДляФормированияПлатежныхПорученийОписаниеОшибокРасширеннаяПодсказка" id="614"/>
-								</InputField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -883,12 +926,54 @@
 					</ToolTip>
 					<ExtendedTooltip name="ГруппаВыгрузкаПлатежныхПорученийРасширеннаяПодсказка" id="259"/>
 					<ChildItems>
-						<CheckBoxField name="ВыгрузитьПорученияСоСтраницыФормирование" id="727">
-							<DataPath>ВыгрузитьПорученияСоСтраницыФормирование</DataPath>
+						<UsualGroup name="ГруппаФлажки" id="735">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа флажки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа флажки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФлажкиРасширеннаяПодсказка" id="736"/>
+							<ChildItems>
+								<CheckBoxField name="ВыгрузитьПорученияСоСтраницыФормирование" id="727">
+									<DataPath>ВыгрузитьПорученияСоСтраницыФормирование</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВыгрузитьПорученияСоСтраницыФормированиеКонтекстноеМеню" id="728"/>
+									<ExtendedTooltip name="ВыгрузитьПорученияСоСтраницыФормированиеРасширеннаяПодсказка" id="729"/>
+									<Events>
+										<Event name="OnChange">ВыгрузитьПорученияСоСтраницыФормированиеПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ВыгрузитьПорученияДляЭДОВТБ" id="732">
+									<DataPath>ВыгрузитьПорученияДляЭДОВТБ</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВыгрузитьПорученияДляЭДОВТБКонтекстноеМеню" id="733"/>
+									<ExtendedTooltip name="ВыгрузитьПорученияДляЭДОВТБРасширеннаяПодсказка" id="734"/>
+									<Events>
+										<Event name="OnChange">ВыгрузитьПорученияДляЭДОВТБПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="СкрытьВыгруженные" id="737">
+							<DataPath>СкрытьВыгруженные</DataPath>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ВыгрузитьПорученияСоСтраницыФормированиеКонтекстноеМеню" id="728"/>
-							<ExtendedTooltip name="ВыгрузитьПорученияСоСтраницыФормированиеРасширеннаяПодсказка" id="729"/>
+							<ContextMenu name="СкрытьВыгруженныеКонтекстноеМеню" id="738"/>
+							<ExtendedTooltip name="СкрытьВыгруженныеРасширеннаяПодсказка" id="739"/>
+							<Events>
+								<Event name="OnChange">СкрытьВыгруженныеПриИзменении</Event>
+							</Events>
 						</CheckBoxField>
 						<UsualGroup name="ГруппаБанк" id="730">
 							<Title>
@@ -2184,20 +2269,23 @@
 			</Type>
 			<FillCheck>ShowError</FillCheck>
 		</Attribute>
-		<Attribute name="Этап" id="11">
+		<Attribute name="Режим" id="11">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Этап</v8:content>
+					<v8:content>Режим</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>20</v8:Length>
+					<v8:Length>21</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>Режим</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="ДокументыДляФормированияПлатежныхПоручений" id="13">
 			<Title>
@@ -2932,21 +3020,6 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="ОписаниеОшибок" id="53">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Описание ошибок</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>255</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
 				<Column name="ТипДокумента" id="54">
 					<Title>
 						<v8:item>
@@ -3131,6 +3204,72 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сумма фиксирована</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СуммаРаспоряженийБезМНО" id="69">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма распоряжений на МНО, которые не оформлены в МНО</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ПриоритетнаяОплата" id="70">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма фиксирована</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДоступныйОстатокБезРаспоряженийНаМНО" id="71">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступный остаток без распоряжений на МНО</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДляВыгрузкиВЭДОВТБ" id="72">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для выгрузки ВЭДОВТБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Проверено" id="73">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проверено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТребуетсяПроверка" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требуется проверка</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -3358,6 +3497,9 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+			<Save>
+				<Field>ВыгрузитьПорученияСоСтраницыФормирование</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="СуммаТекущейСтроки" id="12">
 			<Title>
@@ -3370,17 +3512,6 @@
 				<v8:TypeSet>cfg:DefinedType.ДенежныеСуммы</v8:TypeSet>
 			</Type>
 		</Attribute>
-		<Attribute name="ПлатежныеПорученияДляВыгрузкиВЭДОВТБ" id="29">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Платежные поручения для выгрузки в ЭДО ВТБ</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>v8:ValueListType</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="СпецдепВТБ" id="30">
 			<Title>
 				<v8:item>
@@ -3390,6 +3521,53 @@
 			</Title>
 			<Type>
 				<v8:Type>cfg:CatalogRef.ДепозитарныеКомпании</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыгрузитьПорученияДляЭДОВТБ" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить документы для ЭДО ВТБ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СкрытьВыгруженные" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть выгруженные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>СкрытьВыгруженные</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="БанкГПБ" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Банк ГПБ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуетсяСтатусПроверено" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется статус проверено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>
@@ -3443,13 +3621,41 @@
 					<dcsset:item xsi:type="dcsset:FilterItemGroup">
 						<dcsset:groupType>AndGroup</dcsset:groupType>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ПлательщикСчет</dcsset:left>
-							<dcsset:comparisonType>Filled</dcsset:comparisonType>
+							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Документ</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Сумма</dcsset:left>
-							<dcsset:comparisonType>Greater</dcsset:comparisonType>
-							<dcsset:right xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ОстатокНаСчете</dcsset:right>
+							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ДокументОснование</dcsset:left>
+							<dcsset:comparisonType>Filled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>OrGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemGroup">
+								<dcsset:groupType>AndGroup</dcsset:groupType>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Сумма</dcsset:left>
+									<dcsset:comparisonType>Greater</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ДоступныйОстатокБезРаспоряженийНаМНО</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ПриоритетнаяОплата</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemGroup">
+								<dcsset:groupType>AndGroup</dcsset:groupType>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Сумма</dcsset:left>
+									<dcsset:comparisonType>Greater</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ОстатокНаСчете</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ПриоритетнаяОплата</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+								</dcsset:item>
+							</dcsset:item>
 						</dcsset:item>
 					</dcsset:item>
 				</dcsset:filter>
@@ -3555,9 +3761,17 @@
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ДокументОснование</dcsset:left>
-						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ДокументОснование</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Проверено</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
 					</dcsset:item>
 				</dcsset:filter>
 				<dcsset:appearance>
@@ -3724,6 +3938,135 @@
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
 						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДокументыДляФормированияПлатежныхПорученийОстатокНаСчете</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДокументыДляФормированияПлатежныхПорученийСуммаРаспоряженийБезМНО</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ДокументОснование</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДокументыДляФормированияПлатежныхПоручений</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыПлатежныхПоручений.Создано</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ActivityColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДокументыДляФормированияПлатежныхПоручений</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыПлатежныхПоручений.Выгружено</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ФонГруппыУсловийПервойЧастиРЕПОЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДокументыДляФормированияПлатежныхПоручений</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыПлатежныхПоручений.Исполнено</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеактуальнаяСтрокаВСпискеЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДокументыДляФормированияПлатежныхПорученийПроверено</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.ТребуетсяПроверка</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДокументыДляФормированияПлатежныхПоручений.Документ</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Отображать</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
 			</dcsset:item>

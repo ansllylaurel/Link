@@ -446,14 +446,19 @@
 					<ContextMenu name="ВнешниеДанныеДатаВозвратаКонтекстноеМеню" id="56"/>
 					<ExtendedTooltip name="ВнешниеДанныеДатаВозвратаРасширеннаяПодсказка" id="57"/>
 				</InputField>
-				<CheckBoxField name="ВнешниеДанныеПодКупон" id="140">
-					<DataPath>ВнешниеДанные.ПодКупон</DataPath>
-					<ReadOnly>true</ReadOnly>
+				<InputField name="ВнешниеДанныеОжидаемогоПоступленияДенежныхСредств" id="127">
+					<DataPath>ВнешниеДанные.ТипОжидаемогоПоступленияДенежныхСредств</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Под ожидаемое поступление д/с</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ВнешниеДанныеПодКупонКонтекстноеМеню" id="141"/>
-					<ExtendedTooltip name="ВнешниеДанныеПодКупонРасширеннаяПодсказка" id="142"/>
-				</CheckBoxField>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ВнешниеДанныеОжидаемогоПоступленияДенежныхСредствКонтекстноеМеню" id="128"/>
+					<ExtendedTooltip name="ВнешниеДанныеОжидаемогоПоступленияДенежныхСредствРасширеннаяПодсказка" id="129"/>
+				</InputField>
 				<InputField name="ВнешниеДанныеСрок" id="58">
 					<DataPath>ВнешниеДанные.Срок</DataPath>
 					<ReadOnly>true</ReadOnly>
@@ -949,15 +954,30 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
-				<Column name="ПодКупон" id="28">
+				<Column name="ПодОжидаемоеПоступлениеДенежныхСредств" id="28">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Под купон</v8:content>
+							<v8:content>Под поступление д/с</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТипОжидаемогоПоступленияДенежныхСредств" id="29">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип ожидаемого поступления д/с</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 			</Columns>

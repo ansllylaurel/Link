@@ -20,14 +20,14 @@
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Создана новая заявка</v8:content>
+						<v8:content>Создана новая заявка на покупку паев</v8:content>
 					</v8:item>
 				</Title>
 				<ToolTip/>
 				<TabOrder>1</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
+				<LineColor>web:ForestGreen</LineColor>
 				<GroupNumber>0</GroupNumber>
 				<ZOrder>0</ZOrder>
 				<Hyperlink>false</Hyperlink>
@@ -36,7 +36,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="0" left="200" bottom="20" right="500"/>
+				<Location top="0" left="330" bottom="40" right="580"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -65,10 +65,10 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="350" y="20"/>
-					<Point x="350" y="30"/>
-					<Point x="350" y="30"/>
-					<Point x="350" y="40"/>
+					<Point x="455" y="40"/>
+					<Point x="455" y="52"/>
+					<Point x="455" y="52"/>
+					<Point x="455" y="65"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -76,7 +76,7 @@
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
-						<Item>ПроверкаСканаПаспорта</Item>
+						<Item>ОтправкаВЛККСтатусаЗаявкиВРаботе</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -111,7 +111,7 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="260" left="360" bottom="320" right="680"/>
+				<Location top="270" left="490" bottom="320" right="870"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -157,18 +157,18 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="520" y="320"/>
-					<Point x="520" y="370"/>
-					<Point x="460" y="370"/>
+					<Point x="490" y="295"/>
+					<Point x="455" y="295"/>
+					<Point x="455" y="344"/>
 				</PivotPoints>
 				<Connect>
 					<From>
 						<Item>ОтправкаПакетаЗаявкиВДК</Item>
-						<PortIndex>4</PortIndex>
+						<PortIndex>1</PortIndex>
 					</From>
 					<To>
 						<Item>ЗагрузкаНовогоЛицевогоСчета</Item>
-						<PortIndex>3</PortIndex>
+						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
 				<Line width="1" gap="false">
@@ -198,8 +198,8 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="680" y="290"/>
-					<Point x="680" y="290"/>
+					<Point x="870" y="295"/>
+					<Point x="870" y="295"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -220,17 +220,17 @@
 				<EndArrow>Filled</EndArrow>
 			</Properties>
 		</ConnectionLine>
-		<Activity id="60" uuid="526cec44-0bf7-442f-a275-117986ab0a53">
+		<Activity id="65" uuid="445b2af5-2f3e-4f99-85f6-d2dbfcb9bfd3">
 			<Properties>
-				<Name>ПроверкаСканаПаспорта</Name>
+				<Name>ОтправкаВЛККСтатусаЗаявкиВРаботе</Name>
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>(вручную) Проверка скана паспорта</v8:content>
+						<v8:content>(автоматически) Установка и отправка в ЛКК статуса "В работе"</v8:content>
 					</v8:item>
 				</Title>
 				<ToolTip/>
-				<TabOrder>54</TabOrder>
+				<TabOrder>59</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
@@ -242,234 +242,13 @@
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="40" left="260" bottom="80" right="440"/>
+				<Location top="65" left="265" bottom="115" right="645"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
 				<Picture/>
 				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(вручную) Проверка скана паспорта</TaskDescription>
-				<Explanation/>
-				<Group>false</Group>
-				<AddressingAttributes>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-				</AddressingAttributes>
-			</Properties>
-			<Events>
-				<Event name="InteractiveActivationProcessing"/>
-				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">ПроверкаСканаПаспортаПриСозданииЗадач</Event>
-				<Event name="OnExecute">ПроверкаСканаПаспортаПриВыполнении</Event>
-				<Event name="CheckExecutionProcessing"/>
-				<Event name="BeforeExecute"/>
-				<Event name="BeforeExecuteInteractively"/>
-			</Events>
-		</Activity>
-		<ConnectionLine id="61">
-			<Properties>
-				<Name>Линия26</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>55</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>6</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="350" y="80"/>
-					<Point x="350" y="90"/>
-					<Point x="350" y="90"/>
-					<Point x="350" y="100"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>ПроверкаСканаПаспорта</Item>
-						<PortIndex>4</PortIndex>
-					</From>
-					<To>
-						<Item>ПроверкаСканаПаспортаПройдена</Item>
-						<PortIndex>2</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Condition id="62" uuid="b4cee86b-54e0-4b1a-a424-3e8a726d16d0">
-			<Properties>
-				<Name>ПроверкаСканаПаспортаПройдена</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Проверка скана паспорта пройдена?</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>56</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>7</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="100" left="260" bottom="120" right="440"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-				<TruePortIndex>3</TruePortIndex>
-				<FalsePortIndex>1</FalsePortIndex>
-			</Properties>
-			<Events>
-				<Event name="ConditionCheck">ПроверкаСканаПаспортаПройденаПроверкаУсловия</Event>
-			</Events>
-		</Condition>
-		<ConnectionLine id="63">
-			<Properties>
-				<Name>Линия27</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Нет</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>57</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>8</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="260" y="110"/>
-					<Point x="240" y="110"/>
-					<Point x="240" y="110"/>
-					<Point x="220" y="110"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>ПроверкаСканаПаспортаПройдена</Item>
-						<PortIndex>1</PortIndex>
-					</From>
-					<To>
-						<Item>УточнениеВопросовПоПроверкеСканаПаспорта</Item>
-						<PortIndex>3</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<ConnectionLine id="64">
-			<Properties>
-				<Name>Линия28</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Да</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>58</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>9</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="440" y="110"/>
-					<Point x="520" y="110"/>
-					<Point x="520" y="180"/>
-					<Point x="500" y="180"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>ПроверкаСканаПаспортаПройдена</Item>
-						<PortIndex>3</PortIndex>
-					</From>
-					<To>
-						<Item>ОтправкаВЛККСтатусаЗаявкаПринята</Item>
-						<PortIndex>3</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Activity id="65" uuid="445b2af5-2f3e-4f99-85f6-d2dbfcb9bfd3">
-			<Properties>
-				<Name>ОтправкаВЛККСтатусаЗаявкаПринята</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Отправка в ЛКК статуса "Заявка принята"</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>59</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>10</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="160" left="200" bottom="200" right="500"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(автоматически) Отправка в ЛКК статуса "Заявка принята"</TaskDescription>
+				<TaskDescription>(автоматически) Установка и отправка в ЛКК статуса "В работе"</TaskDescription>
 				<Explanation/>
 				<Group>false</Group>
 				<AddressingAttributes>
@@ -484,8 +263,8 @@
 			<Events>
 				<Event name="InteractiveActivationProcessing"/>
 				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">ОтправкаВЛККСтатусаЗаявкаПринятаПриСозданииЗадач</Event>
-				<Event name="OnExecute">ОтправкаВЛККСтатусаЗаявкаПринятаПриВыполнении</Event>
+				<Event name="OnCreateTask">ОтправкаВЛККСтатусаЗаявкиВРаботеПриСозданииЗадач</Event>
+				<Event name="OnExecute">ОтправкаВЛККСтатусаЗаявкиВРаботеПриВыполнении</Event>
 				<Event name="CheckExecutionProcessing"/>
 				<Event name="BeforeExecute"/>
 				<Event name="BeforeExecuteInteractively"/>
@@ -501,7 +280,7 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>11</ZOrder>
+				<ZOrder>6</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
@@ -509,110 +288,19 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="350" y="200"/>
-					<Point x="350" y="210"/>
-					<Point x="350" y="210"/>
-					<Point x="350" y="220"/>
+					<Point x="455" y="115"/>
+					<Point x="455" y="130"/>
+					<Point x="455" y="130"/>
+					<Point x="455" y="146"/>
 				</PivotPoints>
 				<Connect>
 					<From>
-						<Item>ОтправкаВЛККСтатусаЗаявкаПринята</Item>
+						<Item>ОтправкаВЛККСтатусаЗаявкиВРаботе</Item>
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
-						<Item>ТребуетсяОткрытиеЛицевогоСчета</Item>
+						<Item>ЭкспортЗаявкиВПервуюФормуКоллЦентраМКБ</Item>
 						<PortIndex>2</PortIndex>
-					</To>
-				</Connect>
-				<Line width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Line>
-				<DecorativeLine>false</DecorativeLine>
-				<TextLocation>FirstSegment</TextLocation>
-				<BeginArrow>None</BeginArrow>
-				<EndArrow>Filled</EndArrow>
-			</Properties>
-		</ConnectionLine>
-		<Activity id="67" uuid="d26468a7-1aae-4346-985f-f61ee74bfa25">
-			<Properties>
-				<Name>УточнениеВопросовПоПроверкеСканаПаспорта</Name>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>(Вручную) Уточнение вопросов по проверке скана паспорта</v8:content>
-					</v8:item>
-				</Title>
-				<ToolTip/>
-				<TabOrder>61</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>12</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<Location top="80" left="100" bottom="140" right="220"/>
-				<Border width="1" gap="false">
-					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
-				</Border>
-				<Picture/>
-				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(Вручную) Уточнение вопросов по проверке скана паспорта</TaskDescription>
-				<Explanation/>
-				<Group>false</Group>
-				<AddressingAttributes>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
-						<Value xsi:nil="true"/>
-					</AddressingAttribute>
-				</AddressingAttributes>
-			</Properties>
-			<Events>
-				<Event name="InteractiveActivationProcessing"/>
-				<Event name="BeforeCreateTasks"/>
-				<Event name="OnCreateTask">УточнениеВопросовПоПроверкеСканаПаспортаПриСозданииЗадач</Event>
-				<Event name="OnExecute"/>
-				<Event name="CheckExecutionProcessing"/>
-				<Event name="BeforeExecute"/>
-				<Event name="BeforeExecuteInteractively"/>
-			</Events>
-		</Activity>
-		<ConnectionLine id="68">
-			<Properties>
-				<Name>Линия30</Name>
-				<Title/>
-				<ToolTip/>
-				<TabOrder>62</TabOrder>
-				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
-				<GroupNumber>0</GroupNumber>
-				<ZOrder>13</ZOrder>
-				<Hyperlink>false</Hyperlink>
-				<Transparent>false</Transparent>
-				<Font kind="AutoFont"/>
-				<HorizontalAlign>Center</HorizontalAlign>
-				<VerticalAlign>Center</VerticalAlign>
-				<PictureLocation>Left</PictureLocation>
-				<PivotPoints>
-					<Point x="160" y="80"/>
-					<Point x="160" y="60"/>
-					<Point x="260" y="60"/>
-				</PivotPoints>
-				<Connect>
-					<From>
-						<Item>УточнениеВопросовПоПроверкеСканаПаспорта</Item>
-						<PortIndex>2</PortIndex>
-					</From>
-					<To>
-						<Item>ПроверкаСканаПаспорта</Item>
-						<PortIndex>1</PortIndex>
 					</To>
 				</Connect>
 				<Line width="1" gap="false">
@@ -637,16 +325,16 @@
 				<TabOrder>68</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
+				<LineColor>web:CadetBlue</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>14</ZOrder>
+				<ZOrder>7</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="500" left="280" bottom="520" right="420"/>
+				<Location top="578" left="405" bottom="618" right="505"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -672,14 +360,14 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>15</ZOrder>
+				<ZOrder>8</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="340" left="240" bottom="400" right="460"/>
+				<Location top="344" left="265" bottom="394" right="645"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -717,7 +405,7 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>16</ZOrder>
+				<ZOrder>9</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
@@ -725,10 +413,10 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="350" y="400"/>
-					<Point x="350" y="410"/>
-					<Point x="350" y="410"/>
-					<Point x="350" y="420"/>
+					<Point x="455" y="394"/>
+					<Point x="455" y="408"/>
+					<Point x="455" y="408"/>
+					<Point x="455" y="423"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -762,16 +450,16 @@
 				<TabOrder>71</TabOrder>
 				<BackColor>auto</BackColor>
 				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
+				<LineColor>web:IndianRed</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>17</ZOrder>
+				<ZOrder>10</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="220" left="260" bottom="240" right="440"/>
+				<Location top="220" left="330" bottom="250" right="580"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -796,10 +484,10 @@
 				<ToolTip/>
 				<TabOrder>72</TabOrder>
 				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
+				<TextColor>web:IndianRed</TextColor>
+				<LineColor>web:IndianRed</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>18</ZOrder>
+				<ZOrder>11</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
@@ -807,9 +495,9 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="260" y="230"/>
-					<Point x="180" y="230"/>
-					<Point x="180" y="260"/>
+					<Point x="330" y="235"/>
+					<Point x="230" y="235"/>
+					<Point x="230" y="270"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -817,7 +505,7 @@
 						<PortIndex>1</PortIndex>
 					</From>
 					<To>
-						<Item>ДействиеОтправкаТолькЗаявкиНаПриобретениеПаев</Item>
+						<Item>ДействиеОтправкаТолькоЗаявкиНаПриобретениеПаев</Item>
 						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
@@ -842,10 +530,10 @@
 				<ToolTip/>
 				<TabOrder>73</TabOrder>
 				<BackColor>auto</BackColor>
-				<TextColor>style:FormTextColor</TextColor>
-				<LineColor>style:BorderColor</LineColor>
+				<TextColor>web:ForestGreen</TextColor>
+				<LineColor>web:ForestGreen</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>19</ZOrder>
+				<ZOrder>12</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
@@ -853,9 +541,9 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="440" y="230"/>
-					<Point x="520" y="230"/>
-					<Point x="520" y="260"/>
+					<Point x="580" y="235"/>
+					<Point x="680" y="235"/>
+					<Point x="680" y="270"/>
 				</PivotPoints>
 				<Connect>
 					<From>
@@ -878,7 +566,7 @@
 		</ConnectionLine>
 		<Activity id="80" uuid="806470eb-42ef-4a8a-b316-e96054a1e07c">
 			<Properties>
-				<Name>ДействиеОтправкаТолькЗаявкиНаПриобретениеПаев</Name>
+				<Name>ДействиеОтправкаТолькоЗаявкиНаПриобретениеПаев</Name>
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
@@ -891,14 +579,14 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>20</ZOrder>
+				<ZOrder>13</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="260" left="20" bottom="320" right="340"/>
+				<Location top="270" left="40" bottom="320" right="420"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
@@ -936,7 +624,7 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>21</ZOrder>
+				<ZOrder>14</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
@@ -944,18 +632,19 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="180" y="320"/>
-					<Point x="180" y="510"/>
-					<Point x="280" y="510"/>
+					<Point x="230" y="320"/>
+					<Point x="230" y="563"/>
+					<Point x="455" y="563"/>
+					<Point x="455" y="578"/>
 				</PivotPoints>
 				<Connect>
 					<From>
-						<Item>ДействиеОтправкаТолькЗаявкиНаПриобретениеПаев</Item>
+						<Item>ДействиеОтправкаТолькоЗаявкиНаПриобретениеПаев</Item>
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>
 						<Item>Завершение</Item>
-						<PortIndex>1</PortIndex>
+						<PortIndex>2</PortIndex>
 					</To>
 				</Connect>
 				<Line width="1" gap="false">
@@ -973,7 +662,7 @@
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>(автоматически) Отправка уведомления об открытии лицевого счета в ЛКК</v8:content>
+						<v8:content>(автоматически) Отправка уведомления об открытии лицевого счета в ЛКК, установка и отправка в ЛКК статуса "Исполнена" у заявки</v8:content>
 					</v8:item>
 				</Title>
 				<ToolTip/>
@@ -982,20 +671,20 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>22</ZOrder>
+				<ZOrder>15</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
-				<Location top="420" left="240" bottom="480" right="460"/>
+				<Location top="423" left="265" bottom="473" right="645"/>
 				<Border width="1" gap="false">
 					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
 				</Border>
 				<Picture/>
 				<PictureSize>AutoSize</PictureSize>
-				<TaskDescription>(автоматически) Отправка уведомления об открытии лицевого счета в ЛКК</TaskDescription>
+				<TaskDescription>(автоматически) Отправка уведомления об открытии лицевого счета в ЛКК, установка и отправка в ЛКК статуса "Исполнена" у заявки</TaskDescription>
 				<Explanation/>
 				<Group>false</Group>
 				<AddressingAttributes>
@@ -1027,7 +716,7 @@
 				<TextColor>style:FormTextColor</TextColor>
 				<LineColor>style:BorderColor</LineColor>
 				<GroupNumber>0</GroupNumber>
-				<ZOrder>23</ZOrder>
+				<ZOrder>16</ZOrder>
 				<Hyperlink>false</Hyperlink>
 				<Transparent>false</Transparent>
 				<Font kind="AutoFont"/>
@@ -1035,14 +724,198 @@
 				<VerticalAlign>Center</VerticalAlign>
 				<PictureLocation>Left</PictureLocation>
 				<PivotPoints>
-					<Point x="350" y="480"/>
-					<Point x="350" y="490"/>
-					<Point x="350" y="490"/>
-					<Point x="350" y="500"/>
+					<Point x="455" y="473"/>
+					<Point x="455" y="485"/>
+					<Point x="455" y="485"/>
+					<Point x="455" y="497"/>
 				</PivotPoints>
 				<Connect>
 					<From>
 						<Item>ОтправкаУведомленияОбОткрытииСчетаВЛКК</Item>
+						<PortIndex>4</PortIndex>
+					</From>
+					<To>
+						<Item>ЭкспортСтатусаЗаявкиВПервуюФормуКоллЦентраМКБ</Item>
+						<PortIndex>2</PortIndex>
+					</To>
+				</Connect>
+				<Line width="1" gap="false">
+					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
+				</Line>
+				<DecorativeLine>false</DecorativeLine>
+				<TextLocation>FirstSegment</TextLocation>
+				<BeginArrow>None</BeginArrow>
+				<EndArrow>Filled</EndArrow>
+			</Properties>
+		</ConnectionLine>
+		<Activity id="86" uuid="634486b5-4fb6-4952-9160-332337f88c82">
+			<Properties>
+				<Name>ЭкспортЗаявкиВПервуюФормуКоллЦентраМКБ</Name>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(автоматически) Экспорт заявки в первую форму колл центра МКБ</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip/>
+				<TabOrder>80</TabOrder>
+				<BackColor>web:Wheat</BackColor>
+				<TextColor>style:FormTextColor</TextColor>
+				<LineColor>style:BorderColor</LineColor>
+				<GroupNumber>0</GroupNumber>
+				<ZOrder>17</ZOrder>
+				<Hyperlink>false</Hyperlink>
+				<Transparent>false</Transparent>
+				<Font kind="AutoFont"/>
+				<HorizontalAlign>Center</HorizontalAlign>
+				<VerticalAlign>Center</VerticalAlign>
+				<PictureLocation>Left</PictureLocation>
+				<Location top="146" left="265" bottom="196" right="645"/>
+				<Border width="1" gap="false">
+					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
+				</Border>
+				<Picture/>
+				<PictureSize>AutoSize</PictureSize>
+				<TaskDescription>(автоматически) Экспорт заявки в первую форму колл центра МКБ</TaskDescription>
+				<Explanation/>
+				<Group>false</Group>
+				<AddressingAttributes>
+					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.3/xcf/readable" xsi:type="d7p1:DesignTimeRef">Catalog.ГруппыПользователей.EmptyRef</Value>
+					</AddressingAttribute>
+					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
+						<Value xsi:nil="true"/>
+					</AddressingAttribute>
+				</AddressingAttributes>
+			</Properties>
+			<Events>
+				<Event name="InteractiveActivationProcessing"/>
+				<Event name="BeforeCreateTasks"/>
+				<Event name="OnCreateTask">ЭкспортЗаявкиВПервуюФормуКоллЦентраМКБПриСозданииЗадач</Event>
+				<Event name="OnExecute">ЭкспортЗаявкиВПервуюФормуКоллЦентраМКБПриВыполнении</Event>
+				<Event name="CheckExecutionProcessing"/>
+				<Event name="BeforeExecute"/>
+				<Event name="BeforeExecuteInteractively"/>
+			</Events>
+		</Activity>
+		<ConnectionLine id="87">
+			<Properties>
+				<Name>Линия9</Name>
+				<Title/>
+				<ToolTip/>
+				<TabOrder>81</TabOrder>
+				<BackColor>auto</BackColor>
+				<TextColor>style:FormTextColor</TextColor>
+				<LineColor>style:BorderColor</LineColor>
+				<GroupNumber>0</GroupNumber>
+				<ZOrder>18</ZOrder>
+				<Hyperlink>false</Hyperlink>
+				<Transparent>false</Transparent>
+				<Font kind="AutoFont"/>
+				<HorizontalAlign>Center</HorizontalAlign>
+				<VerticalAlign>Center</VerticalAlign>
+				<PictureLocation>Left</PictureLocation>
+				<PivotPoints>
+					<Point x="455" y="196"/>
+					<Point x="455" y="208"/>
+					<Point x="455" y="208"/>
+					<Point x="455" y="220"/>
+				</PivotPoints>
+				<Connect>
+					<From>
+						<Item>ЭкспортЗаявкиВПервуюФормуКоллЦентраМКБ</Item>
+						<PortIndex>4</PortIndex>
+					</From>
+					<To>
+						<Item>ТребуетсяОткрытиеЛицевогоСчета</Item>
+						<PortIndex>2</PortIndex>
+					</To>
+				</Connect>
+				<Line width="1" gap="false">
+					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
+				</Line>
+				<DecorativeLine>false</DecorativeLine>
+				<TextLocation>FirstSegment</TextLocation>
+				<BeginArrow>None</BeginArrow>
+				<EndArrow>Filled</EndArrow>
+			</Properties>
+		</ConnectionLine>
+		<Activity id="99" uuid="287c4f54-8d12-4e74-b927-643fca7e3fda">
+			<Properties>
+				<Name>ЭкспортСтатусаЗаявкиВПервуюФормуКоллЦентраМКБ</Name>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(автоматически) Экспорт статуса заявки в первую форму колл центра МКБ</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip/>
+				<TabOrder>89</TabOrder>
+				<BackColor>web:Wheat</BackColor>
+				<TextColor>style:FormTextColor</TextColor>
+				<LineColor>style:BorderColor</LineColor>
+				<GroupNumber>0</GroupNumber>
+				<ZOrder>19</ZOrder>
+				<Hyperlink>false</Hyperlink>
+				<Transparent>false</Transparent>
+				<Font kind="AutoFont"/>
+				<HorizontalAlign>Center</HorizontalAlign>
+				<VerticalAlign>Center</VerticalAlign>
+				<PictureLocation>Left</PictureLocation>
+				<Location top="497" left="265" bottom="547" right="645"/>
+				<Border width="1" gap="false">
+					<v8ui:style xsi:type="sch:ConnectorLineType">Solid</v8ui:style>
+				</Border>
+				<Picture/>
+				<PictureSize>AutoSize</PictureSize>
+				<TaskDescription>(автоматически) Экспорт статуса заявки в первую форму колл центра МКБ</TaskDescription>
+				<Explanation/>
+				<Group>false</Group>
+				<AddressingAttributes>
+					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.ГруппаИсполнителей">
+						<Value xsi:nil="true"/>
+					</AddressingAttribute>
+					<AddressingAttribute ref="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель">
+						<Value xsi:nil="true"/>
+					</AddressingAttribute>
+				</AddressingAttributes>
+			</Properties>
+			<Events>
+				<Event name="InteractiveActivationProcessing"/>
+				<Event name="BeforeCreateTasks"/>
+				<Event name="OnCreateTask">ЭкспортСтатусаЗаявкиВПервуюФормуКоллЦентраМКБПриСозданииЗадач</Event>
+				<Event name="OnExecute">ЭкспортСтатусаЗаявкиВПервуюФормуКоллЦентраМКБПриВыполнении</Event>
+				<Event name="CheckExecutionProcessing"/>
+				<Event name="BeforeExecute"/>
+				<Event name="BeforeExecuteInteractively"/>
+			</Events>
+		</Activity>
+		<ConnectionLine id="100">
+			<Properties>
+				<Name>Линия15</Name>
+				<Title/>
+				<ToolTip/>
+				<TabOrder>90</TabOrder>
+				<BackColor>auto</BackColor>
+				<TextColor>style:FormTextColor</TextColor>
+				<LineColor>style:BorderColor</LineColor>
+				<GroupNumber>0</GroupNumber>
+				<ZOrder>20</ZOrder>
+				<Hyperlink>false</Hyperlink>
+				<Transparent>false</Transparent>
+				<Font kind="AutoFont"/>
+				<HorizontalAlign>Center</HorizontalAlign>
+				<VerticalAlign>Center</VerticalAlign>
+				<PictureLocation>Left</PictureLocation>
+				<PivotPoints>
+					<Point x="455" y="547"/>
+					<Point x="455" y="562"/>
+					<Point x="455" y="562"/>
+					<Point x="455" y="578"/>
+				</PivotPoints>
+				<Connect>
+					<From>
+						<Item>ЭкспортСтатусаЗаявкиВПервуюФормуКоллЦентраМКБ</Item>
 						<PortIndex>4</PortIndex>
 					</From>
 					<To>

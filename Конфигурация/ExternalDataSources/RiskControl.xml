@@ -38,6 +38,10 @@
 			<Table>VW_Assets1C8</Table>
 			<Table>VW_Clients</Table>
 			<Table>VW_Scenario_Statuses</Table>
+			<Table>FT_Trade_Date_Period</Table>
+			<Table>FT_Work_Date_Period</Table>
+			<Table>T_Investment_Portfolio_Registrations</Table>
+			<Table>T_Portfolio_Returns</Table>
 			<Function uuid="19c334c6-002d-4ce7-bc47-bdcd34ba5562">
 				<Properties>
 					<Name>F_Bond_Index_VaR</Name>
@@ -309,6 +313,27 @@
 						</v8:StringQualifiers>
 					</Type>
 					<ExpressionInDataSource>AM.P_Scenario_Market_VaR(&amp;1, &amp;2, &amp;3, &amp;4, &amp;5, &amp;6, &amp;7)</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="deb7a250-9deb-4643-9967-af4d03482bbf">
+				<Properties>
+					<Name>P_Scenario_Currency_VaR</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Procedure: Scenario - Currency VaR</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>@Date DATE, @CurrencyID INT = NULL, @SessionID INT = 0, @ForceExecute BIT = 0</Comment>
+					<ReturnValue>false</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>AM.P_Scenario_Currency_VaR(&amp;1, &amp;2, &amp;3, &amp;4)</ExpressionInDataSource>
 				</Properties>
 			</Function>
 		</ChildObjects>

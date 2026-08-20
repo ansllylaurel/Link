@@ -47,6 +47,29 @@
 					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
 					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
 				</LabelField>
+				<LabelField name="Сделка" id="181">
+					<DataPath>Объект.ПоСделке</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БИ='Сформирован при формировании учета автоматически'</v8:content>
+						</v8:item>
+					</Format>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="СделкаКонтекстноеМеню" id="182"/>
+					<ExtendedTooltip name="СделкаРасширеннаяПодсказка" id="183"/>
+				</LabelField>
+				<CheckBoxField name="РучнойВвод" id="184">
+					<DataPath>Объект.РучнойВвод</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="РучнойВводКонтекстноеМеню" id="185"/>
+					<ExtendedTooltip name="РучнойВводРасширеннаяПодсказка" id="186"/>
+					<Events>
+						<Event name="OnChange">РучнаяКорректировкаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
 		<InputField name="СчетДоверительногоУправления" id="10">
@@ -225,6 +248,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Заполнить</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 		<Command name="ПроверитьЭСПНаРыночность" id="2">
 			<Title>

@@ -5,6 +5,7 @@
 	<RepostOnWrite>true</RepostOnWrite>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="BeforeWrite">ПередЗаписью</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
@@ -61,47 +62,127 @@
 			<ContextMenu name="ЮрФизЛицоКонтекстноеМеню" id="309"/>
 			<ExtendedTooltip name="ЮрФизЛицоРасширеннаяПодсказка" id="310"/>
 		</InputField>
-		<RadioButtonField name="ИсточникАнкеты" id="301">
-			<DataPath>Объект.ИсточникАнкеты</DataPath>
+		<UsualGroup name="ГруппаИсточникАнкеты" id="495">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Источник</v8:content>
+					<v8:content>Группа источник анкеты</v8:content>
 				</v8:item>
 			</Title>
-			<RadioButtonType>Tumbler</RadioButtonType>
-			<ChoiceList>
-				<xr:Item>
-					<xr:Presentation/>
-					<xr:CheckState>0</xr:CheckState>
-					<xr:Value xsi:type="FormChoiceListDesTimeValue">
-						<Presentation/>
-						<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Агент</Value>
-					</xr:Value>
-				</xr:Item>
-				<xr:Item>
-					<xr:Presentation/>
-					<xr:CheckState>0</xr:CheckState>
-					<xr:Value xsi:type="FormChoiceListDesTimeValue">
-						<Presentation/>
-						<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Офис</Value>
-					</xr:Value>
-				</xr:Item>
-				<xr:Item>
-					<xr:Presentation/>
-					<xr:CheckState>0</xr:CheckState>
-					<xr:Value xsi:type="FormChoiceListDesTimeValue">
-						<Presentation/>
-						<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Сайт</Value>
-					</xr:Value>
-				</xr:Item>
-			</ChoiceList>
-			<ContextMenu name="ИсточникАнкетыКонтекстноеМеню" id="302"/>
-			<ExtendedTooltip name="ИсточникАнкетыРасширеннаяПодсказка" id="303"/>
-			<Events>
-				<Event name="OnChange">ИсточникАнкетыПриИзменении</Event>
-			</Events>
-		</RadioButtonField>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа источник анкеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИсточникАнкетыРасширеннаяПодсказка" id="496"/>
+			<ChildItems>
+				<RadioButtonField name="ИсточникАнкеты" id="301">
+					<DataPath>Объект.ВидИсточника</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник</v8:content>
+						</v8:item>
+					</Title>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Агент</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Офис</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Сайт</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиАнкетИЗаявок.EnumValue.Клиент</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ИсточникАнкетыКонтекстноеМеню" id="302"/>
+					<ExtendedTooltip name="ИсточникАнкетыРасширеннаяПодсказка" id="303"/>
+					<Events>
+						<Event name="OnChange">ИсточникАнкетыПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<UsualGroup name="ГруппаИсточникКлиент" id="490">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа источник клиент</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа источник клиент</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаИсточникКлиентРасширеннаяПодсказка" id="491"/>
+					<ChildItems>
+						<InputField name="Доверитель" id="492">
+							<DataPath>Объект.Доверитель</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доверитель</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ДоверительКонтекстноеМеню" id="493"/>
+							<ExtendedTooltip name="ДоверительРасширеннаяПодсказка" id="494"/>
+							<Events>
+								<Event name="OnChange">ДоверительПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Должность" id="487">
+							<DataPath>Объект.Должность</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должность</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ДолжностьКонтекстноеМеню" id="488"/>
+							<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="489"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="ГруппаСтраницы" id="89">
 			<Title>
 				<v8:item>
@@ -459,6 +540,18 @@
 							<Representation>StrongSeparation</Representation>
 							<ExtendedTooltip name="ГруппаДанныеАгентаРасширеннаяПодсказка" id="387"/>
 							<ChildItems>
+								<InputField name="Источник" id="484">
+									<DataPath>Объект.Источник</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Агент</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ИсточникКонтекстноеМеню" id="485"/>
+									<ExtendedTooltip name="ИсточникРасширеннаяПодсказка" id="486"/>
+								</InputField>
 								<InputField name="ФИОАгента" id="388">
 									<DataPath>Объект.ФИОАгента</DataPath>
 									<Title>
@@ -995,7 +1088,16 @@
 					</Title>
 					<ExtendedTooltip name="СтраницаОпросникиРасширеннаяПодсказка" id="232"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаОпросники1" id="242">
+						<CheckBoxField name="ЯвляетсяПубличнымДолжностнымЛицомИлиЕгоРодственником" id="497">
+							<DataPath>ЯвляетсяПубличнымДолжностнымЛицомИлиЕгоРодственником</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЯвляетсяПубличнымДолжностнымЛицомИлиЕгоРодственникомКонтекстноеМеню" id="498"/>
+							<ExtendedTooltip name="ЯвляетсяПубличнымДолжностнымЛицомИлиЕгоРодственникомРасширеннаяПодсказка" id="499"/>
+							<Events>
+								<Event name="OnChange">ЯвляетсяПубличнымДолжностнымЛицомИлиЕгоРодственникомПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаОпросники1" id="500">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -1008,81 +1110,197 @@
 									<v8:content>Группа опросники1</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>Horizontal</Group>
+							<Group>Vertical</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаОпросники1РасширеннаяПодсказка" id="243"/>
+							<ExtendedTooltip name="ГруппаОпросники1РасширеннаяПодсказка" id="501"/>
 							<ChildItems>
-								<CheckBoxField name="ЯвляетсяПубличнымДолжностнымЛицом" id="233">
-									<DataPath>Объект.ЯвляетсяПубличнымДолжностнымЛицом</DataPath>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ЯвляетсяПубличнымДолжностнымЛицомКонтекстноеМеню" id="234"/>
-									<ExtendedTooltip name="ЯвляетсяПубличнымДолжностнымЛицомРасширеннаяПодсказка" id="235"/>
-									<Events>
-										<Event name="OnChange">ЯвляетсяПубличнымДолжностнымЛицомПриИзменении</Event>
-									</Events>
-								</CheckBoxField>
-								<InputField name="ЯвляетсяПубличнымДолжностнымЛицомОписание" id="244">
-									<DataPath>Объект.ЯвляетсяПубличнымДолжностнымЛицомОписание</DataPath>
-									<TitleLocation>None</TitleLocation>
-									<ToolTipRepresentation>None</ToolTipRepresentation>
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<AutoMarkIncomplete>true</AutoMarkIncomplete>
-									<InputHint>
+								<UsualGroup name="ГруппаРФ1" id="502">
+									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Указывается должность, наименование и адрес работодателя</v8:content>
+											<v8:content>Группа р ф1</v8:content>
 										</v8:item>
-									</InputHint>
-									<ContextMenu name="ЯвляетсяПубличнымДолжностнымЛицомОписаниеКонтекстноеМеню" id="245"/>
-									<ExtendedTooltip name="ЯвляетсяПубличнымДолжностнымЛицомОписаниеРасширеннаяПодсказка" id="246"/>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаОпросники2" id="258">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа опросники2</v8:content>
-								</v8:item>
-							</Title>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа опросники2</v8:content>
-								</v8:item>
-							</ToolTip>
-							<Group>Horizontal</Group>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаОпросники2РасширеннаяПодсказка" id="259"/>
-							<ChildItems>
-								<CheckBoxField name="ЯвляетсяРодственникомПубличногоДолжностногоЛица" id="236">
-									<DataPath>Объект.ЯвляетсяРодственникомПубличногоДолжностногоЛица</DataPath>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаКонтекстноеМеню" id="237"/>
-									<ExtendedTooltip name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаРасширеннаяПодсказка" id="238"/>
-									<Events>
-										<Event name="OnChange">ЯвляетсяРодственникомПубличногоДолжностногоЛицаПриИзменении</Event>
-									</Events>
-								</CheckBoxField>
-								<InputField name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписание" id="260">
-									<DataPath>Объект.ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписание</DataPath>
-									<TitleLocation>None</TitleLocation>
-									<ToolTipRepresentation>None</ToolTipRepresentation>
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<AutoMarkIncomplete>true</AutoMarkIncomplete>
-									<InputHint>
+									</Title>
+									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Указывается степень родства или статус</v8:content>
+											<v8:content>Группа р ф1</v8:content>
 										</v8:item>
-									</InputHint>
-									<ContextMenu name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписаниеКонтекстноеМеню" id="261"/>
-									<ExtendedTooltip name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписаниеРасширеннаяПодсказка" id="262"/>
-								</InputField>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРФ1РасширеннаяПодсказка" id="503"/>
+									<ChildItems>
+										<CheckBoxField name="ЯвляетсяПубличнымДолжностнымЛицом" id="504">
+											<DataPath>Объект.ЯвляетсяПубличнымДолжностнымЛицом</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Является российским публичным должностным лицом</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЯвляетсяПубличнымДолжностнымЛицомКонтекстноеМеню" id="505"/>
+											<ExtendedTooltip name="ЯвляетсяПубличнымДолжностнымЛицомРасширеннаяПодсказка" id="506"/>
+											<Events>
+												<Event name="OnChange">ЯвляетсяПубличнымДолжностнымЛицомПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<InputField name="ЯвляетсяПубличнымДолжностнымЛицомОписание" id="507">
+											<DataPath>Объект.ЯвляетсяПубличнымДолжностнымЛицомОписание</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Должность; Наименование организации; Адрес организации</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ЯвляетсяПубличнымДолжностнымЛицомОписаниеКонтекстноеМеню" id="508"/>
+											<ExtendedTooltip name="ЯвляетсяПубличнымДолжностнымЛицомОписаниеРасширеннаяПодсказка" id="509"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаИн1" id="510">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа ин1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа ин1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаИн1РасширеннаяПодсказка" id="511"/>
+									<ChildItems>
+										<CheckBoxField name="ЯвляетсяИностраннымПубличнымДолжностнымЛицом" id="512">
+											<DataPath>Объект.ЯвляетсяИностраннымПубличнымДолжностнымЛицом</DataPath>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЯвляетсяИностраннымПубличнымДолжностнымЛицомКонтекстноеМеню" id="513"/>
+											<ExtendedTooltip name="ЯвляетсяИностраннымПубличнымДолжностнымЛицомРасширеннаяПодсказка" id="514"/>
+											<Events>
+												<Event name="OnChange">ЯвляетсяИностраннымПубличнымДолжностнымЛицомПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<InputField name="ЯвляетсяИностраннымПубличнымДолжностнымЛицомОписание" id="515">
+											<DataPath>Объект.ЯвляетсяИностраннымПубличнымДолжностнымЛицомОписание</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Должность; Наименование организации; Адрес организации</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ЯвляетсяИностраннымПубличнымДолжностнымЛицомОписаниеКонтекстноеМеню" id="516"/>
+											<ExtendedTooltip name="ЯвляетсяИностраннымПубличнымДолжностнымЛицомОписаниеРасширеннаяПодсказка" id="517"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПМО" id="518">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа ПМО</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа ПМО</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПМОРасширеннаяПодсказка" id="519"/>
+									<ChildItems>
+										<CheckBoxField name="ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизации" id="520">
+											<DataPath>Объект.ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизации</DataPath>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииКонтекстноеМеню" id="521"/>
+											<ExtendedTooltip name="ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииРасширеннаяПодсказка" id="522"/>
+											<Events>
+												<Event name="OnChange">ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<InputField name="ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииОписание" id="523">
+											<DataPath>Объект.ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииОписание</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Должность; Наименование организации; Адрес организации</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииОписаниеКонтекстноеМеню" id="524"/>
+											<ExtendedTooltip name="ЯвляетсяДолжностнымЛицомПубличнойМеждународнойОрганизацииОписаниеРасширеннаяПодсказка" id="525"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаРодственник" id="526">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа родственник</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа родственник</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРодственникРасширеннаяПодсказка" id="527"/>
+									<ChildItems>
+										<CheckBoxField name="ЯвляетсяРодственникомПубличногоДолжностногоЛица" id="528">
+											<DataPath>Объект.ЯвляетсяРодственникомПубличногоДолжностногоЛица</DataPath>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаКонтекстноеМеню" id="529"/>
+											<ExtendedTooltip name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаРасширеннаяПодсказка" id="530"/>
+											<Events>
+												<Event name="OnChange">ЯвляетсяРодственникомПубличногоДолжностногоЛицаПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<InputField name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписание" id="531">
+											<DataPath>Объект.ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписание</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Указывается степень родства или статус</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписаниеКонтекстноеМеню" id="532"/>
+											<ExtendedTooltip name="ЯвляетсяРодственникомПубличногоДолжностногоЛицаОписаниеРасширеннаяПодсказка" id="533"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаОпросники3" id="263">
@@ -1209,6 +1427,9 @@
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="ИсточникиПроисхожденияДенежныхСредствКонтекстноеМеню" id="288"/>
 							<ExtendedTooltip name="ИсточникиПроисхожденияДенежныхСредствРасширеннаяПодсказка" id="289"/>
+							<Events>
+								<Event name="StartChoice">ИсточникиПроисхожденияДенежныхСредствНачалоВыбора</Event>
+							</Events>
 						</InputField>
 						<CheckBoxField name="ВыгодоприобретательКлиент" id="290">
 							<DataPath>Объект.ВыгодоприобретательКлиент</DataPath>
@@ -1750,6 +1971,28 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЯвляетсяПубличнымДолжностнымЛицомИлиЕгоРодственником" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Является публичным должностным лицом, супругом (супругой) или близким родственником публичного должностного лица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИсточникиПроисхожденияДенежныхСредствПодбираютсяИзСписка" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источники происхождения денежных средств подбираются из списка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>

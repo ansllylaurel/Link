@@ -28,11 +28,6 @@
 						<CommandName>Form.Command.КомандаВосстановитьВсе</CommandName>
 						<ExtendedTooltip name="ФормаКомандаВосстановитьВсеРасширеннаяПодсказка" id="112"/>
 					</Button>
-					<Button name="ФормаКомандаПерепровестиВсеДокументыЗаПериод" id="196">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.КомандаПерепровестиВсеДокументыЗаПериод</CommandName>
-						<ExtendedTooltip name="ФормаКомандаПерепровестиВсеДокументыЗаПериодРасширеннаяПодсказка" id="197"/>
-					</Button>
 				</ChildItems>
 			</ButtonGroup>
 			<ButtonGroup name="ФормаГруппаКомандыСписка" id="182">
@@ -153,13 +148,278 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="29"/>
 			<ChildItems>
+				<CheckBoxField name="ФлажокОграничитьТочкуАктуальностиДатой" id="230">
+					<DataPath>ФлажокОграничитьТочкуАктуальностиДатой</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФлажокОграничитьТочкуАктуальностиДатойКонтекстноеМеню" id="231"/>
+					<ExtendedTooltip name="ФлажокОграничитьТочкуАктуальностиДатойРасширеннаяПодсказка" id="232"/>
+					<Events>
+						<Event name="OnChange">ФлажокОграничитьТочкуАктуальностиДатойПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ОграничитьТочкуАктуальностиДатой" id="144">
+					<DataPath>ОграничитьТочкуАктуальностиДатой</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ОграничитьТочкуАктуальностиДатойКонтекстноеМеню" id="145"/>
+					<ExtendedTooltip name="ОграничитьТочкуАктуальностиДатойРасширеннаяПодсказка" id="146"/>
+					<Events>
+						<Event name="OnChange">ОграничитьТочкуАктуальностиДатойПриИзменении</Event>
+					</Events>
+				</InputField>
 				<LabelField name="Организация" id="15">
-					<DataPath>Объект.Организация</DataPath>
+					<DataPath>Организация</DataPath>
 					<TitleLocation>None</TitleLocation>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="16"/>
 					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="17"/>
 				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительнаяИнформация" id="260">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дополнительная информация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<CollapsedRepresentationTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</CollapsedRepresentationTitle>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаДополнительнаяИнформацияРасширеннаяПодсказка" id="261"/>
+			<ChildItems>
+				<InputField name="ИмяПоследовательности" id="262">
+					<DataPath>ИмяПоследовательности</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Последовательность</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Она пока одна</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ИмяПоследовательностиКонтекстноеМеню" id="263"/>
+					<ExtendedTooltip name="ИмяПоследовательностиРасширеннаяПодсказка" id="264"/>
+				</InputField>
+				<UsualGroup name="ИнформацияПоТочкеАктуальности" id="252">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Информация по точке актуальности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Информация по точке актуальности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ИнформацияПоТочкеАктуальностиРасширеннаяПодсказка" id="253"/>
+					<ChildItems>
+						<PictureDecoration name="Декорация1" id="254">
+							<Picture>
+								<xr:Ref>StdPicture.AppearanceExclamationMarkIcon</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="255"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="256"/>
+						</PictureDecoration>
+						<LabelDecoration name="Декорация2" id="257">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>* Точка актуальности -- это самый последний документ-регистратор, на который может быть устанолена граница последовательности
+* Непроведенные документ остаются в составе последовательности.
+* Если последовательность восстанавливается через проверение, то при определении точки актуальности приходится добавлять отбор по Регистратор.Проведен, т.к. если такой документ будет в конце дня, то граница на него не станет и последовательность будет считаться невосстановленной. При восстановлении через контроль отрицательных остатков такой проблемы нет.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация2КонтекстноеМеню" id="258"/>
+							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="259"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСпособВосстановленияПоследовательности" id="228">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ восстановления последовательности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа способ восстановления последовательности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаСпособВосстановленияПоследовательностиРасширеннаяПодсказка" id="229"/>
+					<ChildItems>
+						<RadioButtonField name="СпособВосстановленияПоследовательности" id="213">
+							<DataPath>СпособВосстановленияПоследовательности</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Начиная с 01.02.2026 применяется только способ с контролем отрицательных остатков</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<RadioButtonType>RadioButtons</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Через проведение</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сдвиг границы с контролем отрицательных остатков</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СпособВосстановленияПоследовательностиКонтекстноеМеню" id="214"/>
+							<ExtendedTooltip name="СпособВосстановленияПоследовательностиРасширеннаяПодсказка" id="215"/>
+						</RadioButtonField>
+						<UsualGroup name="ГруппаОписаниеВариантовСдвигаГраницыПоследовательности" id="216">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описание вариантов сдвига границы последовательности</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описание вариантов сдвига границы последовательности</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОписаниеВариантовСдвигаГраницыПоследовательностиРасширеннаяПодсказка" id="217"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаОписаниеЧерезПроведение" id="221">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Через проведение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа описание через проведение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаОписаниеЧерезПроведениеРасширеннаяПодсказка" id="222"/>
+									<ChildItems>
+										<LabelDecoration name="НадписьЧерезПроведение" id="218">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>классический вариант, когда документы, входящие в последовательность, последовательно проводятся, начиная с предыдущей границы по новую точку актуальности</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НадписьЧерезПроведениеКонтекстноеМеню" id="219"/>
+											<ExtendedTooltip name="НадписьЧерезПроведениеРасширеннаяПодсказка" id="220"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаОписаниеСдвигГраницыСКонтролемОтрицательныхОстатков" id="223">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сдвиг границы с контролем отрицательных остатков</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа описание сдвиг границы с контролем отрицательных остатков</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаОписаниеСдвигГраницыСКонтролемОтрицательныхОстатковРасширеннаяПодсказка" id="224"/>
+									<ChildItems>
+										<LabelDecoration name="НадписьСдвигГраницыСКонтролемОтрицательныхОстатков" id="225">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>54</MaxWidth>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Проверяется наличие отрицательных остатков на каждый день по всем регистрам накопления, входящим в состав последовательности, начиная с даты предыдущей границы последовательности по дату точки актуальности, после чего последовательность устанавливается на последний документ</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НадписьСдвигГраницыСКонтролемОтрицательныхОстатковКонтекстноеМеню" id="226"/>
+											<ExtendedTooltip name="НадписьСдвигГраницыСКонтролемОтрицательныхОстатковРасширеннаяПодсказка" id="227"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ОтборПоСчетуДУ" id="241">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор по счету ДУ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор по счету ДУ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОтборПоСчетуДУРасширеннаяПодсказка" id="242"/>
+			<ChildItems>
 				<CheckBoxField name="ОтборПоСчетуДоверительногоУправления" id="103">
 					<DataPath>ОтборПоСчетуДоверительногоУправления</DataPath>
 					<Title>
@@ -177,33 +437,13 @@
 					</Events>
 				</CheckBoxField>
 				<InputField name="СчетДоверительногоУправления" id="106">
-					<DataPath>Объект.СчетДоверительногоУправления</DataPath>
+					<DataPath>СчетДоверительногоУправления</DataPath>
 					<TitleLocation>None</TitleLocation>
 					<AutoMarkIncomplete>true</AutoMarkIncomplete>
 					<ContextMenu name="СчетДоверительногоУправленияКонтекстноеМеню" id="107"/>
 					<ExtendedTooltip name="СчетДоверительногоУправленияРасширеннаяПодсказка" id="108"/>
 					<Events>
 						<Event name="OnChange">СчетДоверительногоУправленияПриИзменении</Event>
-					</Events>
-				</InputField>
-				<CheckBoxField name="ОграничитьГраницуПоследовательности" id="138">
-					<DataPath>ОграничитьГраницуПоследовательности</DataPath>
-					<TitleLocation>Right</TitleLocation>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ОграничитьГраницуПоследовательностиКонтекстноеМеню" id="139"/>
-					<ExtendedTooltip name="ОграничитьГраницуПоследовательностиРасширеннаяПодсказка" id="140"/>
-					<Events>
-						<Event name="OnChange">ОграничитьГраницуПоследовательностиПриИзменении</Event>
-					</Events>
-				</CheckBoxField>
-				<InputField name="ОграничениеГраницыПоследовательности" id="144">
-					<DataPath>Объект.ОграничениеГраницыПоследовательности</DataPath>
-					<TitleLocation>None</TitleLocation>
-					<AutoMarkIncomplete>true</AutoMarkIncomplete>
-					<ContextMenu name="ОграничениеГраницыПоследовательностиКонтекстноеМеню" id="145"/>
-					<ExtendedTooltip name="ОграничениеГраницыПоследовательностиРасширеннаяПодсказка" id="146"/>
-					<Events>
-						<Event name="OnChange">ОграничениеГраницыПоследовательностиПриИзменении</Event>
 					</Events>
 				</InputField>
 			</ChildItems>
@@ -352,6 +592,40 @@
 				</ColumnGroup>
 			</ChildItems>
 		</Table>
+		<UsualGroup name="ГруппаПодвал" id="239">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="240"/>
+			<ChildItems>
+				<CheckBoxField name="ФлажокНеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДаты" id="236">
+					<DataPath>ФлажокНеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДаты</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФлажокНеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДатыКонтекстноеМеню" id="237"/>
+					<ExtendedTooltip name="ФлажокНеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДатыРасширеннаяПодсказка" id="238"/>
+				</CheckBoxField>
+				<InputField name="НеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДаты" id="233">
+					<DataPath>НеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДаты</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="НеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДатыКонтекстноеМеню" id="234"/>
+					<ExtendedTooltip name="НеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДатыРасширеннаяПодсказка" id="235"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -361,10 +635,9 @@
 			<MainAttribute>true</MainAttribute>
 			<Save>
 				<Field>1/0:2a0bc7da-4513-4413-8a5c-c2f6e9a57b01</Field>
+				<Field>1/0:87715b7c-8762-47c8-ad34-aed3cdae3f83</Field>
 				<Field>1/0:936ac517-e8ef-452a-9720-cd6029710573</Field>
 				<Field>1/0:a02f05f9-e9ca-4084-ae5e-d1b0a62add1c</Field>
-				<Field>Объект.ОграничениеГраницыПоследовательности</Field>
-				<Field>Объект.СчетДоверительногоУправления</Field>
 			</Save>
 		</Attribute>
 		<Attribute name="ОтборПоСчетуДоверительногоУправления" id="6">
@@ -377,9 +650,6 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
-			<Save>
-				<Field>ОтборПоСчетуДоверительногоУправления</Field>
-			</Save>
 		</Attribute>
 		<Attribute name="ГраницыПоследовательности" id="3">
 			<Title>
@@ -496,15 +766,122 @@
 				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="ОграничитьГраницуПоследовательности" id="2">
+		<Attribute name="СпособВосстановленияПоследовательности" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Ограничить границу последовательности</v8:content>
+					<v8:content>Способ восстановления последовательности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФлажокОграничитьТочкуАктуальностиДатой" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ограничить точку актуальности датой</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДаты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не выводить восстановленные последовательности с точкой актуальности ранее даты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФлажокНеВыводитьВосстановленныеПоследовательностиСТочкойАктуальностиРанееДаты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не выводить восстановленные последовательности с точкой актуальности ранее даты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Отчет" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СчетДоверительногоУправления" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет доверительного управления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СчетаДоверительногоУправления</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОграничитьТочкуАктуальностиДатой" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ограничить точку актуальности датой</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяПоследовательности" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя последовательности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>
@@ -626,22 +1003,6 @@
 			</Picture>
 			<Action>КомандаОбновить</Action>
 			<Representation>TextPicture</Representation>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="КомандаПерепровестиВсеДокументыЗаПериод" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Перепровести все документы за период…</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Команда перепровести все документы за период</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>КомандаПерепровестиВсеДокументыЗаПериод</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>

@@ -1023,10 +1023,6 @@
 		<expression>Сумма(СтоимостьПокупкиКупонаВ)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>СтоимостьПокупкиВ</dataPath>
-		<expression>Сумма(СтоимостьПокупкиВ)</expression>
-	</totalField>
-	<totalField>
 		<dataPath>СтоимостьКупонаВ</dataPath>
 		<expression>Сумма(СтоимостьКупонаВ)</expression>
 	</totalField>
@@ -1145,6 +1141,125 @@
 	<totalField>
 		<dataPath>СуммаРезервовПодОбесценениеВ</dataPath>
 		<expression>Сумма(СуммаРезервовПодОбесценениеВ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПокупкиВ</dataPath>
+		<expression>Сумма(СтоимостьПокупкиВ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПокупкиВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда СтоимостьПокупкиВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>КомиссияПриПокупкеВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда КомиссияПриПокупкеВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПокупкиКупонаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда СтоимостьПокупкиКупонаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПремияПриПриобретенииВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПремияПриПриобретенииВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДисконтПриПриобретенииВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ДисконтПриПриобретенииВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>РазницаППНачальнаяВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда РазницаППНачальнаяВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПриобретенияВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда СтоимостьПриобретенияВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>НКДнаДатуРеклассаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда НКДнаДатуРеклассаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПремияДатуРеклассаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПремияДатуРеклассаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДисконтДатуРеклассаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ДисконтДатуРеклассаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>КорректировканаДатуРеклассаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда КорректировканаДатуРеклассаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда СтоимостьВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПремияВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПремияВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДисконтВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ДисконтВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПереоценкаКупонаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПереоценкаКупонаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПереоценкаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПереоценкаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьКупонаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда СтоимостьКупонаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>КорректировкаЭСПВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда КорректировкаЭСПВ  Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>РазницаППВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда РазницаППВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаРезервовПодОбесценениеВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда СуммаРезервовПодОбесценениеВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПогашениеКупонаНеИсполненноеВСрокВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПогашениеКупонаНеИсполненноеВСрокВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ИтогоСтоимостьЦБВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ИтогоСтоимостьЦБВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПереоценкаСНачалаГодаВ</dataPath>
+		<expression>Вычислить("Сумма(Выбор Когда ЦеннаяБумагаВалютаНоминала &lt;&gt; ПараметрыДанных.ВалютаУчета Тогда ПереоценкаСНачалаГодаВ Иначе 0 Конец)", "ОбщийИтог")</expression>
+		<group>ОбщийИтог</group>
 	</totalField>
 	<parameter>
 		<name>Регистратор</name>
@@ -18429,7 +18544,7 @@
 						<dcsat:value xsi:type="v8:LocalStringType">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Всего</v8:content>
+								<v8:content>Всего В</v8:content>
 							</v8:item>
 						</dcsat:value>
 					</dcsat:item>
@@ -20492,7 +20607,7 @@
 		</parameter>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>СтоимостьПокупкиВ</dcsat:name>
-			<dcsat:expression>СтоимостьПокупкиВ</dcsat:expression>
+			<dcsat:expression>Представление(СтоимостьПокупкиВ)</dcsat:expression>
 		</parameter>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>СтоимостьПокупкиКупонаВ</dcsat:name>

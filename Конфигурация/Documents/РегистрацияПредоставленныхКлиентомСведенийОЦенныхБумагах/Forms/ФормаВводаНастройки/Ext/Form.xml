@@ -10,6 +10,9 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
 	<ChildItems>
 		<InputField name="Настройка" id="4">
 			<DataPath>Настройка</DataPath>
@@ -26,6 +29,9 @@
 			</TypeLink>
 			<ContextMenu name="ЗначениеНастройкиКонтекстноеМеню" id="2"/>
 			<ExtendedTooltip name="ЗначениеНастройкиРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="StartChoice">ЗначениеНастройкиНачалоВыбора</Event>
+			</Events>
 		</InputField>
 		<CheckBoxField name="Отключить" id="7">
 			<DataPath>Отключить</DataPath>
@@ -66,6 +72,17 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦеннаяБумага" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ценная бумага</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Облигации</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

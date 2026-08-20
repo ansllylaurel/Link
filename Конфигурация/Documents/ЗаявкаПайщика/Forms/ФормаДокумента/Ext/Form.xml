@@ -111,6 +111,13 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<InputField name="ЗаявкаНаОбмен" id="190">
+			<DataPath>Объект.ЗаявкаНаОбмен</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ЗаявкаНаОбменКонтекстноеМеню" id="191"/>
+			<ExtendedTooltip name="ЗаявкаНаОбменРасширеннаяПодсказка" id="192"/>
+		</InputField>
 		<Pages name="ГруппаСтраницы" id="126">
 			<Title>
 				<v8:item>
@@ -271,6 +278,9 @@
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ContextMenu name="ДепозитарныйСчетКонтекстноеМеню" id="106"/>
 									<ExtendedTooltip name="ДепозитарныйСчетРасширеннаяПодсказка" id="107"/>
+									<Events>
+										<Event name="OnChange">ДепозитарныйСчетПриИзменении</Event>
+									</Events>
 								</InputField>
 								<RadioButtonField name="СобственностьНаПаи" id="40">
 									<DataPath>Объект.СобственностьНаПаи</DataPath>
@@ -302,6 +312,9 @@
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ДепозитарныйСчетВПаевомИнвестиционномФондеДляОбменаКонтекстноеМеню" id="180"/>
 									<ExtendedTooltip name="ДепозитарныйСчетВПаевомИнвестиционномФондеДляОбменаРасширеннаяПодсказка" id="181"/>
+									<Events>
+										<Event name="OnChange">ДепозитарныйСчетВПаевомИнвестиционномФондеДляОбменаПриИзменении</Event>
+									</Events>
 								</InputField>
 								<UsualGroup name="ГруппаУчастники" id="114">
 									<Title>
@@ -360,6 +373,49 @@
 									<ContextMenu name="АгентКонтекстноеМеню" id="20"/>
 									<ExtendedTooltip name="АгентРасширеннаяПодсказка" id="21"/>
 								</InputField>
+								<UsualGroup name="ГруппаДанныеАгента" id="188">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа данные агента</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа данные агента</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДанныеАгентаРасширеннаяПодсказка" id="189"/>
+									<ChildItems>
+										<InputField name="ФИОАгента" id="182">
+											<DataPath>Объект.ФИОАгента</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ф.И.О.</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ФИОАгентаКонтекстноеМеню" id="183"/>
+											<ExtendedTooltip name="ФИОАгентаРасширеннаяПодсказка" id="184"/>
+										</InputField>
+										<InputField name="ДолжностьАгента" id="185">
+											<DataPath>Объект.ДолжностьАгента</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Должность</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ДолжностьАгентаКонтекстноеМеню" id="186"/>
+											<ExtendedTooltip name="ДолжностьАгентаРасширеннаяПодсказка" id="187"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаУсловияЗаявкиНаЗачисление" id="51">
@@ -430,6 +486,13 @@
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
+						<CheckBoxField name="ВыгружатьОперацииВЕСИАФинанс" id="193">
+							<DataPath>Объект.ВыгружатьОперацииВЕСИАФинанс</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВыгружатьОперацииВЕСИАФинансКонтекстноеМеню" id="194"/>
+							<ExtendedTooltip name="ВыгружатьОперацииВЕСИАФинансРасширеннаяПодсказка" id="195"/>
+						</CheckBoxField>
 						<UsualGroup name="ГруппаПростаяЭлектроннаяПодпись" id="160">
 							<Title>
 								<v8:item>

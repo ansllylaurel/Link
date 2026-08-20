@@ -286,11 +286,33 @@
 								</Popup>
 							</ChildItems>
 						</ButtonGroup>
-						<Button name="ВыполнитьЗадачиПодтверждения" id="182">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.ВыполнитьЗадачиПодтверждения</CommandName>
-							<ExtendedTooltip name="ВыполнитьЗадачиПодтвержденияРасширеннаяПодсказка" id="183"/>
-						</Button>
+						<ButtonGroup name="КомандыКлиентскогоОтдела" id="310">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Команды клиентского отдела</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Команды клиентского отдела</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="КомандыКлиентскогоОтделаРасширеннаяПодсказка" id="311"/>
+							<ChildItems>
+								<Button name="ВыполнитьЗадачиПодтверждения" id="182">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ВыполнитьЗадачиПодтверждения</CommandName>
+									<ExtendedTooltip name="ВыполнитьЗадачиПодтвержденияРасширеннаяПодсказка" id="183"/>
+								</Button>
+								<Button name="ОтменитьВыполнениеЗадачПодтверждения" id="312">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ОтменитьВыполнениеЗадачПодтверждения</CommandName>
+									<ExtendedTooltip name="ОтменитьВыполнениеЗадачПодтвержденияРасширеннаяПодсказка" id="313"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
 					</ChildItems>
 				</CommandBar>
 			</ChildItems>
@@ -2369,7 +2391,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Согласовано</v8:content>
+					<v8:content>Согласовать</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -2378,7 +2400,12 @@
 					<v8:content>Клиентский отдел закрывает задачи "Подтвердить" бизнес процесса СогласованиеПорученийНаВыводАктивов </v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceCheckBox</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>ВыполнитьЗадачиПодтверждения</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 		<Command name="ПоместитьДанныеВБуфер" id="7">
 			<Title>
@@ -2459,6 +2486,26 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьДанныеДляВыполненияЗадачСогласования</Action>
+		</Command>
+		<Command name="ОтменитьВыполнениеЗадачПодтверждения" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить согласование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить выполнение задач подтверждения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceCross</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтменитьВыполнениеЗадачПодтверждения</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 </Form>

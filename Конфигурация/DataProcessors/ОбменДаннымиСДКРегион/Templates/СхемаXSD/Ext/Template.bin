@@ -4,6 +4,59 @@
 	<xs:annotation>
 		<xs:documentation>Документы взаимодействия спецдепозитария ДК "Регион" и УК (агента)</xs:documentation>
 	</xs:annotation>
+	<xs:element name="PROCESSING_PERSONAL_DATA">
+		<xs:annotation>
+			<xs:documentation>Разрешение на обработку персональных данных</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="out_doc_t">
+					<xs:sequence>
+						<xs:element name="document_code" type="text_t" fixed="DKRI_PD">
+							<xs:annotation>
+								<xs:documentation>Идентификатор типа документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="managment_company" type="party_id_name_t" nillable="true">
+							<xs:annotation>
+								<xs:documentation>Идентификатор УК, например, ОГРН (id_type = OGRN);</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="investment_fund" type="party_id_name_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Описание фонда, номер правил доверительного управления паевого инвестиционного фонда; (id_type = TMRL);</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="agent" type="party_id_name_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Идентификатор агента, если заявление поступает от него</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="shareholder_info" type="individual_person_t2">
+							<xs:annotation>
+								<xs:documentation>сведения о лице</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="consent_to_the_processing_of_personal_data" type="text_t" fixed="Настоящим своей волей и в своих интересах, в соответствии со ст. 9 Федерального закона от 27.07.2006 N 152-ФЗ «О персональных данных» даю конкретное, предметное, информированное, сознательное и однозначное согласие на обработку своих персональных данных Акционерному обществу «Депозитарная компания «РЕГИОН» (119049, г. Москва, вн. тер. г. муниципальный округ Якиманка, ул. Крымский вал, д. 3, стр. 2, Антресоль 3, помещ. I, ком. 32-57) (далее - Регистратор). Согласие дается для целей открытия и дальнейшего обслуживания лицевого счета, включая внесение изменений в мои анкетные данные, совершение операций с лицевым счетом и по лицевому счету, надлежащего исполнения Регистратором обязанностей по ведению реестра владельцев инвестиционных паев, установленных законодательством Российской Федерации. В целях сбора документов, необходимых для совершения операций в реестре, передачи мне информации из реестра даю свое согласие Регистратору поручить обработку персональных данных, содержащихся в настоящем согласии управляющей компании паевого инвестиционного фонда, инвестиционные паи которого мной приобретаются. Обработка персональных данных осуществляется Регистратором в объеме, необходимом для достижения вышеперечисленных целей, включая сбор, запись, систематизацию, использование, накопление, хранение, уточнение (обновление, изменение), уничтожение, удаление, блокирование, обезличивание, передачу (предоставление) персональных данных. Регистратор вправе осуществлять передачу моих персональных данных иным лицам, имеющим право получать такие сведения в соответствии с законодательством Российской Федерации, в составе запрашиваемых сведений. Обработка персональных данных осуществляется с соблюдением требований законодательства Российской Федерации следующими способами: с применением средств автоматизации и без применения средств автоматизации. Данное согласие действует на период до достижения целей обработки персональных данных или до истечения сроков хранения соответствующей информации и\или документов, содержащих указанную информацию, определяемых в соответствии с законодательством Российской Федерации. Настоящим подтверждается, что настоящее согласие может быть отозвано путем предоставления Регистратору соответствующего заявления в письменной форме. В случае отзыва согласия на обработку своих персональных данных, Регистратор вправе не прекращать обработку персональных данных и не уничтожать их в случаях, предусмотренных законодательством Российской Федерации, в том числе если установленные законодательство Российской Федерации сроки хранения персональных данных не истекли.Перечень моих персональных данных, на обработку которых я даю согласие: фамилия, имя, отчество, гражданство, пол, возраст, дата и место рождения, номер основного документа, удостоверяющего личность, сведения о дате выдачи указанного документа и выдавшем его органе, адрес регистрации по месту жительства (месту пребывания), идентификационный номер налогоплательщика, страховой номер индивидуального лицевого счета, номер телефона, адрес электронной почты, банковские реквизиты для перечисления доходов или выплат по инвестиционным паям.">
+							<xs:annotation>
+								<xs:documentation>Согласие на обработку персональных данных зарегистрированного физического лица</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="sign_info" type="text_t">
+							<xs:annotation>
+								<xs:documentation>Информация о подписи</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="add_info" type="info_list_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Дополнительная информация</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
 	<xs:element name="ACCOUNT_MODIFICATION_INSTRUCTION">
 		<xs:annotation>
 			<xs:documentation>Заявление на  открытие/изменение лицевого счета зарегистрированного лица</xs:documentation>
@@ -57,14 +110,175 @@
 								<xs:documentation>Уведомлять об операции</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="consent_to_the_processing_of_personal_data" type="text_t" fixed="Настоящим своей волей и в своих интересах даю согласие на обработку Регистратором АО «Депозитарная компания «РЕГИОН» (119049, г. Москва, вн. тер. г. муниципальный округ Якиманка, ул. Крымский вал, д. 3, стр. 2, Антресоль 3, помещ. I, ком. 32-57) всех моих персональных данных (персональных данных зарегистрированного лица, в случае если согласие дается законным представителем), указанных в настоящей анкете. Согласие дается для целей открытия и дальнейшего обслуживания лицевого счета, надлежащего исполнения Регистратором обязанностей по ведению реестра владельцев инвестиционных паев, установленных законодательством Российской Федерации. В целях сбора документов, необходимых для совершения операций в реестре, передачи мне информации из реестра даю свое согласие Регистратору поручить обработку персональных данных, содержащихся в настоящей анкете Управляющей компании паевого инвестиционного фонда, инвестиционные паи которого мной приобретаются. Обработка персональных данных осуществляется Регистратором в объеме, необходимом для достижения вышеперечисленных целей, включая сбор, запись, систематизацию, использование, накопление, хранение, уточнение (обновление, изменение), уничтожение, удаление, блокирование, обезличивание, передачу (предоставление) персональных данных. Регистратор вправе осуществлять передачу моих персональных данных иным лицам, имеющим право получать такие сведения в соответствии с законодательством Российской Федерации, в составе запрашиваемых сведений. Обработка персональных данных осуществляется с соблюдением требований законодательства Российской Федерации следующими способами: с применением средств автоматизации и без применения средств автоматизации. Данное согласие действует на период до достижения целей обработки персональных данных или до истечения сроков хранения соответствующей информации и/или документов, содержащих указанную информацию, определяемых в соответствии с законодательством Российской Федерации. Настоящим подтверждается, что настоящее согласие может быть отозвано путем предоставления Регистратору соответствующего заявления в письменной форме. В случае отзыва согласия на обработку своих персональных данных, Регистратор вправе не прекращать обработку персональных данных и не уничтожать их в случаях, предусмотренных законодательством Российской Федерации, в том числе если установленные законодательство Российской Федерации сроки хранения персональных данных не истекли." minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Согласие на обработку персональных данных зарегистрированного физического лица</xs:documentation>
-							</xs:annotation>
-						</xs:element>
 						<xs:element name="sign_info" type="text_t" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Информация о подписи</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="add_info" type="info_list_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Дополнительная информация</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ACCOUNT_INFORMATION_INSTRUCTION">
+		<xs:annotation>
+			<xs:documentation>Запрос информации по лицевому счету зарегистрированного лица</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="out_doc_t">
+					<xs:sequence>
+						<xs:element name="document_code" type="text_t" fixed="DKRI_07">
+							<xs:annotation>
+								<xs:documentation>Идентификатор типа документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="message_type" type="account_information_type_et" nillable="false">
+							<xs:annotation>
+								<xs:documentation>Цель подачи запроса</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="report_date_begin" type="date_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>дата начала периода</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="report_date_end" type="date_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>дата окончания периода</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="report_date" type="date_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>дата и время приема заявки</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="units" type="decimal_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>количество паев</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="managment_company" type="party_id_name_t" nillable="true">
+							<xs:annotation>
+								<xs:documentation>Идентификатор УК, например, ОГРН (id_type = OGRN);</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="investment_fund" type="party_id_name_t">
+							<xs:annotation>
+								<xs:documentation>Описание фонда, номер правил доверительного управления паевого инвестиционного фонда; (id_type = TMRL);</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="agent" type="party_id_name_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Идентификатор агента, если заявление поступает от него</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="account_id" type="account_dtls_v02_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>информация о счете. Номер счета обязательно заполняется, есои несколько счетов</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="shareholder_id" type="party_identification_t">
+							<xs:annotation>
+								<xs:documentation>Идентификатор лица для пайщиков, которым уже открыт счет</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="operation_notify" type="yes_no_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Уведомлять об операции</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="receive_date_time" type="datetime_t">
+							<xs:annotation>
+								<xs:documentation>дата и время приема заявки</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="add_info" type="info_list_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Дополнительная информация</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ACCOUNT_INFORMATION_REPORT_ZAGLUSHKA">
+		<xs:annotation>
+			<xs:documentation>Отчет на запрос информации по лицевому счету зарегистрированного лица</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="out_doc_t">
+					<xs:sequence>
+						<xs:element name="document_code" type="text_t" fixed="DKRA_13">
+							<xs:annotation>
+								<xs:documentation>Идентификатор типа документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="message_type" type="account_information_type_et" nillable="false">
+							<xs:annotation>
+								<xs:documentation>Цель подачи запроса</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="report_date_begin" type="date_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>дата начала периода</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="report_date_end" type="date_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>дата окончания периода</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="report_date" type="date_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>дата и время приема заявки</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="units" type="decimal_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>количество паев</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="managment_company" type="party_id_name_t" nillable="true">
+							<xs:annotation>
+								<xs:documentation>Идентификатор УК, например, ОГРН (id_type = OGRN);</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="investment_fund" type="party_id_name_t">
+							<xs:annotation>
+								<xs:documentation>Описание фонда, номер правил доверительного управления паевого инвестиционного фонда; (id_type = TMRL);</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="agent" type="party_id_name_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Идентификатор агента, если заявление поступает от него</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="account_id" type="account_dtls_v02_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>информация о счете. Номер счета обязательно заполняется, есои несколько счетов</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="shareholder_id" type="party_identification_t">
+							<xs:annotation>
+								<xs:documentation>Идентификатор лица для пайщиков, которым уже открыт счет</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="operation_notify" type="yes_no_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Уведомлять об операции</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="receive_date_time" type="datetime_t">
+							<xs:annotation>
+								<xs:documentation>дата и время приема заявки</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="add_info" type="info_list_t" minOccurs="0">
@@ -254,48 +468,40 @@
 								<xs:documentation>Идентификатор агента, если заявление поступает от него</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="account_id" type="account_dtls_v03_t" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>информация о счете. Номер счета обязательно заполняется.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
 						<xs:element name="shareholder_id" type="party_identification_t">
 							<xs:annotation>
 								<xs:documentation>информация о зарегистрированном лице (по которому предоставляется распоряжение)</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="processing_info">
+						<xs:element name="account_id" type="account_dtls_v03_t" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>тип, дата, время проведенной операции;</xs:documentation>
+								<xs:documentation>информация о счете. Номер счета обязательно заполняется.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="refuse_info">
+							<xs:annotation>
+								<xs:documentation>информация об отказе</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="operation_name" type="text_t">
+									<xs:element name="reason_operation">
 										<xs:annotation>
-											<xs:documentation>Наименование операции</xs:documentation>
+											<xs:documentation>основание операции</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="doc" type="doc_link_t" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="reason_refused" type="text_t">
+										<xs:annotation>
+											<xs:documentation>причина отказа</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="processing_datetime" type="date_or_datetime_t">
+									<xs:element name="recommendation" type="text_t">
 										<xs:annotation>
-											<xs:documentation>Дата обработки документа/ дата операции/ дата внесения записи в реестр</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="processing_reference" type="text_t">
-										<xs:annotation>
-											<xs:documentation>номер документа /номер операции/ номер внесения записи в реестр</xs:documentation>
-											<!-- ===================================================
-Референс обработки документа /номер операции/ номер внесения записи в реестр
-=================================================== -->
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="description_refuse" type="text_t">
-										<xs:annotation>
-											<xs:documentation>описание причины отказа</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="action" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>рекомендуемые действия</xs:documentation>
+											<xs:documentation>рекомендации</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 								</xs:sequence>
@@ -306,9 +512,9 @@
 								<xs:documentation>Уполномоченные лица регистратора</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="report_date" type="date_t">
+						<xs:element name="report_datetime" type="datetime_t">
 							<xs:annotation>
-								<xs:documentation>дата отчета</xs:documentation>
+								<xs:documentation>дата и время уведомления</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="add_info" type="info_list_t" nillable="true" minOccurs="0">
@@ -357,6 +563,11 @@
 						<xs:element name="owner_info" type="party_details_t" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>сведения о владельце инвестиционных паев, обязательно указываются в случае указания типа счета "номинальный держатель" в блоке сведений о лице-заявителе</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="unit_quantity" type="quantity_in_unit_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>количество паев</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="bank_prop_rub" type="bank_prop_rub_t" nillable="true">
@@ -472,59 +683,6 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="PROCESSING_PERSONAL_DATA">
-		<xs:annotation>
-			<xs:documentation>Согласие на обработку Персональных данных </xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="out_doc_t">
-					<xs:sequence>
-						<xs:element name="document_code" type="text_t" fixed="DKRI_PD">
-							<xs:annotation>
-								<xs:documentation>Идентификатор типа документа</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="managment_company" type="party_id_name_t">
-							<xs:annotation>
-								<xs:documentation>Идентификатор УК, например, ОГРН (id_type = OGRN);</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="investment_fund" type="party_id_name_t">
-							<xs:annotation>
-								<xs:documentation>Описание фонда, номер правил доверительного управления паевого инвестиционного фонда; (id_type = TMRL);</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="agent" type="party_id_name_t" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Идентификатор агента, если заявление поступает от него</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="shareholder_info" type="individual_person_t" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Информация о пайщике</xs:documentation>
-							</xs:annotation>
-						</xs:element>																		
-						<xs:element name="consent_to_the_processing_of_personal_data" type="text_t" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Текст согласия</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="sign_info" type="text_t" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Информация о подписи</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="add_info" type="info_list_t" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Дополнительная информация</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-					</xs:sequence>
-				</xs:extension>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="ORDER_TO_SHARE_EXCHANGE">
 		<xs:annotation>
 			<xs:documentation>Заявка на обмен паев</xs:documentation>
@@ -573,6 +731,11 @@
 								<xs:documentation>количество паев</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element name="unit_quantity_dest" type="quantity_in_unit_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>количество паев в ПИФе назначения</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="bank_prop_rub" type="bank_prop_rub_t" nillable="true" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>реквизиты для денежных расчетов</xs:documentation>
@@ -611,6 +774,11 @@
 			<xs:complexContent>
 				<xs:extension base="out_doc_t">
 					<xs:sequence>
+						<xs:element name="document_category" type="text_t">
+							<xs:annotation>
+								<xs:documentation>категория документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="document_code" type="text_t" fixed="DKRI_06">
 							<xs:annotation>
 								<xs:documentation>Идентификатор типа документа</xs:documentation>
@@ -688,6 +856,11 @@
 			<xs:complexContent>
 				<xs:extension base="out_doc_t">
 					<xs:sequence>
+						<xs:element name="document_category" type="text_t">
+							<xs:annotation>
+								<xs:documentation>категория документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="fix_date" type="date_t">
 							<xs:annotation>
 								<xs:documentation>дата, на которую составлен список</xs:documentation>
@@ -709,6 +882,11 @@
 			<xs:complexContent>
 				<xs:extension base="out_doc_t">
 					<xs:sequence>
+						<xs:element name="document_category" type="text_t">
+							<xs:annotation>
+								<xs:documentation>категория документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="fix_date" type="date_t"/>
 						<xs:element name="basis_doc_main_id" type="text_t"/>
 						<xs:element name="investment_fund_reg_number" type="text_t"/>
@@ -726,6 +904,11 @@
 			<xs:complexContent>
 				<xs:extension base="out_doc_t">
 					<xs:sequence>
+						<xs:element name="document_category" type="text_t">
+							<xs:annotation>
+								<xs:documentation>категория документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="basis_doc_main_id"/>
 						<xs:element name="investment_fund_reg_number" type="text_t"/>
 						<xs:element name="percent_block_pie" type="decimal_t"/>
@@ -742,6 +925,11 @@
 			<xs:complexContent>
 				<xs:extension base="out_doc_t">
 					<xs:sequence>
+						<xs:element name="document_category" type="text_t">
+							<xs:annotation>
+								<xs:documentation>категория документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="basis_doc_main_id"/>
 						<xs:element name="investment_fund_reg_number" type="text_t"/>
 					</xs:sequence>
@@ -757,6 +945,11 @@
 			<xs:complexContent>
 				<xs:extension base="out_doc_t">
 					<xs:sequence>
+						<xs:element name="document_category" type="text_t">
+							<xs:annotation>
+								<xs:documentation>категория документа</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="basis_doc_main_id" type="text_t"/>
 						<xs:element name="fix_date" type="xs:date" minOccurs="0"/>
 						<xs:element name="investment_fund_reg_number" type="text_t"/>
@@ -1694,10 +1887,16 @@
 								<xs:documentation>Дата, на которую строится отчет</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="total_quantity_in" type="quantity_in_unit_t">
-							<xs:annotation>
-								<xs:documentation>входящий остаток</xs:documentation>
-							</xs:annotation>
+						<xs:element name="total_quantity_in_N" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="quantity" type="quantity_in_unit_t" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>входящий остаток</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
 						</xs:element>
 						<xs:element name="executed_transactions">
 							<xs:complexType>
@@ -1774,10 +1973,16 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="total_quantity_out" type="quantity_in_unit_t">
-							<xs:annotation>
-								<xs:documentation>исходящий остаток</xs:documentation>
-							</xs:annotation>
+						<xs:element name="total_quantity_out_N" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="quantity" type="quantity_in_unit_t" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>входящий остаток</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
 						</xs:element>
 						<xs:element name="managers" type="manager_dtls_t" nillable="true">
 							<xs:annotation>
@@ -1836,10 +2041,16 @@
 								<xs:documentation>Дата, на которую строится отчет</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="total_quantity_in" type="quantity_in_unit_t">
-							<xs:annotation>
-								<xs:documentation>входящий остаток</xs:documentation>
-							</xs:annotation>
+						<xs:element name="total_quantity_in_N" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="quantity" type="quantity_in_unit_t" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>входящий остаток</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
 						</xs:element>
 						<xs:element name="executed_transactions">
 							<xs:complexType>
@@ -1916,10 +2127,16 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="total_quantity_out" type="quantity_in_unit_t">
-							<xs:annotation>
-								<xs:documentation>исходящий остаток</xs:documentation>
-							</xs:annotation>
+						<xs:element name="total_quantity_out_N" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="quantity" type="quantity_in_unit_t" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>входящий остаток</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
 						</xs:element>
 						<xs:element name="managers" type="manager_dtls_t" nillable="true">
 							<xs:annotation>
@@ -2920,7 +3137,53 @@ OTHR – прочие
 			</xs:element>
 			<xs:element name="placecountry" type="registration_country_et" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>страна месторасположения</xs:documentation>
+					<xs:documentation>страна месторасположения (рег)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="factcountry" type="registration_country_et" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>страна месторасположения (факт)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="individual_person_t2">
+		<xs:annotation>
+			<xs:documentation>характеристики физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="individual_name_separate">
+				<xs:annotation>
+					<xs:documentation>фамилия, имя, отчетство в разных полях</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="name_first" type="text_t">
+							<xs:annotation>
+								<xs:documentation>имя</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="name_second" type="text_t" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>отчество</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="name_last" type="text_t">
+							<xs:annotation>
+								<xs:documentation>фамилия</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="individual_document" type="id_type_t">
+				<xs:annotation>
+					<xs:documentation>документ, удостоверяющий личность физического лица</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="legal_address" type="text_t" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Адрес регистрации по месту жительства</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3275,7 +3538,7 @@ OTHR – прочие
 					<xs:documentation>версия XML документа</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="header" type= "header_t">
+			<xs:element name="header">
 				<xs:annotation>
 					<xs:documentation>заголовок документа</xs:documentation>
 				</xs:annotation>
@@ -3693,7 +3956,7 @@ OTHR – прочие
 			<xs:documentation>количество ценных бумаг в штуках</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="units" type="decimal_t">
+			<xs:element name="units" type="decimal_t" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Целая часть и десятичная дробь. При наличии fraction - только целое</xs:documentation>
 				</xs:annotation>
@@ -3720,6 +3983,16 @@ OTHR – прочие
 						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
+			</xs:element>
+			<xs:element name="pie_class" type="text_t" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Класс пая</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pie_special" type="text_t" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Спец пай</xs:documentation>
+				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 		<!-- =========================================================================================== -->
@@ -3992,6 +4265,28 @@ UKWN
 	<xs:annotation>
 		<xs:documentation>Перечисления и справочники</xs:documentation>
 	</xs:annotation>
+	<xs:simpleType name="account_information_type_et">
+		<xs:annotation>
+			<xs:documentation>тип информации по счету</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="text_t">
+			<xs:enumeration value="REMIND">
+				<xs:annotation>
+					<xs:documentation>Выписка</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OPERATION">
+				<xs:annotation>
+					<xs:documentation>Справка об операциях по лицевому счету</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EXISTENCE">
+				<xs:annotation>
+					<xs:documentation>Справка о наличии паев</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="account_innstruction_type_et">
 		<xs:annotation>
 			<xs:documentation>назначение распоряжения по счету</xs:documentation>

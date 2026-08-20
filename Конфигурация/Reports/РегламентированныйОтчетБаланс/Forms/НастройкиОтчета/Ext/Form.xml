@@ -132,6 +132,39 @@
 			<ContextMenu name="ОтчетНаКонецПрошлогоГодаКонтекстноеМеню" id="5"/>
 			<ExtendedTooltip name="ОтчетНаКонецПрошлогоГодаРасширеннаяПодсказка" id="6"/>
 		</InputField>
+		<InputField name="ОтчетЗаАналогичныйПериодПрошлогоГода" id="23">
+			<DataPath>ОтчетЗаАналогичныйПериодПрошлогоГода</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.ВалютаДокумента</xr:Name>
+					<xr:DataPath xsi:type="xs:string">ВалютаДокумента</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+				<xr:Link>
+					<xr:Name>Отбор.ВыбраннаяФорма</xr:Name>
+					<xr:DataPath xsi:type="xs:string">ВыбраннаяФорма</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+				<xr:Link>
+					<xr:Name>Отбор.ИсточникОтчета</xr:Name>
+					<xr:DataPath xsi:type="xs:string">ИсточникОтчета</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+				<xr:Link>
+					<xr:Name>Отбор.Организация</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+				<xr:Link>
+					<xr:Name>Отбор.СчетДоверительногоУправления</xr:Name>
+					<xr:DataPath xsi:type="xs:string">СчетДоверительногоУправления</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ОтчетЗаАналогичныйПериодПрошлогоГодаКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="ОтчетЗаАналогичныйПериодПрошлогоГодаРасширеннаяПодсказка" id="25"/>
+		</InputField>
 		<InputField name="Подписант" id="1">
 			<DataPath>Подписант</DataPath>
 			<DropListButton>false</DropListButton>
@@ -269,6 +302,17 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтчетЗаАналогичныйПериодПрошлогоГода" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет за аналогичный период прошлого года</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.РегламентированныйОтчет</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
