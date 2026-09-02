@@ -1,0 +1,33 @@
+
+{
+ 	var leftBlock;
+    var taskState;
+    var subscribers;
+  
+    function globalStyleBlock() {
+      subscribers = document.querySelector('a[href="javascript:void(0)"][tabindex="-1"].vh-post-comment__recipient-menu-item-text.pointer.d-none.d-sm-flex.ng-star-inserted');
+      if (subscribers) {
+        subscribers.click();
+      }
+      leftBlock = document.querySelector('.vh-task-card-system-params-column.right-part.d-none.d-sm-flex');
+      taskState = document.querySelector('.vh-task-card-system-params-row.task-state.ng-star-inserted');
+
+      if (leftBlock && taskState) {
+        leftBlock.appendChild(taskState); 
+  }
+ 	}
+
+  function onLoad() {
+    globalStyleBlock();
+  }
+
+  function onDestroy() {
+     leftBlock = null;
+     taskState = null;
+     subscribers = null;
+     window.removeEventListener('MTFMainLoadFinished', onLoad);
+   }
+      
+  window.addEventListener('MTFMainLoadFinished', onLoad);
+  window.addEventListener('MTFMainDestroyed', onDestroy);
+}
